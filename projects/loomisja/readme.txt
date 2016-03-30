@@ -1,5 +1,5 @@
-FLIGHT OF THE CONCHORDS LYRICS
-"Robots"
+Robots
+by Flight of the Conchords
 
 The distant future
 The year 2000
@@ -14,7 +14,7 @@ We are robots
 The world is quite different ever since the robotic uprising of the late 90s.
 There is no more unhappiness.
 Affirmative
-We no longer say ‘yes'. Instead we say ‘affirmative'.
+We no longer say 'yes'. Instead we say 'affirmative'.
 Yes - Err - Affirmative.
 Unless we know the other robot really well.
 There is no more unethical treatment of the elephants.
