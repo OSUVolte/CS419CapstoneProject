@@ -1,11 +1,11 @@
 /********************************************************
-*														*	
+*														*
 * Author: Sam Nelson									*
 * Class: CS 362											*
-* Assignment: Assignment 2 								*	
+* Assignment: Assignment 2 								*
 * Date: 4/1/2016										*
 * Description: Give documentation on smith, adventurer	*
-* cards and also on discardCard() and updateCoins() 	*	
+* cards and also on discardCard() and updateCoins() 	*
 * functions												*
 *														*
 *********************************************************

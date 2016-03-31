@@ -1,10 +1,10 @@
 /********************************************************
-*														*	
+*														*
 * Author: Sam Nelson									*
 * Class: CS 362											*
-* Assignment: Assignment 2 								*	
+* Assignment: Assignment 2 								*
 * Date: 4/1/2016										*
-* Description: refactor smithy, adventurer, baron,		* 	
+* Description: refactor smithy, adventurer, baron,		*
 * and feast and village									*
 *														*
 *********************************************************

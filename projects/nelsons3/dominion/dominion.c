@@ -1160,10 +1160,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 /******************************************************************
 Function:   refactorSmithy
-Input:      integer handPos, integer currentPlayer, pointer to state
-Output:     Three more cards are drawn and added to hand, smithy is
-            discarded. Returns 0 on success.
-*******************************************************************/
+*/
 int refactorSmithy(int handPos, int currentPlayer, struct gameState *state) {
     //+3 Cards
     for (int i = 1; i < 3; i++)
@@ -1177,11 +1174,7 @@ return 0;
 }
 /******************************************************************
 Function:   refactorAdventurer
-Input:      integer handPos, integer currentPlayer, pointer to state,
-            array temphand, integer drawntreasure
-Output:     Two treasure cards are added to the players hand, the rest
-            are discarded. Returns 0 on success.
-*******************************************************************/
+*/
 int refactorAdventurer(int z, int handPos, int currentPlayer, int cardDrawn, struct gameState *state, int temphand[], int drawntreasure){
     while(drawntreasure<=2){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -1206,10 +1199,7 @@ return 0;
 
 /******************************************************************
 Function:   refactorVillage
-Input:      integer handPos, integer currentPlayer, pointer to state,
-Output:     Two additional actions allowable. Discards card when
-            completed. Returns 0 on success.
-*******************************************************************/
+*/
 int refactorVillage(int handPos, int currentPlayer, struct gameState *state){
     //+1 Card
     drawCard(currentPlayer, state);
@@ -1224,11 +1214,7 @@ int refactorVillage(int handPos, int currentPlayer, struct gameState *state){
 
 /******************************************************************
 Function:   refactorFeast
-Input:      integer handPos, integer currentPlayer, pointer to state,
-            three integers indicting user choice
-Output:     Three options: Two cards, two coins, or trash 2 cards.
-            Returns 0 on completion.
-*******************************************************************/
+*/
 int refactorFeast(int handPos, int currentPlayer, struct gameState *state, int choice1, int choice2, int choice3){
     //gain card with cost up to 5
     //Backup hand
@@ -1291,12 +1277,7 @@ return 0;
 
 /******************************************************************
 Function:   refactorBaron
-Input:      integer handPos, integer currentPlayer, pointer to state,
-            integer indicating user choice
-Output:     Two options: discard an estate and gain 4 coins, or gain
-            an estate card with 0 coins. Increases buys by 1.
-            Returns 0 on success.
-*******************************************************************/
+*/
 int refactorBaron(int handPos, int currentPlayer, struct gameState *state, int choice1){
     state->numBuys++;//Increase buys by 1!
     if (choice1 > 0)
@@ -1350,8 +1331,6 @@ int refactorBaron(int handPos, int currentPlayer, struct gameState *state, int c
 	}
 	return 0;
 }
-//end of dominion.c
-
 
 //end of dominion.c
 
