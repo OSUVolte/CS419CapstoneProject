@@ -667,7 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return refactorAdventurer(z, handPos, currentPlayer, cardDrawn, state, temphand, drawntreasure);
+	return refactorAdventurer(z, handPos, currentPlayer, cardDrawn, state, temphand, drawntreasure);
 			
     case council_room:
       //+4 Cards
@@ -694,7 +694,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 			
     case feast:
-		refactorFeast(handPos, currentPlayer, state, choice1, choice2, choice3)
+	refactorFeast(handPos, currentPlayer, state, temphand, choice1);
 			
     case remodel:
       j = state->hand[currentPlayer][choice1];  //store card we will trash
@@ -723,13 +723,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-		refactorSmithy(handPos, currentPlayer, state)
+		refactorSmithy(handPos, currentPlayer, state);
 		
     case village:
-		refactorVillage(handPos, currentPlayer, state)
+		refactorVillage(handPos, currentPlayer, state);
 		
     case baron:
-		refactorBaron(handPos, currentPlayer, state, choice1)
+		refactorBaron(handPos, currentPlayer, state, choice1);
 		
     case great_hall:
       //+1 Card
@@ -1215,10 +1215,10 @@ int refactorVillage(int handPos, int currentPlayer, struct gameState *state){
 /******************************************************************
 Function:   refactorFeast
 */
-int refactorFeast(int handPos, int currentPlayer, struct gameState *state, int choice1, int choice2, int choice3){
+int refactorFeast(int handPos, int currentPlayer, struct gameState *state, int temphand[], int choice1){
     //gain card with cost up to 5
     //Backup hand
-    for (i = 0; i <= state->handCount[currentPlayer]; i++)
+    for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		temphand[i] = state->hand[currentPlayer][i];//Backup card
 		state->hand[currentPlayer][i] = -1;//Set to nothing
@@ -1227,7 +1227,7 @@ int refactorFeast(int handPos, int currentPlayer, struct gameState *state, int c
 
     //Update Coins for Buy
     updateCoins(currentPlayer, state, 5);
-    x = 2;//Condition to loop on
+    int x = 2;//Condition to loop on
     while( x >= 0) 
 	{//Buy one card
 		if (supplyCount(choice1, state) <= 0)
@@ -1266,7 +1266,7 @@ int refactorFeast(int handPos, int currentPlayer, struct gameState *state, int c
     }     
 
     //Reset Hand
-    for (i = 0; i <= state->handCount[currentPlayer]; i++)
+    for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		state->hand[currentPlayer][i] = temphand[i];
 		temphand[i] = -1;
@@ -1331,6 +1331,6 @@ int refactorBaron(int handPos, int currentPlayer, struct gameState *state, int c
 	}
 	return 0;
 }
-
 //end of dominion.c
+
 

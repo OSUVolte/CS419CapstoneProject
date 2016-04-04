@@ -1,12 +1,12 @@
 /********************************************************
-*														*
-* Author: Sam Nelson									*
-* Class: CS 362											*
-* Assignment: Assignment 2 								*
-* Date: 4/1/2016										*
-* Description: refactor smithy, adventurer, baron,		*
-* and feast and village									*
-*														*
+*							*	
+* Author: Sam Nelson					*
+* Class: CS 362						*
+* Assignment: Assignment 2 				*	
+* Date: 4/1/2016					*
+* Description: refactor smithy, adventurer, baron,	* 	
+* and feast and village					*
+*							*
 *********************************************************
 
 Village card refactor:
