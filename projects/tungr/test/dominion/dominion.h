@@ -35,7 +35,7 @@ enum CARD
    mine, /* choice1 is hand# of money to trash, choice2 is supply# of
 	    money to put in hand */
    remodel, /* choice1 is hand# of card to remodel, choice2 is supply# */
-   smithy, //13
+   smithy,
    village,
 
    baron, /* choice1: boolean for discard of estate */
