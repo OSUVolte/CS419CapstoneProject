@@ -721,8 +721,8 @@ void baronCard(struct gameState* state, int currentPlayer, int choice1){
       state->numBuys++;//Increase buys by 1!
       if (choice1 > 0){//Boolean true or going to discard an estate
 	int p = 0;//Iterator for hand!
-	int card_not_discarded = 1;//Flag for discard set!
-	while(card_not_discarded > 0){
+	int card_not_discarded = 1;//Cards not discarded count
+	while(card_not_discarded){
 	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
 	    state->coins += 4;//Add 4 coins to the amount of coins
 	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
@@ -765,7 +765,7 @@ void baronCard(struct gameState* state, int currentPlayer, int choice1){
 	  }
 	}
       }
-   return 0;
+   return;
 }
 
 void villageCard(struct gameState* state, int currentPlayer, int handPos){
@@ -775,7 +775,7 @@ void villageCard(struct gameState* state, int currentPlayer, int handPos){
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return;
 }
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
