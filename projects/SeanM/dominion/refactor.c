@@ -10,7 +10,7 @@ I added in a bunch of red herring code that doesn't actually accomplish anything
 I swapped the the handPos and currentPlayer variables in the stewardCard() function call in the switch statement.
 
 /-------Baron Card Bug -------/
-I created an infinite loop in the baron card if the player makes a non-estate card selection. If they play the baron on its own, it should work. If they play the baron with an estate card to discard, it should work.
+I made it appear like I changed the purpose of the card_not_discarded variable. I changed the comment so it looks like a count of the not discarded cards (for an incomplete reason), and then in the else section where p is incremented I also increment card_not_discarded. The while loop still works because its just a bool looking at card_not_discarded as the flag it was originally intended so as it increments it doesn't affect the loop. The bug is that when an estate card is found it only decrements card_not_discarded by 1. So if this is the first loop iteration, and the player has an estate card in the first slot the baron card works as expected. But, if the player has something else in the first slot the baron card will discard ALL the estate cards and add 4 gold for each until the p variable is greater than the hand size at which point it should terminate.
 
 /--------Village Card Bug -------/
 This was a simple bug that's a bit superfluous, but actually a bit subtle at the same time. Instead of incrementing the action, I rewrote the line as assigning a value of 2 to the actions. In this way, the Village card still works almost as intended in that the player will have another action. However, if the player should have more than 2 action remaining it will reset the action count to 2!
