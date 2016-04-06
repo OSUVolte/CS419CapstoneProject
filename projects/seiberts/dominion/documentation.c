@@ -23,6 +23,7 @@ After each iteration, the draw card function is called which adds a new card to 
 hand. After the loop has completed, the smithy card is discarded from the players hand.
 ************************************************************/
 
+//------------------------------------------------------------------------------------//
 
 //ADVENTURER
 case adventurer:
@@ -60,3 +61,95 @@ found, then the loop ends. If a treasure card is drawn initially, then that card
 into the players hand and the while loop is not activated.
 *******************************************************************************/
 
+//------------------------------------------------------------------------------------//
+
+//updateCoins
+int updateCoins(int player, struct gameState *state, int bonus)
+{
+  int i;
+	
+  //reset coin count
+  state->coins = 0;
+
+  //add coins for each Treasure card in player's hand
+  for (i = 0; i < state->handCount[player]; i++)
+    {
+      if (state->hand[player][i] == copper)
+	{
+	  state->coins += 1;
+	}
+      else if (state->hand[player][i] == silver)
+	{
+	  state->coins += 2;
+	}
+      else if (state->hand[player][i] == gold)
+	{
+	  state->coins += 3;
+	}	
+    }	
+
+  //add bonus
+  state->coins += bonus;
+
+  return 0;
+}
+
+/***************************************************************************
+Description of updateCoins
+This function sets the initial coins in the players hand to zero. This is then
+followed by a loop based on the number of treasure cards in the players hand.
+The loop iterates through the treasure cards and adds each copper, silver and
+gold coins. The function ends by returning the total number of coins back to
+the player.
+***************************************************************************/
+
+//------------------------------------------------------------------------------------//
+
+//discardCard
+
+int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+{
+	
+  //if card is not trashed, added to Played pile 
+  if (trashFlag < 1)
+    {
+      //add card to played pile
+      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+      state->playedCardCount++;
+    }
+	
+  //set played card to -1
+  state->hand[currentPlayer][handPos] = -1;
+	
+  //remove card from player's hand
+  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+    {
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+    {
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+  else 	
+    {
+      //replace discarded card with last card in hand
+      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+      //set last card to -1
+      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+	
+  return 0;
+}
+
+/***************************************************************************
+Description of discardCard
+When this function is called, it first checks to see if the card is added to the
+trash pile. If it is not trashed, then the card is added to the played pile.
+After checking the trashing of the desired card, the number of cards in the players 
+hand is reduced by one. From there, the desired card is removed from the players
+hand, and the number of cards in the players hand is updated to by -1.
+***************************************************************************/
