@@ -11,7 +11,7 @@ It will then move by calling drawcard method to draw the first card and then pul
  discardCard()
 This is the method for removing a card from the current hand. It works by first checking if the trash flag is active.  If the card isn't being trashed it will be added to the played card pile. This is done by manipulating properties in the state object member properties for played cards. 
 It will then go on to update the cards in the current hand. The current card will be set to a value of -1. It will then go on to reduce the number of cards in the players hand. It has 3 scenarios, the first being the card just played is the last card. The 2nd is the where the user has exactly 1 card left. The final is where the card played is in the middle of the deck. In this final scenario
-the last card in the deck will replace the card that was just played
+the last card in the deck will replace the card that was just played.
  
  
  
