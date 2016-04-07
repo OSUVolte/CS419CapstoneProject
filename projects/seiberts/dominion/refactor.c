@@ -6,3 +6,4 @@
 Smithy card: Modified the for loop so that instead of incrementing 3 times it increments 4 times.
 			 It may not be obvious be of the added "=" sign to the for loop.
 			 
+Adventurer card: Starting
