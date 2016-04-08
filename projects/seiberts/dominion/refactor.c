@@ -9,3 +9,7 @@ Smithy card: Modified the for loop so that instead of incrementing 3 times it in
 Adventurer card: Starting: When the player draws a card, the top card is no longer drawn because the -1 was removed
 				 from the state->handCount[currentPlayer]. The -1 was then placed outside of all the brackets so the 
 				 cardDrawn value is now minus one affecting when the while loop should end.
+				 
+Great_hall card: This card is supposed to increase the action allowed by 1, however a bug was inserted which 
+				  allows for 2 actions to be played by the player.
+				  

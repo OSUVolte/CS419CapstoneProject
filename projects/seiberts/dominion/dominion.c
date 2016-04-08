@@ -673,27 +673,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 			
     case council_room:
-      //+4 Cards
-      for (i = 0; i < 4; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //+1 Buy
-      state->numBuys++;
-			
-      //Each other player draws a card
-      for (i = 0; i < state->numPlayers; i++)
-	{
-	  if ( i != currentPlayer )
-	    {
-	      drawCard(i, state);
-	    }
-	}
-			
-      //put played card in played card pile
-      discardCard(handPos, currentPlayer, state, 0);
-			
+		councilRoomCard(handPos, currentPlayer, state);
+ 		
       return 0;
 			
     case feast:
@@ -880,15 +861,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case great_hall:
-      //+1 Card
-      drawCard(currentPlayer, state);
-			
-      //+1 Actions
-      state->numActions++;
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      greatHallCard(handPos, currentPlayer, state);
+	  return 0;
 		
     case minion:
       //+1 action
@@ -1349,6 +1323,42 @@ int adventureCard(int handPos, int currentPlayer, struct gameState *state)
 	z=z-1;
       }
       return 0;
+}
+
+int greatHallCardCard(int handPos, int currentPlayer, struct gameState *state)
+{
+	 //+1 Card
+	  drawCard(currentPlayer, state);
+			
+      greatHallCard(handPos, currentPlayer, state);
+	  
+      state->numActions+=2;
+			
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+}
+int councilRoomCard(handPos, currentPlayer, state)
+{
+	     //+4 Cards
+      for (i = 0; i <= 4; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //+1 Buy
+      state->numBuys++;
+			
+      //Each other player draws a card
+      for (i = 0; i < state->numPlayers; i++)
+	{
+	  if ( i != currentPlayer )
+	    {
+	      drawCard(i, state);
+	    }
+	}
+			
+      //put played card in played card pile
+      discardCard(handPos, currentPlayer, state, 0);
 }
 //end of dominion.c
 
