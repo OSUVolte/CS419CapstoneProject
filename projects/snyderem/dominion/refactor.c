@@ -18,7 +18,7 @@ ADVENTURER - adventurerEffect()
 
 
 SMITHY - smithyEffect()
-	This function takes three parameters, an integer with the current player, a
+  This function takes three parameters, an integer with the current player, a
   pointer to a gameState struct and an integer with the hand position. These
   three variables are passed by cardEffect. 
 
