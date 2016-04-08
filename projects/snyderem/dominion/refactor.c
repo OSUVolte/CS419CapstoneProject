@@ -53,4 +53,12 @@ MINION - minionEffect()
       draw 4 cards instead and vice versa.
     - The loop for drawing 4 cards for the current player has been altered to 
       instead draw 5 cards. 
+
+TRIBUTE - tributeEffect()
+  This function takes three parameters, integers for both the current player and 
+  the next player and a pointer to a gameState struct. All are passed to the 
+  function when it is called by cardEffect.  
+
+  Bugs: None added.
 */
+
