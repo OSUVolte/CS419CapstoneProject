@@ -15,4 +15,4 @@ Great_hall card: This card is supposed to increase the action allowed by 1, howe
 				  
 council_room card: This card is designed to draw 4 cards and increase the number of buys by one. However, within the 
 					for loop, an equal sign was added which will now cause 5 cards to be drawn. Additionally, instead
-					of the number of buys increasing by one, the player will recieve an action point instead.
+					of the number of buys increasing by one, the player will recieve an action point instead .
