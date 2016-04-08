@@ -1,11 +1,12 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
 //draw smithy
+//Change for bug: Draws 2 cards instead of 3
 int smithyCard(int handPos, int currentPlayer, struct gameState *state){	
     
     int i;   
     //+3 Cards
-    for (i = 0; i < 3; i++){
+    for (i = 1; i < 3; i++){
         drawCard(currentPlayer, state);
     }
 			
@@ -15,6 +16,7 @@ int smithyCard(int handPos, int currentPlayer, struct gameState *state){
 }
 
 //draw adventurer
+//Change for bug: Changed logic of drawn treasure conditional so that you can only draw copper
 int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_HAND]){
     int cardDrawn;
     int drawntreasure = 0;
@@ -25,7 +27,7 @@ int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_
 	}
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+        if (cardDrawn == copper || cardDrawn == silver && cardDrawn == gold)
             drawntreasure++;
         else{
             temphand[z]=cardDrawn;
@@ -41,6 +43,7 @@ int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_
 }
 
 //draw greatHall
+//Change for bugs: No added bugs
 int greatHallCard(int handPos, int currentPlayer, struct gameState *state){
 		
     //+1 Card
@@ -55,6 +58,7 @@ int greatHallCard(int handPos, int currentPlayer, struct gameState *state){
 }
 
 //draw steward card
+//Change for bug: set choice one to the same thing for both options in conditional
 int stewardCard(int handPos, int choice1, int choice2, int choice3, int currentPlayer, struct gameState *state){
 		
     if (choice1 == 1)
@@ -63,7 +67,7 @@ int stewardCard(int handPos, int choice1, int choice2, int choice3, int currentP
         drawCard(currentPlayer, state);
 	drawCard(currentPlayer, state);
     }
-    else if (choice1 == 2)
+    else if (choice1 == 1)
     {
         //+2 coins
 	state->coins = state->coins + 2;
@@ -79,7 +83,8 @@ int stewardCard(int handPos, int choice1, int choice2, int choice3, int currentP
     return 0;
 }
 
-//draw councilRoom 
+//draw councilRoom
+//Change for bug: Not every player gets a new card 
 int councilRoomCard(int handPos, int currentPlayer, struct gameState *state){			    
     int i;
     //+4 Cards
@@ -92,7 +97,7 @@ int councilRoomCard(int handPos, int currentPlayer, struct gameState *state){
     state->numBuys++;
 			
     //Each other player draws a card
-    for (i = 0; i < state->numPlayers; i++)
+    for (i = 1; i < state->numPlayers; i++)
     {
         if ( i != currentPlayer )
 	{
