@@ -4,7 +4,7 @@ Assignment 2
 
 adventurer:
 Added adventurerEffect() prototype to dominion_helpers.h
-Parameters: int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand
+Parameters: int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand[]
 Bug: Line 1251; temphand[z]; should be z-1
 
 smithy:
