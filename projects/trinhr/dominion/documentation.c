@@ -4,14 +4,15 @@ function. This adds 3 cards to the player's hand.
  
 adventurer
 --This allows the player to keep drawing cards from their deck and stops until they've drawn two
-treasure cards. There is a variable that keeps track of the treasure cards called drawntreasure
-that runs in a while loop and stops when it is equal to two. Inside the while loop, there is a function
+treasure cards: copper, silver, or gold. 
+--A variable that keeps track of the treasure cards called drawntreasure
+controls the while loop and stops when it is equal to two. 
+--Inside the while loop, there is a function
 that first checks that the deck isn't empty. If it is, then it calls a function which will shuffle the 
-discard pile and add it to the players current deck. Then it calls the draw function which will add
-a card to the players hand. If the card is a copper, silver or gold card then the drawntreasure varable
-will be incremented. If it isn't then the card is added to a temporary varible that keeps track of non-treasure
-cards. When the while loop ends and the player has two treasure cards, then the variable keeping track
-of the drawn non-treasure cards will add them to the discard pile. 
+discard pile and add it to the players current deck. 
+--Calls the draw function which will add a card to the players hand.
+--Checks if it's a treasure card, if not it saves it to a temporary hand which will discard all non-treasure drawn cards
+after two treasure cards are found. 
     
 discardCard()
 --This sets the status of the card as played if the player hasn't trashed it aka decided not to use it. 
