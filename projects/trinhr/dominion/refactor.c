@@ -21,3 +21,6 @@ stewardCard()
 now give the player both 2 cards and 2 coins. It will not account for when choice1 == 2 and will default
 to letting the player discard two cards instead. Previously, the first branch choice1==1 will only let the player draw two
 cards and the second branch choice1==2 will let the player get 2 coins.
+
+cutPurseCard()
+--This card adds two coins to the player, but it also makes other players lose a copper card or reveal their hand if they have no copper. I removed the break from the loop that goes through each opponnent's hand to remove the first copper. Now it'll remove all the coppers from the player's hand instead of just stopping after the first removal. 
