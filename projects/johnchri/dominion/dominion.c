@@ -645,12 +645,11 @@ int getCost(int cardNumber)
 
 void effectAdventurer(struct gameState* state){
     int currentPlayer = whoseTurn(state);
-    int nextPlayer = currentPlayer + 1;
-    int drawnTreausre = 0;
+    int drawntreasure = 0;
     int temphand[MAX_HAND];// moved above the if statement
     int z = 0;// this is the counter for the temp hand
 
-    while(drawntreasure<2){
+    while(drawntreasure<=2){
     	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
     	    shuffle(currentPlayer, state);
     	}
@@ -672,9 +671,10 @@ void effectAdventurer(struct gameState* state){
 
 void effectCouncilRoom(struct gameState* state, int handPos){
     int currentPlayer = whoseTurn(state);
+    int i;
 
     //+4 Cards
-    for (i = 0; i < 4; i++){
+    for (i = 0; i < 5; i++){
         drawCard(currentPlayer, state);
     }
 
@@ -695,6 +695,7 @@ void effectCouncilRoom(struct gameState* state, int handPos){
 
 void effectFeast(struct gameState* state, int choice1){
     int i;
+    int x;
     int currentPlayer = whoseTurn(state);
     int temphand[MAX_HAND];// moved above the if statement
     //gain card with cost up to 5
@@ -739,7 +740,7 @@ void effectFeast(struct gameState* state, int choice1){
     }
 
     //Reset Hand
-    for (i = 0; i <= state->handCount[currentPlayer]; i++){
+    for (i = 0; i < state->handCount[currentPlayer]; i++){
     	state->hand[currentPlayer][i] = temphand[i];
     	temphand[i] = -1;
     }
@@ -747,9 +748,10 @@ void effectFeast(struct gameState* state, int choice1){
 }
 
 void effectSmithy(struct gameState* state, int handPos){
+    int i;
     int currentPlayer = whoseTurn(state);
     //+3 Cards
-    for (i = 0; i < 3; i++){
+    for (i = 0; i < 2; i++){
         drawCard(currentPlayer, state);
     }
 
@@ -773,20 +775,14 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int i;
   int j;
   int k;
-  int x;
   int index;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
   int tributeRevealedCards[2] = {-1, -1};
-  int temphand[MAX_HAND];// moved above the if statement
-  int drawntreasure=0;
-  int cardDrawn;
-  int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
   }
-  
 	
   //uses switch to select card and perform actions
   switch( card ) {

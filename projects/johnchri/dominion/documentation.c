@@ -20,5 +20,4 @@ The updateCoins method takes the player, a pointer to the game state, and a bonu
 hand, adding to the coin count in the game state whenever it encounters a copper gold or silver. It adds the bonus
 at the end.
 
-
 */
