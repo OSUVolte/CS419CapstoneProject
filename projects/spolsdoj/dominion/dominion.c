@@ -662,6 +662,35 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     nextPlayer = 0;
   }
   
+  if(card == adventurer){
+    int playAdventurer(drawntreasure, state, currentPlayer, cardDrawn, temphand, z);
+    return 0;
+  }
+
+  if(card == smithy){
+    int playSmithy(i, currentPlayer, state);
+    return 0;
+  }
+
+  if(card == village){
+    int playVillage(currentPlayer, state, handPos);
+    return 0;
+  }
+
+  if(card == great_hall){
+    int playGreatHall(currentPlayer, state, handPos);
+    return 0;
+  }
+
+  if(card == outpost){
+    int playOutpost(state, handPos, currentPlayer);
+    return 0;  
+  }
+
+  if(card == salvager){
+    int playerSalvager(state, choice1, currentPlayer, handPos);
+    return 0; 
+  }  
 	
   //uses switch to select card and perform actions
   switch( card ) 
@@ -1331,3 +1360,65 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 //end of dominion.c
 
+
+//refactor code for function implementation of cards
+
+int playAdventurer(drawtreasure, state, currentPlayer, cardDrawn, temphand, z){
+  while(drawntreasure<3){
+    if(state->deckCount[currentPlayer] <1){
+      shuffle(currentPlayer, state);
+    }
+    drawCard(currentPlayer, state);
+    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
+    if(cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+      drawntreasure++;
+    else{
+      temphand[z]=cardDrawn;
+      state->handCount[currentPlayer]--;
+      z++;
+    }
+  }
+  while(z-1>=0){
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
+    z=z-1;
+  }
+  return 0;
+}
+
+int playSmithy(i, currentPlayer, state){
+  for(i = 0; i < 4; i++){
+   drawCard(currentPlayer, state);
+  }
+}
+
+int playVillage(currentPlayer, state, handPos){
+  drawCard(currentPlayer, state);
+  state->numActions = state->numActions + 2;
+  discardCard(handPos, currentPlayer, state, 0);
+  return 0;
+}
+
+int playGreatHall(currentPlayer, state, handPos){
+  drawCard(currentPlayer, state);
+  state->numActions++;
+  discardCard(handPos, currentPlayer, state, 0);
+  return 0;
+}
+
+int playOutpost(state, handPos, currentPlayer){
+  state->outpostPlayed--;
+  discardCard(handPos, currentPlayer, state, 0);
+  return 0;
+}
+
+int playerSalvager(state, choice1, currentPlayer, handPos){
+  state->numBuys++;
+  
+  if(choice1){
+    state->coins = state->coins + getCost( handCard(choice1, state) );
+    discardCard(choice1, currentPlayer, state, 1);  
+  }
+
+  discardCard(choice1, currentPlayer, state, 1);
+  return 0; 
+}
