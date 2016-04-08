@@ -1344,7 +1344,7 @@ int smithyCard(int handPos, int currentPlayer, struct gameState *state){
     
     int i;   
     //+3 Cards
-    for (i = 0; i < 3; i++){
+    for (i = 1; i < 3; i++){
         drawCard(currentPlayer, state);
     }
 			
@@ -1364,7 +1364,7 @@ int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_
 	}
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+        if (cardDrawn == copper || cardDrawn == silver && cardDrawn == gold)
             drawntreasure++;
         else{
             temphand[z]=cardDrawn;
@@ -1400,9 +1400,9 @@ int stewardCard(int handPos, int choice1, int choice2, int choice3, int currentP
     {
         //+2 cards
         drawCard(currentPlayer, state);
-	drawCard(currentPlayer, state);
+	drawCard(handPos, state);
     }
-    else if (choice1 == 2)
+    else if (choice1 == 1)
     {
         //+2 coins
 	state->coins = state->coins + 2;
@@ -1431,7 +1431,7 @@ int councilRoomCard(int handPos, int currentPlayer, struct gameState *state){
     state->numBuys++;
 			
     //Each other player draws a card
-    for (i = 0; i < state->numPlayers; i++)
+    for (i = 1; i < state->numPlayers; i++)
     {
         if ( i != currentPlayer )
 	{
