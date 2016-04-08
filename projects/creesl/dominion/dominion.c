@@ -667,7 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      adventurer(drawntreasure, state, currentPlayer, z, temphand);
+      adventurerEffect(drawntreasure, state, currentPlayer, cardDrawn=0, z, temphand);
       return 0;
 			
     case council_room:
@@ -812,7 +812,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      smithy(currentPlayer, state, handPos);
+      smithyEffect(currentPlayer, state, handPos, i=0);
       return 0;
 		
     case village:
@@ -889,7 +889,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case minion:
-      void minion(state, handPos, currentPlayer, choice1, choice2, i, j);
+      minionEffect(state, handPos, currentPlayer, choice1, choice2, i=0, j=0);
       return 0;
 		
     case steward:
@@ -1109,11 +1109,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case sea_hag:
-      seahag(state, currentPlayer, i);
+      seahagEffect(state, currentPlayer, i=0);
       return 0;
 		
     case treasure_map:
-      return treasuremap(index, state, currentPlayer, i, handPos);
+      return treasuremapEffect(index=0, state, currentPlayer, i=0, handPos);
     }
 	
   return -1;
@@ -1229,7 +1229,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 // Refactored code for selected cards
 // adventurer
-void adventurer(int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand)
+void adventurerEffect(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int z, int temphand[])
 {
   while(drawntreasure<2){
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -1253,7 +1253,7 @@ void adventurer(int drawntreasure, struct gameState *state, int currentPlayer, i
 }
 
 // smithy
-void smithy(int currentPlayer, struct gameState *state, int handPos)
+void smithyEffect(int currentPlayer, struct gameState *state, int handPos, int i)
 {
   //+3 Cards
       for (i = 0; i < 3; i++)
@@ -1266,7 +1266,7 @@ void smithy(int currentPlayer, struct gameState *state, int handPos)
 }
 
 // treasure map
-int treasuremap(int index, struct gameState *state, int currentPlayer, int i, int handPos)
+int treasuremapEffect(int index, struct gameState *state, int currentPlayer, int i, int handPos)
 {
   //search hand for another treasure_map
       index = -1;
@@ -1299,7 +1299,7 @@ int treasuremap(int index, struct gameState *state, int currentPlayer, int i, in
 }
 
 // sea hag
-void seahag(struct gameState *state, int currentPlayer, int i)
+void seahagEffect(struct gameState *state, int currentPlayer, int i)
 {
   for (i = 0; i < state->numPlayers; i++){
     if (i != currentPlayer){
@@ -1311,7 +1311,7 @@ void seahag(struct gameState *state, int currentPlayer, int i)
 }
 
 // minion
-void minion(struct gameState *state, int handPos, int currentPlayer, int choice1, int choice2, int i, int j)
+void minionEffect(struct gameState *state, int handPos, int currentPlayer, int choice1, int choice2, int i, int j)
 {
   //+1 action
       state->numActions++;
