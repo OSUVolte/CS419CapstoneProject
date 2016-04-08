@@ -1292,7 +1292,7 @@ int treasuremapEffect(int index, struct gameState *state, int currentPlayer, int
       }
         
     //return success
-    return 1;
+    return -1;
   }
       
       //no second treasure_map found in hand
