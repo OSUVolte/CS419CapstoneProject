@@ -1158,7 +1158,7 @@ int adventurerEffect (
   int drawntreasure = 0;
   int cardDrawn;
   int temphand[MAX_HAND];
-  int z = 3;
+  int z;
  
 	while(drawntreasure < 2) {
 		//if the deck is empty we need to shuffle discard and add to deck
@@ -1167,7 +1167,7 @@ int adventurerEffect (
 		}
 		drawCard(currentPlayer, state);
 		//top card of hand is most recently drawn card.
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 2];
 		if (cardDrawn == copper || cardDrawn == silver) {
 			drawntreasure++;
 		}
@@ -1209,13 +1209,13 @@ int smithyEffect (
 int baronEffect (
   int 							currentPlayer, 
   struct gameState  *state, 
-  int 							choice1 ) 
+  int 							discard ) 
 {
   //Increase buys by 1!
 	state->numBuys++;
 
   //Boolean true or going to discard an estate
-	if (choice1 > 0) {
+	if (discard > 0) {
     // Iterator for hand!
 		int p = 2;
     //Flag for discard set!
