@@ -13,3 +13,6 @@ Adventurer card: Starting: When the player draws a card, the top card is no long
 Great_hall card: This card is supposed to increase the action allowed by 1, however a bug was inserted which 
 				  allows for 2 actions to be played by the player.
 				  
+council_room card: This card is designed to draw 4 cards and increase the number of buys by one. However, within the 
+					for loop, an equal sign was added which will now cause 5 cards to be drawn. Additionally, instead
+					of the number of buys increasing by one, the player will recieve an action point instead.

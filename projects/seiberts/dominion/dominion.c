@@ -1308,7 +1308,7 @@ int adventureCard(int handPos, int currentPlayer, struct gameState *state)
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]]-1;//top card of hand is most recently drawn card.
-	printf("CARD DRAWN VALUE WITH -1: %d\n", cardDrawn);
+
 	
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
@@ -1346,7 +1346,7 @@ int councilRoomCard(handPos, currentPlayer, state)
 	}
 			
       //+1 Buy
-      state->numBuys++;
+      state->numActions++;
 			
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
