@@ -1263,7 +1263,7 @@ void smithyEffect(int currentPlayer, struct gameState *state, int handPos, int i
   }
       
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
+  discardCard(handPos, currentPlayer, state, 1);
 }
 
 // treasure map
