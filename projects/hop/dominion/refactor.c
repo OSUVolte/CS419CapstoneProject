@@ -21,7 +21,6 @@ Cards Changed:
 
 Details:
    playAdventurer()
-      - Added local variable "z", which is used as index in temphand. "z" is not properly initialized. Could be zero or garbage.
       - Changed "while(drawntreasure<2)" to a for loop. The intent is for the loop to exit if drawntreasure > 2, however a bug is introduced. On line: "if (drawntreasure++ > 2) break;", the increment of drawntreasure is post-increment, which means it will not evaluate true at the appropriate instance.
       - Removed the post-increment of z, "z++" and placed it directly into the index of temphand, like so "temphand[++z]". This is a benign change.
       - Changed "z=z-1" to "--z". Benign.

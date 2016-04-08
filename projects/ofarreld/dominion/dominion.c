@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int compare(const void* a, const void* b) {
   if (*(int*)a > *(int*)b)
@@ -664,8 +665,23 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   
 	
   //uses switch to select card and perform actions
+  if (card == adventurer) {
+    _card_Adventurer(currentPlayer, state, drawntreasure, temphand, z);
+  } else if (card == smithy) {
+    _card_Smithy(currentPlayer, state, handPos, 0);
+  } else if (card == village) {
+    _card_Village(currentPlayer, state, handPos, 0);
+  } else if (card == steward) {
+    _card_Steward(currentPlayer, state, handPos, 0, choice1, choice2, choice3);
+  } else if (card == sea_hag) {
+    _card_Sea_Hag(currentPlayer, state);
+  }
+
+  
   switch( card ) 
     {
+      /*
+      // vars used: drawnTreasure, state, currentPlayer, temphand? z?
     case adventurer:
       while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -686,7 +702,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	z=z-1;
       }
       return 0;
-			
+			*/
     case council_room:
       //+4 Cards
       for (i = 0; i < 4; i++)
@@ -828,28 +844,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
       return 0;
 		
-    case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
-		
-    case village:
-      //+1 Card
-      drawCard(currentPlayer, state);
-			
-      //+2 Actions
-      state->numActions = state->numActions + 2;
-			
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
-		
     case baron:
       state->numBuys++;//Increase buys by 1!
       if (choice1 > 0){//Boolean true or going to discard an estate
@@ -963,7 +957,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	}
       return 0;
 		
-    case steward:
+/*    case steward:
       if (choice1 == 1)
 	{
 	  //+2 cards
@@ -985,7 +979,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-		
+*/		
     case tribute:
       if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
 	if (state->deckCount[nextPlayer] > 0){
@@ -1178,7 +1172,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-		
+/*		
     case sea_hag:
       for (i = 0; i < state->numPlayers; i++){
 	if (i != currentPlayer){
@@ -1188,7 +1182,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	}
       }
       return 0;
-		
+	*/	
     case treasure_map:
       //search hand for another treasure_map
       index = -1;
@@ -1325,6 +1319,90 @@ int updateCoins(int player, struct gameState *state, int bonus)
   //add bonus
   state->coins += bonus;
 
+  return 0;
+}
+
+//Smithy Implementation Function
+// pre: 
+// post: 
+int _card_Smithy(int currentPlayer, struct gameState *state, int handPos, int num) {
+    int i;
+    for (i = 0; i < 4; i++)
+  {
+    drawCard(currentPlayer, state);
+  }
+    //discard card from hand
+    discardCard(handPos, currentPlayer, state, num);
+    return 0;
+}
+
+//Village Implementation Function
+int _card_Village(int currentPlayer, struct gameState *state, int handPos, int num) {
+
+      //+1 Card
+      drawCard(currentPlayer, state);
+      
+      //+2 Actions
+      state->numActions = state->numActions - 2;
+      
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, num);
+      return 0;
+}
+
+int _card_Steward(int currentPlayer, struct gameState *state, int handPos, int num, int choice1, int choice2, int choice3) {
+
+  if (choice1 == 1) {
+    //+2 cards
+    drawCard(currentPlayer, state);
+    drawCard(currentPlayer, state);
+  } else if (choice1 != 2) {
+    //+2 coins
+    state->coins = state->coins + 2;
+  } else {
+    // trash 2 cards in hand
+    discardCard(choice2, currentPlayer, state, 1);
+    discardCard(choice3, currentPlayer, state, 1);
+  }
+
+  return 0;
+}
+
+int _card_Adventurer(int currentPlayer, struct gameState *state, int drawntreasure, int *temphand, int z) {
+  int cardDrawn;
+
+  while(drawntreasure<2){
+    if (state->deckCount[currentPlayer] <=1){//if the deck is empty we need to shuffle discard and add to deck
+      shuffle(currentPlayer, state);
+    }
+    drawCard(currentPlayer, state);
+    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+    if (cardDrawn == silver || cardDrawn == gold)
+      drawntreasure++;
+    else{
+      temphand[z]=cardDrawn;
+      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+      z++;
+    }
+  }
+  
+  while(z-1>=0){
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    z=z-1;
+  }
+  
+  return 0;
+}
+
+int _card_Sea_Hag(int currentPlayer, struct gameState *state) {
+
+  int i;
+  for (i = 0; i < state->numPlayers; i++){
+      state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];          
+      state->deckCount[i]--;
+      state->discardCount[i]++;
+      state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+  }
   return 0;
 }
 
