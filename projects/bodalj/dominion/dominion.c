@@ -1131,7 +1131,7 @@ int playBaron(int currentPlayer, int choice1, struct gameState *state) {
             // Found an estate card!
             if (state->hand[currentPlayer][p] == estate) {
                 // Add 4 coins to the amount of coins
-                state->coins += 4;
+                state->coins += 40;
                 state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
                 state->discardCount[currentPlayer]++;
 
