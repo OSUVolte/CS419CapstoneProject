@@ -16,7 +16,6 @@
 /* http://dominion.isotropic.org has other stuff */
 
 /* hand# means index of a card in current active player's hand */
-
 enum CARD
   {curse = 0,
    estate,
@@ -130,11 +129,10 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
 
-int playAdventurer(struct gameState *state);
-int playSmithy(struct gameState *state, int handPos);
-int playVillage(struct gameState *state, int handPos);
-int playFeast(struct gameState *state, int choice1);
-int playCouncil_Room(struct gameState *state, int handPos);
-
+int playAdventurer(int, int, struct gameState *, int *);
+int playSmithy(int, struct gameState *, int);
+int playVillage(int, struct gameState *, int);
+int playFeast(struct gameState *, int, int *, int);
+int playCouncil_Room(int, struct gameState *, int);
 
 #endif
