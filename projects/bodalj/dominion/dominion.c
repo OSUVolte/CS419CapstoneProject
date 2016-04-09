@@ -1079,12 +1079,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 // ## Effect: Draw cards until 2 treasure cards drawn into hand; discard non-treasure cards ## //
 int playAdventurer(int currentPlayer, struct gameState *state) {
-    int tempHand[MAX_HAND]; // non-treasure cards are stored here to be discarded afterwards
-    int drawnTreasure = 0;  // count of treasure cards drawn
-    int cardDrawn;          // holder for last card drawn
-    int z = 0;              // counter for the temp hand
+    int TREASURES_TO_DRAW = 3;  // number of cards this card draws
+    int tempHand[MAX_HAND];     // non-treasure cards are stored here to be discarded afterwards
+    int drawnTreasure = 0;      // count of treasure cards drawn
+    int cardDrawn;              // holder for last card drawn
+    int z = 0;                  // counter for the temp hand
     
-    while(drawnTreasure < 2) {
+    while(drawnTreasure < 1) {
         //if the deck is empty we need to shuffle discard and add to deck
 	if (state->deckCount[currentPlayer] < 1) {
             shuffle(currentPlayer, state);

@@ -11,12 +11,9 @@ card effect.
 
 * There were existing prototypes for card effects in dominion.h.  Those were slightly rewritten to fit the 
 method signature of existing functions (e.g. gameState goes last, player is first)
-
 * Fixed whitespace, variable capitalizations, and code format to conform with a consistent style in method bodies
 that I worked on.
-
 * Alphabetized function order for card effects
-
 * Added comment in the form of `## Effect: ...` to denote card's effect above the function bodies for those card
 effects implemented into functions
 
@@ -24,6 +21,13 @@ effects implemented into functions
 
 * Moved Adventurer card effect to own method
 * Cleaned up code and whitespace and variable names
+
+** Bug Introduced **
+
+* Created `TREASURES_TO_DRAW` variable and incorrectly set to 3.  This is a red herring as the variable is not used
+* Set main while loop to only draw up to 1 treasure instead of 2.  This is where the bug is introduced and causes
+less treasures to be drawn for this card.  
+* `TREASURES_TO_DRAW` should be set to 2 and used in the while loop.
 
 ## Smithy Card
 
