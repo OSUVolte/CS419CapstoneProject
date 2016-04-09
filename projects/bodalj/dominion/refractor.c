@@ -34,10 +34,22 @@ less treasures to be drawn for this card.
 * Moved Smithy card effect to own method
 * Cleaned up whitespace and code formatting
 
+** Bug Introduced **
+
+* After Smithy card is played the card before it is discarded rather than the Smithy card.
+* `discard(handPos, currentPlayer, state, 0)` becomes discard(handPos-1, currentPlayer, state, 0)`
+
 ## Council Room Card
 
 * Moved Councel Room card effect to own method
 * Cleaned up whitespace and code formatting
+
+** Bug Introduced **
+
+* Created `NUM_CARDS_TO_DRAW` variable and set to 4
+* Variable alludes to the effect where the player that plays the card receives 4 cards
+* Variable is used in loop for each other player drawing a card, where instead of them drawing 1 card each of
+them will draw 4 cards.
 
 ## Feast Card
 
@@ -49,3 +61,8 @@ less treasures to be drawn for this card.
 
 * Moved Baron card effect to own method
 * Cleaned up code format and comments
+
+** Bug Introduced**
+
+* Baron card adds 40 treasures to your hand instead of 4 when an estate card is discarded.
+* Simply set the incrementer from `state->coins += 4` to `state->coins += 40`
