@@ -8,6 +8,12 @@
 
 int playAdventurer(struct gameState *state)
 {
+	int cardDrawn;
+	int drawntreasure=0;
+	int z = 0;// this is the counter for the temp hand
+	int temphand[MAX_HAND];
+	int currentPlayer = whoseTurn(state);
+	
 	while(drawntreasure<2){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 		  shuffle(currentPlayer, state);
@@ -26,6 +32,19 @@ int playAdventurer(struct gameState *state)
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 		z=z-1;
 	}
+	return 0;
+}
+
+int playSmithy(struct gameState *state, int handPos)
+{
+	int currentPlayer = whoseTurn(state);
+	
+	//+3 Cards
+	for (i = 0; i < 3; i++)
+	{
+		drawCard(currentPlayer, state);
+	}
+
 	return 0;
 }
 
@@ -856,7 +875,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      //+3 Cards
+		return playSmithy(state, handPos);
+      /*//+3 Cards
       for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
@@ -865,6 +885,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
+		*/
 		
     case village:
       //+1 Card
