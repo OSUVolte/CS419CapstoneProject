@@ -643,7 +643,7 @@ int getCost(int cardNumber)
   return -1;
 }
 
-int playAdventurer(struct gameState *state, int currentPlayer) {
+int playAdventurer(int currentPlayer, struct gameState *state) {
     int tempHand[MAX_HAND];     // moved above the if statement
     int drawnTreasure = 0;
     int cardDrawn;
@@ -679,7 +679,7 @@ int playAdventurer(struct gameState *state, int currentPlayer) {
     return 0;
 }
 
-int playSmithy(struct gameState *state, int currentPlayer, int handPos) {
+int playSmithy(int currentPlayer, int handPos, struct gameState *state) {
     int i;  // drawCard counter 
 
     // +3 cards
@@ -715,7 +715,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(state, currentPlayer);
+      return playAdventurer(currentPlayer, state);
 			
     case council_room:
       //+4 Cards
@@ -858,7 +858,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      return playSmithy(state, currentPlayer, handPos);
+      return playSmithy(currentPlayer, handPos, state);
 		
     case village:
       //+1 Card
