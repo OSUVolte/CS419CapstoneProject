@@ -17,6 +17,9 @@ that I worked on.
 
 * Alphabetized function order for card effects
 
+* Added comment in the form of `## Effect: ...` to denote card's effect above the function bodies for those card
+effects implemented into functions
+
 ## Adventurer Card
 
 * Moved Adventurer card effect to own method
@@ -29,9 +32,15 @@ that I worked on.
 
 ## Council Room Card
 
-* Moved Councel Room Card to own method
+* Moved Councel Room card effect to own method
 * Cleaned up whitespace and code formatting
 
-## Card 4
+## Feast Card
 
-## Card 5
+* Moved Feast card effect to own method
+* Renamed variable `x` to `buying`
+* Cleaned up code whitespace and comments
+
+## Baron Card
+
+* 
