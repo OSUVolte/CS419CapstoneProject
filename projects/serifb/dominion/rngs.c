@@ -48,7 +48,7 @@ static int  stream        = 0;          /* stream index, 0 is the default */
 static int  initialized   = 0;          /* test for stream initialization */
 
 
-double Random(void)
+   double Random(void)
 /* ----------------------------------------------------------------
  * Random returns a pseudo-random real number uniformly distributed 
  * between 0.0 and 1.0. 
@@ -68,7 +68,7 @@ double Random(void)
 }
 
 
-void PlantSeeds(long x)
+   void PlantSeeds(long x)
 /* ---------------------------------------------------------------------
  * Use this function to set the state of all the random number generator 
  * streams by "planting" a sequence of states (seeds), one per stream, 
@@ -98,7 +98,7 @@ void PlantSeeds(long x)
 }
 
 
-void PutSeed(long x)
+   void PutSeed(long x)
 /* ---------------------------------------------------------------
  * Use this function to set the state of the current random number 
  * generator stream according to the following conventions:
@@ -125,7 +125,8 @@ void PutSeed(long x)
   seed[stream] = x;
 }
 
-void GetSeed(long *x)
+
+   void GetSeed(long *x)
 /* ---------------------------------------------------------------
  * Use this function to get the state of the current random number 
  * generator stream.                                                   
@@ -136,7 +137,7 @@ void GetSeed(long *x)
 }
 
 
-void SelectStream(int index)
+   void SelectStream(int index)
 /* ------------------------------------------------------------------
  * Use this function to set the current random number generator
  * stream -- that stream from which the next random number will come.
@@ -148,7 +149,8 @@ void SelectStream(int index)
     PlantSeeds(DEFAULT);                     /* un-initialized streams */
 }
 
-void TestRandom(void)
+
+   void TestRandom(void)
 /* ------------------------------------------------------------------
  * Use this (optional) function to test for a correct implementation.
  * ------------------------------------------------------------------    
