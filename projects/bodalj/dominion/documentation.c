@@ -30,4 +30,5 @@ trashFlag indicates whether the card should be added to the playedCard pile (dis
 
     int updateCoins(int player, struct gameState *state, int bonus)
 
-
+This method updates the number of coins that are usable from a player's hand based on the total count of treasure
+cards they have as well as any additional coin bonuses from played cards
