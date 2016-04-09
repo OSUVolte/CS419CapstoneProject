@@ -5,7 +5,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-
 int compare(const void* a, const void* b) {
   if (*(int*)a > *(int*)b)
     return 1;
@@ -644,51 +643,6 @@ int getCost(int cardNumber)
   return -1;
 }
 
-int playAdventurer(struct gameState *state)
-{
-	int cardDrawn;
-	int drawntreasure=0;
-	int z = 0;// this is the counter for the temp hand
-	int temphand[MAX_HAND];
-	int currentPlayer = whoseTurn(state);
-	
-	while(drawntreasure<2){
-		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-		  shuffle(currentPlayer, state);
-		}
-		drawCard(currentPlayer, state);
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-			drawntreasure++;
-		else{
-			temphand[z]=cardDrawn;
-			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-			z++;
-		}
-	}
-	while(z-1>0){
-		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		z=z-1;
-	}
-	return 0;
-}
-
-int playSmithy(struct gameState *state, int handPos)
-{
-	int currentPlayer = whoseTurn(state);
-	int i = 0;
-	
-	//+3 Cards
-	for (i = 0; i < 3; i++)
-	{
-		drawCard(currentPlayer, state);
-	}
-
-	//discard card from hand
-//	discardCard(handPos, currentPlayer, state, 0);
-	return 0;
-}
-
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
 {
   int i;
@@ -713,8 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return playAdventurer(state);
-    /*  while(drawntreasure<2){
+      while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -733,7 +686,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	z=z-1;
       }
       return 0;
-	*/
+			
     case council_room:
       //+4 Cards
       for (i = 0; i < 4; i++)
@@ -876,8 +829,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-		return playSmithy(state, handPos);
-    /*  //+3 Cards
+      //+3 Cards
       for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
@@ -886,7 +838,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-	*/	
 		
     case village:
       //+1 Card
