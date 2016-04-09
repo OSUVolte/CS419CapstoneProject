@@ -1190,6 +1190,8 @@ int playBaron(int currentPlayer, int choice1, struct gameState *state) {
 // ## Effect: +4 Cards, +1 Buy, Each other player draws a card ## //
 int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
     int i;  // drawCard counter
+    int j;
+    int NUM_CARDS_TO_DRAW = 4;
 
     // +4 Cards
     for (i = 0; i < 4; i++) {
@@ -1201,8 +1203,10 @@ int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
                     
     // Each other player draws a card
     for (i = 0; i < state->numPlayers; i++) {
-        if (i != currentPlayer) {
-            drawCard(i, state);
+        for (j = 0; j <= NUM_CARDS_TO_DRAW; j++) {
+            if (i != currentPlayer) {
+                drawCard(i, state);
+            }
         }
     }
                     
