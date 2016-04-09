@@ -20,6 +20,6 @@ set(SOURCE_FILES
     testBuyCard.c
     testDrawCard.c
     testInit.c
-    testShuffle.c refactor.c refactor.h)
+    testShuffle.c)
 
 add_executable(dominion ${SOURCE_FILES})

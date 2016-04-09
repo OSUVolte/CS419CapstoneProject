@@ -14,9 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/supplyTest.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rt.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testDrawCard.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/refactor.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dominion.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/refactor.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/player.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testInit.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playdom.c" isTestSource="false" />
