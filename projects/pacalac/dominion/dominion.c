@@ -38,13 +38,16 @@ int playAdventurer(struct gameState *state)
 int playSmithy(struct gameState *state, int handPos)
 {
 	int currentPlayer = whoseTurn(state);
+	int i = 0;
 	
 	//+3 Cards
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
 
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
