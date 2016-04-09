@@ -58,7 +58,7 @@
 ** CUTPURSE BUG DOCUMENTATION
 **
 ** Description:
-** Current Player gets +3 bonus instead of +4.  Also, instead 
+** Current Player gets +3 bonus instead of +2.  Also, instead 
 ** of removing a copper card from each other enemy player, a 
 ** gold card is removed if contained in their hands.  WINNING!
 *************************************************************/
