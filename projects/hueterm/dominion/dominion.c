@@ -647,7 +647,7 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 
     int playAdventurerCard(struct gameState *state){
       int currentPlayer = whoseTurn(state);
-      int drawntreasure = 0;
+      int drawntreasure;
       int cardDrawn;
       int temphand[MAX_HAND];
       int z = 0;
@@ -679,12 +679,12 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
       int currentPlayer = whoseTurn(state);
       int i = 0;
       //+3 Cards
-      for (i = 0; i < 3; i++){
+      for (i = 0; i > 3; i++){
         drawCard(currentPlayer, state);
       }
 
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1);
       return 0;
     }
 
@@ -724,13 +724,13 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
             printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
           }
 
-          gainCard(choice1, state, 0, currentPlayer);//Gain the card
           x = 0;//No more buying cards
 
           if (DEBUG){
             printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
           }
         }
+        gainCard(choice1, state, 0, currentPlayer);//Gain the card
       }
       //Reset Hand
       for (i = 0; i <= state->handCount[currentPlayer]; i++){
@@ -743,11 +743,14 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 
     int playVillageCard(struct gameState *state, int handPos){
       int currentPlayer = whoseTurn(state);
+      int i = 0;
       //+1 Card
       drawCard(currentPlayer, state);
 
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      for (i = 0; i < 3; i++){
+        state->numActions++;
+      }
 
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -791,16 +794,15 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
           {
             if ( state->handCount[i] > 4 )
             {
-              //discard hand
-              while( state->handCount[i] > 0 )
-              {
-                discardCard(handPos, i, state, 0);
-              }
-
               //draw 4
               for (j = 0; j < 4; j++)
               {
                 drawCard(i, state);
+              }
+              //discard hand
+              while( state->handCount[i] > 0 )
+              {
+                discardCard(handPos, i, state, 0);
               }
             }
           }
