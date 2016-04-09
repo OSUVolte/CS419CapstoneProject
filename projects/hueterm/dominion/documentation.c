@@ -1,5 +1,5 @@
 /*******************************************************************************
-Michael Hueter | CS362 Assignment 2 | 9 April 2016
+Michael Hueter | CS362 Assignment 2 | 10 April 2016
 
 Cards:
 
@@ -43,3 +43,4 @@ Functions:
     A for loop iterates through the cards in the player's hand and adds the
     value of each treasure card (copper, silver, or gold) and, lastly, any bonus
     to the `coins` value for the turn.
+*******************************************************************************/
