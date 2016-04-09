@@ -643,11 +643,12 @@ int getCost(int cardNumber)
   return -1;
 }
 
+// ## Effect: Draw cards until 2 treasure cards drawn into hand; discard non-treasure cards ## //
 int playAdventurer(int currentPlayer, struct gameState *state) {
-    int tempHand[MAX_HAND]; 
-    int drawnTreasure = 0;
-    int cardDrawn;
-    int z = 0;                  // counter for the temp hand
+    int tempHand[MAX_HAND]; // non-treasure cards are stored here to be discarded afterwards
+    int drawnTreasure = 0;  // count of treasure cards drawn
+    int cardDrawn;          // holder for last card drawn
+    int z = 0;              // counter for the temp hand
     
     while(drawnTreasure < 2) {
         //if the deck is empty we need to shuffle discard and add to deck
@@ -679,6 +680,7 @@ int playAdventurer(int currentPlayer, struct gameState *state) {
     return 0;
 }
 
+// ## Effect: +3 cards ## //
 int playSmithy(int currentPlayer, int handPos, struct gameState *state) {
     int i;  // drawCard counter 
 
@@ -692,6 +694,7 @@ int playSmithy(int currentPlayer, int handPos, struct gameState *state) {
     return 0;
 }
 
+// ## Effect: +4 Cards, +1 Buy, Each other player draws a card ## //
 int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
     int i;  // drawCard counter
 
@@ -710,18 +713,17 @@ int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
         }
     }
                     
-    //put played card in played card pile
+    // Put played card in played card pile
     discardCard(handPos, currentPlayer, state, 0);
                     
     return 0;
 }
 
+// ## Effect: Trash Feast and gain a card with cost up to 5 ## //
 int playFeast(int currentPlayer, int choice1, struct gameState *state) {
     int i;                  // drawCard, resetHand counter
     int buying;             // for while loop while buying a card
     int tempHand[MAX_HAND]; // temporary hold cards while we buy a new one 
-
-    // ## Trash Feast and gain a card with cost up to 5 ## //
 
     // Backup hand
     for (i = 0; i <= state->handCount[currentPlayer]; i++) {
