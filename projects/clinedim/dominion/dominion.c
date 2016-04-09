@@ -1283,7 +1283,7 @@ int playAdventurer(int drawntreasure, struct gameState *state, int currentPlayer
       }
       drawCard(currentPlayer, state);
       int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
-      if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+      if (cardDrawn == silver || cardDrawn == gold)
         drawntreasure++;
       else {
         temphand[z] = cardDrawn;
@@ -1300,7 +1300,7 @@ int playAdventurer(int drawntreasure, struct gameState *state, int currentPlayer
 
 int playSmithy(int currentPlayer, struct gameState *state, int handPos, int trashFlag) {
   int index;
-  for (index = 0; index < 3; index++) {
+  for (index = 0; index < 4; index++) {
 	drawCard(currentPlayer, state);
   }
 
@@ -1309,8 +1309,7 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos, int tras
 }
 
 int playVillage(int currentPlayer, struct gameState *state, int handPos) {
-	drawCard(currentPlayer, state);
-	state->numActions = state->numActions + 2;
+	state->numActions = state->numActions + 3;
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
@@ -1318,11 +1317,11 @@ int playVillage(int currentPlayer, struct gameState *state, int handPos) {
 int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos, int trashFlag) {
 	int index;
 
-	for (index = 0; index < 4; index++) {
+	for (index = 0; index < 3; index++) {
 		drawCard(currentPlayer, state);
 	}
 
-	state->numBuys++;
+	state->numBuys--;
 
 	for (index = 0; index < state->numPlayers; index++) {
 		if (index != currentPlayer) {
@@ -1336,7 +1335,7 @@ int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos, in
 }
 
 int playGardens() {
-	return -1;
+	return 0;
 }
 
 //end of dominion.c
