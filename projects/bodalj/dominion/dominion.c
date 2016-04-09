@@ -643,9 +643,7 @@ int getCost(int cardNumber)
   return -1;
 }
 
-int playAdventurer(struct gameState *state) {
-    int currentPlayer = whoseTurn(state);
-
+int playAdventurer(struct gameState *state, int currentPlayer) {
     int tempHand[MAX_HAND];     // moved above the if statement
     int drawnTreasure = 0;
     int cardDrawn;
@@ -661,8 +659,9 @@ int playAdventurer(struct gameState *state) {
         //top card of hand is most recently drawn card.
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];	
         
-        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
             drawnTreasure++;
+        }
 	else{
             tempHand[z] = cardDrawn;
             //this should just remove the top card (the most recently drawn one).
@@ -677,6 +676,19 @@ int playAdventurer(struct gameState *state) {
         z--;
     }
     
+    return 0;
+}
+
+int playSmithy(struct gameState *state, int currentPlayer, int handPos) {
+    int i;  // drawCard counter 
+
+    // +3 cards
+    for (i = 0; i < 3; i++) {
+        drawCard(currentPlayer, state);
+    }
+                    
+    //discard card from hand
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
 
@@ -703,14 +715,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(state);
+      return playAdventurer(state, currentPlayer);
 			
     case council_room:
       //+4 Cards
-      for (i = 0; i < 4; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
+      for (i = 0; i < 4; i++) {
+          drawCard(currentPlayer, state);
+      }
 			
       //+1 Buy
       state->numBuys++;
@@ -847,15 +858,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return playSmithy(state, currentPlayer, handPos);
 		
     case village:
       //+1 Card
