@@ -43,4 +43,5 @@ effects implemented into functions
 
 ## Baron Card
 
-* 
+* Moved Baron card effect to own method
+* Cleaned up code format and comments
