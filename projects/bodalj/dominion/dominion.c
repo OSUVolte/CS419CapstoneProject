@@ -717,9 +717,9 @@ int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
 }
 
 int playFeast(int currentPlayer, int choice1, struct gameState *state) {
-    int i;       // drawCard, resetHand counter
-    int buying;  // for while loop while buying a card
-    int tempHand[MAX_HAND];     
+    int i;                  // drawCard, resetHand counter
+    int buying;             // for while loop while buying a card
+    int tempHand[MAX_HAND]; // temporary hold cards while we buy a new one 
 
     // ## Trash Feast and gain a card with cost up to 5 ## //
 
@@ -758,8 +758,10 @@ int playFeast(int currentPlayer, int choice1, struct gameState *state) {
                 printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
             }
 
-            gainCard(choice1, state, 0, currentPlayer);//Gain the card
-            buying = 0;//No more buying cards
+            // Gain the card
+            gainCard(choice1, state, 0, currentPlayer);
+            // Quit loop as we've bought a card
+            buying = 0;
 
             if (DEBUG) {
                 printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
