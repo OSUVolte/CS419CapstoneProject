@@ -2,6 +2,7 @@
 	In this file, I will be providing documentation for the refactorings I made to
 	both the dominion.h and dominion.c files.  This documentation appears below.
 
+	*** dominion.h REFACTORING WORK  ***
 	I began my work by adding several function prototypes to the dominion.h file, based
 	on what I would need in order to implement functions to handle the playing of five
 	different card types.  The prototypes that I added are listed below:
@@ -12,6 +13,7 @@
 		int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos, int trashFlag);
 		int playGardens();
 
+	*** dominion.c REFACTORING WORK ***
 	In addition to adding the prototypes listed above, I also added function definitions 
 	to the dominion.c files.  These were fairly easy to implement--I mainly used the code
 	that was in the case statements.  It wasn't entirely that simple, though, and there was a
@@ -31,6 +33,7 @@
 	code was "falling through" to the next case statement which was producing the bug.  I ended up needing
 	to change this for all of my refactored case statements.
 
+	*** INTRODUCING BUGS ***
 	After comfirming that my functions were behaving as expected, I performed some additional refactorings
 	to introduce bugs into the program.  These are described below:
 

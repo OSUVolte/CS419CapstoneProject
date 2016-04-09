@@ -32,5 +32,4 @@
 	silver, then the count is incremented by 2.  If the card is a gold, then the count is
 	incremented by 3.  Finally, if there is any bonus to be added, this bonus is added to the
 	count.  The state of the game is updated any time an incrementation occurs.
-
 */
