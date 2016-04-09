@@ -7,17 +7,30 @@ ahead and added my own prototypes there and/or reused those that existed for the
 The prototypes were reworked to include passing the currentPlayer to the function as this is needed for every
 card effect.
 
-## Smithy Card
+## General Info
 
+* There were existing prototypes for card effects in dominion.h.  Those were slightly rewritten to fit the 
+method signature of existing functions (e.g. gameState goes last, player is first)
 
+* Fixed whitespace, variable capitalizations, and code format to conform with a consistent style in method bodies
+that I worked on.
+
+* Alphabetized function order for card effects
 
 ## Adventurer Card
 
-* Moved adventurer card to own method
+* Moved Adventurer card effect to own method
 * Cleaned up code and whitespace and variable names
 
+## Smithy Card
 
-## Card 3
+* Moved Smithy card effect to own method
+* Cleaned up whitespace and code formatting
+
+## Council Room Card
+
+* Moved Councel Room Card to own method
+* Cleaned up whitespace and code formatting
 
 ## Card 4
 
