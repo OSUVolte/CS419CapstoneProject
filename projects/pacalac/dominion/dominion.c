@@ -741,7 +741,7 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 	return 0;
 }
 
-int playSteward(int choice1, int choice2, int choice3, struct gameState *state)
+int playSteward(int choice1, struct gameState *state)
 {
 	int currentPlayer = whoseTurn(state);
 	
@@ -760,8 +760,6 @@ int playSteward(int choice1, int choice2, int choice3, struct gameState *state)
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
-
-
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
 {
@@ -1088,7 +1086,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case steward:
-      if (choice1 == 1)
+		return playSteward(choice1, state);
+    /*  if (choice1 == 1)
 	{
 	  //+2 cards
 	  drawCard(currentPlayer, state);
@@ -1109,7 +1108,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
-		
+		*/
     case tribute:
       if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
 	if (state->deckCount[nextPlayer] > 0){
