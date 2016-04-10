@@ -1,3 +1,13 @@
+Five new functions were added for various action cards. Those functions were:
+	adventurerCard
+	council_roomCard
+	feastCard
+	remodelCard
+	smithyCard
+Function declarations were added to dominion.h and function definitions were added to dominion.c.
+
+Bugs were introduced to all of the fuctions listed above. The details of the bugs are noted below:
+
 int adventurerCard(int currentPlayer, struct gameState *state)
 	Modified while loop so the discard deck is shuffled each time, even if the deck is not empty.
 	Modified while loop to continue while less than 3 (instead of 2).
