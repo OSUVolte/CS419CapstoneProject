@@ -11,7 +11,7 @@ Adventurer:
 While drawntreasure is less than two, this reshuffles if the deck is empty, then draws a card.  If the
 card that is drawn is a copper, silver, or gold (treasure), then drawntreasure is increased by 1.
 Since drawntreasure starts with a value of 0, this makes the cards continue to be drawn until a total of
-3 treasure cards are found.
+2 treasure cards are found.
 If the drawn card is not a treasure card, cards are continued to be drawn.  The else statement keeps
 track of the cards drawn.  Once drawntreasure is equal to 2, the second while statement
 puts the "stack" of non-treasure cards that were drawn into the discard pile.
