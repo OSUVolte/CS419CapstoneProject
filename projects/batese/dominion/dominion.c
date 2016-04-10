@@ -1314,7 +1314,8 @@ int villageCard(int currentPlayer, struct gameState *state, int handPos) {
 }
 
 int council_roomCard(int currentPlayer, struct gameState *state, int handPos) {
-	      //+4 Cards
+  //+4 Cards
+  int i;
       for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
