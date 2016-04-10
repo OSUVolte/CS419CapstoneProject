@@ -16,5 +16,17 @@ refactor tested by running playdom
 
 ------------------------------------------------------------------------------------
 
+Implemented playVillage as function
+Implemented playFeast as function
+removed now unused variables from cardEffect() function
+removed while loop from function (while loop from original case statement),
+there seemed to be no change to choice1 in the loop that would cause the state of the loop control variable to change
+that loop would have run once or infinitely.
+Instead if the choice is un-purchasable the function returns -1 which will signal failure all the way up the call hierarchy,  the player will be free to play the card again with a different choice
+
+---------------------------------------------------------------------------------------
+
+
+
 */
 

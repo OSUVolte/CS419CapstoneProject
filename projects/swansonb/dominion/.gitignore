@@ -16,3 +16,4 @@ testDrawCard
 *.gcda
 
 *.gcno
+/Debug/
