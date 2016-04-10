@@ -24,3 +24,17 @@ allow cards to be recovered from the trash pile, I made a trash pile and a way
 to add cards to it based on the trashFlag in the discardCard() function.
 
 Bugs:
+Adventurer - When adding temphand to the discard pile, index z is used instead of
+z-1.  This will make the player discard something that they didn't draw.  It will
+depend on previous uses of Adventurer for what this might be.  The first card in
+temphand (zero index) never gets discarded.
+
+Smithy - Player draws 4 cards instead of 3 because loop condition is set to <=
+instead of <.
+
+Village - Village gets trashed instead of just discarded because trashFlag is set
+to 1.
+
+Council Room - Current player draws another card instead of each other player
+because the if condition checks for i being equal to currentPlayer instead of not
+equal.
