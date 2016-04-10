@@ -741,6 +741,25 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 	return 0;
 }
 
+int playSteward(int choice1, int choice2, int choice3, struct gameState *state)
+{
+	int currentPlayer = whoseTurn(state);
+	
+	if (choice1 == 1)
+	{
+		//+2 cards
+		drawCard(currentPlayer, state);
+		drawCard(currentPlayer, state);
+	}
+	else if (choice1 == 2)
+	{
+		state->coins = state->coins++;
+	}
+
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+	return 0;
+}
 
 
 

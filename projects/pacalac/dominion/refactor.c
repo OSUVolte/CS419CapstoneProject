@@ -10,3 +10,6 @@ Council:
 	
 Remodel:
 	Changed gainCard(choice2, state, 0, currentPlayer); to gainCard(choice1, state, 0, currentPlayer); (changed choice2 to choice1)
+	
+Steward:
+	Only add one coin instead of adding 2 coins. Removed else statement to discard 2 cards in hand if choice1 != 1 or 2.
