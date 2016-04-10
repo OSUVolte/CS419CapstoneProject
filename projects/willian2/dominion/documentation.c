@@ -1,10 +1,15 @@
-/*************************************************************************
- * Mark Rushmere
- * CS 362
- * Assignment 2
- * Description: A written description of the Smithy and Adventurer cards
- * and the  discardCard() and updateCoins() function
- ************************************************************************/
+/****************************************************************************
+* FILENAME: documentation.c
+* AUTHOR: Nickolas A. Williams
+* DATE: 04/10/2016
+* DESCRIPTION: Documents code for smithy and adventurer cards, plus
+*	discardCard() and updateCoins() methods
+* INPUT: n/a
+* OUTPUT: n/a
+*****************************************************************************/
+
+
+
 
 // Smithy:
 // When a player plays the Smithy card, they can draw an additional 3 cards. It does not affect how many actions or coins the player has.
