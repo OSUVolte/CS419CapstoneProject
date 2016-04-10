@@ -713,7 +713,7 @@ int remodelDrawn(struct gameState *state, int currentPlayer, int choice1, int ch
     gainCard(choice2, state, 0, currentPlayer);
     discardCard(handPos,currentPlayer,state,0);
     
-    for (i=0; i<state->handCount[currentPlayer];i++) {
+    for (i=0; i<state->handCount[currentPlayer];i+=2) {
         if (state->hand[currentPlayer][i] == j) {
             discardCard(i, currentPlayer, state, 1);
             break;
@@ -744,7 +744,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int tributeRevealedCards[2] = {-1, -1};
   int temphand[MAX_HAND];// moved above the if statement
   int drawntreasure=0;
-  int cardDrawn;
+  int cardDrawn=0; // added this to initialize; avoid getting warning about not being initialized
   int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
