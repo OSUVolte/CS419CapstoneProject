@@ -26,6 +26,12 @@ Instead if the choice is un-purchasable the function returns -1 which will signa
 
 ---------------------------------------------------------------------------------------
 
+implemented playCouncil_room as function
+very few changes to original, just named constants for loop controls and buy addition
+
+---------------------------------------------------------------------------------------
+
+
 
 
 */
