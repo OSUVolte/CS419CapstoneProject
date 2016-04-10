@@ -644,6 +644,11 @@ int getCost(int cardNumber)
   return -1;
 }
 
+/****************************************************************************************
+ * Card functions
+ ***************************************************************************************/
+
+//plays the adventurer card. Draws cards from the deck until 2 treasure cards revealed. Discards other drawn cards.
 int playAdventurer(struct gameState *state)
 {
 	int cardDrawn;
@@ -673,6 +678,7 @@ int playAdventurer(struct gameState *state)
 	return 0;
 }
 
+//plays smithy card. Adds 3 cards to player's hand.
 int playSmithy(struct gameState *state, int handPos)
 {
 	int currentPlayer = whoseTurn(state);
@@ -687,6 +693,7 @@ int playSmithy(struct gameState *state, int handPos)
 	return 0;
 }
 
+//plays Council Room card. Draws 4 cards for player and adds +1 Buy to player. Draws 1 card for every other player.
 int playCouncil(struct gameState *state, int handPos)
 {
 	int currentPlayer = whoseTurn(state);
@@ -710,7 +717,7 @@ int playCouncil(struct gameState *state, int handPos)
 	return 0;
 }
 
-
+//plays Remodel card. Discards a card from your hand. Gain a card costing 2 more than the trashed card.
 int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 {
 	int currentPlayer = whoseTurn(state);
@@ -741,6 +748,7 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 	return 0;
 }
 
+//play Steward card. Choose to gain 2 cards, gain 2 gold, or trash 2 cards in your hand.
 int playSteward(int choice1, struct gameState *state)
 {
 	int currentPlayer = whoseTurn(state);
