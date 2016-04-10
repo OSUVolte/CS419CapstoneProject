@@ -9,4 +9,4 @@ Adventure Card: It is also an action card. The effect is to reveal cards from de
 				condition inside while loop checks if deckCount is less than 1 it shuffles the state for current player. 
 discardCard(): This function is used to remove the card from player’s hand. It first checks if card is thrashed or 
 				not, if it is not it is added to played pile. 
-updateCoins(): This function counts the number of coins based on treasure cards in player’s hand. 
+updateCoins(): This function counts the number of coins based on treasure cards in player’s hand. It also adds the bonus to coins if any.
