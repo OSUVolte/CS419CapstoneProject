@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int smithyCard(int handPos, int currentPlayer, struct gameState *state);
-
+int adventurerCard(int drawntreasure, struct gameState *state, int z, int currentPlayer);
 
 
 
@@ -672,6 +672,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card )
     {
     case adventurer:
+    /*
       while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
@@ -691,6 +692,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	z=z-1;
       }
       return 0;
+    */
+        adventurerCard(drawntreasure, state, z, currentPlayer);
 
     case council_room:
       //+4 Cards
@@ -1334,6 +1337,32 @@ int smithyCard(int handPos, int currentPlayer, struct gameState *state) {
     discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
+
+int adventurerCard(int drawntreasure, struct gameState *state, int z, int currentPlayer) {
+    int temphand[MAX_HAND];
+    while(drawntreasure<3){
+        if (state->deckCount[currentPlayer] <1){
+          shuffle(currentPlayer, state);
+        }
+        drawCard(currentPlayer, state);
+        int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+          drawntreasure++;
+        else{
+          temphand[z]=cardDrawn;
+          state->handCount[currentPlayer]--;
+          z++;
+        }
+      }
+    while(z-1>=0){
+	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
+	z=z-1;
+    }
+
+    return 0;
+}
+
+
 
 //end of dominion.c
 
