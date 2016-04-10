@@ -1,3 +1,5 @@
+Assignment 2
+
 smithy
 - Is implemented through the smithyCard() method in dominion.c . 
 BUG: When the player plays the smithy card, the player draws 4 cards from their deck.
@@ -17,3 +19,5 @@ embargo
 BUG: Card is not trashed, merely discarded.
 BUG: Card increases player's number of actions by 2 rather than number of coins.
 
+sea_hag
+-Is implemented through the seahagCard() method in dominion.c .
