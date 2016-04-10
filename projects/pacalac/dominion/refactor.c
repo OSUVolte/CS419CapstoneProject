@@ -3,3 +3,7 @@ Adventurer:
 	
 Smithy:
 	Removed call to discardCard() so smithy will not be discarded after use.
+	
+Council:
+	Removed increment of buy count for player. Also removed check for current player when looping through
+	players to give everyone but the card player a card (so the person who plays the card will receive 5 cards).
