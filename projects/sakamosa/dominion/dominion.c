@@ -650,7 +650,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int k;
   int x;
   int temphand[MAX_HAND];
-  int z = 0;
   int index;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
@@ -1351,7 +1350,7 @@ int playEmbargo(struct gameState *state, int currentPlayer, int handPos, int pil
       int i;
       for (i = 0; i < state->numPlayers; i++){
 	    if (i != currentPlayer){
-	        state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i--];
+	        state->discard[i][state->discardCount[i]--] = state->deck[i][state->deckCount[i];
             state->deckCount[i]--;
 	        state->discardCount[i]++;
 	        state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse

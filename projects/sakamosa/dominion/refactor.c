@@ -15,5 +15,5 @@ function playEmbargo:
     choice1 is set to 0 instead of 1 making the trash flag false so the card will be discarded instead
     
 function playSeahag:
-    the decrementer for the count is put inside the brackets so i is decremented instead of the count.
+    decrement discard count and fail to decrement deck count for each discard
  */
