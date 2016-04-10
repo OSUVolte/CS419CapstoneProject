@@ -17,10 +17,11 @@ Other than that and the bugs, the code is identical to the one within the switch
 
 //bugs
 
-cardSmithy has a miss-spelling of currentPlayer
+cardSmithy draws 4 cards instead of 3 should be i < 3
 
-cardCouncil does not have int i defined within the function (scoping)
+cardCouncil does not discard hand afterwards
 
 cardVillage does not increment the right actions it only adds one action instead of state->numActions + 2
 
-cardAdventurer is improperly defined in header file
+cardAdventurer gets three treasures not 2 (drawntrasure<3) not (drawntreasure<2)
+
