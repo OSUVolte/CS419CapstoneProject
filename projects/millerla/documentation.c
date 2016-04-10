@@ -1,4 +1,4 @@
-Assignment 2: Dominion Documentation
+Assignment 2 - documentation.c
 
 Lauren Miller
 Software Engineering II (CS362)
