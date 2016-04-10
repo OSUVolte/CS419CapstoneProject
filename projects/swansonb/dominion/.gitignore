@@ -2,3 +2,13 @@
 
 .*project
 
+
+*.o
+
+playdom
+
+player
+
+badTestDrawCard
+
+testDrawCard
