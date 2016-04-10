@@ -39,6 +39,11 @@ BUGS INTRODUCED
 playVillage     - receives a struct instead of pointer to struct, modifications to game state will not persist after function returns
 playAdventurer  - doesn't check for case that deck and discard pile are empty (because the deck and draw pile have been revealed already and they contain <2 treasure cards)
                   loop will run forever if the deck contains less than 2 treasure cards
+playSmithy      - Off by one error causing function to draw 4 cards instead of 3
+playFeast       - uses two loop index and array index values for moving hand to temp array, then back into hand
+                  first loop uses "tempHandIndex" as loop control and array copy index
+                  second loop uses i as loop control but for the copy source tempHandIndex is still used
+                  the hand will be filled with whatever garbage values are at the handLenght+1 index
 
 */
 

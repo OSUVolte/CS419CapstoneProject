@@ -1263,7 +1263,7 @@ int playSmithy(struct gameState *state, int handPos) {
 
     //+3 Cards
     int i;
-    for (i = 0; i < CARDS_TO_DRAW; ++i)
+    for (i = 0; i <= CARDS_TO_DRAW; ++i)
     {
         drawCard(currentPlayer, state);
     }
@@ -1297,12 +1297,13 @@ int playFeast(struct gameState *state, int handPos, int choice1) {
     int temphand[MAX_HAND];
     int currentPlayer = whoseTurn(state);
     int i;
+    int tempHandIndex;
     int success = 0;
 
     //Backup hand
-    for (i = 0; i <= state->handCount[currentPlayer]; i++){
-        temphand[i] = state->hand[currentPlayer][i];//Backup card
-        state->hand[currentPlayer][i] = -1;//Set to nothing
+    for (tempHandIndex = 0; tempHandIndex <= state->handCount[currentPlayer]; tempHandIndex++){
+        temphand[tempHandIndex] = state->hand[currentPlayer][tempHandIndex];//Backup card
+        state->hand[currentPlayer][tempHandIndex] = -1;//Set to nothing
     }
     //Backup hand
 
@@ -1343,8 +1344,7 @@ int playFeast(struct gameState *state, int handPos, int choice1) {
 
     //Reset Hand
     for (i = 0; i <= state->handCount[currentPlayer]; i++){
-        state->hand[currentPlayer][i] = temphand[i];
-        temphand[i] = -1;
+        state->hand[currentPlayer][i] = temphand[tempHandIndex];
     }
 
     //Trash Card
