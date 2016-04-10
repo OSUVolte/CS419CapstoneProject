@@ -54,6 +54,9 @@ enum CARD
    treasure_map
   };
 
+
+
+
 struct gameState {
   int numPlayers; //number of players
   int supplyCount[treasure_map+1];  //this is the amount of a specific type of card given a specific number.
@@ -129,5 +132,13 @@ int scoreFor(int player, struct gameState *state);
 int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
+
+
+int smithyCard(int handPos, int currentPlayer, struct gameState *state);
+int councilRoomCard(int handPos, int currentPlayer, struct gameState *state);
+int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_HAND]);
+int greatHallCard(int handPos, int currentPlayer, struct gameState *state);
+int stewardCard (int handPos, int choice1, int choice2, int choice3, int currentPlayer, struct gameState *state);
+int councilRoomCard(int handPos, int currentPlayer, struct gameState *state);			    
 
 #endif
