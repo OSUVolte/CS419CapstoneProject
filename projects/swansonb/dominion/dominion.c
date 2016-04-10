@@ -666,7 +666,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(state);
+      return playAdventurer(state, handPos);
 			
     case council_room:
       //+4 Cards
@@ -1155,7 +1155,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     case sea_hag:
       for (i = 0; i < state->numPlayers; i++){
 	if (i != currentPlayer){
-	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
+	  state->deckCount[i]--;
 	  state->discardCount[i]++;
 	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
 	}
@@ -1301,44 +1302,54 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
 
-int playAdventurer(struct gameState *state) {
+int playAdventurer(struct gameState *state, int handPos) {
+    const int TREASURE_CARDS_TO_DRAW = 2;
+
     int currentPlayer = whoseTurn(state);
-    int drawntreasure=0;
+    int drawCardsRemaining = TREASURE_CARDS_TO_DRAW;
     int cardDrawn;
     int temphand[MAX_HAND];
-    int z = 0;
-    while(drawntreasure<2){
-        if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+    int tempCount = 0;
+
+    //The second conditional exits the loop if there is 1, or 0 treasure cards in players deck
+    //it is now, reveal cards until 2 treasure cards have been drawn, and while there are either cards in your deck or discard pile
+    while(drawCardsRemaining && (state->deckCount[currentPlayer] || state->discardCount[currentPlayer])){
+        if (!state->deckCount[currentPlayer]){//if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
         }
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
         if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-            drawntreasure++;
+            drawCardsRemaining--;
         else{
-            temphand[z]=cardDrawn;
+            temphand[tempCount]=cardDrawn;
             state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-            z++;
+            tempCount++;
         }
     }
 
-    //discard adventurer from hand?
+    //discard adventurer from hand
+    discardCard(handPos, currentPlayer, state, 0);
 
-    while(z-1>=0){
-        state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-        z=z-1;
+    //discard revealed cards
+    for(; tempCount; --tempCount){
+        // discard all cards in play that have been drawn
+        state->discard[currentPlayer][state->discardCount[currentPlayer]++] =
+                temphand[tempCount-1];
     }
-
 
     return 0;
 }
 
 int playSmithy(struct gameState *state, int handPos) {
+
+    const int CARDS_TO_DRAW = 3;
+
     int currentPlayer = whoseTurn(state);
 
     //+3 Cards
     int i;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < CARDS_TO_DRAW; ++i)
     {
         drawCard(currentPlayer, state);
     }

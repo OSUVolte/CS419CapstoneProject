@@ -12,3 +12,7 @@ player
 badTestDrawCard
 
 testDrawCard
+
+*.gcda
+
+*.gcno
