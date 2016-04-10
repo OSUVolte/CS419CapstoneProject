@@ -33,12 +33,31 @@ Puts the cards in the discard pile from your hand until 2 treasure cards are had
 
 The adventure card will loop until the drawn treasure count reaches two.
 
-It starts by checking to see if there are any cards in the hand. If there are none it will shuffle cards in the deck.
-If the cards in the deck
+It starts by checking to see if there are any cards in the hand.
+If there are none it will shuffle cards in the deck.
+It will then set a the card drawn to the "cardDrawn" (an enumerated integer).
+It will see if the card drawn is copper, silver, or gold.
+If it is a treasure card it will increment the treasure card count.
+Otherwise, it will add the card to a temporary array holding cards that will be discarded.
+After it hits 2 treasure counts it will discard every card from the temp hand.
 
 
+*** discardCard()  ***
+This will first find out if trashflag has been called.
+If trash flag is called it will add the card to the "played Cards" portion.
+Then, if it hasn't been set to -1 already, it will set the card to -1.
+It will then call a series of if that will all reduce the number of cards in the hand of the current player.
+If the discarded card is not the last card in the hand it will swap those cards in order to discard the correct card.
 
+
+** updateCoins() **
+
+Update coins sets coins to 0 and then runs a for loop through the entire hand of the player.
+This shows how many coins the player has in their hand.
+After it runs through the entire hand of the player it will add the bonus to the coins and the function will return.
 
 */
+
+
 
 
