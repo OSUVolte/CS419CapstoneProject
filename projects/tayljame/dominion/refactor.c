@@ -1,31 +1,19 @@
-<<<<<<< HEAD
-/*************************************************************************
- * Mark Rushmere
- * CS 362
- * Assignment 2
- * Description: Descrptions of changes made to dominion.c
- * **********************************************************************/
+/***************
+Author: James Taylor
+Date: 10/25/15
+Updated: 4/10/16
 
-
-// Smithy
-
-
-
-// Adventurer
-
-
-
-
-=======
-//Process of Refactoring
-/*
-	I started by looking over the dominion header and C file. I made a seperate function for adventurer
-	but named it "Adventurer". This didn't work as expected. Upon closer examination of the header file
-	I noticed the playAdventurer() prototype function. Afterwards I added that to the main source file as 
-	my function seperate from the switch statement. Then it was just a matter of looking up how to pass 
-	structs and arrays to functions before they all worked.
+***************/
+Refactored cards:
+	Adventurer
+	Smithy
+	Council Room
+	gardens
+	Great Hall
 	
-	The errors that I created are a pointer on the function call in playAdventurer() and declaring the iterative
-	looping integer "i" in the playSmithy function.
-*/
->>>>>>> 10dda0265d82c7973e7a193fdc915b7b09a6fed0
+introduced bugs:
+	Adventurer_ref: changed < to > when checking deck for enough cards
+	Smithy_ref: set i to 1
+	Council Room: removed statement :        discardCard(handPos, currentPlayer, state, 0);
+	Gardens: return 0 instead of -1.
+	
