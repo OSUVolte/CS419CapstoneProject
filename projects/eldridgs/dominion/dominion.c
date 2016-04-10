@@ -667,7 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card )
     {
     case adventurer:
-      pAdventurer(*state);
+      pAdventurer(state);
 
     case council_room:
       //+4 Cards
@@ -811,15 +811,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+        pSmithy(state, handPos);
 
     case village:
       //+1 Card
@@ -1316,8 +1308,9 @@ int updateCoins(int player, struct gameState *state, int bonus)
 //refactor 5 cards in their own functions
 
 
-pAdventurer(struct gameState *state)
+int pAdventurer(struct gameState *state)
 {
+    int whoseTurn(state);
     while(drawntreasure<2){
         if (state->deckCount[currentPlayer] <3){//if the deck is empty we need to shuffle discard and add to deck
         shuffle(currentPlayer, state);
@@ -1337,4 +1330,22 @@ pAdventurer(struct gameState *state)
         z=z-1;
     }
     return 0;
+}
+
+int pSmithy(struct gameState *state, int handPos)
+{
+    int currentPlayer = whoseTurn(state);
+    if (handPos == 2)
+    {
+        handPos--;
+    }
+//+3 Cards
+    for (i = 0; i < 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 1);
+      return 0;
 }
