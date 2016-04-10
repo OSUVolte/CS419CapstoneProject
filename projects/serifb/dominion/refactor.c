@@ -1,31 +1,18 @@
-<<<<<<< HEAD
-/*************************************************************************
- * Mark Rushmere
- * CS 362
- * Assignment 2
- * Description: Descrptions of changes made to dominion.c
- * **********************************************************************/
-
-
-// Smithy
-
-
-
-// Adventurer
-
-
-
-
-=======
-//Process of Refactoring
 /*
-	I started by looking over the dominion header and C file. I made a seperate function for adventurer
-	but named it "Adventurer". This didn't work as expected. Upon closer examination of the header file
-	I noticed the playAdventurer() prototype function. Afterwards I added that to the main source file as 
-	my function seperate from the switch statement. Then it was just a matter of looking up how to pass 
-	structs and arrays to functions before they all worked.
-	
-	The errors that I created are a pointer on the function call in playAdventurer() and declaring the iterative
-	looping integer "i" in the playSmithy function.
+Name:		Bryan Serif
+filename:	refactor.c
+Date:		04/10/2016
+
+Changes:
+
+Dominion.c: Changed the following switch statement calls to functions per the
+guidelines of Assignment 2: Adventurer, Smithy, Village, 
+
+Bugs:
+
+	Adventurer: Removed gold from the selectable list of currencies
+	Smithy: changed the number of cards drawn from 3 to 1
+	Village: changed the number of cards drawn to 2 and the number of actions added to 1
+	Great Hall: changed the number of actions to decrement instead of increment
+	Council Room: no bugs added
 */
->>>>>>> 10dda0265d82c7973e7a193fdc915b7b09a6fed0
