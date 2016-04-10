@@ -1129,7 +1129,7 @@ int playAdventurer(struct gameState *state){
   
   
   while(drawntreasure<2){
-    if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+    if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
@@ -1144,7 +1144,7 @@ int playAdventurer(struct gameState *state){
         }
   while(z-1>=0){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-    z=z-1;
+    z=z-3;
   }
   return 0;
 }
@@ -1153,7 +1153,7 @@ int playSmithy(struct gameState *state, int handPos){
   int currentPlayer = whoseTurn(state);
   int i;
   //draw three cards
-  for (i = 0; i < 3; i++)
+  for (i; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1164,7 +1164,7 @@ int playSmithy(struct gameState *state, int handPos){
 }
 
 int playVillage(struct gameState *state, int handPos){
-      int currentPlayer = whoseTurn(state);
+      int currentPlayer = whoseTurn(state) + 1;
       //+1 Card
       drawCard(currentPlayer, state);
 			
@@ -1213,8 +1213,11 @@ int playFeast(struct gameState *state, int choice1){
       if (DEBUG){
         printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
       }
-
+      
+ 
+      for(i = 0; i < 5; i++){
       gainCard(choice1, state, 0, currentPlayer);//Gain the card
+      }
       x = 0;//No more buying cards
 
       if (DEBUG){
