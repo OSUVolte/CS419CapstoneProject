@@ -1125,7 +1125,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case salvager:
-        return playSalvager(state, currentPlayer, handPos, choice1);
+        return playSalvager(state, currentPlayer, choice1, handPos);
   
     case sea_hag:
         return playSeahag(state, currentPlayer);
@@ -1281,7 +1281,7 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos){
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1);
       return 0;
 }
 
@@ -1296,19 +1296,18 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
 	}
 	drawCard(currentPlayer, state);
 	int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold){
 	  drawntreasure++;
-	else{
 	  temphand[z]=cardDrawn;
 	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
 	  z++;
 	}
-      }
-      while(z-1>=0){
+    }
+    while(z-1>=0){
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
-      }
-      return 0;
+    }
+    return 0;
     
 }
 //embargo: get two coins, add embargo to selected pile
@@ -1326,7 +1325,7 @@ int playEmbargo(struct gameState *state, int currentPlayer, int handPos, int pil
       state->embargoTokens[pileChoice]++;
 			
       //trash card
-      discardCard(handPos, currentPlayer, state, 1);		
+      discardCard(handPos, currentPlayer, state, 0);		
       return 0;
 }
 		
@@ -1352,7 +1351,7 @@ int playEmbargo(struct gameState *state, int currentPlayer, int handPos, int pil
       int i;
       for (i = 0; i < state->numPlayers; i++){
 	    if (i != currentPlayer){
-	        state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
+	        state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i--];
             state->deckCount[i]--;
 	        state->discardCount[i]++;
 	        state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
