@@ -8,6 +8,9 @@
 //Card Effect function prototypes
 int pSmithy(int handPos, int currentPlayer, struct gameState *state);
 int aAdventurer(int handPos, int currentPlayer, struct gameState *state);
+int pGreatHall(int handPos, int currentPlayer, struct gameState *state);
+int pVillage(int handPos, int currentPlayer, struct gameState *state);
+int pEmbargo(int handPos, int currentPlayer, struct gameState *state, int choice1);
 
 int compare(const void* a, const void* b) {
   if (*(int*)a > *(int*)b)
@@ -812,18 +815,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case smithy:
-    return pSmithy(handPos, currentPlayer, state);
+        return pSmithy(handPos, currentPlayer, state);
 
     case village:
-      //+1 Card
-      drawCard(currentPlayer, state);
-
-      //+2 Actions
-      state->numActions = state->numActions + 2;
-
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+        return pVillage(handPos, currentPlayer, state);
 
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -877,15 +872,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case great_hall:
-      //+1 Card
-      drawCard(currentPlayer, state);
-
-      //+1 Actions
-      state->numActions++;
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+        return pGreatHall(handPos, currentPlayer, state);
 
     case minion:
       //+1 action
@@ -1114,21 +1101,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 
     case embargo:
-      //+2 Coins
-      state->coins = state->coins + 2;
-
-      //see if selected pile is in play
-      if ( state->supplyCount[choice1] == -1 )
-	{
-	  return -1;
-	}
-
-      //add embargo token to selected supply pile
-      state->embargoTokens[choice1]++;
-
-      //trash card
-      discardCard(handPos, currentPlayer, state, 1);
-      return 0;
+        return pEmbargo(handPos, currentPlayer, state, choice1);
 
     case outpost:
       //set outpost flag
@@ -1359,6 +1332,65 @@ int pSmithy(int handPos, int currentPlayer, struct gameState *state)
 		discardCard(handPos, currentPlayer, state, 0);
 
 	return 0;
+}
+
+/*
+ *   Play Great Hall
+ */
+
+int pGreatHall(int handPos, int currentPlayer, struct gameState *state)
+{
+      //+1 Card
+      drawCard(currentPlayer, state);
+
+      //+1 Actions
+      state->numActions+2;
+
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+}
+
+
+/*
+ *   Play Village
+ */
+
+int pVillage(int handPos, int currentPlayer, struct gameState *state)
+{
+      //+1 Card
+      drawCard(currentPlayer, state);
+
+      //+2 Actions
+      state->numActions = state->numActions + 1;
+
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+}
+
+/*
+ *   Play Embargo
+ */
+
+int pEmbargo(int handPos, int currentPlayer, struct gameState *state, int choice1)
+{
+	//+2 Coins
+    state->coins++;
+
+		//see if selected pile is in play
+		if ( state->supplyCount[choice1] == -1 )
+		{
+			return -1;
+		}
+
+		//add embargo token to selected supply pile
+		state->embargoTokens[choice1]++;
+
+		//trash card
+		discardCard(handPos, currentPlayer, state, 1);
+
+    return 0;
 }
 
 
