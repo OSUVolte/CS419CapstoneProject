@@ -32,7 +32,13 @@ very few changes to original, just named constants for loop controls and buy add
 ---------------------------------------------------------------------------------------
 
 
+---------------------------------------
+BUGS INTRODUCED
+---------------------------------------
 
+playVillage     - receives a struct instead of pointer to struct, modifications to game state will not persist after function returns
+playAdventurer  - doesn't check for case that deck and discard pile are empty (because the deck and draw pile have been revealed already and they contain <2 treasure cards)
+                  loop will run forever if the deck contains less than 2 treasure cards
 
 */
 

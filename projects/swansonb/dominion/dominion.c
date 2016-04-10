@@ -737,7 +737,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return playSmithy(state, handPos);
 		
     case village:
-      return playVillage(state, handPos);
+      return playVillage(*state, handPos);
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -1227,9 +1227,7 @@ int playAdventurer(struct gameState *state, int handPos) {
     int temphand[MAX_HAND];
     int tempCount = 0;
 
-    //The second conditional exits the loop if there is 1, or 0 treasure cards in players deck
-    //it is now, reveal cards until 2 treasure cards have been drawn, and while there are either cards in your deck or discard pile
-    while(drawCardsRemaining && (state->deckCount[currentPlayer] || state->discardCount[currentPlayer])){
+    while(drawCardsRemaining){
         if (!state->deckCount[currentPlayer]){//if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
         }
@@ -1276,7 +1274,9 @@ int playSmithy(struct gameState *state, int handPos) {
 
 }
 
-int playVillage(struct gameState *state, int handPos) {
+int playVillage(struct gameState stat, int handPos) {
+
+    struct gameState *state = &stat;
 
     int currentPlayer = whoseTurn(state);
 
