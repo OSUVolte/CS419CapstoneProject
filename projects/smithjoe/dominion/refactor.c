@@ -1,4 +1,6 @@
-the implementations of smithy, adventurer, concilroom, feast, and gardens were refactored into the functions:
+The functions described below are defined in the file assignment2.c . This file is included in dominion.c
+he implementations of smithy, adventurer, concilroom, feast, and gardens were refactored into the functions:
+
 
 int smithyAss2(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus, int currentPlayer, int i)
 int adventurerAss2(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus, int drawntreasure, int currentPlayer, int cardDrawn, int temphand[MAX_HAND], int z)
