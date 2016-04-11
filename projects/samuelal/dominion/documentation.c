@@ -47,5 +47,73 @@ then draws a card via the drawCard() function. If the card is 1 of 3 possible tr
 is incremented. If the player does not draw a treasure card, the drawn card is added to a temporary hand and the while 
 loop repeats. After 2 treasure cards are drawn, the temporary hand is discarded. Returns 0 on success.
 
+
+
 discardCard()
+
+int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+{
+  if (trashFlag < 1)
+    {
+      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+      state->playedCardCount++;
+    }
+	
+  state->hand[currentPlayer][handPos] = -1;
+	
+  if ( handPos == (state->handCount[currentPlayer] - 1) )
+    {
+      state->handCount[currentPlayer]--;
+    }
+  else if ( state->handCount[currentPlayer] == 1 )
+    {
+      state->handCount[currentPlayer]--;
+    }
+  else 	
+    {
+      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+      state->handCount[currentPlayer]--;
+    }
+	
+  return 0;
+}
+
+-The discardCard() method removes cards from the player's hand and adds them to the played pile or the trashed 
+pile depending on the state of the trashFlag. If the trashFlag is not set, the card is added to the played pile. 
+The card is removed from the player's hand and the number of cards in hand is decremented. The last card in 
+hand takes the position of the most recently discarded card. Returns 0 on success.
+
+
+
 updateCoins()
+
+int updateCoins(int player, struct gameState *state, int bonus)
+{
+  int i;
+  state->coins = 0;
+  for (i = 0; i < state->handCount[player]; i++)
+    {
+      if (state->hand[player][i] == copper)
+	{
+	  state->coins += 1;
+	}
+      else if (state->hand[player][i] == silver)
+	{
+	  state->coins += 2;
+	}
+      else if (state->hand[player][i] == gold)
+	{
+	  state->coins += 3;
+	}	
+    }	
+
+  state->coins += bonus;
+
+  return 0;
+}
+
+-The updateCoins() method calculates the total value of the Treasure cards in the player's hand in addition 
+to any bonus the player has earned. This is accomplished through a for loop which iterates through every card 
+in the hand and checks if it matches a copper, silver, or gold and increments the value of state->coins by 
+the appropriate amount.

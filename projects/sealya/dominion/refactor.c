@@ -13,20 +13,20 @@ Smithy:
                 }
 
 Adventurer:
-    Change:     Now only copper and silver, but not gold, is recognized as treasure
+    Change:     Now only copper and silver, but not gold, are recognized as treasure
     Old code:   if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
                     drawntreasure++;
     New code:   if (cardDrawn == copper || cardDrawn == silver)
                     drawntreasure++;
 
 Great Hall:
-    Change:     Instead of incrementing actions, it increments and then  actions (i.e. no change to action)
+    Change:     Instead of incrementing actions, it increments and then decrements actions (i.e. no change to action)
     Old code:   state->numActions++;
     New Code:   state->numActions++;
                 state->numActions--;
 
 Remodel:
-    Change:     Instead of choosing a card worth 2 coins more the trashed card, it can now be
+    Change:     Instead of choosing a card worth 2 coins more than the trashed card, it can now be
                     worth 4 coins more.
     Old code:   if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
                 {
