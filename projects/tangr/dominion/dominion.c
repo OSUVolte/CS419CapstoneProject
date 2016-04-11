@@ -1314,10 +1314,25 @@ int playVillage(struct gameState *state, int handPos)
       discardCard(handPos, currentPlayer, state, 0);
 }
 
+
+///////////////////// Assignment 2 //////////////////////////////////
+//////////////// adds 2 cards, discards 1 and Village card////////////
 ///////////////////////////////////////////////////////////////////////////
 
 int playFeast(struct gameState *state, int choice1)
 {
+  int i;
+  int j;
+  int k;
+  int x;
+  int index;
+  int currentPlayer = whoseTurn(state);
+  int nextPlayer = currentPlayer + 1;
+
+  int tributeRevealedCards[2] = {-1, -1};
+  int temphand[MAX_HAND];// moved above the if statement
+  int drawntreasure=0;
+  int cardDrawn;
       //gain card with cost up to 5
       //Backup hand
       for (i = 0; i <= state->handCount[currentPlayer]; i++){
@@ -1327,7 +1342,7 @@ int playFeast(struct gameState *state, int choice1)
       //Backup hand
 
       //Update Coins for Buy
-      updateCoins(currentPlayer, state, 5);
+      updateCoins(currentPlayer, state, 4);
       x = 1;//Condition to loop on
       while( x == 1) {//Buy one card
   if (supplyCount(choice1, state) <= 0){

@@ -1,7 +1,7 @@
 playSmithy 
 draws 4 cards (not 3)
 discards smithy card and next card (not only smithy)
-
+//////////////////////////////////////////////////////////////////////////
 playAdventurer
 draws 2 Treasures
 if cards are shuffled more than once
@@ -10,6 +10,16 @@ if cards are shuffled more than once
 
 just in case, 
 smithy counts as 1
+////////////////////////////////////////////////////////////////////////
+playVillage
+draws an extra card
+discards an extra card
+gain 3 rather than 2 actions
+////////////////////////////////////////////////////////////////////////
+playFeast
+gain a card up to a cost of 4 rather than 5
+///////////////////////////////////////////////////////////////////////
+
 // added functions
 
 
