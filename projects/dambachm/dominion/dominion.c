@@ -915,7 +915,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-	  playSmithy(i, currentPlayer, handPos, state);
+	  playSmithy(currentPlayer, handPos, state);
       return 0;
 		
     case village:
@@ -986,7 +986,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case minion:
       //+1 action
-	  playMinion(handPos, currentPlayer, choice1, choice2, i, j, state);
+	  playMinion(handPos, currentPlayer, choice1, choice2, state);
       return 0;
 		
     case steward:
