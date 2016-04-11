@@ -670,7 +670,8 @@ adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand){
 
 councilRoomRefactored(currentPlayer, state, handPos){
   //+4 Cards
-  for (int i = 0; i < 4; i++)
+  int i;
+  for (i = 0; i < 4; i++)
   {
     drawCard(currentPlayer, state);
   }
@@ -679,7 +680,7 @@ councilRoomRefactored(currentPlayer, state, handPos){
       state->numBuys++;
       
       //Each other player draws a card
-      for (int i = 0; i < state->numPlayers; i++)
+      for (i = 0; i < state->numPlayers; i++)
   {
     if ( i == currentPlayer )
       {
@@ -696,7 +697,8 @@ councilRoomRefactored(currentPlayer, state, handPos){
 
 smithyRefactored(handPos, currentPlayer, state){
       //+3 Cards
-      for (int i = 0; i <= 3; i++)
+      int i;
+      for (i = 0; i <= 3; i++)
   {
     drawCard(currentPlayer, state);
   }
