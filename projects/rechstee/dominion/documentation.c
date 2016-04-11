@@ -1,7 +1,7 @@
 //Adventurer Scenario
 //The Adventurer card allows the player to draw cards from his or her deck until they have obtained two treasure cards. They may then 
 //keep those two treasure cards and discard the rest.
-/*case adventurer:
+/*
     int playAdventurer(struct gameState *state, int currentPlayer, int drawntreasure, int cardDrawn, int *temphand, int z) {
       while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
