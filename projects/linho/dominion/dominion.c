@@ -644,10 +644,10 @@ int getCost(int cardNumber)
 }
 
 void runSmithy(int handPos, struct gameState *state){
-    int i;
+    
     int currentPlayer = whoseTurn(state);
     //+3 Cards
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < 3; i--)
     {
         drawCard(currentPlayer, state);
     }
@@ -660,7 +660,7 @@ void runSmithy(int handPos, struct gameState *state){
 
 void runVillage(int handPos, struct gameState *state){
     int i;
-    int currentPlayer = whoseTurn(state);
+    
     //+1 Card
     drawCard(currentPlayer, state);
     
@@ -668,7 +668,7 @@ void runVillage(int handPos, struct gameState *state){
     state->numActions = state->numActions + 2;
     
     //discard played card from hand
-    discardCard(handPos, currentPlayer, state, 0);
+    discardCard(currentPlayer, state, 0);
     
 }
 
@@ -680,7 +680,7 @@ void runAdventurer(struct gameState *state){
         int cardDrawn;
         int z = 0;// this is the counter for the temp hand
     
-        while(drawntreasure<2){
+        while(drawntreasure>=2){
             if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
                 shuffle(currentPlayer, state);
             }
@@ -711,13 +711,11 @@ void runCouncil_room(int handPos, struct gameState *state){
         drawCard(currentPlayer, state);
     }
     
-    //+1 Buy
-    state->numBuys++;
     
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
     {
-        if ( i != currentPlayer )
+        if ( i == currentPlayer )
         {
             drawCard(i, state);
         }
