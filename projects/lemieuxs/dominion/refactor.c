@@ -13,7 +13,7 @@ int play_outpost(int currentPlayer, struct gameState * state, int handPos);
 
 The function definitions are at the end of the dominion.c file.
 
-Bugs
+Bugs in the dominion.c file
 1. On line 1246, in the play_smithy function, drawcard() is called an extra time.
 2. On line 1261, in the play_adventurer function, the smithy card is treated as a treasure card even though it is not one.
 3. On line 1321, in the play_minion function, the i++ statement causes some players to not have to discard their hand and draw 4 cards.
