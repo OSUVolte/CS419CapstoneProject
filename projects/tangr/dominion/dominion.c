@@ -1294,17 +1294,23 @@ int playSmithy(struct gameState *state, int handPos)
   discardCard(handPos, currentPlayer, state, 0);
 }
 
+///////////////////// Assignment 2 //////////////////////////////////
+//////////////// adds 2 cards, discards 1 and Village card////////////
 ////////////////////////////////////////////////////////////////////////
 
 int playVillage(struct gameState *state, int handPos)
 {
+      int currentPlayer = whoseTurn(state);
       //+1 Card
+      drawCard(currentPlayer, state);
       drawCard(currentPlayer, state);
       
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      state->numActions = state->numActions + 3;
       
       //discard played card from hand
+
+      discardCard(handPos, currentPlayer, state, 0);
       discardCard(handPos, currentPlayer, state, 0);
 }
 
