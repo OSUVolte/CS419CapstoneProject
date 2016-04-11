@@ -1,5 +1,7 @@
+ERROR! Found that someone changed dominion original
+-resolved by learning how to download oringal version from github.com website
+
 smithy
-	function with no parameters in dominion.c
 	in dominion.h 	- handPos (position of card in hand)
 					- gameState *state (current state of game pointer)
 	function draws 3 cards for the 'current' player (currentPlayer)
