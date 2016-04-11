@@ -1276,7 +1276,7 @@ int adventurerPlay(int drawntreasure, struct gameState *state, int currentPlayer
 int councilRoomPlay(int currentPlayer, struct gameState *state, int handPos) {
 	int i;
 	
-	for(i = 0; i < 4; i++) {
+	for(i = 0; i <= 4; i++) {
 		drawCard(currentPlayer,state);
 	}
 	
@@ -1300,7 +1300,7 @@ int minePlay(int j, struct gameState *state, int choice1, int choice2, int curre
 		
 		j = state->hand[currentPlayer][choice1];
 		
-		if(state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold) {
+		if(state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] >= gold) {
 			return -1;
 		}
 		
@@ -1339,7 +1339,7 @@ int remodelPlay(int j, struct gameState *state, int choice1, int choice2, int cu
 	discardCard(handPos,currentPlayer,state,0);
 	
 	for(i = 0; i < state->handCount[currentPlayer]; i++) {
-		if(state->hand[currentPlayer][i] == j) {
+		if(state->hand[currentPlayer][i+1] == j) {
 			discardCard(i,currentPlayer,state,0);
 			break;
 		}
