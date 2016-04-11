@@ -19,6 +19,12 @@ gain 3 rather than 2 actions
 playFeast
 gain a card up to a cost of 4 rather than 5
 ///////////////////////////////////////////////////////////////////////
+playCouncil_Room
+other players draw 2 cards (not 1)
+other players discard a card 
+(net gain still 1 card)
+
+current player discards an additional card
 
 // added functions
 

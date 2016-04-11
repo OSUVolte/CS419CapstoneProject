@@ -1316,7 +1316,7 @@ int playVillage(struct gameState *state, int handPos)
 
 
 ///////////////////// Assignment 2 //////////////////////////////////
-//////////////// adds 2 cards, discards 1 and Village card////////////
+//////////////// Feast gain card 4 card////////////
 ///////////////////////////////////////////////////////////////////////////
 
 int playFeast(struct gameState *state, int choice1)
@@ -1385,9 +1385,11 @@ int playFeast(struct gameState *state, int choice1)
 }
 
 ////////////////////////////////////////////////////////////////////////
-
+//////////////// playCouncil complex////////////
+////////////////////////////////////////////////////////////////////////
 int playCouncil_Room(struct gameState *state, int handPos)
 {
+  int currentPlayer = whoseTurn(state);
         //+4 Cards
       for (i = 0; i < 4; i++)
   {
@@ -1403,10 +1405,13 @@ int playCouncil_Room(struct gameState *state, int handPos)
     if ( i != currentPlayer )
       {
         drawCard(i, state);
+        drawCard(i, state);
+        discard(1, i, state, 0);
       }
   }
       
       //put played card in played card pile
+      discardCard(handPos, currentPlayer, state, 0);
       discardCard(handPos, currentPlayer, state, 0);
 }
 
