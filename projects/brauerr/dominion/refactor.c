@@ -32,3 +32,7 @@
   which should then always result in the statement evaluating to false and essentially enabling the user to
   trash any card to get any card
 */
+
+/*village
+  no bugs introduced to this one
+*/
