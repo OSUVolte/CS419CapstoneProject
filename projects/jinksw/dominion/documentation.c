@@ -43,3 +43,20 @@ Otherwise, the drawn card is put into a temporary hand and the hand count of the
 After the loop terminates another loop: while(z-1>=0) is initiated to discard the non-treasure cards in the temp hand:
 	state->discard[currentPlayer][state-discardCount[currentPlayer]++]=temphand[z-1];
 	z=z-1;
+
+Documentation:
+discardCard( int handPos, int currentPlayer, struct gameState* state, int trashFlag) method
+
+The card is either added to the garbage/trash pile if the trashFlag is >= 1, or added to the played pile if it < 1
+The card is removed from the player's hand and the number of cards in the players hand is decremented by 1
+
+Documentation:
+updateCoins( int player, struct gameState* state, int bonus) method.
+
+coin count is reset to 0
+Coins are added to the coin count based on treasure cards in a player's hand:
+	Copper = 1
+	Silver = 2
+	Gold = 3
+Bonus coins are added to the coin total.
+
