@@ -1265,7 +1265,7 @@ int adventurerPlay(int drawntreasure, struct gameState *state, int currentPlayer
 			}
 		}
 		
-		while(z - 1 >= 0) {
+		while(z >= 0) {
 			state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z - 1];
 			z = z - 1;
 		}
