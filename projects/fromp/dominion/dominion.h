@@ -79,7 +79,6 @@ struct gameState {
    unless specified for other return, return 0 on success */
 
 struct gameState* newGame();
-
 int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 		  int k8, int k9, int k10);
 
@@ -136,5 +135,10 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+int adventurerCard(int currentPlayer, struct gameState *state);		
+int council_roomCard(int currentPlayer, int handPos, struct gameState *state);			
+int feastCard(int currentPlayer, int choice1, struct gameState *state);
+int remodelCard(int currentPlayer, int handPos, int choice1, int choice2, struct gameState *state);
+int smithyCard(int currentPlayer, int handPos, struct gameState *state);
 
 #endif

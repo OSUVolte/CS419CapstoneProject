@@ -645,19 +645,16 @@ int getCost(int cardNumber)
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
 {
+
   int i;
   int j;
-  int k;
   int x;
   int index;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
-
   int tributeRevealedCards[2] = {-1, -1};
   int temphand[MAX_HAND];// moved above the if statement
-  int drawntreasure=0;
-  int cardDrawn;
-  int z = 0;// this is the counter for the temp hand
+
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
   }
@@ -667,24 +664,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      while(drawntreasure<2){
-	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-	  shuffle(currentPlayer, state);
-	}
-	drawCard(currentPlayer, state);
-	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  drawntreasure++;
-	else{
-	  temphand[z]=cardDrawn;
-	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-	  z++;
-	}
-      }
-      while(z-1>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-	z=z-1;
-      }
+      playAdventurer(currentPlayer, state);
       return 0;
 			
     case council_room:
@@ -768,38 +748,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return -1;
 			
     case mine:
-      j = state->hand[currentPlayer][choice1];  //store card we will trash
-
-      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
-	{
-	  return -1;
-	}
-		
-      if (choice2 > treasure_map || choice2 < curse)
-	{
-	  return -1;
-	}
-
-      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
-	{
-	  return -1;
-	}
-
-      gainCard(choice2, state, 2, currentPlayer);
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-
-      //discard trashed card
-      for (i = 0; i < state->handCount[currentPlayer]; i++)
-	{
-	  if (state->hand[currentPlayer][i] == j)
-	    {
-	      discardCard(i, currentPlayer, state, 0);			
-	      break;
-	    }
-	}
-			
+      playMine(currentPlayer, state, choice1, choice2, handPos);
       return 0;
 			
     case remodel:
@@ -829,15 +778,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      playSmithy(currentPlayer, state, handPos);
+
 		
     case village:
       //+1 Card
@@ -1104,55 +1046,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case cutpurse:
-
-      updateCoins(currentPlayer, state, 2);
-      for (i = 0; i < state->numPlayers; i++)
-	{
-	  if (i != currentPlayer)
-	    {
-	      for (j = 0; j < state->handCount[i]; j++)
-		{
-		  if (state->hand[i][j] == copper)
-		    {
-		      discardCard(j, i, state, 0);
-		      break;
-		    }
-		  if (j == state->handCount[i])
-		    {
-		      for (k = 0; k < state->handCount[i]; k++)
-			{
-			  if (DEBUG)
-			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
-			}	
-		      break;
-		    }		
-		}
-					
-	    }
-				
-	}				
-
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);			
-
+      playCutpurse(currentPlayer, state, handPos);
       return 0;
 
 		
     case embargo: 
-      //+2 Coins
-      state->coins = state->coins + 2;
-			
-      //see if selected pile is in play
-      if ( state->supplyCount[choice1] == -1 )
-	{
-	  return -1;
-	}
-			
-      //add embargo token to selected supply pile
-      state->embargoTokens[choice1]++;
-			
-      //trash card
-      discardCard(handPos, currentPlayer, state, 1);		
+      playEmbargo(currentPlayer, state, handPos, choice1);
       return 0;
 		
     case outpost:
@@ -1327,6 +1226,188 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
+/********************************************************************
+* Erin Donnelly's additional code for Assignment 2.
+********************************************************************/
+
+
+/********************************************************************
+* Rules for Adventurer: Reveal cards from your deck until you reveal 
+* 2 Treasure cards. Put those Treasure cards in your hand and discard 
+* the other revealed cards. If you have to shuffle in the middle, 
+* shuffle. Don't shuffle in the revealed cards as these cards do not 
+* go to the Discard pile until you have finished revealing cards. If 
+* you run out of cards after shuffling and still only have one Treasure, 
+* you get just that one Treasure.
+* Source: http://dominioncg.wikia.com/wiki/Adventurer
+********************************************************************/
+int playAdventurer(int currentPlayer, struct gameState *state)
+{
+  int drawntreasure;
+  int cardDrawn;
+  int temphand[MAX_HAND];
+  int z = 0;  // this is the counter for the temp hand
+
+  while(drawntreasure<=2)
+  {
+    if (state->deckCount[currentPlayer] < 1)
+    {//if the deck is empty we need to shuffle discard and add to deck
+      shuffle(currentPlayer, state);
+    }
+
+    drawCard(currentPlayer, state);
+    
+    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+    
+    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+      drawntreasure++;
+    
+    else
+    {
+      temphand[z]=cardDrawn;
+      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+      z++;
+    }
+  }
+  
+  while(z-1>=0)
+  {
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    z=z-1;
+  }
+  
+  return 0;
+}
+
+/********************************************************************
+* Rules for Smithy: Draw three cards.
+* Source: http://dominioncg.wikia.com/wiki/Smithy
+********************************************************************/
+int playSmithy(int currentPlayer, struct gameState *state, int handPos)
+{
+  int i;
+  //+3 Cards
+  for (i = 0; i <= 3; i++)
+  {
+    drawCard(currentPlayer, state);
+    return 0;
+  }
+}
+
+/********************************************************************
+* Rules for Embargo: +2 Coins', Trash this card. Put an Embargo 
+* token on top of a Supply pile. / When a player buys a card, he 
+* gains a Curse card per Embargo token on that pile.
+* Source: http://dominioncg.wikia.com/wiki/Embargo
+********************************************************************/
+int playEmbargo(int currentPlayer, struct gameState *state, int handPos, int choice1)
+{
+  //+2 Coins
+   state->coins = state->coins + 2;
+      
+  //see if selected pile is in play
+  if ( state->supplyCount[choice1] == -1 )
+  {
+    return -1;
+  }
+  
+  //add embargo token to selected supply pile
+  state->embargoTokens[choice1]++;
+  
+  //trash card
+  discardCard(handPos, currentPlayer, state, 1);    
+  return 0;
+}
+
+/********************************************************************
+* Rules for Mine: Trash a Treasure card from your hand. Gain a 
+* Treasure card costing up to 3 Coins more; put it into your hand.
+* Source: http://dominioncg.wikia.com/wiki/Mine
+********************************************************************/
+int playMine(int currentPlayer, struct gameState *state, int choice1, int choice2, int handPos)
+{
+  int i;
+  int j;
+
+  j = state->hand[currentPlayer][choice1];  //store card we will trash
+
+  if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+  {
+    return -1;
+  }
+    
+  if (choice2 > treasure_map || choice2 < curse)
+  {
+    return -1;
+  }
+
+  if ( (getCost(state->hand[currentPlayer][choice1])) > getCost(choice2) )
+  {
+    return -1;
+  }
+
+  gainCard(choice2, state, 2, currentPlayer);
+
+  //discard card from hand
+  discardCard(handPos, currentPlayer, state, 0);
+
+  //discard trashed card
+  for (i = 0; i < state->handCount[currentPlayer]; i++)
+  {
+    if (state->hand[currentPlayer][i] == j)
+    {
+      discardCard(i, currentPlayer, state, 0);      
+      break;
+    }
+  }  
+  return 0;
+}
+
+/********************************************************************
+* Rules for Cutpurse: +2 Coins, Each other player discards a Copper 
+* card (or reveals a hand with no Copper).
+* Source: http://dominioncg.wikia.com/wiki/Cutpurse
+********************************************************************/
+int playCutpurse(int currentPlayer, struct gameState *state, int handPos)
+{
+  int i;
+  int j;
+  int k;
+
+  updateCoins(currentPlayer, state, 3);
+  
+  for (i = 0; i < state->numPlayers; i++)
+  {
+    if (i != currentPlayer)
+    {
+      for (j = 0; j < state->handCount[i]; j++)
+      {
+        if (state->hand[i][j] == gold)
+        {
+          discardCard(j, i, state, 0);
+          break;
+        }
+        if (j == state->handCount[i])
+        {
+          for (k = 0; k < state->handCount[i]; k++)
+          {
+            if (DEBUG)
+              printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+          } 
+          
+          break;
+        }   
+      }      
+    }  
+    //discard played card from hand
+    discardCard(handPos, currentPlayer, state, 0);      
+    
+  }       
+  return 0;  
+}
+
+
 
 
 //end of dominion.c

@@ -6,6 +6,5 @@
 	my function seperate from the switch statement. Then it was just a matter of looking up how to pass 
 	structs and arrays to functions before they all worked.
 	
-	The errors that I created are a pointer on the function call in playAdventurer() and declaring the iterative
-	looping integer "i" in the playSmithy function.
+	The errors that I created are  playAdventurer() while(z-2>=0) and discardCard(handPos, currentPlayer, state, 1) should start at 0 not 1 in the playSmithy function.
 */
