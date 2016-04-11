@@ -136,11 +136,5 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
-void card_adventurer(int currentPlayer, struct gameState *state);
-void card_smithy(int currentPlayer, struct gameState *state, int handPos);
-int card_remodel(int currentPlayer, struct gameState *state, int handPos, int choice1, int choice2);
-void card_councilRoom(int currentPlayer, struct gameState *state, int handPos);
-void card_village(int currentPlayer, struct gameState *state, int handPos);
-
 
 #endif
