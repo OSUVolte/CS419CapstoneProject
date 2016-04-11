@@ -1,4 +1,15 @@
+playSmithy 
+draws 4 cards (not 3)
+discards smithy card and next card (not only smithy)
 
+playAdventurer
+draws 2 Treasures
+if cards are shuffled more than once
+	reduce Treasures drawn by 1
+(note I think i figured out how to resolve the possible infinite loop bug i thought of)
+
+just in case, 
+smithy counts as 1
 // added functions
 
 
@@ -35,6 +46,7 @@ int playSmithy(struct gameState *state, int handPos)
   }
       
   //discard card from hand
+  discardCard(handPos, currentPlayer, state, 0);
   discardCard(handPos, currentPlayer, state, 0);
 }
 

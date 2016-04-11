@@ -1234,6 +1234,9 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 // added functions
 
+/////////////////////////////////////////////////////////////////////
+///////////////////// Assignment 2 //////////////////////////////////
+//////////////// 2 or less Treasures and Adventurer card////////////
 
 int playAdventurer(struct gameState *state)
 {
@@ -1245,20 +1248,26 @@ int playAdventurer(struct gameState *state)
   int drawntreasure=0;
   int cardDrawn;
   int z = 0;// this is the counter for the temp hand
+  int countCards = 0;
 
   while(drawntreasure<2)
   {
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
     shuffle(currentPlayer, state);
+    countCards++;
+
+    if (countCards > 1)
+      drawntreasure++;
   }
   drawCard(currentPlayer, state);
   cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-  if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+  if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold || cardDrawn == smithy)
     drawntreasure++;
   else{
     temphand[z]=cardDrawn;
     state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
     z++;
+
   }
       }
       while(z-1>=0){
