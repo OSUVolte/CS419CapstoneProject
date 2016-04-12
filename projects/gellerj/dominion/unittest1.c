@@ -25,20 +25,22 @@ int main() {
 
     initializeGame(players, kingdomCards, seed, &G);
 
-    if (VERBOSE) printf("Test game over when province supply equals zero...\n");
+    printf("Testing isGameOver():\n");
+
+    if (VERBOSE) printf("\tTest game over when province supply equals zero...\n");
     int supplyCount = G.supplyCount[province];      // save current supply count
     G.supplyCount[province] = 0;                    // set province to supply to 0 (game over)
     gameOver = isGameOver(&G);
-    if (VERBOSE) printf("Game over = %d, expected 1\n", gameOver);
+    if (VERBOSE) printf("\tGame over = %d, expected 1\n", gameOver);
     assert(gameOver == 1);
 
-    if (VERBOSE) printf("Test game over when three supply pile counts equal zero...\n");
+    if (VERBOSE) printf("\tTest game over when three supply pile counts equal zero...\n");
     G.supplyCount[province] = supplyCount;          // restore supply count for new test case
     G.supplyCount[0] = 0;                           // set three supply pile counts to zero (game over)
     G.supplyCount[1] = 0;
     G.supplyCount[2] = 0;
     gameOver = isGameOver(&G);
-    if (VERBOSE) printf("Game over = %d, expected 1\n", gameOver);
+    if (VERBOSE) printf("\tGame over = %d, expected 1\n", gameOver);
     assert(gameOver == 1);
 
     printf("All tests passed.\n");
