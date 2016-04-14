@@ -3,16 +3,42 @@
 #include<stdlib.h>
 #include<time.h>
 
+// declared globally to avoid thrashing heap during execution
+char* stringBuffer = 0;
+
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    const int ASCII_RANGE = 256;
+    return rand() % ASCII_RANGE;
 }
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+    const int STRING_SIZE = 5;
+
+    if (!stringBuffer){
+        stringBuffer = malloc(STRING_SIZE);
+    }
+    char *cur = stringBuffer;
+    while (cur - stringBuffer < STRING_SIZE){
+
+        // First test 5 char string generated as combination of all 256 chars
+        //*(cur++) = inputChar();
+
+        // Second version of test generates 5 char lower case alpha string
+        //*(cur++) = rand()%('z'-'a'+1) + 'a';
+
+        // Third version of test generates 5 lower case alpha with
+        // with a 5% chance to choose a value from entire ASCII range
+        int bias = rand()%100;
+        if (bias < 5) {
+            *(cur++) = inputChar();
+        } else {
+            *(cur++) = rand()%('z'-'a'+1) + 'a';
+        }
+    }
+    *cur = 0;
+    return stringBuffer;
 }
 
 void testme()
