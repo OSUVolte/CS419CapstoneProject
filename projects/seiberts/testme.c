@@ -5,14 +5,14 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    char randArray[] = {' ', '[','{','(',')','}',']','a','x'};
+    return randArray[rand() % 9];
 }
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+    
+    return "reset";
 }
 
 void testme()
