@@ -5,13 +5,14 @@
 
 char inputChar()
 {
+	//Created an array of chars to be returned
     char randArray[] = {' ', '[','{','(',')','}',']','a','x'};
-    return randArray[rand() % 9];
+    //Return a random char from the array
+	return randArray[rand() % 9];
 }
 
 char *inputString()
 {
-    
     return "reset";
 }
 
