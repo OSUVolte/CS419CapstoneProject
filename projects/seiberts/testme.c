@@ -6,14 +6,26 @@
 char inputChar()
 {
 	//Created an array of chars to be returned
-    char randArray[] = {' ', '[','{','(',')','}',']','a','x'};
+    char randArray[] = {' ', '[','{','(',')','}',']','a','x',
+						'b', 'c','d','e','f','g','h','i','j',
+						'k', 'z','y','w','t','u','v','l','o'};
     //Return a random char from the array
-	return randArray[rand() % 9];
+	return randArray[rand() % 27];
 }
 
 char *inputString()
-{
-    return "reset";
+{	
+	int i = 0;
+	char *randWord = malloc(sizeof(char) * 10);
+	for (i = 0; i < 5; i++)
+	{
+		int randomNumber = (rand() % 18) + 100;
+		char randChar = randomNumber;
+		randWord[i] = randChar;
+	}
+	randWord[5] = '\0';
+	
+	return randWord;
 }
 
 void testme()
