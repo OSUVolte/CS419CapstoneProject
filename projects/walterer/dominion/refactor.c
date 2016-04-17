@@ -1,31 +1,21 @@
-<<<<<<< HEAD
-/*************************************************************************
- * Mark Rushmere
- * CS 362
- * Assignment 2
- * Description: Descrptions of changes made to dominion.c
- * **********************************************************************/
-
-
-// Smithy
-
-
-
-// Adventurer
-
-
-
-
-=======
-//Process of Refactoring
 /*
-	I started by looking over the dominion header and C file. I made a seperate function for adventurer
-	but named it "Adventurer". This didn't work as expected. Upon closer examination of the header file
-	I noticed the playAdventurer() prototype function. Afterwards I added that to the main source file as 
-	my function seperate from the switch statement. Then it was just a matter of looking up how to pass 
-	structs and arrays to functions before they all worked.
+
+Eric Walters
+
+	playAdventurer: In while(z-1) statement, I changed temphand[z-1] to temphand[z]
+	so that there is an extra card
 	
-	The errors that I created are a pointer on the function call in playAdventurer() and declaring the iterative
-	looping integer "i" in the playSmithy function.
+	playSmithy: Changed the iterations to 4 so they player can draw 4 cards
+	when playing the Smithy
+	
+	playVillage: Changed the number of actions to +1 so the player only gets
+	to make 1 additional actions as opposed to two
+	
+	playGreatHall: Added an action for the player so the person who uses the card
+	gets an additional action
+	
+	playCouncil_Room: Added 4 to the Buy so that the player gets 3 more buys than
+	they are expecting
+
+
 */
->>>>>>> 10dda0265d82c7973e7a193fdc915b7b09a6fed0
