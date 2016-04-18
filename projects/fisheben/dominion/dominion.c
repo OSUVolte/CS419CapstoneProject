@@ -1212,7 +1212,7 @@ int myAdventurer(struct gameState *state, int currentPlayer ){
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		
 		//ADDED A LOGIC BUG HERE WHERE CARD DRAWN IS ASSIGNED TO GOLD
-		if (cardDrawn == copper || cardDrawn == silver || cardDrawn = gold)
+		if (cardDrawn == copper || cardDrawn == silver || (cardDrawn = gold))
 		  drawntreasure++;
 		else{
 		  temphand[z]=cardDrawn;
