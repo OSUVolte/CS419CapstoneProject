@@ -23,7 +23,7 @@ int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, trib
 
 						initializeGame(numPlayers, k, seed, &game);
 
-printf("-----------------Unit Test 2 ----------------------");	
+printf("-----------------Unit Test 2-1 ----------------------");	
 printf("----------------- gainCard() ----------------------");
 
   //Note: supplyPos is enum of choosen card

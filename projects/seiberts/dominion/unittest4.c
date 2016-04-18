@@ -26,7 +26,7 @@ int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, trib
 
 			initializeGame(numPlayers, k, seed, &game);
 
-printf("-----------------Unit Test 4 ----------------------");	
+printf("-----------------Unit Test 4-1 ----------------------");	
 printf("----------------- playCard() ----------------------");
 
   //check if it is the right phase

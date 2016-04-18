@@ -3,7 +3,7 @@
 //updateCoins()
 //Purpose: Test updateCoins by modifying the players hand
 //		   and modifying the values of the coins.
-//gcc unittest1.c dominion.c rngs.c -o unittest1
+//gcc unittest1.c dominion.c rngs.c -o unittest1 -lm
 
 
 
@@ -26,7 +26,7 @@ int main()
 				smithy, council_room};
 
 
-	printf("-----------------Unit Test 1 ----------------------\n");	
+	printf("-----------------Unit Test 1-1 ----------------------\n");	
 	printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
@@ -72,7 +72,7 @@ int main()
   }
   testState.coins = 0;
   
-  printf("-----------------Unit Test 2 ----------------------\n");	
+  printf("-----------------Unit Test 1-2 ----------------------\n");	
   printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
@@ -118,7 +118,7 @@ int main()
   }
   testState.coins = 0;
   
-  printf("-----------------Unit Test 3 ----------------------\n");	
+  printf("-----------------Unit Test 1-3 ----------------------\n");	
   printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
@@ -164,7 +164,7 @@ int main()
   }
   testState.coins = 0;
   
-  printf("-----------------Unit Test 4 ----------------------\n");	
+  printf("-----------------Unit Test 1-4 ----------------------\n");	
   printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
