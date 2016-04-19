@@ -1,7 +1,7 @@
 //Shawn Seibert
 //Unit test 4
 //playCard()
-
+//gcc unittest4.c dominion.c rngs.c -o unittest4 -lm
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -16,7 +16,7 @@ int handPos;
 int choice1;
 int choice2;
 int choice3;
-struct gameState *state; 
+struct gameState *state, *testState; 
 int card;
 int coin_bonus = 0; 		//tracks coins gain from actions
 int seed = 100;
@@ -24,11 +24,10 @@ int numPlayers = 2;
 int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
 			smithy, council_room};
 
-			initializeGame(numPlayers, k, seed, &game);
-
-printf("-----------------Unit Test 4-1 ----------------------");	
-printf("----------------- playCard() ----------------------");
-
+printf("-----------------Unit Test 4-1 ----------------------\n");	
+printf("----------------- playCard() ----------------------\n");
+printf("");
+initializeGame(numPlayers, k, seed, &testState);
   //check if it is the right phase
   if (state->phase != 0)
     {
