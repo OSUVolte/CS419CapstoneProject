@@ -29,7 +29,7 @@ int main() {
     printf("Testing whoseTurn():\n");
 
     if (VERBOSE)
-        printf("\tTest player 0 has first turn in 2-player game...\n");
+        printf("Test player 0 has first turn in 2-player game...\n");
     result = whoseTurn(&G);
     printf("\t\tPlayer %d turn, expected 0\n", result);
     assert(result == 0);

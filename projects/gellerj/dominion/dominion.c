@@ -1213,6 +1213,7 @@ int playVillage(struct gameState *state, int handPos) {
     drawCard(currentPlayer, state);
     state->numActions = 2;
     discardCard(handPos, currentPlayer, state, 0);
+    return 0;
 }
 
 int playSteward(struct gameState *state, int choice1, int choice2, int choice3, int handPos) {
@@ -1228,6 +1229,7 @@ int playSteward(struct gameState *state, int choice1, int choice2, int choice3, 
         discardCard(choice2, currentPlayer, state, 1);
         discardCard(choice3, currentPlayer, state, 1);
     }
+    return 0;
 }
 
 int playCouncil_Room(struct gameState *state, int handPos) {
@@ -1243,6 +1245,7 @@ int playCouncil_Room(struct gameState *state, int handPos) {
         }
     }
     discardCard(handPos, currentPlayer, state, 0);
+    return 0;
 }
 
 //end of dominion.c
