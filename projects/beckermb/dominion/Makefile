@@ -24,6 +24,9 @@ unitTest1: unittest1.c dominion.o rngs.o
 unitTest2: unittest2.c dominion.o rngs.o
 	gcc -o unitTest2 -g  unittest2.c dominion.o rngs.o $(CFLAGS) 
 
+unitTest3: unittest3.c dominion.o rngs.o
+	gcc -o unitTest3 -g  unittest3.c dominion.o rngs.o $(CFLAGS) 
+
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
@@ -42,4 +45,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe .DS_Store unitTest1 unitTest2 playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe .DS_Store unitTest1 unitTest2 unitTest3 playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
