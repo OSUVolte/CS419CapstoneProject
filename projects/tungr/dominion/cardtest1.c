@@ -15,6 +15,7 @@
 #include <stdlib.h> //free malloc
 
 int main(){
+	printf("testing testing!\n");
 	printf("cardtest1.c\n");
 	return 0;
 }

@@ -1,8 +1,24 @@
-unittest1.c
+---Testing whoseTurn function START---
+
+Initialize Game...
+Attempt to Set to Player 1's turn
+	SUCCESS
+Attempt to Set to player 2's turn
+	SUCCESS
+
+---Testing whoseTurn function COMPLETE---
+
+testing testing!
 unittest2.c
+testing testing!
 unittest3.c
+testing testing!
 unittest4.c
+testing testing!
 cardtest1.c
+testing testing!
 cardtest2.c
+testing testing!
 cardtest3.c
+testing testing!
 cardtest4.c
