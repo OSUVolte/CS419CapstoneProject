@@ -1,0 +1,183 @@
+---Testing initializeGame function START---
+
+Initialize Game...
+	Testing gameState for 2 players...
+		Function succeeded including all below
+			1. correct number of players
+			2. selected kingdom cards are different
+			3. deck is shuffled
+		Correct Number of Players
+		Correct # of Curse Cards
+		Correct # of Estate cards
+		Correct # of Duchy cards
+		Correct # of Province cards
+		Correct # copper cards
+		Correct # silver cards
+		Correct # gold cards
+		Correct Cards in currentPlayers Hand
+		Correct Cards in currentPlayers Deck
+
+Initialize Game...
+	Testing gameState for 3 players...
+		Function succeeded including all below
+			1. correct number of players
+			2. selected kingdom cards are different
+			3. deck is shuffled
+		Correct Number of Players
+		Correct # of Curse Cards
+		Correct # of Estate cards
+		Correct # of Duchy cards
+		Correct # of Province cards
+		Correct # copper cards
+		Correct # silver cards
+		Correct # gold cards
+		Correct Cards in currentPlayers Hand
+		Correct Cards in currentPlayers Deck
+
+Initialize Game...
+	Testing gameState for 4 players...
+		Function succeeded including all below
+			1. correct number of players
+			2. selected kingdom cards are different
+			3. deck is shuffled
+		Correct Number of Players
+		Correct # of Curse Cards
+		Correct # of Estate cards
+		Correct # of Duchy cards
+		Correct # of Province cards
+		Correct # copper cards
+		Correct # silver cards
+		Correct # gold cards
+		Correct Cards in currentPlayers Hand
+		Correct Cards in currentPlayers Deck
+
+
+---Testing initializeGame function COMPLETE---
+
+
+
+---Testing whoseTurn function START---
+
+Initialize Game...
+	Attempt to Set to Player 1's turn
+		PASS
+	Attempt to Set to player 2's turn
+		PASS
+
+---Testing whoseTurn function COMPLETE---
+
+
+
+---Testing getCost function START---
+
+Testing curse cost (should be 0)
+	PASS
+Testing estate cost (should be 2)
+	PASS
+Testing duchy cost (should be 5)
+	PASS
+Testing province cost (should be 8)
+	PASS
+Testing copper cost (should be 0)
+	PASS
+Testing silver cost (should be 3)
+	PASS
+Testing gold cost (should be 6)
+	PASS
+Testing adventurer cost (should be 6)
+	PASS
+Testing council_room cost (should be 5)
+	PASS
+Testing feast cost (should be 4)
+	PASS
+Testing gardens cost (should be 4)
+	PASS
+Testing mine cost (should be 5)
+	PASS
+Testing remodel cost (should be 4)
+	PASS
+Testing smithy cost (should be 4)
+	PASS
+Testing village cost (should be 3)
+	PASS
+Testing baron cost (should be 4)
+	PASS
+Testing great_hall cost (should be 3)
+	PASS
+Testing minion cost (should be 5)
+	PASS
+Testing steward cost (should be 3)
+	PASS
+Testing tribute cost (should be 5)
+	PASS
+Testing ambassador cost (should be 3)
+	PASS
+Testing cutpurse cost (should be 4)
+	PASS
+Testing embargo cost (should be 2)
+	PASS
+Testing outpost cost (should be 5)
+	PASS
+Testing salvager cost (should be 4)
+	PASS
+Testing sea_hag cost (should be 4)
+	PASS
+Testing treasure_map cost (should be 4)
+	PASS
+
+---Testing getCost function COMPLETE---
+
+
+
+---Testing compare function START---
+
+Testing [left < right]...
+	PASS
+Testing [left > right]...
+	PASS
+Testing [left = right]...
+	PASS
+
+---Testing compare function COMPLETE---
+
+
+
+---Testing Smithy Card START---
+
+Initialize Game...
+currentPlayer: 0
+Testing smithy cardEffect function return value...
+	PASS
+Testing smithy action...
+	PASS
+		Smithy gave 3 cards
+		current handCount: 7, previous handCount: 5
+	FAIL
+		3 cards not taken from currentPlayers Deck
+		current deckCount: 1, previous deckCount: 5
+	PASS
+		Other player's handCount has not changed
+	PASS
+		Other player's deckCount has not changed
+---Testing Smithy Card COMPLETE---
+
+
+
+---Testing Adventurer Card START---
+
+Initialize Game...
+Testing Adventurer cardEffect function return value...
+	PASS
+Testing playAdventurer function return value...
+	PASS
+Testing adventurer action...
+	PASS
+
+---Testing Adventurer Card COMPLETE---
+
+
+
+testing testing!
+cardtest3.c
+testing testing!
+cardtest4.c

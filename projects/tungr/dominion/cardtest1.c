@@ -20,38 +20,64 @@ int main(){
 	struct gameState G;
 
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
-	int flag;
+	int flag; //return state 
 	
-	int currentPlayer = whoseTurn(&G);
-	int baseHandCount = G.handCount[currentPlayer];
+	int currentPlayer;
+	int baseHandCount;
+	int baseDeckCount;
 	
 	printf("---Testing Smithy Card START---\n\n");
 	
 	printf("Initialize Game...\n");
-	flag = initializeGame(2, k, 2, &G);
+	flag = initializeGame(2, k, 4, &G);
 	
+	currentPlayer = G.whoseTurn;
+	printf("currentPlayer: %d\n", currentPlayer);
+	baseHandCount = G.handCount[currentPlayer];
+	baseDeckCount = G.deckCount[currentPlayer];
+
 	printf("Testing smithy cardEffect function return value...\n");
-	flag = cardEffect(smithy, copper, silver, gold, &G, 1, 0);
+	flag = cardEffect(smithy, 0, 0, 0, &G, 0, 0);
 	if(flag == -1){
 		printf("	PASS\n");
 	} else {
 		printf("	FAIL\n");
 	}
 	
-	printf("Testing playSmithy function return value...\n");
-	flag = playSmithy(&G, 1);
-	if(flag == 0){
-		printf("	PASS\n");
+	printf("Testing smithy action...\n");
+	if(G.handCount[currentPlayer] == baseHandCount + 2){ //draw 3 cards but put one back
+		printf("	PASS\n"); 
+		printf("		Smithy gave 3 cards\n");
+		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
+
 	} else {
 		printf("	FAIL\n");
+		printf("		Smithy did not give 3 cards\n");
+		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
 	}
-	
-	printf("Testing smithy action...\n");
-	if(G.handCount[currentPlayer] = baseHandCount + 3){
-		printf("	PASS\n\n"); 
+	if(G.deckCount[currentPlayer] == baseDeckCount - 2){ //give 3 cards but take one in 
+		printf("	PASS\n"); 
+		printf("		3 cards taken from currentPlayers Deck\n\n");
+		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);		
 	} else {
-		printf("	FAIL\n\n");
-		printf("		Wrong Number of Cards being added.\n\n");
+		printf("	FAIL\n");
+		printf("		3 cards not taken from currentPlayers Deck\n");
+		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);
+	}
+	//check other player
+	if(G.handCount[currentPlayer+1] == 0){
+		printf("	PASS\n");
+		printf("		Other player's handCount has not changed\n");
+	} else {
+		printf("	FAIL\n");
+		printf("		Other player's handCount has changed\n");
+	}
+	if(G.deckCount[currentPlayer+1] == 10){
+		printf("	PASS\n");
+		printf("		Other player's deckCount has not changed\n");
+	} else {
+		printf("	FAIL\n");
+		printf("		Other player's deckCount has changed\n\n");
 	}
 	
 	printf("---Testing Smithy Card COMPLETE---\n\n\n\n");
