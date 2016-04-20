@@ -47,7 +47,7 @@ int main()
   {
     if (testState.hand[player][i] == copper)
 	{
-	  testState.coins += 5;
+	  testState.coins += 1;
 	}
       else if (testState.hand[player][i] == silver)
 	{
@@ -62,7 +62,7 @@ int main()
   //add bonus
   testState.coins += bonus;
   printf("Copper coin total: %d\n", testState.coins);
-  if (testState.coins == 15)
+  if (testState.coins == 3)
   {
 	  printf("Test 1 passed.\n");
   }
@@ -97,7 +97,7 @@ int main()
 	}
       else if (testState.hand[player][i] == silver)
 	{
-	  testState.coins += 10;
+	  testState.coins += 2;
 	}
       else if (testState.hand[player][i] == gold)
 	{
@@ -108,7 +108,7 @@ int main()
   //add bonus
   testState.coins += bonus;
   printf("Silver coin total: %d\n", testState.coins);
-  if (testState.coins == 30)
+  if (testState.coins == 6)
   {
 	  printf("Test 2 passed.\n");
   }
@@ -147,14 +147,14 @@ int main()
 	}
       else if (testState.hand[player][i] == gold)
 	{
-	  testState.coins += 15;
+	  testState.coins += 3;
 	}	
   }	
 
   //add bonus
   testState.coins += bonus;
   printf("Gold coin total: %d\n", testState.coins);
-  if (testState.coins == 45)
+  if (testState.coins == 9)
   {
 	  printf("Test 3 passed.\n");
   }
