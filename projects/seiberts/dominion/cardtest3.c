@@ -1,30 +1,85 @@
 //Shawn Seibert
 //Card Test 3
 //councilRoomCard()
+//gcc unittest1.c dominion.c rngs.c -o unittest1 -lm
 
 
-int councilRoomCard(int handPos, int currentPlayer, struct gameState *state)
+#include "dominion.h"
+#include "dominion_helpers.h"
+#include "rngs.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
 {
+	int player = 1;
+	struct gameState state, testState;
+	int bonus;
+	int c1, c2, c3;
+	int seed = 100;
+	int numPlayers = 2;
+	int cardDrawCount = 0;
+	int checkBuyAmount = 0;
+	int oldBuyAmount = 0, newBuyAmount = 0;
+	int drawTotal = 3;
+	int loopCount = 0;
+	int currentPlayer = 1;
 	int i = 0;
-	     //+4 Cards
-      for (i = 0; i <= 4; i++)
+	int handPos = 0;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
+
+	printf("-------------------SMITHY CARD TEST---------------------\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
+	initializeGame(numPlayers, k, seed, &testState);
+	   //+4 Cards
+	printf("CHECKING CARD DRAW AMOUNT.\n");
+	for (i = 0; i <= 4; i++)
 	{
-	  drawCard(currentPlayer, state);
+		cardDrawCount++;
+		printf("Drawing card: %d\n", cardDrawCount);
+		drawCard(currentPlayer, &testState);
 	}
-			
-      //+1 Buy
-      state->numActions++;
-			
+	if (cardDrawCount == 4)
+	{
+		printf("Test Passed: LoopCount = %d  |   Draw total should be: 4\n", i);
+	}
+	else
+	{
+		printf("Test Failed: LoopCount = %d  |   Draw total should be: 4\n", i);
+	}
+		
+	printf("CHECK BUY AMOUNT:\n");
+	oldBuyAmount = testState.numBuys;
+	printf("Number of buys before: %d\n",oldBuyAmount);
+	oldBuyAmount = testState.numBuys;
+	//+1 Buy
+	testState.numActions++;
+	newBuyAmount = testState.numBuys;
+	printf("Number of buys after: %d\n",newBuyAmount);
+	if (newBuyAmount == (oldBuyAmount + 1))
+	{
+		printf("Test Passed: Buy amount increased by 1\n");
+	}
+	else
+	{
+		printf("Test Failed: Buy amount did not increased by 1\n");
+	}
+		
       //Each other player draws a card
-      for (i = 0; i < state->numPlayers; i++)
+      for (i = 0; i < testState.numPlayers; i++)
 	{
 	  if ( i != currentPlayer )
 	    {
-	      drawCard(i, state);
+	      drawCard(i, &testState);
 	    }
 	}
-			
+	printf("CHECKING DISCARD.\n");
+	//Get player hand count.
       //put played card in played card pile
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, &testState, 0);
+	  // check player hand count.
+	  //write if else statement.
 	  return 0;
 }

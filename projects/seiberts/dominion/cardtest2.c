@@ -25,7 +25,7 @@ int main()
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
 				smithy, council_room};
 
-	printf("-------------------SMITHY TEST---------------------\n");
+	printf("-------------------SMITHY CARD TEST---------------------\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	initializeGame(numPlayers, k, seed, &testState);
 	

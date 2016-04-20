@@ -1,6 +1,7 @@
 //Shawn Seibert
 //Card Test 4
 //MinionCard()
+//gcc unittest1.c dominion.c rngs.c -o unittest1 -lm
 
 minionCard(int choice1, int choice2, int choice3, int handPos, int currentPlayer, struct gameState *state)
 {
