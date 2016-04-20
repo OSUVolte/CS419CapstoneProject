@@ -6,7 +6,7 @@
 	(for example, you can create a test for updateCoins() method)
 	
 	Testing:
-		int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed, struct gameState *state);
+		int whoseTurn(struct gameState *state);
 */
 
 #include "dominion.h" 
@@ -14,27 +14,39 @@
 #include <stdio.h> //printf scanf
 
 int main(){
-	//create gameState object, hand, and flag for function state
-	struct gameState G;
+	//create gameState object, initialize player turns and hand
+	struct gameState G; 
+	int currentPlayer; 
+	int player1 = 0;
+	int player2 = 1;
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
-	int flag;
-	int numPlayers;
 	
-	printf("---Testing initializeGame function START---\n\n");
+	printf("---Testing whoseTurn function START---\n\n");
 	
-	for(numPlayers = 2; numPlayers <= MAX_PLAYERS; numPlayers++){
-		printf("Initialize Game...\n");
-		printf("	Testing %d players...\n", numPlayers);
-		flag = initializeGame(2, k, 4, &G);
-		if (flag == 0){
-			printf("		SUCCESS\n");
-		}
-		else{
-			printf("		FAILURE\n");	
-		}		
+	printf("Initialize Game...\n");
+	initializeGame(2, k, 4, &G); 
+	
+	printf("	Attempt to Set to Player 1's turn\n");
+	G.whoseTurn = player1;
+	currentPlayer = whoseTurn(&G);
+	if(currentPlayer == 0){
+		printf("		PASS\n");
+	}	
+	else{
+		printf("		FAIL\n");
+	}
+	
+	printf("	Attempt to Set to player 2's turn\n");
+	G.whoseTurn = player2;
+	currentPlayer = whoseTurn(&G);
+	if(currentPlayer == 1){
+		printf("		PASS\n\n");
+	}	
+	else{
+		printf("		FAIL\n\n");
 	}
 
-	printf("\n---Testing initializeGame function COMPLETE---\n\n");
+	printf("---Testing whoseTurn function COMPLETE---\n\n\n\n");
 	
 	return 0;
 }
