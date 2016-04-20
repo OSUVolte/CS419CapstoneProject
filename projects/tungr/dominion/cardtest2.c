@@ -24,38 +24,37 @@ int main(){
 	struct gameState G;
 
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
-	int flag;
 	
-	int currentPlayer = whoseTurn(&G);
-	int baseHandCount = G.handCount[currentPlayer];
+	int flag;
+	int currentPlayer; 
+	int baseHandCount;
+	int baseDeckCount;	
 	
 	printf("---Testing Adventurer Card START---\n\n");
 	
 	printf("Initialize Game...\n");
-	flag = initializeGame(2, k, 2, &G);
+	initializeGame(2, k, 4, &G);	
 	
-	printf("Testing Adventurer cardEffect function return value...\n");
-	flag = cardEffect(adventurer, copper, silver, gold, &G, 1, 0);
+	currentPlayer = G.whoseTurn;
+	baseHandCount = G.handCount[currentPlayer];
+	baseDeckCount = G.deckCount[currentPlayer];
+	
+	printf("currentPlayer: %d\n", currentPlayer);
+	printf("baseHandCount: %d\n", baseHandCount);
+	printf("baseDeckCount: %d\n", baseDeckCount);
+
+	//check for function execution
+	printf("Testing adventurer cardEffect function return value...\n");
+	flag = cardEffect(adventurer, 0, 0, 0, &G, 0, 0);
 	if(flag == -1){
 		printf("	PASS\n");
 	} else {
 		printf("	FAIL\n");
-	}
+	}	
 	
-	printf("Testing playAdventurer function return value...\n");
-	flag = playAdventurer(&G);
-	if(flag == 0){
-		printf("	PASS\n");
-	} else {
-		printf("	FAIL\n");
-	}
-	printf("Testing adventurer action...\n");
-	if(G.handCount[currentPlayer] = baseHandCount + 2){
-		printf("	PASS\n\n"); 
-	} else {
-		printf("	FAIL\n\n");
-		printf("		Wrong Number of Cards being added.\n\n");
-	}
+	printf("currentPlayer: %d\n", currentPlayer);
+	printf("baseHandCount: %d\n", G.handCount[currentPlayer]);
+	printf("baseDeckCount: %d\n", G.deckCount[currentPlayer]);
 	
 	printf("---Testing Adventurer Card COMPLETE---\n\n\n\n");
 	return 0;

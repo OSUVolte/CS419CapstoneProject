@@ -145,7 +145,6 @@ Testing [left = right]...
 ---Testing Smithy Card START---
 
 Initialize Game...
-currentPlayer: 0
 Testing smithy cardEffect function return value...
 	PASS
 Testing smithy action...
@@ -159,6 +158,11 @@ Testing smithy action...
 		Other player's handCount has not changed
 	PASS
 		Other player's deckCount has not changed
+	PASS
+		no state change to victory card piles
+	PASS
+		no state change to kingdom card piles
+
 ---Testing Smithy Card COMPLETE---
 
 
@@ -166,13 +170,34 @@ Testing smithy action...
 ---Testing Adventurer Card START---
 
 Initialize Game...
-Testing Adventurer cardEffect function return value...
+Card: 4
+Card: 1
+Card: 4
+Card: 1
+Card: 4
+Card: 0
+Card: 0
+Card: 0
+Card: 0
+Card: 0
+currentPlayer: 0
+baseHandCount: 5
+baseDeckCount: 5
+Testing adventurer cardEffect function return value...
 	PASS
-Testing playAdventurer function return value...
-	PASS
-Testing adventurer action...
-	PASS
-
+currentPlayer: 0
+baseHandCount: 9
+baseDeckCount: 0
+Card: 1
+Card: 1
+Card: 4
+Card: 1
+Card: 4
+Card: 4
+Card: 4
+Card: 4
+Card: 4
+Card: -1
 ---Testing Adventurer Card COMPLETE---
 
 
