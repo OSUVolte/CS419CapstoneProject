@@ -34,13 +34,12 @@ int main() {
 
     printf("Testing SMITHY...\n");
 
-
-
     // simulate a Smithy being played
     cardEffect(smithy, c1, c2, c3, &G2, handPos, &bonus);
 
     printf("\nTest that hand count is incremented by 2 (+3 new cards, -1 existing smithy)...\n");
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1], G2.handCount[player1]);
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
     // make sure the new hand count is +2. three cards should be gained and the smithy should
     // be discarded for a net gain of two cards.
     if (G2.handCount[player1] == G1.handCount[player1] + 2) {

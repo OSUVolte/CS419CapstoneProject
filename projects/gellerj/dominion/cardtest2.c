@@ -59,9 +59,25 @@ int main() {
     }
 
     printf("\nCheck that hand count is incremented by 2 (+2 new treasure cards)...\n");
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1], G2.handCount[player1]);
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
     // make sure the new hand count is +2. two new treasure cards should be gained.
     if (G2.handCount[player1] == G1.handCount[player1] + 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    // ensure new cards came from player 1's deck
+    printf("\nCheck new treasure cards came from player 1's deck...");
+    int diffSupplies[MAX_DECK];
+    diffDeckSupply(&G1, &G2, player1, diffSupplies);
+    int copperDiff = diffSupplies[copper];
+    int silverDiff = diffSupplies[silver];
+    int goldDiff = diffSupplies[gold];
+    int netDiff = copperDiff + silverDiff + goldDiff;
+    printf("\nNet difference in deck treasure card supply is %d, expected 2...", netDiff);
+    if (netDiff == 2) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
@@ -83,20 +99,6 @@ int main() {
         printf("FAILED.\n");
     }
 
-    // ensure new cards came from player 1's deck
-    printf("\nCheck new cards came from player 1's deck...");
-    int diffSupplies[MAX_DECK];
-    diffDeckSupply(&G1, &G2, player1, diffSupplies);
-    int copperDiff = diffSupplies[copper];
-    int silverDiff = diffSupplies[silver];
-    int goldDiff = diffSupplies[gold];
-
-    if (copperDiff + silverDiff + goldDiff == 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
     // ensure kingdom pile was not modified
     printf("\nCheck kingdom pile is untouched...");
     if (kingdomPileIsUntouched(&G1, &G2) == 1) {
@@ -112,8 +114,4 @@ int main() {
     } else {
         printf("FAILED.\n");
     }
-
-
-
-
 }

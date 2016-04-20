@@ -14,5 +14,6 @@ int deckWasShuffled(struct gameState *before, struct gameState *after, int playe
 void diffHand(struct gameState *before, struct gameState *after, int player, int diffCards[MAX_HAND]);
 int checkHandCard(struct gameState *game, int player, int position, int card);
 void diffDeckSupply(struct gameState *before, struct gameState *after, int player, int supplyDiffs[MAX_DECK]);
+int countHandSupply(struct gameState *game, int player, int card);
 
 #endif //DOMINION_TESTKIT_H

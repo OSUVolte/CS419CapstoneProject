@@ -527,6 +527,7 @@ int drawCard(int player, struct gameState *state) {
             printf("Current hand count: %d\n", count);
         }
 
+        // Take the last card from the deck and place it in the last position of the hand.
         deckCounter = state->deckCount[player];//Create holder for the deck count
         state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
         state->deckCount[player]--;
