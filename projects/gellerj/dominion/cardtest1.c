@@ -18,8 +18,10 @@ int main() {
     int kingdomCards[10] = {
             adventurer,
             gardens,
-            embargo, village,
-            minion, mine,
+            embargo,
+            village,
+            minion,
+            mine,
             cutpurse,
             sea_hag,
             tribute,
@@ -32,13 +34,13 @@ int main() {
 
     printf("Testing SMITHY...\n");
 
-    printf("\nTest that hand count is incremented by 2 (+3 new cards, -1 existing smithy)...\n");
+
 
     // simulate a Smithy being played
     cardEffect(smithy, c1, c2, c3, &G2, handPos, &bonus);
 
+    printf("\nTest that hand count is incremented by 2 (+3 new cards, -1 existing smithy)...\n");
     printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1], G2.handCount[player1]);
-
     // make sure the new hand count is +2. three cards should be gained and the smithy should
     // be discarded for a net gain of two cards.
     if (G2.handCount[player1] == G1.handCount[player1] + 2) {
@@ -88,13 +90,12 @@ int main() {
         printf("FAILED.\n");
     }
 
-    // ensure card was added to played pile
+    // ensure card was last card played
     printf("\nCheck smithy card was played...");
-    if (playedCardsWasIncremented(&G1, &G2, 1) == 1) {
+    if (cardWasPlayed(&G2, smithy, G2.playedCardCount) == 1) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
     }
-
 
 }
