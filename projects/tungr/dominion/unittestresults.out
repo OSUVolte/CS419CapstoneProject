@@ -149,11 +149,12 @@ Testing smithy cardEffect function return value...
 	PASS
 Testing smithy action...
 	PASS
-		Smithy gave 3 cards
+		Player received 3 new cards
 		current handCount: 7, previous handCount: 5
 	FAIL
-		3 cards not taken from currentPlayers Deck
+		exactly 3 cards not taken from the deck
 		current deckCount: 1, previous deckCount: 5
+		cards in discard pile: 0
 	PASS
 		Other player's handCount has not changed
 	PASS
@@ -170,39 +171,56 @@ Testing smithy action...
 ---Testing Adventurer Card START---
 
 Initialize Game...
-Card: 4
-Card: 1
-Card: 4
-Card: 1
-Card: 4
-Card: 0
-Card: 0
-Card: 0
-Card: 0
-Card: 0
-currentPlayer: 0
-baseHandCount: 5
-baseDeckCount: 5
 Testing adventurer cardEffect function return value...
 	PASS
-currentPlayer: 0
-baseHandCount: 9
-baseDeckCount: 0
-Card: 1
-Card: 1
-Card: 4
-Card: 1
-Card: 4
-Card: 4
-Card: 4
-Card: 4
-Card: 4
-Card: -1
+Testing Adventurer action...
+	FAIL
+		Player did not receive just 2 cards
+		current handCount: 9, previous handCount: 5
+	FAIL
+		exactly 2 cards not taken from currentPlayers Deck
+		current deckCount: 0, previous deckCount: 5
+		cards in discard pile: 0
+	PASS
+		Other player's handCount has not changed
+	PASS
+		Other player's deckCount has not changed
+	PASS
+		no state change to victory card piles
+	PASS
+		no state change to kingdom card piles
+
 ---Testing Adventurer Card COMPLETE---
 
 
 
-testing testing!
-cardtest3.c
+---Testing great_hall Card START---
+
+Initialize Game...
+Testing great_hall cardEffect function return value...
+	FAIL
+Testing great_hall action...
+	PASS
+		Player received just 1 card
+		current handCount: 5, previous handCount: 5
+	PASS
+		exactly 1 card taken from currentPlayers Deck
+		current deckCount: 4, previous deckCount: 5
+	PASS
+		Actions increased by 1
+		current actions: 2, previous actions: 1
+	PASS
+		Other player's handCount has not changed
+	PASS
+		Other player's deckCount has not changed
+	PASS
+		no state change to victory card piles
+	PASS
+		no state change to kingdom card piles
+
+---Testing great_hall Card COMPLETE---
+
+
+
 testing testing!
 cardtest4.c

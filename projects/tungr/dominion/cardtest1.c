@@ -47,28 +47,30 @@ int main(){
 	} else {
 		printf("	FAIL\n");
 	}
+	
 	//check smithy effect correctness
 	printf("Testing smithy action...\n");
 	//check number of cards received from currentPlayer
 	if(G.handCount[currentPlayer] == baseHandCount + 2){ //draw 3 cards but put one back
 		printf("	PASS\n"); 
-		printf("		Smithy gave 3 cards\n");
+		printf("		Player received 3 new cards\n");
 		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
 
 	} else {
 		printf("	FAIL\n");
-		printf("		Smithy did not give 3 cards\n");
+		printf("		Player does not receive 3 new cards\n");
 		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
 	}
 	//check number of cards given from players deck 
-	if(G.deckCount[currentPlayer] == baseDeckCount - 2){ //give 3 cards but take one in 
+	if(G.deckCount[currentPlayer] == baseDeckCount - 3){ //give 3 cards but take one in 
 		printf("	PASS\n"); 
-		printf("		3 cards taken from currentPlayers Deck\n\n");
+		printf("		exactly 3 cards were taken from the deck\n");
 		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);		
 	} else {
 		printf("	FAIL\n");
-		printf("		3 cards not taken from currentPlayers Deck\n");
+		printf("		exactly 3 cards not taken from the deck\n");
 		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);
+		printf("		cards in discard pile: %d\n", G.discardCount[currentPlayer]);
 	}
 	//check other player state change 
 	if(G.handCount[currentPlayer+1] == 0){
