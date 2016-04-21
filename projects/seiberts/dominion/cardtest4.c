@@ -46,8 +46,7 @@ int main()
 	for (i = 0; i <= 3; i++) 
 	{
 		loopCount++;
-		printf("Drawing card: %d\n", loopCount);
-	    drawCard(currentPlayer, &testState);
+		drawCard(currentPlayer, &testState);
 	}
 	
 	//+1 action

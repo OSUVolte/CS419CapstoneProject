@@ -125,10 +125,6 @@ Lines executed:93.62% of 47
 Creating 'cardtest3.c.gcov'
 
 -------------------MINION CARD TEST---------------------
-Drawing card: 1
-Drawing card: 2
-Drawing card: 3
-Drawing card: 4
 CHECKING INCREASE IN ACTIONS.
 Previous number of Actions 1
 Increased number of Actions 1
@@ -161,7 +157,7 @@ Number of cards added: 3
 Number of cards added: 4
 Test failed: Incorrect number of cards added.
 File 'cardtest4.c'
-Lines executed:92.94% of 85
+Lines executed:92.86% of 84
 Creating 'cardtest4.c.gcov'
 
 File 'dominion.c'
