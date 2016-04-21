@@ -11,7 +11,7 @@
         -:    6:#include <stdlib.h>
         -:    7:
         1:    8:int main(){
-        -:    9:	int effect, handCount;
+        -:    9:	int effect, handCountShouldBe;
         -:   10:	struct gameState game;	
         1:   11:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   12:    
@@ -19,18 +19,18 @@
         -:   14://create game
         -:   15://4 players, cards, seed, 
         1:   16:	initializeGame(4, k, 10, &game);
-        1:   17:	handCount = game.handCount[0] + 2;
+        1:   17:	handCountShouldBe = game.handCount[0] + 2;
         1:   18:	printf("Current Hand: %d \n", game.handCount[0]);	
         -:   19://line 646 dominion.c
         -:   20://pass card (smithy since we are testing it), choice1-3, struct gameState, the handPos and the bonus (which we have none yet)
         1:   21:	effect = cardEffect(smithy, 0, 0, 0, &game, 0, 0);
         1:   22:	printf("\nSmithy played for first player. \n\n");
-        1:   23:	if(game.handCount[0] != handCount)
+        1:   23:	if(game.handCount[0] != handCountShouldBe)
         -:   24:    {
-        1:   25:		printf("error: Hands don't match. test: %d. returned: %d \n", handCount, game.handCount[0]);
+    #####:   25:		printf("error: Hands don't match. Hand Should be: %d. returned: %d \n", handCountShouldBe, game.handCount[0]);
         -:   26:	}
         -:   27:	else{
-    #####:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
+        1:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
         -:   29:	}
         1:   30:	printf("\nunit Test: Smithy test successful \n");
         1:   31:return 0;

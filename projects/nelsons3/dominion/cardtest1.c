@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int main(){
-	int effect, handCount;
+	int effect, handCountShouldBe;
 	struct gameState game;	
 	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     
@@ -14,15 +14,15 @@ int main(){
 //create game
 //4 players, cards, seed, 
 	initializeGame(4, k, 10, &game);
-	handCount = game.handCount[0] + 2;
+	handCountShouldBe = game.handCount[0] + 2;
 	printf("Current Hand: %d \n", game.handCount[0]);	
 //line 646 dominion.c
 //pass card (smithy since we are testing it), choice1-3, struct gameState, the handPos and the bonus (which we have none yet)
 	effect = cardEffect(smithy, 0, 0, 0, &game, 0, 0);
 	printf("\nSmithy played for first player. \n\n");
-	if(game.handCount[0] != handCount)
+	if(game.handCount[0] != handCountShouldBe)
     {
-		printf("error: Hands don't match. test: %d. returned: %d \n", handCount, game.handCount[0]);
+		printf("error: Hands don't match. Hand Should be: %d. returned: %d \n", handCountShouldBe, game.handCount[0]);
 	}
 	else{
 		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);

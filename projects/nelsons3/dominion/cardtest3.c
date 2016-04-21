@@ -7,24 +7,18 @@
 #include <assert.h>
 
 int main(){
-	int i, r;
-
-	struct gameState state;
-	
+	int counter, effectReturn;
+	struct gameState game;
 	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
 	
 	printf("\n\nRunning Unit Test: Gardens \n");
+	for(counter = 0; counter < 5; counter++){
 	
-	for(i = 0; i < 5; i++){
-	
-		initializeGame(i, k, 10, &state);
-		r = cardEffect(gardens, 0, 0, 0, &state, 0, 0);
-		assert(r == -1);
+		initializeGame(counter, k, 10, &game);
+		effectReturn = cardEffect(gardens, 0, 0, 0, &game, 0, 0);
+		assert(effectReturn == -1);
 	}
-	
 	printf("\nCard function properly returned -1. \n");
 	printf("\nUnit Test: Gardens complete. \n");
-	
-	return 0;
-
+return 0;
 }

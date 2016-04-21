@@ -237,7 +237,8 @@ Current Hand: 5
 
 Smithy played for first player. 
 
-error: Hands don't match. test: 7. returned: 6 
+Hand Count: 7 
+test successful: Card properly drawn.
 
 unit Test: Smithy test successful 
 File 'cardtest1.c'
@@ -257,7 +258,7 @@ Creating 'cardtest1.c.gcov'
         -:    6:#include <stdlib.h>
         -:    7:
         1:    8:int main(){
-        -:    9:	int effect, handCount;
+        -:    9:	int effect, handCountShouldBe;
         -:   10:	struct gameState game;	
         1:   11:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   12:    
@@ -265,18 +266,18 @@ Creating 'cardtest1.c.gcov'
         -:   14://create game
         -:   15://4 players, cards, seed, 
         1:   16:	initializeGame(4, k, 10, &game);
-        1:   17:	handCount = game.handCount[0] + 2;
+        1:   17:	handCountShouldBe = game.handCount[0] + 2;
         1:   18:	printf("Current Hand: %d \n", game.handCount[0]);	
         -:   19://line 646 dominion.c
         -:   20://pass card (smithy since we are testing it), choice1-3, struct gameState, the handPos and the bonus (which we have none yet)
         1:   21:	effect = cardEffect(smithy, 0, 0, 0, &game, 0, 0);
         1:   22:	printf("\nSmithy played for first player. \n\n");
-        1:   23:	if(game.handCount[0] != handCount)
+        1:   23:	if(game.handCount[0] != handCountShouldBe)
         -:   24:    {
-        1:   25:		printf("error: Hands don't match. test: %d. returned: %d \n", handCount, game.handCount[0]);
+    #####:   25:		printf("error: Hands don't match. Hand Should be: %d. returned: %d \n", handCountShouldBe, game.handCount[0]);
         -:   26:	}
         -:   27:	else{
-    #####:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
+        1:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
         -:   29:	}
         1:   30:	printf("\nunit Test: Smithy test successful \n");
         1:   31:return 0;
@@ -352,30 +353,24 @@ Creating 'cardtest3.c.gcov'
         -:    7:#include <assert.h>
         -:    8:
         1:    9:int main(){
-        -:   10:	int i, r;
-        -:   11:
-        -:   12:	struct gameState state;
+        -:   10:	int counter, effectReturn;
+        -:   11:	struct gameState game;
+        1:   12:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   13:	
-        1:   14:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-        -:   15:	
-        1:   16:	printf("\n\nRunning Unit Test: Gardens \n");
-        -:   17:	
-        6:   18:	for(i = 0; i < 5; i++){
-        -:   19:	
-        5:   20:		initializeGame(i, k, 10, &state);
-        5:   21:		r = cardEffect(gardens, 0, 0, 0, &state, 0, 0);
-        5:   22:		assert(r == -1);
-        -:   23:	}
-        -:   24:	
-        1:   25:	printf("\nCard function properly returned -1. \n");
-        1:   26:	printf("\nUnit Test: Gardens complete. \n");
-        -:   27:	
-        1:   28:	return 0;
-        -:   29:
-        -:   30:}
+        1:   14:	printf("\n\nRunning Unit Test: Gardens \n");
+        6:   15:	for(counter = 0; counter < 5; counter++){
+        -:   16:	
+        5:   17:		initializeGame(counter, k, 10, &game);
+        5:   18:		effectReturn = cardEffect(gardens, 0, 0, 0, &game, 0, 0);
+        5:   19:		assert(effectReturn == -1);
+        -:   20:	}
+        1:   21:	printf("\nCard function properly returned -1. \n");
+        1:   22:	printf("\nUnit Test: Gardens complete. \n");
+        1:   23:return 0;
+        -:   24:}
 
 testing council_room_card
-hand count: 5, After card played: 7 (council room should increase the players hand by 4)
+hand count: 5, After card played: 8 (council room should increase the players hand by 4)
 number of buys: 1, After card played number of buys: 2 (card increases buys by 1)
 Player 2's amount of cards: 0, After player one plays council room:  1 (new should be 1 more)
 
