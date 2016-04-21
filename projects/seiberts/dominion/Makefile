@@ -66,27 +66,35 @@ run:
 	echo "----------UNIT TEST 1-------------"
 	./unittest1 &> unittestresults.out
 	gcov unittest1.c >> unittestresults.out
+	gcov -b unittest1.c >> unittestresults.out
 	echo "----------UNIT TEST 2-------------"
 	./unittest2 >> unittestresults.out
 	gcov unittest2.c >> unittestresults.out
+	gcov -b unittest2.c >> unittestresults.out
 	echo "----------UNIT TEST 3-------------"
 	./unittest3 >> unittestresults.out
 	gcov unittest3.c >> unittestresults.out
+	gcov -b unittest3.c >> unittestresults.out
 	echo "----------UNIT TEST 4-------------"
 	./unittest4 >> unittestresults.out
 	gcov unittest4.c >> unittestresults.out
+	gcov -b unittest4.c >> unittestresults.out
 	echo "----------CARD TEST 1-------------"
 	./cardtest1 >> unittestresults.out
 	gcov cardtest1.c >> unittestresults.out
+	gcov -b cardtest1.c >> unittestresults.out
 	echo "----------CARD TEST 2-------------"
 	./cardtest2 >> unittestresults.out
 	gcov cardtest2.c >> unittestresults.out
+	gcov -b cardtest2.c >> unittestresults.out
 	echo "----------CARD TEST 3-------------"
 	./cardtest3 >> unittestresults.out
 	gcov cardtest3.c >> unittestresults.out
+	gcov -b cardtest3.c >> unittestresults.out
 	echo "----------CARD TEST 4-------------"
 	./cardtest4 >> unittestresults.out
 	gcov cardtest4.c >> unittestresults.out
+	gcov -b cardtest4.c >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
