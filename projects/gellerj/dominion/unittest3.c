@@ -5,50 +5,109 @@
 #include <assert.h>
 #include "rngs.h"
 
-#define VERBOSE 1
-
 int main() {
-    struct gameState G;
-    int players = 2;
+    struct gameState G1, G2;
+    int numPlayers = 2;
     int seed = 1;
-    int gameOver = 0;
+    int player1 = 0;
+    int player2 = 1;
+    int bonus = 0;
+    int handPos = 0;
+    int c1, c2, c3 = 0;
     int result = -1;
     int kingdomCards[10] = {
             adventurer,
             gardens,
-            embargo, village,
-            minion, mine,
+            embargo,
+            village,
+            minion,
+            mine,
             cutpurse,
             sea_hag,
             tribute,
             smithy
     };
 
-    initializeGame(players, kingdomCards, seed, &G);
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
     printf("Testing whoseTurn():\n");
 
-    if (VERBOSE)
-        printf("Test player 0 has first turn in 2-player game...\n");
-    result = whoseTurn(&G);
-    printf("\t\tPlayer %d turn, expected 0\n", result);
-    assert(result == 0);
+    printf("\nTest player 1 has first turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-    endTurn(&G);
+    endTurn(&G2);
 
-    if (VERBOSE)
-        printf("\tTest player 1 has second turn in 2-player game...\n");
-    result = whoseTurn(&G);
-    printf("\t\tPlayer %d turn, expected 1\n", result);
-    assert(result == 1);
+    printf("\nTest player 1 has second turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 1...", result);
+    if (result == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-    endTurn(&G);
+    endTurn(&G2);
 
-    if (VERBOSE)
-        printf("\tTest player 0 has third turn in 2-player game...\n");
-    result = whoseTurn(&G);
-    printf("\t\tPlayer %d turn, expected 0\n", result);
-    assert(result == 0);
+    printf("\nTest player 2 has third turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-    printf("All tests passed.\n");
+    initializeGame(3, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest player 1 has first turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 2 has second turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 1...", result);
+    if (result == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 3 has third turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 2...", result);
+    if (result == 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 1 has fourth turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+
 }
