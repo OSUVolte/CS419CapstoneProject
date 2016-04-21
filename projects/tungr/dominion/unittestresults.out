@@ -146,7 +146,7 @@ Testing [left = right]...
 
 Initialize Game...
 Testing smithy cardEffect function return value...
-	PASS
+	FAIL
 Testing smithy action...
 	PASS
 		Player received 3 new cards
@@ -172,7 +172,7 @@ Testing smithy action...
 
 Initialize Game...
 Testing adventurer cardEffect function return value...
-	PASS
+	FAIL
 Testing Adventurer action...
 	FAIL
 		Player did not receive just 2 cards
@@ -198,7 +198,7 @@ Testing Adventurer action...
 
 Initialize Game...
 Testing great_hall cardEffect function return value...
-	FAIL
+	PASS
 Testing great_hall action...
 	PASS
 		Player received just 1 card
@@ -222,5 +222,31 @@ Testing great_hall action...
 
 
 
-testing testing!
-cardtest4.c
+---Testing gardens Card START---
+
+Initialize Game...
+Testing gardens cardEffect function return value...
+	PASS
+Testing gardens action...
+	PASS
+		No change in player hand count
+		current handCount: 5, previous handCount: 5
+	PASS
+		No change in currentPlayers Deck
+		current deckCount: 5, previous deckCount: 5
+	PASS
+		Actions unchanged
+		current actions: 1, previous actions: 1
+	PASS
+		Other player's handCount has not changed
+	PASS
+		Other player's deckCount has not changed
+	PASS
+		no state change to victory card piles
+	PASS
+		no state change to kingdom card piles
+
+---Testing gardens Card COMPLETE---
+
+
+

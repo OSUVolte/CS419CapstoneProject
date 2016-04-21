@@ -44,7 +44,7 @@ int main(){
 	//check for function execution
 	printf("Testing great_hall cardEffect function return value...\n");
 	flag = cardEffect(great_hall, 0, 0, 0, &G, 0, 0);
-	if(flag == -1){
+	if(flag == 0){
 		printf("	PASS\n");
 	} else {
 		printf("	FAIL\n");

@@ -6,7 +6,7 @@
 	(For example, create a test for smithy card.). It is mandatory to test smithy and adventurer card.
 
 	Testing:
-		adventurer card - bugs found lines 59 + 71
+		adventurer card - bugs found lines 59 + 71, 45 supposed to return 0
 		int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
 */
 
@@ -42,7 +42,7 @@ int main(){
 	//check for function execution
 	printf("Testing adventurer cardEffect function return value...\n");
 	flag = cardEffect(adventurer, 0, 0, 0, &G, 0, 0);
-	if(flag == -1){
+	if(flag == 0){
 		printf("	PASS\n");
 	} else {
 		printf("	FAIL\n");
