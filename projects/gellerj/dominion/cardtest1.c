@@ -90,7 +90,7 @@ int main() {
     }
 
     // ensure card was last card played
-    printf("\nCheck smithy card was played...");
+    printf("\nCheck smithy card was added to played pile...");
     if (cardWasPlayed(&G2, smithy, G2.playedCardCount) == 1) {
         printf("PASSED.\n");
     } else {

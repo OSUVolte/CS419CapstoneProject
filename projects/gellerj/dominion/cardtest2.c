@@ -114,4 +114,50 @@ int main() {
     } else {
         printf("FAILED.\n");
     }
+
+    printf("\nCheck that copper treasure cards are gained by adventurer...\n");
+    memcpy(&G2, &G1, sizeof(struct gameState));
+    for (int i = 0; i < G2.deckCount[player1]; i++) {
+        G2.deck[player1][i] = copper;
+    }
+    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
+    // make sure the new hand count is +2. two new treasure cards should be gained.
+    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    printf("\nCheck that silver treasure cards are gained by adventurer...\n");
+    memcpy(&G2, &G1, sizeof(struct gameState));
+    for (int i = 0; i < G2.deckCount[player1]; i++) {
+        G2.deck[player1][i] = silver;
+    }
+    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
+    // make sure the new hand count is +2. two new treasure cards should be gained.
+    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    printf("\nCheck that gold treasure cards are gained by adventurer...\n");
+    memcpy(&G2, &G1, sizeof(struct gameState));
+    for (int i = 0; i < G2.deckCount[player1]; i++) {
+        G2.deck[player1][i] = gold;
+    }
+    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
+    // make sure the new hand count is +2. two new treasure cards should be gained.
+    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
 }
