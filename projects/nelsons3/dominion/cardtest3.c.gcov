@@ -11,19 +11,30 @@
         -:    6:#include <stdlib.h>
         -:    7:#include <assert.h>
         -:    8:
+function main called 1 returned 100% blocks executed 92%
         1:    9:int main(){
         -:   10:	int counter, effectReturn;
         -:   11:	struct gameState game;
         1:   12:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   13:	
         1:   14:	printf("\n\nRunning Unit Test: Gardens \n");
+call    0 returned 100%
         6:   15:	for(counter = 0; counter < 5; counter++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
         -:   16:	
         5:   17:		initializeGame(counter, k, 10, &game);
+call    0 returned 100%
         5:   18:		effectReturn = cardEffect(gardens, 0, 0, 0, &game, 0, 0);
+call    0 returned 100%
         5:   19:		assert(effectReturn == -1);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
         -:   20:	}
         1:   21:	printf("\nCard function properly returned -1. \n");
+call    0 returned 100%
         1:   22:	printf("\nUnit Test: Gardens complete. \n");
+call    0 returned 100%
         1:   23:return 0;
         -:   24:}

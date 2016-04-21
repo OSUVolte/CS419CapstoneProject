@@ -9,6 +9,13 @@ File 'unittest1.c'
 Lines executed:100.00% of 10
 Creating 'unittest1.c.gcov'
 
+File 'unittest1.c'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+Calls executed:83.33% of 6
+Creating 'unittest1.c.gcov'
+
         -:    0:Source:unittest1.c
         -:    0:Graph:unittest1.gcno
         -:    0:Data:unittest1.gcda
@@ -23,21 +30,32 @@ Creating 'unittest1.c.gcov'
         -:    7:#include "dominion_helpers.h"
         -:    8:#include "rngs.h"
         -:    9:
+function main called 1 returned 100% blocks executed 92%
         1:   10:int main(int argc, char* argv[])
         -:   11:{
         -:   12:	int counter;
         1:   13:	printf("\n\nTest creation of new games.\n");
+call    0 returned 100%
         1:   14:	printf("only one will run at a time but 1000 will be created.\n");
+call    0 returned 100%
         1:   15:	printf("Unit test 1.\n");
+call    0 returned 100%
         -:   16:	//heres our simple test...create the game struct as shown on 
         -:   17:	//line 16 of dominion.c and then make sure the game actually exists!
      1001:   18:	for (counter = 0; counter < 1000; counter++) 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
         -:   19:	{
      1000:   20:		struct gameState *g = newGame();
+call    0 returned 100%
      1000:   21:		assert(g != NULL);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
      1000:   22:		free(g);
         -:   23:	}
         1:   24:	printf("\nunit Test 1 Passed \n");
+call    0 returned 100%
         1:   25:return 0;
         -:   26:}
 
@@ -1856,3 +1874,169 @@ Creating 'dominion.c.gcov'
         -: 1435:}
         -: 1436://end of dominion.c
         -: 1437:
+
+
+Test creation of new games.
+only one will run at a time but 1000 will be created.
+Unit test 1.
+
+unit Test 1 Passed 
+File 'unittest1.c'
+Lines executed:100.00% of 10
+Creating 'unittest1.c.gcov'
+
+File 'unittest1.c'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+Calls executed:83.33% of 6
+Creating 'unittest1.c.gcov'
+
+
+
+Whos turn test
+whose turn - player number: 2 
+whose turn - player number: 3 
+whose turn - player number: 4 
+
+Unit test 2 passed. 
+File 'unittest2.c'
+Lines executed:100.00% of 11
+Creating 'unittest2.c.gcov'
+
+File 'unittest2.c'
+Lines executed:100.00% of 11
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+Calls executed:71.43% of 7
+Creating 'unittest2.c.gcov'
+
+
+
+testing getCost() method.
+
+test estate points firstTest Estate points first
+Curse value passedestate value passedduchy value passedprovince value passed
+test monies next
+copper value passedsilver value passedgold value passed
+test playcards last
+adventurer value passedcouncil_room value passedfeast value passedgardens value passedmine value passedremodel value passedsmithy value passedvillage value passedbaron value passedgreat_hall value passedminion value passedsteward value passedtribute value passedambassador value passedcutpurse value passedembargo value passedsalvager value passedsea_hag value passedtreasure_map value passed
+Unit test 3 passed. 
+File 'unittest3.c'
+Lines executed:98.39% of 62
+Creating 'unittest3.c.gcov'
+
+File 'unittest3.c'
+Lines executed:98.39% of 62
+Branches executed:100.00% of 54
+Taken at least once:50.00% of 54
+Calls executed:98.33% of 60
+Creating 'unittest3.c.gcov'
+
+
+
+testing isGameOver
+game ends when all provinces are gone
+supply pile Win Condition properly returned as true 
+
+Unit test 4 passed. 
+File 'unittest4.c'
+Lines executed:81.25% of 16
+Creating 'unittest4.c.gcov'
+
+File 'unittest4.c'
+Lines executed:81.25% of 16
+Branches executed:80.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:70.00% of 10
+Creating 'unittest4.c.gcov'
+
+
+
+Running Unit Test: Smithy
+Current Hand: 5 
+
+Smithy played for first player. 
+
+Hand Count: 7 
+test successful: Card properly drawn.
+
+unit Test: Smithy test successful 
+File 'cardtest1.c'
+Lines executed:92.31% of 13
+Creating 'cardtest1.c.gcov'
+
+File 'cardtest1.c'
+Lines executed:92.31% of 13
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:87.50% of 8
+Creating 'cardtest1.c.gcov'
+
+
+
+Running Unit Test: Adventurer
+
+starting hand count Player: 5
+
+ending hand count Player: 9
+
+unit Test: Adventurer test successful 
+File 'cardtest2.c'
+Lines executed:100.00% of 12
+Creating 'cardtest2.c.gcov'
+
+File 'cardtest2.c'
+Lines executed:100.00% of 12
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:85.71% of 7
+Creating 'cardtest2.c.gcov'
+
+
+
+Running Unit Test: Gardens 
+
+Card function properly returned -1. 
+
+Unit Test: Gardens complete. 
+File 'cardtest3.c'
+Lines executed:100.00% of 10
+Creating 'cardtest3.c.gcov'
+
+File 'cardtest3.c'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+Calls executed:83.33% of 6
+Creating 'cardtest3.c.gcov'
+
+
+testing council_room_card
+hand count: 5, After card played: 8 (council room should increase the players hand by 4)
+number of buys: 1, After card played number of buys: 2 (card increases buys by 1)
+Player 2's amount of cards: 0, After player one plays council room:  1 (new should be 1 more)
+
+All tests passed.
+
+File 'cardtest4.c'
+Lines executed:100.00% of 11
+Creating 'cardtest4.c.gcov'
+
+File 'cardtest4.c'
+Lines executed:100.00% of 11
+No branches
+Calls executed:100.00% of 7
+Creating 'cardtest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.07% of 560
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.07% of 560
+Branches executed:40.53% of 417
+Taken at least once:30.22% of 417
+Calls executed:30.53% of 95
+Creating 'dominion.c.gcov'
+

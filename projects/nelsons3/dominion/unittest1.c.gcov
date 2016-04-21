@@ -12,20 +12,31 @@
         -:    7:#include "dominion_helpers.h"
         -:    8:#include "rngs.h"
         -:    9:
+function main called 1 returned 100% blocks executed 92%
         1:   10:int main(int argc, char* argv[])
         -:   11:{
         -:   12:	int counter;
         1:   13:	printf("\n\nTest creation of new games.\n");
+call    0 returned 100%
         1:   14:	printf("only one will run at a time but 1000 will be created.\n");
+call    0 returned 100%
         1:   15:	printf("Unit test 1.\n");
+call    0 returned 100%
         -:   16:	//heres our simple test...create the game struct as shown on 
         -:   17:	//line 16 of dominion.c and then make sure the game actually exists!
      1001:   18:	for (counter = 0; counter < 1000; counter++) 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
         -:   19:	{
      1000:   20:		struct gameState *g = newGame();
+call    0 returned 100%
      1000:   21:		assert(g != NULL);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
      1000:   22:		free(g);
         -:   23:	}
         1:   24:	printf("\nunit Test 1 Passed \n");
+call    0 returned 100%
         1:   25:return 0;
         -:   26:}

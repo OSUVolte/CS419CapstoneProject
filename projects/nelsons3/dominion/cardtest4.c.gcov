@@ -11,20 +11,28 @@
         -:    6:#include "rngs.h"
         -:    7:#include <stdlib.h>
         -:    8:
+function main called 1 returned 100% blocks executed 100%
         1:    9:int main() {
         1:   10:	printf("\ntesting council_room_card\n");
+call    0 returned 100%
         -:   11:	struct gameState game, afterCard;
         1:   12:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
         -:   13://create game
         -:   14://4 players, cards, seed, game struct
         1:   15:	initializeGame(2, k, 10, &game);
+call    0 returned 100%
         1:   16:	memcpy(&afterCard, &game, sizeof(struct gameState));
         1:   17:	playCouncil_Room(&afterCard, 1, 0);
+call    0 returned 100%
         -:   18:	
         1:   19:	printf("hand count: %d, After card played: %d (council room should increase the players hand by 4)\n", game.handCount[0], afterCard.handCount[0]);
+call    0 returned 100%
         1:   20:	printf("number of buys: %d, After card played number of buys: %d (card increases buys by 1)\n", game.numBuys, afterCard.numBuys);
+call    0 returned 100%
         1:   21:	printf("Player 2's amount of cards: %d, After player one plays council room:  %d (new should be 1 more)\n", game.handCount[1], afterCard.handCount[1]);
+call    0 returned 100%
         -:   22:
         1:   23:	printf("\nAll tests passed.\n\n");
+call    0 returned 100%
         1:   24:return 0;
         -:   25:}
