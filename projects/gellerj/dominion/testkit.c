@@ -56,7 +56,7 @@ int kingdomPileIsUntouched(struct gameState *before, struct gameState *after) {
 }
 
 int playedPileIsUntouched(struct gameState *before, struct gameState *after) {
-    int i = 0, card;
+    int i = 0;
     for (i = 0; i < after->playedCardCount; i++) {
         if (before->playedCards[i] != after->playedCards[i]) {
             return 0;
