@@ -642,7 +642,7 @@ int getCost(int cardNumber){
 }
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus){
-	printf("card effect\n");
+	//printf("card effect\n");
 	int i;
 	int j;
 	int k;
@@ -659,7 +659,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	if (nextPlayer > (state->numPlayers - 1)){
 		nextPlayer = 0;
 	}
-	printf("card %d\n", card);
+	//printf("card %d\n", card);
 	//uses switch to select card and perform actions
 	switch( card ) {
 		case adventurer:
@@ -672,10 +672,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			playFeast(state, choice1);
 			break;
 		case gardens:
-			printf("**Gardens Case**\n");
+			//printf("**Gardens Case**\n");
 			return -1;	
 		case mine:
-			printf("**Mine Case**\n");
+			//printf("**Mine Case**\n");
 			j = state->hand[currentPlayer][choice1];  //store card we will trash
 			if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold){
 				return -1;
@@ -700,7 +700,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			}
 			return 0;	
 		case remodel:
-			printf("**Remodel Case**\n");
+			//printf("**Remodel Case**\n");
 			j = state->hand[currentPlayer][choice1];  //store card we will trash
 
 			if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) ){
@@ -724,7 +724,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			playVillage(state, handPos);
 			break;
 		case baron:
-			printf("**Baron Case**\n");
+			//printf("**Baron Case**\n");
 			state->numBuys++;//Increase buys by 1!
 			if (choice1 > 0){//Boolean true or going to discard an estate
 				int p = 0;//Iterator for hand!
@@ -771,7 +771,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			}    
 			return 0;
 		case great_hall:
-			printf("**Great Hall Case**\n");
+			//printf("**Great Hall Case**\n");
 			//+1 Card
 			drawCard(currentPlayer, state);
 				
@@ -782,7 +782,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			discardCard(handPos, currentPlayer, state, 0);
 			return 0;
 		case minion:
-			printf("**Minion Case**\n");
+			//printf("**Minion Case**\n");
 			//+1 action
 			state->numActions++;			
 			//discard card from hand
@@ -819,7 +819,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case steward:
-			printf("**Steward Case**\n");
+			//printf("**Steward Case**\n");
 			if (choice1 == 1){
 				//+2 cards
 				drawCard(currentPlayer, state);
@@ -839,7 +839,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case tribute:
-			printf("**Tribute Case**\n");
+			//printf("**Tribute Case**\n");
 			if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
 				if (state->deckCount[nextPlayer] > 0){
 					tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
@@ -893,7 +893,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case ambassador:
-			printf("**amabssador**\n");
+			//printf("**amabssador**\n");
 			j = 0;		//used to check if player has enough cards to discard
 			if (choice2 > 2 || choice2 < 0){
 				return -1;				
@@ -935,7 +935,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case cutpurse:
-			printf("**cutpurse case**\n");
+			//printf("**cutpurse case**\n");
 			updateCoins(currentPlayer, state, 2);
 			for (i = 0; i < state->numPlayers; i++){
 				if (i != currentPlayer){
@@ -960,7 +960,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;	
 		
 		case embargo: 
-			printf("**Embargo Case**\n");
+			//printf("**Embargo Case**\n");
 			//+2 Coins
 			state->coins = state->coins + 2;	
 			//see if selected pile is in play
@@ -974,7 +974,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case outpost:
-			printf("**Outpost Case**\n");
+			//printf("**Outpost Case**\n");
 			//set outpost flag
 			state->outpostPlayed++;
 			//discard card
@@ -982,7 +982,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case salvager:
-			printf("**Salvager Case**\n");
+			//printf("**Salvager Case**\n");
 			//+1 buy
 			state->numBuys++;
 			if (choice1){
@@ -997,7 +997,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			return 0;
 		
 		case sea_hag:
-			printf("**Sea Hag Case**\n");
+			//printf("**Sea Hag Case**\n");
 			for (i = 0; i < state->numPlayers; i++){
 				if (i != currentPlayer){
 					state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    
@@ -1009,7 +1009,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 		
 		case treasure_map:
-			printf("**Treasure Map Case**\n");
+			//printf("**Treasure Map Case**\n");
 			//search hand for another treasure_map
 			index = -1;
 			for (i = 0; i < state->handCount[currentPlayer]; i++){
@@ -1038,7 +1038,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 }
 
 int playAdventurer(struct gameState *state){
-	printf("**Adventurer Case**\n");
+	//printf("**Adventurer Case**\n");
 	int currentPlayer = whoseTurn(state);
 	int temphand[MAX_HAND];// moved above the if statement
 	int drawntreasure=0;
@@ -1067,7 +1067,7 @@ int playAdventurer(struct gameState *state){
 }
 
 int playSmithy(struct gameState *state, int handPos){
-	printf("**Smithy Case**\n");
+	//printf("**Smithy Case**\n");
 	int currentPlayer = whoseTurn(state);
 	int i;
 	//+3 Cards
@@ -1081,7 +1081,7 @@ int playSmithy(struct gameState *state, int handPos){
 }
 
 int playVillage(struct gameState *state, int handPos){
-	printf("**Village Case**\n");
+	//printf("**Village Case**\n");
 	int currentPlayer = whoseTurn(state);
 	//+1 Card
 	drawCard(currentPlayer, state);
@@ -1095,7 +1095,7 @@ int playVillage(struct gameState *state, int handPos){
 }
 
 int playCouncil_Room(struct gameState *state, int handPos){
-	printf("**Council_Room Case**\n");
+	//printf("**Council_Room Case**\n");
 	
 	int i;
 	int currentPlayer = whoseTurn(state);
@@ -1117,7 +1117,7 @@ int playCouncil_Room(struct gameState *state, int handPos){
 }
 
 int playFeast(struct gameState *state, int choice1){
-	printf("**Feast Case**\n");
+	//printf("**Feast Case**\n");
 	
 	int i;
 	int x;
