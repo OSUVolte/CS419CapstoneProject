@@ -32,28 +32,29 @@ int main() {
     };
 
     initializeGame(numPlayers, kingdomCards, seed, &G1);
-    G1.hand[player1][handPos] = village;
+    G1.hand[player1][handPos] = great_hall;
     memcpy(&G2, &G1, sizeof(struct gameState));
 
-    printf("Testing VILLAGE...\n");
+    printf("Testing GREAT HALL...\n");
 
     // simulate a Adventurer being played
-    cardEffect(village, c1, c2, c3, &G2, handPos, &bonus);
+    cardEffect(great_hall, c1, c2, c3, &G2, handPos, &bonus);
 
-    // test action effect
-    printf("\nCheck number of actions is +2...\n");
-    printf("Num actions is %d, expected %d...", G2.numActions, G1.numActions + 2);
-    if (G2.numActions == (G1.numActions + 2)) {
+    printf("\nCheck that hand count is incremented by 0 (+1 new draw cards, -1 discard)...\n");
+    printf("Initial hand count was %d, new hand count is %d, expected 5...", G1.handCount[player1],
+           G2.handCount[player1]);
+    // make sure the new hand count is +0
+    if (G2.handCount[player1] == G1.handCount[player1]) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
     }
 
-    // test draw/discard count effects
-    printf("\nCheck that hand count remains the same (+1 new draw card, -1 discard)...\n");
-    printf("Initial hand count was %d, new hand count is %d, expected 5...", G1.handCount[player1],
-           G2.handCount[player1]);
-    if (G2.handCount[player1] == G1.handCount[player1]) {
+    printf("\nCheck number of actions was incremented by 1...\n");
+    printf("Initial action count was %d, new action count is %d, expected 2...", G1.numActions,
+           G2.numActions);
+    // make sure the new hand count is +0
+    if (G2.numActions == G1.numActions + 1) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
@@ -71,11 +72,11 @@ int main() {
         printf("FAILED.\n");
     }
 
-    // ensure village was discarded from hand
-    printf("\nCheck village was discarded from player's hand...");
-    int supplyBefore = countHandSupply(&G1, player1, village);
-    int supplyAfter = countHandSupply(&G2, player1, village);
-    printf("\nOld village supply count was %d, new count is %d, expected %d...", supplyBefore, supplyAfter, supplyBefore - 1);
+    // ensure great hall was discarded from hand
+    printf("\nCheck great hall was discarded from player's hand...\n");
+    int supplyBefore = countHandSupply(&G1, player1, great_hall);
+    int supplyAfter = countHandSupply(&G2, player1, great_hall);
+    printf("Great Hall supply count was %d, new count is %d, expected %d...", supplyBefore, supplyAfter, supplyBefore - 1);
     if (supplyAfter == (supplyBefore - 1)) {
         printf("PASSED.\n");
     } else {
