@@ -7,7 +7,6 @@
 #include "interface.h"
 #include "testkit.h"
 
-#define VERBOSE 1
 
 int main() {
     struct gameState G1, G2;
@@ -76,7 +75,8 @@ int main() {
     printf("\nCheck great hall was discarded from player's hand...\n");
     int supplyBefore = countHandSupply(&G1, player1, great_hall);
     int supplyAfter = countHandSupply(&G2, player1, great_hall);
-    printf("Great Hall supply count was %d, new count is %d, expected %d...", supplyBefore, supplyAfter, supplyBefore - 1);
+    printf("Great Hall supply count was %d, new count is %d, expected %d...", supplyBefore, supplyAfter,
+           supplyBefore - 1);
     if (supplyAfter == (supplyBefore - 1)) {
         printf("PASSED.\n");
     } else {

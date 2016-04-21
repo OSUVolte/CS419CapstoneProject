@@ -5,43 +5,113 @@
 #include <assert.h>
 #include "rngs.h"
 
-#define VERBOSE 1
-
 int main() {
-    struct gameState G;
-    int players = 2;
+    struct gameState G1, G2;
+    int numPlayers = 2;
     int seed = 1;
+    int player1 = 0;
+    int player2 = 1;
+    int bonus = 0;
+    int handPos = 0;
+    int c1, c2, c3 = 0;
     int gameOver = 0;
     int kingdomCards[10] = {
             adventurer,
             gardens,
-            embargo, village,
-            minion, mine,
+            embargo,
+            village,
+            minion,
+            mine,
             cutpurse,
             sea_hag,
             tribute,
             smithy
     };
 
-    initializeGame(players, kingdomCards, seed, &G);
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-    printf("Testing isGameOver():\n");
+    printf("Testing isGameOver()...\n");
 
-    if (VERBOSE) printf("\tTest game over when province supply equals zero...\n");
-    int supplyCount = G.supplyCount[province];      // save current supply count
-    G.supplyCount[province] = 0;                    // set province to supply to 0 (game over)
-    gameOver = isGameOver(&G);
-    if (VERBOSE) printf("\tGame over = %d, expected 1\n", gameOver);
-    assert(gameOver == 1);
+    printf("\nTest game over when province supply equals zero...\n");
+    G2.supplyCount[province] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 1...", gameOver);
+    if (gameOver == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-    if (VERBOSE) printf("\tTest game over when three supply pile counts equal zero...\n");
-    G.supplyCount[province] = supplyCount;          // restore supply count for new test case
-    G.supplyCount[0] = 0;                           // set three supply pile counts to zero (game over)
-    G.supplyCount[1] = 0;
-    G.supplyCount[2] = 0;
-    gameOver = isGameOver(&G);
-    if (VERBOSE) printf("\tGame over = %d, expected 1\n", gameOver);
-    assert(gameOver == 1);
+    // reset state for next test
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-    printf("All tests passed.\n");
+    printf("\nTest game NOT over when duchy supply equals zero...\n");
+    G2.supplyCount[duchy] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 0...", gameOver);
+    if (gameOver == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    // reset state for next test
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest game NOT over when estate supply equals zero...\n");
+    G2.supplyCount[estate] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 0...", gameOver);
+    if (gameOver == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    // reset state for next test
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest game NOT over when two supply pile counts equal zero...\n");
+    G2.supplyCount[0] = 0;
+    G2.supplyCount[1] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 0...", gameOver);
+    if (gameOver == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    // reset state for next test
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest game over when three supply pile counts equal zero...\n");
+    G2.supplyCount[0] = 0;
+    G2.supplyCount[1] = 0;
+    G2.supplyCount[2] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 1...", gameOver);
+    if (gameOver == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    // reset state for next test
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest game over when four supply pile counts equal zero...\n");
+    G2.supplyCount[0] = 0;
+    G2.supplyCount[1] = 0;
+    G2.supplyCount[2] = 0;
+    G2.supplyCount[3] = 0;
+    gameOver = isGameOver(&G2);
+    printf("Game over = %d, expected 1...", gameOver);
+    if (gameOver == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
 }
