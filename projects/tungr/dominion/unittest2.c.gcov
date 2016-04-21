@@ -27,48 +27,36 @@ function main called 1 returned 100% blocks executed 88%
         1:   21:	int player2 = 1;
         1:   22:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
         -:   23:	
-        1:   24:	printf("---Testing whoseTurn function START---\n\n");
-call    0 returned 100%
+        1:   24:	printf("---Testing whoseTurn function START---\n\n");				call    0 returned 100%
         -:   25:	
-        1:   26:	printf("Initialize Game...\n");
-call    0 returned 100%
-        1:   27:	initializeGame(2, k, 4, &G); 
-call    0 returned 100%
+        1:   26:	printf("Initialize Game...\n");										call    0 returned 100%
+        1:   27:	initializeGame(2, k, 4, &G); 										call    0 returned 100%
         -:   28:	
-        1:   29:	printf("	Attempt to Set to Player 1's turn\n");
-call    0 returned 100%
+        1:   29:	printf("	Attempt to Set to Player 1's turn\n");					call    0 returned 100%
         1:   30:	G.whoseTurn = player1;
-        1:   31:	currentPlayer = whoseTurn(&G);
-call    0 returned 100%
+        1:   31:	currentPlayer = whoseTurn(&G);										call    0 returned 100%
         1:   32:	if(currentPlayer == 0){
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-        1:   33:		printf("		PASS\n");
-call    0 returned 100%
+        1:   33:		printf("		PASS\n");										call    0 returned 100%
         -:   34:	}	
         -:   35:	else{
-    #####:   36:		printf("		FAIL\n");
-call    0 never executed
+    #####:   36:		printf("		FAIL\n");										call    0 never executed
         -:   37:	}
         -:   38:	
-        1:   39:	printf("	Attempt to Set to player 2's turn\n");
-call    0 returned 100%
+        1:   39:	printf("	Attempt to Set to player 2's turn\n");					call    0 returned 100%
         1:   40:	G.whoseTurn = player2;
-        1:   41:	currentPlayer = whoseTurn(&G);
-call    0 returned 100%
+        1:   41:	currentPlayer = whoseTurn(&G);										call    0 returned 100%
         1:   42:	if(currentPlayer == 1){
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-        1:   43:		printf("		PASS\n\n");
-call    0 returned 100%
+        1:   43:		printf("		PASS\n\n");										call    0 returned 100%
         -:   44:	}	
         -:   45:	else{
-    #####:   46:		printf("		FAIL\n\n");
-call    0 never executed
+    #####:   46:		printf("		FAIL\n\n");										call    0 never executed
         -:   47:	}
         -:   48:
-        1:   49:	printf("---Testing whoseTurn function COMPLETE---\n\n\n\n");
-call    0 returned 100%
+        1:   49:	printf("---Testing whoseTurn function COMPLETE---\n\n\n\n");		call    0 returned 100%
         -:   50:	
         1:   51:	return 0;
         -:   52:}

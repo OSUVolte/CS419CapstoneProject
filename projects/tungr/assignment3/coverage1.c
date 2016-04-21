@@ -201,6 +201,14 @@ Initialize Game...
 
 ---Testing whoseTurn function COMPLETE---
 
+/*
+	Taking a look at unittest2.c.gcov and dominion.c.gcov I see that I have gotten pretty good coverage for the test and 
+	100 % coverage for the function itself. The testing file was the same as the one above, since all the tests passed the branches
+	that were not executed were the fail ones. I definitely should have tested the opposite as it is necessary to see the correctness
+	of that portion of the function. This was a short test but there are more ways I could have tested, such as the players stats in 
+	different cases. 
+*/
+
 /* * * * * * * * * * * UNITTEST3 * * * * * * * * * * */
 
 File 'unittest3.c'
@@ -276,6 +284,15 @@ Testing treasure_map cost (should be 4)
 
 ---Testing getCost function COMPLETE---
 
+/*
+	Taking a look at unittest3.c.gov and dominion.c I see that I've gotten good coverage and 100% of branches executed for
+	the function. That makes sense since I essentually looped through every single card and tested the values for them. Since 
+	the tests passed there were some lines that were not covered. The tricky part about this function is that the return values
+	might not reflect the actual values in the game, so there would have to be an array with the actual correct values. I'm not
+	sure how I would test this other than to make my own and look it up, which is what I did. All the branches in the function were
+	taken equally, with the only line not executed being the error line. 
+*/
+
 /* * * * * * * * * * * UNITTEST4 * * * * * * * * * * */
 
 File 'unittest4.c'
@@ -303,6 +320,13 @@ Testing [left = right]...
 
 ---Testing compare function COMPLETE---
 
+/*
+	Taking a look at unittest4.c.gov and dominion.c I see that I've gotten good coverage and 100% of branches executed for
+	the function. That makes sense since I essentually looped through every single possible outcome. Since the tests passed 
+	there were some lines that were not covered. However, unlike the previous functions I don't think it is necessary to do
+	more coverage for my unit test to get through the fails.
+*/
+
 /* * * * * * * * * * * CARDTEST1 * * * * * * * * * * */
 
 File 'cardtest1.c'
@@ -310,6 +334,14 @@ Lines executed:71.93% of 57
 Branches executed:100.00% of 18
 Taken at least once:55.56% of 18
 Calls executed:60.53% of 38
+
+/*
+	Function 'playSmithy'
+	Lines executed:100.00% of 6
+	Branches executed:100.00% of 2
+	Taken at least once:100.00% of 2
+	Calls executed:100.00% of 3
+*/
 
 ---Testing Smithy Card START---
 
@@ -335,6 +367,16 @@ Testing smithy action...
 
 ---Testing Smithy Card COMPLETE---
 
+/*
+	Taking a look at both the funciton and unit test I see that 100% of branches executed, and similar to all the other tests the 
+	branches that were not taken were the ones that reflected the results of the test, since I only did each test once. I noticed 
+	that in dominion.c.gov that not only did the smithy case execute but the village case executed as well even though it was not a 
+	card that was executed, which further convinces me that it has something to do with botching up the tests. Unfortunately I forgot 
+	about that bug so when I ran the tests I thought they were sufficient enough to show that there was something going on within only 
+	the function itself. If i was moving forward in doing more tests I would definitely isolate each function and run tests individually
+	before running them together.
+*/
+
 /* * * * * * * * * * * CARDTEST2 * * * * * * * * * * */
 
 File 'cardtest2.c'
@@ -342,6 +384,14 @@ Lines executed:71.93% of 57
 Branches executed:100.00% of 18
 Taken at least once:55.56% of 18
 Calls executed:60.53% of 38
+
+/*
+	Function 'playAdventurer'
+	Lines executed:66.67% of 18
+	Branches executed:66.67% of 12
+	Taken at least once:41.67% of 12
+	Calls executed:66.67% of 3
+*/
 
 ---Testing Adventurer Card START---
 
@@ -367,6 +417,16 @@ Testing Adventurer action...
 
 ---Testing Adventurer Card COMPLETE---
 
+/*
+	Taking a look at both the function and unit test I see that 100% of branches executed for the first while not the same for 
+	the second. I see here that even though I didn't test the council room the function has been executed so both cases went through 
+	which explains the bugs for my test. Again I forgot that I put that bug in there and had I known at this point I would have done 
+	further testing for the second function. However I do see that the lines that never execute are actually a result of the discard 
+	pile always somehow being empty. That is something I defintely would consider a red flag. Another huge part that I totally missed 
+	in testing is in line 1053, a copper/silver/gold card never seems to be drawn whchih means there is a huge chunk that is never tested 
+	below, which is a definite direction I would want to cover, as it is an important part of the function.
+*/
+
 /* * * * * * * * * * * CARDTEST3 * * * * * * * * * * */
 
 File 'cardtest3.c'
@@ -374,6 +434,14 @@ Lines executed:69.23% of 65
 Branches executed:100.00% of 20
 Taken at least once:55.00% of 20
 Calls executed:56.82% of 44
+
+/*
+	Function 'cardEffect'
+	Lines executed:10.00% of 200
+	Branches executed:13.61% of 169
+	Taken at least once:2.96% of 169
+	Calls executed:12.73% of 55
+*/
 
 ---Testing great_hall Card START---
 
@@ -401,6 +469,14 @@ Testing great_hall action...
 
 ---Testing great_hall Card COMPLETE---
 
+/*
+	This card effect did not have its own function so the coverage is describing the card effect function, and the coverage
+	for that is pretty low since I did not test the other cases, just that one. All the tests in my unit test were successful 
+	so I got 100% branch coverage for that, although going forward I would expand my test to check for the actual cards that are 
+	drawn by the player to make sure they were the correct ones. This case utilizes two more functions so I would want to test 
+	the outcomes of those or the pools that those two functions affected as well. 
+*/
+
 /* * * * * * * * * * * CARDTEST4 * * * * * * * * * * */
 
 File 'cardtest4.c'
@@ -408,6 +484,14 @@ Lines executed:69.23% of 65
 Branches executed:100.00% of 20
 Taken at least once:55.00% of 20
 Calls executed:56.82% of 44
+
+/*
+	Function 'cardEffect'
+	Lines executed:10.00% of 200
+	Branches executed:13.61% of 169
+	Taken at least once:2.96% of 169
+	Calls executed:12.73% of 55
+*/
 
 ---Testing gardens Card START---
 
@@ -435,6 +519,13 @@ Testing gardens action...
 
 ---Testing gardens Card COMPLETE---
 
+/*
+	Like the previous, this card effect did not have its own function so the coverage is describing the card effect function, 
+	and the coverage for that is pretty low since I did not test the other cases, just that one. Again, all the tests in my unit 
+	test were successful so I got 100% branch coverage for that. Given the nature of the card, I think going forward I would need 
+	not to just test the case but have more tests for the state changes to make sure nothing changed in addition to what I have. 
+	I might also want to test the outcome to make sure in the end game those cards are actually giving points properyl 
+*/
 
 
 
