@@ -25,9 +25,9 @@ interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
 runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+	./testDrawCard &> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
 
 unit1:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm -g
@@ -54,16 +54,16 @@ card4:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
 
 myTest:
-	./unittest1 &> unittestresult.out
-	./unittest2 >> unittestresult.out
-	./unittest3 >> unittestresult.out
-	./unittest4 >> unittestresult.out
-	./cardtest1 >> unittestresult.out
-	./cardtest2 >> unittestresult.out
-	./cardtest3 >> unittestresult.out
-	./cardtest4 >> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+	./unittest1 &> unittestresults.out
+	./unittest2 >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	./unittest4 >> unittestresults.out
+	./cardtest1 >> unittestresults.out
+	./cardtest2 >> unittestresults.out
+	./cardtest3 >> unittestresults.out
+	./cardtest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
 
 
 unittestresults.out:
@@ -75,24 +75,24 @@ unittestresults.out:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm -g
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm -g
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
-	./unittest1 &> unittestresult.out
-	gcov unittest1.c >> unittestresult.out
-	./unittest2 >> unittestresult.out
-	gcov unittest2.c >> unittestresult.out
-	./unittest3 >> unittestresult.out
-	gcov unittest3.c >> unittestresult.out
-	./unittest4 >> unittestresult.out
-	gcov unittest4.c >> unittestresult.out
-	./cardtest1 >> unittestresult.out
-	gcov cardtest1.c >> unittestresult.out
-	./cardtest2 >> unittestresult.out
-	gcov cardtest2.c >> unittestresult.out
-	./cardtest3 >> unittestresult.out
-	gcov cardtest3.c >> unittestresult.out
-	./cardtest4 >> unittestresult.out
-	gcov cardtest4.c >> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+	./unittest1 &> unittestresults.out
+	gcov unittest1.c >> unittestresults.out
+	./unittest2 >> unittestresults.out
+	gcov unittest2.c >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	gcov unittest3.c >> unittestresults.out
+	./unittest4 >> unittestresults.out
+	gcov unittest4.c >> unittestresults.out
+	./cardtest1 >> unittestresults.out
+	gcov cardtest1.c >> unittestresults.out
+	./cardtest2 >> unittestresults.out
+	gcov cardtest2.c >> unittestresults.out
+	./cardtest3 >> unittestresults.out
+	gcov cardtest3.c >> unittestresults.out
+	./cardtest4 >> unittestresults.out
+	gcov cardtest4.c >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
 	
 
 player: player.c interface.o
