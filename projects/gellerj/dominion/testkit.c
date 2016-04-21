@@ -158,8 +158,8 @@ void diffHandSupply(struct gameState *before, struct gameState *after, int playe
 }
 
 int countHandSupply(struct gameState *game, int player, int card) {
-    int supply = 0;
-    for (int i = 0; i < game->handCount[player]; i++) {
+    int supply = 0, i = 0;
+    for (i = 0; i < game->handCount[player]; i++) {
         if (game->hand[player][i] == card) {
             supply++;
         }
@@ -168,8 +168,8 @@ int countHandSupply(struct gameState *game, int player, int card) {
 }
 
 int countDeckSupply(struct gameState *game, int player, int card) {
-    int supply = 0;
-    for (int i = 0; i < game->deckCount[player]; i++) {
+    int supply = 0, i = 0;
+    for (i = 0; i < game->deckCount[player]; i++) {
         if (game->deck[player][i] == card) {
             supply++;
         }

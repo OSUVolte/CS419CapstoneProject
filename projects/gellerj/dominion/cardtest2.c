@@ -11,6 +11,7 @@
 
 int main() {
     struct gameState G1, G2;
+    int i = 0;
     int numPlayers = 2;
     int seed = 1;
     int player1 = 0;
@@ -43,7 +44,7 @@ int main() {
     printf("\nCheck new card #1 is a treasure card...\n");
     int card1 = G2.hand[player1][G2.handCount[player1] - 1];
     printf("Card #1 is %d, expected 4, 5, or 6...", card1);
-    if (card1 == copper | card1 == silver | card1 == gold) {
+    if ((card1 == copper) | (card1 == silver) | (card1 == gold)) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
@@ -52,7 +53,7 @@ int main() {
     printf("\nCheck new card #2 is a treasure card...\n");
     int card2 = G2.hand[player1][G2.handCount[player1] - 2];
     printf("Card #2 is %d, expected 4, 5, or 6...", card2);
-    if (card2 == copper | card2 == silver | card2 == gold) {
+    if ((card2 == copper) | (card2 == silver) | (card2 == gold)) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
@@ -117,7 +118,7 @@ int main() {
 
     printf("\nCheck that copper treasure cards are gained by adventurer...\n");
     memcpy(&G2, &G1, sizeof(struct gameState));
-    for (int i = 0; i < G2.deckCount[player1]; i++) {
+    for (i = 0; i < G2.deckCount[player1]; i++) {
         G2.deck[player1][i] = copper;
     }
     cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
@@ -132,7 +133,7 @@ int main() {
 
     printf("\nCheck that silver treasure cards are gained by adventurer...\n");
     memcpy(&G2, &G1, sizeof(struct gameState));
-    for (int i = 0; i < G2.deckCount[player1]; i++) {
+    for (i = 0; i < G2.deckCount[player1]; i++) {
         G2.deck[player1][i] = silver;
     }
     cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
@@ -147,7 +148,7 @@ int main() {
 
     printf("\nCheck that gold treasure cards are gained by adventurer...\n");
     memcpy(&G2, &G1, sizeof(struct gameState));
-    for (int i = 0; i < G2.deckCount[player1]; i++) {
+    for (i = 0; i < G2.deckCount[player1]; i++) {
         G2.deck[player1][i] = gold;
     }
     cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
@@ -160,4 +161,5 @@ int main() {
         printf("FAILED.\n");
     }
 
+    return 0;
 }

@@ -109,4 +109,6 @@ int main() {
         printf("FAILED.\n");
     }
 
+    return 0;
+
 }

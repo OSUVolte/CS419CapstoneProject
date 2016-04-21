@@ -39,7 +39,7 @@
  * cardtest4 (great hall): This function has 100% statement coverage. There are no branches in this
  * function. Like the previous test, each statement is only called once. Again, this card is composed of
  * simple helper functions.
- * 
+ *
  */
 
 
