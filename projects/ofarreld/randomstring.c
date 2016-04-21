@@ -18,9 +18,10 @@ Summary:
 
 	inputString():
 	According to the requirements of testme(), state [9] is looking for the string "reset". 
-	In order to reach this state in a practical manner, the string was set as the sole return
-	object of inputString().
-
+	Therefore a base string was created containing "rest". These are the four characters that
+	make up "reset". They are randomly chosen to create a 5 character string. This random 
+	string is returned.
+	
 	main():
 	The library <unistd> is added. This is to allow for atoi() to be used.
 	main() has been modified to allow for command line arguments of an int. This is in order 

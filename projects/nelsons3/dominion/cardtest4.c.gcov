@@ -1,0 +1,51 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * cardtest1.c
+        -:    3: * unit test for the village card
+        -:    4: */
+        -:    5:
+        -:    6:#include "dominion.h"
+        -:    7:#include "dominion_helpers.h"
+        -:    8:#include <string.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <assert.h>
+        -:   11:#include "rngs.h"
+        -:   12:#include <stdlib.h>
+        -:   13:
+        1:   14:int main() {
+        -:   15:   struct gameState G;
+        -:   16:   struct gameState testG;
+        1:   17:   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        1:   18:   int numPlayers = 2;
+        1:   19:   int seed = 1000;
+        1:   20:   int curPlayer = 0;
+        1:   21:   int otherPlayer = 1;
+        1:   22:   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        1:   23:   int newCards = 1;
+        -:   24:   // initialize the game state and player cards
+        1:   25:   initializeGame(numPlayers, k, seed, &G);
+        1:   26:   printf("---------- Testing village card ----------\n"); 
+        -:   27:   // copy the game state to a test case
+        1:   28:   memcpy(&testG, &G, sizeof(struct gameState));
+        -:   29:   
+        -:   30:   //play village card on testG check handCount
+        1:   31:   cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
+        1:   32:   printf("check current players state\n");
+        1:   33:   printf("hand count = %d, expected = %d\n", testG.handCount[curPlayer], G.handCount[curPlayer] + newCards);
+        -:   34:   //check village card on testG check deckCount
+        1:   35:   printf("deck count = %d, expected = %d\n", testG.deckCount[curPlayer], G.deckCount[curPlayer] - newCards);
+        -:   36:   //check number of actions for the current player. Should incease by 2.
+        1:   37:   printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + 2);
+        -:   38:   //check that other players state is not changed
+        1:   39:   printf("check other players state\n");
+        1:   40:   printf("hand count = %d, expected = %d\n", testG.handCount[otherPlayer], G.handCount[otherPlayer]);
+        -:   41:   //check smithy card on testG check deckCount
+        1:   42:   printf("deck count = %d, expected = %d\n", testG.deckCount[otherPlayer], G.deckCount[otherPlayer]);
+        -:   43:   
+        1:   44:   return 0;
+        -:   45:
+        -:   46:}

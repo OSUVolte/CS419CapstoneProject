@@ -38,7 +38,7 @@ int main()
 				smithy, council_room};
 	
 
-	printf("-------------------COUNCIL ROOM CARD TEST---------------------\n");
+	printf("-------------------MINION CARD TEST---------------------\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	initializeGame(numPlayers, k, seed, &testState);
 	

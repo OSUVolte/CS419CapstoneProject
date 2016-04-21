@@ -2,6 +2,7 @@
 //Unit test 3
 //discardCard()
 //gcc unittest3.c dominion.c rngs.c -o unittest3 -lm
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
