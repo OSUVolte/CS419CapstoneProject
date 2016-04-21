@@ -116,6 +116,17 @@ void testBuyCard()
 	state.whoseTurn = 1;
 	state.handCount[1] = 1;
 	r = buyCard(1, &state);
+	if(state.deckCount[1] == 2)
+		printf("buyCard(): PASS add card to player deck.\n");
+	else
+		printf("buyCard(): FAIL add card to player deck.\n");
+	
+	state.numBuys = 1;
+	state.supplyCount[1] = 1;
+	state.coins = 10;
+	state.whoseTurn = 1;
+	state.handCount[1] = 1;
+	r = buyCard(1, &state);
 	if(state.supplyCount[1] == 0)
 		printf("buyCard(): PASS card removed from supply.\n");
 	else
