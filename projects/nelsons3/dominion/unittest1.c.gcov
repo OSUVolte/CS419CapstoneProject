@@ -15,18 +15,17 @@
         1:   10:int main(int argc, char* argv[])
         -:   11:{
         -:   12:	int counter;
-        -:   13:
-        1:   14:	printf("Test creation of new games.\n");
-        1:   15:	printf("only one will run at a time but 1000 will be created.\n");
-        1:   16:	printf("Unit test 1.\n");
-        -:   17:	//heres our simple test...create the game struct as shown on 
-        -:   18:	//line 16 of dominion.c and then make sure the game actually exists!
-     1001:   19:	for (counter = 0; counter < 1000; counter++) 
-        -:   20:	{
-     1000:   21:		struct gameState *g = newGame();
-     1000:   22:		assert(g != NULL);
-     1000:   23:		free(g);
-        -:   24:	}
-        1:   25:	printf("unit Test 1 Passed \n");
-        1:   26:return 0;
-        -:   27:}
+        1:   13:	printf("\n\nTest creation of new games.\n");
+        1:   14:	printf("only one will run at a time but 1000 will be created.\n");
+        1:   15:	printf("Unit test 1.\n");
+        -:   16:	//heres our simple test...create the game struct as shown on 
+        -:   17:	//line 16 of dominion.c and then make sure the game actually exists!
+     1001:   18:	for (counter = 0; counter < 1000; counter++) 
+        -:   19:	{
+     1000:   20:		struct gameState *g = newGame();
+     1000:   21:		assert(g != NULL);
+     1000:   22:		free(g);
+        -:   23:	}
+        1:   24:	printf("\nunit Test 1 Passed \n");
+        1:   25:return 0;
+        -:   26:}

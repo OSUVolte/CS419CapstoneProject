@@ -10,7 +10,7 @@ int main(){
 	struct gameState game;	
 	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     
-	printf("Running Unit Test: Smithy\n");
+	printf("\n\nRunning Unit Test: Smithy\n");
 //create game
 //4 players, cards, seed, 
 	initializeGame(4, k, 10, &game);
@@ -27,6 +27,6 @@ int main(){
 	else{
 		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
 	}
-	printf("unit Test: Smithy test successful \n");
+	printf("\nunit Test: Smithy test successful \n");
 return 0;
 }

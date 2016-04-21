@@ -10,8 +10,7 @@
 int main(int argc, char* argv[])
 {
 	int counter;
-
-	printf("Test creation of new games.\n");
+	printf("\n\nTest creation of new games.\n");
 	printf("only one will run at a time but 1000 will be created.\n");
 	printf("Unit test 1.\n");
 	//heres our simple test...create the game struct as shown on 
@@ -22,6 +21,6 @@ int main(int argc, char* argv[])
 		assert(g != NULL);
 		free(g);
 	}
-	printf("unit Test 1 Passed \n");
+	printf("\nunit Test 1 Passed \n");
 return 0;
 }

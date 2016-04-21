@@ -12,7 +12,7 @@
         -:    7://Test case for getCost(int)
         1:    8:int main() 
         -:    9:{
-        1:   10:	printf("testing getCost() method.\n\n");
+        1:   10:	printf("\n\ntesting getCost() method.\n\n");
         1:   11:    printf("test estate points first");
         1:   12:    printf("Test Estate points first\n");   
         1:   13:    if(getCost(curse)==0)
