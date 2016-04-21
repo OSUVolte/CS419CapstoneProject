@@ -18,7 +18,7 @@
         -:   13:	
         1:   14:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   15:	
-        1:   16:	printf("Running Unit Test: Gardens \n");
+        1:   16:	printf("\n\nRunning Unit Test: Gardens \n");
         -:   17:	
         6:   18:	for(i = 0; i < 5; i++){
         -:   19:	
@@ -27,8 +27,8 @@
         5:   22:		assert(r == -1);
         -:   23:	}
         -:   24:	
-        1:   25:	printf("Card function properly returned -1. \n");
-        1:   26:	printf("Unit Test: Gardens complete. \n");
+        1:   25:	printf("\nCard function properly returned -1. \n");
+        1:   26:	printf("\nUnit Test: Gardens complete. \n");
         -:   27:	
         1:   28:	return 0;
         -:   29:

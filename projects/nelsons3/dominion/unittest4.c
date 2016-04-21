@@ -6,7 +6,7 @@
 
 int main()
 {
-	 printf("testing isGameOver\n");
+	 printf("\n\ntesting isGameOver\n");
 	int counter;
 	struct gameState *state = malloc(sizeof(struct gameState));
 //no more province cards ends the game
@@ -30,6 +30,6 @@ int main()
 	} else if (isGameOver(state) == 1){
 		printf("supply pile Win Condition properly returned as true \n");
 	}
-	printf("Unit test 4 passed. \n");
+	printf("\nUnit test 4 passed. \n");
 return 0;
 }

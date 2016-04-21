@@ -1,6 +1,9 @@
+
+
 Test creation of new games.
 only one will run at a time but 1000 will be created.
 Unit test 1.
+
 unit Test 1 Passed 
 File 'unittest1.c'
 Lines executed:100.00% of 10
@@ -23,25 +26,27 @@ Creating 'unittest1.c.gcov'
         1:   10:int main(int argc, char* argv[])
         -:   11:{
         -:   12:	int counter;
-        -:   13:
-        1:   14:	printf("Test creation of new games.\n");
-        1:   15:	printf("only one will run at a time but 1000 will be created.\n");
-        1:   16:	printf("Unit test 1.\n");
-        -:   17:	//heres our simple test...create the game struct as shown on 
-        -:   18:	//line 16 of dominion.c and then make sure the game actually exists!
-     1001:   19:	for (counter = 0; counter < 1000; counter++) 
-        -:   20:	{
-     1000:   21:		struct gameState *g = newGame();
-     1000:   22:		assert(g != NULL);
-     1000:   23:		free(g);
-        -:   24:	}
-        1:   25:	printf("unit Test 1 Passed \n");
-        1:   26:return 0;
-        -:   27:}
+        1:   13:	printf("\n\nTest creation of new games.\n");
+        1:   14:	printf("only one will run at a time but 1000 will be created.\n");
+        1:   15:	printf("Unit test 1.\n");
+        -:   16:	//heres our simple test...create the game struct as shown on 
+        -:   17:	//line 16 of dominion.c and then make sure the game actually exists!
+     1001:   18:	for (counter = 0; counter < 1000; counter++) 
+        -:   19:	{
+     1000:   20:		struct gameState *g = newGame();
+     1000:   21:		assert(g != NULL);
+     1000:   22:		free(g);
+        -:   23:	}
+        1:   24:	printf("\nunit Test 1 Passed \n");
+        1:   25:return 0;
+        -:   26:}
+
+
 Whos turn test
 whose turn - player number: 2 
 whose turn - player number: 3 
 whose turn - player number: 4 
+
 Unit test 2 passed. 
 File 'unittest2.c'
 Lines executed:100.00% of 11
@@ -65,23 +70,25 @@ Creating 'unittest2.c.gcov'
         1:   11:int main(int argc, char* argv[])
         -:   12:{
         -:   13:    int counter;
-        -:   14:    int startGame;
+        -:   14:    int startOfGame;
         1:   15:    int k[10] = {adventurer, embargo, great_hall, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-        -:   16:    struct gameState g;
+        -:   16:    struct gameState game;
         -:   17:    
-        1:   18:    printf("Whos turn test\n");
+        1:   18:    printf("\n\nWhos turn test\n");
         4:   19:    for(counter = 2; counter<= 4; counter++)
         -:   20:    {
         -:   21://create game and assert it is running, then check to find out whos turn it is
-        3:   22:        startGame = initializeGame(counter, k, 2, &g);
-        3:   23:        assert(startGame == 0);
-        3:   24:        startGame = whoseTurn(&g);
-        3:   25:        assert(startGame == g.whoseTurn);
+        3:   22:        startOfGame = initializeGame(counter, k, 10, &game);
+        3:   23:        assert(startOfGame == 0);
+        3:   24:        startOfGame = whoseTurn(&game);
+        3:   25:        assert(startOfGame == game.whoseTurn);
         3:   26:        printf("whose turn - player number: %d \n", counter);
         -:   27:    }
-        1:   28:    printf("Unit test 2 passed. \n");
+        1:   28:    printf("\nUnit test 2 passed. \n");
         1:   29:return 0;
         -:   30:}
+
+
 testing getCost() method.
 
 test estate points firstTest Estate points first
@@ -109,7 +116,7 @@ Creating 'unittest3.c.gcov'
         -:    7://Test case for getCost(int)
         1:    8:int main() 
         -:    9:{
-        1:   10:	printf("testing getCost() method.\n\n");
+        1:   10:	printf("\n\ntesting getCost() method.\n\n");
         1:   11:    printf("test estate points first");
         1:   12:    printf("Test Estate points first\n");   
         1:   13:    if(getCost(curse)==0)
@@ -172,9 +179,12 @@ Creating 'unittest3.c.gcov'
         1:   70:    printf("\nUnit test 3 passed. \n");
         1:   71:return 0;
         -:   72:}
+
+
 testing isGameOver
 game ends when all provinces are gone
 supply pile Win Condition properly returned as true 
+
 Unit test 4 passed. 
 File 'unittest4.c'
 Lines executed:81.25% of 16
@@ -193,7 +203,7 @@ Creating 'unittest4.c.gcov'
         -:    6:
         1:    7:int main()
         -:    8:{
-        1:    9:	 printf("testing isGameOver\n");
+        1:    9:	 printf("\n\ntesting isGameOver\n");
         -:   10:	int counter;
         1:   11:	struct gameState *state = malloc(sizeof(struct gameState));
         -:   12://no more province cards ends the game
@@ -217,15 +227,18 @@ Creating 'unittest4.c.gcov'
         1:   30:	} else if (isGameOver(state) == 1){
         1:   31:		printf("supply pile Win Condition properly returned as true \n");
         -:   32:	}
-        1:   33:	printf("Unit test 4 passed. \n");
+        1:   33:	printf("\nUnit test 4 passed. \n");
         1:   34:return 0;
         -:   35:}
+
+
 Running Unit Test: Smithy
 Current Hand: 5 
 
 Smithy played for first player. 
 
 error: Hands don't match. test: 7. returned: 6 
+
 unit Test: Smithy test successful 
 File 'cardtest1.c'
 Lines executed:92.31% of 13
@@ -248,7 +261,7 @@ Creating 'cardtest1.c.gcov'
         -:   10:	struct gameState game;	
         1:   11:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   12:    
-        1:   13:	printf("Running Unit Test: Smithy\n");
+        1:   13:	printf("\n\nRunning Unit Test: Smithy\n");
         -:   14://create game
         -:   15://4 players, cards, seed, 
         1:   16:	initializeGame(4, k, 10, &game);
@@ -265,17 +278,20 @@ Creating 'cardtest1.c.gcov'
         -:   27:	else{
     #####:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
         -:   29:	}
-        1:   30:	printf("unit Test: Smithy test successful \n");
+        1:   30:	printf("\nunit Test: Smithy test successful \n");
         1:   31:return 0;
         -:   32:}
+
+
 Running Unit Test: Adventurer
 
 starting hand count Player: 5
 
 ending hand count Player: 9
+
 unit Test: Adventurer test successful 
 File 'cardtest2.c'
-Lines executed:100.00% of 13
+Lines executed:100.00% of 12
 Creating 'cardtest2.c.gcov'
 
         -:    0:Source:cardtest2.c
@@ -293,14 +309,14 @@ Creating 'cardtest2.c.gcov'
         1:    8:int main () {
         -:    9:    struct gameState game;
         -:   10:    int newHand, oldHand;
-        1:   11:    int randomSeed = rand();
+        -:   11://    int randomSeed = rand();
         1:   12:    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
         -:   13:                sea_hag, tribute, smithy};
         -:   14:
-        1:   15:    printf("Running Unit Test: Adventurer\n");
+        1:   15:    printf("\n\nRunning Unit Test: Adventurer\n");
         -:   16://create game
         -:   17://4 players, cards, seed, game struct
-        1:   18:    initializeGame(4, k, randomSeed, &game);
+        1:   18:    initializeGame(4, k, 10, &game);
         1:   19:    printf("\nstarting hand count Player: %d\n", game.handCount[0]);
         1:   20:    oldHand = game.handCount[0];
         -:   21://play card
@@ -308,11 +324,15 @@ Creating 'cardtest2.c.gcov'
         1:   23:    printf("\nending hand count Player: %d\n", game.handCount[0]);
         1:   24:    newHand = game.handCount[0];
         1:   25:    assert(newHand = oldHand+2);
-        1:   26:    printf("unit Test: Adventurer test successful \n");
+        1:   26:    printf("\nunit Test: Adventurer test successful \n");
         1:   27:return 0;
         -:   28:}
+
+
 Running Unit Test: Gardens 
+
 Card function properly returned -1. 
+
 Unit Test: Gardens complete. 
 File 'cardtest3.c'
 Lines executed:100.00% of 10
@@ -338,7 +358,7 @@ Creating 'cardtest3.c.gcov'
         -:   13:	
         1:   14:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
         -:   15:	
-        1:   16:	printf("Running Unit Test: Gardens \n");
+        1:   16:	printf("\n\nRunning Unit Test: Gardens \n");
         -:   17:	
         6:   18:	for(i = 0; i < 5; i++){
         -:   19:	
@@ -347,22 +367,22 @@ Creating 'cardtest3.c.gcov'
         5:   22:		assert(r == -1);
         -:   23:	}
         -:   24:	
-        1:   25:	printf("Card function properly returned -1. \n");
-        1:   26:	printf("Unit Test: Gardens complete. \n");
+        1:   25:	printf("\nCard function properly returned -1. \n");
+        1:   26:	printf("\nUnit Test: Gardens complete. \n");
         -:   27:	
         1:   28:	return 0;
         -:   29:
         -:   30:}
----------- Testing village card ----------
-check current players state
-hand count = 5, expected = 6
-deck count = 4, expected = 4
-actions = 3, expected = 3
-check other players state
-hand count = 0, expected = 0
-deck count = 10, expected = 10
+
+testing council_room_card
+hand count: 5, After card played: 7 (council room should increase the players hand by 4)
+number of buys: 1, After card played number of buys: 2 (card increases buys by 1)
+Player 2's amount of cards: 0, After player one plays council room:  1 (new should be 1 more)
+
+All tests passed.
+
 File 'cardtest4.c'
-Lines executed:100.00% of 20
+Lines executed:100.00% of 11
 Creating 'cardtest4.c.gcov'
 
         -:    0:Source:cardtest4.c
@@ -370,49 +390,28 @@ Creating 'cardtest4.c.gcov'
         -:    0:Data:cardtest4.gcda
         -:    0:Runs:1
         -:    0:Programs:1
-        -:    1:/*
-        -:    2: * cardtest1.c
-        -:    3: * unit test for the village card
-        -:    4: */
-        -:    5:
-        -:    6:#include "dominion.h"
-        -:    7:#include "dominion_helpers.h"
-        -:    8:#include <string.h>
-        -:    9:#include <stdio.h>
-        -:   10:#include <assert.h>
-        -:   11:#include "rngs.h"
-        -:   12:#include <stdlib.h>
-        -:   13:
-        1:   14:int main() {
-        -:   15:   struct gameState G;
-        -:   16:   struct gameState testG;
-        1:   17:   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
-        1:   18:   int numPlayers = 2;
-        1:   19:   int seed = 1000;
-        1:   20:   int curPlayer = 0;
-        1:   21:   int otherPlayer = 1;
-        1:   22:   int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-        1:   23:   int newCards = 1;
-        -:   24:   // initialize the game state and player cards
-        1:   25:   initializeGame(numPlayers, k, seed, &G);
-        1:   26:   printf("---------- Testing village card ----------\n"); 
-        -:   27:   // copy the game state to a test case
-        1:   28:   memcpy(&testG, &G, sizeof(struct gameState));
-        -:   29:   
-        -:   30:   //play village card on testG check handCount
-        1:   31:   cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
-        1:   32:   printf("check current players state\n");
-        1:   33:   printf("hand count = %d, expected = %d\n", testG.handCount[curPlayer], G.handCount[curPlayer] + newCards);
-        -:   34:   //check village card on testG check deckCount
-        1:   35:   printf("deck count = %d, expected = %d\n", testG.deckCount[curPlayer], G.deckCount[curPlayer] - newCards);
-        -:   36:   //check number of actions for the current player. Should incease by 2.
-        1:   37:   printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + 2);
-        -:   38:   //check that other players state is not changed
-        1:   39:   printf("check other players state\n");
-        1:   40:   printf("hand count = %d, expected = %d\n", testG.handCount[otherPlayer], G.handCount[otherPlayer]);
-        -:   41:   //check smithy card on testG check deckCount
-        1:   42:   printf("deck count = %d, expected = %d\n", testG.deckCount[otherPlayer], G.deckCount[otherPlayer]);
-        -:   43:   
-        1:   44:   return 0;
-        -:   45:
-        -:   46:}
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:
+        1:    9:int main() {
+        1:   10:	printf("\ntesting council_room_card\n");
+        -:   11:	struct gameState game, afterCard;
+        1:   12:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   13://create game
+        -:   14://4 players, cards, seed, game struct
+        1:   15:	initializeGame(2, k, 10, &game);
+        1:   16:	memcpy(&afterCard, &game, sizeof(struct gameState));
+        1:   17:	playCouncil_Room(&afterCard, 1, 0);
+        -:   18:	
+        1:   19:	printf("hand count: %d, After card played: %d (council room should increase the players hand by 4)\n", game.handCount[0], afterCard.handCount[0]);
+        1:   20:	printf("number of buys: %d, After card played number of buys: %d (card increases buys by 1)\n", game.numBuys, afterCard.numBuys);
+        1:   21:	printf("Player 2's amount of cards: %d, After player one plays council room:  %d (new should be 1 more)\n", game.handCount[1], afterCard.handCount[1]);
+        -:   22:
+        1:   23:	printf("\nAll tests passed.\n\n");
+        1:   24:return 0;
+        -:   25:}

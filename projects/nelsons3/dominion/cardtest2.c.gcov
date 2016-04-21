@@ -13,14 +13,14 @@
         1:    8:int main () {
         -:    9:    struct gameState game;
         -:   10:    int newHand, oldHand;
-        1:   11:    int randomSeed = rand();
+        -:   11://    int randomSeed = rand();
         1:   12:    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
         -:   13:                sea_hag, tribute, smithy};
         -:   14:
-        1:   15:    printf("Running Unit Test: Adventurer\n");
+        1:   15:    printf("\n\nRunning Unit Test: Adventurer\n");
         -:   16://create game
         -:   17://4 players, cards, seed, game struct
-        1:   18:    initializeGame(4, k, randomSeed, &game);
+        1:   18:    initializeGame(4, k, 10, &game);
         1:   19:    printf("\nstarting hand count Player: %d\n", game.handCount[0]);
         1:   20:    oldHand = game.handCount[0];
         -:   21://play card
@@ -28,6 +28,6 @@
         1:   23:    printf("\nending hand count Player: %d\n", game.handCount[0]);
         1:   24:    newHand = game.handCount[0];
         1:   25:    assert(newHand = oldHand+2);
-        1:   26:    printf("unit Test: Adventurer test successful \n");
+        1:   26:    printf("\nunit Test: Adventurer test successful \n");
         1:   27:return 0;
         -:   28:}

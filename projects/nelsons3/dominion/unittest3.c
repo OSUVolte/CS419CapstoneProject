@@ -7,7 +7,7 @@
 //Test case for getCost(int)
 int main() 
 {
-	printf("testing getCost() method.\n\n");
+	printf("\n\ntesting getCost() method.\n\n");
     printf("test estate points first");
     printf("Test Estate points first\n");   
     if(getCost(curse)==0)

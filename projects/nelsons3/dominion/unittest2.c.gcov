@@ -16,20 +16,20 @@
         1:   11:int main(int argc, char* argv[])
         -:   12:{
         -:   13:    int counter;
-        -:   14:    int startGame;
+        -:   14:    int startOfGame;
         1:   15:    int k[10] = {adventurer, embargo, great_hall, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-        -:   16:    struct gameState g;
+        -:   16:    struct gameState game;
         -:   17:    
-        1:   18:    printf("Whos turn test\n");
+        1:   18:    printf("\n\nWhos turn test\n");
         4:   19:    for(counter = 2; counter<= 4; counter++)
         -:   20:    {
         -:   21://create game and assert it is running, then check to find out whos turn it is
-        3:   22:        startGame = initializeGame(counter, k, 2, &g);
-        3:   23:        assert(startGame == 0);
-        3:   24:        startGame = whoseTurn(&g);
-        3:   25:        assert(startGame == g.whoseTurn);
+        3:   22:        startOfGame = initializeGame(counter, k, 10, &game);
+        3:   23:        assert(startOfGame == 0);
+        3:   24:        startOfGame = whoseTurn(&game);
+        3:   25:        assert(startOfGame == game.whoseTurn);
         3:   26:        printf("whose turn - player number: %d \n", counter);
         -:   27:    }
-        1:   28:    printf("Unit test 2 passed. \n");
+        1:   28:    printf("\nUnit test 2 passed. \n");
         1:   29:return 0;
         -:   30:}
