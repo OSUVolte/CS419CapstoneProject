@@ -2,6 +2,7 @@
 //Unit test 4
 //fullDeckCount()
 //gcc unittest4.c dominion.c rngs.c -o unittest4 -lm
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"

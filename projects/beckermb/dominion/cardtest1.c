@@ -5,19 +5,7 @@
 #include <assert.h>
 
 
-// This is a test for the smith card / function from dominion.c
-
-// int smithyCardEffect(int currentPlayer, int handPos, struct gameState *state) {
-//   //+3 Cards
-//   int i;
-//   for (i = 0; i < 3; i++) {
-//     drawCard(currentPlayer, state);
-//   }
-//
-//   //discard card from hand
-//   discardCard(handPos, currentPlayer, state, 1);
-//   return 0;
-// }
+// This is a test for the smithy card / function from dominion.c
 
 int main() {
   printf("*** Testing smithyCardEffect *** \n");
