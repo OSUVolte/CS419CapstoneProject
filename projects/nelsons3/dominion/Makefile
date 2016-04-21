@@ -60,8 +60,8 @@ unittestresults.out: cardtest1 cardtest2 cardtest3 cardtest4 unittest4 unittest3
 	./cardtest4 >> unittestresults.out
 	gcov cardtest4.c >> unittestresults.out
 	cat cardtest4.c.gcov >> unittestresults.out
-#	gcov dominion.c >> unittestresults.out
-#	cat dominion.c.gcov >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittest1.exe unittest2.exe unittest3.exe unittest4.exe playcard1.exe playcard2.exe playcard3.exe playcard4.exe *.gcov *.gcda *.gcno *.so
