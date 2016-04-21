@@ -5,62 +5,89 @@
 #include <assert.h>
 #include "rngs.h"
 #include "interface.h"
-
-#define VERBOSE 1
+#include "testkit.h"
 
 int main() {
-    struct gameState G;
-    int players = 2;
-    int seed = 1;
-    int gameOver = 0;
+    struct gameState G1, G2;
+    int i = 0;
     int tempDeck[MAX_DECK];
-    int tempDeckPos = 0;
-    int i;
+    int numPlayers = 2;
+    int seed = 1;
+    int player1 = 0;
+    int player2 = 1;
+    int bonus = 0;
+    int handPos = 0;
+    int c1, c2, c3 = 0;
     int sameCardCount = 0;
     int kingdomCards[10] = {
             adventurer,
             gardens,
-            embargo, village,
-            minion, mine,
+            embargo,
+            village,
+            minion,
+            mine,
             cutpurse,
             sea_hag,
             tribute,
             smithy
     };
 
-    initializeGame(players, kingdomCards, seed, &G);
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("Testing shuffle():\n");
 
     // make a copy of the deck so we can test that it is shuffled
-    for (i = 0; i < G.deckCount[0]; i++) {
-        tempDeck[i] = G.deck[0][i];
+    for (i = 0; i < G2.deckCount[0]; i++) {
+        tempDeck[i] = G2.deck[0][i];
     }
 
-    printf("Testing shuffle():\n\n");
+    printf("\nTest player 1's deck is shuffled...\n");
 
-    if (VERBOSE)
-        printf("Test player 0's deck is shuffled...\n\n");
+    printf("Player 1's deck before shuffle:\n");
+    printDeck(player1, &G2);
 
-    if (VERBOSE)
-        printf("Player 0's deck before shuffle:\n");
-        printDeck(0, &G);
+    shuffle(player1, &G2);
 
-    shuffle(0, &G);
+    printf("Player 1's deck after shuffle:\n");
+    printDeck(player1, &G2);
 
-    if (VERBOSE)
-        printf("Player 0's deck after shuffle:\n");
-        printDeck(0, &G);
-
-    for (i = 0; i < G.deckCount[0]; i++) {
-        if (G.deck[0][i] == tempDeck[i]) {
+    // count how many cards are still in the same position
+    for (i = 0; i < G2.deckCount[player1]; i++) {
+        if (G2.deck[player1][i] == tempDeck[i]) {
             sameCardCount++;
         }
     }
 
-    if (VERBOSE)
-        printf("Number of cards in same position = %d, expected != %d:\n", sameCardCount, G.deckCount[0]);
+    printf("Number of cards in same position = %d, expected != %d...", sameCardCount, G2.deckCount[player1]);
 
-    assert(sameCardCount != G.deckCount[0]);
+    if (sameCardCount != G2.deckCount[player1]) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
+    printf("\nTest player 1 card counts are still the same (no cards lost or gained)...");
+    int diffSupplies[MAX_HAND];
+    int flag = 0;
+    diffHandSupply(&G1, &G2, player1, diffSupplies);
+    for (i = 0; i < G2.handCount[player1]; i++) {
+        if (diffSupplies[i] != 0) {
+            flag = 1;
+        }
+    }
+    if (flag == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-    printf("\nAll tests passed.");
+    // ensure player 2's deck was not modified
+    printf("\nCheck player 2 deck is untouched...");
+    if (deckIsUntouched(&G1, &G2, player2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
 }

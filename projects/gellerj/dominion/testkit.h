@@ -15,5 +15,7 @@ void diffHand(struct gameState *before, struct gameState *after, int player, int
 int checkHandCard(struct gameState *game, int player, int position, int card);
 void diffDeckSupply(struct gameState *before, struct gameState *after, int player, int supplyDiffs[MAX_DECK]);
 int countHandSupply(struct gameState *game, int player, int card);
+int countDeckSupply(struct gameState *game, int player, int card);
+void diffHandSupply(struct gameState *before, struct gameState *after, int player, int supplyDiff[MAX_HAND]);
 
 #endif //DOMINION_TESTKIT_H
