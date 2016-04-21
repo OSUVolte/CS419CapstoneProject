@@ -1,0 +1,1308 @@
+Results for Dominion Unit Tests
+-------------------UNITTEST1: UPDATE COINS--------------------
+
+Test Player 0 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 0 with 1 treasure card(s) and 0 bonus.
+G.coins = 1, expected = 1
+PASSED!
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 3, expected = 3
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 0,  expected= 0
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 0 with 1 treasure card(s) and 1 bonus.
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 1,  expected= 1
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 0 with 1 treasure card(s) and 2 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 2,  expected= 2
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 0 with 1 treasure card(s) and 3 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 3,  expected= 3
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 0 with 1 treasure card(s) and 4 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 4,  expected= 4
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 0 with 1 treasure card(s) and 5 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+Test Player 0 with 0 treasure cards
+G.coins = 5,  expected= 5
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 0 with 2 treasure card(s) and 0 bonus.
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 3,  expected= 3
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 0 with 2 treasure card(s) and 1 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 4,  expected= 4
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 0 with 2 treasure card(s) and 2 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 5,  expected= 5
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 0 with 2 treasure card(s) and 3 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 6,  expected= 6
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 0 with 2 treasure card(s) and 4 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 7,  expected= 7
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 0 with 2 treasure card(s) and 5 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+Test Player 0 with 1 treasure cards
+G.coins = 8,  expected= 8
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 0 with 3 treasure card(s) and 0 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 6,  expected= 6
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 0 with 3 treasure card(s) and 1 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 7,  expected= 7
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 0 with 3 treasure card(s) and 2 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 8,  expected= 8
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 0 with 3 treasure card(s) and 3 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 9,  expected= 9
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 0 with 3 treasure card(s) and 4 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 10,  expected= 10
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 0 with 3 treasure card(s) and 5 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+Test Player 0 with 2 treasure cards
+G.coins = 11,  expected= 11
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 0 with 4 treasure card(s) and 0 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 9,  expected= 9
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 0 with 4 treasure card(s) and 1 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 10,  expected= 10
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 0 with 4 treasure card(s) and 2 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 11,  expected= 11
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 0 with 4 treasure card(s) and 3 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 12,  expected= 12
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 0 with 4 treasure card(s) and 4 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+G.coins = 16, expected = 16
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 13,  expected= 13
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 0 with 4 treasure card(s) and 5 bonus.
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+G.coins = 17, expected = 17
+PASSED!
+Test Player 0 with 3 treasure cards
+G.coins = 14,  expected= 14
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 0 with 5 treasure card(s) and 0 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 12,  expected= 12
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 0 with 5 treasure card(s) and 1 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 16, expected = 16
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 13,  expected= 13
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 0 with 5 treasure card(s) and 2 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+G.coins = 17, expected = 17
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 14,  expected= 14
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 0 with 5 treasure card(s) and 3 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+G.coins = 18, expected = 18
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 15,  expected= 15
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 0 with 5 treasure card(s) and 4 bonus.
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+G.coins = 19, expected = 19
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 16,  expected= 16
+PASSED!
+
+Test Player 0 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 0 with 5 treasure card(s) and 5 bonus.
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+G.coins = 20, expected = 20
+PASSED!
+Test Player 0 with 4 treasure cards
+G.coins = 17,  expected= 17
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 1 with 1 treasure card(s) and 0 bonus.
+G.coins = 1, expected = 1
+PASSED!
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 3, expected = 3
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 0,  expected= 0
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 1 with 1 treasure card(s) and 1 bonus.
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 1,  expected= 1
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 1 with 1 treasure card(s) and 2 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 2,  expected= 2
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 1 with 1 treasure card(s) and 3 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 3,  expected= 3
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 1 with 1 treasure card(s) and 4 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 4,  expected= 4
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 1 with 1 treasure card(s) and 5 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+Test Player 1 with 0 treasure cards
+G.coins = 5,  expected= 5
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 1 with 2 treasure card(s) and 0 bonus.
+G.coins = 2, expected = 2
+PASSED!
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 3,  expected= 3
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 1 with 2 treasure card(s) and 1 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 4,  expected= 4
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 1 with 2 treasure card(s) and 2 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 5,  expected= 5
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 1 with 2 treasure card(s) and 3 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 6,  expected= 6
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 1 with 2 treasure card(s) and 4 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 7,  expected= 7
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 1 with 2 treasure card(s) and 5 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+Test Player 1 with 1 treasure cards
+G.coins = 8,  expected= 8
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 1 with 3 treasure card(s) and 0 bonus.
+G.coins = 3, expected = 3
+PASSED!
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 6,  expected= 6
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 1 with 3 treasure card(s) and 1 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 7,  expected= 7
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 1 with 3 treasure card(s) and 2 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 8,  expected= 8
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 1 with 3 treasure card(s) and 3 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 9,  expected= 9
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 1 with 3 treasure card(s) and 4 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 10,  expected= 10
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 1 with 3 treasure card(s) and 5 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+Test Player 1 with 2 treasure cards
+G.coins = 11,  expected= 11
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 1 with 4 treasure card(s) and 0 bonus.
+G.coins = 4, expected = 4
+PASSED!
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 9,  expected= 9
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 1 with 4 treasure card(s) and 1 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 10,  expected= 10
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 1 with 4 treasure card(s) and 2 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 11,  expected= 11
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 1 with 4 treasure card(s) and 3 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 12,  expected= 12
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 1 with 4 treasure card(s) and 4 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+G.coins = 16, expected = 16
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 13,  expected= 13
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 1 with 4 treasure card(s) and 5 bonus.
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+G.coins = 17, expected = 17
+PASSED!
+Test Player 1 with 3 treasure cards
+G.coins = 14,  expected= 14
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 0,  expected= 0
+PASSED!
+Test player 1 with 5 treasure card(s) and 0 bonus.
+G.coins = 5, expected = 5
+PASSED!
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 12,  expected= 12
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 1,  expected= 1
+PASSED!
+Test player 1 with 5 treasure card(s) and 1 bonus.
+G.coins = 6, expected = 6
+PASSED!
+G.coins = 11, expected = 11
+PASSED!
+G.coins = 16, expected = 16
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 13,  expected= 13
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 2,  expected= 2
+PASSED!
+Test player 1 with 5 treasure card(s) and 2 bonus.
+G.coins = 7, expected = 7
+PASSED!
+G.coins = 12, expected = 12
+PASSED!
+G.coins = 17, expected = 17
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 14,  expected= 14
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 3,  expected= 3
+PASSED!
+Test player 1 with 5 treasure card(s) and 3 bonus.
+G.coins = 8, expected = 8
+PASSED!
+G.coins = 13, expected = 13
+PASSED!
+G.coins = 18, expected = 18
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 15,  expected= 15
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 4,  expected= 4
+PASSED!
+Test player 1 with 5 treasure card(s) and 4 bonus.
+G.coins = 9, expected = 9
+PASSED!
+G.coins = 14, expected = 14
+PASSED!
+G.coins = 19, expected = 19
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 16,  expected= 16
+PASSED!
+
+Test Player 1 with 0 coins in hand
+G.coins = 5,  expected= 5
+PASSED!
+Test player 1 with 5 treasure card(s) and 5 bonus.
+G.coins = 10, expected = 10
+PASSED!
+G.coins = 15, expected = 15
+PASSED!
+G.coins = 20, expected = 20
+PASSED!
+Test Player 1 with 4 treasure cards
+G.coins = 17,  expected= 17
+PASSED!
+
+Unit 1 Test Results Passed!
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------UNITTEST2: IsGameOver--------------------
+Testing Provinces in Deck End Condition
+0 province cards.
+Expected Result: 1, Actual Result: 1
+PASSED!
+1 province cards.
+Expected Result: 1, Actual Result: 0
+PASSED!
+10 province cards.
+Expected Result: 1, Actual Result: 0
+PASSED!
+Check 3 empty pile conditions End Condition for 3 People
+1  empty piles.
+Expected Result: 0, Actual Result: 0
+PASSED!
+2  empty piles.
+Expected Result: 0, Actual Result: 0
+PASSED!
+3  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+4  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+5  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+6  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+7  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+8  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+9  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+10  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+Check 4 empty pile conditions End Condition for 4 People
+11  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+12  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+13  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+14  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+15  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+16  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+17  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+18  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+19  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+20  empty piles.
+Expected Result: 1, Actual Result: 1
+
+PASSED!
+
+Unit 2 Test Results Passed!
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------UNITTEST3: SCOREFOR --------------------
+
+Evaluating Cards in hand
+
+Player 0
+Card in hand: CurseCard
+Expected Value: -5, Actual Value-5
+PASSED!
+Player 0
+Card in hand: estate
+Expected Value: 5, Actual Value5
+PASSED!
+Player 0
+Card in hand: Duchy 
+Expected Value: 15, Actual Value15
+PASSED!
+Player 0
+Card in hand: Province 
+Expected Value: 30, Actual Value30
+PASSED!
+Player 0
+Card in hand: Great Hall
+Expected Value: 5, Actual Value5
+PASSED!
+Player 0
+Card in hand: Great Hall
+Expected Value: 6, Actual Value0
+FAILED!
+Player 1
+Card in hand: CurseCard
+Expected Value: -5, Actual Value-5
+PASSED!
+Player 1
+Card in hand: estate
+Expected Value: 5, Actual Value5
+PASSED!
+Player 1
+Card in hand: Duchy 
+Expected Value: 15, Actual Value15
+PASSED!
+Player 1
+Card in hand: Province 
+Expected Value: 30, Actual Value30
+PASSED!
+Player 1
+Card in hand: Great Hall
+Expected Value: 5, Actual Value5
+PASSED!
+Player 1
+Card in hand: Great Hall
+Expected Value: 6, Actual Value0
+FAILED!
+
+Evaluating Cards in deck
+
+Player 2
+Card in hand: CurseCard
+Expected Value: -5, Actual Value: 0
+FAILED!
+Player 2
+Card in hand: estate
+Expected Value: 5, Actual Value0
+FAILED!
+Player 2
+Card in hand: Duchy 
+Expected Value: 15, Actual Value0
+FAILED!
+Player 2
+Card in hand: Province 
+Expected Value: 30, Actual Value0
+FAILED!
+Player 2
+Card in hand: Great Hall
+Expected Value: 5, Actual Value0
+FAILED!
+Player 2
+Card in hand: Great Hall
+Expected Value: 6, Actual Value0
+FAILED!
+Starting Score: 0 
+
+Evaluating Cards in Discard
+
+Player 0
+Card in hand: CurseCard
+Expected Value: -5, Actual Value-3
+FAILED!
+Player 0
+Card in hand: estate
+Expected Value: 5, Actual Value7
+FAILED!
+Player 0
+Card in hand: Duchy 
+Expected Value: 15, Actual Value17
+FAILED!
+Player 0
+Card in hand: Province 
+Expected Value: 30, Actual Value32
+FAILED!
+Player 0
+Card in hand: Great Hall
+Expected Value: 5, Actual Value7
+FAILED!
+Player 0
+Card in hand: Great Hall
+Expected Value: 6, Actual Value2
+FAILED!
+Player 1
+Card in hand: CurseCard
+Expected Value: -5, Actual Value-4
+FAILED!
+Player 1
+Card in hand: estate
+Expected Value: 5, Actual Value6
+FAILED!
+Player 1
+Card in hand: Duchy 
+Expected Value: 15, Actual Value16
+FAILED!
+Player 1
+Card in hand: Province 
+Expected Value: 30, Actual Value31
+FAILED!
+Player 1
+Card in hand: Great Hall
+Expected Value: 5, Actual Value6
+FAILED!
+Player 1
+Card in hand: Great Hall
+Expected Value: 6, Actual Value1
+FAILED!
+
+Unit 3 Test Failed
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------UNITTEST4: GETWINNERS--------------------
+Expected Result: Player 0, Actual Result: player 0 scored 1
+PASSED!
+Expected Result: Player 1, Actual Result: player 1 scored 1
+PASSED!
+Expected Result: Player 2, Actual Result: player 2 scored 1
+PASSED!
+Expected Result: Player 3, Actual Result: player 3 scored 1
+PASSED!
+
+Evaluating Turn Affect on Winner
+
+new score is: 6
+Expected Result: Player 0, Actual Result: player 0 scored 0
+PASSED!
+new score is: 6
+Expected Result: Player 1, Actual Result: player 1 scored 0
+PASSED!
+new score is: 6
+Expected Result: Player 2, Actual Result: player 2 scored 0
+PASSED!
+new score is: 6
+Expected Result: Player 3, Actual Result: player 3 scored 1
+PASSED!
+
+Unit 4 Test Results Passed!
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------CARDTEST1: adventurer--------------------
+Test 0: Basic Test
+New Coin Count: 6,  Expected Coint Count: 6
+PASSED!
+New Hand Count: 7, Expected Hand Count: 7
+PASSED!
+Discard Count greater than original 2 > 0
+FAILED!
+Player 0's turn,  Expected Players turn: 0
+PASSED!
+Test 1: Every card is in discard, Need to shuffle cards back in Empty Deck
+New Coin Count: 4,  Expected Coint Count: 6
+FAILED!
+New Hand Count: 5, Expected Hand Count: 7
+FAILED!
+Discard Count greater than original 2 > 0
+FAILED!
+Player 0's turn,  Expected Players turn: 0
+PASSED!
+Test 2: 2 coins on top of deck 
+New Coin Count: 4,  Expected Coint Count: 6
+FAILED!
+New Hand Count: 5, Expected Hand Count: 7
+FAILED!
+Discard Count greater than original 0 > 0
+PASSED!
+Player 0's turn,  Expected Players turn: 0
+PASSED!
+Discard Count 0, expected discardCount: 1Test 2: coins spread throughout deck 
+
+Cardtest1 Test Failed
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------CARDTEST2: SMITHY--------------------
+
+Player 0
+New Deck Count: 0,  Expected Deck Count: 2
+FAILED!
+new HandCount: 9,  Expected HandCount: 7
+FAILED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+Expected Players Turn: 0, actual players turn:0PASSED!
+Number of Actions: 1, Expected Actions:1
+PASSED!
+
+Player 1
+New Deck Count: 4,  Expected Deck Count: 7
+FAILED!
+new HandCount: 5,  Expected HandCount: 2
+FAILED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+Expected Players Turn: 1, actual players turn:1PASSED!
+Number of Actions: 1, Expected Actions:1
+PASSED!
+
+Player 2
+New Deck Count: 4,  Expected Deck Count: 7
+FAILED!
+new HandCount: 5,  Expected HandCount: 2
+FAILED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+Expected Players Turn: 2, actual players turn:2PASSED!
+Number of Actions: 1, Expected Actions:1
+PASSED!
+
+Cardtest 2 Test Failed
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------CARDTEST3: Village--------------------
+
+Player 0
+New Deck Count: 4,  Expected Deck Count: 4
+PASSED!
+new HandCount: 5,  Expected HandCount: 5
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 3, Expected Actions:3
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Players Turn: 0, actual players turn:0PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Player 1
+New Deck Count: 9,  Expected Deck Count: 9
+PASSED!
+new HandCount: 0,  Expected HandCount: 0
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 3, Expected Actions:3
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Players Turn: 1, actual players turn:1PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Player 2
+New Deck Count: 9,  Expected Deck Count: 9
+PASSED!
+new HandCount: 0,  Expected HandCount: 0
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 3, Expected Actions:3
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Players Turn: 2, actual players turn:2PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Cardtest 3 Test Passed!
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+
+-------------------CARDTEST4: great_hall--------------------
+
+Player 0
+New Deck Count: 4,  Expected Deck Count: 4
+PASSED!
+new HandCount: 5,  Expected HandCount: 5
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 2, Expected Actions:2
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Player 1
+New Deck Count: 9,  Expected Deck Count: 9
+PASSED!
+new HandCount: 0,  Expected HandCount: 0
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 2, Expected Actions:2
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Player 2
+New Deck Count: 9,  Expected Deck Count: 9
+PASSED!
+new HandCount: 0,  Expected HandCount: 0
+PASSED!
+New Played Card Count:  1,  Expected Played Card Count: 1
+PASSED!
+Number of Actions: 2, Expected Actions:2
+PASSED!
+Number of Buys: 1, Expected number of Buys:1
+PASSED!
+Expected Return Value from card effect: 0, Actual Value: 0
+PASSED!
+
+Cardtest 3 Test Passed!
+--------------------------------------------------
+File 'dominion.c'
+Lines executed:40.71% of 565
+Creating 'dominion.c.gcov'
+

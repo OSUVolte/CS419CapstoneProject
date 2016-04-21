@@ -1,7 +1,7 @@
 //Shawn Seibert
 //Card Test 3
 //councilRoomCard()
-//gcc unittest1.c dominion.c rngs.c -o unittest1 -lm
+//gcc cardtest3.c dominion.c rngs.c -o cardtest3 -lm
 
 
 #include "dominion.h"
@@ -22,6 +22,7 @@ int main()
 	int cardDrawCount = 0;
 	int checkBuyAmount = 0;
 	int oldBuyAmount = 0, newBuyAmount = 0;
+	int oldCardCount, newCardCount;
 	int drawTotal = 3;
 	int loopCount = 0;
 	int currentPlayer = 1;
@@ -30,7 +31,7 @@ int main()
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
 				smithy, council_room};
 
-	printf("-------------------SMITHY CARD TEST---------------------\n");
+	printf("-------------------COUNCIL ROOM CARD TEST---------------------\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	initializeGame(numPlayers, k, seed, &testState);
 	   //+4 Cards
@@ -76,10 +77,21 @@ int main()
 	    }
 	}
 	printf("CHECKING DISCARD.\n");
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer] );
+	oldCardCount = testState.handCount[currentPlayer];
 	//Get player hand count.
       //put played card in played card pile
       discardCard(handPos, currentPlayer, &testState, 0);
-	  // check player hand count.
-	  //write if else statement.
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer] );
+	newCardCount = testState.handCount[currentPlayer];
+	if ((oldCardCount - 1) == newCardCount)
+	{
+		printf("Test Passed: Player discarded.\n");
+	}
+	else
+	{
+		printf("Test Failed: Player did not discard correctly.\n");
+	}
+	 //write if else statement.
 	  return 0;
 }

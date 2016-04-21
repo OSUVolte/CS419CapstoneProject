@@ -21,71 +21,68 @@ testBuyCard: testDrawCard.c dominion.o rngs.o
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 	
-unitTest1:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm -g
+unittest1: unittest1.c dominion.o rngs.o
+	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
 
-unitTest2:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest2.c rngs.c -o unittest2 -lm -g
+unittest2: unittest2.c dominion.o rngs.o
+	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
 
-unitTest3:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest3.c rngs.c -o unittest3 -lm -g
-
-unitTest4:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest4.c rngs.c -o unittest4 -lm -g
-
-cardTest1:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest1.c rngs.c -o cardtest1 -lm -g
-
-cardTest2:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm -g
-
-cardTest3:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm -g
-
-cardTest4:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
+unittest3: unittest3.c dominion.o rngs.o
+	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
 	
-unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4
-	make clean
-	make unitTest1
-	./unittest1 3 > unittestresults.out
-	gcov dominion.c >> unittestresults.out
+unittest4: unittest4.c dominion.o rngs.o
+	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
 	
-	make clean
-	make unitTest2
-	./unittest2 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-
-	make clean
-	make unitTest3
-	./unittest3 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+cardtest1: cardtest1.c dominion.o rngs.o
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
 	
-	make clean
-	make unitTest4
-	./unittest4 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-		
-	make clean
-	make cardTest1 
-	./cardtest1 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-		
-	make clean
-	make cardTest2 
-	./cardtest2 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+cardtest2: cardtest2.c dominion.o rngs.o
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
 	
-	make clean
-	make cardTest3 
-	./cardtest3 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+cardtest3: cardtest3.c dominion.o rngs.o
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
 	
-	make clean
-	make cardTest4 
-	./cardtest4 3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	cat dominion.c.gcov >> unittestresults.out
+cardtest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+	
+unittestresults.out: dominion.o unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 rngs.o
+	echo "* * * * * * * * * * * UNITTEST1 * * * * * * * * * * *" > unittestresults.out
+	unittest1 >> unittestresults.out
+		gcov unittest1.c >> unittestresults.out
+		gcov unittest1.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST2 * * * * * * * * * * *" >> unittestresults.out
+	unittest2 >> unittestresults.out
+		gcov unittest2.c >> unittestresults.out
+		gcov unittest2.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST3 * * * * * * * * * * *" >> unittestresults.out
+	unittest3 >> unittestresults.out
+		gcov unittest3.c >> unittestresults.out
+		gcov unittest3.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST4 * * * * * * * * * * *" >> unittestresults.out
+	unittest4 >> unittestresults.out
+		gcov unittest4.c >> unittestresults.out
+		gcov unittest4.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST1 * * * * * * * * * * *" >> unittestresults.out
+	cardtest1 >> unittestresults.out
+		gcov cardtest1.c >> unittestresults.out
+		gcov cardtest1.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST2 * * * * * * * * * * *" >> unittestresults.out
+	cardtest2 >> unittestresults.out
+		gcov cardtest2.c >> unittestresults.out
+		gcov cardtest2.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST3 * * * * * * * * * * *" >> unittestresults.out
+	cardtest3 >> unittestresults.out
+		gcov cardtest3.c >> unittestresults.out
+		gcov cardtest3.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST4 * * * * * * * * * * *" >> unittestresults.out
+	cardtest4 >> unittestresults.out
+		gcov cardtest4.c >> unittestresults.out
+		gcov cardtest4.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * DOMINION * * * * * * * * * * *" >> unittestresults.out
+		gcov dominion.c >> unittestresults.out
+		gcov dominion.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * DOMINION1 * * * * * * * * * * *" >> unittestresults.out
+		gcov -f -b dominion.c >> unittestresults.out
 	
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
