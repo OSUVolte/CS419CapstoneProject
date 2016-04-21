@@ -1,0 +1,6 @@
+*.gcno
+*.gcda
+*.o
+playdom
+testDrawCard
+badTestDrawCard
