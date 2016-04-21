@@ -1,7 +1,10 @@
 /*
 Author: Ryan Peters
 Date: 04/20/16
-Description: Unit test for buyCard()
+Description: Unit test for buyCard().  Test conditions for failed 
+execution.  Tests for the function executing without a problem.  
+Tests that coins are decremented for the card purchased.  Tests
+for purchased card added to the player's hand or deck.
 */
 
 #include<stdio.h>
