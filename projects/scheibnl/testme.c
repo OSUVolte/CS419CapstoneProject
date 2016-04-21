@@ -7,20 +7,30 @@ char inputChar()
 {
 	char myChar;
 	int myRand;
-	myRand = rand()% 93 + 33;
+	myRand = rand()% 94 + 32;
 	
-	printf("My rand is %i: ", myRand);
 	myChar = myRand;
-	printf("My char is %c: ", myChar);
 	
-    // TODO: rewrite this function
     return myChar;
 }
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+	char randLower;
+	int myRand;
+
+	char* myString = (char*)malloc(6 * sizeof(char));
+
+	int i;
+	for (i = 0; i < 5; i++) {
+		myRand = rand() % 26 + 97;
+		randLower = myRand;
+		myString[i] = randLower;
+	}
+
+	myString[5] = '\0';
+
+    return myString;
 }
 
 void testme()
@@ -60,9 +70,6 @@ void testme()
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
-	
-	char q = inputChar();
-	printf("My char is %c", q);
 	
     testme();
     return 0;
