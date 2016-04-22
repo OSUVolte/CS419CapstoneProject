@@ -4,20 +4,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-
-// int villageCardEffect(int currentPlayer, int handPos, struct gameState *state) {
-//   //+1 Card
-//   drawCard(currentPlayer, state);
-//
-//   //+2 Actions
-//   int actions;
-//   actions = state->numActions + 2;
-//
-//   //discard played card from hand
-//   discardCard(handPos, currentPlayer, state, 0);
-//   return 0;
-// }
-
+// This is test of the village card / function from dominion.c
 
 int main() {
   printf("*** Testing villageCardEffect *** \n");
