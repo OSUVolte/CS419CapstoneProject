@@ -17,6 +17,7 @@ void testIsGameOver()
 	int i;
 	struct gameState state;
 	
+	/*Test when all card stacks have the same number of cards.*/
 	for(i = 0; i < 25; i++)
 	{
 		state.supplyCount[i] = 1;
@@ -27,6 +28,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is not over.\n");
 	
+	/*Test when card piles have different number of cards*/
 	for(i = 0; i < 25; i++)
 	{
 		state.supplyCount[i] = i + 1;
@@ -37,6 +39,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is not over.\n");
 	
+	/*Test when one stack has zero cards.*/
 	state.supplyCount[1] = 0;
 	r = isGameOver(&state);
 	if(r == 0)
@@ -44,6 +47,8 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is not over.\n");
 	
+	/*Test when two stacks have zero cards*/
+	state.supplyCount[1] = 0;
 	state.supplyCount[20] = 0;
 	r = isGameOver(&state);
 	if(r == 0)
@@ -51,6 +56,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is not over.\n");
 	
+	/*Test when three stacks have zero cards*/
 	state.supplyCount[1] = 0;
 	state.supplyCount[20] = 0;
 	state.supplyCount[12] = 0;
@@ -60,6 +66,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is over.\n");
 	
+	/*Test when all stacks are empty*/
 	for(i = 0; i < 25; i++)
 	{
 		state.supplyCount[i] = 0;
@@ -70,6 +77,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is over.\n");
 	
+	/*Test when all stacks have a negative amount*/
 	for(i = 0; i < 25; i++)
 	{
 		state.supplyCount[i] = -1;
@@ -80,6 +88,7 @@ void testIsGameOver()
 	else
 		printf("isGameOver: FAIL game is over.\n");
 	
+	/*Test when only province has zero cards*/
 	for(i = 0; i < 25; i++)
 	{
 		state.supplyCount[i] = 3;

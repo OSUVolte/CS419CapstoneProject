@@ -1,11 +1,10 @@
 /*
 Author: Ryan Peters
 Date: 04/20/16
-Description: Unit test for isGameOver().  Tests check to see if game is
-over when there is one of each supply card, when there are different amounts
-of supply cards, when there is no supply cards, when only one supply card stack
-is empty, when two stacks are empty, when three stack are empty, and when there
-is negative amounts in the stacks.
+Description: Unit test for updateCoins().  There are test for all coin
+cards, hands containing only coins, hands without coins, and hands with
+coins and other cards.  Test the bonus with both positive and negative 
+numbers.
 */
 #include<stdio.h>
 #include "dominion.h"
