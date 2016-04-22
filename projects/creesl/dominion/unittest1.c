@@ -36,9 +36,9 @@ int main()
   // make sure province supply count isn't 0
   testG.supplyCount[province] = G.supplyCount[province];
   // set three piles to 0
-  testG.supplyCount[treasure_map] = 0;
-  testG.supplyCount[sea_hag] = 0;
-  testG.supplyCount[salvager] = 0;
+  testG.supplyCount[adventurer] = 0;
+  testG.supplyCount[embargo] = 0;
+  testG.supplyCount[village] = 0;
   assert(isGameOver(&testG) == 1);
 
   printf("Success! Tests for isGameOver() pass!");
