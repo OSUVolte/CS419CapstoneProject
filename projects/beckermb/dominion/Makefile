@@ -55,9 +55,9 @@ runtests: testDrawCard
 
 unittestresults.out: cardTest1 cardTest2 cardTest3 cardTest4
 	./cardTest1 &> unittestresult.out
-	./cardTest2 &> unittestresult.out
-	./cardTest3 &> unittestresult.out
-	./cardTest4 &> unittestresult.out
+	./cardTest2 >> unittestresult.out
+	./cardTest3 >> unittestresult.out
+	./cardTest4 >> unittestresult.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
