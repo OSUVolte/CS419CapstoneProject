@@ -6,11 +6,6 @@
 
 //This is a test of the numHandCards method in dominion.c
 
-// int numHandCards(struct gameState *state) {
-//   return state->handCount[ whoseTurn(state) ];
-// }
-
-
 int main () {
 
   printf("******** Testing numHandCards *********\n");
