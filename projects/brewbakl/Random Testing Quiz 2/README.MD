@@ -1,2 +1,2 @@
-1. Run [code] make all [/code]to compile
+1. Run make all to compile
 2. run ./test to execute program
