@@ -1,16 +1,38 @@
+/******************************************************************************
+ * Filename: testme.c
+ * Author: Jens Bodal
+ * Date: April 24, 2016
+ * Description: Implement a random tester for the function testme() in testme.c that is capable of printing
+ * the error message in testme().  
+ * inputChar() and inputString() produce random values from the characters in POSSIBLE_CHARS 
+ *****************************************************************************/
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include<time.h>
 
+char POSSIBLE_CHARS[] = "{}[]() axrest";
+
 char inputChar() {
-    // TODO: rewrite this function
-    return ' ';
+    char *characters = POSSIBLE_CHARS;
+    // return random character from characters
+    return characters[rand() % strlen(characters)];
 }
 
 char *inputString() {
-    // TODO: rewrite this function
-    return "";
+    int strlen = 6;
+    char *string = (char*) malloc(sizeof(char) * strlen);
+    int i;  // for loop
+
+    for (i = 0; i < strlen - 1; i++) {
+        // grab random character
+        string[i] = inputChar();
+    }
+    
+    // null termminate string
+    string[strlen-1] = '\0';
+    return string;
 }
 
 void testme() {
@@ -38,7 +60,7 @@ void testme() {
             s[4] == 't' && s[5] == '\0' &&
             state == 9) 
         {
-            printf("error ");
+            printf("error \n");
             exit(200);
         }
     }        
