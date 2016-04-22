@@ -62,6 +62,8 @@ unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2
 	./cardTest2 >> unittestresult.out
 	./cardTest3 >> unittestresult.out
 	./cardTest4 >> unittestresult.out
+	gcov dominion.c >> unittestresult.out
+	cat dominion.c.gcov >> unittestresult.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
