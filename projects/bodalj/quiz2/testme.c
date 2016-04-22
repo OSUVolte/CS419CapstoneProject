@@ -12,10 +12,8 @@
 #include<stdlib.h>
 #include<time.h>
 
-char POSSIBLE_CHARS[] = "{}[]() axrest";
-
 char inputChar() {
-    char *characters = POSSIBLE_CHARS;
+    char characters[] = "{}[]() axrest";
     // return random character from characters
     return characters[rand() % strlen(characters)];
 }
