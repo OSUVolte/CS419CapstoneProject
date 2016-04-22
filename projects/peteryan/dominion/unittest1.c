@@ -16,6 +16,7 @@ void testBuyCard()
 	int i;
 	struct gameState state;
 	
+	/*Tests when player doesn't have a buy.*/
 	state.numBuys = 0;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -25,6 +26,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when numBuys is 0.\n");
 	
+	/*Test when player has one buy*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -34,6 +36,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when numBuys is 1.\n");
 	
+	/*Test when the player has multiple buys*/
 	state.numBuys = 100;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -43,6 +46,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when numBuys is 100.\n");
 	
+	/*Test when trying to buy a card when the card has none left to buy.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 0;
 	state.coins = 10;
@@ -52,6 +56,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when supplyCount is 0.\n");
 	
+	/*Test when there is a card to buy*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -61,6 +66,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when supplyCount is 1.\n");
 	
+	/*Test when play does not have enough coins to the chosen card.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 1;
@@ -70,6 +76,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL when player has insuffienct coins.\n");
 	
+	/*Test number of buys decrements after buying card.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -79,6 +86,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL numBuys decremented.\n");
 	
+	/*Test the game phase changes.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -87,21 +95,8 @@ void testBuyCard()
 		printf("buyCard(): PASS state.phase is 1.\n");
 	else
 		printf("buyCard(): FAIL state.phase is 0.\n");
-		
-	
-	for(i = -1; i <=5; i++)
-	{
-		state.numBuys = 1;
-		state.supplyCount[1] = 1;
-		state.coins = 10;
-		state.whoseTurn = i;
-		r = buyCard(1, &state);
-		if(r == 0)
-			printf("buyCard(): PASS state.whoseTurn is %d.\n", i);
-		else
-			printf("buyCard(): FAIL state.whoseTurn is %d.\n", i);
-	}	
-	
+
+	/*Test that the bought card is added to the player's hand*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -113,6 +108,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL add card to hand.\n");
 	
+	/*Test that the bought card is added to the player's deck*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -124,6 +120,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL add card to player deck.\n");
 	
+	/*Test that the bought card is removed from the stack.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -135,6 +132,7 @@ void testBuyCard()
 	else
 		printf("buyCard(): FAIL card removed from supply.\n");
 	
+	/*Rest of the test are used to test buying each type of card.*/
 	state.numBuys = 1;
 	state.supplyCount[1] = 1;
 	state.coins = 10;
@@ -394,8 +392,7 @@ void testBuyCard()
 	if(state.coins == 11)
 		printf("buyCard(): PASS coins removed for invalid card.\n");
 	else
-		printf("buyCard(): FAIL coins removed for invalid card.\n");
-	
+		printf("buyCard(): FAIL coins removed for invalid card.\n");	
 }
 
 int main(int argc, char *argv[])
