@@ -1,31 +1,33 @@
-<<<<<<< HEAD
-/*************************************************************************
- * Mark Rushmere
- * CS 362
- * Assignment 2
- * Description: Descrptions of changes made to dominion.c
- * **********************************************************************/
+/****************************************************************************
+* FILENAME: refactor.c
+* AUTHOR: Nickolas A. Williams
+* DATE: 04/10/2016
+* DESCRIPTION: Documents refactoring of adventurer, council_room, minion,
+*    salvager, and smithy. Also documents bugs introduced in each of them
+*    (except council_room, which has no bugs).
+* INPUT: n/a
+* OUTPUT: n/a
+*****************************************************************************/
+adventurer:
+moved to playAdventurer(struct gameState *state, int currentPlayer, 
+int handPos). Removed the initial if statement to check if the deck is empty
+and add the discard pile to the deck.
 
+council_room:
+moved to playCouncilRoom(struct gameState *state, int currentPlayer, 
+int handPos). I did not introduce any errors here.
 
-// Smithy
+minion:
+moved to playMinion(struct gameState *state, int currentPlayer, int handPos, 
+int choice1, int choice2). Switched the inputs of choice1 and choice2, so 
+that choice1 is now tied to the discard hand, and choice2 is tied to the +2 
+coins. It should be the other way around.
 
+salvager:
+moved to playSalvager(struct gameState *state, int currentPlayer, int handPos, 
+int choice). Removed the second discardCard() call that finishes the else
+case if choice is empty.
 
-
-// Adventurer
-
-
-
-
-=======
-//Process of Refactoring
-/*
-	I started by looking over the dominion header and C file. I made a seperate function for adventurer
-	but named it "Adventurer". This didn't work as expected. Upon closer examination of the header file
-	I noticed the playAdventurer() prototype function. Afterwards I added that to the main source file as 
-	my function seperate from the switch statement. Then it was just a matter of looking up how to pass 
-	structs and arrays to functions before they all worked.
-	
-	The errors that I created are a pointer on the function call in playAdventurer() and declaring the iterative
-	looping integer "i" in the playSmithy function.
-*/
->>>>>>> 10dda0265d82c7973e7a193fdc915b7b09a6fed0
+smithy:
+moved to playSmithy(struct gameState *state, int currentPlayer, int handPos).
+Changed the for loop to be i <= 3 instead of i < 3.

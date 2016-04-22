@@ -20,7 +20,70 @@ testBuyCard: testDrawCard.c dominion.o rngs.o
 
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
+	
+unittest1: unittest1.c dominion.o rngs.o
+	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
 
+unittest2: unittest2.c dominion.o rngs.o
+	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
+
+unittest3: unittest3.c dominion.o rngs.o
+	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
+	
+unittest4: unittest4.c dominion.o rngs.o
+	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
+	
+cardtest1: cardtest1.c dominion.o rngs.o
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+	
+cardtest2: cardtest2.c dominion.o rngs.o
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+	
+cardtest3: cardtest3.c dominion.o rngs.o
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+	
+cardtest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+	
+unittestresults.out: dominion.o unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 rngs.o
+	echo "* * * * * * * * * * * UNITTEST1 * * * * * * * * * * *" > unittestresults.out
+	unittest1 >> unittestresults.out
+		gcov unittest1.c >> unittestresults.out
+		gcov unittest1.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST2 * * * * * * * * * * *" >> unittestresults.out
+	unittest2 >> unittestresults.out
+		gcov unittest2.c >> unittestresults.out
+		gcov unittest2.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST3 * * * * * * * * * * *" >> unittestresults.out
+	unittest3 >> unittestresults.out
+		gcov unittest3.c >> unittestresults.out
+		gcov unittest3.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * UNITTEST4 * * * * * * * * * * *" >> unittestresults.out
+	unittest4 >> unittestresults.out
+		gcov unittest4.c >> unittestresults.out
+		gcov unittest4.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST1 * * * * * * * * * * *" >> unittestresults.out
+	cardtest1 >> unittestresults.out
+		gcov cardtest1.c >> unittestresults.out
+		gcov cardtest1.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST2 * * * * * * * * * * *" >> unittestresults.out
+	cardtest2 >> unittestresults.out
+		gcov cardtest2.c >> unittestresults.out
+		gcov cardtest2.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST3 * * * * * * * * * * *" >> unittestresults.out
+	cardtest3 >> unittestresults.out
+		gcov cardtest3.c >> unittestresults.out
+		gcov cardtest3.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * CARDTEST4 * * * * * * * * * * *" >> unittestresults.out
+	cardtest4 >> unittestresults.out
+		gcov cardtest4.c >> unittestresults.out
+		gcov cardtest4.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * DOMINION * * * * * * * * * * *" >> unittestresults.out
+		gcov dominion.c >> unittestresults.out
+		gcov dominion.c -b >> unittestresults.out
+	echo "* * * * * * * * * * * DOMINION1 * * * * * * * * * * *" >> unittestresults.out
+		gcov -f -b dominion.c >> unittestresults.out
+	
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
