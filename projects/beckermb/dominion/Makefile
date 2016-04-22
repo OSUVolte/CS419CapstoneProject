@@ -39,6 +39,9 @@ cardTest2: cardtest2.c dominion.o rngs.o
 cardTest3: cardtest3.c dominion.o rngs.o
 	gcc -o cardTest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS) 
 
+cardTest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardTest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS) 
+
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
@@ -50,6 +53,11 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+unittestresults.out: cardTest1 cardTest2 cardTest3 cardTest4
+	./cardTest1 &> unittestresult.out
+	./cardTest2 &> unittestresult.out
+	./cardTest3 &> unittestresult.out
+	./cardTest4 &> unittestresult.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
@@ -57,4 +65,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe .DS_Store unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -rf *.o playdom.exe .DS_Store unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4 playdom test.exe test player player.exe testInit testInit.exe unittestresult.out *.gcov *.gcda *.gcno *.so *.dSYM
