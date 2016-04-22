@@ -90,7 +90,6 @@ void testIsGameOver()
 		printf("isGameOver: PASS game is over.\n");
 	else
 		printf("isGameOver: FAIL game is over.\n");
-	
 }
 
 int main(int argc, char *argv[])
