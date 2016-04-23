@@ -1,4 +1,4 @@
-/* endTurn */
+/* whoseTurn */
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -7,57 +7,70 @@
 #include <stdio.h>
 
 int main() {
-  struct gameState state;
-  kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel,
-                      smithy, village, baron, great_hall};
-  int randomSeed = 1000;   // example unittest
-
-
-  int k;
+  int cost;
   int i;
-  int currentPlayer = whoseTurn(&state);
+  int numCards = 27;  // total number of cards in enum in dominion.h
 
-
-  memset(&state, '\0', sizeof(struct gameState)); // clear game state
+  for (i = 0; i < numCards; i++) {
+		cost = getCost(curse);
+		assert(cost == 0);
+		cost = getCost(estate);
+		assert(cost == 2);
+		cost = getCost(duchy);
+		assert(cost == 5);
+		cost = getCost(province);
+		assert(cost == 8);
+		cost = getCost(copper);
+		assert(cost == 0);
+		cost = getCost(silver);
+		assert(cost == 3);
+		cost = getCost(gold);
+		assert(cost == 6);
+		cost = getCost(adventurer);
+		assert(cost == 6);
+		cost = getCost(council_room);
+		assert(cost == 5);
+		cost = getCost(feast);
+		assert(cost == 4);
+		cost = getCost(gardens);
+		assert(cost == 4);
+		cost = getCost(mine);
+		assert(cost == 5);
+		cost = getCost(remodel);
+		assert(cost == 4);
+		cost = getCost(smithy);
+		assert(cost == 4);
+		cost = getCost(village);
+		assert(cost == 3);
+		cost = getCost(baron); 
+		assert(cost == 4);
+		cost = getCost(great_hall);
+		assert(cost == 3);
+		cost = getCost(minion); 
+		assert(cost == 5);
+		cost = getCost(steward); 
+		assert(cost == 3);
+		cost = getCost(tribute);
+		assert(cost == 5);
+		cost = getCost(ambassador); 
+		assert(cost == 3);
+		cost = getCost(cutpurse);
+		assert(cost == 4);
+		cost = getCost(embargo); 
+		assert(cost == 2);
+		cost = getCost(outpost);
+		assert(cost == 5);
+		cost = getCost(salvager);
+		assert(cost == 4);
+		cost = getCost(sea_hag);
+		assert(cost == 4);
+		cost = getCost(treasure_map);
+		assert(cost == 4);
+  }
   
-  initializeGame(numPlayers, kingdomCards[10], randomSeed, &state);
-  
-  // Set hand for currentPlayer
-  int numTestCards = 3;
-  state.handCount[currentPlayer] = numTestCards; 
-  for (i = 0; i < state.handCount[currentPlayer]; i++) {
-	  state.hand[currentPlayer][i] = mine;
-  } 
-
-
-  //Discard hand
-  for (i = 0; i < state.handCount[currentPlayer]; i++){
-    state.discard[currentPlayer][state.discardCount[currentPlayer]++] = state.hand[currentPlayer][i];//Discard
-    state.hand[currentPlayer][i] = -1;//Set card to -1
-  }
-  state.handCount[currentPlayer] = 0;//Reset hand count
-    
-  //Code for determining the player
-  if (currentPlayer < (state.numPlayers - 1)){ 
-    state.whoseTurn = currentPlayer + 1;//Still safe to increment
-  }
-  else{
-    state.whoseTurn = 0;//Max player has been reached, loop back around to player 1
-  }
-
-  state.outpostPlayed = 0;
-  state.phase = 0;
-  state.numActions = 1;
-  state.coins = 0;
-  state.numBuys = 1;
-  state.playedCardCount = 0;
-  state.handCount[state.whoseTurn] = 0;
-
-  //int k; move to top
-  //Next player draws hand
-  for (k = 0; k < 5; k++){
-    drawCard(state.whoseTurn, state);//Draw a card
-  }
+  // Testing card that does not exist
+  cost = getCost(i);
+  assert(cost == -1);
 
   return 0;
 }
