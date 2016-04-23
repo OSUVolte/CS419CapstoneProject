@@ -47,9 +47,9 @@ unittestresults.out: unittest*.c testUtilities.c dominion.o rngs.o
 	
 	gcc -o unittest3.out unittest3.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./unittest3.out >> unittestresults.out
-#	
-#	gcc -o unittest4.out unittest4.c dominion.o rngs.o -g  $(CFLAGS)
-#	./unittest4.out >> unittestresults.out
+	
+	gcc -o unittest4.out unittest4.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./unittest4.out >> unittestresults.out
 #	
 #	gcc -o cardtest1.out cardtest1.c dominion.o rngs.o -g  $(CFLAGS)
 #	./cardtest1.out >> cardtestresults.out
