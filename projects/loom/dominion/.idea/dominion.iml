@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/interface.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testBuyCard.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rngs.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/dominion_helpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unittest1.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testShuffle.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rngs.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/testInit.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playdom.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dominion.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dominion_helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/interface.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

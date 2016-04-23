@@ -20,6 +20,6 @@ set(SOURCE_FILES
     testBuyCard.c
     testDrawCard.c
     testInit.c
-    testShuffle.c)
+    testShuffle.c unittest1.c)
 
-add_executable(dominion ${SOURCE_FILES})
+add_executable(dominion ${SOURCE_FILES} unittest1.c)
