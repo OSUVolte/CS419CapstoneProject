@@ -33,7 +33,7 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	echo "Result for running unit tests cards:" > unittestsresults.out
 	
 	echo "cardtest1.c:" >> unittestsresults.out
-	gcc -o cardtest1 compare.c bst.c cardtest1.c $(CFLAGS)
+	gcc -o cardtest1 -g cardtest1.c dominion.c rngs.c $(CFLAGS) **need to test?*
 	cardtest1 >> unittestsresults.out
 	gcov dominion.c >> unittestsresults.out
 	
