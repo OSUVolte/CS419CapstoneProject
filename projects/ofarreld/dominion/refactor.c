@@ -21,7 +21,7 @@ Changes made are as follows:
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	to read 
 		if (cardDrawn == silver || cardDrawn == gold)
-
+	
 	3. Village:
 	line 1368, changed
 		state->numActions = state->numActions + 2;
@@ -37,5 +37,9 @@ Changes made are as follows:
 	5. Sea_hag:
 	line 1423 removed     
 		if (i != currentPlayer){
+
+Update 21 April 2016:
+	Adventurer card was changed. The line 1402 but was removed. This proved to be
+	a fatal error while conducting unit tests. The other errors remain, however.
 
 */
