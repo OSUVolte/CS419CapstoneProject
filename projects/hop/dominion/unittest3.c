@@ -60,4 +60,6 @@ int main(){
    printf("    deck count = %i, expected = %i\n", state.deckCount[!currentPlayer], saveState.deckCount[!currentPlayer]);
    assert( saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer] );
    printf("\n<----------END unittest3-drawCard()---------->\n\n");
+
+   return 0;
 }

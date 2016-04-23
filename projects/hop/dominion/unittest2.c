@@ -69,4 +69,6 @@ int main(){
    }
    printf("\n");
    printf("<----------END unittest2-updateCoins()---------->\n\n");
+
+   return 0;
 }

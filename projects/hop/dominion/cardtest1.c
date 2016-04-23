@@ -79,5 +79,7 @@ int main(){
    }
    printf("\n");
    printf("<----------END cardtest1-smithy card---------->\n\n");
+
+   return 0;
 }
 
