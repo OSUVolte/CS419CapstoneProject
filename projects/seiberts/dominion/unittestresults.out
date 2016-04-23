@@ -26,6 +26,13 @@ File 'unittest1.c'
 Lines executed:86.32% of 95
 Creating 'unittest1.c.gcov'
 
+File 'unittest1.c'
+Lines executed:86.32% of 95
+Branches executed:86.96% of 46
+Taken at least once:63.04% of 46
+Calls executed:85.71% of 28
+Creating 'unittest1.c.gcov'
+
 -----------------Unit Test 2-1 ----------------------
 ----------------- scoreFor() ----------------------
 Test 1: Score From Hand with 10 estate cards
@@ -48,6 +55,13 @@ File 'unittest2.c'
 Lines executed:95.45% of 66
 Creating 'unittest2.c.gcov'
 
+File 'unittest2.c'
+Lines executed:95.45% of 66
+Branches executed:100.00% of 54
+Taken at least once:61.11% of 54
+Calls executed:75.00% of 24
+Creating 'unittest2.c.gcov'
+
 -----------------Unit Test 3-1 ----------------------
 --------------- discardCard() ----------------------
 Test 1: Set players hand count to 10 cards and remove one
@@ -64,6 +78,13 @@ Current player hand count: 0
 Test 2: Passed.
 File 'unittest3.c'
 Lines executed:76.79% of 56
+Creating 'unittest3.c.gcov'
+
+File 'unittest3.c'
+Lines executed:76.79% of 56
+Branches executed:87.50% of 16
+Taken at least once:43.75% of 16
+Calls executed:80.00% of 20
 Creating 'unittest3.c.gcov'
 
 -----------------Unit Test 4-1 ----------------------
@@ -85,6 +106,13 @@ File 'unittest4.c'
 Lines executed:94.34% of 53
 Creating 'unittest4.c.gcov'
 
+File 'unittest4.c'
+Lines executed:94.34% of 53
+Branches executed:100.00% of 24
+Taken at least once:75.00% of 24
+Calls executed:83.33% of 18
+Creating 'unittest4.c.gcov'
+
 -------------------ADVENTURE CARD TEST ---------------------
 TESTING TOP CARD OF HAND
 Current top card: 5
@@ -92,6 +120,13 @@ Current new top card: -1
 Test Failed: Card Drawn is not top card.
 File 'cardtest1.c'
 Lines executed:72.09% of 43
+Creating 'cardtest1.c.gcov'
+
+File 'cardtest1.c'
+Lines executed:72.09% of 43
+Branches executed:57.14% of 14
+Taken at least once:28.57% of 14
+Calls executed:66.67% of 12
 Creating 'cardtest1.c.gcov'
 
 -------------------SMITHY CARD TEST---------------------
@@ -102,6 +137,13 @@ Drawing card: 4
 Test Failed: LoopCount = 4  |   Draw total should be: 3
 File 'cardtest2.c'
 Lines executed:95.45% of 22
+Creating 'cardtest2.c.gcov'
+
+File 'cardtest2.c'
+Lines executed:95.45% of 22
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+Calls executed:85.71% of 7
 Creating 'cardtest2.c.gcov'
 
 -------------------COUNCIL ROOM CARD TEST---------------------
@@ -124,11 +166,14 @@ File 'cardtest3.c'
 Lines executed:93.62% of 47
 Creating 'cardtest3.c.gcov'
 
+File 'cardtest3.c'
+Lines executed:93.62% of 47
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:84.21% of 19
+Creating 'cardtest3.c.gcov'
+
 -------------------MINION CARD TEST---------------------
-Drawing card: 1
-Drawing card: 2
-Drawing card: 3
-Drawing card: 4
 CHECKING INCREASE IN ACTIONS.
 Previous number of Actions 1
 Increased number of Actions 1
@@ -161,7 +206,14 @@ Number of cards added: 3
 Number of cards added: 4
 Test failed: Incorrect number of cards added.
 File 'cardtest4.c'
-Lines executed:92.94% of 85
+Lines executed:92.86% of 84
+Creating 'cardtest4.c.gcov'
+
+File 'cardtest4.c'
+Lines executed:92.86% of 84
+Branches executed:100.00% of 34
+Taken at least once:76.47% of 34
+Calls executed:84.21% of 38
 Creating 'cardtest4.c.gcov'
 
 File 'dominion.c'

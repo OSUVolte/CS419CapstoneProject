@@ -1,1 +1,1 @@
-William Maillard's Assignment 1 for CS362
+William Maillard's CS362 Directory

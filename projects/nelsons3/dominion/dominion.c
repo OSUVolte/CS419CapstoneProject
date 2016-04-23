@@ -1360,7 +1360,7 @@ playSmithy(struct gameState *state, int handPos, int currentPlayer)
 {
 	int i;
       //+3 Cards
-    for (i = 1; i < 3; i++)
+    for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1374,7 +1374,7 @@ int playCouncil_Room(struct gameState *state, int handPos, int currentPlayer)
 {
     //+4 Cards
 	int i;
-    for (i = 1; i < 4; i++){
+    for (i = 0; i < 4; i++){
 		drawCard(currentPlayer, state);
 	}
 			
