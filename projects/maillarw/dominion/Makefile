@@ -52,3 +52,11 @@ card2:
 	gcc -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm
 card3:
 	gcc -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm
+card4:
+	gcc -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm
+runMyTests:
+	echo "sup"
+	./unittest1 &> unittestresults.out
+	
+unittestresults.out: unit1 unit2 unit3 unit4 card1 card2 card3 card4 
+	./unittest1 &> unittestresults.out
