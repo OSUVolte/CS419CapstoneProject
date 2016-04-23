@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
     // initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &G);
     G.deckCount[1] = 0;
-    before = copyGameState(G);
+    copyGameState(&before,&G);
     printf("requesting to shuffle empty deck, expected -1 return and game state unaffected \n");
     int result = shuffle(curPlayer, &G);
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     }
     testsRun++;
 
-    if (equalGameStates(G,before)){
+    if (equalGameStates(&G,&before)){
         testsPassed += 1;
         printf("Game state is unaffected after error return (PASSED)\n");
     } else {
@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
             curPlayer = j%numPlayers;
             deckCount = G.deckCount[curPlayer];
 
-            before = copyGameState(G);
+            copyGameState(&before, &G);
             cpyDeck(srted_deck_before_shuffle, G.deck[curPlayer], deckCount);
             qsort ((void*)(srted_deck_before_shuffle), deckCount, sizeof(int), compare);
 
@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
             shuffle(curPlayer, &G);
 
             //test that the players cards are the same set of cards as before shuffle
-            after = copyGameState(G);
+            copyGameState(&after, &G);
             qsort ((void*)(G.deck[curPlayer]), deckCount, sizeof(int), compare);
             decks_contain_same_cards = memcmp(G.deck[curPlayer], srted_deck_before_shuffle, deckCount);
 
@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
             //test that the rest of the game state was unaffected
             cpyDeck(G.deck[curPlayer],before.deck[curPlayer],deckCount);
             printf("The rest of the gameState was unaffected ");
-            if (equalGameStates(before,G) != 0){
+            if (equalGameStates(&before, &G) != 0){
                 testsPassed++;
                 printf("(PASSED) \n");
             } else {
@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
             }
             testsRun += 1;
 
-            G = copyGameState(after);
+            copyGameState(&G,&after);
 
         }
     }
