@@ -13,6 +13,7 @@ int runTest(struct gameState *state);
 
 int main() {
 
+printf("\n***Begin Testing isGameOver***\n");
 //initializing game
 int numPlayers = 2;
 int seed = 555;
@@ -68,6 +69,8 @@ int testVals(int expected, int actual, char *testName){
 	else
 		printf("Failed!\n");
 
+	return 0;
+
 
 }
 
@@ -95,6 +98,8 @@ int runTest(struct gameState *state){
    
 		
 		testVals(expectedState, isGameOver(state), "Game Over Status");
+
+		return 0;
 
 	}
 

@@ -12,8 +12,6 @@ int runTest(int supplyPos, struct gameState *state, int toFlag, int player);
 
 int main() {
 
-printf("\n***Begin Testing gainCard***\n");
-
 //initializing game
 int numPlayers = 2;
 int seed = 555;
@@ -64,12 +62,11 @@ int testVals(int expected, int actual, char *testName){
 	else
 		printf("Failed!\n");
 
-	return 0;
-
 
 }
 
 int runTest(int supplyPos, struct gameState *state, int toFlag, int player){
+
 
 	// toFlag = 0 : add to discard
   // toFlag = 1 : add to deck
@@ -103,14 +100,10 @@ int runTest(int supplyPos, struct gameState *state, int toFlag, int player){
 		gainCard(supplyPos, state, toFlag, player);
 		testVals(expectedCount, state->handCount[player], "hand size");
 
-
-
 	}
 
 
 	//testVals(1, 2, "badstuff");
 	//testVals(1, 1, "goodstuff");
-
-	return 0;
 
 }

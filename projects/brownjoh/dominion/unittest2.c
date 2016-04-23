@@ -14,6 +14,7 @@ int loadCoins(int c, int s, int g, struct gameState *state);
 
 int main() {
 
+printf("\n***Begin Testing updateCoins***\n");
 //initializing game
 int numPlayers = 2;
 int seed = 555;
