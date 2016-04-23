@@ -5,7 +5,4 @@
 *.gcda
 *.o
 *.out
-playdom
-testDrawCard
-badTestDrawCard
 *.vim
