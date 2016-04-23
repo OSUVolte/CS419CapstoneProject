@@ -1,0 +1,102 @@
+Stramel CS362 Assignment 3 Unit Test Results
+--------------------------------------------
+
+unittest1
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest2
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest3
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest4
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest1
+---------
+CARD TEST #1: SMITHY
+PASSED: CARD EXECUTION
+PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 2
+FAILED: CURRENT PLAYER CARDS IN DISCARD+DECK WENT FROM 10 TO 7
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+PASSED: OTHER PLAYER CARDS IN DISCARD+DECK WENT FROM 5 TO 5
+PASSED: NO CHANGE TO VICTORY CARD PILE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+--------------------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest2
+---------
+CARD TEST #2: ADVENTURER
+PASSED: CARD EXECUTION
+FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER CARDS IN DISCARD+DECK WENT FROM 10 TO 7
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+PASSED: OTHER PLAYER CARDS IN DISCARD+DECK WENT FROM 5 TO 5
+PASSED: NO CHANGE TO VICTORY CARD PILE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+--------------------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest3
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest4
+---------
+File 'dominion.c'
+Lines executed:23.98% of 563
+Branches executed:22.06% of 417
+Taken at least once:17.99% of 417
+Calls executed:11.58% of 95
+Creating 'dominion.c.gcov'
+
+
