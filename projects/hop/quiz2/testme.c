@@ -18,8 +18,8 @@ char *inputString()
 	char charset[4] = {'e','r','s','t'};
 
     for ( i = 0 ; i < arraySize - 1 ; ++i){
-		//s[i] = charset[rand() + strlen(charset)];
-        s[i] = rand() % 26 + asciilowera;
+		s[i] = charset[rand() % strlen(charset)];
+		//s[i] = rand() % 26 + asciilowera; // Initial implementation
     }
     s[i] = '\0';
     return s;
