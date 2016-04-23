@@ -13,6 +13,7 @@ int runTest(struct gameState *state);
 
 int main() {
 
+printf("\n***Begin Testing isGameOver***\n");
 //initializing game
 int numPlayers = 2;
 int seed = 555;
@@ -22,8 +23,8 @@ initializeGame(numPlayers, k, seed, &Gstate);
 
 
 
-//precondition, the card type, game state, position the card is going to hand (discard deck or hand)  and player number passed in.
-// post condition, the chosen card should be added to the requested position for the selected player
+//precondition, current games state passed in to the function
+//post, true false value returned indicating if the game is finished.
 
 //int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
 	//copying gameState
@@ -68,6 +69,8 @@ int testVals(int expected, int actual, char *testName){
 	else
 		printf("Failed!\n");
 
+	return 0;
+
 
 }
 
@@ -95,6 +98,8 @@ int runTest(struct gameState *state){
    
 		
 		testVals(expectedState, isGameOver(state), "Game Over Status");
+
+		return 0;
 
 	}
 
