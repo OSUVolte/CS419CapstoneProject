@@ -24,7 +24,9 @@ int main(int argc, char *argv[]) {
   // use smithy card for player 2 (index 1), hand posiition 0
   int r = smithyCardEffect(1, 1, state);
 
+  // -------------------------------------------------------------------------------------
   // REQT: FUNCTION SUCCESSFULLY COMPLETES
+  // -------------------------------------------------------------------------------------
   if (r == 0) {
     printf("PASS");
   }
@@ -46,7 +48,9 @@ int main(int argc, char *argv[]) {
   printf("ED: CURRENT PLAYER CARDS IN HAND WENT FROM %d TO %d\n", before, after);
   printf("        EXPECTATION IS +2 CARDS\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: 3 CARDS SHOULD COME FROM HIS OWN PILE, BUT SMITHY WILL BE ADDED BACK TO THE DISCARD, NET -2
+  // -------------------------------------------------------------------------------------
   before = copy->discardCount[pNum] + copy->deckCount[pNum];
   after = state->discardCount[pNum] + state->deckCount[pNum];
   if (before - after == 2) {
@@ -58,7 +62,9 @@ int main(int argc, char *argv[]) {
   printf("ED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
   printf("        EXPECTATION IS -2 CARDS\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR OTHER PLAYER (player 1, index 0)
+  // -------------------------------------------------------------------------------------
   pNum = 0;
   before = copy->handCount[pNum];
   after = state->handCount[pNum];
@@ -82,7 +88,9 @@ int main(int argc, char *argv[]) {
   printf("ED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
   printf("        EXPECTATION IS NO CHANGE\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR VICTORY CARD PILE
+  // -------------------------------------------------------------------------------------
   int changed = -1;
   int i;
   for (i = 1; i <= 3; i++) {
@@ -101,7 +109,9 @@ int main(int argc, char *argv[]) {
   }
   printf("        EXPECTATION IS NO CHANGE\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR KINGDOM CARD PILE
+  // -------------------------------------------------------------------------------------
   changed = -1;
   for (i = 7; i <= 26; i++) {
     before = copy->supplyCount[i];
