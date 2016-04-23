@@ -13,13 +13,13 @@ and one is removed from the hand.
 void testPlaySmithy()
 {
 	int seed = 100;
-	int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
+	int k[10] = {adventurer, council_room, feast, gardens, mine,
+                remodel, smithy, village, baron, great_hall};
 	struct gameState state;
 	int r;
 	int numPlayer = 2;
 	
-	memset(&state, 23, sizeof(struct gameState));   // clear the game state
+	memset(&state, 0, sizeof(struct gameState));   
     initializeGame(numPlayer, k, seed, &state);
 	
 	/*Test the function executes fully*/
@@ -40,6 +40,17 @@ void testPlaySmithy()
 		printf("playSmithy: PASS 3 cards drawn and smithy discarded.\n");
 	else
 		printf("playSmithy: FAIL 3 cards drawn and smithy discarded.\n");
+	
+	/*Test cards drawn and smithy discarded*/
+	player = 1;
+	handPos = 0;	
+	state.handCount[player] = 3;
+	state.playedCardCount = 0;
+	r = playSmithy(player, &state, handPos);
+	if(state.playedCardCount == 1)
+		printf("playSmithy: PASS card added to played stack.\n");
+	else
+		printf("playSmithy: FAIL card added to played stack.\n");
 }
 
 int main(int argc, char *argv[])
