@@ -16,6 +16,7 @@ int loadCards(int card, int numCard, int pos, struct gameState *state);
 
 int main() {
 
+printf("\n***Begin Testing fullDeckCount***\n");
 //initializing game
 int numPlayers = 2;
 int seed = 555;
@@ -98,6 +99,8 @@ int testVals(int expected, int actual, char *testName){
 	else
 		printf("Failed!\n");
 
+	return 0;
+
 
 }
 
@@ -131,6 +134,8 @@ int loadCards(int card, int numCard, int pos, struct gameState *state){
 
 
 	return added;
+
+	return 0;
 
 
 }

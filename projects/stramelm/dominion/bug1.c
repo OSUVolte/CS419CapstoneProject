@@ -7,7 +7,7 @@ smithyCardEffect()         NOTE: Smithy gains three (+3) from deck/discard to
                              hand should be two (+2), while the number of cards
                              out of deck/discard will be three (-3)
 
-                           BUG: I added a bug to this function in Assignment 2.
+                           BUGS: I added a bug to this function in Assignment 2.
                              The bug sends smithy to the trash instead of to the
                              played pile.  However, the current suite of tests
                              aren't sufficient to detect this bug because it
@@ -26,7 +26,7 @@ adventurerCardEffect()     NOTE: Adventurer gains two (+2) treasure from
                              treasure cards.  Meanwhile, the total number of cards
                              out of the deck/discard should be one (-1).
 
-                           BUG: There are actually two bugs - one of which is
+                           BUGS: There are actually two bugs - one of which is
                              built into the original source code and one of which
                              I added during Assignment #2.  This bug is that the
                              code continues to draw until three (+3) TREASURE
@@ -51,7 +51,7 @@ council_roomCardEffect()   NOTE: Council_room gains four (+4) cards, one (+1)
                              be four (-4) for the current player.  It will be
                              +1/-1 for other players
 
-                           BUG: The bug in this function is that the one (+1)
+                           BUGS: The bug in this function is that the one (+1)
                              card that each OTHER players are suppossed to get
                              doesn't happen.  Instead, the CURRENT player gets
                              an additional one (+1) card.  So their are test
@@ -67,7 +67,7 @@ villageCardEffect()        NOTE: Village gains one (+1) card and two (+2) action
                              while the number of cards out of deck/discard will
                              be one (-1) for the current player.
 
-                           BUG: I added a bug to this function in Assignment 2.
+                           BUGS: I added a bug to this function in Assignment 2.
                              The bug sends smithy to the trash instead of to the
                              played pile.  However, the current suite of tests
                              aren't sufficient to detect this bug because it
@@ -80,3 +80,19 @@ villageCardEffect()        NOTE: Village gains one (+1) card and two (+2) action
                              There remains some question over whether or not the
                              incomplete discard implementation is a "bug" or just
                              code that needs re-factoring or completing.
+
+-------------              -----------------------------------------------------
+isGameOver()               NOTE: Function should return 1 if no more province cards
+                             or if any 3 other cards are empty.
+
+                           BUGS: Fairly simply function but I did find a bug.  The
+                             function incorrectly reports FALSE (GAME NOT OVER) if
+                             1 or 2 of the 3 NON-province cards that are required
+                             to be empty in combination are the sea-hag or
+                             treasure_map cards.  The function is setup with a loop
+                             to check just the first 25 cards but there are 27 in
+                             the CARD enum.
+
+                             The function is tailor made for random testing.  I
+                             refrained from random testing however due to the
+                             instructions to do unit testing only.

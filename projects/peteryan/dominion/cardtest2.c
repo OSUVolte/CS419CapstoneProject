@@ -30,7 +30,7 @@ void testPlayAdventurer()
 	if(state.handCount[player] == 5)
 		printf("playAdventurer: PASS two cards added to player hand.\n");
 	else
-		printf("playAdventurer: FAIL two cards added to player nahd.\n");
+		printf("playAdventurer: FAIL two cards added to player hand.\n");
 	if(r == 0)
 		printf("playAdventurer: PASS exit code 0.\n");
 	else

@@ -11,6 +11,7 @@ numbers.
 
 void testUpdateCoins()
 {
+	int i;
 	struct gameState state;
 	
 	state.handCount[1] = 5;

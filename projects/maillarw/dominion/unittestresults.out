@@ -1,0 +1,156 @@
+
+************Unit Tests 1**************
+
+--------Test 1: Zero Treasure Cards in Player's Hand---------
+
+Passed
+
+--------Test 2: Full Hand of All Copper Cards---------
+
+Passed
+
+--------Test 3: Full Hand of All Silver Cards---------
+
+Passed
+
+--------Test 4: Full Hand of All Gold Cards---------
+
+Passed
+
+--------Test 5: Large Hand with 5 Copper, 5 Silver, and 5 Gold---------
+
+Passed
+
+--------Test 6: One Gold Card and a bonus of 1---------
+
+Passed
+
+************Unit Tests 2**************
+
+--------Test 1: Newly Initialized Game---------
+
+Passed
+
+--------Test 2: 3 Supply Stacks are Empty and 2 players---------
+
+Passed
+
+--------Test 3: 3 Supply Stacks are Empty and 5 players---------
+
+Failed
+
+--------Test 4:  Stack of Province Cards is Empty---------
+
+Passed
+
+************Unit Tests 3**************
+
+--------Test 1: Empty Deck, Hand, and Discard---------
+
+Passed
+
+--------Test 2: Hand that has one of every card, empty deck ---------
+
+Failed
+Count is 10 but should be 11
+
+--------Test 3: Discard that has one of every card, empty deck ---------
+
+Failed
+Count is -7 but should be 11
+
+--------Test 4: Deck that has one of every card ---------
+
+Failed
+Count is 0 but should be 11
+
+
+************Unit Tests 4**************
+
+--------Test 1: Newly Initialized Game, Check for Every Card---------
+
+Passed
+
+--------Test 2: One of the desired card in the Deck, the Hand, and the Discard ---------
+
+Passed
+
+--------Test 3: One of the desired cards in the hand but not the others ---------
+
+Passed
+
+--------Test 4: One of the desired cards in the discard but not the others ---------
+
+Passed
+
+--------Test 4: One of the desired cards in the deck but not the others ---------
+
+Passed
+
+************Card Tests 1**************
+
+--------Test 1: Play Smithy and Check that 3 Cards are Drawn and 1 (Smithy) is Discarded---------
+
+Failed
+
+--------Test 2:	Play Smithy with an empty player deck and empty discard pile---------
+
+Passed
+
+--------Test 3:	Play Smithy with an empty player deck and full discard pile---------
+
+Failed
+
+************Card Tests 2**************
+
+--------Test 1: Play Adventurer with a deck full of Gold and check that -----------------
+-------- two Gold Cards are added to the player's hand---------
+
+Passed
+
+--------Test 2: Play Adventurer with a deck full of Gold and check that -----------------
+-------- one card is discarded (Adventurer)---------
+
+Failed
+
+--------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check -----------------
+-------- that 9 cards are discarded (viewed cards + Adventurer)---------
+
+Failed
+
+--------Test 4: Play Adventurer with an empty deck and discard pile of all Copper-----------------
+-------- Check that two Copper Cards are added to the player's hand ---------
+
+Passed
+
+************Card Tests 3**************
+
+--------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom should be in Played Cards ------------
+
+Passed
+
+--------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's hand------------
+
+Passed
+
+--------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's hand------------
+
+Passed
+
+--------Test 4: Play CouncilRoom. Number of buys should be increased by 1 ------------
+
+Passed
+
+************Card Tests 4**************
+
+--------Test 1: Play Village. Player should add one card to hand and remove one card from hand ------------
+
+Failed
+
+--------Test 2: Play Village. One card (Village) should be sent to playedCards ------------
+
+Failed
+
+--------Test 3: Play Village. Actions should be increased by 2 ------------
+
+Passed

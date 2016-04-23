@@ -41,10 +41,10 @@ buyCard(): PASS coins removed for treasure_map.
 buyCard(): PASS coins removed for invalid card.
 buyCard(): PASS coins removed for invalid card.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:48.40% of 564
+Branches executed:52.52% of 417
+Taken at least once:40.29% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 unittest2.c:
@@ -57,10 +57,10 @@ isGameOver: PASS game is over.
 isGameOver: FAIL game is over.
 isGameOver: PASS game is over.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:48.76% of 564
+Branches executed:52.52% of 417
+Taken at least once:40.77% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 unittest3.c
@@ -73,10 +73,10 @@ updateCoins: PASS have 100 copper in hand.
 updateCoins: PASS hand with different cards.
 updateCoins: PASS have no coins in hand.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:48.76% of 564
+Branches executed:52.52% of 417
+Taken at least once:40.77% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 unittest4.c
@@ -113,10 +113,10 @@ gainCard: PASS add card to player 4 discard, negative flag.
 gainCard: PASS remove from supply stack.
 gainCard: PASS using invalid card.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:49.65% of 564
+Branches executed:52.52% of 417
+Taken at least once:41.49% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 cardtest1.c
@@ -124,30 +124,49 @@ playSmithy: FAIL smithy completed execution.
 playSmithy: FAIL 3 cards drawn and smithy discarded.
 playSmithy: PASS card added to played stack.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:49.65% of 564
+Branches executed:52.52% of 417
+Taken at least once:41.73% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 cardtest2.c
-playAdventurer: FAIL two cards added to player nahd.
+playAdventurer: FAIL two cards added to player hand.
 playAdventurer: PASS exit code 0.
 playAdventurer: FAIL draw two treasure cards.
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:49.65% of 564
+Branches executed:52.52% of 417
+Taken at least once:41.73% of 417
+Calls executed:29.47% of 95
 Creating 'dominion.c.gcov'
 
 cardtest3.c
 villageEffect: PASS net gain 0 cards.
 villageEffect: PASS exit code 0.
+villageEffect: PASS gain 2 actions.
+villageEffect: Hand before play - 6 14 5 
+villageEffect: Hand after play - 6 4 5 
 File 'dominion.c'
-Lines executed:38.30% of 564
-Branches executed:38.61% of 417
-Taken at least once:29.98% of 417
-Calls executed:21.05% of 95
+Lines executed:50.35% of 564
+Branches executed:52.52% of 417
+Taken at least once:41.97% of 417
+Calls executed:31.58% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c
+council_roomEffect: PASS exit code 0.
+council_roomEffect: PASS net gain 3 cards for player 2.
+council_roomEffect: PASS 4 cards removed from deck.
+council_roomEffect: PASS player 1 card added to hand.
+council_roomEffect: PASS player 1 card removed from deck.
+council_roomEffect: PASS player 3 card added to hand.
+council_roomEffect: PASS player 3 card removed from deck.
+council_roomEffect: PASS number of buys increases by one.
+File 'dominion.c'
+Lines executed:52.84% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.60% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 

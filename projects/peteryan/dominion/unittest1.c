@@ -13,7 +13,6 @@ for purchased card added to the player's hand or deck.
 void testBuyCard()
 {
 	int r;
-	int i;
 	struct gameState state;
 	
 	/*Tests when player doesn't have a buy.*/
