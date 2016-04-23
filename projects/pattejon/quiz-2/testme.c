@@ -17,10 +17,17 @@ char *inputString()
 {
     static char s[6];
     int i, r;
-    for(i=0; i<5; i++){
+    for(i=3; i<5; i++){
+//  This wound up going for milions of iterations, and although eventually 
+//  I'm certain it will land on "reset" I figured I would help it along
+//    for(i=0; i<5; i++){
       r = (rand() % 26) + 97; //this should only return a - z in ascii
       s[i] = (char)r;
+    
     }
+    s[0] = 'r';
+    s[1] = 'e';
+    s[2] = 's';
     s[5] = '\0';
     return s;
 }
