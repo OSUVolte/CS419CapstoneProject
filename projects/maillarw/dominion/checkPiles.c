@@ -1,0 +1,2 @@
+	printf("HandCount: %i, DiscardCount: %i, DeckCount: %i", G->handCount[1], G->discardCount[1], G->deckCount[1]);
+												//Hand count should increase by 2 and discard should only have an adventurer
