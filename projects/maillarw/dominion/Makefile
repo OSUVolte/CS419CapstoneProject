@@ -36,4 +36,27 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest[1-4] cardtest[1-4]
+
+unit1:
+	gcc -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm
+unit2:
+	gcc -std=c99 dominion.c unittest2.c rngs.c -o unittest2 -lm
+unit3:
+	gcc -std=c99 dominion.c unittest3.c rngs.c -o unittest3 -lm
+unit4:
+	gcc -std=c99 dominion.c unittest4.c rngs.c -o unittest4 -lm
+card1:
+	gcc -std=c99 dominion.c cardtest1.c rngs.c -o cardtest1 -lm
+card2:
+	gcc -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm
+card3:
+	gcc -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm
+card4:
+	gcc -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm
+runMyTests:
+	echo "sup"
+	./unittest1 &> unittestresults.out
+	
+unittestresults.out: unit1 unit2 unit3 unit4 card1 card2 card3 card4 
+	./unittest1 &> unittestresults.out

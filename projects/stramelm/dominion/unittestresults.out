@@ -1,0 +1,165 @@
+Stramel CS362 Assignment 3 Unit Test Results
+--------------------------------------------
+
+unittest1
+---------
+UNIT TEST #1: isGameOver()
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 1
+        EXPECTATION IS r = 1
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+FAILED: RETURN VALUE = 0
+        EXPECTATION IS r = 1
+FAILED: RETURN VALUE = 0
+        EXPECTATION IS r = 1
+PASSED: RETURN VALUE = 1
+        EXPECTATION IS r = 1
+--------------------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest2
+---------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest3
+---------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+unittest4
+---------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest1
+---------
+CARD TEST #1: SMITHY
+PASSED: CARD EXECUTION
+PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 2
+        EXPECTATION IS +2 CARDS
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
+        EXPECTATION IS -2 CARDS
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO VICTORY CARD PILE
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+        EXPECTATION IS NO CHANGE
+--------------------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest2
+---------
+CARD TEST #2: ADVENTURER
+PASSED: CARD EXECUTION
+FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 3
+        EXPECTATION IS +1 CARDS
+FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 3
+        EXPECTATION IS +2 TREASURE CARDS
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
+        EXPECTATION IS -1 CARDS
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO VICTORY CARD PILE
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+        EXPECTATION IS NO CHANGE
+--------------------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest3
+---------
+CARD TEST #3: COUNCIL ROOM
+PASSED: CARD EXECUTION
+PASSED: NUMBER OF BUYS WENT FROM 1 TO 2
+        EXPECTATION IS +1 BUYS
+FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 4
+        EXPECTATION IS +3 CARDS
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 5
+        EXPECTATION IS -3 CARDS
+FAILED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+        EXPECTATION IS +1 CARDS
+FAILED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
+        EXPECTATION IS -1 CARDS
+PASSED: NO CHANGE TO VICTORY CARD PILE
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+        EXPECTATION IS NO CHANGE
+--------------------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
+cardtest4
+---------
+CARD TEST #4: VILLAGE
+PASSED: CARD EXECUTION
+PASSED: NUMBER OF ACTIONS WENT FROM 1 TO 3
+        EXPECTATION IS +2 ACTIONS
+PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 0
+        EXPECTATION IS NET ZERO CARDS
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 9
+        EXPECTATION IS NET ZERO CARDS
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO VICTORY CARD PILE
+        EXPECTATION IS NO CHANGE
+PASSED: NO CHANGE TO KINGDOM CARD PILE
+        EXPECTATION IS NO CHANGE
+--------------------
+File 'dominion.c'
+Lines executed:25.93% of 563
+Branches executed:23.98% of 417
+Taken at least once:19.90% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+
