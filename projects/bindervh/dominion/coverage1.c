@@ -4,9 +4,9 @@ Assignment 3
 Coverage Report
 Used gcov to measure line and branch coverage for each unit test created.
 
-Summary:  My unit tests covered 85-95% of the statements.  It would be a good 
-idea to get this up to 100% in case there is a error in a statement not covered.
-Branch coverage is at 100% for all tests.
+Summary:  My unit tests did not cover 100% of the statements. This is okay because
+there were many if statements that meant lines were skipped if the test passed or 
+failed. Branch coverage is at 100% for all tests.
 	Many of the functions tested through cardtests and unittests had 100% coverage.
 The tests that need to be added to are cardtest1 for the adventurer card, unitetest3
 for discardCard, and unittest4 for playCard.  These functions all had less than 100%
@@ -17,36 +17,35 @@ completely covered.  This is because the unit tests were written to test four sp
 cards and four specific functions, not the entire program.  To have a complete test suite,
 I would need to write tests that cover the entire program.
 
-
 gcov cardtest1.c -b
 File 'cardtest1.c'
-Lines executed:84.44% of 45
-Branches executed:100.00% of 8
-Taken at least once:50.00% of 8
+Lines executed:70.00% of 80
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
 No calls
 cardtest1.c:creating 'cardtest1.c.gcov'
 
 gcov cardtest2.c -b
 File 'cardtest2.c'
-Lines executed:87.50% of 16
-Branches executed:100.00% of 2
-Taken at least once:50.00% of 2
+Lines executed:65.57% of 61
+Branches executed:100.00% of 26
+Taken at least once:53.85% of 26
 No calls
 cardtest2.c:creating 'cardtest2.c.gcov'
 
 gcov cardtest3.c -b
 File 'cardtest3.c'
-Lines executed:90.48% of 21
-Branches executed:100.00% of 4
-Taken at least once:50.00% of 4
+Lines executed:68.18% of 66
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
 No calls
 cardtest3.c:creating 'cardtest3.c.gcov'
 
 gcov cardtest4.c -b
 File 'cardtest4.c'
-Lines executed:90.48% of 21
-Branches executed:100.00% of 4
-Taken at least once:50.00% of 4
+Lines executed:68.18% of 66
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
 No calls
 cardtest4.c:creating 'cardtest4.c.gcov'
 
@@ -243,3 +242,4 @@ Branches executed:28.67% of 415
 Taken at least once:19.76% of 415
 No calls
 dominion.c:creating 'dominion.c.gcov'
+
