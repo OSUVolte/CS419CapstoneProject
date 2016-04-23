@@ -10,13 +10,13 @@ int main(int argc, char *argv[]) {
   printf("CARD TEST #1: SMITHY\n");
 
   // setup dummy game with 2 players
-  int np = 2;  
+  int np = 2;
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
     sea_hag, tribute, smithy};
   int seed = 777; // arbitrary seed value
   struct gameState* state = malloc(sizeof(struct gameState));
   initializeGame(np, k, seed, state);
- 
+
   // make copy of gamestate
   struct gameState* copy = malloc(sizeof(struct gameState));
   memcpy(copy, state, sizeof(struct gameState));
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     printf("FAIL");
   }
   printf("ED: CARD EXECUTION\n");
-  
+
   // REQT: CURRENT PLAYER SHOULD REC'V 3 CARDS, BUT SMITHY TO BE DISCARDED, NET 2
   int pNum = 1;
   int before = copy->handCount[pNum];
@@ -45,10 +45,10 @@ int main(int argc, char *argv[]) {
   }
   printf("ED: CURRENT PLAYER CARDS IN HAND WENT FROM %d TO %d\n", before, after);
 
-  // REQT: 3 CARDS SHOULD COME FROM HIS OWN PILE
+  // REQT: 3 CARDS SHOULD COME FROM HIS OWN PILE, BUT SMITHY WILL BE ADDED, NET -2
   before = copy->discardCount[pNum] + copy->deckCount[pNum];
   after = state->discardCount[pNum] + state->deckCount[pNum];
-  if (after - before == 2) {
+  if (before - after == 2) {
     printf("PASS");
   }
   else {

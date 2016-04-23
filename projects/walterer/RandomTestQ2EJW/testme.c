@@ -3,28 +3,31 @@
 #include<stdlib.h>
 #include<time.h>
 
+
+/* Returns a random character on the ASCII table between character 33-126 */
 char inputChar()
 {
-	char ch[] = { '[', ']', '{', '}', '(', ')', ' ', 'a', 'x' };
-	int randInt = rand() % sizeof(ch);
-
-	return ch[randInt];
+    return (rand() % 126) + 33;
 }
 
+/* Returns a random string with a null character at the end */
 char *inputString()
-{
-	char ch[] = { 'r', 'e', 's', 'e', 't'};
-	char *s = (char*)malloc(sizeof(char));
-	int i;
-
-	for (i = 0; i < 5; i++)
-	{
-		s[i] = ch[rand() % sizeof(ch)];
-	}
-
-	s[5] = '\0';
-
-	return s;
+{    
+    char * randomString;
+    int i;
+    
+    randomString = (char *) malloc(6);
+    
+    for (i = 0; i < 5; i++){
+    	
+    	randomString[i] = inputChar();
+    	
+    }
+    
+    randomString[5] = '\0';
+    
+    
+    return randomString;
 }
 
 void testme()
@@ -63,7 +66,7 @@ void testme()
 
 int main(int argc, char *argv[])
 {
-	srand(time(NULL));
-	testme();
-	return 0;
+    srand(time(NULL));
+    testme();
+    return 0;
 }
