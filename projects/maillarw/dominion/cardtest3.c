@@ -20,42 +20,18 @@ int main () {
   	int numCards = 27;
 	
 	
-	printf ("\n--------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom should be discarded -----------------\n\n");
+	printf ("\n--------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom should be in Played Cards ------------\n\n");
 	
 	initializeGame(2, k, 1, G);
 	G->whoseTurn = 1;
 	G->handCount[1] = 5;							//Set player 1 to have 5 cards
 	G->hand[1][0] = council_room;
-	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 5 curses
+	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 4 curses
 		G->hand[1][i] = curse;
 	}
 
-	playCouncilRoom(G, 0);
-
-	if(G->handCount[1] == 9 && G->discardCount == 1) && G->discard[1][0] == council_room){											 
-		 printf("Passed\n");
-	}
-	else{
-		printf("Failed\n");
-	}
-/*
-
-	printf ("\n--------Test 2: Play Adventurer with a deck full of Gold and check that -----------------\n-------- one card is discarded (Adventurer)---------\n\n");
-	
-	initializeGame(2, k, 1, G);
-	G->whoseTurn = 1;
-	G->handCount[1] = 5;							//Set player 1 to have 5 cards
-	G->hand[1][0] = adventurer;
-	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 5 curses
-		G->hand[1][i] = curse;
-	}
-	for(int i = 1; i < 10; i++){				//Fill Deck with all Gold
-		G->deck[1][i] = gold;
-	}
-	
-	playAdventurer(G);
-
-	if(G->discardCount == 0 && G->discard[1][0] == adventurer){											 
+	playCouncil_Room(G, 0);
+	if(G->handCount[1] == 8 && G->playedCardCount == 1 && G->playedCards[0] == council_room){											 
 		 printf("Passed\n");
 	}
 	else{
@@ -63,26 +39,39 @@ int main () {
 	}
 
 
-	printf ("\n--------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check -----------------\n-------- that 9 cards are discarded (viewed cards + Adventurer)---------\n\n");
+	
+	printf ("\n--------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's hand------------\n\n");
 	
 	initializeGame(2, k, 1, G);
 	G->whoseTurn = 1;
 	G->handCount[1] = 5;							//Set player 1 to have 5 cards
-	G->hand[1][0] = adventurer;
-	for(int i = 1; i < 5; i++){					//Fill hand with 1 smithy and 5 curses
+	G->hand[1][0] = council_room;
+	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 4 curses
 		G->hand[1][i] = curse;
 	}
-	for(int i = 0; i < 8; i++){
-		G->deck[1][i] = curse;
-	}
 
-	for(int i = 8; i < 10; i++){				
-		G->deck[1][i] = silver;
+	playCouncil_Room(G, 0);
+
+	if(G->handCount[0] == 6){											 
+		 printf("Passed\n");
 	}
+	else{
+		printf("Failed\n");
+	}
+	   
+	printf ("\n--------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's hand------------\n\n");
 	
-	playAdventurer(G);
+	initializeGame(4, k, 1, G);
+	G->whoseTurn = 1;
+	G->handCount[1] = 5;							//Set player 1 to have 5 cards
+	G->hand[1][0] = council_room;
+	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 4 curses
+		G->hand[1][i] = curse;
+	}
 
-	if(G->discardCount[1] == 9){											 
+	playCouncil_Room(G, 0);
+
+	if(G->handCount[0] == 6 && G->handCount[2] == 1 && G->handCount[3] == 1){											 
 		 printf("Passed\n");
 	}
 	else{
@@ -90,28 +79,25 @@ int main () {
 	}
 
 
-	printf ("\n--------Test 4: Play Adventurer with an empty deck and discard pile of all Copper-----------------\n-------- Check that two Copper Cards are added to the player's hand ---------\n\n");
+	printf ("\n--------Test 4: Play CouncilRoom. Number of buys should be increased by 1 ------------\n\n");
 	
 	initializeGame(2, k, 1, G);
 	G->whoseTurn = 1;
 	G->handCount[1] = 5;							//Set player 1 to have 5 cards
-	G->hand[1][0] = adventurer;
-	for(int i = 1; i < 5; i++){					//Fill hand with 1 smithy and 5 curses
+	G->hand[1][0] = council_room;
+	for(int i = 1; i < 5; i++){					//Fill hand with 1 council_room and 4 curses
 		G->hand[1][i] = curse;
 	}
-	for(int i = 0; i < 10; i++){
-		G->discard[1][i] = copper;
-	}
-	G->discardCount[1] = 10;
-	G->deckCount[1] = 0;
+	
+	int buys = 2;
+	G->numBuys = buys;
+	playCouncil_Room(G, 0);
+	buys++;
 
-	playAdventurer(G);
-
-	if(G->handCount[1] == 7 && G->hand[1][5] == copper && G->hand[1][6] == copper){											 
+	if(G->numBuys == buys){											 
 		 printf("Passed\n");
 	}
 	else{
 		printf("Failed\n");
 	}
 }
-*/
