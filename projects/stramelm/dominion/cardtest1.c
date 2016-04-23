@@ -35,7 +35,9 @@ int main(int argc, char *argv[]) {
   }
   printf("ED: CARD EXECUTION\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: CURRENT PLAYER SHOULD REC'V 3 CARDS, BUT SMITHY TO BE DISCARDED, NET 2 IN HAND
+  // -------------------------------------------------------------------------------------
   int pNum = 1;
   int before = copy->handCount[pNum];
   int after = state->handCount[pNum];
