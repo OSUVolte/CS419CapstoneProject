@@ -29,6 +29,52 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.h dominion.c rngs.h rngs.c 
+	echo "Result for running unit tests cards:" > unittestsresults.out
+	
+	echo "cardtest1.c:" >> unittestsresults.out
+	gcc -o cardtest1 compare.c bst.c cardtest1.c $(CFLAGS)
+	cardtest1 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "cardtest2.c:" >> unittestsresults.out
+	gcc -o cardtest2 compare.c bst.c cardtest2.c $(CFLAGS)
+	cardtest2 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "cardtest3.c:" >> unittestsresults.out
+	gcc -o cardtest3 compare.c bst.c cardtest3.c $(CFLAGS)
+	cardtest3 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "cardtest4.c:" >> unittestsresults.out
+	gcc -o cardtest4 compare.c bst.c cardtest4.c $(CFLAGS)
+	cardtest4 >> unittestsresults.out
+	gcov  dominion.c >> unittestsresults.out
+	
+	echo "Result for running unit tests functions:" > unittestsresults.out
+	
+	echo "unittest1.c:" >> unittestsresults.out
+	gcc -o unittest1 compare.c bst.c unittest1.c $(CFLAGS)
+	unittest1 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "unittest2.c:" >> unittestsresults.out
+	gcc -o unittest2 compare.c bst.c unittest2.c $(CFLAGS)
+	unittest2 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "unittest3.c:" >> unittestsresults.out
+	gcc -o unittest3 compare.c bst.c unittest3.c $(CFLAGS)
+	unittest3 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+	echo "unittest4.c:" >> unittestsresults.out
+	gcc -o unittest4 compare.c bst.c unittest4.c $(CFLAGS)
+	unittest4 >> unittestsresults.out
+	gcov dominion.c >> unittestsresults.out
+	
+
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

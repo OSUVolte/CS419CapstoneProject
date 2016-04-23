@@ -19,9 +19,6 @@
 
 
 int main() {
-	// Counters
-	int i;
-
 	// Game settings
 	int seed = 1000,
 		numPlayers = 2,
