@@ -20,7 +20,7 @@ unittest2.c - buyCard() method
 	in practice, is not going to be a very likely scenario, but it is one
 	that should be handled by the code logic.
 
-unittest3.c
+unittest3.c - discardCard() method
 	This method has a curious implementation that works in the game but
 	should probably be made safer. For instance, because it uses a fixed
 	int array indicating what cards are in the hand, but using another
@@ -29,4 +29,11 @@ unittest3.c
 	swaps it with itself, but the function doesn't test to see if we can't
 	just provide position 0 again.
 
-unittest4.c
+unittest4.c - isGameOver() method
+	This method is pretty straightforward and quite easy to write a random
+	test for. As I was writing it I realized there's some interesting
+	design decisions going into this. The state->supplyCount array has 
+	every card available, which is probably fine, but position 3 in that
+	array is the "province" position. So, in my test, I excluded that
+	position from being assigned randomly. Otherwise this method does a 
+	good job of identifying when the game is indeed over.
