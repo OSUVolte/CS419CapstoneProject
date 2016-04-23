@@ -1,0 +1,100 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <math.h>
+        -:    9:
+        -:   10:#include "testHelper.h"
+        -:   11:
+        -:   12:#define TESTCARD "getCost"
+        -:   13:
+        1:   14:int main() {
+        -:   15:
+        1:   16:	int newCards = 0;
+        1:   17:	int discarded = 1;
+        1:   18:	int newCoins = 0;
+        1:   19:	int shuffledCards = 0;
+        1:   20:	int a = 0, b = 0, c= 0;
+        1:   21:	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        -:   22:	int remove1, remove2;
+        1:   23:	int seed = 1000;
+        1:   24:	int numPlayers = 2;
+        1:   25:	int thisPlayer = 0;
+        1:   26:	int otherPlayer = 1;
+        1:   27:	int found = 0;
+        -:   28:
+        1:   29:	int allCards[27] = {curse, estate, duchy, province, copper, silver, gold, adventurer, 
+        -:   30:		council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, 
+        -:   31:		minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, 
+        -:   32:		sea_hag, treasure_map};
+        1:   33:	int allCosts[27] = {0, 2, 5, 8, 0, 3, 6, 6, 5, 4, 4, 5, 4, 4, 3, 4, 3, 5, 3, 5, 3, 4, 2, 
+        -:   34:		5, 4, 4,4};
+        -:   35:	const char *card[27];
+        1:   36:	card[0] = "curse"; 
+        1:   37:	card[1] = "estate"; 
+        1:   38:	card[2] = "duchy"; 
+        1:   39:	card[3] = "province"; 
+        1:   40:	card[4] = "copper"; 
+        1:   41:	card[5] = "silver"; 
+        1:   42:	card[6] = "gold"; 
+        1:   43:	card[7] = "adventurer"; 
+        1:   44:	card[8] = "council_room"; 
+        1:   45:	card[9] = "feast"; 
+        1:   46:	card[10] = "gardens"; 
+        1:   47:	card[11] = "mines"; 
+        1:   48:	card[12] = "remodel"; 
+        1:   49:	card[13] = "smithy"; 
+        1:   50:	card[14] = "village"; 
+        1:   51:	card[15] = "baron"; 
+        1:   52:	card[16] = "great_hall"; 
+        1:   53:	card[17] = "minion"; 
+        1:   54:	card[18] = "steward"; 
+        1:   55:	card[19] = "tribute"; 
+        1:   56:	card[20] = "ambassador"; 
+        1:   57:	card[21] = "cutpurse"; 
+        1:   58:	card[22] = "embargo"; 
+        1:   59:	card[23] = "outpost"; 
+        1:   60:	card[24] = "salvager"; 
+        1:   61:	card[25] = "sea_hag"; 
+        1:   62:	card[26] = "treasure_map"; 
+        -:   63:	struct gameState G, testG;
+        1:   64:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   65:		sea_hag, tribute, smithy, council_room};
+        -:   66:	
+        1:   67:	initializeGame(numPlayers, k, seed, &G);
+        -:   68:
+        1:   69:	printf("\t Testing Card: %s \n", TESTCARD);
+        -:   70:	// boot up the perfect version
+        1:   71:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   72:	// Test 01 -----------------------------------------------------------------
+        -:   73:
+        1:   74:	printf("Testing return values for all cards...\t");	
+       29:   75:	while (a < (sizeof(allCards) / sizeof(int))) {
+       27:   76:		if (allCosts[a] != getCost(allCards[a])) {
+    #####:   77:			printf("ERROR\n");
+    #####:   78:			printf("%s: cost %d, expected %d\n" ,card[a], allCosts[a], getCost(allCards[a]));
+    #####:   79:			found = 1;
+        -:   80:		}
+       27:   81:		a++;
+        -:   82:	}
+        1:   83:	if ( found == 0) {
+        1:   84:		printf("PASS\n");
+        -:   85:	}
+        -:   86:
+        1:   87:	genericTest(G, testG, otherPlayer, 0);
+        -:   88:
+        1:   89:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+        1:   90:	return 0;
+        -:   91:}
+        -:   92:
+        -:   93:
+        -:   94:
+        -:   95:
