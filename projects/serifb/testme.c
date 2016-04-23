@@ -5,7 +5,7 @@
 
 char inputChar()
 {
-	char ch[] = { '[', ']', '{', '}', '(', ')', ' ', 'a'. 'x' };
+	char ch[] = { '[', ']', '{', '}', '(', ')', ' ', 'a', 'x' };
 	int randInt = rand() % sizeof(ch);
 
 	return ch[randInt];
