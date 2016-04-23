@@ -21,12 +21,11 @@
 
 int main() {
 	// Counters
-	int i, j, k;
+	int i;
 
 	// Game settings
 	int seed = 1000,
 		numPlayers = 2,
-		thisPlayer = 0,
 		cards[10] = { adventurer, embargo, village, minion, mine, cutpurse,
 					  sea_hag, tribute, smithy, council_room };
 
@@ -34,7 +33,7 @@ int main() {
 	struct gameState G, testG;
 	initializeGame(numPlayers, cards, seed, &G);
 	memcpy(&testG, &G, sizeof(struct gameState));
-memcpy(&G, &testG, sizeof(struct gameState));
+	
 	printf("--------------- UNIT TEST 1 ---------------\n");
 	printf("------------- BUY CARD TESTS --------------\n");
 
@@ -75,8 +74,8 @@ memcpy(&G, &testG, sizeof(struct gameState));
 	assert(G.discardCount[0] == testG.discardCount[0] + 1);
 
 	printf("\nTEST 5: Supply count for card 0 decremented by 1\n");
-	printf("Supply count for [0]: %d, expected %d\n", G.supplyCount[0], testG.supplyCount[0] - 1);
-	assert(G.supplyCount[0] == (testG.supplyCount[0] - 1));
+	printf("Supply count for adventurer: %d, expected %d\n", G.supplyCount[adventurer], testG.supplyCount[adventurer] - 1);
+	assert(G.supplyCount[adventurer] == (testG.supplyCount[adventurer] - 1));
 
 	printf("\nTEST 6: Number of buys decremented by 1\n");
 	printf("Num of buys left: %d, expected %d\n", G.numBuys, testG.numBuys - 1);
@@ -85,6 +84,8 @@ memcpy(&G, &testG, sizeof(struct gameState));
 	printf("\nTEST 7: Amt. of coin has decremented.\n");
 	printf("Coin: %d, expected %d\n", G.coins, testG.coins - getCost(adventurer));
 	assert(G.coins == testG.coins - getCost(adventurer));
+
+	printf("\n--------------- ALL TESTS PASSED ---------------\n");
 
 	return 0;
 }
