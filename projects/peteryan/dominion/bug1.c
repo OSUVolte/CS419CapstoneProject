@@ -4,7 +4,7 @@ Ryan Peters
 
 General Info
 	I tests for invalid inputs that are used to access an array by providing
-	a number that is larger than number of indicies or a negative number.  
+	a number that is larger than number of indices or a negative number.  
 	These test pass because I add information to the memory location right
 	before using it.  I made the test expecting them to FAIL for using inputs
 	that are out of bounds.
