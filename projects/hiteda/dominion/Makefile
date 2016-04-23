@@ -28,7 +28,17 @@ runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
-
+	
+unittests: unittest1.c unittest2.c
+	gcc -o unittest1 unittest1.c dominion.c rngs.c $(CFLAGS)
+	echo "unittest1" > unittestresult.out
+	unittest1 >> unittestresult.out
+	gcov dominion.c >> unittestresult.out
+	gcc -o unittest2 unittest2.c dominion.c rngs.c $(CFLAGS)
+	echo "-----------------------------------------------------------" >> unittestresult.out
+	echo "unittest2" >> unittestresult.out
+	unittest2 >> unittestresult.out
+	gcov dominion.c >> unittestresult.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
@@ -36,4 +46,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.out unittest1 unittest2
