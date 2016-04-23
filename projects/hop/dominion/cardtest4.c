@@ -84,5 +84,7 @@ int main(){
    }
    printf("\n");
    printf("<----------END cardtest4-village card---------->\n\n");
+
+   return 0;
 }
 

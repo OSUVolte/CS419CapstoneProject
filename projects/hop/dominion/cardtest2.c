@@ -78,5 +78,7 @@ int main(){
    }
    printf("\n");
    printf("<----------END cardtest2-adventurer card---------->\n\n");
+
+   return 0;
 }
 
