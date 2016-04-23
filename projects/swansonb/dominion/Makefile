@@ -42,8 +42,8 @@ unittestresults.out: unittest*.c testUtilities.c dominion.o rngs.o
 	gcc -o unittest1.out unittest1.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./unittest1.out >> unittestresults.out
 	
-#	gcc -o unittest2.out unittest2.c dominion.o rngs.o -g  $(CFLAGS)
-#	./unittest2.out >> unittestresults.out
+	gcc -o unittest2.out unittest2.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./unittest2.out >> unittestresults.out
 #	
 #	gcc -o unittest3.out unittest3.c dominion.o rngs.o -g  $(CFLAGS)
 #	./unittest3.out >> unittestresults.out

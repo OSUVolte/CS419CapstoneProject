@@ -3,19 +3,14 @@
 #include "testUtilities.h"
 #include <string.h>
 
-void cpyDeck(int* dest, int* src, int n){
-    int* end = src + n;
-    for(;src<end; ++src, ++dest) *dest = *src;
-}
-
 int main(int argc, char **argv) {
 
     // Testing for Shuffle function
     printf("Testing dominion.c int shuffle()\n");
 
-    const int NUM_NEW_GAMES = 20;
-    const int NUM_SHUFFLES_PER_GAME = 20;
-    int seed = 1000;
+    const int NUM_NEW_GAMES = 4;
+    const int NUM_SHUFFLES_PER_GAME = 8;
+    int seed = 500;
     int testsRun = 0;
     int testsPassed = 0;
     int numPlayers = 4;
@@ -31,7 +26,7 @@ int main(int argc, char **argv) {
     //Boundry and branch testing
     // initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &G);
-    G.deckCount[1] = 0;
+    G.deckCount[curPlayer] = 0;
     copyGameState(&before,&G);
     printf("requesting to shuffle empty deck, expected -1 return and game state unaffected \n");
     int result = shuffle(curPlayer, &G);
