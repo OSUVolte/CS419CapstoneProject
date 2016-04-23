@@ -7,16 +7,6 @@
 
 // This is a test for the outpost card / function from dominion.c
 
-
-// int outpostCardEffect(int currentPlayer, int handPos, struct gameState *state) {
-//   //set outpost flag
-//   state->outpostPlayed++;
-//
-//   //discard card
-//   discardCard(handPos, currentPlayer, state, 0);
-//   return 0;
-// }
-
 int main() {
   printf("*** Testing outpostCardEffect *** \n");
 
@@ -70,7 +60,6 @@ int main() {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
   outpostCardEffect(player, 0, &game);
-  game.supplyCount[gardens]--;
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;
