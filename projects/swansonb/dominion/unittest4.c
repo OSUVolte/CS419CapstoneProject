@@ -5,8 +5,13 @@
 
 int main(int argc, char **argv) {
 
-    // Testing for Shuffle function
+    // Testing for gainCard function
+    printf("----------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
     printf("Testing dominion.c int gainCard()\n");
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+
 
     char* toFlags[3] = {"discard","deck", "hand"};
     int seed = 500;

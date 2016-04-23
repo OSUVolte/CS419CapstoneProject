@@ -6,7 +6,12 @@
 int main(int argc, char **argv) {
 
     // Testing for Shuffle function
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
     printf("Testing dominion.c int shuffle()\n");
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+
 
     const int NUM_NEW_GAMES = 4;
     const int NUM_SHUFFLES_PER_GAME = 8;
