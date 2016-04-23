@@ -22,8 +22,8 @@ initializeGame(numPlayers, k, seed, &Gstate);
 
 
 
-//precondition, the card type, game state, position the card is going to hand (discard deck or hand)  and player number passed in.
-// post condition, the chosen card should be added to the requested position for the selected player
+//precondition, current games state passed in to the function
+//post, true false value returned indicating if the game is finished.
 
 //int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
 	//copying gameState

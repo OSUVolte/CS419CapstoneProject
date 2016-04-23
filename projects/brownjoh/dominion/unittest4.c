@@ -5,10 +5,14 @@
 #include "rngs.h"
 #include <stdlib.h>
 
-//testing gainCard function
+//testing fullDeckCount(int player, int card, struct gameState *state)
 
 int testVals(int expected, int actual, char *testName);
-int runTest(int supplyPos, struct gameState *state, int toFlag, int player);
+int runTest(int player, int card, struct gameState *state, int cardsExpected);
+int loadCards(int card, int numCard, int pos, struct gameState *state);
+	// pos = 0 : add to discard
+  // pos = 1 : add to deck
+  // pos = 2 : add to hand
 
 int main() {
 
@@ -21,28 +25,60 @@ initializeGame(numPlayers, k, seed, &Gstate);
 
 
 
-//precondition, the card type, game state, position the card is going to hand (discard deck or hand)  and player number passed in.
-// post condition, the chosen card should be added to the requested position for the selected player
+//precondition, current player, card test value and game state are passed to the function
+// postcondition, the function returns a value equal to the total cards held by player in deck, hand and discard
 
-//int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
 	//copying gameState
-	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(1 , &testGState, 0, whoseTurn(&testGState));
-	
-	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(6 , &testGState, 5, whoseTurn(&testGState));
+	int startingCards = 0;
+	int cardsAdded = 0;
+	int targetAdded = 0;
+	int targetCard;
+
 
 	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(8 , &testGState, 1, whoseTurn(&testGState));
+	targetCard = minion;
+	cardsAdded = 0;
+	targetAdded = 0;
+
+	targetAdded = loadCards(targetCard, 5,  0, &testGState);
+	cardsAdded += targetAdded;
+	runTest(whoseTurn(&testGState), targetCard, &testGState, (startingCards + cardsAdded));
+
 	
-	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(7 , &testGState, 2, whoseTurn(&testGState));
 
 	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(1 , &testGState, 3, whoseTurn(&testGState));
+	targetCard = sea_hag;
+	cardsAdded = 0;
+	targetAdded = 0;
+
+	targetAdded = loadCards(targetCard, 1,  1, &testGState);
+	cardsAdded += targetAdded;
+	runTest(whoseTurn(&testGState), targetCard, &testGState, (startingCards + cardsAdded));
+
+
 	
 	memcpy(&testGState, &Gstate, sizeof(struct gameState));
-	runTest(5 , &testGState, 0, whoseTurn(&testGState));
+	targetCard = smithy;
+	cardsAdded = 0;
+	targetAdded = 0;
+
+	targetAdded = loadCards(targetCard, 10,  2, &testGState);
+	cardsAdded += targetAdded;
+	loadCards(tribute, 55,  2, &testGState);
+	runTest(whoseTurn(&testGState), targetCard, &testGState, (startingCards + cardsAdded));
+
+
+	
+	memcpy(&testGState, &Gstate, sizeof(struct gameState));
+	targetCard = village;
+	cardsAdded = 0;
+	targetAdded = 0;
+
+	targetAdded = loadCards(targetCard, 0,  2, &testGState);
+	cardsAdded += targetAdded;
+	loadCards(embargo, 7,  3, &testGState);
+	runTest(whoseTurn(&testGState), targetCard, &testGState, (startingCards + cardsAdded));
+
 
 
 	return 0;
@@ -65,45 +101,36 @@ int testVals(int expected, int actual, char *testName){
 
 }
 
-int runTest(int supplyPos, struct gameState *state, int toFlag, int player){
+int runTest(int player, int card, struct gameState *state, int cardsExpected){
+		int cardsReturned;
+		cardsReturned = fullDeckCount(player, card, state);
+		testVals(cardsExpected, cardsReturned, "Target Card Count");
 
 
-	// toFlag = 0 : add to discard
-  // toFlag = 1 : add to deck
-  // toFlag = 2 : add to hand
-	switch(toFlag){
-			int expectedCount = -1;
-
-		case 0 :
-		expectedCount = (state->discardCount[player]) + 1;
-		gainCard(supplyPos, state, toFlag, player);
-		testVals(expectedCount, state->discardCount[player], "discard size");
-		break;
-
-		case 1 :
-		expectedCount = (state->deckCount[player]) + 1;
-		gainCard(supplyPos, state, toFlag, player);
-		testVals(expectedCount, state->deckCount[player], "deck size");
-
-		break;
-
-		case 2 :
-		expectedCount = (state->handCount[player]) + 1;
-		gainCard(supplyPos, state, toFlag, player);
-		testVals(expectedCount, state->handCount[player], "hand size");
-
-		break;
-
-
-		default : //should be no change
-		expectedCount = (state->handCount[player]);
-		gainCard(supplyPos, state, toFlag, player);
-		testVals(expectedCount, state->handCount[player], "hand size");
+		return 0;
+	
 
 	}
 
 
 	//testVals(1, 2, "badstuff");
 	//testVals(1, 1, "goodstuff");
+
+int loadCards(int card, int numCard, int pos, struct gameState *state){
+	// pos = 0 : add to discard
+  // pos = 1 : add to deck
+  // pos = 2 : add to hand
+	int added = 0;
+
+	int i = 0;
+	for(i = 0; i < numCard; i++){
+		gainCard(card, state, pos, whoseTurn(state));
+		added++;
+
+	}
+
+
+	return added;
+
 
 }
