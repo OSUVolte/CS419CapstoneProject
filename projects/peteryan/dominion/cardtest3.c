@@ -37,6 +37,43 @@ void testVillage()
 		printf("villageEffect: PASS exit code 0.\n");
 	else
 		printf("villageEffect: FAIL exit code 0.\n");
+	
+	/*Test player gains 2 actions*/
+	memset(&state, 0, sizeof(struct gameState));  
+    initializeGame(numPlayer, k, seed, &state);
+	handPos = 1;
+	state.whoseTurn = player;
+	state.numActions = 0;
+	state.handCount[player] = 3;
+	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
+	if(state.numActions == 2)
+		printf("villageEffect: PASS gain 2 actions.\n");
+	else
+		printf("villageEffect: FAIL gain 2 actions.\n");
+	
+	/*Test village card is replaced with new card*/
+	memset(&state, 0, sizeof(struct gameState));  
+    initializeGame(numPlayer, k, seed, &state);
+	handPos = 1;
+	state.whoseTurn = player;
+	state.numActions = 0;
+	state.handCount[player] = 3;
+	state.hand[player][0] = gold;
+	state.hand[player][1] = village;
+	state.hand[player][2] = silver;
+	printf("villageEffect: Hand before play - ");
+	for(i = 0; i < 3; i++)
+	{
+		printf("%d ", state.hand[player][i]);
+	}
+	printf("\n");
+	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
+	printf("villageEffect: Hand after play - ");
+	for(i = 0; i < 3; i++)
+	{
+		printf("%d ", state.hand[player][i]);
+	}
+	printf("\n");
 }
 
 int main(int argc, char *argv[])
