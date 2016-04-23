@@ -13,6 +13,7 @@
 void cardCounts(struct gameState *state, int counts[PLAYERS+1][PILES]);
 int otherPlayerCounts(int currentPlayer, int countsBefore[PLAYERS+1][PILES], int countsAfter[PLAYERS+1][PILES]);
 int printComparison(int countsBefore[PLAYERS+1][PILES], int countsAfter[PLAYERS+1][PILES]);
+
 enum pile 
   {hand = 0,
    deck,
@@ -40,79 +41,24 @@ int main() {
   player = state.whoseTurn;
   handPos = 0;
   
-  // Trash Flag Not Set
-  printf("-------Trash Flag Not Set -------\n");
-  countsBefore[PLAYERS+1][3];
-  countsAfter[PLAYERS+1][3];
-  cardCounts(&state, countsBefore); 
-  discardCard(handPos, player, &state, 0);
-  cardCounts(&state, countsAfter); 
-  if (countsAfter[player][discard] <= countsBefore[player][discard]) {
-		printf("ERROR card was not added to discard pile\n");
-  }
-  if (countsAfter[PLAYERS][0] <= countsBefore[PLAYERS][0]) {
-		printf("ERROR Cards played was not increased\n");
-  }
-  otherPlayerCounts(player, countsBefore, countsAfter);
-  printComparison(countsBefore, countsAfter);
-
-  initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
-  player = state.whoseTurn;
-  handPos = 0;
-
-  // Trash Flag Set
-  printf("\n-------Trash Flag Set -------\n");
-  countsBefore[PLAYERS+1][3];
-  countsAfter[PLAYERS+1][3];
-  cardCounts(&state, countsBefore); 
-  discardCard(handPos, player, &state, 1);
-  cardCounts(&state, countsAfter); 
-  if (countsAfter[player][discard] > countsBefore[player][discard]) {
-		printf("ERROR card was added to discard pile\n");
-  }
-  if (countsAfter[PLAYERS][0] <= countsBefore[PLAYERS][0]) {
-		printf("ERROR Cards played was not increased\n");
-  }
-  otherPlayerCounts(player, countsBefore, countsAfter);
-  printComparison(countsBefore, countsAfter);
-
-  initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
-  player = state.whoseTurn;
-
-  // Discard all cards in hand
-  printf("\n------- Discard all cards -------\n");
-  int cards = state.handCount[player]; 
-  for (i = 0; i < cards; i++) {
-    printf("CARD %d\n", i);
-		countsBefore[PLAYERS+1][3];
-		countsAfter[PLAYERS+1][3];
-		cardCounts(&state, countsBefore); 
-		discardCard(i, player, &state, 0);
-		cardCounts(&state, countsAfter); 
-		if (countsAfter[player][discard] <= countsBefore[player][discard]) {
-			printf("ERROR card was not added to discard pile\n");
-		}
-		if (countsAfter[PLAYERS][0] <= countsBefore[PLAYERS][0]) {
-			printf("ERROR Cards played was not increased\n");
-		}
-    otherPlayerCounts(player, countsBefore, countsAfter);
-		printComparison(countsBefore, countsAfter);
-  }
-
-  printf("\n------- Attempt to discard when hand count = 0 -------\n");
-  printf("CARD %d\n", i);
+  printf("\n------- Two extra cards in deck -------\n");
 	countsBefore[PLAYERS+1][3];
 	countsAfter[PLAYERS+1][3];
 	cardCounts(&state, countsBefore); 
-	discardCard(i, player, &state, 0);
+  state.hand[player][handPos] = smithy;
+  smithyEffect(player, &state, handPos);
 	cardCounts(&state, countsAfter); 
-	if (countsAfter[player][discard] <= countsBefore[player][discard]) {
-  	printf("ERROR card was not added to discard pile\n");
+	if (countsAfter[player][deck] != (countsBefore[player][deck] - 3)) {
+  	printf("ERROR three cards were not removed from the deck\n");
 	}
-	if (countsAfter[PLAYERS][0] <= countsBefore[PLAYERS][0]) {
-		printf("ERROR Cards played was not increased\n");
-  }
-  otherPlayerCounts(player, countsBefore, countsAfter);
+  if (countsAfter[player][hand] != (countsBefore[player][hand] + 2)) { 
+  	printf("ERROR three cards were not added and one discarded from hand for a total of +2\n");
+	}
+  if (countsAfter[PLAYERS][0] != (countsBefore[PLAYERS][0] + 1)) {
+  	printf("ERROR card was not added to played cards count\n");
+	}
+
+  assert(otherPlayerCounts(player, countsBefore, countsAfter) == 0);
   printComparison(countsBefore, countsAfter);
   
   return 0;
