@@ -1,0 +1,153 @@
+Result for running unit tests:
+unittest1.c:
+buyCard(): PASS when numBuys is 0.
+buyCard(): PASS when numBuys is 1.
+buyCard(): PASS when numBuys is 100.
+buyCard(): PASS when supplyCount is 0.
+buyCard(): PASS when supplyCount is 1.
+buyCard(): PASS when player has insuffienct coins.
+buyCard(): PASS numBuys decremented.
+buyCard(): PASS state.phase is 1.
+buyCard(): FAIL add card to hand.
+buyCard(): FAIL add card to player deck.
+buyCard(): PASS card removed from supply.
+buyCard(): PASS coins removed for estate.
+buyCard(): PASS coins removed for curse.
+buyCard(): PASS coins removed for duchy.
+buyCard(): PASS coins removed for province.
+buyCard(): PASS coins removed for copper.
+buyCard(): PASS coins removed for silver.
+buyCard(): PASS coins removed for gold.
+buyCard(): PASS coins removed for adventurer.
+buyCard(): PASS coins removed for council_room.
+buyCard(): PASS coins removed for feast.
+buyCard(): PASS coins removed for gardens.
+buyCard(): PASS coins removed for mine.
+buyCard(): PASS coins removed for remodel.
+buyCard(): PASS coins removed for smithy.
+buyCard(): PASS coins removed for village.
+buyCard(): PASS coins removed for baron.
+buyCard(): PASS coins removed for great_hall.
+buyCard(): PASS coins removed for minion.
+buyCard(): PASS coins removed for steward.
+buyCard(): PASS coins removed for tribute.
+buyCard(): PASS coins removed for ambassador.
+buyCard(): PASS coins removed for cutpurse.
+buyCard(): PASS coins removed for embargo.
+buyCard(): PASS coins removed for outpost.
+buyCard(): PASS coins removed for salvager.
+buyCard(): PASS coins removed for sea_hag.
+buyCard(): PASS coins removed for treasure_map.
+buyCard(): PASS coins removed for invalid card.
+buyCard(): PASS coins removed for invalid card.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+isGameOver: PASS game is not over.
+isGameOver: PASS game is not over.
+isGameOver: PASS game is not over.
+isGameOver: PASS game is not over.
+isGameOver: PASS game is over.
+isGameOver: PASS game is over.
+isGameOver: FAIL game is over.
+isGameOver: PASS game is over.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+unittest3.c
+updateCoins: PASS have five copper in hand.
+updateCoins: PASS have five silver in hand.
+updateCoins: PASS have five gold in hand.
+updateCoins: PASS have five gold in hand and 5 bonus.
+updateCoins: PASS have five gold in hand and -1 bonus.
+updateCoins: PASS have 100 copper in hand.
+updateCoins: PASS hand with different cards.
+updateCoins: PASS have no coins in hand.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+unittest4.c
+gainCard: PASS empty stack, player 0.
+gainCard: PASS gain card, player 0.
+gainCard: PASS add card to player 0 deck.
+gainCard: PASS add card to player 0 hand.
+gainCard: PASS add card to player 0 discard, positive flag.
+gainCard: PASS add card to player 0 discard, negative flag.
+gainCard: PASS empty stack, player 1.
+gainCard: PASS gain card, player 1.
+gainCard: PASS add card to player 1 deck.
+gainCard: PASS add card to player 1 hand.
+gainCard: PASS add card to player 1 discard, positive flag.
+gainCard: PASS add card to player 1 discard, negative flag.
+gainCard: PASS empty stack, player 2.
+gainCard: PASS gain card, player 2.
+gainCard: PASS add card to player 2 deck.
+gainCard: PASS add card to player 2 hand.
+gainCard: PASS add card to player 2 discard, positive flag.
+gainCard: PASS add card to player 2 discard, negative flag.
+gainCard: PASS empty stack, player 3.
+gainCard: PASS gain card, player 3.
+gainCard: PASS add card to player 3 deck.
+gainCard: PASS add card to player 3 hand.
+gainCard: PASS add card to player 3 discard, positive flag.
+gainCard: PASS add card to player 3 discard, negative flag.
+gainCard: PASS empty stack, player 4.
+gainCard: PASS gain card, player 4.
+gainCard: PASS add card to player 4 deck.
+gainCard: PASS add card to player 4 hand.
+gainCard: PASS add card to player 4 discard, positive flag.
+gainCard: PASS add card to player 4 discard, negative flag.
+gainCard: PASS remove from supply stack.
+gainCard: PASS using invalid card.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest1.c
+playSmithy: FAIL smithy completed execution.
+playSmithy: FAIL 3 cards drawn and smithy discarded.
+playSmithy: PASS card added to played stack.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c
+playAdventurer: FAIL two cards added to player nahd.
+playAdventurer: PASS exit code 0.
+playAdventurer: FAIL draw two treasure cards.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c
+villageEffect: PASS net gain 0 cards.
+villageEffect: PASS exit code 0.
+File 'dominion.c'
+Lines executed:38.30% of 564
+Branches executed:38.61% of 417
+Taken at least once:29.98% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
