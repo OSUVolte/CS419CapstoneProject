@@ -26,4 +26,8 @@ playSmithy()
 	card does not return 0 when it executes successfully.  The smithy card was
 	added to the played stack.  These bugs are the ones I introduced into the
 	smithy card effect.
+	
+PlayAdventurer()
+	The adventurer effect does not add two treaure cards to the player's hand.
+	The adventurer does not add any cards to the player's hand.
 */
