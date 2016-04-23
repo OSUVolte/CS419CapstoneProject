@@ -11,5 +11,11 @@ impliciations for tests here.  **
 * must be 10 kingdom cards total (not a requirement?) it's a game requirement, so I should add it
 * number of curse cards 
 
+## Unit Test 2: getCost function
+
+    getCost(int cardNumber)
+
+* get all card values from wiki that are declared in dominion.h and compare their values to getCost function
+* ensure that getCost returns -1 if card is invalid; test invalid with negative and with large number
 
 
