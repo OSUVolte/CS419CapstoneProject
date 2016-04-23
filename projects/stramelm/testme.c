@@ -5,14 +5,23 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+  // create random char, ascii 32 through 126
+  return (char) (32 + rand() % 95); // 95 = 126 - 32 + 1
 }
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+  // create random string of lower case letters
+  // string length is 6 (5 chars + null terminator)
+  char *strRand = malloc(6 * sizeof(char));
+  strRand[5] = '\0';
+  int i;
+  for (i = 0; i <=4; i++) {
+    // lower case characters are ascii 97 through 122
+    strRand[i] = (char) (97 + rand() % 26); // 26 = 122 - 97 + 1    
+  }
+
+  return strRand;
 }
 
 void testme()
@@ -31,7 +40,7 @@ void testme()
     if (c == '[' && state == 0) state = 1;
     if (c == '(' && state == 1) state = 2;
     if (c == '{' && state == 2) state = 3;
-    if (c == ' '&& state == 3) state = 4;
+    if (c == ' ' && state == 3) state = 4;
     if (c == 'a' && state == 4) state = 5;
     if (c == 'x' && state == 5) state = 6;
     if (c == '}' && state == 6) state = 7;
