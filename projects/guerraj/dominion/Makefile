@@ -29,7 +29,7 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-unittestsresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.h dominion.c rngs.h rngs.c 
+unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.h dominion.c rngs.h rngs.c 
 	echo "Result for running unit tests cards:" > unittestsresults.out
 	
 	echo "cardtest1.c:" >> unittestsresults.out
