@@ -13,7 +13,7 @@ badTestDrawCard
 
 testDrawCard
 
-*.gcda
-
-*.gcno
 /Debug/
+.settings/
+
+*test?.out

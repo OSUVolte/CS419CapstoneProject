@@ -1,0 +1,1606 @@
+Result for running dominion tests:
+Testing dominion.c int shuffle()
+requesting to shuffle empty deck, expected -1 return and game state unaffected 
+Shuffle returned -1 (PASSED)
+Game state is unaffected after error return (PASSED)
+Game 0, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 4, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 5, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 6, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 7, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 8, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 9, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 10, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 11, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 12, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 13, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 14, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 15, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 16, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 17, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 18, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 4 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 5 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 6 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 7 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 8 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 9 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 10 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 11 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 12 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 13 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 14 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 15 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 16 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 17 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 18 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 19, Player 19 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+1122 of 1202 tests passed
