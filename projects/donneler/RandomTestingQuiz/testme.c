@@ -69,15 +69,6 @@ void testme()
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
-    
-    int i;
-
-    /*for (i = 0; i < 10; i++)
-    {
-      char *str = inputString();
-      printf(str);
-    }*/
-
     testme();
     return 0;
 }
