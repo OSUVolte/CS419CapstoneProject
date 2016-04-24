@@ -12,6 +12,7 @@
 
 int main() {
     //Testing numCards function
+    printf("Testing numCards function\n");
     int i, card;
     struct gameState Game;
 

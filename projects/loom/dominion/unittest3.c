@@ -17,6 +17,8 @@ int main() {
     int i;
     struct gameState Game;
 
+    printf("Testing updateCoins function\n");
+
     for (i = 0; i < 5; i++) {
         gainCard(copper, &Game, 2, player);
         testCount += 1;

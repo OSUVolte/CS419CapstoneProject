@@ -16,8 +16,8 @@ int main() {
     int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
                  sea_hag, tribute, smithy};
 
-    //testing village card
 
+    printf("Testing Great Hall card\n");
     srand(time(NULL));
 
     int seed = rand() % 10;

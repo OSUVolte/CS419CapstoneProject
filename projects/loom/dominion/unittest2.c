@@ -15,6 +15,7 @@ int main() {
     int i, y;
     int test[10];
     struct gameState Game;
+    printf("Testing supplyCount function\n");
 
     srand(time(NULL));
 

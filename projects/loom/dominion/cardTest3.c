@@ -17,6 +17,7 @@ int main() {
                  sea_hag, tribute, smithy};
 
     //testing village card
+    printf("Testing village card\n");
 
     srand(time(NULL));
 

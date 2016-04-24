@@ -16,6 +16,7 @@ int main() {
                  sea_hag, tribute, smithy};
 
     //testing adventurer card
+    printf("Testing adventurer card\n");
 
     srand(time(NULL));
 

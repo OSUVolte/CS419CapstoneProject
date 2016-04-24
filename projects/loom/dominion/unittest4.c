@@ -20,6 +20,7 @@ int main() {
                  sea_hag, tribute, smithy};
 
 
+    printf("Testing whoseTurn function\n");
     srand(time(NULL));
 
     int seed = rand() % 10;
