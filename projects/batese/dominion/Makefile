@@ -9,7 +9,7 @@ unittestresults.out: unittest1.c dominion.o
 	echo "-------------------------UNITTEST1---------------------------------" >> unittestresults.out
 
 	gcc -o unittest1 unittest1.c -g dominion.o rngs.o $(CFLAGS)
-	unittest1 >> unittestresults.out
+	./unittest1 >> unittestresults.out
 	gcov unittest1.c >> unittestresults.out
 	gcov unittest1.c -b >> unittestresults.out
 	
