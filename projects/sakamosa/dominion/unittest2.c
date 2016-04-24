@@ -59,7 +59,7 @@ int main(){
       printf("FAIL number of Treasure cards is incorrect\n");
   }
 
-  //set number of Kingdom cards
+  //check number of Kingdom cards
   if(T.supplyCount[gardens] != 8){
       printf("FAIL incorrect Victory card settings\n");
   }
