@@ -1,5 +1,6 @@
-/* adventurer */
-/* Reveal cards from your deck until you reveal 2 Treasure cards. 
+/* adventurer 
+http://wiki.dominionstrategy.com/index.php/Adventurer
+Reveal cards from your deck until you reveal 2 Treasure cards. 
 Put those Treasure cards into your hand and discard the other revealed cards.*/
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -20,6 +21,7 @@ void testLast(struct gameState*, int, int);
 void testMiddle(struct gameState*, int, int);
 void testAll(struct gameState*, int, int);
 void testNone(struct gameState*, int);
+void testEmptyDeck(struct gameState*, int);
 void printResults(int, int, int, int, int, int, int, int, int, int, int, int, int, int);  
 
 enum pile {
@@ -36,6 +38,7 @@ int main() {
 													remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
   int player;
+  int i;
   int countsBefore[PLAYERS+1][3];
   int countsAfter[PLAYERS+1][3];
 
@@ -100,6 +103,10 @@ int main() {
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
   player = state.whoseTurn;
   testNone(&state, player);
+
+  initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
+  player = state.whoseTurn;
+  testEmptyDeck(&state, player);
 
   return 0;
 }
@@ -316,6 +323,47 @@ void testNone(
                state->playedCardCount, playedCount + 1, treasureCount, 0);
 }
 
+void testEmptyDeck(
+ 	struct gameState  *state, 
+	int 							player 
+  ) 
+{
+
+  int i;
+  int handSizeAfter; 
+
+  int deckSize = state->deckCount[player];
+  int handSize = state->handCount[player];
+  int playedCount = state->playedCardCount;
+  int discardSize;
+  int treasureCount = 0;
+
+  printf("\n------- Empty Deck -------\n");
+  for (i = 0; i < handSize; i++) {
+		state->hand[player][i] = minion;
+  }
+
+  for (i = 0; i < deckSize; i++) {
+   drawCard(player, state);
+   discardCard(i, player, state, 0);
+  }	
+  deckSize = state->deckCount[player];
+  discardSize = state->discardCount[player];
+
+  adventurerEffect(player, state);
+
+  handSizeAfter = state->handCount[player];
+  for (i = 0; i < handSizeAfter; i++) {
+    if (state->hand[player][i] != mine) {
+      treasureCount++;
+    }
+  }
+
+  printResults(handSize, handSizeAfter, handSize, deckSize, 
+               state->deckCount[player], 0, discardSize, 
+               state->discardCount[player], discardSize + deckSize, playedCount, 
+               state->playedCardCount, playedCount + 1, treasureCount, 0);
+}
 void printResults(  
   int	handBefore, 
   int	handAfter, 
