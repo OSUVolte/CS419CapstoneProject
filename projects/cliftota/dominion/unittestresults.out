@@ -1,0 +1,438 @@
+-----------------TESTING isGameOver():-----------------
+
+Test when game just started.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+
+Test with no Province cards.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+
+Test with one pile empty.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+
+Test with two piles empty.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is not over. ACTUAL: Game is not over.
+
+Test with three piles empty.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+FAIL. EXPECTED: Game is over. ACTUAL: Game is not over.
+PASS. EXPECTED: Game is over. ACTUAL: Game is over.
+---------------------------------------------------------
+------------------TESTING gainCard():--------------------
+
+Test when supply pile of adventure cards is empty.
+PASS. EXPECTED: Cannot gain an adventure card. ACTUAL: Cannot gain an adventure card.
+Test when card is not in the game.
+PASS. EXPECTED: Cannot gain a council_room card. ACTUAL: Cannot gain a council_room card.
+
+Test when card must be moved to deck.
+PASS. EXPECTED: Deck count for player 1 is incremented. ACTUAL: Deck count for player 1 is incremented.
+PASS. EXPECTED: Adventurer is added to the end of deck. ACTUAL: Adventurer is added to the end of deck.
+PASS. EXPECTED: Deck count for player 2 is not changed. ACTUAL: Deck count for player 2 is not changed.
+PASS. EXPECTED: Supply count for adventurer is 4. ACTUAL: Supply count for adventurer is 4.
+
+Test when card must be moved to hand.
+PASS. EXPECTED: Hand count for player 1 is incremented. ACTUAL: Hand count for player 1 is incremented.
+PASS. EXPECTED: Adventurer is added to the end of hand. ACTUAL: Adventurer is added to the end of hand.
+PASS. EXPECTED: Hand count for player 2 is not changed. ACTUAL: Hand count for player 2 is not changed.
+PASS. EXPECTED: Supply count for adventurer is 4. ACTUAL: Supply count for adventurer is 4.
+
+Test when card must be moved to discard.
+PASS. EXPECTED: Discard count for player 1 is incremented. ACTUAL: Discard count for player 1 is incremented.
+PASS. EXPECTED: Adventurer is added to the end of discard. ACTUAL: Adventurer is added to the end of discard.
+PASS. EXPECTED: Discard count for player 2 is not changed. ACTUAL: Discard count for player 2 is not changed.
+PASS. EXPECTED: Supply count for adventurer is 4. ACTUAL: Supply count for adventurer is 4.
+
+---------------------------------------------------------
+------------------TESTING scoreFor():--------------------
+
+Test score for hand.
+PASS. EXPECTED: -1. ACTUAL: -1.
+PASS. EXPECTED: 1. ACTUAL: 1.
+PASS. EXPECTED: 3. ACTUAL: 3.
+PASS. EXPECTED: 6. ACTUAL: 6.
+PASS. EXPECTED: 1. ACTUAL: 1.
+PASS. EXPECTED: 0. ACTUAL: 0.
+PASS. EXPECTED: -1. ACTUAL: -1.
+PASS. EXPECTED: 1. ACTUAL: 1.
+PASS. EXPECTED: 3. ACTUAL: 3.
+PASS. EXPECTED: 6. ACTUAL: 6.
+PASS. EXPECTED: 1. ACTUAL: 1.
+PASS. EXPECTED: 0. ACTUAL: 0.
+Test score for discard.
+FAIL. EXPECTED: -1. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 2.
+FAIL. EXPECTED: 3. ACTUAL: 4.
+FAIL. EXPECTED: 6. ACTUAL: 7.
+FAIL. EXPECTED: 1. ACTUAL: 2.
+FAIL. EXPECTED: 0. ACTUAL: 1.
+FAIL. EXPECTED: -1. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 2.
+FAIL. EXPECTED: 3. ACTUAL: 4.
+FAIL. EXPECTED: 6. ACTUAL: 7.
+FAIL. EXPECTED: 1. ACTUAL: 2.
+FAIL. EXPECTED: 0. ACTUAL: 1.
+Test score for deck.
+FAIL. EXPECTED: -1. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 0.
+FAIL. EXPECTED: 3. ACTUAL: 0.
+FAIL. EXPECTED: 6. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 0.
+PASS. EXPECTED: 0. ACTUAL: 0.
+FAIL. EXPECTED: -1. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 0.
+FAIL. EXPECTED: 3. ACTUAL: 0.
+FAIL. EXPECTED: 6. ACTUAL: 0.
+FAIL. EXPECTED: 1. ACTUAL: 0.
+PASS. EXPECTED: 0. ACTUAL: 0.
+---------------------------------------------------------
+------------------TESTING fullDeckCount():--------------------
+
+Test with no cards gained.
+PASS. EXPECTED: 0. ACTUAL: 0.
+
+Test with a card in player's deck.
+PASS. EXPECTED: 1. ACTUAL: 1.
+
+Test with a card in player's deck and hand.
+PASS. EXPECTED: 2. ACTUAL: 2.
+
+Test with a card in player's deck and hand.
+PASS. EXPECTED: 3. ACTUAL: 3.
+
+Test with a card in player's discard and hand.
+PASS. EXPECTED: 2. ACTUAL: 2.
+
+Test with a card in player's discard and hand.
+PASS. EXPECTED: 1. ACTUAL: 1.
+
+Test with a card in player's discard and hand.
+PASS. EXPECTED: 2. ACTUAL: 2.
+
+Test with other card in player's discard, hand and deck.
+PASS. EXPECTED: 2. ACTUAL: 2.
+
+---------------------------------------------------------
+----------------- Testing Card: smithy ----------------
+Test if current player receives exact 3 cards
+FAIL. EXPECTED: hand count 7. ACTUAL: hand count 8.
+
+Test if 3 cards come from the right pile
+FAIL. EXPECTED: deck count 2. ACTUAL: deck count 1.
+PASS. EXPECTED: played count 1. ACTUAL: played count 1.
+
+Test that no change occurred for other player's hand
+PASS. EXPECTED: hand count 0. ACTUAL: hand count 0.
+
+Test that no change occurred for other player's deck
+PASS. EXPECTED: deck count 10. ACTUAL: deck count 10.
+
+Test that no change occurred to the victory cards pile
+PASS. EXPECTED: estate cards 8. ACTUAL: estate cards 8.
+PASS. EXPECTED: duchy cards 8. ACTUAL: duchy cards 8.
+PASS. EXPECTED: province cards 8. ACTUAL: province cards 8.
+
+Test that no change occurred to the kingdom cards pile
+PASS. EXPECTED: adventurer cards 10. ACTUAL: adventurer cards 10.
+PASS. EXPECTED: feast cards 10. ACTUAL: feast cards 10.
+PASS. EXPECTED: gardens cards 8. ACTUAL: gardens cards 8.
+PASS. EXPECTED: mine cards 10. ACTUAL: mine cards 10.
+PASS. EXPECTED: remodel cards 10. ACTUAL: remodel cards 10.
+PASS. EXPECTED: smithy cards 10. ACTUAL: smithy cards 10.
+PASS. EXPECTED: village cards 10. ACTUAL: village cards 10.
+PASS. EXPECTED: baron cards 10. ACTUAL: baron cards 10.
+PASS. EXPECTED: sea_hag cards 10. ACTUAL: sea_hag cards 10.
+PASS. EXPECTED: great_hall cards 8. ACTUAL: great_hall cards 8.
+
+---------------------------------------------------------
+----------------- Testing Card: adventurer ----------------
+Test with the empty deck if discard was added to the deck
+FAIL. EXPECTED: deck count 1. ACTUAL: deck count 0.
+
+Test if current player receives exact 2 cards
+FAIL. EXPECTED: hand count 6. ACTUAL: hand count 7.
+
+Test if played count was changed
+FAIL. EXPECTED: played count 1. ACTUAL: played count 0.
+
+Test that no change occurred for other player's hand
+PASS. EXPECTED: hand count 0. ACTUAL: hand count 0.
+
+Test that no change occurred for other player's deck
+PASS. EXPECTED: deck count 10. ACTUAL: deck count 10.
+
+Test that no change occurred to the victory cards pile
+PASS. EXPECTED: estate cards 8. ACTUAL: estate cards 8.
+PASS. EXPECTED: duchy cards 8. ACTUAL: duchy cards 8.
+PASS. EXPECTED: province cards 8. ACTUAL: province cards 8.
+
+Test that no change occurred to the kingdom cards pile
+PASS. EXPECTED: adventurer cards 10. ACTUAL: adventurer cards 10.
+PASS. EXPECTED: feast cards 10. ACTUAL: feast cards 10.
+PASS. EXPECTED: gardens cards 8. ACTUAL: gardens cards 8.
+PASS. EXPECTED: mine cards 10. ACTUAL: mine cards 10.
+PASS. EXPECTED: remodel cards 10. ACTUAL: remodel cards 10.
+PASS. EXPECTED: smithy cards 10. ACTUAL: smithy cards 10.
+PASS. EXPECTED: village cards 10. ACTUAL: village cards 10.
+PASS. EXPECTED: baron cards 10. ACTUAL: baron cards 10.
+PASS. EXPECTED: sea_hag cards 10. ACTUAL: sea_hag cards 10.
+PASS. EXPECTED: great_hall cards 8. ACTUAL: great_hall cards 8.
+
+Test that number of treasure cards in hand is increased by 2
+FAIL. EXPECTED: number of treasure cards in hand 5. ACTUAL: number of treasure cards in hand 3.
+
+---------------------------------------------------------
+----------------- Testing Card: village ----------------
+Test if current player receives exact 1 card
+PASS. EXPECTED: hand count 5. ACTUAL: hand count 5.
+
+Test that number of actions was increased by 2
+PASS. EXPECTED: number of actions 3. ACTUAL: number of actions 3.
+
+Test if 1 card come from the right pile
+PASS. EXPECTED: deck count 4. ACTUAL: deck count 4.
+PASS. EXPECTED: played count 1. ACTUAL: played count 1.
+
+Test that no change occurred for other player's hand
+PASS. EXPECTED: hand count 0. ACTUAL: hand count 0.
+
+Test that no change occurred for other player's deck
+PASS. EXPECTED: deck count 10. ACTUAL: deck count 10.
+
+Test that no change occurred to the victory cards pile
+PASS. EXPECTED: estate cards 8. ACTUAL: estate cards 8.
+PASS. EXPECTED: duchy cards 8. ACTUAL: duchy cards 8.
+PASS. EXPECTED: province cards 8. ACTUAL: province cards 8.
+
+Test that no change occurred to the kingdom cards pile
+PASS. EXPECTED: adventurer cards 10. ACTUAL: adventurer cards 10.
+PASS. EXPECTED: feast cards 10. ACTUAL: feast cards 10.
+PASS. EXPECTED: gardens cards 8. ACTUAL: gardens cards 8.
+PASS. EXPECTED: mine cards 10. ACTUAL: mine cards 10.
+PASS. EXPECTED: remodel cards 10. ACTUAL: remodel cards 10.
+PASS. EXPECTED: smithy cards 10. ACTUAL: smithy cards 10.
+PASS. EXPECTED: village cards 10. ACTUAL: village cards 10.
+PASS. EXPECTED: baron cards 10. ACTUAL: baron cards 10.
+PASS. EXPECTED: sea_hag cards 10. ACTUAL: sea_hag cards 10.
+PASS. EXPECTED: great_hall cards 8. ACTUAL: great_hall cards 8.
+
+---------------------------------------------------------
+----------------- Testing Card: great_hall ----------------
+Test if current player receives exact 1 card
+PASS. EXPECTED: hand count 5. ACTUAL: hand count 5.
+
+Test that number of actions was increased by 1
+PASS. EXPECTED: number of actions 2. ACTUAL: number of actions 2.
+
+Test if 1 card come from the right pile
+PASS. EXPECTED: deck count 4. ACTUAL: deck count 4.
+PASS. EXPECTED: played count 1. ACTUAL: played count 1.
+
+Test that no change occurred for other player's hand
+PASS. EXPECTED: hand count 0. ACTUAL: hand count 0.
+
+Test that no change occurred for other player's deck
+PASS. EXPECTED: deck count 10. ACTUAL: deck count 10.
+
+Test that no change occurred to the victory cards pile
+PASS. EXPECTED: estate cards 8. ACTUAL: estate cards 8.
+PASS. EXPECTED: duchy cards 8. ACTUAL: duchy cards 8.
+PASS. EXPECTED: province cards 8. ACTUAL: province cards 8.
+
+Test that no change occurred to the kingdom cards pile
+PASS. EXPECTED: adventurer cards 10. ACTUAL: adventurer cards 10.
+PASS. EXPECTED: feast cards 10. ACTUAL: feast cards 10.
+PASS. EXPECTED: gardens cards 8. ACTUAL: gardens cards 8.
+PASS. EXPECTED: mine cards 10. ACTUAL: mine cards 10.
+PASS. EXPECTED: remodel cards 10. ACTUAL: remodel cards 10.
+PASS. EXPECTED: smithy cards 10. ACTUAL: smithy cards 10.
+PASS. EXPECTED: village cards 10. ACTUAL: village cards 10.
+PASS. EXPECTED: baron cards 10. ACTUAL: baron cards 10.
+PASS. EXPECTED: sea_hag cards 10. ACTUAL: sea_hag cards 10.
+PASS. EXPECTED: great_hall cards 8. ACTUAL: great_hall cards 8.
+
+---------------------------------------------------------
+Function 'updateCoins'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:100.00% of 13
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:8.29% of 193
+Branches executed:14.84% of 155
+Taken at least once:1.94% of 155
+Calls executed:9.80% of 51
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:95.45% of 22
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:100.00% of 24
+Branches executed:100.00% of 42
+Taken at least once:85.71% of 42
+Calls executed:66.67% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:83.87% of 62
+Branches executed:95.65% of 46
+Taken at least once:80.43% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:100.00% of 6
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+Function 'councilRoomPlay'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'remodelPlay'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 6
+
+Function 'minionPlay'
+Lines executed:0.00% of 18
+Branches executed:0.00% of 18
+Taken at least once:0.00% of 18
+Calls executed:0.00% of 7
+
+Function 'smithyPlay'
+Lines executed:100.00% of 6
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 3
+
+Function 'adventurerPlay'
+Lines executed:100.00% of 18
+Branches executed:100.00% of 12
+Taken at least once:91.67% of 12
+Calls executed:100.00% of 3
+
+File 'dominion.c'
+Lines executed:37.68% of 568
+Branches executed:43.41% of 417
+Taken at least once:33.57% of 417
+Calls executed:22.00% of 100
+Creating 'dominion.c.gcov'
+
