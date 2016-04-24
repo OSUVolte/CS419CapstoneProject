@@ -93,9 +93,6 @@ int main() {
     struct gameState G;
 	int x, y; // p1 and p2 scores respectively
 	int players[MAX_PLAYERS];
-	for (i = 0; i < MAX_PLAYERS; i++) {
-		players[i] = i;
-	}
 
 	printf ("TESTING getWinners():\n");	
 
@@ -104,8 +101,8 @@ int main() {
 	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 	G.whoseTurn = 0; // Set to player 1's turn
 	// add province to player 1's deck
-	G.deck[0][G.deckCount[0]] = 4; //4 is code for province
-	G.deckCount[0]++;
+	G.hand[0][G.handCount[0]] = 4; //4 is code for province
+	G.handCount[0]++;
 	getWinners(players, &G);
 	// Player 1 is winner
 	if (players[0] == 1 && players[1] == 0)
@@ -119,8 +116,8 @@ int main() {
 	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 	G.whoseTurn = 0; // Set to player 1's turn
 	// add province to player 2's deck
-	G.deck[1][G.deckCount[1]] = 4; //4 is code for province
-	G.deckCount[1]++;
+	G.hand[1][G.handCount[1]] = 4; //4 is code for province
+	G.handCount[1]++;
 	getWinners(players, &G);
 	if (players[0] == 0 && players[1] == 1)
 		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
