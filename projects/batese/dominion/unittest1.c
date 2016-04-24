@@ -78,11 +78,15 @@ int main() {
 				// perform tests with no trash flag
 				printf("Testing player %d with handCount %d, discarding card from handPos %d without trash flag.\n", p, handCount, handPos);
                 memset(&G, 23, sizeof(struct gameState));   // clear the game state
+				printf("Cleared game state.\n");
                 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+				printf("New game initialised.\n");
                 G.handCount[p] = handCount;                 // set the number of cards on hand
                 memcpy(G.hand[p], testHand1, sizeof(int) * handCount); // copy across some random cards from the test hand
+				printf("Hand copied.\n");
 				prePlayedCount = G.playedCardCount;
 				discardCard(handPos, p, &G, 0); //Call discard card without trash flag
+				printf("Called function.\n");
 				postPlayedCount = G.playedCardCount;
 #if (NOISY_TEST == 1)
                 printf("Top card in playedCards = %s, expected = %s.\n", G.playedCards[G.playedCardCount-1], testHand1[handPos]); // check correct card was added to played cards
