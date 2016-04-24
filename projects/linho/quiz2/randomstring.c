@@ -56,4 +56,11 @@
 
 // In main function, in the while loop inputChar and inputString are called. When the test condition
 // for c are all met and state = 9 then when it iterates to getting the return value of inputString
-// as " reset" it then generates the error message.
+// as " reset" it then generates the error message:
+// Iteration 2073: c =  , s = rrsr, state = 9
+// Iteration 2074: c = }, s = , state = 9
+// Iteration 2075: c = x, s = eeer, state = 9
+// Iteration 2076: c = ], s = errs, state = 9
+// Iteration 2077: c = ), s = tt, state = 9
+// Iteration 2078: c = x, s = reset, state = 9
+// error 
