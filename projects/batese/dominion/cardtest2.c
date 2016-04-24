@@ -51,6 +51,11 @@ int main(){
 			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
 			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			G.whoseTurn = p; //set players turn
+			if (p != 0) { //If not first player need to draw first hand
+				  for (i = 0; i < 5; i++){
+					drawCard(G.whoseTurn, G);
+				  }
+			}
 			//play card
 			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 			
@@ -62,9 +67,9 @@ int main(){
 			
 			//check player has discarded 1 card
 			if (G.discardCount[p] == (O.discardCount[p] + 1))
-				printf("PASSED: New discard count = %d, expected = %d.\n", G.discardCount[p], (O.discardCount[p] + 1));
+				printf("PASSED: New played count = %d, expected = %d.\n", G.playedCount[p], (O.playedCount[p] + 1));
 			else
-				printf("FAILED: New discard count = %d, expected = %d.\n", G.discardCount[p], (O.discardCount[p] + 1));
+				printf("FAILED: New played count = %d, expected = %d.\n", G.playedCount[p], (O.playedCount[p] + 1));
 		}
 	}
 	return 0;
