@@ -7,10 +7,10 @@
 
 int main(int argc, char **argv) {
 
-    // Testing for playVillage function
+    // Testing for playCouncilRoom function
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
-    printf("Testing dominion.c int playVillage()\n");
+    printf("Testing dominion.c int playCouncilRoom()\n");
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
 
