@@ -26,22 +26,32 @@ int main()
   printf("* * * * * * * * * * Testing isGameOver() * * * * * * * * * *\n");
 
   printf("Test 1: New game, with full decks and supplies, should not be over\n");
-  assert(isGameOver(&testG) == 0);
+  if(isGameOver(&testG) == 0)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 2: If province cards empty, game over\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
   testG.supplyCount[province] = 0;
-  assert(isGameOver(&testG) == 1);
+  if(isGameOver(&testG) == 1)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 3: If three supply piles are 0, game over\n");
-  // make sure province supply count isn't 0
-  testG.supplyCount[province] = G.supplyCount[province];
+  memcpy(&testG, &G, sizeof(struct gameState));
   // set three piles to 0
   testG.supplyCount[adventurer] = 0;
   testG.supplyCount[embargo] = 0;
   testG.supplyCount[village] = 0;
-  assert(isGameOver(&testG) == 1);
+  if(isGameOver(&testG) == 1)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Success! Tests for isGameOver() pass!");
+
+  printf("Tests for isGameOver() complete!\n\n");
 
   return 0;
 }
