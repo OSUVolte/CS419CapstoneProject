@@ -68,7 +68,7 @@ int main() {
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
     int maxHandCount = 5;
-	int testHand1 = {copper, silver, gold, adventurer, smithy};
+	int testHand1[] = {copper, silver, gold, adventurer, smithy};
 	int prePlayedCount, postPlayedCount;
 	
 	printf ("TESTING discardCard():\n");
