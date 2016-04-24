@@ -1,0 +1,171 @@
+-- unittest1 results --
+Testing shuffle
+-- SIMPLE FIXED TESTS --
+ -- TESTING INABILITY TO SHUFFLE EMPTY DECK -- 
+SUCCESS: Cannot shuffle an empty deck
+ -- TESTING COUNT OF DECK, HAND, & DISCARD PRE AND POST SHUFFLE -- 
+SUCCESS: deckCount for player [0] same size before and after shuffling
+SUCCESS: handCount for player [0] same size before and after shuffling
+SUCCESS: discardCount for player [0] same size before and after shuffling
+SUCCESS: deckCount for player [1] same size before and after shuffling
+SUCCESS: handCount for player [1] same size before and after shuffling
+SUCCESS: discardCount for player [1] same size before and after shuffling
+SUCCESS: deckCount for player [2] same size before and after shuffling
+SUCCESS: handCount for player [2] same size before and after shuffling
+SUCCESS: discardCount for player [2] same size before and after shuffling
+SUCCESS: deckCount for player [3] same size before and after shuffling
+SUCCESS: handCount for player [3] same size before and after shuffling
+SUCCESS: discardCount for player [3] same size before and after shuffling
+ -- TESTING COUNT OF KNOWN CARDS PRE & POST SHUFFLE -- 
+SUCCESS: player [0] has same card counts before and after shuffling
+SUCCESS: player [1] has same card counts before and after shuffling
+SUCCESS: player [2] has same card counts before and after shuffling
+SUCCESS: player [3] has same card counts before and after shuffling
+ -- TESTING COUNT OF INITIALIZED CARDS PRE & POST SHUFFLE -- 
+SUCCESS: player [0] has same card counts before and after shuffling
+SUCCESS: player [1] has same card counts before and after shuffling
+SUCCESS: player [2] has same card counts before and after shuffling
+SUCCESS: player [3] has same card counts before and after shuffling
+
+-- gcov for function 'shuffle' in unittest1 --
+Function 'shuffle'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+Calls executed:100.00% of 2
+
+-- unittest2 results --
+Testing getCost
+-- SIMPLE FIXED TESTS --
+SUCCESS: [curse] is of cost [0]
+SUCCESS: [estate] is of cost [2]
+SUCCESS: [duchy] is of cost [5]
+SUCCESS: [province] is of cost [8]
+SUCCESS: [copper] is of cost [0]
+SUCCESS: [silver] is of cost [3]
+SUCCESS: [gold] is of cost [6]
+SUCCESS: [adventurer] is of cost [6]
+SUCCESS: [council_room] is of cost [5]
+SUCCESS: [feast] is of cost [4]
+SUCCESS: [gardens] is of cost [4]
+SUCCESS: [mine] is of cost [5]
+SUCCESS: [remodel] is of cost [4]
+SUCCESS: [smithy] is of cost [4]
+SUCCESS: [village] is of cost [3]
+SUCCESS: [baron] is of cost [4]
+SUCCESS: [great_hall] is of cost [3]
+SUCCESS: [minion] is of cost [5]
+SUCCESS: [steward] is of cost [3]
+SUCCESS: [tribute] is of cost [5]
+SUCCESS: [ambassador] is of cost [3]
+SUCCESS: [cutpurse] is of cost [4]
+SUCCESS: [embargo] is of cost [2]
+SUCCESS: [outpost] is of cost [5]
+SUCCESS: [salvager] is of cost [4]
+SUCCESS: [sea_hag] is of cost [4]
+SUCCESS: [treasure_map] is of cost [4]
+SUCCESS: [-1] returned for invalid cardNumber [-1]
+SUCCESS: [-1] returned for invalid cardNumber [9999]
+
+-- gcov for function 'getCost' in unittest2 --
+Function 'getCost'
+Lines executed:100.00% of 30
+Branches executed:100.00% of 28
+Taken at least once:100.00% of 28
+No calls
+
+-- unittest3 results --
+TESTING drawCard function
+-- CONTROL TEST INTERNAL COUNT FUNCTION --
+SUCCESS: Draw 5 cards
+-- TEST DISCARD NOT TRASH --
+ERROR: Discard [not trash] [cardDiscardCount is (0) should be (1)]
+ERROR: Discard [not trash] [discardCount is (0) should be (1)]
+-- TEST DISCARD TO TRASH --
+ERROR: Discard [is trash] [cardPlayedCount is (0) should be (1)]
+ERROR: Discard [is trash] [playedCardCount is (0) should be (1)]
+-- TEST DISCARD HAND --
+ERROR: Discard hand [not trash] [cardDiscardCount is (0) should be (8)]
+ERROR: Discard hand [not trash] [cardPlayedCount is (2) should be (13)]
+ERROR: Discard hand [not trash] [discardCount is (0) should be (13)]
+
+-- gcov for function 'discardCard' in unittest3 --
+Function 'discardCard'
+Lines executed:100.00% of 13
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+No calls
+
+-- unittest4 results --
+TESTING whoseTurn
+SUCCESS: whoseTurn identified correct player over 10 iterations
+
+-- gcov for function 'whoseTurn' in unittest4 --
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+
+-- cardtest1 results --
+TESTING smithy card
+FAIL: [playSmithy] Card order has changed (-3)
+SUCCESS: [playSmithy] Correct number of cards drawn and discarded
+FAIL: [playSmithy] We have 1 Smithy in hand and we should have 0
+
+-- gcov for function 'playSmithy' in cardtest1 --
+Function 'playSmithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+-- cardtest2 results --
+TESTING adventurer card
+FAIL: [playAdventurer] We did not gain two treasure cards
+FAIL: [playAdventurer] Adventurer card was not discarded
+FAIL: [playAdventurer] We did not gain two treasure cards
+FAIL: [playAdventurer] Adventurer card was not discarded
+FAIL: [playAdventurer] We did not gain two treasure cards
+FAIL: [playAdventurer] Adventurer card was not discarded
+FAIL: [playAdventurer] We did not gain two treasure cards
+FAIL: [playAdventurer] Adventurer card was not discarded
+FAIL: [playAdventurer] We did not gain two treasure cards
+FAIL: [playAdventurer] Adventurer card was not discarded
+SUCCESS: [playAdventurer] No treasure cards gained
+SUCCESS: [playAdventurer] Adventurer card was discarded
+
+-- gcov for function 'playAdventurer' in cardtest2 --
+Function 'playAdventurer'
+Lines executed:100.00% of 18
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+Calls executed:100.00% of 2
+
+-- cardtest3 results --
+TESTING village card
+SUCCESS: [playVillage] Village was correctly discarded
+SUCCESS: [playVillage] actions increased by [2]
+SUCCESS: [playVillage] correctly drew [1] card(s)
+SUCCESS: [playVillage] buy count increased by [0]
+
+-- gcov for function 'playVillage' in cardtest3 --
+Function 'playVillage'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+
+
+-- cardtest4 results --
+TESTING great_hall card
+SUCCESS: [playGreatHall] Great Hall was correctly discarded
+SUCCESS: [playGreatHall] actions increased by [1]
+SUCCESS: [playGreatHall] correctly drew [1] card(s)
+SUCCESS: [playGreatHall] buy count increased by [0]
+
+-- gcov for function 'playGreatHall' in cardtest4 --
+Function 'playGreatHall'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+

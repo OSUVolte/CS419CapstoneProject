@@ -1,9 +1,10 @@
 /******************************************************************************
- * Filename: cardtest3.c
+ * Filename: cardtest4.c
  * Author: Jens Bodal
  * Date: April 24, 2016
- * Description: testing village
+ * Description: unit test for great_hall
  *****************************************************************************/
+
 
 #include "dominion.h"
 #include "dominion_helpers.h" 
@@ -19,16 +20,16 @@ void printHand(struct gameState *state, int player);
 int countCardInHand(struct gameState *state, int player, int card);
 void checkPlayCard(struct gameState *state, int targetPlayer, int card);
 
-int CARD = village;
-char *CARD_NAME = "Village";
+int CARD = great_hall;
+char *CARD_NAME = "Great Hall";
 int NUM_CARD_DRAW = 1;
-int NUM_ACTIONS = 2;
+int NUM_ACTIONS = 1;
 int NUM_BUYS = 0;
-char *FUNCTION = "playVillage";
+char *FUNCTION = "playGreatHall";
 
 // change function depending on card used :: CARD MUST only affect cards and actions
 void playFunction(int targetPlayer, int pos, struct gameState *state) {
-    playVillage(targetPlayer, pos, state);
+    playGreatHall(targetPlayer, pos, state);
 }
 
 int main() {
@@ -44,7 +45,7 @@ int main() {
     struct gameState *state = &game;
     initializeGame(players, cards, seed, &game);
     
-    printf("TESTING village card\n");
+    printf("TESTING great_hall card\n");
 
     checkPlayCard(state, targetPlayer, CARD);
     return 0;

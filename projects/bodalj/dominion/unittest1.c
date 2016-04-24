@@ -2,9 +2,7 @@
  * Filename: unittest1.c
  * Author: Jens Bodal
  * Date: April 22, 2016
- * Description: 
- * Input: 
- * Output: 
+ * Description: testing shuffle function
  *****************************************************************************/
 
 #include "dominion.h"
@@ -32,7 +30,7 @@ int main() {
     struct gameState game;
     initializeGame(players, cards, seed, &game);
 
-    printf("Testing shuffle");
+    printf("Testing shuffle\n");
     printf("-- SIMPLE FIXED TESTS --\n");
     
     printf(" -- TESTING INABILITY TO SHUFFLE EMPTY DECK -- \n");
