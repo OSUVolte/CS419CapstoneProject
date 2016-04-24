@@ -137,7 +137,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	
@@ -238,7 +238,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	
@@ -340,7 +340,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	
@@ -451,7 +451,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	
@@ -565,7 +565,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	
@@ -677,7 +677,7 @@ int testAdventurer() {
 	}
 	
 	// The first card should no longer be adventurer (it should be the last card - one of the drawn cards)
-	printf("first card = %d, expected = %d\n", testG.hand[thisPlayer][0], adventurer);
+	printf("first card = %d, expected != %d\n", testG.hand[thisPlayer][0], adventurer);
 	if (testG.hand[thisPlayer][0] == adventurer)
 		printf("********** ERROR: first card mismatch**********\n");
 	

@@ -210,6 +210,48 @@ PASSED: CARDID = 27, RETURN VALUE = 0
 --------------------------------------------
 unittest4
 --------------------------------------------
+UNIT TEST #4: updateCoins()
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: COINS = 1
+        EXPECTATION IS COINS = 1
+PASSED: COINS = 2
+        EXPECTATION IS COINS = 2
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: COINS = 2
+        EXPECTATION IS COINS = 2
+PASSED: COINS = 4
+        EXPECTATION IS COINS = 4
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: COINS = 3
+        EXPECTATION IS COINS = 3
+PASSED: COINS = 6
+        EXPECTATION IS COINS = 6
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: COINS = 1
+        EXPECTATION IS COINS = 1
+PASSED: COINS = 2
+        EXPECTATION IS COINS = 2
+PASSED: COINS = 8
+        EXPECTATION IS COINS = 8
+PASSED: COINS = 2
+        EXPECTATION IS COINS = 2
+PASSED: COINS = 2
+        EXPECTATION IS COINS = 2
+PASSED: COINS = 0
+        EXPECTATION IS COINS = 0
+PASSED: BEFORE COINS = 3, AFTER COINS = 8
+        EXPECTATION IS AFTER COINS = 8
+PASSED: BEFORE COINS = 6, AFTER COINS = 8
+        EXPECTATION IS AFTER COINS = 8
+PASSED: BEFORE COINS = 9, AFTER COINS = 8
+        EXPECTATION IS AFTER COINS = 8
+--------------------
 
 --------------------------------------------
 cardtest1
@@ -234,12 +276,15 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
 cardtest2
 --------------------------------------------
 CARD TEST #2: ADVENTURER
+b
+b
+b
 PASSED: CARD EXECUTION
-FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO -496
         EXPECTATION IS +1 CARDS
-FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 0
         EXPECTATION IS +2 TREASURE CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 4
         EXPECTATION IS -1 CARDS
 PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
         EXPECTATION IS NO CHANGE
@@ -297,9 +342,9 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
 gcov results
 --------------------------------------------
 Function 'updateCoins'
-Lines executed:81.82% of 11
+Lines executed:100.00% of 11
 Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Taken at least once:100.00% of 8
 No calls
 
 Function 'gainCard'
@@ -337,10 +382,10 @@ Taken at least once:100.00% of 6
 Calls executed:100.00% of 3
 
 Function 'adventurerCardEffect'
-Lines executed:94.12% of 17
+Lines executed:100.00% of 18
 Branches executed:100.00% of 12
-Taken at least once:75.00% of 12
-Calls executed:50.00% of 2
+Taken at least once:83.33% of 12
+Calls executed:100.00% of 3
 
 Function 'smithyCardEffect'
 Lines executed:100.00% of 5
@@ -355,10 +400,10 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:36.36% of 22
-Branches executed:33.33% of 6
-Taken at least once:16.67% of 6
-Calls executed:0.00% of 1
+Lines executed:100.00% of 22
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
 
 Function 'getWinners'
 Lines executed:0.00% of 24
@@ -423,9 +468,9 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:93.75% of 16
+Lines executed:100.00% of 16
 Branches executed:100.00% of 8
-Taken at least once:87.50% of 8
+Taken at least once:100.00% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
@@ -451,9 +496,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:31.79% of 563
-Branches executed:36.93% of 417
-Taken at least once:32.85% of 417
-Calls executed:18.95% of 95
+Lines executed:35.11% of 564
+Branches executed:37.89% of 417
+Taken at least once:35.01% of 417
+Calls executed:21.88% of 96
 Creating 'dominion.c.gcov'
 

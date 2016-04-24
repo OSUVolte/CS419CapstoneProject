@@ -17,6 +17,38 @@ int main(int argc, char *argv[]) {
   struct gameState* state = malloc(sizeof(struct gameState));
   initializeGame(np, k, seed, state);
 
+  // -------------------------------------------------------------------------------------
+  // REQT: THIS ISN'T A TEST PER SE, BUT I WANT TO MOVE THE INITIAL DECK CARDS TO DISCARD
+  //       FOR PLAYER 1 TO FORCE A SHUFFLE (FOR BETTER LINE/BRANCH COVERAGE)
+  // -------------------------------------------------------------------------------------
+  int pNum = 1;
+  int i;
+
+  /* printf("PRETEST: HAND=%d, DECK=%d, DISC=%d\n",
+    state->handCount[pNum], state->deckCount[pNum], state->discardCount[pNum]);
+  for (i = 0; i < state->deckCount[pNum]; i++) {
+    printf("PRETEST: DECK CARD=%d\n", state->deck[pNum][i]);
+  }
+  for (i = 0; i < state->discardCount[pNum]; i++) {
+    printf("PRETEST: DISCARD CARD=%d\n", state->discard[pNum][i]);
+  }
+  for (i = 0; i < state->deckCount[pNum]; i++) {
+    state->discard[pNum][i] = state->deck[pNum][i];
+  } */
+
+  i = state->deckCount[pNum];
+  state->deckCount[pNum] = state->discardCount[pNum];
+  state->discardCount[pNum] = i;
+
+  /* printf("PRETEST: HAND=%d, DECK=%d, DISC=%d\n",
+    state->handCount[pNum], state->deckCount[pNum], state->discardCount[pNum]);
+  for (i = 0; i < state->deckCount[pNum]; i++) {
+    printf("PRETEST: DECK CARD=%d\n", state->deck[pNum][i]);
+  }
+  for (i = 0; i < state->discardCount[pNum]; i++) {
+    printf("PRETEST: DISCARD CARD=%d\n", state->discard[pNum][i]);
+  } */
+
   // make copy of gamestate
   struct gameState* copy = malloc(sizeof(struct gameState));
   memcpy(copy, state, sizeof(struct gameState));
@@ -38,7 +70,6 @@ int main(int argc, char *argv[]) {
   // -------------------------------------------------------------------------------------
   // REQT: CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS, BUT ADVENTURER TO BE DISCARDED, NET 1
   // -------------------------------------------------------------------------------------
-  int pNum = 1;
   int before = copy->handCount[pNum];
   int after = state->handCount[pNum];
   if (after - before == 1) { // TOTAL CARDS
@@ -55,7 +86,6 @@ int main(int argc, char *argv[]) {
   // -------------------------------------------------------------------------------------
   before = 0;
   after = 0;
-  int i;
   int card;
   for (i = 0; i < copy->handCount[pNum]; i++) {
 	card = copy->hand[pNum][i];
