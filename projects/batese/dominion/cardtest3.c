@@ -1,20 +1,18 @@
 /*
-File: cardtest2.c
+File: cardtest3.c
 Author: Elliot Bates
-Description: Unit test for the smithy card function in dominion.c
+Description: Unit test for the village card function in dominion.c
 */
 
 /*
-int smithyCard(int currentPlayer, struct gameState *state, int handPos)
-{
-	int i = 0;
-      //+3 Cards
-      for (i = 0; i > 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
+int villageCard(int currentPlayer, struct gameState *state, int handPos) {
+	  //+1 Card
+      drawCard(currentPlayer, state);
 			
-      //discard card from hand
+      //+2 Actions
+      state->numActions = state->numActions + 1;
+			
+      //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
@@ -41,7 +39,7 @@ int main(){
 	int handPos;
 	int maxHandPos = 4;
 
-	printf("Testing SMITHY card.\n");
+	printf("Testing VILLAGE card.\n");
 	for (p = 0; p < numPlayers; p++) {
 		for (handPos = 0; handPos < maxHandPos; handPos++) {
 			printf("Testing for player %d and handPos %d.\n", p, handPos);
@@ -59,13 +57,19 @@ int main(){
 			//play card
 			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 			
-			//Check players hand has gained 2 cards
-			if (G.handCount[p] == (O.handCount[p] + 2))
-				printf("PASSED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+			//Check player hand size has not changed (gained 1 and lost 1)
+			if (G.handCount[p] == O.handCount[p])
+				printf("PASSED: New hand count = %d, expected = %d.\n", G.handCount[p], O.handCount[p]);
 			else
-				printf("FAILED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+				printf("FAILED: New hand count = %d, expected = %d.\n", G.handCount[p], O.handCount[p]);
 			
-			//check player has played 1 card
+			//check player has gained 2 actions
+			if (G.numActions == O.numActions + 2)
+				printf("PASSED: New num actions = %d, expected = %d.\n", G.numActions, O.numActions + 2);
+			else
+				printf("FAILED: New num actions = %d, expected = %d.\n", G.numActions, O.numActions + 2);
+			
+			//check player has discarded 1 card
 			if (G.playedCardCount == (O.playedCardCount + 1))
 				printf("PASSED: New played count = %d, expected = %d.\n", G.playedCardCount, (O.playedCardCount + 1));
 			else
