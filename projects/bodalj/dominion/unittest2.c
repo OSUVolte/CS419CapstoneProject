@@ -7,12 +7,12 @@
  * Output: 
  *****************************************************************************/
 
+#include "dominon.h"
 #include "dominion_helpers.h" // getCost
 #include "assert.h"
 #include <stdio.h>
 
 int compareCost(int, int);
-void printResult(int, int, char*);
 
 int main() {
     int cost, expectedCost;
@@ -200,9 +200,4 @@ int main() {
 int compareCost(int cost, int expectedCost) {
     // if a-b == 0 then cards are equal; 0 is false so return !false if equal
     return (expectedCost-cost);
-}
-
-void printResult(int cost, int expectedCost, char* cardName) {
-    assert(compareCost(cost, expectedCost) == 0);
-    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
 }
