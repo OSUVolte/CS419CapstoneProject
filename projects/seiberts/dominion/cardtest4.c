@@ -38,7 +38,7 @@ int main()
 				smithy, council_room};
 	
 
-	printf("-------------------COUNCIL ROOM CARD TEST---------------------\n");
+	printf("-------------------MINION CARD TEST---------------------\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	initializeGame(numPlayers, k, seed, &testState);
 	
@@ -46,8 +46,7 @@ int main()
 	for (i = 0; i <= 3; i++) 
 	{
 		loopCount++;
-		printf("Drawing card: %d\n", loopCount);
-	    drawCard(currentPlayer, &testState);
+		drawCard(currentPlayer, &testState);
 	}
 	
 	//+1 action

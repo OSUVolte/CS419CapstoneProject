@@ -1,7 +1,7 @@
 //Shawn Seibert
 //Unit test 2
 //scoreFor()
-
+// gcc unittest2.c dominion.c rngs.c -o unittest2 -lm
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"

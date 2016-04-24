@@ -30,7 +30,7 @@ int main()
 	printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
-	printf("TEST 1: Set copper coins equal to 5\n");
+	printf("TEST 1: Copper coins equal to 1\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	
   //reset coin count
@@ -76,7 +76,7 @@ int main()
   printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
-	printf("TEST 2: Set silver coins equal to 10\n");
+	printf("TEST 2: Silver coins equal to 2\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	
   //reset coin count
@@ -122,7 +122,7 @@ int main()
   printf("--------------- updateCoins() ----------------------\n");
 
 	// ----------- TEST 1: coins = 0  --------------
-	printf("TEST 3: Set Gold coins equal to 15\n");
+	printf("TEST 3: Gold coins equal to 3\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
 	
   //reset coin count

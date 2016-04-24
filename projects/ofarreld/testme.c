@@ -19,8 +19,17 @@ char inputChar()
 
 char *inputString()
 {
-	// just returns "reset"
-    return "reset";
+	char *stringSet = "rest";
+	char *value = (char *) malloc(sizeof(char) * 6);
+
+	// iterate through value[i], set random "rest" values.
+	int i = 0;
+	for (i = 0; i < 5; i++) {
+		value[i] = stringSet[rand() % strlen(stringSet)];
+	}
+	value[5] = '\0';
+
+	return value;
 }
 
 void testme()
