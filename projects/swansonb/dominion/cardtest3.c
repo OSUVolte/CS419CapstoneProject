@@ -48,8 +48,10 @@ int main(int argc, char **argv) {
         }
         testsRun += 1;
 
-        printf("Player has 1 more card in hand ");
-        if (G.handCount[curPlayer] - before.handCount[curPlayer] == 1){
+        printf("Player has 1 new card in hand ");
+        // check for 0 because played card is subtracted and
+        if (G.handCount[curPlayer] - before.handCount[curPlayer] == 0 &&
+                G.hand[curPlayer][G.handCount[curPlayer]-1] != before.hand[curPlayer][before.handCount[curPlayer]-1]){
             testsPassed++;
             printf("(PASSED) \n");
         } else {
@@ -86,11 +88,6 @@ int main(int argc, char **argv) {
         copyGameState(&G,&after);
         endTurn(&G);
     }
-
-
-
-
-
 
 
     printf("%d of %d tests passed\n",testsPassed, testsRun);
