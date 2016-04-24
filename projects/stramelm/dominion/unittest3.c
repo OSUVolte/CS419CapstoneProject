@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   int np = 2;
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
     sea_hag, tribute, smithy};
-  int seed = 222; // arbitrary seed value
+  int seed = 333; // arbitrary seed value
   struct gameState* state = malloc(sizeof(struct gameState));
   initializeGame(np, k, seed, state);
 
