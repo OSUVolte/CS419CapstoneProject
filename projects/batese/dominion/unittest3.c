@@ -107,22 +107,3 @@ int main() {
 		printf("FAILED: isGameOver = %d, expected = 0.\n", gameOver);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -55,30 +55,30 @@ int main() {
 	int treasureDeckDisc = 0;
 	for (i = 0; i < G.discardCount[0]; i++)
 	{
-		if (G.hand[0][i] == copper)
+		if (G.discard[0][i] == copper)
 		{
 			treasureDeckDisc++;
 		}
-		if (G.hand[0][i] == silver)
+		if (G.discard[0][i] == silver)
 		{
 			treasureDeckDisc++;
 		}
-		if (G.hand[0][i] == gold)
+		if (G.discard[0][i] == gold)
 		{
 			treasureDeckDisc++;
 		}
 	}
 	for (i = 0; i < G.deckCount[0]; i++)
 	{
-		if (G.hand[0][i] == copper)
+		if (G.deck[0][i] == copper)
 		{
 			treasureDeckDisc++;
 		}
-		if (G.hand[0][i] == silver)
+		if (G.deck[0][i] == silver)
 		{
 			treasureDeckDisc++;
 		}
-		if (G.hand[0][i] == gold)
+		if (G.deck[0][i] == gold)
 		{
 			treasureDeckDisc++;
 		}
@@ -171,30 +171,30 @@ int main() {
 	int postTreasureDeckDisc = 0;
 	for (i = 0; i < G.discardCount[0]; i++)
 	{
-		if (G.hand[0][i] == copper)
+		if (G.discard[0][i] == copper)
 		{
 			postTreasureDeckDisc++;
 		}
-		if (G.hand[0][i] == silver)
+		if (G.discard[0][i] == silver)
 		{
 			postTreasureDeckDisc++;
 		}
-		if (G.hand[0][i] == gold)
+		if (G.discard[0][i] == gold)
 		{
 			postTreasureDeckDisc++;
 		}
 	}
 	for (i = 0; i < G.deckCount[0]; i++)
 	{
-		if (G.hand[0][i] == copper)
+		if (G.deck[0][i] == copper)
 		{
 			postTreasureDeckDisc++;
 		}
-		if (G.hand[0][i] == silver)
+		if (G.deck[0][i] == silver)
 		{
 			postTreasureDeckDisc++;
 		}
-		if (G.hand[0][i] == gold)
+		if (G.deck[0][i] == gold)
 		{
 			postTreasureDeckDisc++;
 		}
