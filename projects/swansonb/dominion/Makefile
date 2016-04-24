@@ -61,6 +61,8 @@ unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 	
 	gcc -o cardtest4.out cardtest4.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./cardtest4.out >> unittestresults.out
+	
+	gcov dominion.c -f -b >> unittestresults.out
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *test?.out 
