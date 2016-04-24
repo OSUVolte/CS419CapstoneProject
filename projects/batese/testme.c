@@ -22,7 +22,7 @@ char inputChar()
 
 char *inputString()
 {
-    char* myString = "aaaaa";
+    char myString [] = "aaaaa";
 	for (int i = 0; i < 5; i++) {
 		int num = (rand() % 4);
 		switch(num) {
