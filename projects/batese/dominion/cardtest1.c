@@ -58,8 +58,8 @@ int main(){
 		printf("Testing for player %d.\n", p);
 		//Create game state
 		memset(&O, 23, sizeof(struct gameState));   // clear the game state
-		r = initializeGame(numPlayer, k, seed, &O); // initialize a new game
-		memcpy(&G, &O, sizeof(struct gameState)) // Copy game state
+		r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
+		memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 		G.whoseTurn = p; //set players turn
 		//play card
 		cardEffect(adventurer, 0, 0, 0, &G, 0, 0);
