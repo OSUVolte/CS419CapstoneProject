@@ -19,10 +19,11 @@ int main()
   int player = 0;
   int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
       sea_hag, tribute, smithy, council_room};
-  struct gameState testG;
+  struct gameState testG, G;
   int i;
 
-  initializeGame(numPlayers, k, seed, &testG);
+  initializeGame(numPlayers, k, seed, &G);
+  memcpy(&testG, &G, sizeof(struct gameState));
   testG.handCount[player] = 10;
   testG.discardCount[player] = 10;
   testG.deckCount[player] = 10;
@@ -45,9 +46,16 @@ int main()
     testG.discard[player][i] = smithy;
     testG.deck[player][i] = smithy;
   }
-  assert(scoreFor(player, &testG) == 10);
+  if(scoreFor(player, &testG) == 10)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 2: Score for discard correct\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
+  testG.handCount[player] = 10;
+  testG.discardCount[player] = 10;
+  testG.deckCount[player] = 10;
   testG.discard[player][0] = curse;
   testG.discard[player][1] = estate;
   testG.discard[player][2] = duchy;
@@ -63,9 +71,16 @@ int main()
     testG.hand[player][i] = smithy;
     testG.deck[player][i] = smithy;
   }
-  assert(scoreFor(player, &testG) == 10);
+  if(scoreFor(player, &testG) == 10)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 3: Score for deck correct\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
+  testG.handCount[player] = 10;
+  testG.discardCount[player] = 10;
+  testG.deckCount[player] = 10;
   testG.deck[player][0] = curse;
   testG.deck[player][1] = estate;
   testG.deck[player][2] = duchy;
@@ -81,9 +96,16 @@ int main()
     testG.discard[player][i] = smithy;
     testG.hand[player][i] = smithy;
   }
-  assert(scoreFor(player, &testG) == 10);
+  if(scoreFor(player, &testG) == 10)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 4: Score total correct\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
+  testG.handCount[player] = 10;
+  testG.discardCount[player] = 10;
+  testG.deckCount[player] = 10;
   testG.hand[player][0] = curse;
   testG.hand[player][1] = estate;
   testG.hand[player][2] = duchy;
@@ -114,9 +136,28 @@ int main()
   testG.deck[player][7] = smithy;
   testG.deck[player][8] = smithy;
   testG.deck[player][9] = smithy;
-  assert(scoreFor(player, &testG) == 30);
+  if(scoreFor(player, &testG) == 30)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Success! Tests for scoreFor() pass!");
+  printf("Test 5: Score is 0 when no scorable cards\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
+  testG.handCount[player] = 10;
+  testG.discardCount[player] = 10;
+  testG.deckCount[player] = 10;
+  for (i = 0; i < 10; i++)
+  {
+    testG.discard[player][i] = smithy;
+    testG.deck[player][i] = smithy;
+    testG.hand[player][i] = smithy;
+  }
+  if(scoreFor(player, &testG) == 0)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
+
+  printf("Tests for scoreFor() complete!\n\n");
 
   return 0;
 }

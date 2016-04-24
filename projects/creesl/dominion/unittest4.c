@@ -28,32 +28,45 @@ int main()
 
   printf("* * * * * * * * * * Testing discardCard() * * * * * * * * * *\n");
 
-  printf("Test 1: Trash Flag of 1 should increase playedCardCount by 1\n");
+  printf("Test 1: Trash Flag of 0 should increase playedCardCount by 1\n");
+  memcpy(&testG, &G, sizeof(struct gameState));
   discardCard(p, player, &testG, flag);
-  assert(testG.playedCardCount == (G.playedCardCount + 1));
+  if(testG.playedCardCount == (G.playedCardCount + 1))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 2: Last card in hand should decrease handCount by 1\n");
   p = testG.handCount[player] - 1;
   flag = 1;
   int hCountBefore = testG.handCount[player];
   discardCard(p, player, &testG, flag);
-  assert(testG.handCount[player] == (hCountBefore - 1));
+  if(testG.handCount[player] == (hCountBefore - 1))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 3: One card in hand should decrease handCount by 1\n");
   testG.handCount[player] = 1;
   hCountBefore = testG.handCount[player];
   p = 0;
   discardCard(p, player, &testG, flag);
-  assert(testG.handCount[player] == (hCountBefore - 1));
+  if(testG.handCount[player] == (hCountBefore - 1))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
   printf("Test 4: More than one card should decrease handCount by 1\n");
   testG.handCount[player] = 3;
   p = 1;
   hCountBefore = testG.handCount[player];
   discardCard(p, player, &testG, flag);
-  assert(testG.handCount[player] == (hCountBefore - 1));
+  if(testG.handCount[player] == (hCountBefore - 1))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Success! Tests for discardCard() pass!");
+  printf("Tests for discardCard() complete!\n\n");
 
   return 0;
 }

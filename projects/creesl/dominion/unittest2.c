@@ -28,10 +28,31 @@ int main()
 
   printf("* * * * * * * * * * Testing fullDeckCount() * * * * * * * * * *\n");
 
-  printf("Test 1: Sum is correct\n");
-  assert(fullDeckCount(player, card, &testG) == fullDeckCount(player, card, &G));
+  printf("Test 1: Sum is correct when card present\n");
+  for (i = 0; i < testG.deckCount[player]; i++)
+    testG.deck[player][i] = card;
+  for (i = 0; i < testG.handCount[player]; i++)
+    testG.hand[player][i] = card;
+  for (i = 0; i < testG.discardCount[player]; i++)
+    testG.discard[player][i] = card;
+  if(fullDeckCount(player, card, &testG) == (testG.deckCount[player] + testG.handCount[player] + testG.discardCount[player]))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Test 2: Deck count is correct\n");
+  printf("Test 2: Sum is 0 when card not present\n");
+  for (i = 0; i < testG.deckCount[player]; i++)
+    testG.deck[player][i] = card + 1;
+  for (i = 0; i < testG.handCount[player]; i++)
+    testG.hand[player][i] = card + 2;
+  for (i = 0; i < testG.discardCount[player]; i++)
+    testG.discard[player][i] = card + 3;
+  if(fullDeckCount(player, card, &testG) == 0)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
+
+  printf("Test 3: Deck count is correct\n");
   // There are deckCount number of cards in deck and no cards in hand or discard
   for (i = 0; i < testG.deckCount[player]; i++)
     testG.deck[player][i] = card;
@@ -39,27 +60,36 @@ int main()
     testG.hand[player][i] = card + 1;
   for (i = 0; i < testG.discardCount[player]; i++)
     testG.discard[player][i] = card + 1;
-  assert(fullDeckCount(player, card, &testG) == testG.deckCount[player]);
+  if(fullDeckCount(player, card, &testG) == testG.deckCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Test 3: Hand count is correct\n");
+  printf("Test 4: Hand count is correct\n");
   for (i = 0; i < testG.deckCount[player]; i++)
     testG.deck[player][i] = card + 1;
   for (i = 0; i < testG.handCount[player]; i++)
     testG.hand[player][i] = card;
   for (i = 0; i < testG.discardCount[player]; i++)
     testG.discard[player][i] = card + 1;
-  assert(fullDeckCount(player, card, &testG) == testG.handCount[player]);
+  if(fullDeckCount(player, card, &testG) == testG.handCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Test 4: Discard count is correct\n");
+  printf("Test 5: Discard count is correct\n");
   for (i = 0; i < testG.deckCount[player]; i++)
     testG.deck[player][i] = card + 1;
   for (i = 0; i < testG.handCount[player]; i++)
     testG.hand[player][i] = card + 1;
   for (i = 0; i < testG.discardCount[player]; i++)
     testG.discard[player][i] = card;
-  assert(fullDeckCount(player, card, &testG) == testG.discardCount[player]);
+  if(fullDeckCount(player, card, &testG) == testG.discardCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-  printf("Success! Tests for fullDeckCount() pass!");
+  printf("Tests for fullDeckCount() complete!\n\n");
 
   return 0;
 }
