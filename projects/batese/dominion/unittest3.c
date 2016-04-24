@@ -64,7 +64,7 @@ int main() {
 	}
 	isGameOver(&G);
 	for (i = 0; i < 25; i++) {
-		if (supplyCounts[i] != G.supplyCount[i])
+		if (supplyCounts[i] == G.supplyCount[i])
 			printf("PASSED: supplyCount[%d] = %d, expected = %d.\n", i, G.supplyCount[i], supplyCounts[i]);
 		else
 			printf("FAILED: supplyCount[%d] = %d, expected = %d.\n", i, G.supplyCount[i], supplyCounts[i]);
