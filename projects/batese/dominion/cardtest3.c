@@ -35,7 +35,7 @@ int main(){
 	int numPlayers = 2;  					// players for valid gamestate
 	struct gameState O;						// original gameState
 	struct gameState G;						// test gameState
-	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
+	int k[10] = {village, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 	int handPos;
 	int maxHandPos = 4;
 
@@ -47,15 +47,15 @@ int main(){
 			memset(&O, 23, sizeof(struct gameState));   // clear the game state
 			memset(&G, 23, sizeof(struct gameState));   // clear the game state
 			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
-			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			G.whoseTurn = p; //set players turn
 			if (p != 0) { //If not first player need to draw first hand
 				  for (i = 0; i < 5; i++){
 					drawCard(G.whoseTurn, &G);
 				  }
 			}
+			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			//play card
-			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
+			cardEffect(village, 0, 0, 0, &G, handPos, 0);
 			
 			//Check player hand size has not changed (gained 1 and lost 1)
 			if (G.handCount[p] == O.handCount[p])

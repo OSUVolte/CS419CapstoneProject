@@ -49,13 +49,13 @@ int main(){
 			memset(&O, 23, sizeof(struct gameState));   // clear the game state
 			memset(&G, 23, sizeof(struct gameState));   // clear the game state
 			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
-			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			G.whoseTurn = p; //set players turn
 			if (p != 0) { //If not first player need to draw first hand
 				  for (i = 0; i < 5; i++){
 					drawCard(G.whoseTurn, &G);
 				  }
 			}
+			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			//play card
 			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 			
