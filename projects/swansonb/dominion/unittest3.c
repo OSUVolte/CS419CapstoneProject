@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
     //fill players decks with extra cards for drawing at beginning of turn
     //behavior of drawcard when deck is empty is tested in drawcard unit test
     for (curPlayer = 0; curPlayer < numPlayers; ++curPlayer){
-        for(i=0; i<40; ++i){
+        for(i=0; i<80; ++i){
             G.deck[curPlayer][G.deckCount[curPlayer]++] = floor(Random() * treasure_map);
         }
     }
@@ -40,7 +40,10 @@ int main(int argc, char **argv) {
         curPlayer = G.whoseTurn;
         expectedNextPlayer = (curPlayer + 1)%numPlayers;
 
-        //place cards in
+        // spoof play cards, move them from hand to playedcard
+        G.playedCards[G.playedCardCount++] = G.hand[curPlayer][--G.handCount[curPlayer]];
+        G.playedCards[G.playedCardCount++] = G.hand[curPlayer][--G.handCount[curPlayer]];
+
 
         printf("calling end turn for player %d:\n",curPlayer);
         copyGameState(&before,&G);
@@ -71,14 +74,37 @@ int main(int argc, char **argv) {
         }
         testsRun += 1;
 
-        //todo need to add check for played pile being moved here
+        // check that played pile is added to players discard
+        printf("previous players discard now contains cards from played pile ");
+        if (G.playedCardCount == 0 &&
+                cardsCHaveBeenAddedtoAinB(
+                        before.discard[prevPlayer], before.discardCount[prevPlayer],
+                        G.discard[prevPlayer], G.discardCount[prevPlayer],
+                        before.playedCards, before.playedCardCount)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        // check that players hand is added to players discard
+        printf("previous players discard now contains cards from their hand ");
+        if (G.handCount[prevPlayer] == 0 &&
+                cardsCHaveBeenAddedtoAinB(
+                        before.discard[prevPlayer], before.discardCount[prevPlayer],
+                        G.discard[prevPlayer], G.discardCount[prevPlayer],
+                        before.hand[prevPlayer], before.handCount[prevPlayer])){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
 
         // check that previous players hand has properly moved to their discard pile
-        printf("Previous players cards in hand have been placed in their discard pile ");
-        if (G.handCount[prevPlayer] == 0 &&
-                G.discardCount[prevPlayer] - before.discardCount[prevPlayer] == before.handCount[prevPlayer] &&
-                cardArraysAreEqual(G.discard[prevPlayer] + before.discardCount[prevPlayer], before.handCount[prevPlayer],
-                        before.hand[prevPlayer], before.handCount[prevPlayer]) ){
+        printf("Previous players cards in hand and played cards have been placed in their discard pile (and no more) ");
+        if ( playerHasSameCards(&before,&G,curPlayer)){
             testsPassed++;
             printf("(PASSED) \n");
         } else {

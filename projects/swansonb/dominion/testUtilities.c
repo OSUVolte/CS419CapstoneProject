@@ -32,6 +32,28 @@ int cardArraysAreEqual(int *a, int aSize, int *b, int bSize){
     return 1;
 }
 
+int cardsCHaveBeenAddedtoAinB(int *a, int aSize, int *b, int bSize, int* c, int cSize){
+    int countdiff[treasure_map+1];
+    int countc[treasure_map+1];
+
+    bzero(countdiff,sizeof(countdiff));
+    bzero(countc,sizeof(countc));
+
+
+    int i;
+    for(i=0;i<aSize; ++i)countdiff[a[i]]--;
+    for(i=0;i<bSize; ++i)countdiff[b[i]]++;
+    for(i=0;i<cSize; ++i)countc[c[i]]++;
+
+
+
+    for (i=0; i<treasure_map; ++i){
+        if (countdiff[i] < countc[i]) return 0;
+    }
+
+    return 1;
+}
+
 // Checks if combination of Deck, Hand, Discard, played piles for one player are the same between game states
 int playerHasSameCards(struct gameState* a, struct gameState* b, int player) {
     int counta[treasure_map+1];
