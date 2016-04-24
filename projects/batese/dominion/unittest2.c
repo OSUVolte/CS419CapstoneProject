@@ -91,7 +91,6 @@ int main() {
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
-	int MAX_PLAYERS = 4;
 	int x, y; // p1 and p2 scores respectively
 	int players[MAX_PLAYERS];
 	
