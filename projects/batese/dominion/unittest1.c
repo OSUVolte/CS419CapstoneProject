@@ -85,7 +85,7 @@ int main() {
                 memcpy(G.hand[p], testHand1, sizeof(int) * handCount); // copy across some random cards from the test hand
 				printf("Hand copied.\n");
 				prePlayedCount = G.playedCardCount;
-				printf("Discarding %s.\n", testHand1[handPos]);
+				printf("Discarding %d.\n", testHand1[handPos]);
 				discardCard(handPos, p, &G, 0); //Call discard card without trash flag
 				printf("Called function.\n");
 				postPlayedCount = G.playedCardCount;
