@@ -15,7 +15,6 @@
 int main()
 {
 	int seed = 1000;
-	int m, n;
 	int r;
 	
 	int numPlayers = 2;
