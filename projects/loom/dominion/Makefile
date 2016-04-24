@@ -53,7 +53,7 @@ cardtest3: cardTest3.c dominion.o rngs.o
 cardtest4: cardTest4.c dominion.o rngs.o
 	gcc -o cardTest4 -g cardTest4.c dominion.o rngs.o -lm $(CFLAGS)
 
-unittests: testDrawCard
+unittestsresults.out: testDrawCard
 	./unittest1 &> unittestresult.out
 	./unittest2 >> unittestresult.out
 	./unittest3 >> unittestresult.out
