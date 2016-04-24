@@ -5,8 +5,14 @@
 #include <math.h>
 #include <stdlib.h>
 
-int playAdventurer (int currentPlayer, struct gameState *state, int drawntreasure, int z){
-      while(drawntreasure<=2){
+int playAdventurer (struct gameState *state){
+	int drawntreasure =0;
+	int z = 0;
+	int currentPlayer = whoseTurn(state);
+	int temphand[MAX_HAND];
+	int cardDrawn;
+	
+	while(drawntreasure<=2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -27,7 +33,9 @@ int playAdventurer (int currentPlayer, struct gameState *state, int drawntreasur
       return 0;
 }
 
-int playSmithy(int currentPlayer, struct gameState *state, int handPos){
+int playSmithy(struct gameState *state, int handPos){
+  int i;
+   int currentPlayer = whoseTurn(state);
   for (i = 1; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
@@ -38,7 +46,11 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos){
       return 0;
 }
 
-int playFeast(int currentPlayer, struct gameState *state, int choice1,int temphand){
+int playFeast(struct gameState *state, int choice1){
+	 int currentPlayer = whoseTurn(state);
+	int temphand[MAX_HAND];
+	int i;
+	int x;
       //gain card with cost up to 5
       //Backup hand
       for (i = 0; i <= state->handCount[currentPlayer]; i++){
@@ -92,21 +104,25 @@ int playFeast(int currentPlayer, struct gameState *state, int choice1,int tempha
       return 0;
 }
 
-int playVillage(int currentPlayer, struct gameState *state, int handPos){}
-	    
-      //+1 Card
+int playVillage(struct gameState *state, int handPos){
+	  //+1 Card
+	  int currentPlayer = whoseTurn(state);
       drawCard(currentPlayer, state);
 			
       //+2 Actions
       state->numActions = state->numActions + 1;
 			
       //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 2);
+      discardCard(handPos, currentPlayer, state,2);
       return 0;
 } 
 
-int playCutpurse(int currentPlayer, struct gameSate *state, int handPos);
-	      updateCoins(currentPlayer, state, 2);
+int playCutpurse(struct gameState *state, int handPos) {
+      int i;
+      int j;
+      int k;
+      int currentPlayer = whoseTurn(state);
+      updateCoins(currentPlayer, state, 2);
       for (i = 0; i < state->numPlayers; i++)
 	{
 	  if (i == currentPlayer)
@@ -138,7 +154,7 @@ int playCutpurse(int currentPlayer, struct gameSate *state, int handPos);
 
       return 0;
 }
-			
+
 
 int compare(const void* a, const void* b) {
   if (*(int*)a > *(int*)b)
@@ -802,7 +818,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return playAdventurer (currentPlayer, state, drawntreasure, z);
+		return playAdventurer (state);
 			
     case council_room:
       //+4 Cards
@@ -829,7 +845,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 	
 	case feast:
-		return playFeast(currentPlayer, state, choice1, temphand);
+		return playFeast(state, choice1);
    
     case gardens:
       return -1;
@@ -896,11 +912,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
 	case smithy:
-		return playSmithy(currentPlayer, state, handPos);	
+		return playSmithy(state, handPos);	
   
 	
 	case village:
-		return playVillage( currentPlayer, state, handPos);
+		return playVillage(state, handPos);
 	
 
     case baron:
@@ -1158,7 +1174,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	
 	
     case cutpurse:
-		return playCutpurse(currentPlayer, state, handPos);
+		return playCutpurse(state, handPos);
 	
 		
     case embargo: 

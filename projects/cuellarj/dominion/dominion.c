@@ -656,7 +656,7 @@ int callAdventurerCard(struct gameState *state, int currentPlayer){
           shuffle(currentPlayer, state);
         }
         drawCard(currentPlayer, state);
-        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];//top card of hand is most recently drawn card.
         if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
           drawntreasure++;
         else{
@@ -679,7 +679,7 @@ int callSmithyCard(struct gameState *state, int currentPlayer, int handPos){
   int i;
   
   //+3 Cards
-  for (i = 0; i < 3; i++){
+  for (i = 0; i < 6; i++){
     drawCard(currentPlayer, state);
   }
   
@@ -690,7 +690,7 @@ int callSmithyCard(struct gameState *state, int currentPlayer, int handPos){
 
 int callVillageCard(int currentPlayer, struct gameState *state, int handPos){
      
-     drawCard(currentPlayer, state);
+     
      
       //+2 Actions
       state->numActions = state->numActions + 2;
@@ -702,7 +702,7 @@ int callVillageCard(int currentPlayer, struct gameState *state, int handPos){
 
 int callEmbargoCard(struct gameState *state, int choice1, int currentPlayer, int handPos){ 
       //+2 Coins
-      state->coins = state->coins + 2;
+      state->coins = state->coins;
       
       //see if selected pile is in play
       if ( state->supplyCount[choice1] == -1 )
