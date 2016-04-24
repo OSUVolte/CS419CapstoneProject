@@ -91,5 +91,5 @@ make cardtest4
 ./cardtest4
 echo >> $fout
 echo >> $fout
-echo >> "Total code coverage for all submitted unit tests against dominion.c" >> $fout
+echo "Total code coverage for all submitted unit tests against dominion.c" >> $fout
 gcov -fb dominion.c >> $fout
