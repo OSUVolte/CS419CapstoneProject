@@ -276,9 +276,6 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
 cardtest2
 --------------------------------------------
 CARD TEST #2: ADVENTURER
-b
-b
-b
 PASSED: CARD EXECUTION
 FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO -496
         EXPECTATION IS +1 CARDS
@@ -382,10 +379,10 @@ Taken at least once:100.00% of 6
 Calls executed:100.00% of 3
 
 Function 'adventurerCardEffect'
-Lines executed:100.00% of 18
+Lines executed:100.00% of 17
 Branches executed:100.00% of 12
 Taken at least once:83.33% of 12
-Calls executed:100.00% of 3
+Calls executed:100.00% of 2
 
 Function 'smithyCardEffect'
 Lines executed:100.00% of 5
@@ -496,9 +493,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:35.11% of 564
+Lines executed:34.99% of 563
 Branches executed:37.89% of 417
 Taken at least once:35.01% of 417
-Calls executed:21.88% of 96
+Calls executed:21.05% of 95
 Creating 'dominion.c.gcov'
 
