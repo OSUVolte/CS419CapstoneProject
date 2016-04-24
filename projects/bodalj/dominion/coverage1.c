@@ -41,7 +41,18 @@ Adventurer effect: Draw cards until 2 treasure cards drawn into hand; discard no
 * Check that if deck is empty we will shuffle discard and gain two treasure
 
 ## Card Test 3: village
+    
+    int playVillage(int currentPlayer, int handPos, struct gameState *state)
+
+* Check that we drew only 1 card
+* Check that we gained only 2 actions
+* Check that card was discarded
+* Check that numBuys is the same
 
 ## Card Test 4: great_hall
 
+* Check that we drew only 1 card
+* Check that we gained only 1 actions
+* Check that card was discarded
+* Check that numBuys is the same
 

@@ -7,7 +7,7 @@
  * Output: 
  *****************************************************************************/
 
-#include "dominon.h"
+#include "dominion.h"
 #include "dominion_helpers.h" // getCost
 #include "assert.h"
 #include <stdio.h>

@@ -2,9 +2,7 @@
  * Filename: unittest4.c
  * Author: Jens Bodal
  * Date: April 23, 2016
- * Description: 
- * Input: 
- * Output: 
+ * Description: testing whoseTurn
  *****************************************************************************/
 
 #include "dominion.h"
@@ -25,6 +23,7 @@ int main() {
     struct gameState *state = &game;
     
     initializeGame(players, cards, seed, state);
+    printf("TESTING whoseTurn\n");
     for (i = 0; i < iterations; i++) {
         drawCard(i, state);
         discardCard(0, i, state, 0);
