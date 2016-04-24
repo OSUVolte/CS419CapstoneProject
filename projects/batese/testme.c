@@ -22,17 +22,21 @@ char inputChar()
 
 char *inputString()
 {
-    char myString [] = "aaaaa";
+    char myString [] = "rrrrr";
 	for (int i = 0; i < 5; i++) {
 		int num = (rand() % 4);
 		switch(num) {
-			case 0: myString[i] = 'r'; 		
+			case 0: myString[i] = 'r';
+			  break;
 			case 1: myString[i] = 'e';
+			  break;
 			case 2: myString[i] = 's';
-			case 3: myString[i] = 't'; 
+			  break;
+			case 3: myString[i] = 't';
 		}
 	}
-    return "";
+	char* myCharStar = myString;
+    return myCharStar;
 }
 
 void testme()
