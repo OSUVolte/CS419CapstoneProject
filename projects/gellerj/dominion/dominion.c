@@ -527,6 +527,8 @@ int drawCard(int player, struct gameState *state) {
             printf("Current hand count: %d\n", count);
         }
 
+        // Take the last card from the deck and place it in the last position of the hand.
+
         deckCounter = state->deckCount[player];//Create holder for the deck count
         state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
         state->deckCount[player]--;
@@ -1185,13 +1187,11 @@ int playAdventurer(struct gameState *state) {
     int cardDrawn;
 
     while (drawntreasure < 2) {
-        if (state->deckCount[currentPlayer] <
-            1) {//if the deck is empty we need to shuffle discard and add to deck
+        if (state->deckCount[currentPlayer] < 1) { //if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
         }
         drawCard(currentPlayer, state);
-        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] -
-                                               1];//top card of hand is most recently drawn card.
+        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
         if (cardDrawn == copper || cardDrawn == silver)
             drawntreasure++;
         else {
@@ -1213,6 +1213,7 @@ int playVillage(struct gameState *state, int handPos) {
     drawCard(currentPlayer, state);
     state->numActions = 2;
     discardCard(handPos, currentPlayer, state, 0);
+    return 0;
 }
 
 int playSteward(struct gameState *state, int choice1, int choice2, int choice3, int handPos) {
@@ -1228,6 +1229,7 @@ int playSteward(struct gameState *state, int choice1, int choice2, int choice3, 
         discardCard(choice2, currentPlayer, state, 1);
         discardCard(choice3, currentPlayer, state, 1);
     }
+    return 0;
 }
 
 int playCouncil_Room(struct gameState *state, int handPos) {
@@ -1243,6 +1245,7 @@ int playCouncil_Room(struct gameState *state, int handPos) {
         }
     }
     discardCard(handPos, currentPlayer, state, 0);
+    return 0;
 }
 
 //end of dominion.c

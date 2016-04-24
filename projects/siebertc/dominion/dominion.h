@@ -136,5 +136,12 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+//refactor implementation of the switch/case function of cardEffects()
+int cardAdventurer(struct gameState *state, int currentPlayer, int temphand[]);
+int cardSmithy(struct gameState *state, int currentPlayer, int handPos);
+int cardVillage(struct gameState *state, int currentPlayer, int handPos);
+int cardCouncilRoom(struct gameState *state, int currentPlayer, int handPos);
+int cardMine(struct gameState *state, int currentPlayer, int handPos, int choice1, int choice2);
+
 
 #endif

@@ -650,13 +650,13 @@ int playSmithy(struct gameState *state, int handPos) {
 	//+3 Cards
 	int currentPlayer = whoseTurn(state);
 	int i;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i <= 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
 			
 	//discard card from hand
-	discardCard(handPos, currentPlayer, state, 0);
+	discardCard(handPos, currentPlayer, state, 1);
 	return 0;
 }
 
@@ -672,16 +672,17 @@ int playAdventurer(struct gameState *state) {
 		  shuffle(currentPlayer, state);
 		}
 		drawCard(currentPlayer, state);
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-2];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 		  drawntreasure++;
 		else{
+      z++;
 		  temphand[z]=cardDrawn;
 		  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-		  z++;
+
 	}
       }
-    while(z-1>=0){
+    while(z>=0){
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
     }
@@ -709,7 +710,7 @@ int playMine(struct gameState *state, int choice1, int choice2, int handPos) {
 		return -1;
 	}
 
-	gainCard(choice2, state, 2, currentPlayer);
+	gainCard(choice1, state, 2, currentPlayer);
 
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -756,14 +757,14 @@ int playRemodel(struct gameState *state, int choice1, int choice2, int handPos) 
 	gainCard(choice2, state, 0, currentPlayer);
 
 	//discard card from hand
-	discardCard(handPos, currentPlayer, state, 0);
+	discardCard(handPos+1, currentPlayer, state, 0);
 
 	//discard trashed card
 	for (i = 0; i < state->handCount[currentPlayer]; i++)
 		{
 		if (state->hand[currentPlayer][i] == j)
 		{
-			discardCard(i, currentPlayer, state, 0);			
+			discardCard(i+1, currentPlayer, state, 0);			
 			break;
 		}
 	}
@@ -1365,6 +1366,15 @@ int updateCoins(int player, struct gameState *state, int bonus)
   state->coins += bonus;
 
   return 0;
+}
+
+
+/************************************************
+Start of function unit tests
+*************************************************/
+
+int testUpdateCoins(int player, struct gameState *state, int bonus) {
+  
 }
 
 

@@ -1,9 +1,3 @@
-/* 	Interactive Dominion Interface
-	
-Sam Heinith CS362
-1/26/2010
-*/
-
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>

@@ -1,11 +1,3 @@
-/* 	Interactive Dominion Interface
-	
-	Sam Heinith CS362
-	1/26/2010
-*/
-
-
-
 #ifndef _INTERFACE_H
 #define _INTERFACE_H
 
@@ -120,9 +112,3 @@ void selectKingdomCards(int randomSeed, int kingdomCards[NUM_K_CARDS]);
 
 
 #endif
-
-
-
-
-
-
