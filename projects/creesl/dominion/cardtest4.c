@@ -31,18 +31,27 @@ int main()
 	printf("Test 1: Top of player's deck is same before and after\n");
 	int topDeckBefore = testG.deck[player][testG.deckCount[player]-1];
 	seahagEffect(&testG, player, i);
-	assert(testG.deck[player][testG.deckCount[player]-1] == topDeckBefore);
+	if(testG.deck[player][testG.deckCount[player]-1] == topDeckBefore)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 2: Other player's discard was top of deck\n");
 	memcpy(&testG, &G, sizeof(struct gameState));
 	topDeckBefore = testG.deck[otherPlayer][testG.deckCount[otherPlayer]-1];
 	seahagEffect(&testG, player, i);
-	assert(testG.discard[otherPlayer][testG.discardCount[otherPlayer]-1] == topDeckBefore);
+	if(testG.discard[otherPlayer][testG.discardCount[otherPlayer]-1] == topDeckBefore)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 3: Other player's top of deck is a curse card\n");
-	assert(testG.deck[otherPlayer][testG.deckCount[otherPlayer]-1] == curse);
+	if(testG.deck[otherPlayer][testG.deckCount[otherPlayer]-1] == curse)
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
-	printf("Success! Tests for sea_hag pass!\n");
+	printf("Tests for sea_hag complete!\n\n");
 
   return 0;
 }

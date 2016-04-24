@@ -33,37 +33,73 @@ int main()
 	printf("Test 1: Player's hand should have two more cards\n");
 	int cardsHandBefore = testG.handCount[player];
 	adventurerEffect(drawntreasure, &testG, player, cardDrawn, z, temphand);
-	assert(testG.handCount[player] == (cardsHandBefore + 2));
+	if(testG.handCount[player] == (cardsHandBefore + 2))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 2: Deck should have less cards\n");
-	assert(testG.deckCount[player] < G.deckCount[player]);
+	if(testG.deckCount[player] < G.deckCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 3: Discard should be same or have more cards\n");
-	assert(testG.discardCount[player] >= G.discardCount[player]);
+	if(testG.discardCount[player] >= G.discardCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 4: Discard + 2 = difference in deck amount\n");
-	assert(testG.deckCount[player] == (G.deckCount[player] - (testG.discardCount[player] + 2)));
+	if(testG.deckCount[player] == (G.deckCount[player] - (testG.discardCount[player] + 2)))
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 
 	printf("Test 5: Other players should be in same state as before\n");
 	player = 1;
 	printf("Hand Count is same\n");
-	assert(testG.handCount[player] == G.handCount[player]);
+  if(testG.handCount[player] == G.handCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 	int j;
 	printf("Hand is same\n");
 	for (j = 0; j < G.handCount[player]; j++)
-		assert(testG.hand[player][j] == G.hand[player][j]);
+  {
+    if(testG.hand[player][j] == G.hand[player][j])
+      printf("PASS\n");
+    else
+      printf("FAIL\n");
+  }
 	printf("Deck Count is same\n");
-	assert(testG.deckCount[player] == G.deckCount[player]);
+  if(testG.deckCount[player] == G.deckCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 	printf("Deck is same\n");
 	for (j = 0; j < G.deckCount[player]; j++)
-		assert(testG.deck[player][j] == G.deck[player][j]);
+  {
+    if(testG.deck[player][j] == G.deck[player][j])
+      printf("PASS\n");
+    else
+      printf("FAIL\n");
+  }
 	printf("Discard Count is same\n");
-	assert(testG.discardCount[player] == G.discardCount[player]);
+  if(testG.discardCount[player] == G.discardCount[player])
+    printf("PASS\n");
+  else
+    printf("FAIL\n");
 	printf("Discard is same\n");
 	for (j = 0; j < G.discardCount[player]; j++)
-		assert(testG.discard[player][j] == G.discard[player][j]);
+	{
+    if(testG.discard[player][j] == G.discard[player][j])
+      printf("PASS\n");
+    else
+      printf("FAIL\n");
+  }
 
-	printf("Success! Tests for adventurer pass!\n");
+	printf("Tests for adventurer complete!\n\n");
 
 	return 0;
 }
