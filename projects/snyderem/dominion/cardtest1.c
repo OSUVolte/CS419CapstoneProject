@@ -45,6 +45,9 @@ int main() {
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
   player = state.whoseTurn;
   handPos = 0;
+  printf("****************************************************************\n");
+  printf("***                         SMITHY                           ***\n");
+  printf("****************************************************************\n");
   
   printf("\n------- Two extra cards in deck -------\n");
 	cardCounts(&state, countsBefore); 

@@ -23,6 +23,9 @@ int main() {
 
   memset(&state, '\0', sizeof(struct gameState)); // clear game state
   initializeGame(numPlayers, kingdomCards, randomSeed, &state);
+  printf("****************************************************************\n");
+  printf("***                      isGameOver()                        ***\n");
+  printf("****************************************************************\n");
   
   printf("------ TESTING 0 PROVINCE CARDS ------\n");
   state.supplyCount[province] = 0;

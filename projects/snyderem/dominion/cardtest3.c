@@ -50,6 +50,9 @@ int main() {
  
   memset(&state, '\0', sizeof(struct gameState)); // clear game state
 
+  printf("****************************************************************\n");
+  printf("***                      GREAT HALL                          ***\n");
+  printf("****************************************************************\n");
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
   player = state.whoseTurn;
   deckSize = state.deckCount[player];

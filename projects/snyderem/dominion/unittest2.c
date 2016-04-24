@@ -46,6 +46,9 @@ int main() {
   
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
 
+  printf("****************************************************************\n");
+  printf("***                        shuffle()                         ***\n");
+  printf("****************************************************************\n");
   //test empty deck
   printf("------- TESTING SHUFFLE ON EMPTY DECK -------\n");
   testEmptyDeck(&state);

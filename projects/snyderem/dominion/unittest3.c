@@ -46,6 +46,9 @@ int main() {
   player = state.whoseTurn;
   handPos = 0;
   
+  printf("****************************************************************\n");
+  printf("***                        discard()                         ***\n");
+  printf("****************************************************************\n");
   // Trash Flag Not Set
   printf("-------Trash Flag Not Set -------\n");
   cardCounts(&state, countsBefore); 

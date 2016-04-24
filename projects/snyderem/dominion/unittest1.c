@@ -22,6 +22,9 @@ int main() {
   int numCards = 27;  // total number of cards in enum in dominion.h
   int bugFound = 0;
 
+  printf("****************************************************************\n");
+  printf("***                        getCost()                         ***\n");
+  printf("****************************************************************\n");
   // Loop through each of the possible cards plus an additional time to simulate
   // a card that does not exist in this implementation of Dominion.
   printf("---------- TESTING CARD COSTS ----------\n");
