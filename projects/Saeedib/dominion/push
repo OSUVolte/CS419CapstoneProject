@@ -1,7 +1,0 @@
-pull:
-	git pull
-	git add -A
-	git commit -m "Assignmnet 3"
-	
-push:
-	git push
