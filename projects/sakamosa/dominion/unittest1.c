@@ -32,5 +32,6 @@ if(getCost(length + 1) != -1){
 else{
     printf("Passed invalid card test\n");    
 }
+printf("**********************TESTS COMPLETE*************************\n\n")
 return 0;
 }

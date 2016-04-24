@@ -52,6 +52,7 @@ int main(){
             printf("FAIL did not decrement supplyCount\n");
         }
     }
+    printf("**********************TESTS COMPLETE*************************\n\n")
     
     return 0;
 }
