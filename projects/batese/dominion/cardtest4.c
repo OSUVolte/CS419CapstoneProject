@@ -61,13 +61,13 @@ int main(){
 			memset(&O, 23, sizeof(struct gameState));   // clear the game state
 			memset(&G, 23, sizeof(struct gameState));   // clear the game state
 			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
-			G.whoseTurn = p; //set players turn
+			O.whoseTurn = p; //set players turn
 			if (p != 0) { //If not first player need to draw first hand
 				  for (i = 0; i < 5; i++){
-					drawCard(G.whoseTurn, &G);
+					drawCard(O.whoseTurn, &O);
 				  }
 			}
-			G.hand[p][handPos] = 8; //int for coincil_room card
+			O.hand[p][handPos] = 8; //int for coincil_room card
 			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			//play card
 			cardEffect(village, 0, 0, 0, &G, handPos, 0);
@@ -93,12 +93,6 @@ int main(){
 						printf("FAILED: Player %d new hand count = %d, expected = %d.\n", otherPlayer, G.handCount[otherPlayer], O.handCount[otherPlayer] + 1);
 				}
 			}
-			
-			//check card has been trashed
-			if (G.hand[p][G.handCount[p]] == 8)
-				printf("PASSED: Trashed card = %d, expected = %d.\n", G.hand[p][G.handCount[p]], 8);
-			else
-				printf("FAILED: Trashed card = %d, expected = %d.\n", G.hand[p][G.handCount[p]], 8);
 		}
 	}
 	return 0;
