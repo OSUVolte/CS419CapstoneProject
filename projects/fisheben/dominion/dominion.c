@@ -1212,7 +1212,7 @@ int myAdventurer(struct gameState *state, int currentPlayer ){
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		
 		//ADDED A LOGIC BUG HERE WHERE CARD DRAWN IS ASSIGNED TO GOLD
-		if (cardDrawn == copper || cardDrawn == silver || cardDrawn = gold)
+		if (cardDrawn == copper || cardDrawn == silver || (cardDrawn = gold))
 		  drawntreasure++;
 		else{
 		  temphand[z]=cardDrawn;
@@ -1303,7 +1303,7 @@ int myRemodel(struct gameState *state, int currentPlayer, int choice1, int choic
 	//discard trashed card
 	for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
-		//ADDED LOGIC BUG WHERE CARD DOESN'T GET DISCARDED
+		//ADDED LOGIC BUG WHERE CARD DOESN'T GET DISCARDED PROPERLY
 		if (state->hand[currentPlayer][i] == --j)
 		{
 			discardCard(i, currentPlayer, state, 0);			
