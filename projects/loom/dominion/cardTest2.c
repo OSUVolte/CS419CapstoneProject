@@ -1,7 +1,6 @@
 //
 // Created by Michael Loo on 4/23/16.
 //
-
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <stdio.h>
@@ -34,12 +33,14 @@ int main() {
     finalHand = Game.handCount[player];
 
     if (initialDeck - finalDeck != 2) {
-        printf("Two cards were not drawn from the deck");
+        printf("Two cards were not drawn from the deck\n");
     }
 
     if (finalHand - initialHand != 2) {
-        printf("Two cards were not added to the players hand!");
+        printf("Two cards were not added to the players hand!\n");
     }
+
+    return 0;
 
 }
 

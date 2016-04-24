@@ -39,19 +39,20 @@ int main() {
         finalHand = Game.handCount[player];
 
         if (finalAct - initialAct != 1) {
-            printf("The great hall card did not add an action!");
+            printf("The great hall card did not add an action!\n");
         }
 
         if (initialDeck - finalDeck != 1) {
-            printf("One card was not drawn from the deck");
+            printf("One card was not drawn from the deck\n");
         }
 
         if (finalHand - initialHand != 1) {
-            printf("One card was not added to the players hand!");
+            printf("One card was not added to the players hand!\n");
         }
 
     }
 
+    return 0;
 
 
 }

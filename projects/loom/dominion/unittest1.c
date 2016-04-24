@@ -25,7 +25,9 @@ int main() {
         card = numHandCards(&Game);
 
         if (card != i) {
-            printf("Number of cards doesn't match!");
+            printf("Number of cards doesn't match!\n");
         }
     }
+
+    return 0;
 }

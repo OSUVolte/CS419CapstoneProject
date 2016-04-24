@@ -37,8 +37,11 @@ int main() {
 
         if (test != turn)
         {
-            printf("whoseTurn does not work!");
+            printf("whoseTurn does not work!\n");
         }
 
     }
+
+    return 0;
+
 }

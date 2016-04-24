@@ -39,10 +39,10 @@ int main() {
     int newCoins = Game.coins;
 
     if (newCoins != testCount) {
-        printf("The coin count is not correct!");
+        printf("The coin count is not correct!\n");
     }
 
-
+    return 0;
 
 
 }

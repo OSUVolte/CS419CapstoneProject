@@ -1,9 +1,9 @@
 //
 // Created by Michael Loo on 4/23/16.
 //
-
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -34,8 +34,9 @@ int main() {
         finalCard = Game.handCount[Game.whoseTurn];
 
         if (finalCard != (initialCard + 2)) {
-            printf("Smithy does not add correct number of cards");
+            printf("Smithy does not add correct number of cards\n");
         }
     }
 
+    return 0;
 }

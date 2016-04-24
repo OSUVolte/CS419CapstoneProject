@@ -30,28 +30,28 @@ runtests: testDrawCard
 	cat dominion.c.gcov >> unittestresult.out
 
 unittest1: unittest1.c dominion.o rngs.o
-    gcc -o unittest1 -g unittest1.c  dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o unittest1 -g unittest1.c  dominion.o rngs.o -lm $(CFLAGS)
 
 unittest2: unittest2.c dominion.o rngs.o
-    gcc -o unittest2 -g unittest2.c  dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o unittest2 -g unittest2.c  dominion.o rngs.o -lm $(CFLAGS)
 
 unittest3: unittest3.c dominion.o rngs.o
-    gcc -o unittest3 -g unittest3.c  dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o unittest3 -g unittest3.c  dominion.o rngs.o -lm $(CFLAGS)
 
 unittest4: unittest4.c dominion.o rngs.o
-    gcc -o unittest4 -g unittest4.c  dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o unittest4 -g unittest4.c  dominion.o rngs.o -lm $(CFLAGS)
 
 cardtest1: cardTest1.c dominion.o rngs.o
-    gcc -o cardTest1 -g cardTest1.c dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o cardTest1 cardTest1.c -g dominion.o rngs.o -lm $(CFLAGS)
 
 cardtest2: cardTest2.c dominion.o rngs.o
-    gcc -o cardTest2 -g cardTest2.c dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o cardTest2 -g cardTest2.c dominion.o rngs.o -lm $(CFLAGS)
 
 cardtest3: cardTest3.c dominion.o rngs.o
-    gcc -o cardTest3 -g cardTest3.c dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o cardTest3 -g cardTest3.c dominion.o rngs.o -lm $(CFLAGS)
 
 cardtest4: cardTest4.c dominion.o rngs.o
-    gcc -o cardTest4 -g cardTest4.c dominion.o rngs.o -lm $(CFLAGS)
+	gcc -o cardTest4 -g cardTest4.c dominion.o rngs.o -lm $(CFLAGS)
 
 unittests: testDrawCard
 	./unittest1 &> unittestresult.out
@@ -68,8 +68,7 @@ unittests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard unittest1 unittest2 unittest3 unittest4 cardTest1 cardTest2
-    cardTest3 cardTest4 runtests unittests
+all: playdom player testDrawCard testBuyCard badTestDrawCard unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 runtests unittests
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so

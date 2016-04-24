@@ -39,15 +39,15 @@ int main() {
         finalHand = Game.handCount[player];
 
         if (finalAct - initialAct != 2) {
-            printf("The village card did not add two actions!");
+            printf("The village card did not add two actions!\n");
         }
 
         if (initialDeck - finalDeck != 1) {
-            printf("One card were not drawn from the deck");
+            printf("One card were not drawn from the deck\n");
         }
 
         if (finalHand - initialHand != 1) {
-            printf("One card were not added to the players hand!");
+            printf("One card were not added to the players hand!\n");
         }
 
     }
