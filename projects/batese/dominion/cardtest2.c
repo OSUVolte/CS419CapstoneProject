@@ -47,11 +47,12 @@ int main(){
 			printf("Testing for player %d and handPos %d.\n", p, handPos);
 			//Create game state
 			memset(&O, 23, sizeof(struct gameState));   // clear the game state
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
 			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
 			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			G.whoseTurn = p; //set players turn
 			//play card
-			cardEffect(adventurer, 0, 0, 0, &G, handPos, 0);
+			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 			
 			//Check players hand has gained 2 cards
 			if (G.handCount[p] == (O.handCount[p] + 2))
