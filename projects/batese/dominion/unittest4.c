@@ -63,10 +63,10 @@ int main() {
 			G.discard[p][0] = card;
 			G.discardCount[p] = 1;
 			deckCount = fullDeckCount(p, card, &G);
-			if (deckCount == 9)
-				printf("PASSED: fullDeckCount = %d, expected = 9.\n", deckCount);
+			if (deckCount == 3)
+				printf("PASSED: fullDeckCount = %d, expected = 3.\n", deckCount);
 			else
-				printf("FAILED: fullDeckCount = %d, expected = 9.\n", deckCount);
+				printf("FAILED: fullDeckCount = %d, expected = 3.\n", deckCount);
 			
 			// Check with 1 cards in 2 places
 			printf("Testing with 1 card in both deck and discard.\n");
@@ -78,10 +78,10 @@ int main() {
 			G.discard[p][0] = card;
 			G.discardCount[p] = 1;
 			deckCount = fullDeckCount(p, card, &G);
-			if (deckCount == 6)
-				printf("PASSED: fullDeckCount = %d, expected = 6.\n", deckCount);
+			if (deckCount == 2)
+				printf("PASSED: fullDeckCount = %d, expected = 2.\n", deckCount);
 			else
-				printf("FAILED: fullDeckCount = %d, expected = 6.\n", deckCount);
+				printf("FAILED: fullDeckCount = %d, expected = 2.\n", deckCount);
 			
 			// Check with 1 card in 1 places
 			printf("Testing with 1 card in just hand.\n");
@@ -92,10 +92,10 @@ int main() {
 			G.handCount[p] = 1;
 			G.discardCount[p] = 0;
 			deckCount = fullDeckCount(p, card, &G);
-			if (deckCount == 3)
-				printf("PASSED: fullDeckCount = %d, expected = 3.\n", deckCount);
+			if (deckCount == 1)
+				printf("PASSED: fullDeckCount = %d, expected = 1.\n", deckCount);
 			else
-				printf("FAILED: fullDeckCount = %d, expected = 3.\n", deckCount);
+				printf("FAILED: fullDeckCount = %d, expected = 1.\n", deckCount);
 		}
 	}
 }
