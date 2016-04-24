@@ -1,0 +1,49 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <math.h>
+        -:    4:#include <time.h>
+        -:    5:
+        -:    6:#include "assert.h"
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include "rngs.h"
+        -:   10:
+function main called 1 returned 100% blocks executed 86%
+        1:   11:int main(int argc, char* argv[])
+        -:   12:{
+        -:   13:    int counter;
+        -:   14:    int startOfGame;
+        1:   15:    int k[10] = {adventurer, embargo, great_hall, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+        -:   16:    struct gameState game;
+        -:   17:    
+        1:   18:    printf("\n\nWhos turn test\n");
+call    0 returned 100%
+        4:   19:    for(counter = 2; counter<= 4; counter++)
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+        -:   20:    {
+        -:   21://create game and assert it is running, then check to find out whos turn it is
+        3:   22:        startOfGame = initializeGame(counter, k, 10, &game);
+call    0 returned 100%
+        3:   23:        assert(startOfGame == 0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        3:   24:        startOfGame = whoseTurn(&game);
+call    0 returned 100%
+        3:   25:        assert(startOfGame == game.whoseTurn);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        3:   26:        printf("whose turn - player number: %d \n", counter);
+call    0 returned 100%
+        -:   27:    }
+        1:   28:    printf("\nUnit test 2 passed. \n");
+call    0 returned 100%
+        1:   29:return 0;
+        -:   30:}
