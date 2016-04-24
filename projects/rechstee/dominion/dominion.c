@@ -738,13 +738,13 @@ int playVillage(struct gameState *state,int currentPlayer, int handPos)
 }
 int playSmithy(struct gameState *state, int currentPlayer, int handPos, int i)
 {
-	for (int i = 0; i < 3; i++)
+	for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1);
       return 0;
 }
 
@@ -763,7 +763,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int drawntreasure
 	  z++;
 	}
       }
-      while(z-1>=0){
+      while(z-2>=0){
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
@@ -794,7 +794,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		playAdventurer(*state,currentPlayer, drawntreasure, cardDrawn, temphand, z);
+		playAdventurer(state,currentPlayer, drawntreasure, cardDrawn, temphand, z);
       /*while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);

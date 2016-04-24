@@ -1,0 +1,72 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * unittest4: whoseTurn() function
+        -:    4: * Due Date: April 24, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h" 
+        -:    8:#include <stdio.h>
+        -:    9:
+function main called 4 returned 100% blocks executed 88%
+        4:   10:int main(){
+        -:   11:
+        4:   12:	printf("\n------------------------Unit Test 4-----------------------------\n\n");
+call    0 returned 100%
+        4:   13:	printf("---Test whoseTurn()---\n");
+call    0 returned 100%
+        -:   14:	
+        -:   15:	// create a game to test
+        -:   16:  	struct gameState game;
+        4:   17:  	int cards[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   18:	
+        4:   19:	printf("Initialize Game...\n");
+call    0 returned 100%
+        -:   20:		
+        4:   21:	initializeGame(2, cards, 10, &game);
+call    0 returned 100%
+        -:   22:	int currentPlayer; 
+        4:   23:	int player1 = 0;
+        4:   24:	int player2 = 1;
+        -:   25:	
+        4:   26:	printf("Testing if Player 1's turn is set...\n");
+call    0 returned 100%
+        4:   27:	game.whoseTurn = player1;
+        4:   28:	currentPlayer = whoseTurn(&game);
+call    0 returned 100%
+        4:   29:	if(currentPlayer == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   30:		printf("PASS\n");
+call    0 returned 100%
+        -:   31:	}	
+        -:   32:	else{
+    #####:   33:		printf("FAIL\n");
+call    0 never executed
+        -:   34:	}
+        -:   35:	
+        4:   36:	printf("Testing if Player 2's turn it set...\n");
+call    0 returned 100%
+        4:   37:	game.whoseTurn = player2;
+        4:   38:	currentPlayer = whoseTurn(&game);
+call    0 returned 100%
+        4:   39:	if(currentPlayer == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   40:		printf("PASS\n");
+call    0 returned 100%
+        -:   41:	}	
+        -:   42:	else{
+    #####:   43:		printf("FAIL\n");
+call    0 never executed
+        -:   44:	}
+        -:   45:
+        4:   46:	printf("---whoseTurn() Test Complete---\n\n");
+call    0 returned 100%
+        -:   47:	
+        4:   48:	return 0;
+        -:   49:}

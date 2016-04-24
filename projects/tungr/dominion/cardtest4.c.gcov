@@ -1,0 +1,201 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:	Rosa Tung
+        -:    3:	CS362
+        -:    4:	(20 points) Write unit tests for four Dominion cards implemented in dominion.c.  
+        -:    5:	These tests should be checked in as cardtest1.c, cardtest2.c,cardtest3.c, and cardtest4.c. 
+        -:    6:	(For example, create a test for smithy card.). It is mandatory to test smithy and adventurer card. 
+        -:    7:	
+        -:    8:	Testing:
+        -:    9:		great hall card 
+        -:   10:		int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);	
+        -:   11:*/
+        -:   12:
+        -:   13:#include "dominion.h" 
+        -:   14:
+        -:   15:#include <stdio.h> //printf scanf
+        -:   16:
+function main called 1 returned 100% blocks executed 66%
+        1:   17:int main(){
+        -:   18:	//make new game 
+        -:   19:	struct gameState G;
+        -:   20:
+        1:   21:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        1:   22:	int kingdomCardsCheck[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   23:	
+        -:   24:	int flag;
+        -:   25:	int currentPlayer; 
+        -:   26:	int baseHandCount;
+        -:   27:	int baseDeckCount;	
+        -:   28:	int baseActions;
+        -:   29:	
+        -:   30:	int victoryCheck;
+        -:   31:	int kingdomCheck;
+        -:   32:	
+        1:   33:	printf("---Testing gardens Card START---\n\n");
+call    0 returned 100%
+        -:   34:	
+        1:   35:	printf("Initialize Game...\n");
+call    0 returned 100%
+        1:   36:	initializeGame(2, k, 4, &G);	
+call    0 returned 100%
+        -:   37:	
+        1:   38:	currentPlayer = G.whoseTurn;
+        1:   39:	baseHandCount = G.handCount[currentPlayer];
+        1:   40:	baseDeckCount = G.deckCount[currentPlayer];
+        1:   41:	baseActions = G.numActions;
+        1:   42:	victoryCheck = G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province];
+        -:   43:	
+        -:   44:	//check for function execution
+        1:   45:	printf("Testing gardens cardEffect function return value...\n");
+call    0 returned 100%
+        1:   46:	flag = cardEffect(gardens, 0, 0, 0, &G, 0, 0);
+call    0 returned 100%
+        1:   47:	if(flag == -1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   48:		printf("	PASS\n");
+call    0 returned 100%
+        -:   49:	} else {
+    #####:   50:		printf("	FAIL\n");
+call    0 never executed
+        -:   51:	}	
+        -:   52:	//check adventurer effect correctness
+        1:   53:	printf("Testing gardens action...\n");
+call    0 returned 100%
+        -:   54:	
+        -:   55:	//check number of cards received from currentPlayer
+        1:   56:	if(G.handCount[currentPlayer] == baseHandCount){ //take 1 card and give 1 away
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   57:		printf("	PASS\n"); 
+call    0 returned 100%
+        1:   58:		printf("		No change in player hand count\n");
+call    0 returned 100%
+        1:   59:		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
+call    0 returned 100%
+        -:   60:
+        -:   61:	} else {
+    #####:   62:		printf("	FAIL\n");
+call    0 never executed
+    #####:   63:		printf("		There was a change in player hand count\n");
+call    0 never executed
+    #####:   64:		printf("		current handCount: %d, previous handCount: %d\n", G.handCount[currentPlayer], baseHandCount);
+call    0 never executed
+        -:   65:	}
+        -:   66:	
+        -:   67:	//check number of cards given from players deck 
+        1:   68:	if(G.deckCount[currentPlayer] == baseDeckCount){ //take 1 card
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   69:		printf("	PASS\n"); 
+call    0 returned 100%
+        1:   70:		printf("		No change in currentPlayers Deck\n");
+call    0 returned 100%
+        1:   71:		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);		
+call    0 returned 100%
+        -:   72:	} else {
+    #####:   73:		printf("	FAIL\n");
+call    0 never executed
+    #####:   74:		printf("		There was a change in currentPlayers DeckCount\n");
+call    0 never executed
+    #####:   75:		printf("		current deckCount: %d, previous deckCount: %d\n", G.deckCount[currentPlayer], baseDeckCount);
+call    0 never executed
+    #####:   76:		printf("		cards in discard pile: %d\n", G.discardCount[currentPlayer]);
+call    0 never executed
+        -:   77:	}
+        -:   78:	
+        -:   79:	//check action count 
+        1:   80:	if(G.numActions == baseActions){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   81:		printf("	PASS\n"); 
+call    0 returned 100%
+        1:   82:		printf("		Actions unchanged\n");
+call    0 returned 100%
+        1:   83:		printf("		current actions: %d, previous actions: %d\n", G.numActions, baseActions);			
+call    0 returned 100%
+        -:   84:	} else {
+    #####:   85:		printf("	FAIL\n");
+call    0 never executed
+    #####:   86:		printf("		Actions changed\n");
+call    0 never executed
+    #####:   87:		printf("		current actions: %d, previous actions: %d\n", G.numActions, baseActions);
+call    0 never executed
+        -:   88:	}
+        -:   89:	
+        -:   90:	//check other player state change 
+        1:   91:	if(G.handCount[currentPlayer+1] == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   92:		printf("	PASS\n");
+call    0 returned 100%
+        1:   93:		printf("		Other player's handCount has not changed\n");
+call    0 returned 100%
+        -:   94:	} else {
+    #####:   95:		printf("	FAIL\n");
+call    0 never executed
+    #####:   96:		printf("		Other player's handCount has changed\n");
+call    0 never executed
+        -:   97:	}
+        1:   98:	if(G.deckCount[currentPlayer+1] == 10){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   99:		printf("	PASS\n");
+call    0 returned 100%
+        1:  100:		printf("		Other player's deckCount has not changed\n");
+call    0 returned 100%
+        -:  101:	} else {
+    #####:  102:		printf("	FAIL\n");
+call    0 never executed
+    #####:  103:		printf("		Other player's deckCount has changed\n");
+call    0 never executed
+        -:  104:	}
+        -:  105:	
+        -:  106:	//victory card pile check
+        1:  107:	if((G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province]) == victoryCheck){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  108:		printf("	PASS\n");
+call    0 returned 100%
+        1:  109:		printf("		no state change to victory card piles\n");
+call    0 returned 100%
+        -:  110:	} else {
+    #####:  111:		printf("	FAIL\n");
+call    0 never executed
+    #####:  112:		printf("		there has been a state change to the victory card piles\n");
+call    0 never executed
+        -:  113:	}
+        -:  114:	
+        -:  115:	//kingdom card pile check 
+        1:  116:	flag = 0; //reset flag
+       11:  117:	for(kingdomCheck = 0; kingdomCheck < 10; kingdomCheck++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:  118:		if(k[kingdomCheck] != kingdomCardsCheck[kingdomCheck]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  119:			flag = 1;
+        -:  120:		}
+        -:  121:	}
+        1:  122:	if(flag == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  123:		printf("	PASS\n");
+call    0 returned 100%
+        1:  124:		printf("		no state change to kingdom card piles\n\n");
+call    0 returned 100%
+        -:  125:	} else {
+    #####:  126:		printf("	FAIL\n");
+call    0 never executed
+    #####:  127:		printf("		there has been a state change to the kingdom card piles\n\n");
+call    0 never executed
+        -:  128:	}	
+        1:  129:	printf("---Testing gardens Card COMPLETE---\n\n\n\n");
+call    0 returned 100%
+        1:  130:	return 0;
+        -:  131:}

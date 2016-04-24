@@ -1,0 +1,117 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <math.h>
+        -:    9:
+        -:   10:#include "testHelper.h"
+        -:   11:
+        -:   12:#define TESTCARD "getCost"
+        -:   13:
+function main called 2 returned 100% blocks executed 78%
+        2:   14:int main() {
+        -:   15:
+        2:   16:	int newCards = 0;
+        2:   17:	int discarded = 1;
+        2:   18:	int newCoins = 0;
+        2:   19:	int shuffledCards = 0;
+        2:   20:	int a = 0, b = 0, c= 0;
+        2:   21:	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        -:   22:	int remove1, remove2;
+        2:   23:	int seed = 1000;
+        2:   24:	int numPlayers = 2;
+        2:   25:	int thisPlayer = 0;
+        2:   26:	int otherPlayer = 1;
+        2:   27:	int found = 0;
+        -:   28:
+        2:   29:	int allCards[27] = {curse, estate, duchy, province, copper, silver, gold, adventurer, 
+        -:   30:		council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, 
+        -:   31:		minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, 
+        -:   32:		sea_hag, treasure_map};
+        2:   33:	int allCosts[27] = {0, 2, 5, 8, 0, 3, 6, 6, 5, 4, 4, 5, 4, 4, 3, 4, 3, 5, 3, 5, 3, 4, 2, 
+        -:   34:		5, 4, 4,4};
+        -:   35:	const char *card[27];
+        2:   36:	card[0] = "curse"; 
+        2:   37:	card[1] = "estate"; 
+        2:   38:	card[2] = "duchy"; 
+        2:   39:	card[3] = "province"; 
+        2:   40:	card[4] = "copper"; 
+        2:   41:	card[5] = "silver"; 
+        2:   42:	card[6] = "gold"; 
+        2:   43:	card[7] = "adventurer"; 
+        2:   44:	card[8] = "council_room"; 
+        2:   45:	card[9] = "feast"; 
+        2:   46:	card[10] = "gardens"; 
+        2:   47:	card[11] = "mines"; 
+        2:   48:	card[12] = "remodel"; 
+        2:   49:	card[13] = "smithy"; 
+        2:   50:	card[14] = "village"; 
+        2:   51:	card[15] = "baron"; 
+        2:   52:	card[16] = "great_hall"; 
+        2:   53:	card[17] = "minion"; 
+        2:   54:	card[18] = "steward"; 
+        2:   55:	card[19] = "tribute"; 
+        2:   56:	card[20] = "ambassador"; 
+        2:   57:	card[21] = "cutpurse"; 
+        2:   58:	card[22] = "embargo"; 
+        2:   59:	card[23] = "outpost"; 
+        2:   60:	card[24] = "salvager"; 
+        2:   61:	card[25] = "sea_hag"; 
+        2:   62:	card[26] = "treasure_map"; 
+        -:   63:	struct gameState G, testG;
+        2:   64:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   65:		sea_hag, tribute, smithy, council_room};
+        -:   66:	
+        2:   67:	initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+        -:   68:
+        2:   69:	printf("\t Testing Card: %s \n", TESTCARD);
+call    0 returned 100%
+        -:   70:	// boot up the perfect version
+        2:   71:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   72:	// Test 01 -----------------------------------------------------------------
+        -:   73:
+        2:   74:	printf("Testing return values for all cards...\t");	
+call    0 returned 100%
+       58:   75:	while (a < (sizeof(allCards) / sizeof(int))) {
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       54:   76:		if (allCosts[a] != getCost(allCards[a])) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   77:			printf("ERROR\n");
+call    0 never executed
+    #####:   78:			printf("%s: cost %d, expected %d\n" ,card[a], allCosts[a], getCost(allCards[a]));
+call    0 never executed
+call    1 never executed
+    #####:   79:			found = 1;
+        -:   80:		}
+       54:   81:		a++;
+        -:   82:	}
+        2:   83:	if ( found == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        2:   84:		printf("PASS\n");
+call    0 returned 100%
+        -:   85:	}
+        -:   86:
+        2:   87:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:   88:
+        2:   89:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+call    0 returned 100%
+        2:   90:	return 0;
+        -:   91:}
+        -:   92:
+        -:   93:
+        -:   94:
+        -:   95:
