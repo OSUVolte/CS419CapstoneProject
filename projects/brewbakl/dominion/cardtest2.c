@@ -29,6 +29,8 @@ int main(){
 	startHandCount = game.handCount[currentPlayer];
 	startDeckCount = game.deckCount[currentPlayer];
 
+	game.hand[0][1] = adventurer;
+	playCard(1, adventurer, 0, 0, &game);
 
 	printf("\n\n ---Testing Adventurer Card Start--- \n\n");
 	
