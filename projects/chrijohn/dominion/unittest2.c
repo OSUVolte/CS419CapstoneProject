@@ -34,7 +34,8 @@ int main() {
 	assert(getCost(24) == 4);
 	assert(getCost(25) == 4);
 	assert(getCost(26) == 4);
-
+	assert(getCost(-1) == -1);
+	assert(getCost(27) == -1);
 
 	printf("All Tests Past!");
 

@@ -96,3 +96,34 @@ isGameOver()               NOTE: Function should return 1 if no more province ca
                              The function is tailor made for random testing.  I
                              refrained from random testing however due to the
                              instructions to do unit testing only.
+
+-------------              -----------------------------------------------------
+scoreFor()                 NOTE: Function should return the total score for a given
+                             player based on the sum of the scores of the victory
+                             cards (and curses) in his hand, deck, and discard piles.
+
+                           BUGS: All tests of scoreFor() fail because of a couple of
+                             different bugs.  First, to get to deck score the counter
+                             is using the number of cards in the discard pile.  Second,
+                             scoreFor() makes a call to fullDeckCount() but uses it
+                             incorrectly.  fullDeckCount() gives the total number of
+                             a particular card type in the deck, not the total number of
+                             ANY card type in the deck.  fullDeckCount() is being called
+                             in such a way that it always counts ONLY curse cards.
+                             Additionally, there is no need to call fullDeckCount at all
+                             because the total number of cards can be determined via the
+                             loops that already exist in scoreFor().
+
+                             Finally, my test didn't reveal this, but it becomes apparent
+                             in the discussion of the call to fullDeckCount().  scoreFor()
+                             is currently (trying to) assess the score for garden() by
+                             taking each hand/deck/discard total and dividing by 10
+                             individually and then summing those results.  It should be
+                             summing the card totals first and then dividing by 10.  It's
+                             subtle but could result in "off-by-1" errors in the return vals.
+
+-------------              -----------------------------------------------------
+fullDeckCount()            NOTE: Function should return the count of a specific card in
+                             a specific player's possession (hand, deck, and discard piles).
+
+                           BUGS: This is a fairly simple function.  I found no bugs.

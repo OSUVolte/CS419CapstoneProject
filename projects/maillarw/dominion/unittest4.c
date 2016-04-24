@@ -1,4 +1,4 @@
-//unittest4
+//unittest4.c
 
 //Unit test for fullDeckCount()
 
@@ -9,7 +9,7 @@
 
 int main () {
 
-  int r;
+  printf ("\n************************    Unit Test 4: Testing fullDeckCount()     **********************\n\n");
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};
