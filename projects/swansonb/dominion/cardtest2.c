@@ -153,6 +153,67 @@ int main(int argc, char **argv) {
 
     }
 
+    // Test when it is necesary to shuffle
+    for (i=0; i<NUM_TESTS; ++i){
+
+        struct adventurerTestCase testCase = initTestCase(i, testDecks);
+
+        initializeGame(numPlayers, k, seed, &G);
+        curPlayer = G.whoseTurn;
+
+        G.discardCount[curPlayer]=0;
+        G.deckCount[curPlayer] = 0;
+        //put most of deck in discard pile
+        for(j=0;j<testCase.deckSize-2;++j){
+            G.discard[curPlayer][G.discardCount[curPlayer]++] = testCase.deck[j];
+        }
+        G.deck[curPlayer][G.deckCount[curPlayer]++] = testCase.deck[j];
+        G.deck[curPlayer][G.deckCount[curPlayer]++] = testCase.deck[j+1];
+
+        G.hand[curPlayer][G.handCount[curPlayer]++] = adventurer;
+        copyGameState(&before,&G);
+        playAdventurer(&G, G.handCount[curPlayer]-1);
+        printf("Test that require player to shuffle #:%d playing adventurer card\n",i);
+        printf("Player's hand has 2 new coin cards ");
+        if (G.handCount[curPlayer] == before.handCount[curPlayer]+1 &&
+                isCoin(G.hand[curPlayer][G.handCount[curPlayer]-1]) &&
+                isCoin(G.hand[curPlayer][G.handCount[curPlayer]-2])){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("Player still has same card in deck/hand/discard ");
+        if (playerHasSameCards(&G,&before,curPlayer)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        //rollback intentional changes to game state and check for any side-effects
+        G.deckCount[curPlayer] = before.deckCount[curPlayer];
+        G.handCount[curPlayer] = before.handCount[curPlayer];
+        G.discardCount[curPlayer] = before.discardCount[curPlayer];
+        G.playedCardCount = before.playedCardCount;
+        cpyDeck(G.hand[curPlayer], before.hand[curPlayer], MAX_HAND);
+        cpyDeck(G.discard[curPlayer], before.discard[curPlayer], MAX_DECK);
+        cpyDeck(G.deck[curPlayer], before.deck[curPlayer], MAX_DECK);
+        cpyDeck(G.playedCards, before.playedCards, MAX_DECK);
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+    }
+
 
 
 
