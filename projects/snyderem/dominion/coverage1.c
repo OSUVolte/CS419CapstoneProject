@@ -12,7 +12,7 @@ unittest1.c - getCost()
 	passed as a parameter. The tests compare the cost returned by the function
 	to the costs given at http://wiki.dominionstrategy.com/.
 
-  All tests pass successfully.	
+  All tests pass successfully, no bugs found.	
  
   GCOV
 		Function 'getCost'
@@ -25,6 +25,21 @@ unittest1.c - getCost()
 
 unittest2.c - shuffle()
 
+  shuffle() should only reorder the cards in the deck. It should not affect the 
+  number of cards in any of the card piles for any of the players. It should
+  return a value of -1 if the deck is empty when the function is called. It 
+  should not change the cards that are in the deck when it shuffles.
+
+  All tests pass successfully, no bugs found.
+ 
+  GCOV
+		Function 'shuffle'
+		Lines executed:100.00% of 16
+		Branches executed:100.00% of 8
+		Taken at least once:100.00% of 8
+		Calls executed:100.00% of 2
+
+  The unit tests cover 100% of the shuffle function().
 
 
 endTurn (line 350)
