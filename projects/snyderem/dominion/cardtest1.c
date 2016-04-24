@@ -1,4 +1,4 @@
-/* discardCard */
+/* smithy */
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
