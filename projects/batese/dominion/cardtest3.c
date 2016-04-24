@@ -51,7 +51,7 @@ int main(){
 			G.whoseTurn = p; //set players turn
 			if (p != 0) { //If not first player need to draw first hand
 				  for (i = 0; i < 5; i++){
-					drawCard(G.whoseTurn, G);
+					drawCard(G.whoseTurn, &G);
 				  }
 			}
 			//play card
