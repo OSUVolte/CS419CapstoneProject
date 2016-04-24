@@ -70,7 +70,7 @@ int main(){
 			O.hand[p][handPos] = 8; //int for coincil_room card
 			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
 			//play card
-			cardEffect(village, 0, 0, 0, &G, handPos, 0);
+			cardEffect(council_room, 0, 0, 0, &G, handPos, 0);
 			
 			//Check player has gained 4 cards
 			if (G.handCount[p] == O.handCount[p] + 3)
