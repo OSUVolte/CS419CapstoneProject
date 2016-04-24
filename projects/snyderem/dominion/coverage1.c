@@ -23,6 +23,7 @@ unittest1.c - getCost()
   Since all the costs returned for all cards are tested, these tests provide
   100% coverage of the function.
 
+unittest2.c - shuffle()
 
 
 
