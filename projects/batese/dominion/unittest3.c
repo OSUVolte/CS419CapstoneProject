@@ -105,6 +105,7 @@ int main() {
 		printf("PASSED: isGameOver = %d, expected = 0.\n", gameOver);
 	else
 		printf("FAILED: isGameOver = %d, expected = 0.\n", gameOver);
+	return 0;
 }
 
 

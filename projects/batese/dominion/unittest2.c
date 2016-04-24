@@ -93,7 +93,8 @@ int main() {
     struct gameState G;
 	int x, y; // p1 and p2 scores respectively
 	int players[MAX_PLAYERS];
-	
+
+	printf ("TESTING getWinners():\n");	
 	for (x = 0; x <= 40; x += 10) {
 		for (y = 0; y <= 40; y += 10) {
 			printf("Testing with player1 score of %d and player2 score of %d on player 1's turn.\n", x, y);
@@ -139,9 +140,7 @@ int main() {
 			}
 		}
 	}
-
-	
-
+	return 0;
 }
 
 

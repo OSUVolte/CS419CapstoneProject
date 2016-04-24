@@ -98,6 +98,7 @@ int main() {
 				printf("FAILED: fullDeckCount = %d, expected = 1.\n", deckCount);
 		}
 	}
+	return 0;
 }
 
 
