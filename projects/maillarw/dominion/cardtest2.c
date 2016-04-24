@@ -7,6 +7,7 @@
 
 int main () {
 
+	printf ("\n************************    Card Test 2: Testing playAdventurer()     **********************\n\n");
 	int k[10] = {adventurer, council_room, feast, gardens, mine,
 				 remodel, smithy, village, baron, great_hall};
 
@@ -58,7 +59,7 @@ int main () {
 	
 	playAdventurer(G);
 
-	if(G->discardCount == 0 && G->discard[1][0] == adventurer){											 
+	if(G->playedCardCount == 1 && G->playedCards[0] == adventurer){											 
 		 printf("Passed\n");
 	}
 	else{
@@ -85,7 +86,7 @@ int main () {
 	
 	playAdventurer(G);
 
-	if(G->discardCount[1] == 9){											 
+	if(G->discardCount[1] == 8 && G->playedCards[0] == adventurer){											 
 		 printf("Passed\n");
 	}
 	else{

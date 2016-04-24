@@ -55,22 +55,14 @@ card3:
 	gcc -std=c99 dominion.o cardtest3.c rngs.c -o cardtest3 $(MYFLAGS)
 card4:
 	gcc -std=c99 dominion.o cardtest4.c rngs.c -o cardtest4 $(MYFLAGS)
-unittestresults.out: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4
-	printf "\n************Unit Tests 1**************\n" &> unittestresults.out 
-	./unittest1 >> unittestresults.out
-	printf "\n************Unit Tests 2**************\n" >> unittestresults.out 
+unittestresults.out: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4 
+	./unittest1 >> unittestresults.out 
 	./unittest2 >> unittestresults.out 
-	printf "\n************Unit Tests 3**************\n" >> unittestresults.out 
-	./unittest3 >> unittestresults.out 
-	printf "\n************Unit Tests 4**************\n" >> unittestresults.out 
-	./unittest4 >> unittestresults.out 
-	printf "\n************Card Tests 1**************\n" >> unittestresults.out 
-	./cardtest1 >> unittestresults.out 
-	printf "\n************Card Tests 2**************\n" >> unittestresults.out 
+	./unittest3 >> unittestresults.out  
+	./unittest4 >> unittestresults.out  
+	./cardtest1 >> unittestresults.out  
 	./cardtest2 >> unittestresults.out 
-	printf "\n************Card Tests 3**************\n" >> unittestresults.out 
-	./cardtest3 >> unittestresults.out 
-	printf "\n************Card Tests 4**************\n" >> unittestresults.out 
+	./cardtest3 >> unittestresults.out  
 	./cardtest4 >> unittestresults.out
 	printf "\n************Coverage Info**************\n" >> unittestresults.out
 	gcov -b -f dominion.c >> unittestresults.out
