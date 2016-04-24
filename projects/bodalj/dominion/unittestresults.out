@@ -171,7 +171,7 @@ Calls executed:100.00% of 2
 
 
 
-
+Total code coverage for all submitted unit tests against dominion.c
 Function 'updateCoins'
 Lines executed:81.82% of 11
 Branches executed:100.00% of 8
