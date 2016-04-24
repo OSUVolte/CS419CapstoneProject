@@ -1,7 +1,11 @@
 /*
 Author: Ryan Peters
 Date: 04/21/16
-Description: Unit test for village card effect.
+Description: Unit test for village card effect.  The village card allows the
+player to draw one card and gain 2 actions.  There are test to see if the player
+handCount stays the same, the drawn card replacing the village card.  Test that 
+the player gains 2 actions.  Tests that the exit code is 0.  Shows that the new
+card in the hand is different.
 */
 
 #include<stdio.h>

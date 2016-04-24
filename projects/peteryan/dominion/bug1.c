@@ -1,4 +1,14 @@
 /*
+Ryan Peters
+04/20/16
+
+General Info
+	I tests for invalid inputs that are used to access an array by providing
+	a number that is larger than number of indices or a negative number.  
+	These test pass because I add information to the memory location right
+	before using it.  I made the test expecting them to FAIL for using inputs
+	that are out of bounds.
+	
 buyCard()
 	There is no bound checking for whose turn it is.  The function executed
 	without a problem when state.whoseTurn was an invalid number [negative and
@@ -20,14 +30,36 @@ updateCoins()
 	There is no input validation for updateCoins().  When passed a bonus that
 	is negative, the bonus is taken away from the total coins.
 	
-playSmithy()
+gainCard()
+	There is no input validation for gainCard().  The function can take any number
+	for the player or supplyPos and execute with out a problem.  Since supplyPos
+	is used to access an array, if it is out of bounds there is no telling what
+	data will be return.  The test passed because added information to the memory
+	location right before using it.
+	
+	
+Smithy Card
 	The smithy card failed when drawing three cards and discarding one.  There 
 	should have been a net gain of two cards.  The function to play the smithy
 	card does not return 0 when it executes successfully.  The smithy card was
 	added to the played stack.  These bugs are the ones I introduced into the
 	smithy card effect.
 	
-PlayAdventurer()
+Adventure Card
 	The adventurer effect does not add two treaure cards to the player's hand.
 	The adventurer does not add any cards to the player's hand.
+	
+Village Card	
+	My test did not find any bugs when playing the village card.  There is no 
+	input validation and C does not have bound checking for arrays.  I did not
+	test for these conditions because the previous tests showed that when unsing
+	out of bound input the functions operate with out a problem.  The data will
+	probably be lost or overwrite other data since it is not stored in the 
+	memory allocated for each array.
+	
+Council_room Card
+	The council_room card passed all the tests.  There should not be a problem 
+	with input validation because it uses only hard coded data and data from the
+	game state.  As long as the game state is not corrupted it should execute
+	without a problem.
 */
