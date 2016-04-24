@@ -108,10 +108,11 @@ scoreFor()                 NOTE: Function should return the total score for a gi
                              scoreFor() makes a call to fullDeckCount() but uses it
                              incorrectly.  fullDeckCount() gives the total number of
                              a particular card type in the deck, not the total number of
-                             ANY card type in the deck.  fullDeckCount() could probably
-                             stand to be renamed.  Additionally, there is no need to call
-                             fullDeckCount at all because the total number of cards can
-                             be determined via the loops that already exist in scoreFor().
+                             ANY card type in the deck.  fullDeckCount() is being called
+                             in such a way that it always counts ONLY curse cards.
+                             Additionally, there is no need to call fullDeckCount at all
+                             because the total number of cards can be determined via the
+                             loops that already exist in scoreFor().
 
                              Finally, my test didn't reveal this, but it becomes apparent
                              in the discussion of the call to fullDeckCount().  scoreFor()
@@ -121,3 +122,8 @@ scoreFor()                 NOTE: Function should return the total score for a gi
                              summing the card totals first and then dividing by 10.  It's
                              subtle but could result in "off-by-1" errors in the return vals.
 
+-------------              -----------------------------------------------------
+fullDeckCount()            NOTE: Function should return the count of a specific card in
+                             a specific player's possession (hand, deck, and discard piles).
+
+                           BUGS: This is a fairly simple function.  I found no bugs.
