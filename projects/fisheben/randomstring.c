@@ -19,13 +19,24 @@
 * inputString generate the random values.  Each call to inputChar returns a random char defined in the operational profile, and each
 * call to inputString returns a string also defined in the operational profile.
 *
-* Code coverage: Examination of the testme.c.gcov file shows the program has 100% statement coverage and 92% block coverage.
+* Code coverage: Examination of the testme.c.gcov file shows the program has 96.15% statement coverage and 100% block coverage.
 * Line 37 is missed this line returns 0 if a char from the operation profile is not found in the switch statement in function inputChar, so I would
 * not expect this line to execute.  Line 101 is also not executed (return 0 in main), but this line should never execute because 
 * the exit function is called from the testme function.  In the testme function the branch coverage of lines 86, 87 88, and 89 is low.  The
 * Lines are executed between 1 and 20 times, it would be better if these lines were executed  at a value in line with the other cases in the switch 
 * statement (~200's).  It may be that the testme program needs to be run more times to get a better average or the random strings generated may need 
 * to be modified to give a better random distribution.
+
+File 'testme.c'
+Lines executed:96.15% of 52
+Creating 'testme.c.gcov'
+
+File 'testme.c'
+Lines executed:96.15% of 52
+Branches executed:100.00% of 62
+Taken at least once:95.16% of 62
+Calls executed:100.00% of 10
+Creating 'testme.c.gcov'
  
 
         -:    0:Source:testme.c
