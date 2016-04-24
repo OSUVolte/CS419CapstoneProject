@@ -1,0 +1,493 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <math.h>
+        -:    9:
+        -:   10:#include "testHelper.h"
+        -:   11:
+        -:   12:#define TESTCARD "scoreFor()"
+        -:   13:
+        1:   14:int main() {
+        1:   15:	int discarded = 1;
+        1:   16:	int a = 0, b = 0;
+        1:   17:	int seed = 1000;
+        1:   18:	int numPlayers = 2;
+        1:   19:	int thisPlayer = 0;
+        1:   20:	int otherPlayer = 1;
+        1:   21:	int newScore = 0;
+        -:   22:
+        -:   23:	struct gameState G, testG;
+        1:   24:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   25:		sea_hag, tribute, smithy, council_room};
+        -:   26:	
+        1:   27:	initializeGame(numPlayers, k, seed, &G);
+        -:   28:
+        -:   29:	// set up 5 copper in each section:
+        7:   30:	while (a < 5) {
+        -:   31:
+        5:   32:		G.hand[thisPlayer][a] = copper;
+        5:   33:		G.deck[thisPlayer][a] = copper;
+        5:   34:		G.discard[thisPlayer][a] = copper;
+        5:   35:		a++;
+        -:   36:	}
+        -:   37:
+        -:   38:
+        -:   39:
+        -:   40:
+        1:   41:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   42:	printf("\t Testing Card: %s \n", TESTCARD);
+        -:   43:
+        1:   44:	newScore = 5;
+        -:   45:	//int scoreFor (int player, struct gameState *state) {
+        -:   46:	// Test with each type: // curse, estate, duchy, province, great_hall, gardens
+        -:   47:
+        -:   48:	// Test 01: Curse to Hand 	---------------------------------------------------
+        1:   49:	linePrint();
+        1:   50:	printf("Test 01: Curse in hand\n");
+        1:   51:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   52:
+        1:   53:	newScore = -1;
+        -:   54:
+        1:   55:	a = 0;
+        1:   56:	b = 0;
+        8:   57:	while ((a < MAX_HAND) && (b < 1)) {
+        6:   58:		if (testG.hand[thisPlayer][a] == NULL) {
+        1:   59:			testG.hand[thisPlayer][a] = curse;
+        1:   60:			testG.handCount[thisPlayer]++;	
+        1:   61:			b++;
+        -:   62:		}
+        6:   63:		a++;
+        -:   64:	}
+        -:   65:
+        1:   66:	printf("Testing Score for Curse in hand...\t");
+        1:   67:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:   68:		printf("ERROR\n");
+    #####:   69:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:   70:			scoreFor(thisPlayer, &G) + newScore);
+        -:   71:	} else {
+        1:   72:		printf("PASS\n");
+        -:   73:	}
+        -:   74:
+        1:   75:	genericTest(G, testG, otherPlayer, 0);
+        -:   76:
+        -:   77:	// Test 02: Curse to Discard	---------------------------------------------------
+        1:   78:	linePrint();
+        1:   79:	printf("Test 02: Curse in discard\n");
+        1:   80:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   81:
+        1:   82:	newScore = -1;
+        -:   83:
+        1:   84:	testG.discard[thisPlayer][0] = curse;
+        1:   85:	testG.discardCount[thisPlayer] += 1;	
+        -:   86:
+        1:   87:	printf("Testing Score for curse in discard...\t");
+        1:   88:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:   89:		printf("ERROR\n");
+    #####:   90:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:   91:			scoreFor(thisPlayer, &G) + newScore);
+        -:   92:	} else {
+        1:   93:		printf("PASS\n");
+        -:   94:	}
+        -:   95:
+        1:   96:	genericTest(G, testG, otherPlayer, 0);
+        -:   97:
+        -:   98:	// Test 03: Curse to Deck	---------------------------------------------------
+        1:   99:	linePrint();
+        1:  100:	printf("Test 03: Curse in deck\n");
+        1:  101:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  102:
+        1:  103:	newScore = -1;
+        -:  104:
+        1:  105:	testG.deck[thisPlayer][0] = curse;
+        1:  106:	testG.deckCount[thisPlayer] += 1;	
+        -:  107:
+        1:  108:	printf("Testing Score for Curse in deck...\t");
+        1:  109:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  110:		printf("ERROR\n");
+        1:  111:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  112:			scoreFor(thisPlayer, &G) + newScore);
+        -:  113:	} else {
+    #####:  114:		printf("PASS\n");
+        -:  115:	}
+        -:  116:
+        1:  117:	genericTest(G, testG, otherPlayer, 0);
+        -:  118:
+        -:  119:
+        -:  120:
+        -:  121:	// Test 04: Estate to Hand 	---------------------------------------------------
+        1:  122:	linePrint();
+        1:  123:	printf("Test 04: estate in hand\n");
+        1:  124:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  125:
+        1:  126:	newScore = 1;
+        -:  127:
+        1:  128:	a = 0;
+        1:  129:	b = 0;
+        8:  130:	while ((a < MAX_HAND) && (b < 1)) {
+        6:  131:		if (testG.hand[thisPlayer][a] == NULL) {
+        1:  132:			testG.hand[thisPlayer][a] = estate;
+        1:  133:			testG.handCount[thisPlayer]++;	
+        1:  134:			b++;
+        -:  135:		}
+        6:  136:		a++;
+        -:  137:	}
+        -:  138:
+        1:  139:	printf("Testing Score for Estate in hand...\t");
+        1:  140:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  141:		printf("ERROR\n");
+    #####:  142:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  143:			scoreFor(thisPlayer, &G) + newScore);
+        -:  144:	} else {
+        1:  145:		printf("PASS\n");
+        -:  146:	}
+        -:  147:
+        1:  148:	genericTest(G, testG, otherPlayer, 0);
+        -:  149:
+        -:  150:	// Test 05: Estate to Discard	---------------------------------------------------
+        1:  151:	linePrint();
+        1:  152:	printf("Test 05: estate in discard\n");
+        1:  153:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  154:
+        1:  155:	newScore = 1;
+        -:  156:
+        1:  157:	testG.discard[thisPlayer][0] = estate;
+        1:  158:	testG.discardCount[thisPlayer] += 1;	
+        -:  159:
+        1:  160:	printf("Testing Score for estate in discard...\t");
+        1:  161:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  162:		printf("ERROR\n");
+    #####:  163:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  164:			scoreFor(thisPlayer, &G) + newScore);
+        -:  165:	} else {
+        1:  166:		printf("PASS\n");
+        -:  167:	}
+        -:  168:
+        1:  169:	genericTest(G, testG, otherPlayer, 0);
+        -:  170:
+        -:  171:	// Test 06: Estate to Deck	---------------------------------------------------
+        1:  172:	linePrint();
+        1:  173:	printf("Test 06: Estate in deck\n");
+        1:  174:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  175:
+        1:  176:	newScore = 1;
+        -:  177:
+        1:  178:	testG.deck[thisPlayer][0] = estate;
+        1:  179:	testG.deckCount[thisPlayer] += 1;	
+        -:  180:
+        -:  181:
+        1:  182:	printf("Testing Score for estate in deck...\t");
+        1:  183:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  184:		printf("ERROR\n");
+        1:  185:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  186:			scoreFor(thisPlayer, &G) + newScore);
+        -:  187:	} else {
+    #####:  188:		printf("PASS\n");
+        -:  189:	}
+        -:  190:
+        1:  191:	genericTest(G, testG, otherPlayer, 0);
+        -:  192:
+        -:  193:	// Test 07: Duchy to Hand 	---------------------------------------------------
+        1:  194:	linePrint();
+        1:  195:	printf("Test 07: duchy in hand\n");
+        1:  196:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  197:
+        1:  198:	newScore = 3;
+        -:  199:
+        1:  200:	a = 0;
+        1:  201:	b = 0;
+        8:  202:	while ((a < MAX_HAND) && (b < 1)) {
+        6:  203:		if (testG.hand[thisPlayer][a] == NULL) {
+        1:  204:			testG.hand[thisPlayer][a] = duchy;
+        1:  205:			testG.handCount[thisPlayer]++;	
+        1:  206:			b++;
+        -:  207:		}
+        6:  208:		a++;
+        -:  209:	}
+        -:  210:
+        1:  211:	printf("Testing Score for duchy in hand...\t");
+        1:  212:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  213:		printf("ERROR\n");
+    #####:  214:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  215:			scoreFor(thisPlayer, &G) + newScore);
+        -:  216:	} else {
+        1:  217:		printf("PASS\n");
+        -:  218:	}
+        -:  219:
+        1:  220:	genericTest(G, testG, otherPlayer, 0);
+        -:  221:	
+        -:  222:	// Test 08: Duchy to Discard	---------------------------------------------------
+        1:  223:	linePrint();
+        1:  224:	printf("Test 08: Duchy in discard\n");
+        1:  225:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  226:
+        1:  227:	newScore = 3;
+        -:  228:
+        1:  229:	testG.discard[thisPlayer][0] = duchy;
+        1:  230:	testG.discardCount[thisPlayer] += 1;	
+        -:  231:
+        1:  232:	printf("Testing Score for duchy in discard...\t");
+        1:  233:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  234:		printf("ERROR\n");
+    #####:  235:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  236:			scoreFor(thisPlayer, &G) + newScore);
+        -:  237:	} else {
+        1:  238:		printf("PASS\n");
+        -:  239:	}
+        -:  240:
+        1:  241:	genericTest(G, testG, otherPlayer, 0);
+        -:  242:
+        -:  243:	// Test 09: Duchy to Deck	---------------------------------------------------
+        1:  244:	linePrint();
+        1:  245:	printf("Test 09: Duchy in deck\n");
+        1:  246:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  247:
+        1:  248:	newScore = 3;
+        1:  249:	testG.deck[thisPlayer][0] = duchy;
+        1:  250:	testG.deckCount[thisPlayer] += 1;	
+        -:  251:
+        1:  252:	printf("Testing Score for duchy in deck...\t");
+        1:  253:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  254:		printf("ERROR\n");
+        1:  255:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  256:			scoreFor(thisPlayer, &G) + newScore);
+        -:  257:	} else {
+    #####:  258:		printf("PASS\n");
+        -:  259:	}
+        -:  260:
+        1:  261:	genericTest(G, testG, otherPlayer, 0);
+        -:  262:
+        -:  263:
+        -:  264:
+        -:  265:	// Test 10: Province to Hand 	---------------------------------------------------
+        1:  266:	linePrint();
+        1:  267:	printf("Test 10: Province in hand\n");
+        1:  268:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  269:
+        1:  270:	newScore = 6;
+        1:  271:	testG.hand[thisPlayer][0] = province;
+        -:  272:
+        1:  273:	printf("Testing Score for province in hand...\t");
+        1:  274:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  275:		printf("ERROR\n");
+    #####:  276:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  277:			scoreFor(thisPlayer, &G) + newScore);
+        -:  278:	} else {
+        1:  279:		printf("PASS\n");
+        -:  280:	}
+        -:  281:
+        1:  282:	genericTest(G, testG, otherPlayer, 0);
+        -:  283:
+        -:  284:	// Test 11: Province to Discard	---------------------------------------------------
+        1:  285:	linePrint();
+        1:  286:	printf("Test 11: province in discard\n");
+        1:  287:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  288:
+        1:  289:	newScore = 6;
+        1:  290:	testG.discard[thisPlayer][0] = province;
+        1:  291:	testG.discardCount[thisPlayer] += 1;	
+        -:  292:
+        1:  293:	printf("Testing Score for province in discard...\t");
+        1:  294:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  295:		printf("ERROR\n");
+    #####:  296:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  297:			scoreFor(thisPlayer, &G) + newScore);
+        -:  298:	} else {
+        1:  299:		printf("PASS\n");
+        -:  300:	}
+        -:  301:
+        1:  302:	genericTest(G, testG, otherPlayer, 0);
+        -:  303:
+        -:  304:	// Test 12: province to Deck	---------------------------------------------------
+        1:  305:	linePrint();
+        1:  306:	printf("Test 12: province in deck\n");
+        1:  307:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  308:
+        1:  309:	newScore = 6;
+        1:  310:	testG.deck[thisPlayer][0] = province;
+        1:  311:	testG.deckCount[thisPlayer] += 1;	
+        -:  312:
+        1:  313:	printf("Testing Score for province in deck...\t");
+        1:  314:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  315:		printf("ERROR\n");
+        1:  316:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  317:			scoreFor(thisPlayer, &G) + newScore);
+        -:  318:	} else {
+    #####:  319:		printf("PASS\n");
+        -:  320:	}
+        -:  321:
+        1:  322:	genericTest(G, testG, otherPlayer, 0);
+        -:  323:
+        -:  324:
+        -:  325:
+        -:  326:	// Test 13: Great_Hall to Hand 	---------------------------------------------------
+        1:  327:	linePrint();
+        1:  328:	printf("Test 12: great_hall in hand\n");
+        1:  329:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  330:
+        1:  331:	newScore = 1;
+        1:  332:	testG.hand[thisPlayer][0] = great_hall;
+        -:  333:
+        1:  334:	printf("Testing Score for great_hall in hand...\t");
+        1:  335:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  336:		printf("ERROR\n");
+    #####:  337:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  338:			scoreFor(thisPlayer, &G) + newScore);
+        -:  339:	} else {
+        1:  340:		printf("PASS\n");
+        -:  341:	}
+        -:  342:
+        1:  343:	genericTest(G, testG, otherPlayer, 0);
+        -:  344:
+        -:  345:	// Test 14: greaT_hall to Discard	---------------------------------------------------
+        1:  346:	linePrint();
+        1:  347:	printf("Test 14: great_hall in discard\n");
+        1:  348:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  349:
+        1:  350:	newScore = 1;
+        1:  351:	testG.discard[thisPlayer][0] = great_hall;
+        1:  352:	testG.discardCount[thisPlayer] += 1;	
+        -:  353:
+        1:  354:	printf("Testing Score for great_hall in discard...\t");
+        1:  355:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+    #####:  356:		printf("ERROR\n");
+    #####:  357:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+    #####:  358:			scoreFor(thisPlayer, &G) + newScore);
+        -:  359:	} else {
+        1:  360:		printf("PASS\n");
+        -:  361:	}
+        -:  362:
+        1:  363:	genericTest(G, testG, otherPlayer, 0);
+        -:  364:
+        -:  365:	// Test 15: great_hall to Deck	---------------------------------------------------
+        1:  366:	linePrint();
+        1:  367:	printf("Test 15: great_hall in deck\n");
+        1:  368:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  369:
+        1:  370:	newScore = 1;
+        1:  371:	testG.deck[thisPlayer][0] = great_hall;
+        1:  372:	testG.deckCount[thisPlayer] += 1;	
+        -:  373:
+        1:  374:	printf("Testing Score for great_hall in deck...\t");
+        1:  375:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  376:		printf("ERROR\n");
+        1:  377:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  378:			scoreFor(thisPlayer, &G) + newScore);
+        -:  379:	} else {
+    #####:  380:		printf("PASS\n");
+        -:  381:	}
+        -:  382:
+        1:  383:	genericTest(G, testG, otherPlayer, 0);
+        -:  384:
+        -:  385:
+        -:  386:
+        -:  387:
+        -:  388:	// Test 16: gardens to Hand 	---------------------------------------------------
+        1:  389:	linePrint();
+        1:  390:	printf("Test 16: gardens in hand\n");
+        1:  391:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  392:
+        1:  393:	newScore = 5;
+        -:  394:
+        1:  395:	a = 0;
+        1:  396:	b = 0;
+       11:  397:	while ((a < MAX_HAND) && (b < 4)) {
+        9:  398:		if (testG.hand[thisPlayer][a] == NULL) {
+        4:  399:			testG.hand[thisPlayer][a] = estate;
+        4:  400:			b++;
+        -:  401:		}
+        9:  402:		a++;
+        -:  403:	}
+        1:  404:	testG.hand[thisPlayer][a] = gardens;
+        1:  405:	testG.handCount[thisPlayer] += 5;
+        -:  406:
+        1:  407:	printf("Testing Score for gardens in hand...\t");
+        1:  408:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  409:		printf("ERROR\n");
+        1:  410:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  411:			scoreFor(thisPlayer, &G) + newScore);
+        -:  412:	} else {
+    #####:  413:		printf("PASS\n");
+        -:  414:	}
+        -:  415:
+        1:  416:	genericTest(G, testG, otherPlayer, 0);
+        -:  417:
+        -:  418:	// Test 17: gardens to Discard	---------------------------------------------------
+        1:  419:	linePrint();
+        1:  420:	printf("Test 17: gardens in discard\n");
+        1:  421:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  422:
+        1:  423:	newScore = 5;
+        -:  424:
+        1:  425:	a = 0;
+        1:  426:	b = 0;
+       11:  427:	while ((a < MAX_HAND) && (b < 4)) {
+        9:  428:		if (testG.discard[thisPlayer][a] == NULL) {
+        4:  429:			testG.discard[thisPlayer][a] = estate;
+        4:  430:			b++;
+        -:  431:		}
+        9:  432:		a++;
+        -:  433:	}
+        1:  434:	testG.discard[thisPlayer][a] = gardens;
+        1:  435:	testG.discardCount[thisPlayer] += 5;
+        -:  436:
+        -:  437:
+        1:  438:	printf("Fulldeck = %d\n", fullDeckCount(thisPlayer, 0, &testG));
+        -:  439:
+        1:  440:	printf("Testing Score for gardens in discard...\t");
+        1:  441:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  442:		printf("ERROR\n");
+        1:  443:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  444:			scoreFor(thisPlayer, &G) + newScore);
+        -:  445:	} else {
+    #####:  446:		printf("PASS\n");
+        -:  447:	}
+        -:  448:
+        1:  449:	genericTest(G, testG, otherPlayer, 0);
+        -:  450:
+        -:  451:	// Test 18: gardens to Deck	---------------------------------------------------
+        1:  452:	linePrint();
+        1:  453:	printf("Test 18: gardens in deck\n");
+        1:  454:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  455:
+        1:  456:	newScore = 5;
+        -:  457:
+        1:  458:	a = 0;
+        1:  459:	b = 0;
+       16:  460:	while ((a < MAX_HAND) && (b < 4)) {
+       14:  461:		if (testG.deck[thisPlayer][a] == NULL) {
+        4:  462:			testG.deck[thisPlayer][a] = estate;
+        4:  463:			b++;
+        -:  464:		}
+       14:  465:		a++;
+        -:  466:	}
+        1:  467:	testG.deck[thisPlayer][a] = gardens;
+        1:  468:	testG.deckCount[thisPlayer] += 5;
+        -:  469:
+        1:  470:	printf("Testing Score for gardens in deck...\t");
+        1:  471:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+        1:  472:		printf("ERROR\n");
+        1:  473:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+        1:  474:			scoreFor(thisPlayer, &G) + newScore);
+        -:  475:	} else {
+    #####:  476:		printf("PASS\n");
+        -:  477:	}
+        -:  478:
+        1:  479:	genericTest(G, testG, otherPlayer, 0);
+        -:  480:
+        -:  481:
+        1:  482:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+        1:  483:	return 0;
+        -:  484:}
+        -:  485:
+        -:  486:
+        -:  487:
+        -:  488:
