@@ -41,7 +41,6 @@ int main(int argc, char **argv) {
         curPlayer = G.whoseTurn;
         G.hand[curPlayer][G.handCount[curPlayer]++] = village;
         copyGameState(&before,&G);
-        printf("total cards for player %d: %d\n", curPlayer, G.handCount[curPlayer] + G.discardCount[curPlayer] + G.deckCount[curPlayer]);
         //after play players hand should have 4 extra card in hand and 1 extra Buy
         // all other players should have drawn a card
 
@@ -57,7 +56,7 @@ int main(int argc, char **argv) {
         }
         testsRun += 1;
 
-        printf("Player has 4 more card in hand  <is:%d was:%d> ", G.handCount[curPlayer], before.handCount[curPlayer]);
+        printf("Player has 4 new card in hand ");
         //check that there 3 cards more than before and played card is replaced by new card
         if (G.handCount[curPlayer] - before.handCount[curPlayer] == 3 &&
              G.hand[curPlayer][before.handCount[curPlayer]-1] != before.hand[curPlayer][before.handCount[curPlayer]-1]) {

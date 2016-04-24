@@ -741,184 +741,154 @@ The rest of the gameState was unaffected (PASSED)
 Testing dominion.c int playCouncilRoom()
 --------------------------------------------------------------
 --------------------------------------------------------------
-total cards for player 0: 61
 TestNumber:0  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 60
 TestNumber:1  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 59
 TestNumber:2  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 58
 TestNumber:3  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 58
 TestNumber:4  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 57
 TestNumber:5  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 56
 TestNumber:6  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 55
 TestNumber:7  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 55
 TestNumber:8  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 54
 TestNumber:9  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 53
 TestNumber:10  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 52
 TestNumber:11  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 52
 TestNumber:12  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 51
 TestNumber:13  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 50
 TestNumber:14  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 49
 TestNumber:15  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 49
 TestNumber:16  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 48
 TestNumber:17  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 47
 TestNumber:18  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 46
 TestNumber:19  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 46
 TestNumber:20  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 45
 TestNumber:21  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 44
 TestNumber:22  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 43
 TestNumber:23  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (FAILED) 
+Player has 4 new card in hand (FAILED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 43
 TestNumber:24  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 42
 TestNumber:25  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 2: 41
 TestNumber:26  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 3: 40
 TestNumber:27  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 0: 40
 TestNumber:28  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
-total cards for player 1: 39
 TestNumber:29  Playing Council
 Player has 1 more buy(PASSED) 
-Player has 4 more card in hand  <is:9 was:6> (PASSED) 
+Player has 4 new card in hand (PASSED) 
 Players hand/deck/discard contain same cards (PASSED) 
 All other players drew 1 card and that card came from their deck/discard (PASSED) 
 119 of 120 tests passed
