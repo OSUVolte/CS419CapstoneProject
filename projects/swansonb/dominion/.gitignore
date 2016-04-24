@@ -17,3 +17,4 @@ testDrawCard
 .settings/
 
 *test?.out
+unittestresults.out
