@@ -72,3 +72,24 @@ echo >> $fout
 echo "-- gcov for function 'playGreatHall' in cardtest4 --" >> $fout
 gcov -fb dominion.c | grep -A 4 "^Function 'playGreatHall'" >> $fout
 
+make clean
+make unittest1
+make unittest2
+make unittest3
+make unittest4
+make cardtest1
+make cardtest2
+make cardtest3
+make cardtest4
+./unittest1
+./unittest2
+./unittest3
+./unittest4
+./cardtest1
+./cardtest2
+./cardtest3
+./cardtest4
+echo >> $fout
+echo >> $fout
+echo >> "Total code coverage for all submitted unit tests against dominion.c" >> $fout
+gcov -fb dominion.c >> $fout
