@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     printf("--------------------------------------------------------------\n");
 
 
-    const int NUM_TESTS = 8;
+    const int NUM_TESTS = 30;
     const int CARDS_IN_DECK_AT_START = 15;
     int seed = 1000;
     int testsRun = 0;
@@ -35,18 +35,16 @@ int main(int argc, char **argv) {
             G.deck[curPlayer][G.deckCount[curPlayer]++] = floor(Random() * treasure_map);
         }
     }
-    G.supplyCount[smithy] = NUM_TESTS;
 
     for (i=0; i< NUM_TESTS; ++i){
-        //add smithy to players hand
 
         curPlayer = G.whoseTurn;
 
-        gainCard(smithy, &G, 2 ,curPlayer);
+        G.hand[curPlayer][0] = smithy;
 
         copyGameState(&before,&G);
         printf("Playing smithy card player: %d  testRound: %d\n",curPlayer, i);
-        playSmithy(&G,G.handCount[curPlayer]-1);
+        playSmithy(&G,0);
         copyGameState(&after,&G);
 
         printf("current player has drawn 3 new cards ");
@@ -86,6 +84,7 @@ int main(int argc, char **argv) {
         testsRun += 1;
 
         copyGameState(&G,&after);
+
 
         endTurn(&G);
     }
