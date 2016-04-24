@@ -46,7 +46,9 @@ runtests:
 	./unittest3 >> unittestresults.out
 	gcov unittest3 -f -b >> unittestresults.out	  
 	./unittest4 >> unittestresults.out
-	gcov unittests4 -f -b >> unittestresults.out	  
+	gcov unittests4 -f -b >> unittestresults.out	
+    gcov dominion.c -f -b >> unittestresults.out
+  
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

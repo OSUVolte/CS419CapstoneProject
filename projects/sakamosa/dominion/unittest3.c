@@ -41,14 +41,6 @@ int main(){
         }
     }
     
-    T.numBuys = 2;
-    //test against invalid card
-    if(buyCard(bad_card, &T) != -1 ){
-        printf("FAIL allowed purchase of invalid card\n");
-    }
-    else if(T.numBuys != 2){
-        printf("FAIL altered number of buys with no purchase(bad card)\n");
-        }
 
     T.numBuys = 1;
     T.supplyCount[adventurer] = 3;

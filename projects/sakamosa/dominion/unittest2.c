@@ -9,17 +9,17 @@ int main(){
     printf("*********************BEGIN UNIT TESTS OF INITIALIZEGAME()*********************\n\n");
     
     struct gameState T;
-    int bad_k1[10] = {adventurer, bad, embargo, village, minion, mine, cutpurse,
-           sea_hag, tribute, smithy};
+   // int bad_k1[10] = {adventurer, bad, embargo, village, minion, mine, cutpurse,
+   //        sea_hag, tribute, smithy};
     int bad_k2[10] = {adventurer, smithy, embargo, village, minion, mine, cutpurse,
            sea_hag, tribute, smithy};
     int good_k[10] = {gardens, adventurer, embargo, village, minion, mine, cutpurse,
            sea_hag, tribute, smithy};
 
-    
+    //REMOVED BECAUSE GETS CAUGHT AT COMPILE TIME
     //Test against bad kingdom cards
-    if(initializeGame(2, bad_k1, 5, &T) != -1)
-        {printf("FAIL Did not catch bad kingdom card\n");}
+    //if(initializeGame(2, bad_k1, 5, &T) != -1)
+    //    {printf("FAIL Did not catch bad kingdom card\n");}
  
     //Test against repeat kingdomCards
     if(initializeGame(2, bad_k2, 5, &T) != -1)
