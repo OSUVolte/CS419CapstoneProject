@@ -20,40 +20,218 @@ PASSED: RETURN VALUE = 1
         EXPECTATION IS r = 1
 --------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
 unittest2
 ---------
+UNIT TEST #2: scoreFor()
+FAILED: RETURN VALUE = 33
+        EXPECTATION IS r = 76
+FAILED: RETURN VALUE = 10
+        EXPECTATION IS r = 12
+FAILED: RETURN VALUE = 0
+        EXPECTATION IS r = 25
+FAILED: RETURN VALUE = 23
+        EXPECTATION IS r = 38
+PASSED: RETURN VALUE = -1
+        EXPECTATION IS r = -1
+PASSED: RETURN VALUE = 1
+        EXPECTATION IS r = 1
+PASSED: RETURN VALUE = 3
+        EXPECTATION IS r = 3
+PASSED: RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 1
+        EXPECTATION IS r = 1
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: RETURN VALUE = 0
+        EXPECTATION IS r = 0
+--------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
 unittest3
 ---------
+UNIT TEST #3: fullDeckCount()
+PASSED: CARDID = 0, RETURN VALUE = 3
+        EXPECTATION IS r = 3
+PASSED: CARDID = 1, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 2, RETURN VALUE = 9
+        EXPECTATION IS r = 9
+PASSED: CARDID = 3, RETURN VALUE = 12
+        EXPECTATION IS r = 12
+PASSED: CARDID = 4, RETURN VALUE = 15
+        EXPECTATION IS r = 15
+PASSED: CARDID = 5, RETURN VALUE = 18
+        EXPECTATION IS r = 18
+PASSED: CARDID = 6, RETURN VALUE = 21
+        EXPECTATION IS r = 21
+PASSED: CARDID = 7, RETURN VALUE = 24
+        EXPECTATION IS r = 24
+PASSED: CARDID = 8, RETURN VALUE = 27
+        EXPECTATION IS r = 27
+PASSED: CARDID = 9, RETURN VALUE = 30
+        EXPECTATION IS r = 30
+PASSED: CARDID = 10, RETURN VALUE = 33
+        EXPECTATION IS r = 33
+PASSED: CARDID = 11, RETURN VALUE = 36
+        EXPECTATION IS r = 36
+PASSED: CARDID = 12, RETURN VALUE = 39
+        EXPECTATION IS r = 39
+PASSED: CARDID = 13, RETURN VALUE = 42
+        EXPECTATION IS r = 42
+PASSED: CARDID = 14, RETURN VALUE = 45
+        EXPECTATION IS r = 45
+PASSED: CARDID = 15, RETURN VALUE = 48
+        EXPECTATION IS r = 48
+PASSED: CARDID = 16, RETURN VALUE = 51
+        EXPECTATION IS r = 51
+PASSED: CARDID = 17, RETURN VALUE = 54
+        EXPECTATION IS r = 54
+PASSED: CARDID = 18, RETURN VALUE = 57
+        EXPECTATION IS r = 57
+PASSED: CARDID = 19, RETURN VALUE = 60
+        EXPECTATION IS r = 60
+PASSED: CARDID = 20, RETURN VALUE = 63
+        EXPECTATION IS r = 63
+PASSED: CARDID = 21, RETURN VALUE = 66
+        EXPECTATION IS r = 66
+PASSED: CARDID = 22, RETURN VALUE = 69
+        EXPECTATION IS r = 69
+PASSED: CARDID = 23, RETURN VALUE = 72
+        EXPECTATION IS r = 72
+PASSED: CARDID = 24, RETURN VALUE = 75
+        EXPECTATION IS r = 75
+PASSED: CARDID = 25, RETURN VALUE = 78
+        EXPECTATION IS r = 78
+PASSED: CARDID = 26, RETURN VALUE = 81
+        EXPECTATION IS r = 81
+PASSED: CARDID = 0, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 1, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 2, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 3, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 4, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 5, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 6, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 7, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 8, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 9, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 10, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 11, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 12, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 13, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 14, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 15, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 16, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 17, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 18, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 19, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 20, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 21, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 22, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 23, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 24, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 25, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = 26, RETURN VALUE = 6
+        EXPECTATION IS r = 6
+PASSED: CARDID = -1, RETURN VALUE = 0
+        EXPECTATION IS r = 0
+PASSED: CARDID = 27, RETURN VALUE = 0
+        EXPECTATION IS r = 0
+--------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
 unittest4
 ---------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
@@ -75,10 +253,10 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
         EXPECTATION IS NO CHANGE
 --------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
@@ -102,10 +280,10 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
         EXPECTATION IS NO CHANGE
 --------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
@@ -129,10 +307,10 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
         EXPECTATION IS NO CHANGE
 --------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 
@@ -156,10 +334,10 @@ PASSED: NO CHANGE TO KINGDOM CARD PILE
         EXPECTATION IS NO CHANGE
 --------------------
 File 'dominion.c'
-Lines executed:25.93% of 563
-Branches executed:23.98% of 417
-Taken at least once:19.90% of 417
-Calls executed:15.79% of 95
+Lines executed:31.79% of 563
+Branches executed:36.93% of 417
+Taken at least once:32.85% of 417
+Calls executed:18.95% of 95
 Creating 'dominion.c.gcov'
 
 

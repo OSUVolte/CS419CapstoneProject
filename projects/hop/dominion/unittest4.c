@@ -85,5 +85,7 @@ int main(){
    buyCard(i, &state);
    printf("    supply count: %i, expected: %i\n", state.supplyCount[i], supplyBeforeBuy - 1); assert(state.supplyCount[i] == supplyBeforeBuy - 1);
    printf("\n<----------END unittest4-buyCard()---------->\n\n");   
+
+   return 0;
 }
 

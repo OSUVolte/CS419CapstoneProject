@@ -59,4 +59,5 @@ int main(){
    assert(state.numBuys == 1);   
    printf("\n<----------END unittest1-handCard() ---------->\n\n");
 
+   return 0;
 }

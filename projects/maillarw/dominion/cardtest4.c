@@ -1,12 +1,13 @@
 //cardtest3.c
-//Unit test of playCouncilRoom()
+//Unit test of playVillage()
 
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <stdio.h>
 
 int main () {
-
+	
+	printf ("\n************************    Card Test 4: Testing playVillage()    **********************\n\n");
 	int k[10] = {adventurer, council_room, feast, gardens, mine,
 				 remodel, smithy, village, baron, great_hall};
 

@@ -6,7 +6,8 @@
 #include <stdio.h>
 
 int main () {
-
+	printf ("\n************************    Card Test 3: Testing playCouncilRoom()     **********************\n\n");
+	
 	int k[10] = {adventurer, council_room, feast, gardens, mine,
 				 remodel, smithy, village, baron, great_hall};
 
