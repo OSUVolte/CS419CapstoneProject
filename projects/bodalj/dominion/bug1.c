@@ -22,9 +22,18 @@ NONE
 
 * Error with incrementing discard deck and count, nothing being placed into it and it's not incrementing
 
+## Unit Test 4: whoseTurn function
+
+**BUGS FOUND** 
+
+NONE
+
 ## Card Test 1: smithy
 
 **BUGS FOUND**
+
+* Order of cards change after playing smithy
+* Smithy card not discarded after playing.  Bug introduced by me in refractor.c
 
 ## Card Test 2: adventurer
 

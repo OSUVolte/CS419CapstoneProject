@@ -44,6 +44,8 @@ int main() {
     struct gameState *state = &game;
     initializeGame(players, cards, seed, &game);
     
+    printf("TESTING village card\n");
+
     checkPlayCard(state, targetPlayer, CARD);
     return 0;
 }

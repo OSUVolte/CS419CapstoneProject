@@ -25,16 +25,15 @@ int main() {
     initializeGame(players, cards, seed, state);
     printf("TESTING whoseTurn\n");
     for (i = 0; i < iterations; i++) {
-        drawCard(i, state);
-        discardCard(0, i, state, 0);
-        if (state->whoseTurn != (i%4)) {
+        if (state->whoseTurn != (i%players)) {
             printf("FAIL: It is not player [%d]'s turn\n", i);
             FOUND_BUG = 1;
         }
         endTurn(state);
     }
-    if (FOUND_BUG == 0)
+    if (FOUND_BUG == 0) {
         printf("SUCCESS: whoseTurn identified correct player over %d iterations\n", iterations);
+    }
 
     return 0;
 }
