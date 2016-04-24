@@ -6,6 +6,7 @@
 //testing of getCost function
 
 int main(){
+    printf("*********************BEGIN UNIT TESTS OF GETCOST()*********************\n\n");
 //compare returned value to correct value for each card type
 int length = 27;
 int card_array = [curse, estate, duchy, province, copper, silver, gold, adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag, treasure_map];
@@ -27,4 +28,7 @@ if(getCost(length + 1) != -1){
 }
 else
     printf("Passed invalid card test\n");    
+}
+
+return 0;
 }
