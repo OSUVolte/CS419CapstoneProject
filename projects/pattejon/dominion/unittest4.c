@@ -38,7 +38,7 @@ int main() {
     for(j = 0; j < 25; j++){
         G.supplyCount[j] = 2;
     }
-
+    printf ("Testing isGameOver():\n");
     // first test to see if the number of provinces is > 0
     G.supplyCount[province] = 1;
     i = isGameOver(&G);

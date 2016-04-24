@@ -2,7 +2,6 @@
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
 #include "rngs.h"
 #include "testkit.h"
 
@@ -14,7 +13,7 @@ int main() {
     int player2 = 1;
     int bonus = 0;
     int handPos = 0;
-    int c1, c2, c3 = 0;
+    int c1 = 0, c2 = 0, c3 = 0;
     int kingdomCards[10] = {
             adventurer,
             gardens,
@@ -90,11 +89,12 @@ int main() {
     }
 
     // ensure card was last card played
-    printf("\nCheck smithy card was played...");
+    printf("\nCheck smithy card was added to played pile...");
     if (cardWasPlayed(&G2, smithy, G2.playedCardCount) == 1) {
         printf("PASSED.\n");
     } else {
         printf("FAILED.\n");
     }
 
+    return 0;
 }
