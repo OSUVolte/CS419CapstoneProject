@@ -1,0 +1,132 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * cardtest4: council_room() function
+        -:    4: * Due Date: April 24, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h" 
+        -:    8:#include <stdio.h>
+        -:    9:
+function main called 1 returned 100% blocks executed 75%
+        1:   10:int main(){
+        -:   11:
+        1:   12:	printf("\n------------------------Card Test 4-----------------------------\n\n");
+call    0 returned 100%
+        1:   13:	printf("---Test council_room()---\n");
+call    0 returned 100%
+        -:   14:	
+        -:   15:	// create a game to test 
+        -:   16:	struct gameState G;
+        -:   17:
+        1:   18:	int cards[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   19:	
+        1:   20:	printf("Initialize Game...\n");
+call    0 returned 100%
+        1:   21:	initializeGame(2, cards, 10, &G);	
+call    0 returned 100%
+        -:   22:	// set up variables to track cards and players
+        -:   23:	int flag;
+        -:   24:	int thisPlayer; 
+        -:   25:	int preHandCount;
+        -:   26:	int preDeckCount;	
+        -:   27:	int victoryCheck;
+        -:   28:	int buyCheck;
+        -:   29:
+        1:   30:	thisPlayer = G.whoseTurn;
+        1:   31:	preHandCount = G.handCount[thisPlayer];
+        1:   32:	preDeckCount = G.deckCount[thisPlayer];
+        1:   33:	victoryCheck = G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province];
+        1:   34:	buyCheck = G.numBuys + 1;
+        -:   35:
+        -:   36:	// use cardEffect to check for function return value
+        1:   37:	printf("Testing that council_room() cardEffect function return value is 0...\n");
+call    0 returned 100%
+        1:   38:	flag = cardEffect(council_room, 0, 0, 0, &G, 0, 0);
+call    0 returned 100%
+        1:   39:	if(flag == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   40:		printf("PASS\n");
+call    0 returned 100%
+        -:   41:	} else {
+    #####:   42:		printf("FAIL\n");
+call    0 never executed
+        -:   43:	}
+        -:   44:	
+        -:   45:	// council_room() action is take 4 cards and one additional buy
+        -:   46:
+        1:   47:	printf("Testing if council_room() card gave player 4 new cards...\n");
+call    0 returned 100%
+        -:   48:	
+        1:   49:	if(G.handCount[thisPlayer] == preHandCount + 4){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   50:		printf("PASS\n"); 	
+call    0 never executed
+        -:   51:	} 
+        -:   52:	else {
+        1:   53:		printf("FAIL\n");
+call    0 returned 100%
+        1:   54:		printf("current handCount: %d, previous handCount: %d\n", G.handCount[thisPlayer], preHandCount);
+call    0 returned 100%
+        -:   55:	}
+        -:   56:	
+        -:   57:	// council_room() action should result in 4 cards missing from the deck 
+        1:   58:	printf("Testing if council_room() card removed 4 cards from the deck...\n");
+call    0 returned 100%
+        1:   59:	if(G.deckCount[thisPlayer] == preDeckCount - 4){  
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   60:		printf("PASS\n"); 		
+call    0 returned 100%
+        -:   61:	} 
+        -:   62:	else {
+    #####:   63:		printf("FAIL\n");
+call    0 never executed
+    #####:   64:		printf("current deckCount: %d, previous deckCount: %d\n", G.deckCount[thisPlayer], preDeckCount);
+call    0 never executed
+        -:   65:	}
+        -:   66:	
+        -:   67:	// council_room() action should not effect the victory card pile 
+        1:   68:	printf("Testing if council_room() action did not alter victory points...\n");
+call    0 returned 100%
+        1:   69:	if((G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province]) == victoryCheck){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   70:		printf("PASS\n");
+call    0 returned 100%
+        -:   71:	} 
+        -:   72:	else {
+    #####:   73:		printf("FAIL\n");
+call    0 never executed
+    #####:   74:		printf("Victory points have been changed\n");
+call    0 never executed
+        -:   75:	}
+        -:   76:	
+        -:   77:	// council_room action should give player 1 extra buy
+        1:   78:	printf("Testing if council_room() action gave an extra buy...\n");
+call    0 returned 100%
+        1:   79:	if(G.numBuys == buyCheck){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   80:		printf("PASS\n");
+call    0 returned 100%
+        -:   81:	} 
+        -:   82:	else {
+    #####:   83:		printf("FAIL\n");
+call    0 never executed
+    #####:   84:		printf("Number of buys is %d\n", G.numBuys);
+call    0 never executed
+        -:   85:	}
+        -:   86:	
+        -:   87:
+        -:   88:
+        1:   89:	printf("---council_room() Test Complete---\n\n");
+call    0 returned 100%
+        1:   90:return 0;
+        -:   91:}

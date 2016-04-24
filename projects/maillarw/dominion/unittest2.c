@@ -17,7 +17,7 @@ The Colony Supply pile is empty (if Colony was used)
 
 int main () {
 
-  int r;
+  printf ("\n************************    Unit Test 2: Testing isGameOver()     **********************\n\n");
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};
@@ -26,7 +26,6 @@ int main () {
  
   initializeGame(2, k, 1, G);
 
-  int totalCoins = 0;
 
   printf ("\n--------Test 1: Newly Initialized Game---------\n\n");
   

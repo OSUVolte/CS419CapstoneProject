@@ -9,7 +9,7 @@
 
 int main () {
 
-  int r;
+  printf ("\n************************    Unit Test 3: Testing scoreFor()     **********************\n\n");
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};
@@ -22,9 +22,6 @@ int main () {
  
   initializeGame(2, k, 1, G);
 
-  int totalCoins = 0;
-
-  
   
   printf ("\n--------Test 1: Empty Deck, Hand, and Discard---------\n\n");
   
