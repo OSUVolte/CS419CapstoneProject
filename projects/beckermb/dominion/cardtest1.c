@@ -79,7 +79,6 @@ int main() {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
   smithyCardEffect(player, 0, &game);
-  game.supplyCount[gardens]--;
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;
