@@ -120,7 +120,7 @@ int main()
 		printf("\tPlayer %d - Return value: %d\tExpected Value: %d\n\n", m + 1, r, (G.handCount[m] + G.discardCount[m] + G.deckCount[m]) * 6);
 	}
 	
-	printf("TESTING where players have 19 smithy cards and 1 gardens card\n\n");
+	printf("TESTING where players have 29 smithy cards and 1 gardens card\n\n");
 	initializeGame(numPlayers, k, seed, &G);
 	//Set handCount, discardCount, and deckCount to 5 for all players
 	for(m = 0; m < numPlayers; m++)

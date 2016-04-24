@@ -14,4 +14,8 @@ under players control before and after the function call.  This should remain co
 discarded, not trashed.  However, this does not behave as expected as the incorrect number of cards were discarded 
 from the temp hand in playAdventurer and placed into discard.
 
+Error found using cardtest3 to test playVillage function.  Both the expected number of actions and the number of 
+cards in hand do not return the expected value for all test cases.  This is because the next player rather than 
+current player is passed to the function, wrong player receives the village card effect.
+
 */

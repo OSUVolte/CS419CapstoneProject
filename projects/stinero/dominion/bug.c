@@ -23,7 +23,6 @@
  *
  *Cardtest4.c bugs found (BARON)
  *
- * This was a bummer as I had tried to correctly implement this card last week.
  * Baron does not trigger a game over correctly when the last estate card is assigned and game ending condition is met
  * The testGameOVer is called but it doesn't do anything.
  *
