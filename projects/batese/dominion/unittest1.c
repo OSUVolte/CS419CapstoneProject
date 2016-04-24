@@ -90,7 +90,7 @@ int main() {
 				postPlayedCount = G.playedCardCount;
 #if (NOISY_TEST == 1)
 				printf("Played card count = %d, expected %d.\n", postPlayedCount, (prePlayedCount + 1)); //check played cards has increased by 1
-                printf("Top card in playedCards = %s, expected = %s.\n", "Something"/*G.playedCards[G.playedCardCount-1]*/, testHand1[handPos]); // check correct card was added to played cards
+                printf("Top card in playedCards = %s, expected = %s.\n", "Something"/*G.playedCards[G.playedCardCount-1]*/, "something"/*testHand1[handPos]*/); // check correct card was added to played cards
 				printf("Hand Count = %d, expected %d.\n", G.handCount[p], (handCount - 1)); // Check handcount has recreases
 				if ((handPos != (handCount - 1)) && (handCount != 1)) { // ie is not the last card in the hand
 					printf("Card switched with = %s, expected = %s\n", G.hand[p][handPos], testHand1[handCount - 1]); //Check that the card was switched with the expected card
