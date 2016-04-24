@@ -56,26 +56,11 @@ unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 #	gcc -o cardtest2.out cardtest2.c dominion.o rngs.o -g  $(CFLAGS)
 #	./cardtest2.out >> cardtestresults.out
 #	
-#	gcc -o cardtest3.out cardtest3.c dominion.o rngs.o -g  $(CFLAGS)
-#	./cardtest3.out >> cardtestresults.out
+	gcc -o cardtest3.out cardtest3.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./cardtest3.out >> cardtestresults.out
 #	
 #	gcc -o cardtest4.out cardtest4.c dominion.o rngs.o -g  $(CFLAGS)
 #	./cardtest4.out >> cardtestresults.out
-#	
-	
-	
-#	for cFile in $(ls unittest*.c) ; do \
-#    		gcc -o $compileFile $cFile dominion.c -g  $(CFLAGS); \
-#    		./$compileFile >> unittestresults.out; \
-#    		gcov $cFile >> unittestresults.out; \
-#	done
-	
-#	for cFile in $(ls cardtest*.c) ; do \
-#    		compileFile=${cFile%.*}.out; \
-#    		gcc -o $compileFile $cFile dominion.c -g  $(CFLAGS); \
-#    		./$compileFile >> unittestresults.out; \
-#    		gcov $cFile >> unittestresults.out; \
-#	done
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *test?.out 

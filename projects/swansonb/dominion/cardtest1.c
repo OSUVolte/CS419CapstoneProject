@@ -27,7 +27,6 @@ int main(int argc, char **argv) {
     int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
                sea_hag, tribute, smithy, council_room};
 
-    //testing empty deck and empty discard
     initializeGame(numPlayers, k, seed, &G);
 
     for (curPlayer = 0; curPlayer < numPlayers; ++curPlayer){
