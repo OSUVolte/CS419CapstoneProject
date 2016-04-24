@@ -56,7 +56,7 @@ int main() {
 	printf ("TESTING isGameOver():\n");
 	
 	// check function does not modify any supply counts
-	printf("Testing effect of function on supply counts.\n", p, handCount, handPos);
+	printf("Testing effect of function on supply counts.\n");
 	memset(&G, 23, sizeof(struct gameState));   // clear the game state
 	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 	for (i = 0; i < 25; i++) {
