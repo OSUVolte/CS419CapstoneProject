@@ -52,44 +52,50 @@ int main() {
 	for (p = 0; p < numPlayer; p++) {
 		for (card = 1; card < 24; card++) {
 			printf("Testing with player %d and card %d.\n", p, card);
-			// Check with 3 cards in each place
-			printf("Testing with 3 cards in each location.\n");
+			// Check with 1 cards in each place
+			printf("Testing with 1 card in each location.\n");
 			memset(&G, 23, sizeof(struct gameState));   // clear the game state
 			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-			G.deck[p][card] = 3;
-			G.hand[p][card] = 3;
-			G.discard[p][card] = 3;
-			deckCount = fullDeckCount(p, card, &G);
-			if (deckCount == 9)
-				printf("PASSED: fullDeckCount = %d, expected = 9.\n", deckCount);
-			else
-				printf("FAILED: fullDeckCount = %d, expected = 9.\n", deckCount);
-			
-			// Check with 3 cards in 2 places
-			printf("Testing with 3 cards in both deck and discard.\n");
-			memset(&G, 23, sizeof(struct gameState));   // clear the game state
-			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-			G.deck[p][card] = 3;
-			G.hand[p][card] = 0;
-			G.discard[p][card] = 3;
-			deckCount = fullDeckCount(p, card, &G);
-			if (deckCount == 6)
-				printf("PASSED: fullDeckCount = %d, expected = 6.\n", deckCount);
-			else
-				printf("FAILED: fullDeckCount = %d, expected = 6.\n", deckCount);
-			
-			// Check with 3 cards in 1 places
-			printf("Testing with 3 cards in just hand.\n");
-			memset(&G, 23, sizeof(struct gameState));   // clear the game state
-			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-			G.deck[p][card] = 0;
-			G.hand[p][card] = 3;
-			G.discard[p][card] = 0;
+			G.deck[p][0] = card;
+			G.deckCount[p] = 1;
+			G.hand[p][0] = card;
+			G.handCount[p] = 1;
+			G.discard[p][0] = card;
+			G.discardCount[p] = 1;
 			deckCount = fullDeckCount(p, card, &G);
 			if (deckCount == 3)
 				printf("PASSED: fullDeckCount = %d, expected = 3.\n", deckCount);
 			else
 				printf("FAILED: fullDeckCount = %d, expected = 3.\n", deckCount);
+			
+			// Check with 1 cards in 2 places
+			printf("Testing with 1 card in both deck and discard.\n");
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+			G.deck[p][0] = card;
+			G.deckCount[p] = 1;
+			G.handCount[p] = 0;
+			G.discard[p][0] = card;
+			G.discardCount[p] = 1;
+			deckCount = fullDeckCount(p, card, &G);
+			if (deckCount == 2)
+				printf("PASSED: fullDeckCount = %d, expected = 2.\n", deckCount);
+			else
+				printf("FAILED: fullDeckCount = %d, expected = 2.\n", deckCount);
+			
+			// Check with 1 card in 1 places
+			printf("Testing with 1 card in just hand.\n");
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+			G.deckCount[p] = 0;
+			G.hand[p][0] = card;
+			G.handCount[p] = 1;
+			G.discardCount[p] = 0;
+			deckCount = fullDeckCount(p, card, &G);
+			if (deckCount == 1)
+				printf("PASSED: fullDeckCount = %d, expected = 1.\n", deckCount);
+			else
+				printf("FAILED: fullDeckCount = %d, expected = 1.\n", deckCount);
 		}
 	}
 }
