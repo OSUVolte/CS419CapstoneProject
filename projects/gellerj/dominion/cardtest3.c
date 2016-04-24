@@ -17,7 +17,7 @@ int main() {
     int player2 = 1;
     int bonus = 0;
     int handPos = 0;
-    int c1, c2, c3 = 0;
+    int c1 = 0, c2 = 0, c3 = 0;
     int kingdomCards[10] = {
             adventurer,
             gardens,
@@ -114,4 +114,5 @@ int main() {
         printf("FAILED.\n");
     }
 
+    return 0;
 }

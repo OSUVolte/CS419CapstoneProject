@@ -40,8 +40,6 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	echo "--------------------------------------------" >> unittestresults.out
 	echo "" >> unittestresults.out
 	
-	rm *.gcda
-	
 	echo "--------------------------------------------" >> unittestresults.out
 	echo "unittest1" >> unittestresults.out
 	echo "--------------------------------------------" >> unittestresults.out

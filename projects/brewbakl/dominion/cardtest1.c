@@ -34,7 +34,7 @@ int main(){
 
 	printf("\n\n ---Testing Smithy Card ---\n\n");
 	//check number of cards received from currentPlayer
-	if(game.handCount[currentPlayer] == startHandCount + 2){
+	if(game.handCount[currentPlayer] == startHandCount + 3){
 		printf("  PASS: Player draws 3 cards\n");
 
 	} else {

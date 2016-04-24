@@ -78,7 +78,9 @@ int main(int argc, char *argv[]) {
   printf("ED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
   printf("        EXPECTATION IS NET ZERO CARDS\n");
 
+  // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR OTHER PLAYER (player 1, index 0)
+  // -------------------------------------------------------------------------------------
   pNum = 0;
   before = copy->handCount[pNum];
   after = state->handCount[pNum];
