@@ -37,3 +37,18 @@ unittest4.c - isGameOver() method
 	array is the "province" position. So, in my test, I excluded that
 	position from being assigned randomly. Otherwise this method does a 
 	good job of identifying when the game is indeed over.
+
+cardtest1.c - playCard() for smithy
+	Initially I tried to implement this at the cardEffect() level but I ran
+	into some concerns with that, so I re-implemented this at the playCard()
+	level. This seemed to fix one of the small bugs that I encountered that
+	was probably just due to how the game was implemented. However, I ran
+	into some bugs with drawing the incorrect number of cards, which is due
+	to a bug that I introduced in an earlier assignment.
+
+cardtest2.c playCard() for adventurer
+	I added a bug to this in the previous assignment, but this code already 
+	had a significant problem before I messed with it. As the code is written
+	now, there is a scenario where the card will not be able to find the 
+	required number of treasure cards in the deck and loop forever. It likely
+	will not happen in most cases, but it could occur.

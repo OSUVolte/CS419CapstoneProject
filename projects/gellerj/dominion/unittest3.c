@@ -9,11 +9,6 @@ int main() {
     struct gameState G1, G2;
     int numPlayers = 2;
     int seed = 1;
-    int player1 = 0;
-    int player2 = 1;
-    int bonus = 0;
-    int handPos = 0;
-    int c1, c2, c3 = 0;
     int result = -1;
     int kingdomCards[10] = {
             adventurer,
@@ -109,5 +104,6 @@ int main() {
         printf("FAILED.\n");
     }
 
+    return 0;
 
 }
