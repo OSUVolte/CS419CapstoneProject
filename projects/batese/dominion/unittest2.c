@@ -93,53 +93,61 @@ int main() {
     struct gameState G;
 	int x, y; // p1 and p2 scores respectively
 	int players[MAX_PLAYERS];
+	for (i = 0; i < MAX_PLAYERS; i++) {
+		players[i] = i;
+	}
 
 	printf ("TESTING getWinners():\n");	
-	for (x = 0; x <= 40; x += 10) {
-		for (y = 0; y <= 40; y += 10) {
-			printf("Testing with player1 score of %d and player2 score of %d on player 1's turn.\n", x, y);
-			players[0] = x;
-			players[1] = y; //Store scores in players array
-			memset(&G, 23, sizeof(struct gameState));   // clear the game state
-			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-			G.whoseTurn = 0; // Set to player 1's turn
-			getWinners(players, &G);
-			if (x > y) { // Player 1 is winner
-				if (players[0] == 1 && players[1] == 0)
-					printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
-				else
-					printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
-			} else { // Player 2 is the winner even if scores are equal since they have had one less turn
-				if (players[0] == 0 && players[1] == 1)
-					printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
-				else
-					printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);				
-			}
-			printf("Testing with player1 score of %d and player2 score of %d on player 2's turn.\n", x, y);
-			players[0] = x;
-			players[1] = y; //Store scores in players array
-			memset(&G, 23, sizeof(struct gameState));   // clear the game state
-			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-			G.whoseTurn = 1; // Set to player 2's turn
-			getWinners(players, &G);
-			if (x > y) { // Player 1 is winner
-				if (players[0] == 1 && players[1] == 0)
-					printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
-				else
-					printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
-			} else if (y > x) { // Player 2 is the winner
-				if (players[0] == 0 && players[1] == 1)
-					printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
-				else
-					printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);				
-			} else { // x == y
-				if (players[0] == 1 && players[1] == 1)
-					printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
-				else
-					printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);					
-			}
-		}
-	}
+
+	//Player 1 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 1's deck
+	G.deck[0][G.deckCount[0]] = 4; //4 is code for province
+	G.deckCount[0]++;
+	getWinners(players, &G);
+	// Player 1 is winner
+	if (players[0] == 1 && players[1] == 0)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
+
+
+	//Player 2 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 2's deck
+	G.deck[1][G.deckCount[1]] = 4; //4 is code for province
+	G.deckCount[1]++;
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+
+	
+	//Same score player 1's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);	
+	
+	//Same score player 2's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 1; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 1 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	
 	return 0;
 }
 
