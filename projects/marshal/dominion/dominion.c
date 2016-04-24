@@ -30,7 +30,7 @@ void playAdventurerCard(struct gameState *state){
     //initialize a temp hand
     int temphand[MAX_HAND];
     
-    while(drawntreasure<=2){
+    while(drawntreasure<2){
         if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
           shuffle(currentPlayer, state);
         }
@@ -107,7 +107,7 @@ void playMinionCard(int handPos, int choice1, int choice2, struct gameState *sta
 	    }
 				
 	  //draw 4
-	  for (i = 0; i <= 4; i++)
+	  for (i = 0; i < 4; i++)
 	    {
 	      drawCard(currentPlayer, state);
 	    }
