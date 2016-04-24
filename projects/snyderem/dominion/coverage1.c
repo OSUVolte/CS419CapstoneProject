@@ -1,7 +1,30 @@
-/*
-Write unit tests for four functions (not card implementations or cardEffect) in 
-dominion.c. Check these tests in as unittest1.c,unittest2.c, unittest3.c, and 
-unittest4.c. (for example, you can create a test for updateCoins() method)
+/******************************************************************************
+** coverage1.c 
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** Discusses coverage provided by test suite.
+*******************************************************************************
+
+unittest1.c - getCost()
+
+	getCost() should return the correct cost in coins for the card that is
+	passed as a parameter. The tests compare the cost returned by the function
+	to the costs given at http://wiki.dominionstrategy.com/.
+
+  All tests pass successfully.	
+ 
+  GCOV
+		Function 'getCost'
+		Lines executed:100.00% of 30
+		Branches executed:100.00% of 28
+		Taken at least once:100.00% of 28
+
+  Since all the costs returned for all cards are tested, these tests provide
+  100% coverage of the function.
+
+
+
 
 endTurn (line 350)
   
