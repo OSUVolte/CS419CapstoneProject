@@ -1,8 +1,10 @@
-/* Council Room 
-http://wiki.dominionstrategy.com/index.php/Council_Room
-+4 Cards
-+1 Buy
-Each other player draws a card.*/
+/******************************************************************************
+** cardtest4.c 
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** This file contains unit tests for the Council Room card 
+******************************************************************************/
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"

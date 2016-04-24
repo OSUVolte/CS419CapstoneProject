@@ -1,7 +1,10 @@
-/* adventurer 
-http://wiki.dominionstrategy.com/index.php/Adventurer
-Reveal cards from your deck until you reveal 2 Treasure cards. 
-Put those Treasure cards into your hand and discard the other revealed cards.*/
+/******************************************************************************
+** cardtest2.c 
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** This file contains unit tests for the Adventurer card 
+******************************************************************************/
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -38,9 +41,8 @@ int main() {
 													remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
   int player;
-  int i;
-  int countsBefore[PLAYERS+1][3];
-  int countsAfter[PLAYERS+1][3];
+  int countsBefore[PLAYERS+1][PILES];
+  int countsAfter[PLAYERS+1][PILES];
 
   memset(&state, '\0', sizeof(struct gameState)); // clear game state
 
@@ -364,6 +366,7 @@ void testEmptyDeck(
                state->discardCount[player], discardSize + deckSize, playedCount, 
                state->playedCardCount, playedCount + 1, treasureCount, 0);
 }
+
 void printResults(  
   int	handBefore, 
   int	handAfter, 

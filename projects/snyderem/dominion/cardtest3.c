@@ -1,6 +1,10 @@
-/* greatHall 
-http://wiki.dominionstrategy.com/index.php/Great_Hall
-When you play it, you draw a card and may play another Action.*/
+/******************************************************************************
+** cardtest3.c 
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** This file contains unit tests for the Great Hall card 
+******************************************************************************/
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -33,8 +37,8 @@ int main() {
   int randomSeed = 1000;   // example unittest
   int player;
   int bonus;
-  int countsBefore[PLAYERS+1][3];
-  int countsAfter[PLAYERS+1][3];
+  int countsBefore[PLAYERS+1][PILES];
+  int countsAfter[PLAYERS+1][PILES];
   int i;
   int deckSize;
   int handSize;
@@ -71,7 +75,6 @@ int main() {
 	cardEffect(great_hall, -1, -1, -1, &state, handPos, &bonus);
   actionsAfter = state.numActions;
 	cardCounts(&state, countsAfter);
-	// After: hand + 1, numActions + 1, discard card
 
   printResults(handSize, state.handCount[player], handSize, deckSize, 
                state.deckCount[player], deckSize - 1, discardSize, 
