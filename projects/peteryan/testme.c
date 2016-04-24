@@ -14,7 +14,6 @@ void inputString(char *s)
 {
     char string[] = {'r', 'e', 's', 'e', 't', '\0'};
 	int size = sizeof(string)/sizeof(string[0]);
-	char* randString = (char*) malloc(size);
 	int i;
 	
 	for(i = 0; i < size; i++)
