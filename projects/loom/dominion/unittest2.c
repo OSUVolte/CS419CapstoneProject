@@ -1,5 +1,5 @@
 //
-// Created by Michael Loo on 4/22/16.
+// Created by Michael Loo on 4/23/16.
 //
 
 #include "dominion.h"
@@ -11,21 +11,24 @@
 #include <time.h>
 
 int main() {
-    //Testing numCards function
-    printf("Testing numCards function\n");
-    int i, card;
+    //Testing supplyCount function
+    int i, y;
+    int test[10];
     struct gameState Game;
+    printf("Testing supplyCount function\n");
 
     srand(time(NULL));
 
     for(i = 0; i<11; i++) {
+        test[i] = i;
+        Game.supplyCount[i] = i;
+    }
 
-        Game.whoseTurn = i;
-        Game.handCount[i] = i;
+    for(i = 0; i<11; i++) {
 
-        card = numHandCards(&Game);
+        y = supplyCount(i, &Game);
 
-        if (card != i) {
+        if(y != test[i]) {
             printf("Number of cards doesn't match!\n");
         }
     }
