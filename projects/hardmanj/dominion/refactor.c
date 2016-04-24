@@ -10,12 +10,9 @@ Simthy:
 Adventurer:
 	Under the case for Adventurer in the switch statment, UseAdventurer() is called.
 	UseAdventurer uses the same code from the original case statment with the required
-	variables defined locally in the function so it can complie. The bug I added in was instead
-	of using '==' in the if statement check for the treasure cards I changed it to '=' so all of 
-	the cards drawn are treasure cards.
-	
-	Before: "if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)"
-	After: "if (cardDrawn = copper || cardDrawn = silver || cardDrawn = gold)"
+	variables defined locally in the function so it can complie. The bug I added was 
+	removing the return after the function was executed so that it would roll into council_room
+	and execute that card as well.
 
 Council Room:
 	Under the case for council_room in the switch statment, UseCouncilRoom() is called.

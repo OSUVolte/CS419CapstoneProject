@@ -1,0 +1,96 @@
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:
+        -:    9:#include "testHelper.h"
+        -:   10:
+        -:   11:#define TESTCARD "smithy"
+        -:   12:
+function main called 2 returned 100% blocks executed 94%
+        2:   13:int main() {
+        2:   14:	int newCards = 0;
+        2:   15:	int discarded = 1;
+        2:   16:	int newCoins = 0;
+        2:   17:	int shuffledCards = 0;
+        -:   18:
+        -:   19:	int a, b, c;
+        2:   20:	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        -:   21:	int remove1, remove2;
+        2:   22:	int seed = 1000;
+        2:   23:	int numPlayers = 2;
+        2:   24:	int thisPlayer = 0;
+        2:   25:	int otherPlayer = 1;
+        -:   26:
+        -:   27:	struct gameState G, testG;
+        2:   28:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   29:		sea_hag, tribute, smithy, council_room};
+        -:   30:	
+        2:   31:	initializeGame(numPlayers, k, seed, &G);  
+call    0 returned 100%
+        2:   32:	printf("\t Testing Card: %s \n", TESTCARD);
+call    0 returned 100%
+        -:   33:	
+        -:   34:	// Smithy Info: cost = +3 cards 	
+        -:   35:
+        -:   36:	// boot up the perfect version
+        2:   37:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   38:	
+        -:   39:	// Test 01 -----------------------------------------------------------------
+        -:   40:	// handCount = handCount + 3 (-1, smithy)
+        2:   41:	printf("Test 01: handCount = handCount + 3 (-1, smithy) \n");
+call    0 returned 100%
+        -:   42:	
+        -:   43:	// setup test environment
+        2:   44:	memcpy(&testG, &G, sizeof(struct gameState));	
+        2:   45:	printf("initial hand count = %d\n", testG.handCount[thisPlayer]);	
+call    0 returned 100%
+        2:   46:	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+call    0 returned 100%
+        -:   47:	
+        2:   48:	newCoins = 0;
+        2:   49:	newCards = 3;
+        2:   50:	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+call    0 returned 100%
+        2:   51:	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.handCount[thisPlayer] - newCards + shuffledCards);
+call    0 returned 100%
+        2:   52:	printf("coins = %d, expected = %d\n", testG.coins, G.coins + newCoins);
+call    0 returned 100%
+        -:   53:	
+        2:   54:	if (testG.handCount[thisPlayer] != G.handCount[thisPlayer] + newCards- discarded) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        2:   55:		errorMessage("handCount does not match");
+call    0 returned 100%
+        -:   56:	}
+        2:   57:	if (testG.deckCount[thisPlayer] != G.deckCount[thisPlayer] - newCards + shuffledCards){ 
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        2:   58:		errorMessage("deckCount does not match");
+call    0 returned 100%
+        -:   59:  	}
+        2:   60:	if (testG.coins != G.coins + newCoins) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   61:		errorMessage("coins do not match");
+call    0 never executed
+        -:   62:	}
+        -:   63:	
+        2:   64:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:   65:	
+        2:   66:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+call    0 returned 100%
+        -:   67:
+        2:   68:  return 0;
+        -:   69:}
+        -:   70:
+        -:   71:
