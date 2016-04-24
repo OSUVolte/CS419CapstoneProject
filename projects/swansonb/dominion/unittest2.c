@@ -69,8 +69,6 @@ int main(int argc, char **argv) {
     for (curPlayer=0; curPlayer < numPlayers; ++curPlayer){
         //draw from empty deck
         printf("drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it\n");
-        printf("cur discard count: %d  deck count: %d\n",G.discardCount[curPlayer], G.deckCount[curPlayer]);
-
         drawCard(curPlayer, &G);
 
         printf("Discard deck is shuffled and moved to player deck ");

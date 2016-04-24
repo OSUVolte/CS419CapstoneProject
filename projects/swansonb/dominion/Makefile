@@ -35,8 +35,7 @@ player: player.c interface.o
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
-#unittestresults.out: unittest*.c cardtest*.c
-unittestresults.out: unittest*.c testUtilities.c dominion.o rngs.o
+unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 	echo "Result for running dominion tests:" > unittestresults.out
 	
 	gcc -o unittest1.out unittest1.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
@@ -50,9 +49,9 @@ unittestresults.out: unittest*.c testUtilities.c dominion.o rngs.o
 	
 	gcc -o unittest4.out unittest4.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./unittest4.out >> unittestresults.out
-#	
-#	gcc -o cardtest1.out cardtest1.c dominion.o rngs.o -g  $(CFLAGS)
-#	./cardtest1.out >> cardtestresults.out
+	
+	gcc -o cardtest1.out cardtest1.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./cardtest1.out >> cardtestresults.out
 #	
 #	gcc -o cardtest2.out cardtest2.c dominion.o rngs.o -g  $(CFLAGS)
 #	./cardtest2.out >> cardtestresults.out

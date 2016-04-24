@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
-    printf("Testing dominion.c int shuffle()\n");
+    printf("Testing dominion.c int endTurn()\n");
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
 
@@ -39,6 +39,8 @@ int main(int argc, char **argv) {
     for (i=0; i<NUM_TESTS_TO_RUN; ++i){
         curPlayer = G.whoseTurn;
         expectedNextPlayer = (curPlayer + 1)%numPlayers;
+
+        //place cards in
 
         printf("calling end turn for player %d:\n",curPlayer);
         copyGameState(&before,&G);
@@ -68,6 +70,8 @@ int main(int argc, char **argv) {
             printf("(FAILED) \n");
         }
         testsRun += 1;
+
+        //todo need to add check for played pile being moved here
 
         // check that previous players hand has properly moved to their discard pile
         printf("Previous players cards in hand have been placed in their discard pile ");
