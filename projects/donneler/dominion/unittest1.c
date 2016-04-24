@@ -13,7 +13,7 @@
 * 1 - Only update coins in the game state, nothing else should change
 * 2 - Coins only come from treasures in player's current hand or bonus pts
 * 3 - Adds 1 coin for each copper, 2 for each silver, 3 for each gold
-* 4 - no change to the victory card piels and kingdom card piles
+* 4 - No change to the victory card piles and kingdom card piles.
 **************************************************************************/		
 
 #include "dominion.h"
@@ -37,14 +37,16 @@ int main() {
 	int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G, controlG;
-    int maxHandCount = MAX_HAND;
+
+	int maxHandCount = 15;
     
-	int coppers[MAX_HAND];		// arrays of all coppers, silvers, and golds
-	int silvers[MAX_HAND];
-	int golds[MAX_HAND];
-	int adventurers[MAX_HAND];
+	int coppers[maxHandCount];		// arrays of all coppers, silvers, and golds
+	int silvers[maxHandCount];
+	int golds[maxHandCount];
+	int adventurers[maxHandCount];
+
 	
-	for (i = 0; i < MAX_HAND; i++) {
+	for (i = 0; i < maxHandCount; i++) {
 		coppers[i] = copper;
 		silvers[i] = silver;
 		golds[i] = gold;

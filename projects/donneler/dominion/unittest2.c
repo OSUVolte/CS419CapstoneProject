@@ -38,31 +38,35 @@ int main() {
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
 
-	int coppers[MAX_HAND];		// arrays of all coppers, silvers, and golds
-	int silvers[MAX_HAND];
-	int golds[MAX_HAND];
-	int adventurers[MAX_HAND];
+	int maxDeckCount = 100;
+	int maxHandCount = 15;
+
+	int coppers[maxHandCount];		// arrays of all coppers, silvers, and golds
+	int silvers[maxHandCount];
+	int golds[maxHandCount];
+	int adventurers[maxHandCount];
 	
-	for (i = 0; i < MAX_HAND; i++) {
+	for (i = 0; i < maxHandCount; i++) {
 		coppers[i] = copper;
 		silvers[i] = silver;
 		golds[i] = gold;
 		adventurers[i] = adventurer;
+		
 	}
 
 	printf("----------------- Testing Function: %s ----------------\n", TESTFXN);
 
 	for (p = 0; p < numPlayers; p++) {
-		for (handCount = 0; handCount <= MAX_HAND; handCount++) {
-			for (deckCount = 0; deckCount <= MAX_DECK; deckCount++) {			
+		for (handCount = 0; handCount <= maxHandCount; handCount++) {
+			for (deckCount = 0; deckCount <= maxDeckCount; deckCount++) {			
 
 				initializeGame(numPlayers, k, seed, &G);			// init a game state and player cards
 				G.handCount[p] = handCount;                 			// set cards on hand
 				memcpy(G.hand[p], adventurers, sizeof(int) * handCount); 
 				G.deckCount[p] = deckCount;									// set deck 
 				memcpy(G.deck[p], golds, sizeof(int) * deckCount); 	
-				G.discardCount[p] = MAX_DECK - deckCount;					// set discarded
-				memcpy(G.discard[p], silvers, sizeof(int) * (MAX_DECK - deckCount)); 
+				G.discardCount[p] = maxDeckCount - deckCount;					// set discarded
+				memcpy(G.discard[p], silvers, sizeof(int) * (maxDeckCount - deckCount)); 
 
 				memcpy(&controlG, &G, sizeof(struct gameState));	// copy game state to test case
 
