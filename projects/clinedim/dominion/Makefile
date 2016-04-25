@@ -33,7 +33,6 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-<<<<<<< HEAD
 cardtest1: cardtest1.c dominion.o
 	gcc -fprofile-arcs -ftest-coverage -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
 
@@ -74,9 +73,6 @@ unittestresults.out: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2
 	gcov -b dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
-
-=======
->>>>>>> 8b2855345a758364e601c8b73e68f190ca1d3d88
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
