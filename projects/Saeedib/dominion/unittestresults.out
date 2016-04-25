@@ -59,16 +59,16 @@ supply count of 2 now is 0.
 Test 3 Passed
 
 Test 4: Checking unexpected input/Output
-Supplies 2, 2 and 12 are set to 0
-Supplies 9, 5 and 24 are set to 0
-Supplies 8, 2 and 2 are set to 0
-Supplies 5, 0 and 6 are set to 0
-Supplies 2, 18 and 15 are set to 0
-Supplies 18, 5 and 6 are set to 0
-Supplies 0, 14 and 20 are set to 0
-Supplies 2, 12 and 23 are set to 0
-Supplies 2, 21 and 1 are set to 0
-Supplies 8, 12 and 10 are set to 0
+Supplies 0, 24 and 16 are set to 0
+Supplies 18, 1 and 9 are set to 0
+Supplies 13, 9 and 6 are set to 0
+Supplies 18, 5 and 10 are set to 0
+Supplies 9, 1 and 12 are set to 0
+Supplies 22, 8 and 16 are set to 0
+Supplies 24, 2 and 17 are set to 0
+Supplies 1, 2 and 7 are set to 0
+Supplies 19, 18 and 10 are set to 0
+Supplies 24, 11 and 10 are set to 0
 Test 4 Passed
 _________________________________________________________
 _________________________________________________________
@@ -130,36 +130,14 @@ _________________________________________________________
 _________________________________________________________
 
 
-Testing card: Adventurer
+Not enough time: Adventurer
 
-Test 1: Checking the function.
-Test 1 Passed
-
-Test 2: testing decrease in province cards.
-Test 2 Passed
-
-Test 3: Testing 3 piles are at 0.
-Test 3 Passed
-
-Test 4: Checking unexpected input/Output
-Test 4 Passed
 _________________________________________________________
 _________________________________________________________
 
 
-Testing card: Adventurer
+Not enough time: Adventurer
 
-Test 1: Checking the function.
-Test 1 Passed
-
-Test 2: testing decrease in province cards.
-Test 2 Passed
-
-Test 3: Testing 3 piles are at 0.
-Test 3 Passed
-
-Test 4: Checking unexpected input/Output
-Test 4 Passed
 _________________________________________________________
 Coverage test: 
 File 'unittest1.c'
@@ -193,12 +171,12 @@ Creating 'cardtest2.c.gcov'
 
 _________________________________________________________
 File 'cardtest3.c'
-Lines executed:100.00% of 27
+Lines executed:100.00% of 19
 Creating 'cardtest3.c.gcov'
 
 _________________________________________________________
 File 'cardtest4.c'
-Lines executed:100.00% of 27
+Lines executed:100.00% of 19
 Creating 'cardtest4.c.gcov'
 
 _________________________________________________________
