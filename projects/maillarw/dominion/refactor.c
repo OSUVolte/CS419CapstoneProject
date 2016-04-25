@@ -13,7 +13,7 @@ Changes: The following variables were declared locally inside playAdventurer to 
   int z = 0;
   int drawntreasure = 0;
   int cardDrawn;
-  **Bug added: Line 1147 z=z-3 should be z=z-1, not all of the cards in paly that have been drawn will be discarded 
+  **Bug added: Line 1147 z=z-3 should be z=z-1, not all of the cards in play that have been drawn will be discarded 
 
 ---playSmithy()---
 Smithy was taken from the switch statement in cardEffect() and made into its own function.

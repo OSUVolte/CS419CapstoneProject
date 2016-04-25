@@ -1,0 +1,4309 @@
+
+*** BEGIN unittest3.c (unit test for scoreFor) ***
+
+State: 2 players, player index 0.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 4, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 7, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 2 players, player index 1.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 3 players, player index 0.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 4, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 7, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 3 players, player index 1.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 3 players, player index 2.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 4 players, player index 0.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 4, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 7, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 4 players, player index 1.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 4 players, player index 2.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+State: 4 players, player index 3.
+Test Condition: deck = 0, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 0
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score -1, expected -1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 0, expected -1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score -3, expected -3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score -3, expected -6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 1
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 2
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 4, expected 3. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 9, expected 9. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 9, expected 18. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 3
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 6, expected 6. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 7, expected 6. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 18, expected 18. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 18, expected 36. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 4
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 5
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 6
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 7
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 8
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 9
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 10
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 11
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 12
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 13
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 14
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 15
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 16
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 1, expected 1. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 2, expected 1. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 3, expected 3. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 3, expected 6. FAILED
+Result: gameState unchanged. Passed
+
+Card type in deck: 17
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 18
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 19
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 20
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 21
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 22
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 23
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 24
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 25
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Card type in deck: 26
+Test Condition: deck = 1, hand = 0, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1, discard = 0
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1
+Result: score 1, expected 0. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1, hand = 1, discard = 1
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+Test Condition: deck = 2, hand = 2, discard = 2
+Result: score 0, expected 0. Passed
+Result: gameState unchanged. Passed
+
+Test decks containing all card types...
+Test Condition: deck = 1 of each card, hand = 0, discard = 0
+Result: score 0, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 1 of each card, discard = 0
+Result: score 10, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 0, hand = 0, discard = 1 of each card
+Result: score -4, expected 12. FAILED
+Result: gameState unchanged. Passed
+Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each
+Result: score -4, expected 38. FAILED
+Result: gameState unchanged. Passed
+
+SUMMARY for unittest3.c (scoreFor): failed 234 of 2520 tests.
+Testing Outcome: FAILED!
+See results output above.
+*** END unittest3.c (unit test for scoreFor) ***
