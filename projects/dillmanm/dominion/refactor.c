@@ -1,4 +1,6 @@
 /*
+ALL BUGS OUTLINED BELOW WERE FOUND IN UNIT TESTS AND ARE FIXED IN LATEST VERSION
+
 Refactor playAdventurer
 declare currentPlayer, drawntreasure, cardDrawn, tempHand[MAX_HAND], z
 Bug: for loop searches hand for two treasures after each draw then terminates
