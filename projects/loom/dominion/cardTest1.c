@@ -34,7 +34,8 @@ int main() {
 
         finalCard = Game.handCount[Game.whoseTurn];
 
-        if (finalCard != (initialCard + 2)) {
+
+        if (finalCard != (initialCard + 1)) {
             printf("Smithy does not add correct number of cards\n");
         }
     }
