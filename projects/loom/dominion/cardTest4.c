@@ -46,7 +46,7 @@ int main() {
             printf("One card was not drawn from the deck\n");
         }
 
-        if (finalHand - initialHand != 1) {
+        if (finalHand - initialHand != 0) {
             printf("One card was not added to the players hand!\n");
         }
 
