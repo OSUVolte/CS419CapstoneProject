@@ -7,6 +7,7 @@
 
 int main () {
 
+	printf ("\n************************    Card Test 1: Testing playSmithy()     **********************\n\n");
 	int k[10] = {adventurer, council_room, feast, gardens, mine,
 				 remodel, smithy, village, baron, great_hall};
 
@@ -28,7 +29,7 @@ int main () {
 	
 	playSmithy(G, 0);
 	
-	if(G->handCount[1] == 7){											 
+	if(G->handCount[1] == 7 && G->playedCardCount == 1 && G->playedCards[0] == smithy){											 
 		 printf("Passed\n");
 	}
 	else{
@@ -48,7 +49,7 @@ int main () {
 	
 	playSmithy(G, 0);
 
-	if(G->handCount[1] == 4){											 
+	if(G->handCount[1] == 4 && G->playedCardCount == 1 && G->playedCards[0] == smithy){											 
 		 printf("Passed\n");
 	}
 	else printf("Failed\n");
@@ -71,7 +72,7 @@ int main () {
 
 	playSmithy(G, 0);
 
-	if(G->handCount[1] == 7){											 
+	if(G->handCount[1] == 7 && G->playedCardCount == 1 && G->playedCards[0] == smithy){											 
 		 printf("Passed\n");
 	}
 	else printf("Failed\n");

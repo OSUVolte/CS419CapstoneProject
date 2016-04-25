@@ -37,6 +37,7 @@ int main () {
   actual.hand[player2][1] = copper;
   actual.handCount[player2] = 2;
   actual.coins = 0;
+  
 
   //Copy the game state to the post game state test case.
   memcpy(&expected, &actual, sizeof(struct gameState));
@@ -46,7 +47,7 @@ int main () {
  //Set up Expected Results for current Player after Playing the Card.
   expected.coins = actual.coins + 2;
   expected.handCount[player] -= 1;
-  expected.discardCount[player] = actual.discardCount[player] + 1;
+  expected.discardCount[player] = actual.discardCount[player];
   expected.handCount[player2] = actual.handCount[player2] - 1;  
   expected.discardCount[player2] = actual.discardCount[player2] + 1;
 
@@ -66,19 +67,14 @@ int main () {
   assert( expected.coins == actual.coins );
   printf("EXPECTED HAND COUNT: %i ACTUAL HAND COUNT: %i for CURRENT PLAYER.\n", expected.handCount[player], actual.handCount[player]);
   assert( expected.handCount[player] == actual.handCount[player] );
-  printf("EXPECTED DISCARD COUNT: %i ACTUAL DISCARD COUNT: %i for CURRENT PLAYER.\n", expected.discardCount[player], actual.discardCount[player]);
-//  assert( expected.discardCount[player] == actual.discardCount[player] ); 
   
   //Check that other players lose a copper.
-//  assert( actual.handCount[player2] == expected.handCount[player2] );
   assert( actual.hand[player2][1] != copper );
   assert( actual.handCount[player2] == expected.handCount[player2]);
- // assert( actual.discardCount[player2] == expected.discardCount[player2]);
-/*
-
+  printf("EXPECTED HAND COUNT: %i ACTUAL HAND COUNT: %i for CURRENT PLAYER.\n", expected.handCount[player2], actual.handCount[player2]);
   assert(memcmp(&actual.supplyCount, &expected.supplyCount, sizeof(expected.supplyCount)) == 0);
-  printf("The kingdom and treasure piles were unaffected./n");
-*/
+  printf("The kingdom and treasure piles were unaffected.\n");
+ 
   return 0;
  
 }				

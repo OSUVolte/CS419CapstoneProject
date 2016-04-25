@@ -1,3 +1,5 @@
+//unittest1: Tests for updateCoins()
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <stdio.h>
@@ -6,7 +8,7 @@
 
 int main () {
 
-  int r;
+  printf ("\n************************    Unit Test 1: Testing updateCoins()     **********************\n\n");
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};

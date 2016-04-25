@@ -27,48 +27,57 @@ enum CARD
    silver,
    gold,
 
-   adventurer,
-   /* If no/only 1 treasure found, stop when full deck seen */
+   adventurer,    /* If no/only 1 treasure found, stop when full deck seen */
    council_room,
-   feast, /* choice1 is supply # of card gained) */
+   feast,         /* choice1 is supply # of card gained) */
    gardens,
-   mine, /* choice1 is hand# of money to trash, choice2 is supply# of
-	    money to put in hand */
-   remodel, /* choice1 is hand# of card to remodel, choice2 is supply# */
+   mine,          /* choice1 is hand# of money to trash, choice2 is supply# ofmoney to put in hand */
+   remodel,       /* choice1 is hand# of card to remodel, choice2 is supply# */
    smithy,
    village,
 
-   baron, /* choice1: boolean for discard of estate */
-   /* Discard is always of first (lowest index) estate */
+   baron,         /* choice1: boolean for discard of estate */
+                  /* Discard is always of first (lowest index) estate */
    great_hall,
-   minion, /* choice1:  1 = +2 coin, 2 = redraw */
-   steward, /* choice1: 1 = +2 card, 2 = +2 coin, 3 = trash 2 (choice2,3) */
+   minion,        /* choice1:  1 = +2 coin, 2 = redraw */
+   steward,       /* choice1: 1 = +2 card, 2 = +2 coin, 3 = trash 2 (choice2,3) */
    tribute,
 
-   ambassador, /* choice1 = hand#, choice2 = number to return to supply */
+   ambassador,    /* choice1 = hand#, choice2 = number to return to supply */
    cutpurse,
-   embargo, /* choice1 = supply# */
+   embargo,       /* choice1 = supply# */
    outpost,
-   salvager, /* choice1 = hand# to trash */
+   salvager,      /* choice1 = hand# to trash */
    sea_hag,
    treasure_map
   };
 
 struct gameState {
   int numPlayers; //number of players
-  int supplyCount[treasure_map+1];  //this is the amount of a specific type of card given a specific number.
+  
+  //this is the amount of a specific type of card given a specific number.
+  int supplyCount[treasure_map+1];  
   int embargoTokens[treasure_map+1];
   int outpostPlayed;
   int outpostTurn;
+  
+  // number representing player whose turn it is
   int whoseTurn;
   int phase;
   int numActions; /* Starts at 1 each turn */
   int coins; /* Use as you see fit! */
   int numBuys; /* Starts at 1 each turn */
+  
+  // This is the HAND pile
   int hand[MAX_PLAYERS][MAX_HAND];
+  // This is the HANDCOUNT per player (an int)
   int handCount[MAX_PLAYERS];
+  
+  // This is the DECK pile
   int deck[MAX_PLAYERS][MAX_DECK];
   int deckCount[MAX_PLAYERS];
+
+  // This is the DISCARD pile
   int discard[MAX_PLAYERS][MAX_DECK];
   int discardCount[MAX_PLAYERS];
   int playedCards[MAX_DECK];
@@ -90,7 +99,18 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
    are in fact (different) kingdom cards, and that numPlayers is valid.
 
 Cards not in game should initialize supply position to -1 */
+// ****************************************
+// New dominion.c functions from assignment
+// ****************************************
+int adventurerCard(int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand[MAX_HAND], int cardDrawn);
 
+int councilRoomCard(int i, int currentPlayer, struct gameState *state, int handPos);
+
+int feastCard(int i, int currentPlayer, struct gameState *state, int temphand[MAX_HAND], int x, int choice1);
+
+int mineCard(int i, int j, struct gameState *state, int choice1, int currentPlayer, int choice2, int handPos);
+// ****************************************
+// ****************************************
 int shuffle(int player, struct gameState *state);
 /* Assumes all cards are now in deck array (or hand/played):  discard is
  empty */

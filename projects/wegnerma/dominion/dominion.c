@@ -644,17 +644,29 @@ int getCost(int cardNumber)
 }
 
 /******************************************CARD FUNCTIONS*************************************************/
-int playAdventurer(struct gameState *state) {
-	int currentPlayer = 0;
+int playAdventurer(struct gameState *state, int handPos) {
+	int currentPlayer = whoseTurn(state);
 	int cardDrawn;
 	int drawntreasure=0;
 	int temphand[MAX_HAND];
 	int z = 0;
+	int i;
 
-	while(drawntreasure<2){
+	while(drawntreasure>2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-	  shuffle(currentPlayer, state);
+	      //Step 1 Shuffle the discard pile back into a deck
+		  //Move discard to deck
+		  for (i = 0; i < state->discardCount[currentPlayer];i++){
+				state->deck[currentPlayer][i] = state->discard[currentPlayer][i];
+				state->discard[currentPlayer][i] = -1;
+		   }
+
+			state->deckCount[currentPlayer] = state->discardCount[currentPlayer];
+			state->discardCount[currentPlayer] = 0;//Reset discard
+
+			shuffle(currentPlayer, state);
 	}
+
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
@@ -669,6 +681,9 @@ int playAdventurer(struct gameState *state) {
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
+
+	  //put played card in played card pile
+      discardCard(handPos, currentPlayer, state, 0);
 
 	return 0;
 }
@@ -768,7 +783,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-	  return playAdventurer(state);
+	  return playAdventurer(state, handPos);
 			
     case council_room:
       //+4 Cards
