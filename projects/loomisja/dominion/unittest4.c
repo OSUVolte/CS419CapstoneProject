@@ -46,7 +46,7 @@
 **		passes and failures are pointers to valid integer accumulators
 ** Post-Conditions: passes and failures are incremented per test results
 *******************************************************************************/
-void test(int expected, struct gameState* pre, struct gameState* post, int* passes, int* failures)
+test(int expected, struct gameState* pre, struct gameState* post, int* passes, int* failures)
 {
 	int result;
 
@@ -76,7 +76,8 @@ void test(int expected, struct gameState* pre, struct gameState* post, int* pass
 ** Description: entrypoint for unit test.
 ** Parameters: None
 ** Pre-Conditions: None
-** Post-Conditions: Exit code 0 if all tests succeeded, otherwise 1.
+** Post-Conditions: Exit code reports the number of failed tests, 0 if all
+**		tests succeeded, or greater than if some tests failed.
 *******************************************************************************/
 int main()
 {
@@ -96,7 +97,7 @@ int main()
 	int passes = 0; /* tests passed */
 	int failures = 0; /* tests failed */
 
-	if (OUTPUTLEVEL > 0) printf("\n*** BEGIN " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
+	if (OUTPUTLEVEL > 0) printf("*** BEGIN " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
 
 	/* test games with each allowed number of players */
 	for (players = 2; players <= MAX_PLAYERS; players++)
@@ -183,8 +184,7 @@ int main()
 
 	if (OUTPUTLEVEL > 0)
 	{
-		if (OUTPUTLEVEL > 1) printf("\n");
-		printf("SUMMARY for " FILENAME " (" xstr(TESTFUNC) "): ");
+		printf("\nSUMMARY for " FILENAME " (" xstr(TESTFUNC) "): ");
 		if (failures == 0) printf("passed all %d tests.\nTesting Outcome: SUCCESS!\n", passes);
 		else
 		{
@@ -195,5 +195,5 @@ int main()
 		if (OUTPUTLEVEL > 0) printf("*** END " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
 	}
 
-	return failures != 0 ? 1 : 0;
+	return failures;
 }

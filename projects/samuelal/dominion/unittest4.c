@@ -42,7 +42,6 @@ int main() {
 
     int totalCards = testG.handCount[PlayerID] + testG.deckCount[PlayerID] + testG.discardCount[PlayerID];
 
-    //Calculates the total number of victory points in players hand
     for (i = 0; i < testG.handCount[PlayerID]; i++) {
         if (testG.hand[PlayerID][i] == curse) {
                 --manualScoreResult;
@@ -64,7 +63,6 @@ int main() {
         }
     }
 
-    //Calculates the total number of victory points in players deck pile
     for (i = 0; i < testG.deckCount[PlayerID]; i++) {
         if (testG.deck[PlayerID][i] == curse) {
                 --manualScoreResult;
@@ -86,7 +84,6 @@ int main() {
         }
     }
 
-//Calculates the total number of victory points in players discard
     for (i = 0; i < testG.discardCount[PlayerID]; i++) {
         if (testG.discard[PlayerID][i] == curse) {
                 --manualScoreResult;
@@ -137,7 +134,6 @@ int main() {
     G.discardCount[PlayerID] = MAX_DECK;
     int cardIndex;
 
-//These for loops randomly assign cards to player's hand, deck, and discard pile
     for (i = 0; i < G.handCount[PlayerID]; i++) {
         cardIndex = floor(Random() * 27); //generates a random value between 0 and 27
         G.hand[PlayerID][i] = cards[cardIndex]; //randomly assigns a card to the hand
@@ -228,7 +224,7 @@ int main() {
     }
 
     if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+        printf("ALL TESTS PASSED");
     }
 
     return 0;
