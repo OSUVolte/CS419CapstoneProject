@@ -6,7 +6,7 @@
  *      gcc -o testUpdateCoins -g  testUpdateCoins.c dominion.o rngs.o $(CFLAGS)
  
  This unit test will test the smithy card in dominion.c  
-we will test that after the smithy card is played a card is discarded and two cards are drawn
+we will test that after the smithy card is played a card is discarded and three cards are drawn
  Created by James Guerra
  
  * -----------------------------------------------------------------------
@@ -33,41 +33,42 @@ int main() {
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
     int maxHandCount = 5;
-    // arrays of all coppers, silvers, and golds
-    int coppers[MAX_HAND];
-    int silvers[MAX_HAND];
-    int golds[MAX_HAND];
-    for (i = 0; i < MAX_HAND; i++)
-    {
-        coppers[i] = copper;
-        silvers[i] = silver;
-        golds[i] = gold;
-    }
+    int pass =0;
 
     printf ("TESTING Smithy Card:\n"); //handpos = 6 in k
-    for (p = 0; p < numPlayer; p++)
-    {
-        for (handCount = 1; handCount <= maxHandCount; handCount++)
-        {
+   
             
 #if (NOISY_TEST == 1)
-                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+				p = 0;
+				handCount =0;
+                printf("Test player %d with %d card(s) in hand before given smithy \n", p, handCount);
 #endif
                 memset(&G, 23, sizeof(struct gameState));   // clear the game state
                 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
                 G.handCount[p] = handCount;                 // set the number of cards on hand
                 gainCard(smithy, &G, 2, p);
-                cardEffect(smithy, 0, 0, 0, &G, G->hand[p][0], 0);
+				handCount++;
+                cardEffect(smithy, 0, 0, 0, &G, G.hand[p][0], 0);
 #if (NOISY_TEST == 1)
-                printf("G.handCount = %d, expected = %d\n", G.handCount, handCount +2); //smithy card should draw three and discard 1
+                printf("G.handCount = %d, expected = %d\n", G.handCount[p], handCount + 2); //smithy card should draw three and discard 1
 #endif
-                assert(G.handCount == handCount + 2); // check if the number of coins is correct
-
-                
-        }
-    }
-
+                if(G.handCount[p] == handCount + 2){ // check if the number of cards is correct
+					printf("Test 1 passed, expected card number in hand \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 1 failed, expected card number not found in hand \n");
+				}
+				//check player 2 hand
+				if(G.handCount[p+1] == 0){ // check if the number of cards is correct
+					printf("Test 2 passed, expected card number in hand player 2 \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 2 failed, expected card number not found in hand player 2\n");
+				}
+       if(pass == 0){
     printf("All tests passed!\n");
-
+	   }
     return 0;
 }

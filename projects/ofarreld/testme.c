@@ -7,13 +7,10 @@
 
 char inputChar()
 {
-	// container of all possible chars to test for
-	char *stringSet = "{([ ax]})";
 	// container for char to return
-	char a;
-
-	a = stringSet[rand() % strlen(stringSet)];
-
+	// ascii chars	32 - 125
+	char a = ' ' + (rand() % (126-32));
+	 
 	return a;
 }
 
