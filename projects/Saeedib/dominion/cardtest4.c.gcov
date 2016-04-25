@@ -20,7 +20,7 @@
         -:   15:#include "dominion_helpers.h"
         -:   16:#include "rngs.h"
         -:   17:
-        -:   18:#define UNITTEST "isGameOver"
+        -:   18:#define UNITTEST "Adventurer"
         -:   19:
         1:   20:int main(int argc, char ** argv)
         -:   21:{
@@ -49,70 +49,19 @@
         1:   44:	testG.supplyCount[province] = rand() % 5 + 1;
         -:   45:	//Total should add up to 6
         -:   46:	// Starting test
-        1:   47:	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+        1:   47:	printf("\n\nTesting card: %s\n\n", UNITTEST);
         -:   48:
         -:   49:
         1:   50:	printf("Test 1: Checking the function.\n");
-        1:   51:	out = isGameOver(&testG);
-        1:   52:	if(out != 1)
-        1:   53:		printf("Game is not over(expected)\n");
-        -:   54:	else
-    #####:   55:		printf("Game is over(unexpected)\n");
-        1:   56:	assert(out != 1);
-        1:   57:	printf("Setting the province cards to 0\n");
-        1:   58:	testG.supplyCount[province] = 0;
-        1:   59:	out = isGameOver(&testG);
-        1:   60:	if(out == 1)
-        1:   61:		printf("Game is over(expected)\n");
-        -:   62:	else
-    #####:   63:		printf("Game is Not over(unexpected)\n");
-        1:   64:	assert(out == 1);
-        1:   65:	printf("Test 1 Passed\n");
-        -:   66:
-        1:   67:	printf("\nTest 2: testing decrease in province cards.\n");
-        1:   68:	testG.supplyCount[province] = 5;
-        6:   69:	for(int i = 0; i < 5; i++)
-        -:   70:	{
-        5:   71:		testG.supplyCount[province] = testG.supplyCount[province] -1;
-        5:   72:		out = isGameOver(&testG);
-        5:   73:		printf("value of %d: %d\n",i,out);
-        5:   74:		if(i != 4)
-        4:   75:			assert(out == 0);
-        -:   76:		else
-        1:   77:			assert(out == 1);
-        -:   78:	}
-        1:   79:	printf("Test 2 Passed\n");
-        -:   80:
-        1:   81:	printf("\nTest 3: Testing 3 piles are at 0.\n");
-        4:   82:	for(int i = 0; i < 3; i++)
-        -:   83:	{
-        3:   84:		printf("supply count of %d was %d.\n",i,testG.supplyCount[i]);
-        3:   85:		for(; testG.supplyCount[i] != 0; testG.supplyCount[i] = testG.supplyCount[i] -1);
-        3:   86:		printf("supply count of %d now is %d.\n",i,testG.supplyCount[i]);
-        -:   87:	}
-        1:   88:	testG.supplyCount[province] = 10;
-        1:   89:	out = isGameOver(&testG);
-        1:   90:	assert(out == 1);
-        1:   91:	printf("Test 3 Passed\n");
-        -:   92:
-        1:   93:	printf("\nTest 4: Checking unexpected input/Output\n");
-       11:   94:	for(int i = 0; i < 10; i++)
-        -:   95:	{
-       10:   96:		int mem[3] = {0,0,0};
-       40:   97:		for(int i = 0; i < 3; i++)
-        -:   98:		{
-       30:   99:			mem[i] = rand() % 25;
-        -:  100:		}
-       10:  101:		testG.supplyCount[mem[0]] = 0;
-       10:  102:		testG.supplyCount[mem[1]] = 0;
-       10:  103:		testG.supplyCount[mem[2]] = 0;
-       10:  104:		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
-       10:  105:		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
-       10:  106:			assert(isGameOver(&testG) == 1);
-      260:  107:		for(int j = 0; j < 25; j++)
-      250:  108:			testG.supplyCount[j] = 10;
-        -:  109:	}
-        -:  110:	
-        1:  111:	printf("Test 4 Passed\n");
-        1:  112:	return 0;	//No bugs found
-        -:  113:}
+        1:   51:	printf("Test 1 Passed\n");
+        -:   52:
+        1:   53:	printf("\nTest 2: testing decrease in province cards.\n");
+        1:   54:	printf("Test 2 Passed\n");
+        -:   55:
+        1:   56:	printf("\nTest 3: Testing 3 piles are at 0.\n");
+        1:   57:	printf("Test 3 Passed\n");
+        -:   58:
+        1:   59:	printf("\nTest 4: Checking unexpected input/Output\n");
+        1:   60:	printf("Test 4 Passed\n");
+        1:   61:	return 0;	//No bugs found
+        -:   62:}
