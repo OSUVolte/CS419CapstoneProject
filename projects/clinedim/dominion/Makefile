@@ -33,7 +33,6 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-<<<<<<< HEAD
 cardtest1: cardtest1.c dominion.o
 	gcc -fprofile-arcs -ftest-coverage -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
 
