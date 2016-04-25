@@ -211,16 +211,19 @@ int shuffle(int player, struct gameState *state) {
   qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
   /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
 
-  while (state->deckCount[player] > 0) {
+  while (state->deckCount[player] > 0) 
+  {
     card = floor(Random() * state->deckCount[player]);
     newDeck[newDeckPos] = state->deck[player][card];
     newDeckPos++;
-    for (i = card; i < state->deckCount[player]-1; i++) {
+    for (i = card; i < state->deckCount[player]-1; i++) 
+	{
       state->deck[player][i] = state->deck[player][i+1];
     }
     state->deckCount[player]--;
   }
-  for (i = 0; i < newDeckPos; i++) {
+  for (i = 0; i < newDeckPos; i++) 
+  {
     state->deck[player][i] = newDeck[i];
     state->deckCount[player]++;
   }
@@ -530,7 +533,8 @@ int drawCard(int player, struct gameState *state)
     //Step 1 Shuffle the discard pile back into a deck
     int i;
     //Move discard to deck
-    for (i = 0; i < state->discardCount[player];i++){
+    for (i = 0; i < state->discardCount[player];i++)
+	{
       state->deck[player][i] = state->discard[player][i];
       state->discard[player][i] = -1;
     }
@@ -564,10 +568,12 @@ int drawCard(int player, struct gameState *state)
     state->handCount[player]++;//Increment hand count
   }
 
-  else{
+  else
+  {
     int count = state->handCount[player];//Get current hand count for player
     int deckCounter;
-    if (DEBUG){//Debug statements
+    if (DEBUG)
+	{//Debug statements
       printf("Current hand count: %d\n", count);
     }
 
@@ -1226,20 +1232,24 @@ int playAdventurer(struct gameState *state, const int currentPlayer)
 	int temphand[MAX_HAND];
 	int z = 1; // this is the counter for the temp hand
 	int cardDrawn;
-	while(drawntreasure<2){
-	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-	  shuffle(currentPlayer, state);
+	while(drawntreasure<2)
+	{
+		if (state->deckCount[currentPlayer] <1)
+		{//if the deck is empty we need to shuffle discard and add to deck
+		  shuffle(currentPlayer, state);
+		}
+		drawCard(currentPlayer, state);
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+		  drawntreasure++;
+		else
+		{
+		  temphand[z]=cardDrawn;
+		  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+		}
 	}
-	drawCard(currentPlayer, state);
-	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  drawntreasure++;
-	else{
-	  temphand[z]=cardDrawn;
-	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-	}
-	}
-	while(z-1>=0){
+	while(z-1>=0)
+	{
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 		z=z-1;
 	}

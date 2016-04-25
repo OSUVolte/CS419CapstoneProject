@@ -11,13 +11,12 @@ I changed the if statement where it checks if a player draws a treasure card. It
 
 I changed the trashFlag parameter when the function calls the discardCard function. I switched it from a 0 to a 2. This makes it so that the card is trashed instead of being discarded to the played pile.
 
-//council_roomCard
+//council_roomCard bug
 
 After the player draws 4 cards and gets 1 extra buy, every other player gets to draw one card. So in the code where it lets every other player draw a card I took out the if statement that prevents the current player from drawing a card. This will make it so that everyone will draw a card which is incorrect because it should be every other player not every player. 
 
-//villageCard
+//villageCard bug
 
 This card adds 1 card and 2 action to the player. In the code I changed it so that it adds 2 extra buy for the player instead. 
-
 
 //stewardCard

@@ -1,0 +1,70 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:10
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * unittest2: numHandCards() function
+        -:    4: * Due Date: April 24, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h"
+        -:    8:#include <stdio.h>
+        -:    9:
+function main called 10 returned 100% blocks executed 88%
+       10:   10:int main(){
+        -:   11:
+       10:   12:	printf("\n------------------------Unit Test 2-----------------------------\n\n");
+call    0 returned 100%
+       10:   13:	printf("---Test numHandCards()---\n");
+call    0 returned 100%
+        -:   14:	// create a game to test
+        -:   15:  	struct gameState game;
+       10:   16:  	int cards[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   17:	
+       10:   18:	printf("Initialize Game...\n");
+call    0 returned 100%
+        -:   19:		
+       10:   20:	initializeGame(2, cards, 1, &game);
+call    0 returned 100%
+        -:   21:	// set testing variables
+       10:   22:	game.whoseTurn = 0;
+        -:   23:  	int counter;
+        -:   24:	// numHandCards() will 0 when handCount is 0
+       10:   25:	printf("Testing if returns 0 when no cards in hand...\n");
+call    0 returned 100%
+       10:   26:	game.handCount[0] = 0;
+       10:   27:  	counter = numHandCards(&game);
+call    0 returned 100%
+       10:   28:  		if (counter == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       10:   29:    			printf("PASS\n");
+call    0 returned 100%
+        -:   30:  		} 
+        -:   31:		else {
+    #####:   32:	    		printf("FAIL: returned %d when no cards in hand.\n", counter);
+call    0 never executed
+        -:   33:  		}
+        -:   34:	// numHandCards() will return the number of cards in handCount
+       10:   35:	printf("Testing if returns 8 when handCount is set to 8\n");
+call    0 returned 100%
+       10:   36:  	game.handCount[0] = 8;
+       10:   37:  	counter = numHandCards(&game);
+call    0 returned 100%
+       10:   38:  		if (counter == 8) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       10:   39:    			printf("PASS\n");
+call    0 returned 100%
+        -:   40:  		} 
+        -:   41:		else {
+    #####:   42:    			printf("FAIL: returned %d when 8 was expected.\n", counter);
+call    0 never executed
+        -:   43:  		}
+        -:   44:
+       10:   45:  	printf("---numHandCards() Test Complete---\n\n");
+call    0 returned 100%
+       10:   46:	return 0;	
+        -:   47:}

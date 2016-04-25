@@ -1,1 +1,1 @@
-Dummy readme file
+Read me file for CS362
