@@ -1,5 +1,5 @@
 #include "dominion.h" 
-#include "dominion_helpers.h" 
+#include "dominion_helpers.h"
 #include <string.h> 
 #include <stdio.h> 
 #include <assert.h> 
@@ -22,9 +22,11 @@ int main()
 
 	int i, j, p, r, handCount;
 
+	memset(&game, 23, sizeof(struct gameState));
+
 	p = 1;
 	int cardNum;
-	handCount = 1;
+	handCount = 2;
 
 	//initialize a new game
 	r = initializeGame(numPlayer, k, seed, &game);
@@ -39,10 +41,10 @@ int main()
 	int who;
 	int cardTotalBefore, cardTotalAfter;
 
-	who = game->whoseTurn;
-	cardTotalBefore = game->handCount[who];
+	who = game.whoseTurn;
+	cardTotalBefore = game.handCount[who];
 	i = gainCard(p, game, 2, who);
-	cardTotalAfter = game->handCount[who];
+	cardTotalAfter = game.handCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to hand
@@ -57,9 +59,9 @@ int main()
 	}
 
 
-	cardTotalBefore = game->deckCount[who];
+	cardTotalBefore = game.deckCount[who];
 	j = gainCard(p, game, 1, who);
-	cardTotalAfter = game->deckCount[who];
+	cardTotalAfter = game.deckCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to deck
