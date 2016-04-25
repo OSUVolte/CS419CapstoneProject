@@ -18,6 +18,6 @@
  *
  * The program works by first generating strings and chars, but only checking the char.  If the right char is created,
  * the state advances by one.  After this has occured 9 times, the program then instead starts checking the string, for
- * the correct character array in the correct order.  For me, I have had the program running over 300000 iterations and
+ * the correct character array in the correct order.  For me, I have had the program running over 3000000 iterations and
  * it still has not hit the correct string.
  */
