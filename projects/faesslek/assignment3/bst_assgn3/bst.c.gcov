@@ -1,0 +1,210 @@
+        -:    0:Source:bst.c
+        -:    0:Graph:bst.gcno
+        -:    0:Data:bst.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: File: bst.c
+        -:    3: Implementation of the binary search tree data structure.
+        -:    4: 
+        -:    5: */
+        -:    6:#include <stdlib.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include "assert.h"
+        -:    9:#include "bst.h"
+        -:   10:
+        -:   11:
+        -:   12:struct Node {
+        -:   13:	TYPE         val;
+        -:   14:	struct Node *left;
+        -:   15:	struct Node *right;
+        -:   16:};
+        -:   17:
+        -:   18:struct BSTree {
+        -:   19:	struct Node *root;
+        -:   20:	int          cnt;
+        -:   21:};
+        -:   22:
+        -:   23:/*----------------------------------------------------------------------------*/
+        1:   24:void initBSTree(struct BSTree *tree)
+        -:   25:{	
+        1:   26:	tree->cnt  = 0; 
+        1:   27:	tree->root = 0;	
+        1:   28:}
+        -:   29:
+        1:   30:struct BSTree*  newBSTree()
+        -:   31:{
+        1:   32:	struct BSTree *tree = (struct BSTree *)malloc(sizeof(struct BSTree));
+        1:   33:	assert(tree != 0);
+        -:   34:	
+        1:   35:	initBSTree(tree);
+        1:   36:	return tree;
+        -:   37:}
+        -:   38:
+        -:   39:/*----------------------------------------------------------------------------*/
+    #####:   40:void _freeBST(struct Node *node)
+        -:   41:{
+    #####:   42:	if (node != 0) {
+    #####:   43:		_freeBST(node->left);
+    #####:   44:		_freeBST(node->right);		
+    #####:   45:		free(node);
+        -:   46:	}
+    #####:   47:}
+        -:   48:
+    #####:   49:void clearBSTree(struct BSTree *tree)
+        -:   50:{
+    #####:   51:	_freeBST(tree->root);
+    #####:   52:	tree->root = 0;
+    #####:   53:	tree->cnt  = 0;
+    #####:   54:}
+        -:   55:
+    #####:   56:void deleteBSTree(struct BSTree *tree)
+        -:   57:{
+    #####:   58:	clearBSTree(tree);
+    #####:   59:	free(tree);
+    #####:   60:}
+        -:   61:
+        -:   62:/*----------------------------------------------------------------------------*/
+    #####:   63:int isEmptyBSTree(struct BSTree *tree) { return (tree->cnt == 0); }
+        -:   64:
+    #####:   65:int sizeBSTree(struct BSTree *tree) { return tree->cnt; }
+        -:   66:
+        -:   67:/*----------------------------------------------------------------------------*/
+        8:   68:struct Node *_addNode(struct Node *cur, TYPE val)
+        -:   69:{
+        -:   70:	/*write this*/
+        -:   71:	/*	return NULL; */
+        -:   72:	
+        -:   73:	struct Node *newnode;
+        -:   74:	/* case1 - cur is null */
+        8:   75:	if (cur == NULL)	
+        -:   76:	{	/*create new node and return*/
+        4:   77:		newnode = (struct Node *)malloc(sizeof(struct Node));
+        4:   78:		assert(newnode != 0);
+        4:   79:		newnode->val = val;
+        -:   80:		/*newnode->val->number = val->number;*/
+        4:   81:		newnode->left = newnode->right = 0;
+        4:   82:		return newnode;
+        -:   83:	}
+        4:   84:	if (EQ(compare(val,cur->val),-1))
+        -:   85:	{		
+        3:   86:		cur->left = _addNode(cur->left,val);
+        -:   87:	}
+        1:   88:	else if (EQ(compare(val, cur->val),1))
+        -:   89:	{	
+        1:   90:		cur->right = _addNode(cur->right, val);
+        -:   91:	}
+        4:   92:	return cur;
+        -:   93:
+        -:   94:
+        -:   95:}
+        -:   96:
+        4:   97:void addBSTree(struct BSTree *tree, TYPE val)
+        -:   98:{
+        4:   99:	tree->root = _addNode(tree->root, val);	
+        4:  100:	tree->cnt++;
+        4:  101:}
+        -:  102:
+        -:  103:/*----------------------------------------------------------------------------*/
+    #####:  104:int containsBSTree(struct BSTree *tree, TYPE val)
+        -:  105:{
+        -:  106:	/*write this*/	
+        -:  107:	/*	return 0; */
+    #####:  108:	struct Node *cur = tree->root;
+        -:  109:	
+    #####:  110:	while (cur != 0) {
+    #####:  111:		if (EQ(compare(val,cur->val),0))
+    #####:  112:			return 1; /* Return true if val found. */
+    #####:  113:		if (EQ(compare(val, cur->val),-1))
+    #####:  114:			cur = cur->left; /* Otherwise, go to the left */
+    #####:  115:		else cur = cur->right; /* or right, depending on val. */
+        -:  116:	}
+    #####:  117:	return 0;
+        -:  118:
+        -:  119:
+        -:  120:}
+        -:  121:
+        -:  122:/*----------------------------------------------------------------------------*/
+    #####:  123:TYPE _leftMost(struct Node *cur)
+        -:  124:{
+        -:  125:	/*write this*/	
+        -:  126:	/*return NULL;*/
+    #####:  127:	while (cur->left != 0)
+    #####:  128:		cur = cur->left;
+    #####:  129:	return cur->val;
+        -:  130:
+        -:  131:}
+        -:  132:
+        -:  133:/*----------------------------------------------------------------------------*/
+    #####:  134:struct Node *_removeLeftMost(struct Node *cur)
+        -:  135:{
+        -:  136:	/*write this*/
+        -:  137:	/*	return NULL;*/
+        -:  138:	
+        -:  139:	struct Node *node;
+        -:  140:
+    #####:  141:  	if (cur->left != 0) {
+    #####:  142:    	cur->left = _removeLeftMost(cur->left);
+    #####:  143:    return cur;
+        -:  144:	}
+        -:  145:
+    #####:  146:	node = cur->right;
+    #####:  147:    free(cur);
+    #####:  148:	return node;
+        -:  149:}
+        -:  150:
+        -:  151:/*----------------------------------------------------------------------------*/
+    #####:  152:struct Node *_removeNode(struct Node *cur, TYPE val)
+        -:  153:{
+        -:  154:	/*write this*/
+        -:  155:	/*	return NULL; */
+        -:  156:	struct Node *temp;
+    #####:  157:	if (EQ(compare(val, cur->val),0)) { /* Found val. */
+    #####:  158:		if (cur->right == 0) {
+    #####:  159:			temp = cur->left;
+    #####:  160:			free(cur);
+    #####:  161:			return temp;
+        -:  162:		}
+    #####:  163:		cur->val = _leftMost(cur->right);
+    #####:  164:		cur->right = _removeLeftMost(cur->right);
+        -:  165:	}
+    #####:  166:	else if (EQ(compare(val, cur->val),-1))
+    #####:  167:		cur->left = _removeNode(cur->left, val);
+        -:  168:	else 
+    #####:  169:		cur->right = _removeNode(cur->right,val);
+    #####:  170:	return cur;
+        -:  171:}
+        -:  172:
+    #####:  173:void removeBSTree(struct BSTree *tree, TYPE val)
+        -:  174:{
+    #####:  175:	if (containsBSTree(tree, val)) {
+    #####:  176:		tree->root = _removeNode(tree->root, val);
+    #####:  177:		tree->cnt--;
+        -:  178:	}
+    #####:  179:}
+        -:  180:
+        -:  181:/*----------------------------------------------------------------------------*/
+        -:  182:
+        -:  183:/* The following is used only for debugging, set to "#if 0" when used 
+        -:  184:  in other applications */
+        -:  185:#if 1
+        -:  186:#include <stdio.h>
+        -:  187:
+        -:  188:/*----------------------------------------------------------------------------*/
+    #####:  189:void printNode(struct Node *cur) {
+    #####:  190:	 if (cur == 0) return;
+    #####:  191:	 printf("(");
+    #####:  192:	 printNode(cur->left);	 
+        -:  193:	 /*Call print_type which prints the value of the TYPE*/
+    #####:  194:	 print_type(cur->val);
+    #####:  195:	 printNode(cur->right);
+    #####:  196:	 printf(")");
+        -:  197:}
+        -:  198:
+    #####:  199:void printTree(struct BSTree *tree) {
+    #####:  200:	 if (tree == 0) return;	 
+    #####:  201:	 printNode(tree->root);	 
+        -:  202:}
+        -:  203:/*----------------------------------------------------------------------------*/
+        -:  204:
+        -:  205:#endif

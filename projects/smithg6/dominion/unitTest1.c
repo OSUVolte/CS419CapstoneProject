@@ -22,9 +22,12 @@ int main()
 
 	int i, j, p, r, handCount;
 
+	memset(&game, 23, sizeof(struct gameState));
+
+
 	p = 1;
 	int cardNum;
-	handCount = 1;
+	handCount = 2;
 
 	//initialize a new game
 	r = initializeGame(numPlayer, k, seed, &game);
@@ -57,8 +60,7 @@ int main()
 
 	if(j)
 	{
-		printf("This test failed. getCost returned a 
-			default value %d for a card that doesn't exist", j);
+		printf("This test failed. getCost returned a default value %d for a card that doesn't exist", j);
 	} else
 		{
 			printf("This test passed and returned no value for an invalid card.");	

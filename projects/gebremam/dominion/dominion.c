@@ -644,12 +644,13 @@ int getCost(int cardNumber)
 }
 
 
-adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand){
+int adventurerRefactored(int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand []){
   while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
         shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
+    int cardDrawn;
     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
         drawntreasure++;
@@ -668,7 +669,7 @@ adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand){
 
 
 
-councilRoomRefactored(currentPlayer, state, handPos){
+int councilRoomRefactored(int currentPlayer, struct gameState *state, int handPos){
   //+4 Cards
   int i;
   for (i = 0; i < 4; i++)
@@ -695,7 +696,7 @@ councilRoomRefactored(currentPlayer, state, handPos){
 }
 
 
-smithyRefactored(handPos, currentPlayer, state){
+int smithyRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+3 Cards
       int i;
       for (i = 0; i <= 3; i++)
@@ -709,7 +710,7 @@ smithyRefactored(handPos, currentPlayer, state){
 }
 
 
-villageRefactored(handPos, currentPlayer, state){
+int villageRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+1 Card
       drawCard(currentPlayer, state);
       
@@ -721,7 +722,7 @@ villageRefactored(handPos, currentPlayer, state){
       return 0;
 }
 
-greatHallRefactored(handPos, currentPlayer, state){
+int greatHallRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+1 Card
       drawCard(currentPlayer, state);
       

@@ -78,28 +78,30 @@ testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardte
 	./cardtest4 >> unittestresults.txt
 	echo "_________________________________________________________" >> unittestresults.txt
 
-	echo "Coverage test: " >> unittestresults.txt
-	gcov unittest1.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov unittest2.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov unittest3.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov unittest4.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov cardtest1.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov cardtest2.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov cardtest3.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	gcov cardtest4.gnda >> unittestresults.txt
-	echo "_________________________________________________________" >> unittestresults.txt
-	echo "End of tests" >> unittestresults.txt
+	echo "Coverage test: " > coverage1.c
+	gcov unittest1.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest2.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest3.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest4.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest1.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest2.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest3.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest4.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	echo "End of tests" >> coverage1.c
 
 	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
-unittestresults.out:
+unittestresults.out: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	make testresults
-	cat unittestresults.txt
+	cat coverage1.c >> unittestresults.txt
+	cat unittestresults.txt >> unittestresults.out
 	rm unittestresults.txt
+	

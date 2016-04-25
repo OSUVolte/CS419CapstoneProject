@@ -22,9 +22,11 @@ int main()
 
 	int i, j, p, r, handCount;
 
+	memset(&game, 23, sizeof(struct gameState));
+
 	p = 0;
 	int cardNum;
-	handCount = 1;
+	handCount = 2;
 
 	//initialize a new game
 	r = initializeGame(numPlayer, k, seed, &game);
@@ -38,7 +40,7 @@ int main()
 
 
 	//set stack of province card value == 0
-	game->supplyCount[province] = 0;
+	game.supplyCount[province] = 0;
 	i = isGameOver(game);
 
 	if(i == 0)
@@ -47,7 +49,7 @@ int main()
 	}
 
 	//set stack of province cards to be negative, expect an error
-	game->supplyCount[province] = -5;
+	game.supplyCount[province] = -5;
 	j = isGameOver(game);
 
 	if(j == 0)
@@ -56,7 +58,7 @@ int main()
 	}
 
 	//Test that acceptable province value does not end game
-	game->supplyCount[province] = 4;
+	game.supplyCount[province] = 4;
 	j = isGameOver(game);
 
 	if(j == 0)

@@ -1,39 +1,62 @@
-CFLAGS = -Wall -fpic -coverage -lm
+CXX = gcc
+CXXFLAGS = -std=c99
+CXXFLAGS += -Wall
+CXXFLAGS += -g
+CXXFLAGS += -pedantic-errors
 
-rngs.o: rngs.h rngs.c
-	gcc -c rngs.c -g  $(CFLAGS)
+default: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
-dominion.o: dominion.h dominion.c rngs.o
-	gcc -c dominion.c -g  $(CFLAGS)
+unittestresults.out: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+	./unittest1 > unittestresults.out
+	./unittest2 >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	./unittest4 >> unittestresults.out
+	./cardtest1 >> unittestresults.out
+	./cardtest2 >> unittestresults.out
+	./cardtest3 >> unittestresults.out
+	./cardtest4 >> unittestresults.out
+	gcov unittest1.c -b >> unittestresults.out
+	gcov unittest2.c -b >> unittestresults.out
+	gcov unittest3.c -b >> unittestresults.out
+	gcov unittest4.c -b >> unittestresults.out
+	gcov cardtest1.c -b >> unittestresults.out
+	gcov cardtest2.c -b >> unittestresults.out
+	gcov cardtest3.c -b >> unittestresults.out
+	gcov cardtest4.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+dominion: dominion.c
+	${CXX} ${CXXFLAGS} dominion.c -c -coverage 
 
-playdom: dominion.o playdom.c
-	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
+rngs: rngs.c
+	${CXX} ${CXXFLAGS} rngs.c -c -coverage 
 
-testDrawCard: testDrawCard.c dominion.o rngs.o
-	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
+unitTestLib: unitTestLib.c
+	${CXX} ${CXXFLAGS} unitTestLib.c -lm -c
 
-badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
-	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
+unittest1: unittest1.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} unittest1.c rngs.o dominion.o unitTestLib.o -lm -coverage -o unittest1
 
-testBuyCard: testDrawCard.c dominion.o rngs.o
-	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
+unittest2: unittest2.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} unittest2.c rngs.o dominion.o unitTestLib.o -lm -coverage -o unittest2
 
-testAll: dominion.o testSuite.c
-	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
+unittest3: unittest3.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} unittest3.c rngs.o dominion.o unitTestLib.o -lm -coverage -o unittest3
 
-interface.o: interface.h interface.c
-	gcc -c interface.c -g  $(CFLAGS)
+unittest4: unittest4.c dominion rngs unitTestLib 
+	${CXX} ${CXXFLAGS} unittest4.c rngs.o dominion.o unitTestLib.o -lm -coverage -o unittest4
 
-runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+cardtest1: cardtest1.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} cardtest1.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest1
 
+cardtest2: cardtest2.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} cardtest2.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest2
 
-player: player.c interface.o
-	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+cardtest3: cardtest3.c dominion rngs unitTestLib
+	${CXX} ${CXXFLAGS} cardtest3.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest3
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard
-
+cardtest4: cardtest4.c unitTestLib dominion.o
+	${CXX} ${CXXFLAGS} cardtest4.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest4
+	
 clean:
-	rm -f *.o playdom.exe playdom test.exe test testDrawCard badTestDrawCard player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f  *.o *~ *.gch  ${PROG}
