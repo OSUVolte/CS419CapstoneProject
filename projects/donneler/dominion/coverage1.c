@@ -29,13 +29,17 @@
 * were run over 5000 times, with the exception of the lines for when a
 * player has one card left in their hand or if we are removing the last
 * card from the player's hand. Some of these runs are most likely due to
-* running the cards and not the unittest for this function. 
+* running the cards and not the unittest for this function. Based on the coverage, 
+* it appears this unit test is sufficient for this function, but we may want to
+* check the coverage of the unit test alone to be sure.
 *
 * unittest4: Lines executed:25.46% of 648
 * This unit test was responsible for testing endTurn(). All of the statements
 * in the endTurn function were run, but mostly only 2 times. Both of these
 * times are from unittest 4, as no where else in our testsuite do we call
-* the function. 
+* the function. Since the unit test only ran this function twice, we should 
+* add additonal tests to the unit test. This may include having players with
+* different size hands, more players, etc.
 *
 * cardtest1: Lines executed:27.62% of 648
 * This unit test was responsible for testing playAdventurer(). Not all
