@@ -1,0 +1,507 @@
+        -:    0:Source:cardtest3.c
+        -:    0:Graph:cardtest3.gcno
+        -:    0:Data:cardtest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "stdlib.h"
+        -:    2:#include "stdio.h"
+        -:    3:#include "string.h"
+        -:    4:#include "math.h"
+        -:    5:#include "time.h"
+        -:    6:#include "assert.h"
+        -:    7:
+        -:    8:#include "rngs.h"
+        -:    9:#include "dominion.h"
+        -:   10:#include "dominion_helpers.h"
+        -:   11:#include "unitTestLib.h"
+        -:   12:
+        -:   13:/* Function to Be Tested
+        -:   14: *
+        -:   15: * Description: This card should draw a card and add 2 actions for the player
+        -:   16: *
+        -:   17: *    The way it should work is:
+        -:   18: *			-A card is drawn
+        -:   19: *			-The number of actions is set to 2
+        -:   20: *			-The card is discarded
+        -:   21: *
+        -:   22: * Eval:
+        -:   23: *
+        -:   24: *	The number of actions is set to 2 instead of adding 2
+        -:   25: *	The card should be placed into the discard pile
+        -:   26:*/
+        -:   27:void villageCard(struct gameState*, int, int);
+        -:   28:/*
+        -:   29:void villageCard(struct gameState* state, int currentPlayer, int handPos){
+        -:   30:
+        -:   31:      drawCard(currentPlayer, state);
+        -:   32:      state->numActions = 2;
+        -:   33:			
+        -:   34:      //discard played card from hand
+        -:   35:      discardCard(handPos, currentPlayer, state, 0);
+        -:   36:      return;
+        -:   37:}
+        -:   38:*/
+function basicTest called 1 returned 100% blocks executed 72%
+        1:   39:int basicTest(struct gameState* state){
+        -:   40:
+        1:   41:   state->numPlayers = 2;
+        1:   42:   state->deckCount[0] = 27;
+        -:   43:
+        -:   44:   int i;
+        -:   45:   //Deck should include at one copper, one silver, and one gold to be found
+       28:   46:   for(i = 0;  i < state->deckCount[0]; i++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   47:      state->deck[0][i] = i;
+        -:   48:   }
+        1:   49:   state->handCount[0] = 5;
+        6:   50:   for(i = 5;  i < 5 + state->handCount[0]; i++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:   51:      state->hand[0][i-5] = village;
+        -:   52:   }
+        1:   53:   state->discardCount[0] = 10;
+       11:   54:   for(i = 0;  i < state->discardCount[0]; i++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:   55:      state->discard[0][i] = i;
+        -:   56:   }
+        -:   57:
+        1:   58:   struct gameState* cpy = (struct gameState*)(malloc(sizeof(struct gameState)));
+        1:   59:   memcpy(cpy, state, sizeof(struct gameState));
+        -:   60:
+        1:   61:   villageCard(state, 0, 0);
+call    0 returned 100%
+        -:   62:
+        -:   63:   //Use 1 action, add 2 actions
+        1:   64:   if(state->numActions != cpy->numActions +1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   65:	   free(cpy);
+        1:   66:	   return -1;
+        -:   67:   }
+        -:   68:   //Discard village card, add one new card
+    #####:   69:   if(state->handCount[0] != cpy->handCount[0]){
+branch  0 never executed
+branch  1 never executed
+    #####:   70:	   free(cpy);
+    #####:   71:	   return -2;
+        -:   72:   }
+        -:   73:   //Discard only the village card
+    #####:   74:   if(state->discardCount[0] != cpy->discardCount[0] +1){
+branch  0 never executed
+branch  1 never executed
+    #####:   75:	   free(cpy);
+    #####:   76:	   return -3;
+        -:   77:   }
+        -:   78:
+    #####:   79:   free(cpy);
+    #####:   80:   return 0;
+        -:   81:}
+        -:   82:
+function _stateTestHelper called 6 returned 100% blocks executed 59%
+        6:   83:int _stateTestHelper(struct gameState* state, struct gameState* cpy, int i){
+        -:   84:   int j;
+        6:   85:   int retVal = abs(checkState(cpy, state));
+call    0 returned 100%
+        -:   86:
+        6:   87:   switch (retVal){
+branch  0 taken 17%
+branch  1 taken 17%
+branch  2 taken 0%
+branch  3 taken 0%
+branch  4 taken 0%
+branch  5 taken 17%
+branch  6 taken 17%
+branch  7 taken 17%
+branch  8 taken 0%
+branch  9 taken 17%
+        -:   88:
+        -:   89:     case 8:
+        1:   90:    	 state->numActions = cpy->numActions;
+        1:   91:    	 return 8;
+        -:   92:
+        -:   93:     case 11:
+      501:   94:		 for(j = 0; j < MAX_HAND; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      500:   95:			state->hand[i][j] = cpy->hand[i][j];
+        -:   96:		 }
+        1:   97:		 return 11;
+        -:   98:
+        -:   99:     case 12:
+    #####:  100:		 state->handCount[i] = cpy->handCount[i];
+    #####:  101:		 return 12;
+        -:  102:
+        -:  103:     case 13:
+    #####:  104:		 for(j = 0; j < MAX_DECK; j++){
+branch  0 never executed
+branch  1 never executed
+    #####:  105:			state->discard[i][j] = cpy->discard[i][j];
+        -:  106:		 }
+    #####:  107:		 return 13;
+        -:  108:
+        -:  109:     case 14:
+    #####:  110:		 state->discardCount[i] = cpy->discardCount[i];
+    #####:  111:		 return 14;
+        -:  112:
+        -:  113:     case 15:
+      501:  114:    	  for(j = 0; j < MAX_DECK; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      500:  115:    		  state->playedCards[j] = cpy->playedCards[j];
+        -:  116:    	  }
+        1:  117:		 return 15;
+        -:  118:
+        -:  119:     case 16:
+        1:  120:		 state->playedCardCount = cpy->playedCardCount;
+        1:  121:		 return 16;
+        -:  122:
+        -:  123:     case 17:
+        1:  124:    	 state->deckCount[i] = cpy->deckCount[i];
+        1:  125:    	 return 17;
+        -:  126:
+        -:  127:     case 18:
+        -:  128:
+    #####:  129:		 for(j = 0; j < MAX_DECK; j++){
+branch  0 never executed
+branch  1 never executed
+    #####:  130:			 state->deck[i][j] = cpy->deck[i][j];
+        -:  131:		 }
+    #####:  132:		 return 18;
+        -:  133:
+        -:  134:      default:
+        1:  135:	 if(retVal){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  136:	    return retVal;
+        -:  137:	 } else {
+        1:  138:	    return 0;
+        -:  139:	 }
+        -:  140:   }
+        -:  141:}
+        -:  142:
+function _stateTrackerChecker called 1 returned 100% blocks executed 100%
+        1:  143:int _stateTrackerChecker(int* tracker){
+        -:  144:   int i;
+        1:  145:   int count = 0;
+       20:  146:   for(i = 0; i < 19; i++){
+branch  0 taken 95%
+branch  1 taken 5% (fallthrough)
+       19:  147:      if(tracker[i] > 0){
+branch  0 taken 26% (fallthrough)
+branch  1 taken 74%
+        5:  148:    	  count++;
+        -:  149:      }
+        -:  150:   }
+        1:  151:   return count;
+        -:  152:}
+        -:  153:
+function stateTest called 1 returned 100% blocks executed 52%
+        1:  154:int stateTest(struct gameState* state, int expectedStateChanges){
+        -:  155:
+        1:  156:   int* stateTracker = (int*)(malloc(19*sizeof(int)));
+        1:  157:   memset(stateTracker, 0, 19*sizeof(int));
+        -:  158:
+        -:  159:   int i, retVal;
+        1:  160:   state->numPlayers = 2;
+        1:  161:   state->deckCount[0] = 27;
+        -:  162:
+       28:  163:   for(i = 0;  i < state->deckCount[0]; i++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:  164:      state->deck[0][i] = i;
+        -:  165:   }
+        1:  166:   state->handCount[0] = 5;
+        6:  167:   for(i = 0;  i < state->handCount[0]; i++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:  168:      state->hand[0][i] = village;
+        -:  169:   }
+        1:  170:   state->discardCount[0] = 10;
+       11:  171:   for(i = 0;  i < state->discardCount[0]; i++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:  172:      state->discard[0][i] = i;
+        -:  173:   }
+        -:  174:
+        1:  175:   struct gameState* cpy = (struct gameState*)(malloc(sizeof(struct gameState)));
+        1:  176:   memcpy(cpy, state, sizeof(struct gameState));
+        -:  177:
+        1:  178:   villageCard(state, 0, 0);
+call    0 returned 100%
+        -:  179:   do{
+        -:  180:
+        6:  181:      retVal = _stateTestHelper(state, cpy, 0);
+call    0 returned 100%
+        6:  182:      if(retVal){
+branch  0 taken 83% (fallthrough)
+branch  1 taken 17%
+        5:  183:    	  stateTracker[retVal]++;
+        5:  184:    	  if(stateTracker[retVal] > 1){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  185:    		  printf("stateTest %i: Can't Clear State Error\n", retVal);
+call    0 never executed
+    #####:  186:    		  return -1;
+        -:  187:    	  }
+        -:  188:      }
+        6:  189:   } while (retVal);
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        -:  190:
+        1:  191:   int sc = _stateTrackerChecker(stateTracker);
+call    0 returned 100%
+        -:  192:   //numActions should change
+        1:  193:   if(!stateTracker[8]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  194:	   return -1;
+        -:  195:   }
+        -:  196:   //Hand Should change
+        1:  197:   if(!stateTracker[11]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  198:	   return -2;
+        -:  199:   }
+        -:  200:   //Hand Count Shouldn't CHange
+        1:  201:   if(stateTracker[12]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  202:	   return -3;
+        -:  203:   }
+        -:  204:   //discard should change
+        1:  205:   if(!stateTracker[13]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  206:	   return -4;
+        -:  207:   }
+        -:  208:   //discard count
+    #####:  209:   if(!stateTracker[14]){
+branch  0 never executed
+branch  1 never executed
+    #####:  210:	   return -5;
+        -:  211:   }
+        -:  212:   //playedCards
+    #####:  213:   if(!stateTracker[15]){
+branch  0 never executed
+branch  1 never executed
+    #####:  214:	   return -6;
+        -:  215:   }
+        -:  216:   //PlayedCardCount
+    #####:  217:   if(!stateTracker[16]){
+branch  0 never executed
+branch  1 never executed
+    #####:  218:	   return -7;
+        -:  219:   }
+        -:  220:   //deckCount
+    #####:  221:   if(!stateTracker[17]){
+branch  0 never executed
+branch  1 never executed
+    #####:  222:	   return -8;
+        -:  223:   }
+        -:  224:   //deck should change
+    #####:  225:   if(!stateTracker[18]){
+branch  0 never executed
+branch  1 never executed
+    #####:  226:	   return -9;
+        -:  227:   }
+    #####:  228:   if(sc != expectedStateChanges){
+branch  0 never executed
+branch  1 never executed
+    #####:  229:	   printf("stateTest -1: State error, %i Extra Changes\n", sc-expectedStateChanges);
+call    0 never executed
+    #####:  230:	   return -10;
+        -:  231:   }
+    #####:  232:   free(stateTracker);
+    #####:  233:   free(cpy);
+    #####:  234:   return 0;
+        -:  235:}
+        -:  236:
+function discardTest called 1 returned 100% blocks executed 81%
+        1:  237:int discardTest(struct gameState* state){
+        -:  238:
+        1:  239:   state->numPlayers = 2;
+        1:  240:   state->deckCount[0] = 27;
+        -:  241:
+        -:  242:   int i;
+        -:  243:
+       28:  244:   for(i = 0;  i < state->deckCount[0]; i++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:  245:      state->deck[0][i] = i;
+        -:  246:   }
+        1:  247:   state->handCount[0] = 5;
+        6:  248:   for(i = 5;  i < 5 + state->handCount[0]; i++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:  249:      state->hand[0][i-5] = village;
+        -:  250:   }
+        1:  251:   state->discardCount[0] = 10;
+       11:  252:   for(i = 0;  i < state->discardCount[0]; i++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:  253:      state->discard[0][i] = i;
+        -:  254:   }
+        -:  255:
+        1:  256:   struct gameState* cpy = (struct gameState*)(malloc(sizeof(struct gameState)));
+        1:  257:   memcpy(cpy, state, sizeof(struct gameState));
+        -:  258:
+        1:  259:   villageCard(state, 0, 0);
+call    0 returned 100%
+        -:  260:
+        1:  261:   if(state->discardCount[0] != cpy->discardCount[0]+1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  262:	   free(cpy);
+        1:  263:	   return -1;
+        -:  264:   }
+        -:  265:
+    #####:  266:   if(state->discard[0][state->discardCount[0]-1] != village){
+branch  0 never executed
+branch  1 never executed
+    #####:  267:	   free(cpy);
+    #####:  268:	   return -2;
+        -:  269:   }
+        -:  270:
+        -:  271:   //Card should exit normally as expected
+    #####:  272:   free(cpy);
+    #####:  273:   return 0;
+        -:  274:}
+        -:  275:
+function totalCardCountTest called 1 returned 100% blocks executed 93%
+        1:  276:int totalCardCountTest(struct gameState* state){
+        -:  277:
+        1:  278:   state->numPlayers = 2;
+        1:  279:   state->deckCount[0] = 27;
+        -:  280:
+        -:  281:   int i;
+        -:  282:   //Deck will contain one of each card
+       28:  283:   for(i = 0;  i < state->deckCount[0]; i++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:  284:      state->deck[0][i] = i;
+        -:  285:   }
+        -:  286:   //Fill hand with village cards
+        1:  287:   state->handCount[0] = 5;
+        6:  288:   for(i = 5;  i < 5 + state->handCount[0]; i++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:  289:      state->hand[0][i-5] = village;
+        -:  290:   }
+        -:  291:   //Fill discard pile with arbitrary 10 cards
+        1:  292:   state->discardCount[0] = 10;
+       11:  293:   for(i = 0;  i < state->discardCount[0]; i++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:  294:      state->discard[0][i] = i;
+        -:  295:   }
+        -:  296:
+        1:  297:   struct gameState* cpy = (struct gameState*)(malloc(sizeof(struct gameState)));
+        1:  298:   memcpy(cpy, state, sizeof(struct gameState));
+        -:  299:
+        1:  300:   villageCard(state, 0, 0);
+call    0 returned 100%
+        -:  301:
+        1:  302:   int cardCount = 0;
+        1:  303:   cardCount += state->deckCount[0] + state->handCount[0] + state->discardCount[0];
+        1:  304:   if(cardCount != cpy->deckCount[0] + cpy->handCount[0] + cpy->discardCount[0]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  305:	   return -1;
+        -:  306:   }
+        -:  307:   //Card should exit normally as expected
+    #####:  308:   free(cpy);
+    #####:  309:   return 0;
+        -:  310:}
+        -:  311:
+function unitTest called 1 returned 100% blocks executed 83%
+        1:  312:int unitTest(){
+        -:  313:
+        1:  314:   printf("\n+--------------------------------Village CARD TEST----------------------------+\n");
+call    0 returned 100%
+        -:  315:   //Create Zeroed Gamestate;
+        1:  316:   struct gameState* testState = (struct gameState*)(malloc(sizeof(struct gameState)));
+        1:  317:   memset(testState, 0, sizeof(struct gameState));
+        1:  318:   int retVal = 0;
+        -:  319:
+        1:  320:   printf("\n+------basicTest------+\n\n");
+call    0 returned 100%
+        -:  321:   ///Checks if theres a net 2 card gain in hand
+        1:  322:   retVal = basicTest(testState);
+call    0 returned 100%
+        1:  323:   if(retVal != 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  324:      printf("basicTest -1: Test Failed, \n");
+call    0 returned 100%
+        -:  325:      //return -1
+        -:  326:   } else {
+    #####:  327:      printf("basicTest: Successful\n");
+call    0 never executed
+        -:  328:   }
+        1:  329:   memset(testState, 0, sizeof(struct gameState));
+        -:  330:
+        1:  331:   printf("\n+--------stateTest----------+\n\n");
+call    0 returned 100%
+        -:  332:   //Checks to ensure expected values in current state are changed after function
+        1:  333:   retVal = stateTest(testState, 9);// Expected: numActions, hand, handCount, deck, deckCount, discard, discardCount, played, playedCount
+call    0 returned 100%
+        1:  334:   if(retVal){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  335:	   printf("stateTest %i: Failed State Test\n", retVal);
+call    0 returned 100%
+        -:  336:	   //return -2;
+        -:  337:   } else {
+    #####:  338:		   printf("stateTest: Successful\n");
+call    0 never executed
+        -:  339:   }
+        -:  340:
+        1:  341:   printf("\n+--------discardTest----------+\n\n");
+call    0 returned 100%
+        -:  342:   //Checks to ensure Village Card is Discarded
+        1:  343:   retVal = discardTest(testState);
+call    0 returned 100%
+        1:  344:   if(retVal){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  345:	   printf("discardTest %i: Failed Discard Test\n", retVal);
+call    0 returned 100%
+        -:  346:	   //return -3;
+        -:  347:   } else {
+    #####:  348:		   printf("discardTest: Successful\n");
+call    0 never executed
+        -:  349:   }
+        -:  350:
+        1:  351:   printf("\n+--------totalCardCountTest----------+\n\n");
+call    0 returned 100%
+        -:  352:   //Checks to ensure the total cards in all the piles hasn't changed
+        1:  353:   retVal = totalCardCountTest(testState);
+call    0 returned 100%
+        1:  354:   if(retVal){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  355:	   printf("totalCardCountTest %i: Failed Total Card Count Test\n", retVal);
+call    0 returned 100%
+        -:  356:	   //return -3;
+        -:  357:   } else {
+    #####:  358:		   printf("totalCardCountTest: Successful\n");
+call    0 never executed
+        -:  359:   }
+        -:  360:
+        -:  361:
+        1:  362:   free(testState);
+        1:  363:   return retVal;
+        -:  364:}
+        -:  365:
+function main called 1 returned 100% blocks executed 100%
+        1:  366:int main(){
+        1:  367:   int testVal = unitTest();
+call    0 returned 100%
+        1:  368:   printf("Outcome: %i\n", testVal);
+call    0 returned 100%
+        1:  369:   return testVal;
+        -:  370:}
+        -:  371:
+        -:  372:
