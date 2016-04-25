@@ -111,7 +111,7 @@ int smithPlay(int currentPlayer, int handPos, struct gameState *state);
 int remodelPlay(int currentPlayer,int choice1, int choice2, int handPos, struct gameState *state);
 int adventurerPlay(int currentPlayer, int handPos, struct gameState *state);
 int baronPlay(int currentPlayer, int choice1, int handPos, struct gameState *state);
-int seahagPlay(int currentPlayer, struct gameState *state);
+int seahagPlay(int currentPlayer, struct gameState *state, int handpos);
 
 int handCard(int handNum, struct gameState *state);
 /* enum value of indexed card in player's hand */

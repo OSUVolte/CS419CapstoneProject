@@ -7,7 +7,6 @@ BUG: When the player plays the smithy card, the player draws 4 cards from their 
 adventurer
 - Is implemented through the adventurerCard() method in dominion.c .
 BUG: Player keeps drawing cards until 3 treasure cards are drawn rather than 2.
-BUG: If player draws a gold card, it does not count as one of the 3 treasure cards that need to be drawn.
 
 great_hall
 - Is implemented through the greathallCard() method in dominion.c .
