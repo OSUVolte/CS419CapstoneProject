@@ -28,8 +28,8 @@ void testEmptyDeck(struct gameState*, int);
 void printResults(int, int, int, int, int, int, int, int, int, int, int, int, int, int);  
 
 enum pile {
-	hand = 0,
-	deck,
+  hand = 0,
+  deck,
   discard,
   played 
 };
@@ -38,7 +38,7 @@ int main() {
  
   struct gameState state;
   int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, 
-													remodel, smithy, village, baron, great_hall};
+                          remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
   int player;
   int countsBefore[PLAYERS+1][PILES];
@@ -117,10 +117,10 @@ int main() {
 }
 
 void testFirst(
-	struct gameState  *state, 
-	int 							player, 
-	int 							treasureType
-	) 
+  struct gameState  *state, 
+  int               player, 
+  int               treasureType
+  ) 
 {
 
   int i;
@@ -135,12 +135,12 @@ void testFirst(
 
   printf("\n------- First Card -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   state->deck[player][0] = treasureType;
   for (i = 1; i < deckSize; i++) {
-	  state->deck[player][i] = mine;
+    state->deck[player][i] = mine;
   }
   
   adventurerEffect(player, state);
@@ -159,9 +159,9 @@ void testFirst(
 }
 
 void testLast(
-	struct gameState  *state, 
-	int 							player, 
-	int 							treasureType
+  struct gameState  *state, 
+  int               player, 
+  int               treasureType
   ) 
 {
 
@@ -177,11 +177,11 @@ void testLast(
 
   printf("\n------- Last Card -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   for (i = 0; i < deckSize - 1; i++) {
-	  state->deck[player][i] = mine;
+    state->deck[player][i] = mine;
   }
   state->deck[player][i] = treasureType;
   
@@ -202,9 +202,9 @@ void testLast(
 }
 
 void testMiddle(
- 	struct gameState  *state, 
-	int 							player, 
-	int 							treasureType
+   struct gameState  *state, 
+  int               player, 
+  int               treasureType
   ) 
 {
 
@@ -220,7 +220,7 @@ void testMiddle(
 
   printf("\n------- Middle Card -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   middle = deckSize/2;
@@ -229,7 +229,7 @@ void testMiddle(
       state->deck[player][i] = treasureType;
     }
     else {
-	    state->deck[player][i] = mine;
+      state->deck[player][i] = mine;
     }
   }
   
@@ -250,9 +250,9 @@ void testMiddle(
 }
 
 void testAll(
- 	struct gameState  *state, 
-	int 							player, 
-	int 							treasureType
+   struct gameState  *state, 
+  int               player, 
+  int               treasureType
   ) 
 {
 
@@ -267,11 +267,11 @@ void testAll(
 
   printf("\n------- All Treasure Cards -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   for (i = 0; i < deckSize; i++) {
-	  state->deck[player][i] = treasureType;
+    state->deck[player][i] = treasureType;
   }
   
   adventurerEffect(player, state);
@@ -290,8 +290,8 @@ void testAll(
 }
 
 void testNone(
- 	struct gameState  *state, 
-	int 							player 
+   struct gameState  *state, 
+  int               player 
   ) 
 {
 
@@ -306,11 +306,11 @@ void testNone(
 
   printf("\n------- No Treasure Cards -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   for (i = 0; i < deckSize; i++) {
-	  state->deck[player][i] = mine;
+    state->deck[player][i] = mine;
   }
   
   adventurerEffect(player, state);
@@ -329,8 +329,8 @@ void testNone(
 }
 
 void testEmptyDeck(
- 	struct gameState  *state, 
-	int 							player 
+   struct gameState  *state, 
+  int               player 
   ) 
 {
 
@@ -345,13 +345,13 @@ void testEmptyDeck(
 
   printf("\n------- Empty Deck -------\n");
   for (i = 0; i < handSize; i++) {
-		state->hand[player][i] = minion;
+    state->hand[player][i] = minion;
   }
 
   for (i = 0; i < deckSize; i++) {
    drawCard(player, state);
    discardCard(i, player, state, 0);
-  }	
+  }  
   deckSize = state->deckCount[player];
   discardSize = state->discardCount[player];
 
@@ -371,19 +371,19 @@ void testEmptyDeck(
 }
 
 void printResults(  
-  int	handBefore, 
-  int	handAfter, 
+  int  handBefore, 
+  int  handAfter, 
   int handDesired,
-	int	deckBefore, 
-	int	deckAfter, 
+  int  deckBefore, 
+  int  deckAfter, 
   int deckDesired,
-	int	discardBefore,
-  int	discardAfter, 
+  int  discardBefore,
+  int  discardAfter, 
   int discardDesired,
-	int	playedBefore, 
-	int playedAfter, 
+  int  playedBefore, 
+  int playedAfter, 
   int playedDesired,
-	int treasure,
+  int treasure,
   int treasureDesired)  
 {
   printf("\tBefore\tAfter\n");
@@ -429,9 +429,9 @@ void printResults(
 }
 
 void cardCounts(
-	struct gameState	*state, 
-	int 							counts[PLAYERS+1][PILES]
-	) 
+  struct gameState  *state, 
+  int               counts[PLAYERS+1][PILES]
+  ) 
 {
    
   int i;
@@ -441,39 +441,39 @@ void cardCounts(
     counts[i][1] = state->deckCount[i];
     counts[i][2] = state->discardCount[i];
   }
-  counts[i][0] = state->playedCardCount;		
+  counts[i][0] = state->playedCardCount;    
 }
 
 void otherPlayerCounts(
-	int	currentPlayer, 
-	int countsBefore[PLAYERS+1][PILES], 
-	int countsAfter[PLAYERS+1][PILES]
-	) 
+  int  currentPlayer, 
+  int countsBefore[PLAYERS+1][PILES], 
+  int countsAfter[PLAYERS+1][PILES]
+  ) 
 {
   
-	int i;
+  int i;
 
   printf("\n------- Status of Other Players' Piles -------\n");
-	for (i = 0; i < PLAYERS; i++) {	
-		printf("Player %d", i);
-		if (i != currentPlayer) {
-			printf("\tBefore\tAfter\n");
-			printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
-			if (countsAfter[i][hand] != countsBefore[i][hand]) {
-				printf("ERROR - should not be altered\n");
-			}
-			printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
-			if (countsAfter[i][deck] != countsBefore[i][deck]) {
-				printf("ERROR - should not be altered\n");
-			}
-			printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
-			if (countsAfter[i][discard] != countsBefore[i][discard]) {
-				printf("ERROR - should not be altered\n");
-			}
-		}
-		else {
-			printf(" - current player\n");
-		}
-	}
+  for (i = 0; i < PLAYERS; i++) {  
+    printf("Player %d", i);
+    if (i != currentPlayer) {
+      printf("\tBefore\tAfter\n");
+      printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
+      if (countsAfter[i][hand] != countsBefore[i][hand]) {
+        printf("ERROR - should not be altered\n");
+      }
+      printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
+      if (countsAfter[i][deck] != countsBefore[i][deck]) {
+        printf("ERROR - should not be altered\n");
+      }
+      printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
+      if (countsAfter[i][discard] != countsBefore[i][discard]) {
+        printf("ERROR - should not be altered\n");
+      }
+    }
+    else {
+      printf(" - current player\n");
+    }
+  }
 }
 

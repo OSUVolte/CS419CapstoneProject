@@ -23,8 +23,8 @@ void testNone(struct gameState*, int);
 void printResults(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);  
 
 enum pile {
-	hand = 0,
-	deck,
+  hand = 0,
+  deck,
   discard,
   played 
 };
@@ -33,7 +33,7 @@ int main() {
  
   struct gameState state;
   int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, 
-													remodel, smithy, village, baron, great_hall};
+                          remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
   int player;
   int bonus;
@@ -44,7 +44,7 @@ int main() {
   int handSize;
   int playedCount;
   int discardSize;
-	int handPos = 0;
+  int handPos = 0;
   int actionsBefore;
   int actionsAfter;
  
@@ -61,52 +61,52 @@ int main() {
   discardSize = state.discardCount[player];
 
   for (i = 0; i < handSize; i++) {
-		state.hand[player][i] = minion;
+    state.hand[player][i] = minion;
   }
 
   for (i = 0; i < deckSize; i++) {
-		if (i == handPos) {
-	  	state.deck[player][i] = great_hall;
-		}
-		else {
-	  	state.deck[player][i] = mine;
-		}
+    if (i == handPos) {
+      state.deck[player][i] = great_hall;
+    }
+    else {
+      state.deck[player][i] = mine;
+    }
   }
 
-	cardCounts(&state, countsBefore);
+  cardCounts(&state, countsBefore);
   actionsBefore = state.numActions;
-	cardEffect(great_hall, -1, -1, -1, &state, handPos, &bonus);
+  cardEffect(great_hall, -1, -1, -1, &state, handPos, &bonus);
   actionsAfter = state.numActions;
-	cardCounts(&state, countsAfter);
+  cardCounts(&state, countsAfter);
 
   printResults(handSize, state.handCount[player], handSize, deckSize, 
                state.deckCount[player], deckSize - 1, discardSize, 
                state.discardCount[player], discardSize + 1, playedCount, 
                state.playedCardCount, playedCount + 1, actionsBefore, 
-							 actionsAfter, actionsBefore + 1);
+               actionsAfter, actionsBefore + 1);
 
-	otherPlayerCounts(player, countsBefore, countsAfter);
+  otherPlayerCounts(player, countsBefore, countsAfter);
 
   return 0;
 }
 
 
 void printResults(  
-  int	handBefore, 
-  int	handAfter, 
+  int  handBefore, 
+  int  handAfter, 
   int handDesired,
-	int	deckBefore, 
-	int	deckAfter, 
+  int  deckBefore, 
+  int  deckAfter, 
   int deckDesired,
-	int	discardBefore,
-  int	discardAfter, 
+  int  discardBefore,
+  int  discardAfter, 
   int discardDesired,
-	int	playedBefore, 
-	int playedAfter, 
+  int  playedBefore, 
+  int playedAfter, 
   int playedDesired,
   int actionsBefore,
-	int actionsAfter,
-	int actionsDesired
+  int actionsAfter,
+  int actionsDesired
   )
 {
   printf("\tBefore\tAfter\n");
@@ -141,7 +141,7 @@ void printResults(
   else {
     printf("\n");
   }
-	printf("Actions\t%d\t%d", actionsBefore, actionsAfter);
+  printf("Actions\t%d\t%d", actionsBefore, actionsAfter);
   if (actionsAfter != actionsDesired) {
     printf("\tERROR - should be %d\n", actionsDesired);
   }
@@ -151,9 +151,9 @@ void printResults(
 }
 
 void cardCounts(
-	struct gameState	*state, 
-	int 							counts[PLAYERS+1][PILES]
-	) 
+  struct gameState  *state, 
+  int               counts[PLAYERS+1][PILES]
+  ) 
 {
    
   int i;
@@ -163,47 +163,47 @@ void cardCounts(
     counts[i][1] = state->deckCount[i];
     counts[i][2] = state->discardCount[i];
   }
-  counts[i][0] = state->playedCardCount;		
+  counts[i][0] = state->playedCardCount;    
 }
 
 void otherPlayerCounts(
-	int	currentPlayer, 
-	int countsBefore[PLAYERS+1][PILES], 
-	int countsAfter[PLAYERS+1][PILES]
-	) 
+  int  currentPlayer, 
+  int countsBefore[PLAYERS+1][PILES], 
+  int countsAfter[PLAYERS+1][PILES]
+  ) 
 {
   
-	int i;
+  int i;
   int bugFound = 0;
 
   printf("\n------- Status of Other Players' Piles -------\n");
-	for (i = 0; i < PLAYERS; i++) {	
-		printf("Player %d", i);
-		if (i != currentPlayer) {
-			printf("\tBefore\tAfter\n");
-			printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
-			if (countsAfter[i][hand] != countsBefore[i][hand]) {
-				printf("ERROR - should not be altered\n");
- 				bugFound = 1;
-			}
-			printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
-			if (countsAfter[i][deck] != countsBefore[i][deck]) {
-				printf("ERROR - should not be altered\n");
- 				bugFound = 1;
-			}
-			printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
-			if (countsAfter[i][discard] != countsBefore[i][discard]) {
-				printf("ERROR - should not be altered\n");
- 				bugFound = 1;
-			}
-		}
-		else {
-			printf(" - current player\n");
-		}
-	}
-	
-	if (!bugFound) {
-		printf("SUCCESS: Other players' piles were not changed.\n");
-	}
+  for (i = 0; i < PLAYERS; i++) {  
+    printf("Player %d", i);
+    if (i != currentPlayer) {
+      printf("\tBefore\tAfter\n");
+      printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
+      if (countsAfter[i][hand] != countsBefore[i][hand]) {
+        printf("ERROR - should not be altered\n");
+         bugFound = 1;
+      }
+      printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
+      if (countsAfter[i][deck] != countsBefore[i][deck]) {
+        printf("ERROR - should not be altered\n");
+         bugFound = 1;
+      }
+      printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
+      if (countsAfter[i][discard] != countsBefore[i][discard]) {
+        printf("ERROR - should not be altered\n");
+         bugFound = 1;
+      }
+    }
+    else {
+      printf(" - current player\n");
+    }
+  }
+  
+  if (!bugFound) {
+    printf("SUCCESS: Other players' piles were not changed.\n");
+  }
 }
 
