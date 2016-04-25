@@ -6,7 +6,7 @@
 char inputChar()
 {
     // TODO: rewrite this function
-		char chArr[] = "[]{}() abcdefghijklmnopqrstuvwxyz";
+		char chArr[] = "[]{}() ax";
 		int randChar = rand() % strlen(chArr) ;
     return chArr[randChar];
 }
