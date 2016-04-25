@@ -54,7 +54,7 @@ runtests:
 	./unittest4 >> unittestresults.out
 	#gcov unittests4 -f -b >> unittestresults.out	
 	./cardtest1 >> unittestresults.out
-	./cardtest2 >> unittestresults.out
+	./cardtest2 
 	gcov dominion.c -f -b >> unittestresults.out
   
 

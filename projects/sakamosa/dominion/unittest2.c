@@ -75,7 +75,7 @@ int main(){
   if(T.deckCount[0] != 10 || T.deckCount[1] != 10){
       printf("FAIL incorrect number of cards in deck\n");
   }
-  printf("**********************TESTS COMPLETE*************************\n\n")
+  printf("**********************TESTS COMPLETE*************************\n\n");
   
   return 0;
 }

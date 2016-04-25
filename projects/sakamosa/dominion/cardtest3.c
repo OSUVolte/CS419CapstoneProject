@@ -7,7 +7,7 @@
 //testing of getCost function
 
 int main(){
-    printf("*********************BEGIN UNIT TESTS OF ADVENTURER*********************\n\n");
+    printf("*********************BEGIN UNIT TESTS OF GREAT HALL*********************\n\n");
 //compare returned value to correct value for each card type
     struct gameState T;
     int i, total_cards;
@@ -18,39 +18,35 @@ int main(){
     int beg_count, end_count = 0;
     int k[10] = {gardens, adventurer, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
-
+    
     initializeGame(2, k, 5, &T);
-    T.hand[0][0] = adventurer;
+    int pre_actions = T.numActions;
+   
+
+    T.hand[0][0] = great_hall;
     total_cards = T.handCount[0] + T.deckCount[0] + T.discardCount[0];
 
-    //count current treasure cards in hand
-    for(i = 0; i < T.handCount[0]; i++){
-        if(T.hand[0][i] == copper ||
-            T.hand[0][i] == silver ||
-            T.hand[0][i] == gold){
-                beg_count ++;
-        }
-    }
-    //Play the adventurer card for the Test state player 0, position 0
-    playAdventurer(&T, 0, 0);
+    cardEffect(great_hall, 0, 0, 0, &T, 0, 0);
+      //  case great_hall:
+      //+1 Card
+      //drawCard(currentPlayer, state);
+			
+      //+1 Actions
+      //state->numActions++;
+			
+      //discard card from hand
+      //discardCard(handPos, currentPlayer, state, 0);
    
-    //check that two cards have added and one discarded
-    if(T.handCount[0] != playerCount + 1){
+    //check that one card has been added and one discarded
+    if(T.handCount[0] != playerCount){
         printf("FAIL incorrect number of cards in player hand\n");
     }
-
-    //check that the treasure count has increased by 2
-    for(i = 0; i < T.handCount[0]; i++){
-        if(T.hand[0][i] == copper ||
-            T.hand[0][i] == silver ||
-            T.hand[0][i] == gold){
-                end_count ++;
-        }
-    }
-    if(end_count != beg_count + 2){
-        printf("FAIL two treasure cards were not added to hand\n");
-    }
     
+    //check that actions are increased
+    if(T.numActions != pre_actions + 1){
+        printf("FAIL incorrect number of action cards\n");
+    }
+
     //check that the card was added to discard pile
     if(T.discardCount[0] != playerDiscard + 1){
         printf("FAIL incorrect number of cards in player discard pile\n");

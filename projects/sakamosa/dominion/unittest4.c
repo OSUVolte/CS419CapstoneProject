@@ -49,7 +49,7 @@ int main(){
             printf("FAIL change to deckCount when deck empty\n");
     }
     
-    printf("**********************TESTS COMPLETE*************************\n\n")
+    printf("**********************TESTS COMPLETE*************************\n\n");
     return 0;
 }
     

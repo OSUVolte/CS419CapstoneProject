@@ -74,7 +74,7 @@ int main(){
         printf("FAIL smithy removed from opponents deck\n");
     }
     
-    printf("**********************TESTS COMPLETE*************************\n\n")
+    printf("**********************TESTS COMPLETE*************************\n\n");
     return 0;
 
 }
