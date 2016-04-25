@@ -25,7 +25,7 @@ Creating 'cardtest1.c.gcov'
 
 _________________________________________________________
 File 'cardtest2.c'
-Lines executed:100.00% of 36
+Lines executed:100.00% of 32
 Creating 'cardtest2.c.gcov'
 
 _________________________________________________________

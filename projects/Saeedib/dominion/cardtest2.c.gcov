@@ -55,24 +55,15 @@
         1:   50:	printf("Test 1: Checking the function.\n");
         1:   51:	updateCoins(thisPlayer,&testG,0);
         1:   52:	out = testG.coins;
-        1:   53:	printf("This should return Adventurer new coins in card: %d (should be 5)\n",out);
-        -:   54:
+        1:   53:	printf("This should return Adventurer new coins in card: %d (should be 6)\n",out);
+        1:   54:	assert(out == 6);
         1:   55:	out = Adventurer(thisPlayer,0,&testG,&G.hand);
         1:   56:	assert(out == 6);
         1:   57:	printf("This should return the value of Adventurer card: %d\n",out);
         1:   58:	out = updateCoins(thisPlayer,&testG,0);
         1:   59:	out = testG.coins;
-        1:   60:	printf("This should return Adventurer new coins in card: %d (should be 0)\n",out);
-        -:   61:
+        1:   60:	printf("This should return Adventurer new coins in card: %d (should be 8)\n",out);
+        1:   61:	assert(out == 8);
         1:   62:	printf("Test 1 Passed\n");
-        -:   63:
-        1:   64:	printf("\nTest 2: testing decrease in province cards.\n");
-        1:   65:	printf("Test 2 Passed\n");
-        -:   66:
-        1:   67:	printf("\nTest 3: Testing 3 piles are at 0.\n");
-        1:   68:	printf("Test 3 Passed\n");
-        -:   69:
-        1:   70:	printf("\nTest 4: Checking unexpected input/Output\n");
-        1:   71:	printf("Test 4 Passed\n");
-        1:   72:	return 0;	//No bugs found
-        -:   73:}
+        1:   63:	return 0;	//No bugs found
+        -:   64:}
