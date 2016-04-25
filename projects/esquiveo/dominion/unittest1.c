@@ -40,8 +40,6 @@ int main() {
 			state.supplyCount[j] = floor(Random() * 50);
 			j++;
 		}
-
-		isGameOverTest(&state);
 	
 		i++;
 	}	
