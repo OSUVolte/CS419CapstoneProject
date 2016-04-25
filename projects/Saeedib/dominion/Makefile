@@ -99,7 +99,7 @@ testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardte
 
 	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
-unittestresults.out:
+unittestresults.out: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	make testresults
 	cat coverage1.c >> unittestresults.txt
 	cat unittestresults.txt >> unittestresults.out
