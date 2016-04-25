@@ -165,11 +165,11 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
       //initialize hand size to zero
       state->handCount[i] = 0;
       state->discardCount[i] = 0;
-      //draw 5 cards
-      // for (j = 0; j < 5; j++)
-      //	{
-      //	  drawCard(i, state);
-      //	}
+      draw 5 cards
+      for (j = 0; j < 5; j++)
+      	{
+      	  drawCard(i, state);
+      	}
     }
   
   //set embargo tokens to 0 for all supply piles
@@ -189,9 +189,9 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   //int it; move to top
 
   //Moved draw cards to here, only drawing at the start of a turn
-  for (it = 0; it < 5; it++){
-    drawCard(state->whoseTurn, state);
-  }
+  //for (it = 0; it < 5; it++){
+  //  drawCard(state->whoseTurn, state);
+  //}
 
   updateCoins(state->whoseTurn, state, 0);
 
@@ -1286,10 +1286,12 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos){
 
 //adventurer: reveal cards from your deck until you get two treasure cards, discard rest
 int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
-    int drawntreasure=0;
+    printf("entered adv\n");
+    int drawntreasure = 0;
     int temphand[MAX_HAND];
     int z = 0;
-    while(drawntreasure<2){
+    while(drawntreasure < 2){
+        printf("in while loop\n");
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -1303,6 +1305,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
 	}
     }
     while(z-1>=0){
+        printf("in discard loop\n");
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
     }
