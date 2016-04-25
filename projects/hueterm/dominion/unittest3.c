@@ -1,7 +1,7 @@
 /**
 Michael Hueter
 CS 362 Assignment 3
-unittest3.c - testing the numHandCards function
+unitTest3.c - testing the numHandCards function
 **/
 
 #include "dominion.h"
