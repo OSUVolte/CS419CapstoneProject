@@ -73,9 +73,6 @@ unittestresults.out: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2
 	gcov -b dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
-
-=======
->>>>>>> 8b2855345a758364e601c8b73e68f190ca1d3d88
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
