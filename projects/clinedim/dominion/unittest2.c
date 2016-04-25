@@ -1,3 +1,10 @@
+/*
+	File Name:				unittest2.c
+	Author:					Marc Clinedinst
+	Functionality Tested:	This unit test tests the initializeGame function.  It does so by initializing
+							games with different number of players and checking that the state of the game
+							is correct.
+*/
 #include <assert.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -9,6 +16,13 @@
 #define DEBUG 0
 #define NOISY_TEST 1
 
+/*
+	Funciton Name:	check_curse_cards
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of curse cards are present based
+					on the number of players.  The correct values are hard coded.
+*/
 int check_curse_cards(struct gameState game_state) {
 	if (game_state.numPlayers == 2) {
 		return game_state.supplyCount[curse] == 10;
@@ -19,6 +33,13 @@ int check_curse_cards(struct gameState game_state) {
 	}
 }
 
+/*
+	Funciton Name:	check_embargo_tokens
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of embargo tokens are present based
+					on the number of players.  The correct values are hard coded.
+*/
 int check_embargo_tokens(struct gameState game_state) {
 	int index;
 
@@ -31,6 +52,14 @@ int check_embargo_tokens(struct gameState game_state) {
 	return 1;
 }
 
+/*
+	Funciton Name:	check_first_turn_setup
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the outpostPlayed, phase, numActions,
+					numBuys, playedCardCount, whoseTurn, and handCount values are
+					correct for the game.  The correct values are hard coded.
+*/
 int check_first_turn_setup(struct gameState game_state) {
 	if (game_state.outpostPlayed != 0) {
 		return 0;
@@ -56,7 +85,13 @@ int check_first_turn_setup(struct gameState game_state) {
 	return 1;
 }
 
-
+/*
+	Funciton Name:	check_cking_cards
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of king cards are present based
+					on the number of players.  The correct values are hard coded.
+*/
 int check_kingdom_cards(struct gameState game_state) {
 	int card,
 		number_of_kingdom_cards = 0;
@@ -70,10 +105,24 @@ int check_kingdom_cards(struct gameState game_state) {
 	return number_of_kingdom_cards == 10;
 }
 
+/*
+	Funciton Name:	check_number_of_players
+	Parameters: 	A gameState structure and number of players.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of players are present based
+					on the number of players.  The correct value is passed to the function.
+*/
 int check_number_of_players(struct gameState game_state, int expected_number_of_players) {
 	return game_state.numPlayers == expected_number_of_players;
 }
 
+/*
+	Funciton Name:	check_other_players_setup
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the other players have the correct number of
+					copper and estate cards.  The correct values are hardcoded.
+*/
 int check_other_players_setup(struct gameState game_state) {
 	int current_player;
 
@@ -100,6 +149,13 @@ int check_other_players_setup(struct gameState game_state) {
 	return 1;
 }
 
+/*
+	Funciton Name:	check_player_one_setup
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of copper and estate are present 
+					for player one. The correct values are hard coded.
+*/
 int check_player_one_setup(struct gameState game_state) {
 	int copper_count = 0,
 		estate_count = 0,
@@ -128,6 +184,13 @@ int check_player_one_setup(struct gameState game_state) {
 	return copper_count == 7 && estate_count == 3;
 }
 
+/*
+	Funciton Name:	check_treasure_cards
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of treasure cards are present based
+					on the number of players.  The correct values are hard coded.
+*/
 int check_treasure_cards(struct gameState game_state) {
 	if (game_state.numPlayers == 2) {
 		return game_state.supplyCount[copper] == 46 &&
@@ -144,6 +207,13 @@ int check_treasure_cards(struct gameState game_state) {
 	}
 }
 
+/*
+	Funciton Name:	check_victory_cards
+	Parameters: 	A gameState structure.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function tests that the correct number of treasure cards are present based
+					on the number of players.  The correct values are hard coded.
+*/
 int check_victory_cards(struct gameState game_state) {
 	if (game_state.numPlayers == 2) {
 		return game_state.supplyCount[estate] == 8 && 
@@ -156,6 +226,12 @@ int check_victory_cards(struct gameState game_state) {
 	}
 }
 
+/*
+	Funciton Name:	perform_all_checks
+	Parameters: 	A gameState structure and a number of players.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This function performs all the checks defined in functions above.
+*/
 void perform_all_checks(struct gameState game_state, int number_of_players) {
 	printf("Checking intializeGame for game with %d players.\n", number_of_players);
 	
@@ -187,7 +263,17 @@ void perform_all_checks(struct gameState game_state, int number_of_players) {
 	printf("\tVictory cards setup check passed.\n");
 }
 
+/*
+	Perform all the checks.
+*/
 int main(void) {
+	printf("**********\n");
+	printf("UNIT TEST # 2\n");
+	printf("*********\n");
+
+	/*
+		Test initial state for 2 players.
+	*/
 	int number_of_players = 2,
 		kingdom_cards[] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall },
 		random_seed = 1;
@@ -195,10 +281,17 @@ int main(void) {
 	initializeGame(number_of_players, kingdom_cards, random_seed, &game_state);
 	perform_all_checks(game_state, number_of_players);
 
+	/*
+		Test initial state for 3 players.
+	*/
 	number_of_players = 3;
 	initializeGame(number_of_players, kingdom_cards, random_seed, &game_state);
 	perform_all_checks(game_state, number_of_players);	
 
+
+	/*
+		Test initial state for 4 players.
+	*/
 	number_of_players = 4;
 	initializeGame(number_of_players, kingdom_cards, random_seed, &game_state);
 	perform_all_checks(game_state, number_of_players);
