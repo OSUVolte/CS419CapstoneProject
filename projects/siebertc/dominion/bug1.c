@@ -51,5 +51,24 @@ with one card in hand, and 0 buys.
 	all current players in the game, and allows them all to draw one (for otherPlayer).
 	This loop doesn't add and exception for currentPlayer to not draw during this. Results in
 	the extra drawn card, making the result 5.
+
+cardAdventurer(): results ended up in a bug, the card adds two treasures to the currentPlayer hand
+This function also is removed once it is played, and removed two cards from the deck (two treasures)
+While this card gave the player two cards, coin changes were not in line to the expected values
+
+	expected: 1 adventurer in hand, discard, and draw 2 copper.
+	expected hand size = 1 -1  +2 (treasures) = 2
+	expected deck size = 3 -2; (treasures drawn)
+	expected coins = 2; (2 copper gained)
+	
+	results: -2 deck, -1 hand, +1 coin
+	result hand size = 2
+	result deck size = 1
+	coins returned = 1.
+	
+	The results show that the treasure that was drawn isn't a coin, like it's defined to be.
+	The treasure table in cardAdventurer() shows that estate is a card that is eligible to be
+	drawn, and against the basic logic of Adventurer.
+	
 	
 */
