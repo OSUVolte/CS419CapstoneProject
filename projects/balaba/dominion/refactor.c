@@ -1,25 +1,22 @@
 /* Aleksandr Balab
    Assigment2 
 
-The cards refactored: Adventurer, Smithy, Remodel, Baron and CouncilRoom
+The cards refactored: Adventurer, Smithy, CouncilRoom, Salvager and Village 
 
-1.ref_Adventurer:
-In first while loop - drawntreasure <2 , made to drawntreasure <=2 thus making it search for 3 treasure cards not 2.
-        in if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) deleted  cardDrawn == gold part,
-		so gold cards wont be counted as a tresuare card. 
+1.Adventurer:
+Bug: in the  discard all cards in play that have been drawn the has tempHand to be tempHand[z-1],
+but instead is from z. It'll discard 1 additional card instead. 
 
-2.ref_Smithy:
-In for loop for (i = 0; i < 3; i++) changed to (i = 0; i <= 3; i++) will  add 4 cards instead of 3.
+2.Smithy:
+Bug: Change flag from discardCard() from 0 to 1, will trash the card instead of discard. 
 
-3.ref_Remodel: 
-In the for loop put break; stamement before the discardCard. The trashed card will never get discarted.
+3.Salvager: 
+Bug: In   state->coins = state->coins - getCost( handCard(choice1, state) ); Changed the + into -. Thus 
+the player will not be getting goins equal to trashed card will get less or crash. 
 
-4.ref_Baron:
-In the next to last if statement  state->supplyCount[estate]--; changed to state->supplyCount[estate];
-Thus the number of estates available will not change thus effecting the outcome of the game. 
+4. Village: 
+No bugs. 
 
-5.ref_CounsilRoom:
+5.CounsilRoom:
 In for (i = 0; i < 4; i++) changed it to for (i = 0; i <= 4; i++). Player will get 5 cards instead of 4
-In the state->numBuys++; changed it to state->numBuys; so no additional bonus for the player. 
-
 */

@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int adventurerCard(int, int, struct gameState*, int, int*, int);
+int adventurerCard(struct gameState*, int);
 int smithyCard(int, struct gameState*, int);
 int cutpurseCard(int, struct gameState*, int);
 int salvagerCard(int, struct gameState*, int, int);
@@ -673,7 +673,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-	return adventurerCard(cardDrawn, drawntreasure, state, currentPlayer, temphand, z);			
+	return adventurerCard(state, currentPlayer);			
     case council_room:
       //+4 Cards
       for (i = 0; i < 4; i++)
@@ -1253,8 +1253,12 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
 
-int adventurerCard(int cardDrawn, int drawntreasure, struct gameState *state, int currentPlayer, int *temphand, int z)
+int adventurerCard(struct gameState *state, int currentPlayer)
 {
+  int cardDrawn;
+  int drawntreasure = 0;
+  int z = 0;
+  int temphand[MAX_HAND];
   while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] = 0){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);

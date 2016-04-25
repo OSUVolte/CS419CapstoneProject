@@ -33,7 +33,19 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
+cardsuite: 
+	gcc -coverage mirTestSuite.c dominion.c rngs.c -o mirTestSuite -lm
+
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+
+printout:
+	./mirTestSuite > unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	gcov -f dominion.c >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
+	
+
+unittestresults.out: cardsuite printout

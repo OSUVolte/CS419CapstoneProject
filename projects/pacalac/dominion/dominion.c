@@ -722,6 +722,7 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 {
 	int currentPlayer = whoseTurn(state);
 	int i = 0;
+	int j = 0;
 	
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
@@ -749,8 +750,9 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 }
 
 //play Steward card. Choose to gain 2 cards, gain 2 gold, or trash 2 cards in your hand.
-int playSteward(int choice1, struct gameState *state)
+int playSteward(int choice1, struct gameState *state, int handPos)
 {
+	
 	int currentPlayer = whoseTurn(state);
 	
 	if (choice1 == 1)
@@ -1094,7 +1096,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case steward:
-		return playSteward(choice1, state);
+		return playSteward(choice1, state, handPos);
     /*  if (choice1 == 1)
 	{
 	  //+2 cards
