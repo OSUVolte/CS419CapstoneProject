@@ -1,0 +1,337 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:
+function main called 1 returned 100% blocks executed 87%
+        1:    9:int main() {
+        -:   10:    int i;
+        1:   11:    int seed = 1000;
+        1:   12:    int numPlayer = 2;
+        1:   13:	int player1 = 0;
+        1:   14:	int player2 = 1;
+        -:   15:	int gameOver;
+        1:   16:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   17:               , remodel, smithy, village, baron, great_hall};
+        -:   18:    struct gameState G, RESET;
+        -:   19:	
+        1:   20:	initializeGame(numPlayer, k, seed, &RESET);
+call    0 returned 100%
+        1:   21:	memcpy(&G, &RESET, sizeof(struct gameState));	
+        -:   22:	
+        -:   23:	//Test isGameOver function
+        1:   24:	printf("~~~Testing isGameOver Function~~~\n");
+call    0 returned 100%
+        1:   25:	printf("Game over = 1 | Game continue = 0\n\n");
+call    0 returned 100%
+        -:   26:	
+        1:   27:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        1:   28:	printf("Test if stack of province card is empty\n\n");
+call    0 returned 100%
+        1:   29:	G.supplyCount[province] = 0;
+        1:   30:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:   31:	printf("Game over state = %d, expected = 1\n", gameOver);
+call    0 returned 100%
+        1:   32:	if (gameOver == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   33:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   34:	}
+        -:   35:	else{
+    #####:   36:		printf("FAILED.\n");
+call    0 never executed
+        -:   37:	}
+        1:   38:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:   39:	
+        1:   40:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:   41:	
+        1:   42:	printf("Test if stack of estates card is empty\n\n");
+call    0 returned 100%
+        1:   43:	G.supplyCount[estate] = 0;
+        1:   44:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:   45:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:   46:	if (gameOver == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   47:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   48:	}
+        -:   49:	else{
+    #####:   50:		printf("FAILED.\n");
+call    0 never executed
+        -:   51:	}
+        1:   52:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:   53:	
+        1:   54:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:   55:	
+        1:   56:	printf("Test if stack of duchies card is empty\n\n");
+call    0 returned 100%
+        1:   57:	G.supplyCount[duchy] = 0;
+        1:   58:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:   59:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:   60:	if (gameOver == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   61:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   62:	}
+        -:   63:	else{
+    #####:   64:		printf("FAILED.\n");
+call    0 never executed
+        -:   65:	}
+        1:   66:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:   67:	
+        1:   68:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:   69:	
+        1:   70:	printf("Test if one supply pile are at 0\n\n");
+call    0 returned 100%
+        1:   71:	G.supplyCount[0] = 0;
+        1:   72:    gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:   73:    printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:   74:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   75:        printf("PASSED.\n");
+call    0 returned 100%
+        -:   76:    } else {
+    #####:   77:        printf("FAILED.\n");
+call    0 never executed
+        -:   78:    }
+        1:   79:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:   80:	
+        1:   81:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:   82:	
+        1:   83:	printf("Test if two supply pile are at 0\n\n");
+call    0 returned 100%
+        1:   84:	G.supplyCount[0] = 0;
+        1:   85:	G.supplyCount[1] = 0;
+        1:   86:    gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:   87:    printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:   88:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   89:        printf("PASSED.\n");
+call    0 returned 100%
+        -:   90:    } else {
+    #####:   91:        printf("FAILED.\n");
+call    0 never executed
+        -:   92:    }	
+        1:   93:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:   94:	
+        1:   95:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:   96:	
+        1:   97:	printf("Test if three supply pile are at 0\n\n");
+call    0 returned 100%
+        1:   98:	G.supplyCount[0] = 0;
+        1:   99:	G.supplyCount[1] = 0;
+        1:  100:	G.supplyCount[2] = 0;
+        1:  101:    gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  102:    printf("Game over state = %d, expected = 1\n", gameOver);
+call    0 returned 100%
+        1:  103:    if (gameOver == 1) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  104:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  105:    } else {
+    #####:  106:        printf("FAILED.\n");
+call    0 never executed
+        -:  107:    }
+        1:  108:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  109:	
+        1:  110:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  111:
+        1:  112:	printf("Test if player 1 discard pile is empty\n\n");
+call    0 returned 100%
+        1:  113:	G.discardCount[player1] = 0;
+        1:  114:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  115:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  116:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  117:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  118:    } else {
+    #####:  119:        printf("FAILED.\n");
+call    0 never executed
+        -:  120:    }
+        1:  121:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  122:	
+        1:  123:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  124:		
+        1:  125:	printf("Test if player 1 hand is empty\n\n");
+call    0 returned 100%
+        1:  126:	G.handCount[player1] = 0;
+        1:  127:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  128:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  129:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  130:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  131:    } else {
+    #####:  132:        printf("FAILED.\n");
+call    0 never executed
+        -:  133:    }
+        1:  134:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  135:	
+        1:  136:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  137:		
+        1:  138:	printf("Test if player 1 deck is empty\n\n");
+call    0 returned 100%
+        1:  139:	G.deckCount[player1] = 0;
+        1:  140:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  141:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  142:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  143:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  144:    } else {
+    #####:  145:        printf("FAILED.\n");
+call    0 never executed
+        -:  146:    }
+        1:  147:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  148:	
+        1:  149:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  150:		
+        1:  151:	printf("Test if player 1 has cards\n\n");
+call    0 returned 100%
+        1:  152:	G.handCount[player1] = 5;
+        1:  153:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  154:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  155:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  156:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  157:    } else {
+    #####:  158:        printf("FAILED.\n");
+call    0 never executed
+        -:  159:    }
+        1:  160:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  161:	
+        1:  162:	printf("Test if player 2 discard pile is empty\n\n");
+call    0 returned 100%
+        1:  163:	G.discardCount[player2] = 0;
+        1:  164:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  165:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  166:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  167:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  168:    } else {
+    #####:  169:        printf("FAILED.\n");
+call    0 never executed
+        -:  170:    }
+        1:  171:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  172:	
+        1:  173:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  174:		
+        1:  175:	printf("Test if player 2 hand is empty\n\n");
+call    0 returned 100%
+        1:  176:	G.handCount[player2] = 0;
+        1:  177:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  178:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  179:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  180:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  181:    } else {
+    #####:  182:        printf("FAILED.\n");
+call    0 never executed
+        -:  183:    }
+        1:  184:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  185:	
+        1:  186:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  187:		
+        1:  188:	printf("Test if player 2 deck is empty\n\n");
+call    0 returned 100%
+        1:  189:	G.deckCount[player2] = 0;
+        1:  190:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  191:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  192:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  193:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  194:    } else {
+    #####:  195:        printf("FAILED.\n");
+call    0 never executed
+        -:  196:    }
+        1:  197:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  198:	
+        1:  199:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state	
+        -:  200:		
+        1:  201:	printf("Test if player 2 has cards\n\n");
+call    0 returned 100%
+        1:  202:	G.handCount[player2] = 7;
+        1:  203:	gameOver = isGameOver(&G);
+call    0 returned 100%
+        1:  204:	printf("Game over state = %d, expected = 0\n", gameOver);
+call    0 returned 100%
+        1:  205:    if (gameOver == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  206:        printf("PASSED.\n");
+call    0 returned 100%
+        -:  207:    } else {
+    #####:  208:        printf("FAILED.\n");
+call    0 never executed
+        -:  209:    }
+        1:  210:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  211:	
+        -:  212:	
+        1:  213:	return 0;
+        -:  214:	
+        -:  215:}

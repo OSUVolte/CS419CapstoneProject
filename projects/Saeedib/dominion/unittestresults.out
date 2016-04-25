@@ -1,0 +1,314 @@
+
+
+Testing Unit updateCoins
+
+Test 1: Checking validity of value (in range).
+getting initial handCount
+coinUpdate returned: 0
+bonus is: 0
+Number of playing player is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+handCount is: 5 (5 is expected)
+Test 1 Passed
+
+Test 2: Checking addition of coins (all the possible ways to add coin, bonus and cards).
+bonus is: 1
+coinUpdate set the coin value to: 6 (expected value is: 6)
+coinUpdate set the coin value to: 7 (expected value is: 7)
+Test 2 Passed
+
+Test 3: Checking looking for copper, silver and gold coins.
+bonus is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+adding an aditional gold card...
+coinUpdate set the coin value to: 6 (expected value is: 9)
+cards are:
+gold, silver, copper, gold and Empty
+Test 3 Passed
+
+Test 4: Checking unexpected input
+coinUpdate set the coin value to: -1304428536 (expected value is: -1304428536)
+Test 4 failed: Failed to return a positive value.
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 7, 8 and 9 are set to 0
+Supplies 23, 6 and 3 are set to 0
+Supplies 3, 5 and 6 are set to 0
+Supplies 13, 14 and 20 are set to 0
+Supplies 14, 19 and 11 are set to 0
+Supplies 18, 4 and 10 are set to 0
+Supplies 11, 14 and 17 are set to 0
+Supplies 23, 15 and 13 are set to 0
+Supplies 20, 12 and 20 are set to 0
+Supplies 1, 2 and 5 are set to 0
+Test 4 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit kingdomCards
+
+Test 1: cecking for match between two copies.
+Member 0 holds value of 7.
+Member 1 holds value of 22.
+Member 2 holds value of 14.
+Member 3 holds value of 17.
+Member 4 holds value of 11.
+Member 5 holds value of 21.
+Member 6 holds value of 25.
+Member 7 holds value of 19.
+Member 8 holds value of 13.
+Member 9 holds value of 8.
+Test 1 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit scoreFor
+
+Test 1: Checking the function.
+ScoreFor returned: 12(expected 12).
+new ScoreFor returned: 17 (expected 17).
+Test 1 Passed
+
+Test 2: discarding a card.
+new ScoreFor returned: 10 (expected 10).
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+Test 3 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 16, 16 and 15 are set to 0
+Supplies 14, 1 and 8 are set to 0
+Supplies 16, 0 and 11 are set to 0
+Supplies 14, 5 and 4 are set to 0
+Supplies 8, 13 and 14 are set to 0
+Supplies 5, 24 and 2 are set to 0
+Supplies 18, 12 and 4 are set to 0
+Supplies 22, 5 and 2 are set to 0
+Supplies 6, 1 and 16 are set to 0
+Supplies 17, 22 and 16 are set to 0
+Test 4 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 16, 16 and 15 are set to 0
+Supplies 14, 1 and 8 are set to 0
+Supplies 16, 0 and 11 are set to 0
+Supplies 14, 5 and 4 are set to 0
+Supplies 8, 13 and 14 are set to 0
+Supplies 5, 24 and 2 are set to 0
+Supplies 18, 12 and 4 are set to 0
+Supplies 22, 5 and 2 are set to 0
+Supplies 6, 1 and 16 are set to 0
+Supplies 17, 22 and 16 are set to 0
+Test 4 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 5, 12 and 24 are set to 0
+Supplies 13, 6 and 1 are set to 0
+Supplies 16, 5 and 20 are set to 0
+Supplies 14, 24 and 2 are set to 0
+Supplies 19, 14 and 6 are set to 0
+Supplies 12, 3 and 11 are set to 0
+Supplies 9, 9 and 23 are set to 0
+Supplies 9, 0 and 13 are set to 0
+Supplies 2, 1 and 16 are set to 0
+Supplies 11, 17 and 5 are set to 0
+Test 4 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 5, 12 and 24 are set to 0
+Supplies 13, 6 and 1 are set to 0
+Supplies 16, 5 and 20 are set to 0
+Supplies 14, 24 and 2 are set to 0
+Supplies 19, 14 and 6 are set to 0
+Supplies 12, 3 and 11 are set to 0
+Supplies 9, 9 and 23 are set to 0
+Supplies 9, 0 and 13 are set to 0
+Supplies 2, 1 and 16 are set to 0
+Supplies 11, 17 and 5 are set to 0
+Test 4 Passed
+_________________________________________________________
+Coverage test: 
+File 'unittest1.c'
+Lines executed:98.70% of 77
+Creating 'unittest1.c.gcov'
+
+_________________________________________________________
+File 'unittest2.c'
+Lines executed:97.06% of 68
+Creating 'unittest2.c.gcov'
+
+_________________________________________________________
+File 'unittest3.c'
+Lines executed:100.00% of 11
+Creating 'unittest3.c.gcov'
+
+_________________________________________________________
+File 'unittest4.c'
+Lines executed:97.37% of 38
+Creating 'unittest4.c.gcov'
+
+_________________________________________________________
+File 'cardtest1.c'
+Lines executed:96.97% of 66
+Creating 'cardtest1.c.gcov'
+
+_________________________________________________________
+File 'cardtest2.c'
+Lines executed:96.97% of 66
+Creating 'cardtest2.c.gcov'
+
+_________________________________________________________
+File 'cardtest3.c'
+Lines executed:96.97% of 66
+Creating 'cardtest3.c.gcov'
+
+_________________________________________________________
+File 'cardtest4.c'
+Lines executed:96.97% of 66
+Creating 'cardtest4.c.gcov'
+
+_________________________________________________________
+End of tests
