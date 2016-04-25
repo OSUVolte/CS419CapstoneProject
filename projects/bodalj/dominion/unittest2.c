@@ -2,12 +2,10 @@
  * Filename: unittest2.c
  * Author: Jens Bodal
  * Date: April 22, 2016
- * Description: 
- * Input: 
- * Output: 
+ * Description: testing getCost function
  *****************************************************************************/
 
-#include "dominon.h"
+#include "dominion.h"
 #include "dominion_helpers.h" // getCost
 #include "assert.h"
 #include <stdio.h>

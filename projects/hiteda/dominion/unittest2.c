@@ -10,7 +10,6 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "dominion.h"
 
 int RunTest(int numPlayers, int kingdomCards[10], int randomSeed, struct gameState *state, int failureCount);
@@ -24,6 +23,7 @@ int main()
 	const int randomSeed = 25;
 	int failureCount = 0;
 	
+	printf("Testing initializeGame():\n");
 	printf("Normal game state, 2 players:\n");
 	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
 	

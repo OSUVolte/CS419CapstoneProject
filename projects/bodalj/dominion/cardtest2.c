@@ -2,9 +2,7 @@
  * Filename: cardtest2.c
  * Author: Jens Bodal
  * Date: April 24, 2016
- * Description: 
- * Input: 
- * Output: 
+ * Description: Testing adventurer card
  *****************************************************************************/
 
 #include "dominion.h"
@@ -35,6 +33,8 @@ int main() {
     struct gameState game;
     struct gameState *state = &game;
     initializeGame(players, cards, seed, &game);
+
+    printf("TESTING adventurer card\n");
     
     testAdventurer(state, copper, copper);
     initializeGame(players, cards, seed, &game);
