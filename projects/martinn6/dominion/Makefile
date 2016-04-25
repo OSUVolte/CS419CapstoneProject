@@ -24,7 +24,7 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c
+unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	echo "unittest1.c testing updateCoins():" &> unittestresults.out
 	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
 	unittest1 >> unittestresults.out
@@ -44,6 +44,31 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c
 	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
 	unittest4 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
+	
+	echo "cardtest1.c: testing smithy:" >> unittestresults.out
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+	cardtest1 >> unittestresults.out
+	gcov -f dominion.c >> unittestresults.out
+	
+	echo "cardtest2.c: testing adventurer:" >> unittestresults.out
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+	cardtest2 >> unittestresults.out
+	gcov -f dominion.c >> unittestresults.out
+	
+	echo "cardtest3.c: testing great_hall:" >> unittestresults.out
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+	cardtest3 >> unittestresults.out
+	gcov -f dominion.c >> unittestresults.out
+	
+	echo "cardtest4.c: testing embargo:" >> unittestresults.out
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+	cardtest4 >> unittestresults.out
+	echo "final coverage test by line:" >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	echo "final coverage test by function:" >> unittestresults.out
+	gcov -f dominion.c >> unittestresults.out
+	echo "final coverage test by branch:" >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
 	
 
 player: player.c interface.o
