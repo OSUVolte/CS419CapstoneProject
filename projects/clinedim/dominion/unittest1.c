@@ -1,3 +1,10 @@
+/*
+	File Name:				unittest1.c
+	Author:					Marc Clinedinst
+	Functionality Tested:	This unit test test the getCost function.  It does so by testing comparing the
+							actual cost of each individual card to the value returned by the getCost 
+							function for that card.
+*/
 #include <assert.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -9,6 +16,13 @@
 #define DEBUG 0
 #define NOISY_TEST 1
 
+/*
+	Function Name:	get_card_name
+	Parameters:		An enumerated value representing a CARD.
+	Returns:		This function returns a string value representing the name of an enumerated CARD.
+	Description:    This function returns a string value representing the name of an enumerated CARD.
+					It is a simple helper funciton used to prettify the output of the tests.
+*/
 char *get_card_name(enum CARD card) {
 	switch (card) {
 		case curse:
@@ -69,8 +83,15 @@ char *get_card_name(enum CARD card) {
 	return "";
 }
 
+/*
+	Perform the unit test.
+*/
 int main(void) {
 	srand(time(NULL));
+	/*
+		This is simply an array of all of the available cards.  It is used in conjunction with the
+		card_costs array to determine the cost of each card.
+	*/
 	enum CARD cards[] = {
 		curse,
 		estate,
@@ -101,6 +122,10 @@ int main(void) {
 		treasure_map
 	};
 
+	/*
+		This array holds the costs of the cards listed above, so that a comparison is easy. These
+		are the actual costs of each card.
+	*/
 	int card_costs[] = {
 		0,
 		2,
@@ -134,6 +159,14 @@ int main(void) {
 	int index,
 		tests_passed = 0;
 
+	/*
+		This unit test is fairly simply--we just loop through every available card and compare its
+		actual cost from the card_costs array with the value that is returned by the getCost function.
+		If any discrepancies are found, the failure is printed to the screen.
+	*/
+	printf("**********\n");
+	printf("UNIT TEST # 1\n");
+	printf("*********\n");
 	printf("Compare value of getCost() to each card's actual cost.\n");
 	for (index = 0; index < 27; index++) {
 		int actual_cost = card_costs[index],
@@ -147,20 +180,6 @@ int main(void) {
 		}
 	}
 	printf("\t\t%d of %d tests passed.\n", tests_passed, index);
-
-	int iteration,
-		tests_failed = 0;
-	printf("Performing 100 random tests, camparing value of getCost() to each card's actual cost.\n");
-	for (iteration = 0; iteration < 100; iteration++) {
-		index = rand() % 27;
-		int actual_cost = card_costs[index],
-			get_cost_value = getCost(cards[index]);
-		if (!(get_cost_value == actual_cost)) {
-			printf("\t\tTEST FAILED! - Expected %d for getCost(%s), but got %d.\n", card_costs[index], get_card_name(cards[index]), get_cost_value);
-			tests_failed++;
-		}
-	}
-	printf("\t\t%d of %d tests failed.\n", tests_failed, iteration);
 
 	return 0;
 }

@@ -173,7 +173,7 @@ int main() {
     }
 
     if (errorFlag == 0) {
-        printf("ALL TESTS PASSED");
+        printf("ALL TESTS PASSED\n\n");
     }
 
     return 0;
