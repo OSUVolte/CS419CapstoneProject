@@ -45,4 +45,6 @@ int main () {
   } else {
     printf("FAIL: returned %d when 1 expected.\n", counter);
   }
+
+  return 0;
 }
