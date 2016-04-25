@@ -1,5 +1,6 @@
-CFLAGS = -Wall -fpic -coverage -lm
+CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
+default: unittestresults.out
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -29,11 +30,35 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
-clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+unittestresults.out: unittest1.c  unittest2.c unittest3.c unittest4.c dominion.c rngs.c interface.c 
+	echo "Result for running tests:" > unittestresults.out
+	
+	echo "unittest1.c:" >> unittestresults.out
+	gcc -o unittest1 dominion.c rngs.c interface.c unittest1.c -lm $(CFLAGS)
+	unittest1 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "unittest2.c:" >> unittestresults.out
+	gcc -o unittest2 dominion.c rngs.c interface.c unittest2.c -lm $(CFLAGS)	
+	unittest2 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "unittest3.c:" >> unittestresults.out
+	gcc -o unittest3 dominion.c rngs.c interface.c unittest3.c -lm $(CFLAGS)
+	unittest3 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "unittest4.c:" >> unittestresults.out
+	gcc -o unittest4 dominion.c rngs.c interface.c unittest4.c -lm $(CFLAGS)
+	unittest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	rm -f *.o playdom.exe unittestresults.out playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+
+cleanall:
+	rm unittestresults.out unittest1 unittest2 unittest3 unittest4 cardtest1.c cardtest2.c cardtest3.c cardtest4.c *.gcda *.gcno *.gcov
