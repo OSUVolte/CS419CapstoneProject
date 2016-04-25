@@ -18,7 +18,7 @@ badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 	
-unittestresults.out: unittest1.c dominion.o 
+unittestresults.out: unitTest1.c unitTest2.c unitTest3.c unitTest4.c dominion.o 
 	echo "%-------------------------------------UNITTEST1-------------------------------------%" >> unittestresults.out
 
 	gcc -o unitTest1 unitTest1.c -g dominion.o rngs.o $(CFLAGS)
