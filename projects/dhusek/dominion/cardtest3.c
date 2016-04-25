@@ -1,5 +1,5 @@
 /*
- * cardtest1.c
+ * cardtest3.c
  *
  */
 
@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "interface.h"
 
-#define TESTCARD "smithy"
+#define TESTCARD "village"
 
 int main() {
     int newCards = 0;
@@ -36,34 +36,34 @@ int main() {
     int GnewBuyCount;
     int GdeckCount;
     int num;
-    int card1, card2, card3;
-    int deckCard1, deckCard2, deckCard3;
+    int card1;
+    int deckCard1;
     int errorCount = 0;
     int failedTests = 0;
     int passedTests = 0;
     const char* cards[27] = {"curse", "estate", "duchy", "province", "copper", "silver",
-        "gold", "adventurer", "council room", "feast", "gardens",
-        "mine", "remodel", "smithy", "village", "baron", "great hall",
-        "minion", "steward", "tribute", "ambassador", "cutpurse",
-        "embargo", "outpost", "salvager", "sea hag", "treasure map"};
+                        "gold", "adventurer", "council room", "feast", "gardens",
+                        "mine", "remodel", "smithy", "village", "baron", "great hall",
+                        "minion", "steward", "tribute", "ambassador", "cutpurse",
+                        "embargo", "outpost", "salvager", "sea hag", "treasure map"};
     
     // initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &G);
     
     printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
     
-    // set card in position 0 to Smithy
-    G.hand[thisPlayer][handpos] = smithy;
+    // set card in position 0 to Village
+    G.hand[thisPlayer][handpos] = village;
     GdeckCount = G.deckCount[thisPlayer];
     
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     
-    // play smithy card in testG game
-    cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+    // play village card in testG game
+    cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
     
-    newCards = 3;
-    extraActions = 0;
+    newCards = 1;
+    extraActions = 2;
     extraBuys = 0;
     GnewHandCount = G.handCount[thisPlayer] + newCards - discarded;
     GnewDeckCount = GdeckCount - newCards + shuffledCards;
@@ -77,8 +77,8 @@ int main() {
     printf("\tbuys = %d, expected = %d\n", testG.numBuys, GnewBuyCount);
     printf("\n");
     
-    // ----------- Current player should receive exactly 3 cards --------------
-    printf("Testing: Current player should receive exactly 3 cards.\n");
+    // ----------- Current player should receive exactly 1 card --------------
+    printf("Testing: Current player should receive exactly 1 card.\n");
     if(testG.handCount[thisPlayer] != GnewHandCount) {
         if(testG.handCount[thisPlayer] < GnewHandCount) {
             num = GnewHandCount - testG.handCount[thisPlayer];
@@ -94,8 +94,8 @@ int main() {
         passedTests++;
     }
     
-    // ----------- Current player's deck should be 3 cards smaller --------------
-    printf("Testing: Current player's deck should be 3 cards smaller.\n");
+    // ----------- Current player's deck should be 1 card smaller --------------
+    printf("Testing: Current player's deck should be 1 card smaller.\n");
     if(testG.deckCount[thisPlayer] != GnewDeckCount) {
         if(testG.deckCount[thisPlayer] < GnewDeckCount) {
             num = GnewDeckCount - testG.deckCount[thisPlayer];
@@ -111,40 +111,8 @@ int main() {
         passedTests++;
     }
     
-    // ----------- Current player should draw 3 cards from his own deck --------------
-    printf("Testing: Current player should draw 3 cards from his own deck.\n");
-    errorCount = 0;
-    card1 = testG.hand[thisPlayer][testG.handCount[thisPlayer] - 1];
-    card2 = testG.hand[thisPlayer][testG.handCount[thisPlayer] - 2];
-    card3 = testG.hand[thisPlayer][handpos]; // since last card is swapped with Smithy's position when it is discarded
-    deckCard1 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 1];
-    deckCard2 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 2];
-    deckCard3 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 3];
-    if(card1 != deckCard1) {
-        printf("\t**FAILED**: The first card was not drawn from the current player's deck.\n");
-        failedTests++;
-        errorCount++;
-    }
-    if(card2 != deckCard2) {
-        printf("\t**FAILED**: The second card was not drawn from the current player's deck.\n");
-        failedTests++;
-        errorCount++;
-    }
-    if(card3 != deckCard3) {
-        printf("\t**FAILED**: The third card was not drawn from the current player's deck.\n");
-        failedTests++;
-        errorCount++;
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: Cards were drawn from the correct player's deck.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    // ----------- Current player should receive no additional actions --------------
-    printf("Testing: Current player should receive no additional actions.\n");
+    // ----------- Current player should receive 2 additional actions --------------
+    printf("Testing: Current player should receive 2 additional actions.\n");
     if(testG.numActions != GnewActionCount) {
         if(testG.numActions < GnewActionCount) {
             num = GnewActionCount - testG.numActions;
@@ -174,6 +142,18 @@ int main() {
         }
     } else {
         printf("\tPASSED: Current player has the correct number of buys.\n\n");
+        passedTests++;
+    }
+    
+    // ----------- Current player should draw 1 card from his own deck --------------
+    printf("Testing: Current player should draw 1 card from his own deck.\n");
+    card1 = testG.hand[thisPlayer][handpos]; // since last card is swapped with Village's position when it is discarded
+    deckCard1 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 1];
+    if(card1 != deckCard1) {
+        printf("\t**FAILED**: The card was not drawn from the current player's deck.\n\n");
+        failedTests++;
+    } else {
+        printf("\tPASSED: Card was drawn from the correct player's deck.\n\n");
         passedTests++;
     }
     
@@ -273,14 +253,14 @@ int main() {
         printf("\n");
     }
     
-    // ----------- Current player's discard pile should have Smithy on top --------------
-    printf("Testing: Current player's discard pile should have Smithy on top.\n");
+    // ----------- Current player's discard pile should have Village on top --------------
+    printf("Testing: Current player's discard pile should have Village on top.\n");
     if(testG.discardCount[thisPlayer] > 0) {
-        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 1] != smithy) {
-            printf("\t**FAILED**: The last card in current player's discard pile is not Smithy.\n\n");
+        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 1] != village) {
+            printf("\t**FAILED**: The last card in current player's discard pile is not Village.\n\n");
             failedTests++;
         } else {
-            printf("\tPASSED: The last card in current player's discard pile is Smithy.\n\n");
+            printf("\tPASSED: The last card in current player's discard pile is Village.\n\n");
             passedTests++;
         }
     } else {
