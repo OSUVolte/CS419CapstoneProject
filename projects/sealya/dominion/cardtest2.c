@@ -21,19 +21,18 @@ hand are discarded.  The adventurer card itself should also be discarded.
 #include <string.h>
 
 int main() {
-	int i, j, k, x, handPos,
+	int handPos=0;
 	int player=0;
 	int seed = 1000;
 	int numPlayers = 2;
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
-	int maxHandPos = 5;
     struct gameState T, G;
 
     /////// Announce testing
     printf("Testing Adventurer card:\n");
 
     //Initialize game
-    x = initializeGame(numPlayers, k, seed, &T);
+    initializeGame(numPlayers, k, seed, &T);
 
     // Fill player's deck
     T.deckCount[player] = 5;
@@ -41,7 +40,7 @@ int main() {
     T.deck[player][1] = smithy;
     T.deck[player][2] = smithy;
     T.deck[player][3] = silver;
-    T.deck[player][4] = gold;
+    T.deck[player][4] = copper;
 
     //Set up player's hand.
     T.handCount[player] = 1;
@@ -55,15 +54,28 @@ int main() {
 
     // Expected Results
     int played = 4; // adventurer and 3 smithy cards on top of deck
-    int newCoins = 2;
     int estHand = 2; // There should just be the 2 treasure cards
     int estDeck = 0; // treasure to hand and others discarded
 
     // Play adventurer card
-    adventurerCard(&G, player, handpos)
+    adventurerCard(&G, player, handPos);
+
+    //Check cards both treasure
+    int card1 = handCard(0, &G);
+    int card2 = handCard(1, &G);
+    int areCoins = 1;
+    int counter = 2;
+    if ( (card1 < 4) || (card1 > 6) ){
+        areCoins = 0;
+        counter--;
+    }
+    if ( (card2 < 4) || (card2 > 6)){
+        areCoins = 0;
+        counter--;
+    }
 
     // Print results
-    printf("TEST 1: hand count = %d. Expected result = %d.\n", G.handCount[player], estHand));
+    printf("TEST 1: hand count = %d. Expected result = %d.\n", G.handCount[player], estHand);
 
     // Error message if hand count not expected
     if (G.handCount[player] != estHand){
@@ -71,7 +83,7 @@ int main() {
     }
 
     // Print results
-    printf("TEST 2: played count = %d. Expected result = %d.\n", G.playedCardCount, played));
+    printf("TEST 2: played count = %d. Expected result = %d.\n", G.playedCardCount, played);
 
     // Error message if played cards not expected
     if (G.playedCardCount != played){
@@ -79,15 +91,15 @@ int main() {
     }
 
     // Print results
-    printf("TEST 3: coins = %d. Expected result = %d.\n", G.coins[player], newCoins));
+    printf("TEST 3: coins = %d. Expected result = %d.\n", counter, 2);
 
     // Error message if new coins not as expected
-    if (G.coins[player] != newCoins){
+    if (areCoins == 0){
         printf("TEST 3 FAILED!\n");
     }
 
     // Print results
-    printf("TEST 4: deck count = %d. Expected result = %d.\n", G.deckCount[player], estDeck));
+    printf("TEST 4: deck count = %d. Expected result = %d.\n", G.deckCount[player], estDeck);
 
     // Error message if deck count not reduced as expected
     if (G.deckCount[player] != estDeck){
@@ -95,7 +107,7 @@ int main() {
     }
 
     // Print passed message if all tests passed
-    if (G.handCount[player] == estHand && G.playedCardCount == played && G.coins[player] == newCoins && G.deckCount[player] == estDeck){
+    if (G.handCount[player] == estHand && G.playedCardCount == played && areCoins == 1 && G.deckCount[player] == estDeck){
         printf("All 4 tests passed!\n");
     }
     return 0;
