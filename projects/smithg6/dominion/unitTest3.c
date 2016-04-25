@@ -22,8 +22,10 @@ int main()
 
 	int i, j, p, r, handCount;
 
+	memset(&game, 23, sizeof(struct gameState));
+
 	p = 0;
-	handCount = 1;
+	handCount = 2;
 
 	//initialize a new game
 	r = initializeGame(numPlayer, k, seed, &game);
@@ -39,10 +41,10 @@ int main()
 	int who;
 	int cardTotalBefore, cardTotalAfter;
 
-	who = game->whoseTurn;
-	cardTotalBefore = game->handCount[who];
+	who = game.whoseTurn;
+	cardTotalBefore = game.handCount[who];
 	i = discardCard(p, who, game, 1);
-	cardTotalAfter = game->handCount[who];
+	cardTotalAfter = game.handCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to hand
@@ -58,9 +60,9 @@ int main()
 
 
 	//Tests when card discarded should be trashed as well.
-	cardTotalBefore = game->deckCount[who];
+	cardTotalBefore = game.deckCount[who];
 	j = discardCard(p, who, game, 0);
-	cardTotalAfter = game->deckCount[who];
+	cardTotalAfter = game.deckCount[who];
 
 
 	//Test number of cards in designated player's hand after discardCard called
