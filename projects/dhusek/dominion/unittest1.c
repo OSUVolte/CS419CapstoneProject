@@ -24,6 +24,7 @@ int main() {
     struct gameState G, testG;
     int k[10] = {adventurer, feast, village, minion, mine, cutpurse,
         sea_hag, tribute, smithy, council_room};
+    
     int i;
     int num;
     int GnewHandCount;

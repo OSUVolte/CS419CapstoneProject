@@ -42,3 +42,44 @@ Bug: Tying does not result in two winners.
 new function coverage:
 Function 'getWinners'
 Lines executed:100.00% of 24
+
+cardtest1: 
+Testing 'smithy':
+Although it looks like the card is removed from the user's hand. The card is not added to the 'discard' pile or placed back in the deck.
+hand count before=5; hand count after=7; expected=7 PASSED
+discard count before=0; discard count after=0; expected = 1 FAILED
+deck count before=5; deck count after=2; expected = 3 FAILED
+
+cardtest2: 
+Testing 'adventurer':
+Function is working correctly as it only puts 2 cards in a users hand. They are also 2 treasure cards.
+Before:card=4; card=4; card=1; card=4; card=4; 
+After:card=4; card=4; card=1; card=4; card=4; card=4; card=4; 
+hand count before=5; hand count after=7; expected=7 PASSED
+treaure card count before =4; treaure card count after=6; expected=6 PASSED
+
+cardtest3: 
+Testing 'great_hall':
+Function is adding actions correctly. However, I do not believe that it is discarding properly. I cant see any changes in the cards either.
+
+Before:[card=4; card=4; card=1; card=4; card=4; ]
+After:[card=4; card=4; card=1; card=4; card=4; ]
+
+action count before=1; action count after=2; expected=2 PASSED
+hand count before=5; hand count after=5; expected=5 PASSED
+discount count before=0; discount count after=0; expected=1 FAILED
+Discarded:[] = No discarded cards
+
+cardtest4: 
+Testing 'embargo':
+Function is adding embargo token and coins. However, not sure if it is discarding properly. It does not go into the discarded pile.
+
+Before:[card=4; card=4; card=1; card=4; card=4; card=22; ]
+After:[card=4; card=4; card=1; card=4; card=4; ]
+
+action count before=1; action count after=1; expected=1 PASSED
+hand count before=6; hand count after=5; expected=5 PASSED
+coin count before=4; coin count after=6; expected=6 PASSED
+embargo tokens count before=0; embargo tokens count after=1; expected=1 PASSED
+discount count before=0; discount count after=0; expected=1 FAILED
+Discarded:[]

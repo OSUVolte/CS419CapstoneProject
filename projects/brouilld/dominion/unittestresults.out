@@ -1,0 +1,175 @@
+    -------------------------------------------------------------
+
+
+    Unit Test: Function 'updateCoins()'
+    BEGIN
+
+
+        + PASS : copper == 0, silver == 0, gold == 0, and bonus == 0
+        + PASS : copper == 1, silver == 0, gold == 0, and bonus == 0
+        + PASS : copper == 1, silver == 0, gold == 0, and bonus == 4
+        + PASS : copper == 0, silver == 1, gold == 0, and bonus == 0
+        + PASS : copper == 0, silver == 1, gold == 0, and bonus == 5
+        + PASS : copper == 0, silver == 0, gold == 1, and bonus == 0
+        + PASS : copper == 0, silver == 0, gold == 1, and bonus == 0
+        + PASS : copper == 1, silver == 1, gold == 1, and bonus == 0
+        + PASS : copper == 2, silver == 5, gold == 3, and bonus == 0
+        + PASS : copper == 5, silver == 4, gold == 3, and bonus == 8
+
+
+    Unit Test: Function 'updateCoins()'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Function 'getCost()'
+    BEGIN
+
+
+        + PASS : 'curse' returns 0
+        + PASS : 'estate' returns 2
+        + PASS : 'duchy' returns 5
+        + PASS : 'province' returns 8
+        + PASS : 'copper' returns 0
+        + PASS : 'silver' returns 3
+        + PASS : 'gold' returns 6
+        + PASS : 'adventurer' returns 6
+        + PASS : 'council_room' returns 5
+        + PASS : 'feast' returns 4
+        + PASS : 'gardens' returns 4
+        + PASS : 'mine' returns 5
+        + PASS : 'remodel' returns 4
+        + PASS : 'smithy' returns 4
+        + PASS : 'village' returns 3
+        + PASS : 'baron' returns 4
+        + PASS : 'great_hall' returns 3
+        + PASS : 'minion' returns 5
+        + PASS : 'steward' returns 3
+        + PASS : 'tribute' returns 5
+        + PASS : 'ambassador' returns 3
+        + PASS : 'cutpurse' returns 4
+        + PASS : 'embargo' returns 2
+        + PASS : 'outpost' returns 5
+        + PASS : 'salvager' returns 4
+        + PASS : 'sea_hag' returns 4
+        + PASS : 'treasure_map' returns 4
+
+
+    Unit Test: Function 'getCost()'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Function 'playCard()'
+    BEGIN
+
+
+        + PASS : state->phase returns 0
+        + PASS : state->phase returns -1
+        + PASS : state->numActions returns -1
+        + PASS : state->numActions returns 0
+
+
+    Unit Test: Function 'playCard()'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Function 'buyCard()'
+    BEGIN
+
+
+        + PASS : currentState->numBuys < 1 returns -1
+        + PASS : supplyCount conditional returns -1
+        + PASS : state->coins conditional returns -1
+        + PASS : True on all conditionals returns 0
+
+
+    Unit Test: Function 'buyCard()'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Card 'Smithy'
+    BEGIN
+
+
+        - FAIL : 'smithy' adds 3 cards to hand
+               Result was 2. Expected 3 
+
+
+    Unit Test: Card 'Smithy'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Card 'Adventurer'
+    BEGIN
+
+
+        - FAIL : 'Adventurer' adds 2 treasure cards to hand
+               Result was -13661. Expected 2 
+        - FAIL : 'Adventurer' adds 2 treasure cards to hand with copper deck
+               Result was 0. Expected 2 
+        - FAIL : 'Adventurer' adds 2 treasure cards to hand with silver deck
+               Result was 0. Expected 2 
+        - FAIL : 'Adventurer' adds 2 treasure cards to hand with gold deck
+               Result was 3. Expected 2 
+
+
+    Unit Test: Card 'Adventurer'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Card 'Council Room'
+    BEGIN
+
+
+        - FAIL : 'Council Room' adds 4 cards to hand
+               Result was 3. Expected 4 
+        + PASS : 'Council Room' adds 1 buy to player
+        - FAIL : 'Council Room' adds 1 card to other player's hand
+               Result was 0. Expected 1 
+
+
+    Unit Test: Card 'Council Room'
+    END
+
+
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+
+
+    Unit Test: Card 'Village'
+    BEGIN
+
+
+        - FAIL : 'Village' adds one card to hand
+               Result was 0. Expected 1 
+        + PASS : 'Village' adds two actions
+
+
+    Unit Test: Card 'Village'
+    END
+
+
+    -------------------------------------------------------------

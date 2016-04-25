@@ -1297,7 +1297,7 @@ int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
   //check if supply pile is empty (0) or card is not used in game (-1)
   if ( supplyCount(supplyPos, state) < 1 )
     {
-      return -1;
+	return -1;
     }
 	
   //added card for [whoseTurn] current player:

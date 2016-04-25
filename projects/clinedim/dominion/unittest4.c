@@ -1,3 +1,8 @@
+/*
+	File Name:				unittest4.c
+	Author:					Marc Clinedinst
+	Functionality Tested:	This unit test tests the fullDeckCount function.
+*/
 #include <assert.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -9,6 +14,13 @@
 #define DEBUG 0
 #define NOISY_TEST 1
 
+/*
+	Funciton Name:	check_full_deck_count_after_initial_setup
+	Parameters: 	The number of players.
+	Returns:		An integer representing whether the test was successful.
+	Description:    This checks the full deck count after the initial setup. Each player should
+					have 3 estate cards and 7 copper cards in their full deck.
+*/
 void check_full_deck_count_after_initial_setup(int number_of_players) {
 	int kingdom_cards[] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall },
 		random_seed = 1;
@@ -28,6 +40,13 @@ void check_full_deck_count_after_initial_setup(int number_of_players) {
 	}
 }
 
+/*
+	Funciton Name:	check_full_deck_count_after_buying_card
+	Parameters: 	N/A
+	Returns:		An integer representing whether the test was successful.
+	Description:    This checks the full deck count after the initial setup and a player has purchased
+					a card. Expected values are hardcoded.
+*/
 void check_full_deck_count_after_buying_card() {
 	int number_of_players = 2,
 		kingdom_cards[] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall },
@@ -48,6 +67,13 @@ void check_full_deck_count_after_buying_card() {
 	printf(" --- PASSED!\n");
 }
 
+/*
+	Funciton Name:	check_full_deck_count_after_discarding_card
+	Parameters: 	N/A
+	Returns:		An integer representing whether the test was successful.
+	Description:    This checks the full deck count after the initial setup and a player has discarded
+					a card. Expected values are hardcoded.
+*/
 void check_full_deck_count_after_discarding_card() {
 	int number_of_players = 2,
 		kingdom_cards[] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall },
@@ -68,6 +94,13 @@ void check_full_deck_count_after_discarding_card() {
 	printf(" --- PASSED!\n");
 }
 
+/*
+	Funciton Name:	check_full_deck_count_after_mix_of_buys_and_discards
+	Parameters: 	N/A
+	Returns:		An integer representing whether the test was successful.
+	Description:    This checks the full deck count after the initial setup and a player has bought and
+					discarded several cards.
+*/
 void check_full_deck_count_after_mix_of_buys_and_discards() {
 	int number_of_players = 2,
 		kingdom_cards[] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall },
@@ -75,6 +108,9 @@ void check_full_deck_count_after_mix_of_buys_and_discards() {
 	struct gameState game_state;
 	initializeGame(number_of_players, kingdom_cards, random_seed, &game_state);	
 
+	/*
+		Initialize arbitrary deck with 1 adventure, 7 copper, 3 estate, 2 gardens, 2 gold, and 1 great hall.
+	*/
   	game_state.numBuys = 2;
   	game_state.hand[0][0] = gold;
   	game_state.hand[0][1] = gold;
@@ -152,7 +188,13 @@ void check_full_deck_count_after_mix_of_buys_and_discards() {
 	printf(" --- PASSED!\n");
 }
 
+/*
+	Perform checks and print results.
+*/
 int main(void) {
+	printf("**********\n");
+	printf("UNIT TEST # 4\n");
+	printf("*********\n");
 	check_full_deck_count_after_initial_setup(2);
 	check_full_deck_count_after_initial_setup(3);
 	check_full_deck_count_after_initial_setup(4);
