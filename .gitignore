@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 cardtest1
 cardtest2
 cardtest3
@@ -6,3 +7,17 @@ unittest1
 unittest2
 unittest3
 unittest4
+=======
+
+projects/singhba/dominion/dominion/rngs.h
+
+projects/singhba/dominion/dominion/rngs.c
+
+projects/singhba/dominion/dominion/player.c
+
+projects/singhba/dominion/dominion/playdom.c
+
+projects/singhba/dominion/dominion/Makefile
+
+projects/singhba/dominion/dominion/interface.h
+>>>>>>> Stashed changes
