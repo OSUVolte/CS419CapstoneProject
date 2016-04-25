@@ -13,9 +13,13 @@ Council Room Bugs:
 
 
 discardCard Bugs:
-
+- Does not add cards to the discard pile.
 
 drawCard Bugs:
 
 
 updateCoins Bugs:
+- No bugs were found!
+
+gainCard Bugs:
+- No bugs were found!

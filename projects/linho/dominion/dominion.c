@@ -644,10 +644,10 @@ int getCost(int cardNumber)
 }
 
 void runSmithy(int handPos, struct gameState *state){
-    
+    int i;
     int currentPlayer = whoseTurn(state);
     //+3 Cards
-    for (i = 0; i < 3; i--)
+    for (i = 0; i < 2; i++)
     {
         drawCard(currentPlayer, state);
     }
@@ -660,15 +660,15 @@ void runSmithy(int handPos, struct gameState *state){
 
 void runVillage(int handPos, struct gameState *state){
     int i;
-    
+    int currentPlayer = whoseTurn(state);
     //+1 Card
     drawCard(currentPlayer, state);
     
     //+2 Actions
-    state->numActions = state->numActions + 2;
+    state->numActions = state->numActions - 2;
     
     //discard played card from hand
-    discardCard(currentPlayer, state, 0);
+    discardCard(handPos, currentPlayer, state, 0);
     
 }
 
@@ -706,7 +706,7 @@ void runCouncil_room(int handPos, struct gameState *state){
     int i;
     int currentPlayer = whoseTurn(state);
     //+4 Cards
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 5; i++)
     {
         drawCard(currentPlayer, state);
     }
