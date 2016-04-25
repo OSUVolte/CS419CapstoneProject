@@ -210,6 +210,8 @@ int shuffle(int player, struct gameState *state) {
 
   if (state->deckCount[player] < 1)
     return -1;
+
+
   qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
   /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
 
@@ -530,7 +532,8 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 }
 
 int drawCard(int player, struct gameState *state)
-{	int count;
+{
+  int count;
   int deckCounter;
   if (state->deckCount[player] <= 0){//Deck is empty
     
@@ -1092,7 +1095,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case sea_hag:
-   	seahagPlay(currentPlayer, state);
+   	seahagPlay(currentPlayer, state, handPos);
     return 0;
 		
     case treasure_map:
@@ -1129,8 +1132,9 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   return -1;
 }
 
-int seahagPlay(int currentPlayer, struct gameState *state){
+int seahagPlay(int currentPlayer, struct gameState *state, int handpos){
 	int i;
+
 	for (i = 0; i < state->numPlayers; i++){
 	if (i != currentPlayer)
 	{
@@ -1139,6 +1143,11 @@ int seahagPlay(int currentPlayer, struct gameState *state){
 		state->deckCount[i]++;
 	}
     }
+
+    discardCard(handpos, currentPlayer, state, 0);
+    state->discard[currentPlayer][state->discardCount[currentPlayer]] = sea_hag;
+    state->discardCount[currentPlayer]++;
+
     return 0;
 }
 
@@ -1149,7 +1158,7 @@ int baronPlay(int currentPlayer, int choice1, int handPos,
 	int p;
 	int card_not_discarded;
 
-	if (choice1 > 0) //Boolean true or going to discard an estate
+	if (choice1 == 0) //Boolean true or going to discard an estate
 			{
 		card_not_discarded = 0;
 		for (p = 0; p < state->handCount[currentPlayer]; p++) {
@@ -1162,10 +1171,12 @@ int baronPlay(int currentPlayer, int choice1, int handPos,
 		}
 	}
 	if(choice1 != 0 || card_not_discarded != 1)
-		if (supplyCount(estate, state) > 0) {
+		if (supplyCount(estate, state) > 0)
+		{
 			gainCard(estate, state, 0, currentPlayer); //Gain an estate
 			state->supplyCount[estate]--; //Decrement Estates
-			if (supplyCount(estate, state) == 0) {
+			if (supplyCount(estate, state) == 0)
+			{
 				isGameOver(state);
 			}
 		}

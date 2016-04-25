@@ -1,0 +1,15 @@
+*.gcno
+*.o
+*.gcda
+*.dSYM
+badTestDrawCard
+dominion/.idea/
+CMakeLists.txt
+.cproject
+.settings
+.project
+.idea
+playdom
+player
+testDrawCard
+*.gcov

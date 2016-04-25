@@ -21,11 +21,10 @@
 		return 0;
 	// ...
     }
- // If the card value is "smithy", the code calls the drawCard function three times. 
- // Each time the drawCard function is called, it adds the newly drawn card to the 
- // player's current hand of cards. The code then calls the discardCard function to 
- // remove the smithy card that was just played by the player from the player's 
- // current hand.
+ // The code calls the drawCard function three times. Each time the drawCard function
+ // is called, it adds the newly drawn card to the player's current hand of cards. The
+ // code then calls the discardCard function to remove the smithy card that was just 
+ // played by the player from the player's current hand.
 
 
  // Adventurer Card
@@ -100,9 +99,8 @@
 
 
  // updateCoins() method
-
-int updateCoins(int player, struct gameState *state, int bonus)
-  {
+  int updateCoins(int player, struct gameState *state, int bonus)
+    {
 	int i;
 	state->coins = 0;
 	for (i = 0; i < state->handCount[player]; i++){
@@ -118,13 +116,12 @@ int updateCoins(int player, struct gameState *state, int bonus)
 	}	
 	state->coins += bonus;
 	return 0;
-  }
+    }
 // The updateCoins function takes in three parameters: player which is the current player identifier,
 // a pointer to the current game state, and a bonus integer. Coins is initialized to zero. The for
-// loop iterates through the number of cards in the player's current hand ands "coins" values for each
+// loop iterates through the number of cards in the player's current hand and adds "coins" values for each
 // treasure card in the player's current hand. If the current card is a copper, 1 is added to coins. 
 // If the current card is silver, 2 is added to coins. If the current card is gold, then 3 is added
 // to coins. Once the loop has iterated through the player's hand and a coin value is established,
-// a bonus value is added to the value of coins and is returned to the player.
-
+// a bonus value is added to the total value of coins and is returned to the player.
 
