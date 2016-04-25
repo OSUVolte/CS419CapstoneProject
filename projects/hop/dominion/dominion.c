@@ -653,9 +653,8 @@ int playAdventurer(int drawntreasure, int currentPlayer, struct gameState *state
       drawCard(currentPlayer, state);
       cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
       if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-         if (drawntreasure++ > 2) break;
+         if (++drawntreasure > 2) break;
       else{
-
          temphand[++z]=cardDrawn;
          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       }

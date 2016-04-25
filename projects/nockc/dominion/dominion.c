@@ -668,11 +668,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
     	//Previous content replaced with call to refactored function
-	return playAdventurer(state, handPos);
+	return playAdventurer(state, currentPlayer);
 			
     case council_room:
 	//Previous content replaced with call to refactored function 
-	return playCouncil_Room(state, handPos);
+	return playCouncil_Room(currentPlayer, state, handPos);
 	
     case feast:
 	return playFeast(state, choice1);  
@@ -742,10 +742,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-    	return playSmithy(state, handPos);
+    	 return playSmithy(currentPlayer, state, handPos);;
 		
     case village:
-    	return playVillage(state, handPos);
+    	return playVillage(currentPlayer, state, handPos);
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -1226,9 +1226,9 @@ int updateCoins(int player, struct gameState *state, int bonus)
 }
 
 //Below is the refactored portion
-int playAdventurer(struct gameState *state, int handPos){
+int playAdventurer(struct gameState *state, int currentPlayer){
 	//Get the integer of player whose turn it is now	
-	int currentPlayer = whoseTurn(state);
+	//int currentPlayer = whoseTurn(state);
 	//Create variables for temp hand, last drawn card, and drawn treasure
 	int z = 0;
 	int cardDrawn;	
@@ -1256,9 +1256,9 @@ int playAdventurer(struct gameState *state, int handPos){
      return 0;
 }
 
-int playSmithy(struct gameState *state, int handPos){
+int playSmithy(int currentPlayer, struct gameState *state, int handPos){
   //Get the integer of player whose turn it is now
-  int currentPlayer = whoseTurn(state);
+  //int currentPlayer = whoseTurn(state);
   int i;
   //Move the body of smithy from Card Effects under variable declaration and initialization
   for (i = 0; i <= 4; i++){
@@ -1271,9 +1271,9 @@ int playSmithy(struct gameState *state, int handPos){
 }
 
 
-int playVillage(struct gameState *state, int handPos){
+int playVillage(int currentPlayer, struct gameState *state, int handPos){
 	 //Get the integer of player whose turn it is now
-	 int currentPlayer = whoseTurn(state);
+	// int currentPlayer = whoseTurn(state);
 	 //Move the body of village from Card Effects under variable declaration and initialization
 	 //+1 Card
      drawCard(currentPlayer, state);
@@ -1329,9 +1329,8 @@ int playFeast(struct gameState *state, int choice1){
 	return 0;
 }
 
-int playCouncil_Room(struct gameState *state, int handPos){
+int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos){
 	//Get the integer of player whose turn it is now
-    int currentPlayer = whoseTurn(state);
 	int i;
 	//+4 Cards
     for (i = 0; i < 4; i++)

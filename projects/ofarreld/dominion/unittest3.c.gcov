@@ -1,0 +1,771 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <math.h>
+        -:    9:
+        -:   10:#include "testHelper.h"
+        -:   11:
+        -:   12:#define TESTCARD "scoreFor()"
+        -:   13:
+function main called 2 returned 100% blocks executed 82%
+        2:   14:int main() {
+        2:   15:	int discarded = 1;
+        2:   16:	int a = 0, b = 0;
+        2:   17:	int seed = 1000;
+        2:   18:	int numPlayers = 2;
+        2:   19:	int thisPlayer = 0;
+        2:   20:	int otherPlayer = 1;
+        2:   21:	int newScore = 0;
+        -:   22:
+        -:   23:	struct gameState G, testG;
+        2:   24:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   25:		sea_hag, tribute, smithy, council_room};
+        -:   26:	
+        2:   27:	initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+        -:   28:
+        -:   29:	// set up 5 copper in each section:
+       14:   30:	while (a < 5) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        -:   31:
+       10:   32:		G.hand[thisPlayer][a] = copper;
+       10:   33:		G.deck[thisPlayer][a] = copper;
+       10:   34:		G.discard[thisPlayer][a] = copper;
+       10:   35:		a++;
+        -:   36:	}
+        -:   37:
+        -:   38:
+        -:   39:
+        -:   40:
+        2:   41:	memcpy(&testG, &G, sizeof(struct gameState));
+        2:   42:	printf("\t Testing Card: %s \n", TESTCARD);
+call    0 returned 100%
+        -:   43:
+        2:   44:	newScore = 5;
+        -:   45:	//int scoreFor (int player, struct gameState *state) {
+        -:   46:	// Test with each type: // curse, estate, duchy, province, great_hall, gardens
+        -:   47:
+        -:   48:	// Test 01: Curse to Hand 	---------------------------------------------------
+        2:   49:	linePrint();
+call    0 returned 100%
+        2:   50:	printf("Test 01: Curse in hand\n");
+call    0 returned 100%
+        2:   51:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   52:
+        2:   53:	newScore = -1;
+        -:   54:
+        2:   55:	a = 0;
+        2:   56:	b = 0;
+       16:   57:	while ((a < MAX_HAND) && (b < 1)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 86%
+branch  3 taken 14% (fallthrough)
+       12:   58:		if (testG.hand[thisPlayer][a] == NULL) {
+branch  0 taken 17% (fallthrough)
+branch  1 taken 83%
+        2:   59:			testG.hand[thisPlayer][a] = curse;
+        2:   60:			testG.handCount[thisPlayer]++;	
+        2:   61:			b++;
+        -:   62:		}
+       12:   63:		a++;
+        -:   64:	}
+        -:   65:
+        2:   66:	printf("Testing Score for Curse in hand...\t");
+call    0 returned 100%
+        2:   67:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:   68:		printf("ERROR\n");
+call    0 never executed
+    #####:   69:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:   70:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:   71:	} else {
+        2:   72:		printf("PASS\n");
+call    0 returned 100%
+        -:   73:	}
+        -:   74:
+        2:   75:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:   76:
+        -:   77:	// Test 02: Curse to Discard	---------------------------------------------------
+        2:   78:	linePrint();
+call    0 returned 100%
+        2:   79:	printf("Test 02: Curse in discard\n");
+call    0 returned 100%
+        2:   80:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   81:
+        2:   82:	newScore = -1;
+        -:   83:
+        2:   84:	testG.discard[thisPlayer][0] = curse;
+        2:   85:	testG.discardCount[thisPlayer] += 1;	
+        -:   86:
+        2:   87:	printf("Testing Score for curse in discard...\t");
+call    0 returned 100%
+        2:   88:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:   89:		printf("ERROR\n");
+call    0 never executed
+    #####:   90:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:   91:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:   92:	} else {
+        2:   93:		printf("PASS\n");
+call    0 returned 100%
+        -:   94:	}
+        -:   95:
+        2:   96:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:   97:
+        -:   98:	// Test 03: Curse to Deck	---------------------------------------------------
+        2:   99:	linePrint();
+call    0 returned 100%
+        2:  100:	printf("Test 03: Curse in deck\n");
+call    0 returned 100%
+        2:  101:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  102:
+        2:  103:	newScore = -1;
+        -:  104:
+        2:  105:	testG.deck[thisPlayer][0] = curse;
+        2:  106:	testG.deckCount[thisPlayer] += 1;	
+        -:  107:
+        2:  108:	printf("Testing Score for Curse in deck...\t");
+call    0 returned 100%
+        2:  109:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  110:		printf("ERROR\n");
+call    0 returned 100%
+        2:  111:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  112:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  113:	} else {
+    #####:  114:		printf("PASS\n");
+call    0 never executed
+        -:  115:	}
+        -:  116:
+        2:  117:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  118:
+        -:  119:
+        -:  120:
+        -:  121:	// Test 04: Estate to Hand 	---------------------------------------------------
+        2:  122:	linePrint();
+call    0 returned 100%
+        2:  123:	printf("Test 04: estate in hand\n");
+call    0 returned 100%
+        2:  124:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  125:
+        2:  126:	newScore = 1;
+        -:  127:
+        2:  128:	a = 0;
+        2:  129:	b = 0;
+       16:  130:	while ((a < MAX_HAND) && (b < 1)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 86%
+branch  3 taken 14% (fallthrough)
+       12:  131:		if (testG.hand[thisPlayer][a] == NULL) {
+branch  0 taken 17% (fallthrough)
+branch  1 taken 83%
+        2:  132:			testG.hand[thisPlayer][a] = estate;
+        2:  133:			testG.handCount[thisPlayer]++;	
+        2:  134:			b++;
+        -:  135:		}
+       12:  136:		a++;
+        -:  137:	}
+        -:  138:
+        2:  139:	printf("Testing Score for Estate in hand...\t");
+call    0 returned 100%
+        2:  140:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  141:		printf("ERROR\n");
+call    0 never executed
+    #####:  142:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  143:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  144:	} else {
+        2:  145:		printf("PASS\n");
+call    0 returned 100%
+        -:  146:	}
+        -:  147:
+        2:  148:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  149:
+        -:  150:	// Test 05: Estate to Discard	---------------------------------------------------
+        2:  151:	linePrint();
+call    0 returned 100%
+        2:  152:	printf("Test 05: estate in discard\n");
+call    0 returned 100%
+        2:  153:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  154:
+        2:  155:	newScore = 1;
+        -:  156:
+        2:  157:	testG.discard[thisPlayer][0] = estate;
+        2:  158:	testG.discardCount[thisPlayer] += 1;	
+        -:  159:
+        2:  160:	printf("Testing Score for estate in discard...\t");
+call    0 returned 100%
+        2:  161:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  162:		printf("ERROR\n");
+call    0 never executed
+    #####:  163:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  164:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  165:	} else {
+        2:  166:		printf("PASS\n");
+call    0 returned 100%
+        -:  167:	}
+        -:  168:
+        2:  169:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  170:
+        -:  171:	// Test 06: Estate to Deck	---------------------------------------------------
+        2:  172:	linePrint();
+call    0 returned 100%
+        2:  173:	printf("Test 06: Estate in deck\n");
+call    0 returned 100%
+        2:  174:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  175:
+        2:  176:	newScore = 1;
+        -:  177:
+        2:  178:	testG.deck[thisPlayer][0] = estate;
+        2:  179:	testG.deckCount[thisPlayer] += 1;	
+        -:  180:
+        -:  181:
+        2:  182:	printf("Testing Score for estate in deck...\t");
+call    0 returned 100%
+        2:  183:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  184:		printf("ERROR\n");
+call    0 returned 100%
+        2:  185:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  186:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  187:	} else {
+    #####:  188:		printf("PASS\n");
+call    0 never executed
+        -:  189:	}
+        -:  190:
+        2:  191:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  192:
+        -:  193:	// Test 07: Duchy to Hand 	---------------------------------------------------
+        2:  194:	linePrint();
+call    0 returned 100%
+        2:  195:	printf("Test 07: duchy in hand\n");
+call    0 returned 100%
+        2:  196:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  197:
+        2:  198:	newScore = 3;
+        -:  199:
+        2:  200:	a = 0;
+        2:  201:	b = 0;
+       16:  202:	while ((a < MAX_HAND) && (b < 1)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 86%
+branch  3 taken 14% (fallthrough)
+       12:  203:		if (testG.hand[thisPlayer][a] == NULL) {
+branch  0 taken 17% (fallthrough)
+branch  1 taken 83%
+        2:  204:			testG.hand[thisPlayer][a] = duchy;
+        2:  205:			testG.handCount[thisPlayer]++;	
+        2:  206:			b++;
+        -:  207:		}
+       12:  208:		a++;
+        -:  209:	}
+        -:  210:
+        2:  211:	printf("Testing Score for duchy in hand...\t");
+call    0 returned 100%
+        2:  212:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  213:		printf("ERROR\n");
+call    0 never executed
+    #####:  214:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  215:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  216:	} else {
+        2:  217:		printf("PASS\n");
+call    0 returned 100%
+        -:  218:	}
+        -:  219:
+        2:  220:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  221:	
+        -:  222:	// Test 08: Duchy to Discard	---------------------------------------------------
+        2:  223:	linePrint();
+call    0 returned 100%
+        2:  224:	printf("Test 08: Duchy in discard\n");
+call    0 returned 100%
+        2:  225:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  226:
+        2:  227:	newScore = 3;
+        -:  228:
+        2:  229:	testG.discard[thisPlayer][0] = duchy;
+        2:  230:	testG.discardCount[thisPlayer] += 1;	
+        -:  231:
+        2:  232:	printf("Testing Score for duchy in discard...\t");
+call    0 returned 100%
+        2:  233:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  234:		printf("ERROR\n");
+call    0 never executed
+    #####:  235:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  236:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  237:	} else {
+        2:  238:		printf("PASS\n");
+call    0 returned 100%
+        -:  239:	}
+        -:  240:
+        2:  241:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  242:
+        -:  243:	// Test 09: Duchy to Deck	---------------------------------------------------
+        2:  244:	linePrint();
+call    0 returned 100%
+        2:  245:	printf("Test 09: Duchy in deck\n");
+call    0 returned 100%
+        2:  246:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  247:
+        2:  248:	newScore = 3;
+        2:  249:	testG.deck[thisPlayer][0] = duchy;
+        2:  250:	testG.deckCount[thisPlayer] += 1;	
+        -:  251:
+        2:  252:	printf("Testing Score for duchy in deck...\t");
+call    0 returned 100%
+        2:  253:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  254:		printf("ERROR\n");
+call    0 returned 100%
+        2:  255:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  256:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  257:	} else {
+    #####:  258:		printf("PASS\n");
+call    0 never executed
+        -:  259:	}
+        -:  260:
+        2:  261:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  262:
+        -:  263:
+        -:  264:
+        -:  265:	// Test 10: Province to Hand 	---------------------------------------------------
+        2:  266:	linePrint();
+call    0 returned 100%
+        2:  267:	printf("Test 10: Province in hand\n");
+call    0 returned 100%
+        2:  268:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  269:
+        2:  270:	newScore = 6;
+        2:  271:	testG.hand[thisPlayer][0] = province;
+        -:  272:
+        2:  273:	printf("Testing Score for province in hand...\t");
+call    0 returned 100%
+        2:  274:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  275:		printf("ERROR\n");
+call    0 never executed
+    #####:  276:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  277:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  278:	} else {
+        2:  279:		printf("PASS\n");
+call    0 returned 100%
+        -:  280:	}
+        -:  281:
+        2:  282:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  283:
+        -:  284:	// Test 11: Province to Discard	---------------------------------------------------
+        2:  285:	linePrint();
+call    0 returned 100%
+        2:  286:	printf("Test 11: province in discard\n");
+call    0 returned 100%
+        2:  287:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  288:
+        2:  289:	newScore = 6;
+        2:  290:	testG.discard[thisPlayer][0] = province;
+        2:  291:	testG.discardCount[thisPlayer] += 1;	
+        -:  292:
+        2:  293:	printf("Testing Score for province in discard...\t");
+call    0 returned 100%
+        2:  294:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  295:		printf("ERROR\n");
+call    0 never executed
+    #####:  296:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  297:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  298:	} else {
+        2:  299:		printf("PASS\n");
+call    0 returned 100%
+        -:  300:	}
+        -:  301:
+        2:  302:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  303:
+        -:  304:	// Test 12: province to Deck	---------------------------------------------------
+        2:  305:	linePrint();
+call    0 returned 100%
+        2:  306:	printf("Test 12: province in deck\n");
+call    0 returned 100%
+        2:  307:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  308:
+        2:  309:	newScore = 6;
+        2:  310:	testG.deck[thisPlayer][0] = province;
+        2:  311:	testG.deckCount[thisPlayer] += 1;	
+        -:  312:
+        2:  313:	printf("Testing Score for province in deck...\t");
+call    0 returned 100%
+        2:  314:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  315:		printf("ERROR\n");
+call    0 returned 100%
+        2:  316:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  317:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  318:	} else {
+    #####:  319:		printf("PASS\n");
+call    0 never executed
+        -:  320:	}
+        -:  321:
+        2:  322:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  323:
+        -:  324:
+        -:  325:
+        -:  326:	// Test 13: Great_Hall to Hand 	---------------------------------------------------
+        2:  327:	linePrint();
+call    0 returned 100%
+        2:  328:	printf("Test 12: great_hall in hand\n");
+call    0 returned 100%
+        2:  329:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  330:
+        2:  331:	newScore = 1;
+        2:  332:	testG.hand[thisPlayer][0] = great_hall;
+        -:  333:
+        2:  334:	printf("Testing Score for great_hall in hand...\t");
+call    0 returned 100%
+        2:  335:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  336:		printf("ERROR\n");
+call    0 never executed
+    #####:  337:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  338:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  339:	} else {
+        2:  340:		printf("PASS\n");
+call    0 returned 100%
+        -:  341:	}
+        -:  342:
+        2:  343:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  344:
+        -:  345:	// Test 14: greaT_hall to Discard	---------------------------------------------------
+        2:  346:	linePrint();
+call    0 returned 100%
+        2:  347:	printf("Test 14: great_hall in discard\n");
+call    0 returned 100%
+        2:  348:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  349:
+        2:  350:	newScore = 1;
+        2:  351:	testG.discard[thisPlayer][0] = great_hall;
+        2:  352:	testG.discardCount[thisPlayer] += 1;	
+        -:  353:
+        2:  354:	printf("Testing Score for great_hall in discard...\t");
+call    0 returned 100%
+        2:  355:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  356:		printf("ERROR\n");
+call    0 never executed
+    #####:  357:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 never executed
+call    1 never executed
+    #####:  358:			scoreFor(thisPlayer, &G) + newScore);
+call    0 never executed
+        -:  359:	} else {
+        2:  360:		printf("PASS\n");
+call    0 returned 100%
+        -:  361:	}
+        -:  362:
+        2:  363:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  364:
+        -:  365:	// Test 15: great_hall to Deck	---------------------------------------------------
+        2:  366:	linePrint();
+call    0 returned 100%
+        2:  367:	printf("Test 15: great_hall in deck\n");
+call    0 returned 100%
+        2:  368:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  369:
+        2:  370:	newScore = 1;
+        2:  371:	testG.deck[thisPlayer][0] = great_hall;
+        2:  372:	testG.deckCount[thisPlayer] += 1;	
+        -:  373:
+        2:  374:	printf("Testing Score for great_hall in deck...\t");
+call    0 returned 100%
+        2:  375:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  376:		printf("ERROR\n");
+call    0 returned 100%
+        2:  377:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  378:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  379:	} else {
+    #####:  380:		printf("PASS\n");
+call    0 never executed
+        -:  381:	}
+        -:  382:
+        2:  383:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  384:
+        -:  385:
+        -:  386:
+        -:  387:
+        -:  388:	// Test 16: gardens to Hand 	---------------------------------------------------
+        2:  389:	linePrint();
+call    0 returned 100%
+        2:  390:	printf("Test 16: gardens in hand\n");
+call    0 returned 100%
+        2:  391:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  392:
+        2:  393:	newScore = 5;
+        -:  394:
+        2:  395:	a = 0;
+        2:  396:	b = 0;
+       22:  397:	while ((a < MAX_HAND) && (b < 4)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 90%
+branch  3 taken 10% (fallthrough)
+       18:  398:		if (testG.hand[thisPlayer][a] == NULL) {
+branch  0 taken 44% (fallthrough)
+branch  1 taken 56%
+        8:  399:			testG.hand[thisPlayer][a] = estate;
+        8:  400:			b++;
+        -:  401:		}
+       18:  402:		a++;
+        -:  403:	}
+        2:  404:	testG.hand[thisPlayer][a] = gardens;
+        2:  405:	testG.handCount[thisPlayer] += 5;
+        -:  406:
+        2:  407:	printf("Testing Score for gardens in hand...\t");
+call    0 returned 100%
+        2:  408:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  409:		printf("ERROR\n");
+call    0 returned 100%
+        2:  410:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  411:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  412:	} else {
+    #####:  413:		printf("PASS\n");
+call    0 never executed
+        -:  414:	}
+        -:  415:
+        2:  416:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  417:
+        -:  418:	// Test 17: gardens to Discard	---------------------------------------------------
+        2:  419:	linePrint();
+call    0 returned 100%
+        2:  420:	printf("Test 17: gardens in discard\n");
+call    0 returned 100%
+        2:  421:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  422:
+        2:  423:	newScore = 5;
+        -:  424:
+        2:  425:	a = 0;
+        2:  426:	b = 0;
+       22:  427:	while ((a < MAX_HAND) && (b < 4)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 90%
+branch  3 taken 10% (fallthrough)
+       18:  428:		if (testG.discard[thisPlayer][a] == NULL) {
+branch  0 taken 44% (fallthrough)
+branch  1 taken 56%
+        8:  429:			testG.discard[thisPlayer][a] = estate;
+        8:  430:			b++;
+        -:  431:		}
+       18:  432:		a++;
+        -:  433:	}
+        2:  434:	testG.discard[thisPlayer][a] = gardens;
+        2:  435:	testG.discardCount[thisPlayer] += 5;
+        -:  436:
+        -:  437:
+        2:  438:	printf("Fulldeck = %d\n", fullDeckCount(thisPlayer, 0, &testG));
+call    0 returned 100%
+call    1 returned 100%
+        -:  439:
+        2:  440:	printf("Testing Score for gardens in discard...\t");
+call    0 returned 100%
+        2:  441:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  442:		printf("ERROR\n");
+call    0 returned 100%
+        2:  443:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  444:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  445:	} else {
+    #####:  446:		printf("PASS\n");
+call    0 never executed
+        -:  447:	}
+        -:  448:
+        2:  449:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  450:
+        -:  451:	// Test 18: gardens to Deck	---------------------------------------------------
+        2:  452:	linePrint();
+call    0 returned 100%
+        2:  453:	printf("Test 18: gardens in deck\n");
+call    0 returned 100%
+        2:  454:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:  455:
+        2:  456:	newScore = 5;
+        -:  457:
+        2:  458:	a = 0;
+        2:  459:	b = 0;
+       32:  460:	while ((a < MAX_HAND) && (b < 4)) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 93%
+branch  3 taken 7% (fallthrough)
+       28:  461:		if (testG.deck[thisPlayer][a] == NULL) {
+branch  0 taken 29% (fallthrough)
+branch  1 taken 71%
+        8:  462:			testG.deck[thisPlayer][a] = estate;
+        8:  463:			b++;
+        -:  464:		}
+       28:  465:		a++;
+        -:  466:	}
+        2:  467:	testG.deck[thisPlayer][a] = gardens;
+        2:  468:	testG.deckCount[thisPlayer] += 5;
+        -:  469:
+        2:  470:	printf("Testing Score for gardens in deck...\t");
+call    0 returned 100%
+        2:  471:	if (scoreFor(thisPlayer, &testG) != (scoreFor(thisPlayer, &G)+ newScore)) {
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  472:		printf("ERROR\n");
+call    0 returned 100%
+        2:  473:		printf("Player score: %d, expected: %d\n",scoreFor(thisPlayer, &testG), 
+call    0 returned 100%
+call    1 returned 100%
+        2:  474:			scoreFor(thisPlayer, &G) + newScore);
+call    0 returned 100%
+        -:  475:	} else {
+    #####:  476:		printf("PASS\n");
+call    0 never executed
+        -:  477:	}
+        -:  478:
+        2:  479:	genericTest(G, testG, otherPlayer, 0);
+call    0 returned 100%
+        -:  480:
+        -:  481:
+        2:  482:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+call    0 returned 100%
+        2:  483:	return 0;
+        -:  484:}
+        -:  485:
+        -:  486:
+        -:  487:
+        -:  488:

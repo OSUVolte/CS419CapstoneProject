@@ -1,6 +1,9 @@
+*
+!*/
+!*.*
 *.gcno
 *.gcda
 *.o
-playdom
-testDrawCard
-badTestDrawCard
+*.gcov
+*.out
+*.vim
