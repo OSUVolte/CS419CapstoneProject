@@ -174,6 +174,7 @@ void otherPlayerCounts(
 {
   
 	int i;
+  int bugFound = 0;
 
   printf("\n------- Status of Other Players' Piles -------\n");
 	for (i = 0; i < PLAYERS; i++) {	
@@ -183,19 +184,26 @@ void otherPlayerCounts(
 			printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
 			if (countsAfter[i][hand] != countsBefore[i][hand]) {
 				printf("ERROR - should not be altered\n");
+ 				bugFound = 1;
 			}
 			printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
 			if (countsAfter[i][deck] != countsBefore[i][deck]) {
 				printf("ERROR - should not be altered\n");
+ 				bugFound = 1;
 			}
 			printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
 			if (countsAfter[i][discard] != countsBefore[i][discard]) {
 				printf("ERROR - should not be altered\n");
+ 				bugFound = 1;
 			}
 		}
 		else {
 			printf(" - current player\n");
 		}
+	}
+	
+	if (!bugFound) {
+		printf("SUCCESS: Other players' piles were not changed.\n");
 	}
 }
 

@@ -216,3 +216,60 @@ cardtest4.c - Council Room card
  		Taken at least once:7.56% of 119
  		Calls executed:12.50% of 48
 
+--------------------------- DOMINION COVERAGE ------------------------------
+	File 'dominion.c'
+		Lines executed:34.86% of 568
+		Branches executed:37.35% of 415
+		Taken at least once:29.88% of 415
+		Calls executed:18.95% of 95
+		Creating 'dominion.c.gcov'
+
+	Uncovered functions: 
+		'tributeEffect'
+		'minionEffect'
+		'baronEffect'
+		'gainCard'
+		'getWinners'
+		'scoreFor'
+		'endTurn'
+		'fullDeckCount'
+		'supplyCount'
+		'handCard'
+		'numHandCards'
+		'buyCard'
+		'playCard'
+		'kingdomCards'
+		'newGame'
+
+	Partially Covered Functions
+		Function 'updateCoins'
+			Lines executed:81.82% of 11
+			Branches executed:100.00% of 8
+			Taken at least once:75.00% of 8
+			No calls
+
+		Function 'cardEffect'
+			Lines executed:11.49% of 148
+			Branches executed:24.37% of 119
+			Taken at least once:7.56% of 119
+			Calls executed:12.50% of 48
+
+		Function 'drawCard'
+			Lines executed:77.27% of 22
+			Branches executed:100.00% of 6
+			Taken at least once:66.67% of 6
+			Calls executed:100.00% of 1
+
+		Function 'initializeGame'
+			Lines executed:93.55% of 62
+			Branches executed:100.00% of 46
+			Taken at least once:89.13% of 46
+			Calls executed:100.00% of 5
+
+		Function 'compare'
+			Lines executed:83.33% of 6
+			Branches executed:100.00% of 4
+			Taken at least once:75.00% of 4
+			No calls
+
+
