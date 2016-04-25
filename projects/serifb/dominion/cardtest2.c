@@ -3,7 +3,7 @@
 	CS 362
 	04/24/2016
 
-	This file tests the Smithy Card
+	This file tests the Adventurer Card
 */
 
 #include "dominion.h"
