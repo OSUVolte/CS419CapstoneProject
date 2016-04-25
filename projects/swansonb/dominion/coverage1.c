@@ -21,6 +21,16 @@ that had be left undected by these test cases because they either led to
 infinite loops or segmentation fault (and all of the unit tests needed to run
 in sequence).
 
+There are other bugs in the code not introduced by me that were not
+discoverable simply by having 100% code coverage.  My first implementation 
+of the endTurn unit test was based on examining what the function purpoted to
+do and testing that it accomplished all of those correctly.  But it was also
+important to look at important functions it was not executing that the rules of
+the game dictated should be occuring.  The function was not moving the cards
+in the playedCards array back to the players discard.  This bug was not found
+only through achieving 100% coverage but also by carfully designed tests.
+
+
 ----------------------------------------
 File summary
 ----------------------------------------

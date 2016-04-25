@@ -67,6 +67,8 @@ tests:
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+	
+mytests: unit1 unit2 unit3 unit4 card1 card2 card3 card4 tests
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard unit1 unit2 unit3 unit4 card1 card2 card3 card4 runtests tests
 

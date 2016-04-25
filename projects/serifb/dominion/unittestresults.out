@@ -1,0 +1,1307 @@
+Result for running tests:
+unittest1.c:
+
+-----Testing Update Coins-----
+Player 0 has 1 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 1, expected coins = 1. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 2. Expected coins: 2. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 3. Expected coins: 3. Success!
+Player 0 has 1 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 2, expected coins = 2. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 3. Expected coins: 3. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 4. Expected coins: 4. Success!
+Player 0 has 1 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 4. Expected coins: 4. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 5. Expected coins: 5. Success!
+Player 0 has 1 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 5. Expected coins: 5. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 6. Expected coins: 6. Success!
+Player 0 has 1 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 7. Expected coins: 7. Success!
+Player 0 has 1 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 8. Expected coins: 8. Success!
+Player 0 has 1 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 0 has 1 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 0 has 1 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 0 has 1 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 0 has 2 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 2, expected coins = 2. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 4. Expected coins: 4. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 6. Expected coins: 6. Success!
+Player 0 has 2 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 5. Expected coins: 5. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 7. Expected coins: 7. Success!
+Player 0 has 2 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 8. Expected coins: 8. Success!
+Player 0 has 2 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 0 has 2 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 0 has 2 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 0 has 2 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 0 has 2 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 0 has 2 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 0 has 2 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 0 has 3 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 0 has 3 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 0 has 3 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 0 has 3 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 0 has 3 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 0 has 3 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 0 has 3 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 0 has 3 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 0 has 3 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 0 has 3 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 0 has 4 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 0 has 4 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 0 has 4 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 0 has 4 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 0 has 4 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 0 has 4 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 0 has 4 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 0 has 4 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 19. Expected coins: 19. Success!
+Player 0 has 4 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 16. Expected coins: 16. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 20. Expected coins: 20. Success!
+Player 0 has 4 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 13, expected coins = 13. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 17. Expected coins: 17. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 21. Expected coins: 21. Success!
+Player 0 has 5 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 0 has 5 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 0 has 5 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 0 has 5 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 0 has 5 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 19. Expected coins: 19. Success!
+Player 0 has 5 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 20. Expected coins: 20. Success!
+Player 0 has 5 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 16. Expected coins: 16. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 21. Expected coins: 21. Success!
+Player 0 has 5 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 17. Expected coins: 17. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 22. Expected coins: 22. Success!
+Player 0 has 5 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 13, expected coins = 13. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 18. Expected coins: 18. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 23. Expected coins: 23. Success!
+Player 0 has 5 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 14, expected coins = 14. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 19. Expected coins: 19. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 24. Expected coins: 24. Success!
+Player 1 has 1 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 1, expected coins = 1. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 2. Expected coins: 2. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 3. Expected coins: 3. Success!
+Player 1 has 1 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 2, expected coins = 2. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 3. Expected coins: 3. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 4. Expected coins: 4. Success!
+Player 1 has 1 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 4. Expected coins: 4. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 5. Expected coins: 5. Success!
+Player 1 has 1 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 5. Expected coins: 5. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 6. Expected coins: 6. Success!
+Player 1 has 1 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 7. Expected coins: 7. Success!
+Player 1 has 1 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 8. Expected coins: 8. Success!
+Player 1 has 1 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 1 has 1 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 1 has 1 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 1 has 1 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 1 has 2 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 2, expected coins = 2. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 4. Expected coins: 4. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 6. Expected coins: 6. Success!
+Player 1 has 2 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 5. Expected coins: 5. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 7. Expected coins: 7. Success!
+Player 1 has 2 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 8. Expected coins: 8. Success!
+Player 1 has 2 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 1 has 2 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 1 has 2 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 1 has 2 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 1 has 2 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 1 has 2 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 1 has 2 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 1 has 3 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 3, expected coins = 3. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 6. Expected coins: 6. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 9. Expected coins: 9. Success!
+Player 1 has 3 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 7. Expected coins: 7. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 10. Expected coins: 10. Success!
+Player 1 has 3 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 11. Expected coins: 11. Success!
+Player 1 has 3 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 1 has 3 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 1 has 3 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 1 has 3 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 1 has 3 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 1 has 3 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 1 has 3 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 1 has 4 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 4, expected coins = 4. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 8. Expected coins: 8. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 12. Expected coins: 12. Success!
+Player 1 has 4 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 9. Expected coins: 9. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 13. Expected coins: 13. Success!
+Player 1 has 4 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 14. Expected coins: 14. Success!
+Player 1 has 4 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 1 has 4 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 1 has 4 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 1 has 4 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 1 has 4 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 19. Expected coins: 19. Success!
+Player 1 has 4 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 16. Expected coins: 16. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 20. Expected coins: 20. Success!
+Player 1 has 4 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 13, expected coins = 13. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 17. Expected coins: 17. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 21. Expected coins: 21. Success!
+Player 1 has 5 treasure cards and a max bonus of 0.
+Test 1: Testing with Copper Cards
+G.coins = 5, expected coins = 5. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 10. Expected coins: 10. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 15. Expected coins: 15. Success!
+Player 1 has 5 treasure cards and a max bonus of 1.
+Test 1: Testing with Copper Cards
+G.coins = 6, expected coins = 6. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 11. Expected coins: 11. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 16. Expected coins: 16. Success!
+Player 1 has 5 treasure cards and a max bonus of 2.
+Test 1: Testing with Copper Cards
+G.coins = 7, expected coins = 7. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 12. Expected coins: 12. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 17. Expected coins: 17. Success!
+Player 1 has 5 treasure cards and a max bonus of 3.
+Test 1: Testing with Copper Cards
+G.coins = 8, expected coins = 8. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 13. Expected coins: 13. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 18. Expected coins: 18. Success!
+Player 1 has 5 treasure cards and a max bonus of 4.
+Test 1: Testing with Copper Cards
+G.coins = 9, expected coins = 9. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 14. Expected coins: 14. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 19. Expected coins: 19. Success!
+Player 1 has 5 treasure cards and a max bonus of 5.
+Test 1: Testing with Copper Cards
+G.coins = 10, expected coins = 10. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 15. Expected coins: 15. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 20. Expected coins: 20. Success!
+Player 1 has 5 treasure cards and a max bonus of 6.
+Test 1: Testing with Copper Cards
+G.coins = 11, expected coins = 11. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 16. Expected coins: 16. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 21. Expected coins: 21. Success!
+Player 1 has 5 treasure cards and a max bonus of 7.
+Test 1: Testing with Copper Cards
+G.coins = 12, expected coins = 12. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 17. Expected coins: 17. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 22. Expected coins: 22. Success!
+Player 1 has 5 treasure cards and a max bonus of 8.
+Test 1: Testing with Copper Cards
+G.coins = 13, expected coins = 13. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 18. Expected coins: 18. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 23. Expected coins: 23. Success!
+Player 1 has 5 treasure cards and a max bonus of 9.
+Test 1: Testing with Copper Cards
+G.coins = 14, expected coins = 14. Success!
+
+Test 2: Testing with Silver Cards
+Actual Coins: 19. Expected coins: 19. Success!
+
+Test 3: Testing with Gold Cards
+Actual Coins: 24. Expected coins: 24. Success!
+
+-----Testing of Update Coins Complete-----
+File 'dominion.c'
+Lines executed:15.86% of 561
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+
+-----Testing Is Game Over-----
+
+Testing with no province cards
+Expected: Game is Over. Actual: Game is over. Success!
+
+Testing with Provinces > 0
+Expected: Game is not Over. Actual: Game is not Over. Success!
+
+Testing with 1 supply pile empty
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+
+Testing with 2 supply piles empty
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+Expected: Game is not Over. Actual: Game is not Over. Success!
+
+Testing with 3 supply piles empty
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is not Over. Failed!
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is over. Success!
+Expected: Game is Over. Actual: Game is over. Success!
+
+-----Testing Is Game Over Complete---
+File 'dominion.c'
+Lines executed:17.29% of 561
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+
+-----Testing Get Cost-----
+
+Testing Curse:
+Expected Cost: 0. Actual Cost 0. Success!
+
+Testing Estate:
+Expected Cost: 2. Actual Cost 2. Success!
+
+Testing Duchy:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Province:
+Expected Cost: 8. Actual Cost 8. Success!
+
+Testing Copper:
+Expected Cost: 0. Actual Cost 0. Success!
+
+Testing Silver:
+Expected Cost: 3. Actual Cost 3. Success!
+
+Testing Gold:
+Expected Cost: 6. Actual Cost 6. Success!
+
+Testing Adventurer:
+Expected Cost: 6. Actual Cost 6. Success!
+
+Testing Concil Room:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Feast:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Gardens:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Mine:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Remodel:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Smithy:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Village:
+Expected Cost: 3. Actual Cost 3. Success!
+
+Testing Baron:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Great Hall:
+Expected Cost: 3. Actual Cost 3. Success!
+
+Testing Minion:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Steward:
+Expected Cost: 3. Actual Cost 3. Success!
+
+Testing Tribute:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Ambassador:
+Expected Cost: 3. Actual Cost 3. Success!
+
+Testing Cutpurse:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Embargo:
+Expected Cost: 2. Actual Cost 2. Success!
+
+Testing Outpost:
+Expected Cost: 5. Actual Cost 5. Success!
+
+Testing Salvager:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Sea Hag:
+Expected Cost: 4. Actual Cost 4. Success!
+
+Testing Tresure Map:
+Expected Cost: 4. Actual Cost 4. Success!
+
+-----Testing of Get Cost Complete-----
+File 'dominion.c'
+Lines executed:5.17% of 561
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+
+-----Testing Whose Turn-----
+Expected value: 0. Actual Value 0. Success!
+Expected value: 1. Actual Value 1. Success!
+
+----Testing of Whose Turn Complete-----
+File 'dominion.c'
+Lines executed:15.86% of 561
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+
+-----Testing for Smithy Card-----
+Testing for player 0, hand count 0:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 0, hand count 1:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 0, hand count 2:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 0, hand count 3:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 0, hand count 4:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 1, hand count 0:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 1, hand count 1:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 1, hand count 2:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 1, hand count 3:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+Testing for player 1, hand count 4:
+Expected played count: 1. Actual played count: 1. Success!
+Expected hand count: 7. Actual hand count: 5. Failed!
+
+-----Smithy Card Testing Complete-----
+File 'dominion.c'
+Lines executed:20.68% of 561
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+
+-----Testing for Adventurer Card-----
+Testing for player 0.
+Expected hand count: 6. Actual hand count: 7. Failed!
+Expected cards: 4, 5, or 6. Actual Card: 4. Success!
+Expected cards: 4, 5, or 6. Actual Card: 4. Success!
+Testing for player 1.
+Expected hand count: 1. Actual hand count: 2. Failed!
+Expected cards: 4, 5, or 6. Actual Card: 4. Success!
+Expected cards: 4, 5, or 6. Actual Card: 4. Success!
+
+-----Adevnturer Card Testing Complete-----
+File 'dominion.c'
+Lines executed:18.72% of 561
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+
+-----Testing for Great Hall Card-----
+Testing for player 0.
+Expected hand count: 5. Actual hand count: 5. Success!
+Expected number of actions: 1. Actual number of Actions: 0. Failure!
+Testing for player 1.
+Expected hand count: 0. Actual hand count: 0. Success!
+Expected number of actions: 1. Actual number of Actions: 0. Failure!
+
+-----Great Hall Card Testing Complete-----
+File 'dominion.c'
+Lines executed:18.89% of 561
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+
+-----Testing for Council Room Card-----
+Testing for player 0.
+Expected number of actions: 1. Actual number of Actions: 1. Success!
+Expected hand count: 8. Actual hand count: 8. Success!
+Expected hand count: 1. Actual hand count: 1. Success!
+Testing for player 1.
+Expected number of actions: 1. Actual number of Actions: 1. Success!
+Expected hand count: 6. Actual hand count: 6. Success!
+Expected hand count: 3. Actual hand count: 3. Success!
+
+-----Council Room Card Testing Complete-----
+File 'dominion.c'
+Lines executed:19.61% of 561
+Creating 'dominion.c.gcov'
+
+Function 'playCouncilRoom'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 3
+
+Function 'playGreatHall'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'playVillage'
+Lines executed:0.00% of 6
+No branches
+Calls executed:0.00% of 3
+
+Function 'playSmithy'
+Lines executed:0.00% of 4
+No branches
+Calls executed:0.00% of 2
+
+Function 'playAdventurer'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
+Function 'updateCoins'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:84.62% of 13
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 207
+Branches executed:0.00% of 179
+Taken at least once:0.00% of 179
+Calls executed:0.00% of 58
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:83.87% of 62
+Branches executed:95.65% of 46
+Taken at least once:78.26% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:19.61% of 561
+Branches executed:18.89% of 413
+Taken at least once:15.01% of 413
+Calls executed:10.42% of 96
+Creating 'dominion.c.gcov'
+

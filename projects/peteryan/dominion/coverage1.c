@@ -2,7 +2,7 @@
 Ryan Peters
 4/22/16
 
-The overall coverage for my unit tests and card tests is 52.84% statement coverage and
+The overall coverage for my unit tests and card tests is 53.01% statement coverage and
 54.44% branch coverage.  The number of calls executed was 34.74%.  The totals is not 
 that good but I was not trying to test the entire program.  Looking at dominion.c.gcov
 I have 100% statement and branch coverage for the four unit tests and the two card test
