@@ -59,16 +59,16 @@ supply count of 2 now is 0.
 Test 3 Passed
 
 Test 4: Checking unexpected input/Output
-Supplies 19, 11 and 21 are set to 0
-Supplies 21, 2 and 18 are set to 0
-Supplies 0, 6 and 15 are set to 0
-Supplies 12, 14 and 12 are set to 0
-Supplies 8, 2 and 13 are set to 0
-Supplies 22, 24 and 19 are set to 0
-Supplies 2, 2 and 9 are set to 0
-Supplies 6, 18 and 13 are set to 0
-Supplies 15, 22 and 13 are set to 0
-Supplies 7, 2 and 6 are set to 0
+Supplies 2, 2 and 12 are set to 0
+Supplies 9, 5 and 24 are set to 0
+Supplies 8, 2 and 2 are set to 0
+Supplies 5, 0 and 6 are set to 0
+Supplies 2, 18 and 15 are set to 0
+Supplies 18, 5 and 6 are set to 0
+Supplies 0, 14 and 20 are set to 0
+Supplies 2, 12 and 23 are set to 0
+Supplies 2, 21 and 1 are set to 0
+Supplies 8, 12 and 10 are set to 0
 Test 4 Passed
 _________________________________________________________
 _________________________________________________________
@@ -117,3 +117,89 @@ Discard count is: 0.
 Test 2 failed, discard count is not correct.
 _________________________________________________________
 _________________________________________________________
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Test 4 Passed
+_________________________________________________________
+_________________________________________________________
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Test 4 Passed
+_________________________________________________________
+Coverage test: 
+File 'unittest1.c'
+Lines executed:98.70% of 77
+Creating 'unittest1.c.gcov'
+
+_________________________________________________________
+File 'unittest2.c'
+Lines executed:97.06% of 68
+Creating 'unittest2.c.gcov'
+
+_________________________________________________________
+File 'unittest3.c'
+Lines executed:100.00% of 11
+Creating 'unittest3.c.gcov'
+
+_________________________________________________________
+File 'unittest4.c'
+Lines executed:97.22% of 36
+Creating 'unittest4.c.gcov'
+
+_________________________________________________________
+File 'cardtest1.c'
+Lines executed:93.75% of 32
+Creating 'cardtest1.c.gcov'
+
+_________________________________________________________
+File 'cardtest2.c'
+Lines executed:100.00% of 32
+Creating 'cardtest2.c.gcov'
+
+_________________________________________________________
+File 'cardtest3.c'
+Lines executed:100.00% of 27
+Creating 'cardtest3.c.gcov'
+
+_________________________________________________________
+File 'cardtest4.c'
+Lines executed:100.00% of 27
+Creating 'cardtest4.c.gcov'
+
+_________________________________________________________
+End of tests

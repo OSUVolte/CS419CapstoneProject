@@ -51,7 +51,7 @@ int main(int argc, char ** argv)
 	updateCoins(thisPlayer,&testG,0);
 	out = testG.coins;
 	printf("This should return Adventurer new coins in card: %d (should be 6)\n",out);
-	asset(out == 6);
+	assert(out == 6);
 	out = Adventurer(thisPlayer,0,&testG,&G.hand);
 	assert(out == 6);
 	printf("This should return the value of Adventurer card: %d\n",out);
