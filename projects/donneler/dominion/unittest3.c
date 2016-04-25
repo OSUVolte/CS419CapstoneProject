@@ -38,14 +38,17 @@ int main() {
 			sea_hag, tribute, smithy, council_room};
 	int discardCount, handCount;
 
-	int silvers[MAX_DECK];
-	int adventurers[MAX_HAND];
+	int maxDeckCount = 50;
+	int maxHandCount = 15;
+
+	int silvers[maxDeckCount];
+	int adventurers[maxHandCount];
 	
-	for (i = 0; i < MAX_HAND; i++) {
+	for (i = 0; i < maxHandCount; i++) {
 		adventurers[i] = adventurer;
 	}
 
-	for (i = 0; i < MAX_DECK; i++) {
+	for (i = 0; i < maxDeckCount; i++) {
 		silvers[i] = silver;
 	}
 
@@ -54,8 +57,8 @@ int main() {
 	printf("----------------- Testing Function: %s ----------------\n", TESTFXN);
 
 	for (p = 0; p < numPlayers; p++) {
-		for (handCount = 0; handCount <= MAX_HAND; handCount++) {
-			for (discardCount = 0; discardCount <= MAX_DECK; discardCount++) {
+		for (handCount = 0; handCount <= maxHandCount; handCount++) {
+			for (discardCount = 0; discardCount <= maxDeckCount; discardCount++) {
 
 // ********************* TEST 1 *************************************************************
 				// Set up hand and discard pile
@@ -120,7 +123,7 @@ int main() {
 
 				memcpy(&controlG, &G, sizeof(struct gameState));	// copy game state to test case
 		
-				handPos = MAX_HAND;
+				handPos = maxHandCount;
 				discardCard(handPos, p, &G, 1); 					// Discard of first card with trash flag
 
 				if (handPos < handCount) {
