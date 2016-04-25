@@ -24,3 +24,6 @@ all the lines in dominion.c were covered by this test.
 
 cardtest2 tested playAdventurer(). 100% of its 16 lines and 12 branches were covered. 10.93%
 of dominion.c was covered by this test.
+
+cardtest3 tested playVillage(). 100% of 5 its 5 lines were executed. 4.84% of the lines in
+dominion.c were covered by this test.

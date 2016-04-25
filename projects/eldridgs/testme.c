@@ -5,14 +5,21 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    char randChar = (rand()%85) + 40; //get a random number between 40 and 125
+    return randChar;
 }
+
+
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    return "";
+    int i;
+    char *rString = malloc(sizeof(char) * 6);
+    for(i = 0; i < 5; i++) //0 to 4 with null terminator
+    {
+        rString[i] = (char)(rand() % 26) + 97; //get a number between 97 and 122 (corresponds to lower case letters)
+    }
+    return rString;
 }
 
 void testme()
