@@ -1,4 +1,4 @@
-CFLAGS = -Wall -std=c99 -fpic -coverage -lm
+CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
