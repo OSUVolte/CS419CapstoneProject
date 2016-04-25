@@ -24,14 +24,8 @@ int main(int argc, char ** argv)
 	srand(time(NULL));
 	//Generating player:
 	int out;
-	int newCards = 0;
-	int discarded = 1;
-	int xtraCoins = 0;
-	int shuffledCards = 0;
-	int i, j, m;
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 10;
-	int remove1, remove2;
-	int seed = 1000;
+	int bonus = 0;
+	int seed = 999;
 	int numPlayers = 2;
 	int thisPlayer = 0;
 	struct gameState G, testG;
