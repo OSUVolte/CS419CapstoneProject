@@ -14,7 +14,7 @@
 char inputChar()
 {
 	//This will give a random  ascii values 0 - 127
-	int v = rand() % 128;
+	char v = rand() % 128;
    
     return v;
 }
@@ -23,7 +23,7 @@ char *inputString()
 {
     //This will assign a random ascii value between 101 and 116 to the first 5 characters with the 6th character being null to terminate the string
     //(101 - 116) because this encompasses all of the lower cases letters of reset
-    char w[6];
+    static char w[6];
     int i = 0;
     w[5] = '\0';
     for(i; i<5; i++)

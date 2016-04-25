@@ -594,6 +594,7 @@ int getCost(int cardNumber)
       return 8;
     case copper:
       return 0;
+
     case silver:
       return 3;
     case gold:
@@ -606,6 +607,7 @@ int getCost(int cardNumber)
       return 4;
     case gardens:
       return 4;
+
     case mine:
       return 5;
     case remodel:
@@ -618,6 +620,7 @@ int getCost(int cardNumber)
       return 4;
     case great_hall:
       return 3;
+
     case minion:
       return 5;
     case steward:
@@ -630,6 +633,7 @@ int getCost(int cardNumber)
       return 4;
     case embargo:
       return 2;
+
     case outpost:
       return 5;
     case salvager:

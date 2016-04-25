@@ -1,0 +1,25 @@
+Testing numCards function
+Testing supplyCount function
+Testing updateCoins function
+The coin count is not correct!
+Testing whoseTurn function
+Testing smithy card
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Testing adventurer card
+Two cards were not drawn from the deck
+Two cards were not added to the players hand!
+Testing village card
+The village card did not add two actions!
+One card were not added to the players hand!
+The village card did not add two actions!
+One card were not added to the players hand!
+The village card did not add two actions!
+One card were not added to the players hand!
+The village card did not add two actions!
+One card were not added to the players hand!
+The village card did not add two actions!
+One card were not added to the players hand!
