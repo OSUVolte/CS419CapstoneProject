@@ -108,7 +108,7 @@
        10:  103:		testG.supplyCount[mem[2]] = 0;
        10:  104:		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
        10:  105:		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
-       10:  106:			assert(isGameOver(&testG) == 1);
+        9:  106:			assert(isGameOver(&testG) == 1);
       260:  107:		for(int j = 0; j < 25; j++)
       250:  108:			testG.supplyCount[j] = 10;
         -:  109:	}
