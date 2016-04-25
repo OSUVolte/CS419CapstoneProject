@@ -19,7 +19,6 @@ int main()
 	int failCount = 0;
 	int testArray[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	
-	printf("Testing kingdomCards():\n");
 	printf("Normal test case, valid values:\n");
 	failCount = RunTest(testArray, failCount);
 	
