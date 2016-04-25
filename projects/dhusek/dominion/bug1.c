@@ -18,9 +18,12 @@ Council Room Bugs:
 - The discard pile is empty and does not contain the Council Room card that was played.
 
 discardCard Bugs:
-
+- Does not add cards to the discard pile.
 
 drawCard Bugs:
 
 
 updateCoins Bugs:
+- No bugs were found!
+
+gainCard Bugs:
