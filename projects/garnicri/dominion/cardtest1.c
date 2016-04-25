@@ -15,7 +15,7 @@ int main(int argc, char const *argv[]) {
     int numPlayer = 2;
     int p, r, handCount;
     int k[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
-    struct gameState G;
+    struct gameState game;
     int maxHandCount = 5;
 
     int adven[MAX_HAND];
@@ -32,17 +32,17 @@ int main(int argc, char const *argv[]) {
     	for (handCount = 1; handCount <= maxHandCount; handCount++) {
     		printf("Test %d the adventurer card. Hand size: %d\n", p, handCount);
     		
-    		memset(&G, 23, sizeof(struct gameState));   
-            r = initializeGame(numPlayer, k, seed, &G);
-            G.whoseTurn = p;
-            G.handCount[p] = handCount;
-            memcpy(G.hand[p], adven, sizeof(int) * handCount);
+    		memset(&game, 23, sizeof(struct gameState));   
+            r = initializeGame(numPlayer, k, seed, &game);
+            game.whoseTurn = p;
+            game.handCount[p] = handCount;
+            memcpy(game.hand[p], adven, sizeof(int) * handCount);
 
-            r = playCard(0, 0, 0, 0, &G);
+            r = playCard(0, 0, 0, 0, &game);
 
-            printf("Hand count = %d, %d <= expected <= %d\n", G.handCount[p], handCount - 1, handCount + 1);
+            printf("Hand count = %d, %d <= expected <= %d\n", game.handCount[p], handCount - 1, handCount + 1);
 
-            if (G.handCount[p] >= handCount - 1 && G.handCount <= handCount + 1) {
+            if (game.handCount[p] >= handCount - 1 && game.handCount <= handCount + 1) {
             	printf("The Adventurer card worked correctly\n");
             }
             else {
