@@ -11,6 +11,8 @@ Tests fullDeckCount() function
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <time.h>
+#include <stdlib.h>
 
 // set NOISY_TEST to 0 to remove printfs from output
 #define NOISY_TEST 1
@@ -34,7 +36,7 @@ int main() {
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
 
-    printf("TEST 1: Testing fullDeckCount() - Normal Card Distribution\n");
+    printf ("TEST 1: Testing fullDeckCount() - Normal Card Distribution\n");
 
     initializeGame(numPlayers, k, seed, &G);
     memcpy(&testG, &G, sizeof(struct gameState));
@@ -88,7 +90,7 @@ int main() {
     memset(fdcResults, 0, sizeof fdcResults);
 
     initializeGame(numPlayers, k, seed, &G);
-    //memcpy(&testG, &G, sizeof(struct gameState));
+    memcpy(&testG, &G, sizeof(struct gameState));
 
     G.handCount[PlayerID] = MAX_HAND;
     G.deckCount[PlayerID] = MAX_DECK;
@@ -144,7 +146,7 @@ int main() {
     }
 
     if (memcmp(manualCountResults, fdcResults, sizeof(fdcResults)) == 0) {
-            printf("\n\nTEST 2 COMPLETED SUCCESSFULLY\n\n");
+            printf("\n\nTEST 2 COMPLETED SUCCESSFULLY");
     }
 
     return 0;

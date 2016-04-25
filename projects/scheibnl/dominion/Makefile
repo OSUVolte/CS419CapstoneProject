@@ -71,7 +71,7 @@ unittestresults.out:
 	echo "-------------------Running All Tests--------------------" >> unittestresults.out
 	echo "*Please note- Failing asserts have been commented out so that program runs through.*" >> unittestresults.out
 	make runtests >> unittestresults.out
-	echo "------------------Coverage Tests-----------------------" >> unitestresults.out
+	echo "------------------Coverage Tests-----------------------" >> unittestresults.out
 	gcov -f -b dominion.c >> unittestresults.out
 
 runtests:
