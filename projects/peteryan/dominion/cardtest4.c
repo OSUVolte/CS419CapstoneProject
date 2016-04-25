@@ -89,6 +89,27 @@ void testVillage()
 		printf("council_roomEffect: PASS number of buys increases by one.\n");
 	else
 		printf("council_roomEffect: FAIL number of buys increases by one\n");
+	
+	/*Test supply stacks do not change*/
+	for(i = 0; i <= treasure_map; i++)
+	{
+		state.supplyCount[i] = 10;
+	}
+	player = 1;
+	handPos = 0;	
+	state.handCount[player] = 3;
+	state.deckCount[player] = 10;
+	state.handCount[0] = 3;
+	state.deckCount[0] = 10;
+	state.playedCardCount = 0;
+	r = cardEffect(council_room, 0, 0, 0, &state, handPos, &bonus);
+	for(i = 0; i <= treasure_map; i++)
+	{
+		if(state.supplyCount[i] == 10)
+			printf("council_roomEffect: PASS card to drawn from supply posistion %d.\n", i);
+		else
+			printf("council_roomEffect: FAIL  card to drawn from supply posistion %d.\n", i);
+	}
 }
 
 int main(int argc, char *argv[])

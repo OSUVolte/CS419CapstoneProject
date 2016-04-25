@@ -40,43 +40,48 @@ clean:
 
 testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
 	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
-	./unittest1 > unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./unittest1 > unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
-	./unittest2 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./unittest2 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
-	./unittest3 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./unittest3 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
-	./unittest4 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./unittest4 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
-	./cardtest1 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./cardtest1 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
-	./cardtest2 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./cardtest2 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
-	./cardtest3 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
+	./cardtest3 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 
 	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-	./cardtest4 >> unittestresults.out
-	echo "_________________________________________________________" >> unittestresults.out
-	echo "End of tests" >> unittestresults.out
+	./cardtest4 >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	echo "End of tests" >> unittestresults.txt
 
 	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 
+
+unittestresults.out:
+	make testresults
+	cat unittestresults.txt
+	rm unittestresults.txt
