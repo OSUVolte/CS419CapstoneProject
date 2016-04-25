@@ -7,3 +7,7 @@ In unittest2 I found what appears to be a bug, but perhaps is the intended behav
 resulting gameState after initializeGame() results in player 1 having fewer than 7 copper. I also found
 that there is no checking in the initializeGame() function for whether the cards in the kingdomCard 
 array are valid.
+
+No bugs found in shuffle() with unittest3.
+
+No bugs found in fullDeckCount() with unittest4, though there is no checking for a valid card range.
