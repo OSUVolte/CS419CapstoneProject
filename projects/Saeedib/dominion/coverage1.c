@@ -25,17 +25,17 @@ Creating 'cardtest1.c.gcov'
 
 _________________________________________________________
 File 'cardtest2.c'
-Lines executed:96.97% of 66
+Lines executed:100.00% of 36
 Creating 'cardtest2.c.gcov'
 
 _________________________________________________________
 File 'cardtest3.c'
-Lines executed:96.97% of 66
+Lines executed:100.00% of 27
 Creating 'cardtest3.c.gcov'
 
 _________________________________________________________
 File 'cardtest4.c'
-Lines executed:96.97% of 66
+Lines executed:100.00% of 27
 Creating 'cardtest4.c.gcov'
 
 _________________________________________________________
