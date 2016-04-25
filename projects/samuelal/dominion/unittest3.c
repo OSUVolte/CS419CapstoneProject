@@ -32,28 +32,20 @@ int main() {
 
     printf ("TEST 1: Testing isGameOver() - Province Check\n");
 
-    //Initializes game
     initializeGame(numPlayers, k, seed, &G);
-
-    //Copies gamestate into a test gamestate
     memcpy(&testG, &G, sizeof(struct gameState));
 
     int provinceNum;
 
-    //This loop randomly assigns the number of provinces to supplyCount
     for (i = 0; i < 1000; i++) {
         provinceNum = floor(Random() * 3);
         testG.supplyCount[province] = provinceNum;
-
-//If the supply count count = 0, isGameOver should indicate the game should end
         if (testG.supplyCount[province] == 0) {
             if (isGameOver(&testG) != 1) {
                 printf("TEST 1 HAS FAILED\n\n");
                 errorFlag = 1;
             }
         }
-
-//If the supply count is greater than 0, isGameOver should indicate the game should continue
         else {
             if (isGameOver(&testG) != 0) {
                 printf("TEST 1 HAS FAILED\n\n");
@@ -102,7 +94,7 @@ int main() {
     }
 
     if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+        printf("ALL TESTS PASSED");
     }
 
 

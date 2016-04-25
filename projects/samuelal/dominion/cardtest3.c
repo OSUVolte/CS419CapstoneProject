@@ -50,7 +50,7 @@ int main() {
 
     int newActions = 2;
 
-	printf("Player 1 Action Count = %d, Expected Action Count = %d\n", testG.numActions, G.numActions + newActions);
+	printf("Player 1 Action Count = %d, Expected Action Count= %d\n", testG.numActions, G.numActions + newActions);
 
     if (testG.numActions != (G.numActions + newActions)) {
         printf("TEST 2 HAS FAILED\n\n");
@@ -172,7 +172,7 @@ int main() {
     }
 
     if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+        printf("ALL TESTS PASSED");
     }
 
     return 0;

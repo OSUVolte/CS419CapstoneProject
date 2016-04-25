@@ -1,5 +1,6 @@
 Alex Samuel
 Assignment 3
+big1.c
 
 unittest1.c - Testing getCost() function
 -No bugs found
@@ -27,7 +28,19 @@ BUG: One bug that was found was the one that was introduced in assignment 2. Smi
 player 3 cards from the deck. The bug in this card function allows the player to draw 4 cards from the deck.
 
 cardtest2.c - Testing adventurer card
+BUG: One bug that is present in this card was introduced in assignment 2. The bug is that the player will keep drawing cards until 
+3 treasure cards are drawn rather than 2. Another bug that was indicated from my tests was that a non-treasure card can be 
+drawn by the player and enter the player's hand rather than only treasure cards. Finally, my tests also indicate that playing 
+the adventurer card can affect the deck and hand of the other player. The total number of estate cards in player 2's deck and 
+hand appeared to change after player 1 played the adventurer card.
 
 cardtest3.c - Testing village card
+-No bugs found
 
 cardtest4.c - Testing great hall card
+BUG: One bug present in great hall is that the player will draw 2 cards instead of just 1. In addition, the great hall card 
+will not be discarded from the player's hand as it should be when it is played. This happens because the drawCard() function 
+is called twice when this card is played and the discardCard() function is not called. In addition,,another bug that may be 
+present is that the number of actions is incremented by 2 rather than just 1. But this may be occur because the number of 
+actions is not decremented when only cardEffect() is called. The decrement action takes place in playCard() which executes 
+at an earlier time during the player's turn before cardEffect() is executed. 

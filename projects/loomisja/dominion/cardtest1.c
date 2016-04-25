@@ -178,7 +178,8 @@ void testStandardConditions(int players, int player, int handpos, struct gameSta
 ** Description: entrypoint for unit test.
 ** Parameters: None
 ** Pre-Conditions: None
-** Post-Conditions: Exit code 0 if all tests succeeded, otherwise 1.
+** Post-Conditions: Exit code reports the number of failed tests, 0 if all
+**		tests succeeded, or greater than if some tests failed.
 *******************************************************************************/
 int main()
 {
@@ -195,7 +196,7 @@ int main()
 	int passes = 0; /* tests passed */
 	int failures = 0; /* tests failed */
 
-	if (OUTPUTLEVEL > 0) printf("\n*** BEGIN " FILENAME " (cardEffect unit test for " xstr(CARDUNDERTEST) ") ***\n");
+	if (OUTPUTLEVEL > 0) printf("*** BEGIN " FILENAME " (cardEffect unit test for " xstr(CARDUNDERTEST) ") ***\n");
 
 	/* test games with each allowed number of players */
 	for (players = 2; players <= MAX_PLAYERS; players++)
@@ -245,8 +246,7 @@ int main()
 
 	if (OUTPUTLEVEL > 0)
 	{
-		if (OUTPUTLEVEL > 1) printf("\n");
-		printf("SUMMARY for " FILENAME " (" xstr(CARDUNDERTEST) "): ");
+		printf("\nSUMMARY for " FILENAME " (" xstr(CARDUNDERTEST) "): ");
 		if (failures == 0) printf("passed all %d tests.\nTesting Outcome: SUCCESS!\n", passes);
 		else
 		{
@@ -254,8 +254,8 @@ int main()
 			printf("Testing Outcome: FAILED!\n");
 			if (OUTPUTLEVEL > 1) printf("See results output above.\n");
 		}
-		printf("*** END " FILENAME " (cardEffect unit test for " xstr(CARDUNDERTEST) ") ***\n");
+		printf("\n*** END " FILENAME " (cardEffect unit test for " xstr(CARDUNDERTEST) ") ***\n");
 	}
 
-	return failures != 0 ? 1 : 0;
+	return failures;
 }
