@@ -5,14 +5,30 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    char randomChar[] = "abcdefghijklmnopqrstuvwxyz[({ })]";
+
+    int r = rand() % strlen(randomChar);
+
+    return randomChar[r];
 }
 
 char *inputString()
 {
+
+    char* string = malloc(sizeof(char*) * 6);
+    char randomChar[] = "abcdefghijklmnopqrstuvwxyz";
+
+    int i;
+
+    for (i = 0; i < (5); i++){
+        int r = rand() % strlen(randomChar);
+        string[i] = randomChar[r];
+    }
+
+    string[6] = '/0';
+
     // TODO: rewrite this function
-    return "";
+    return string;
 }
 
 void testme()
