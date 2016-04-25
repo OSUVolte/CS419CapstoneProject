@@ -684,14 +684,14 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	}
       }
       while(z-1>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z]; //Refactor: Doesn't discards
 	z=z-1;
       }
       return 0;
 			
     case council_room:
-      //+4 Cards
-      for (i = 0; i < 4; i++)
+      //refactor: changed to draw 3 Cards
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -836,18 +836,24 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	{
 	  drawCard(currentPlayer, state);
 	}
-			
-      //discard card from hand
+	
+      // refactor: +2 Actions
+      state->numActions = state->numActions + 2;	
+     
+	 //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
 		
     case village:
-      //+1 Card
-      drawCard(currentPlayer, state);
+     //refactor
+	 for (i = 0; i < 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
 			
-      //+2 Actions
-      state->numActions = state->numActions + 2;
-			
+  
+      state->numActions = state->numActions + 0;
+	  
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;
@@ -907,8 +913,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //+1 Card
       drawCard(currentPlayer, state);
 			
-      //+1 Actions
-      state->numActions++;
+      //refactor 0 adds no actions
+      state->numActions == 0;
 			
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);

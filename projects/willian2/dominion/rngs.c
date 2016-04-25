@@ -150,11 +150,12 @@ static int  initialized   = 0;          /* test for stream initialization */
 }
 
 
-   void TestRandom(void)
+    void TestRandom(void)
 /* ------------------------------------------------------------------
  * Use this (optional) function to test for a correct implementation.
  * ------------------------------------------------------------------    
  */
+
 {
   long   i;
   long   x;
@@ -176,4 +177,4 @@ static int  initialized   = 0;          /* test for stream initialization */
     printf("\n The implementation of rngs.c is correct.\n\n");
   else
     printf("\n\a ERROR -- the implementation of rngs.c is not correct.\n\n");
-}
+} 
