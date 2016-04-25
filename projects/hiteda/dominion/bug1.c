@@ -16,3 +16,5 @@ No bugs found with cardtest1. The bug I introduced in the previous assignment wa
 I ran out of time.
 
 The bug I introduced to playAdventurer() was found in cardtest2, but not narrowed down.
+
+With cardTest3, the bug I introduced in the previous assignment was found.
