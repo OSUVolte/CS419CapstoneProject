@@ -136,6 +136,8 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag);
+
 //Save Card Functions.
 int smithyCard(int currentPlayer, struct gameState *state, int handPos);
 int adventurerCard(struct gameState *state, int currentPlayer, int handPos);

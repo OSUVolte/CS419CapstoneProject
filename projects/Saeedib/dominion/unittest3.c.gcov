@@ -1,0 +1,46 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:Behnam Saeedi
+        -:    3:Saeedib
+        -:    4:93227697
+        -:    5:Unit test
+        -:    6:*/
+        -:    7:
+        -:    8:#include <stdlib.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <assert.h>
+        -:   11:#include <string.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#include "dominion.h"
+        -:   15:#include "dominion_helpers.h"
+        -:   16:#include "rngs.h"
+        -:   17:
+        -:   18:#define UNITTEST "kingdomCards"
+        -:   19:
+        1:   20:int main(int argc, char ** argv)
+        -:   21:{
+        1:   22:	srand(time(NULL));
+        -:   23:	//Generating player:
+        1:   24:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+        -:   25:	// initialize a game state and player cards
+        -:   26:	//Total should add up to 6
+        -:   27:	// Starting test
+        1:   28:	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+        -:   29:
+        -:   30:
+        1:   31:	printf("Test 1: cecking for match between two copies.\n");
+        1:   32:	int * k2 = kingdomCards(k[0],k[1],k[2],k[3],k[4],k[5],k[6],k[7],k[8],k[9]);
+       11:   33:	for(int i = 0; i < 10; i++)
+        -:   34:	{
+       10:   35:		printf("Member %d holds value of %d.\n",i, k[i]);
+       10:   36:		assert(k2[i] == k[i]);
+        -:   37:	}
+        1:   38:	printf("Test 1 Passed\n");
+        -:   39:
+        1:   40:	return 0;	//No bugs found
+        -:   41:}

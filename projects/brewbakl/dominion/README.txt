@@ -1,2 +1,2 @@
-1. run make all
-2. all unit tests results sent to unittestresult.out
+1. To compile my tests, run "make mytests".  This will compile all 8 tests and output results to the file.
+

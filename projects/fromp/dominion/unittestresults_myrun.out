@@ -1,0 +1,5445 @@
+Testing gainCard.
+
+States before using gainCard
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+
+Round 1
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 2
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 3
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 4
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 5
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 6
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 7
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 8
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 9
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 10
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+Round 11
+Adding card to discard. 
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to deck.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Adding card to hand.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+
+
+Final state of game and compareGame
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 7 10 22 14 17 11 21 25 19 13 
+Cards in Player 2's discard pile: 7 10 22 14 17 11 21 25 19 13 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 7 10 22 14 17 11 21 25 19 13 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 7 10 22 14 17 11 21 25 19 13 
+Cards in Player 2's discard pile: 7 10 22 14 17 11 21 25 19 13 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 7 10 22 14 17 11 21 25 19 13 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 10
+Player 1 cards in deck: 5
+Player 2 cards in deck: 20
+Player 1 cards in discard: 0
+Player 2 cards in discard: 10
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 7 -1 -1 5 
+7 -1 7 7 -1 -1 7 -1 7 -1 7 7 -1 -1 7 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 10
+Player 1 cards in deck: 5
+Player 2 cards in deck: 20
+Player 1 cards in discard: 0
+Player 2 cards in discard: 10
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 7 -1 -1 5 
+7 -1 7 7 -1 -1 7 -1 7 -1 7 7 -1 -1 7 -1 
+Problems found: 0
+
+<--- gainCard Testing Completed successfully --->
+
+Testing gainCard.
+
+States before using gainCard
+
+Testing card number 0
+
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 6
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 6  Card: 7
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 6  Card: 7
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 6  Card: 7
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 6  Card: 7
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 6  Card: 7
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 6  Card: 7
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 6  Card: 7
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 6  Card: 7
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 6  Card: 7
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 6  Card: 7
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 6  Card: 7
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 6  Card: 7
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 6  Card: 7
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 7 7 7 7 7 7 7 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 7 7 7 7 7 7 7 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 7
+Played card count: 0
+Buys available: 0
+Coins available: 13
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 7
+Played card count: 0
+Buys available: 0
+Coins available: 13
+
+Testing card number 1
+
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 10
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 10
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 10
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 10
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 10
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 10
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 10
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 10
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 10
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 10
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 10
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 4  Card: 10
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 4  Card: 10
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 1  Card Cost: 4  Card: 10
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 1  Card Cost: 4  Card: 10
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 10 10 10 10 10 10 10 10 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 10 10 10 10 10 10 10 10 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+Testing card number 2
+
+Num of Cards: 10  Card Cost: 2  Card: 22
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 2  Card: 22
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 2  Card: 22
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 2  Card: 22
+
+
+Round 4
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 2  Card: 22
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 2  Card: 22
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 2  Card: 22
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 2  Card: 22
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 2  Card: 22
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 2  Card: 22
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 2  Card: 22
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 2  Card: 22
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 2  Card: 22
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 2  Card: 22
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 2  Card: 22
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 2  Card: 22
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 2  Card: 22
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 2  Card: 22
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 2  Card: 22
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 2  Card: 22
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 22 22 22 22 22 22 22 22 22 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 22 22 22 22 22 22 22 22 22 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 9
+Played card count: 0
+Buys available: 0
+Coins available: 17
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 9
+Played card count: 0
+Buys available: 0
+Coins available: 17
+
+Testing card number 3
+
+Num of Cards: 10  Card Cost: 3  Card: 14
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 3  Card: 14
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 3  Card: 14
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 3  Card: 14
+
+
+Round 4
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 3  Card: 14
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 3  Card: 14
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 3  Card: 14
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 3  Card: 14
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 3  Card: 14
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 3  Card: 14
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 3  Card: 14
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 3  Card: 14
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 3  Card: 14
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 3  Card: 14
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 3  Card: 14
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 3  Card: 14
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 3  Card: 14
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 3  Card: 14
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 3  Card: 14
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 2  Card Cost: 3  Card: 14
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 14 14 14 14 14 14 14 14 14 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 14 14 14 14 14 14 14 14 14 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 9
+Played card count: 0
+Buys available: 0
+Coins available: 16
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 9
+Played card count: 0
+Buys available: 0
+Coins available: 16
+
+Testing card number 4
+
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 17
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 17
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 17
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 17
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 17
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 17
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 17
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 17
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 17
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 17
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 17
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 17
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 17
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 17
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 17
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 17 17 17 17 17 17 17 17 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 17 17 17 17 17 17 17 17 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+Testing card number 5
+
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 11
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 11
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 11
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 11
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 11
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 11
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 11
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 11
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 11
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 11
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 11
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 11
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 11
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 11
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 11
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 11 11 11 11 11 11 11 11 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 11 11 11 11 11 11 11 11 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+Testing card number 6
+
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 21
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 21
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 21
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 21
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 21
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 21
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 21
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 21
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 21
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 21
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 21
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 21
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 21
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 21
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 21
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 21 21 21 21 21 21 21 21 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 21 21 21 21 21 21 21 21 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+Testing card number 7
+
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 25
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 25
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 25
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 25
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 25
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 25
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 25
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 25
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 25
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 25
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 25
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 25
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 25
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 25
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 25
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 25 25 25 25 25 25 25 25 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 25 25 25 25 25 25 25 25 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+Testing card number 8
+
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 5  Card: 19
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 19
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 5  Card: 19
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 19
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 5  Card: 19
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 19
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 5  Card: 19
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 19
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 5  Card: 19
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 19
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 5  Card: 19
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 19
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 5  Card: 19
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 19
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 5  Card: 19
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 19 19 19 19 19 19 19 19 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 19 19 19 19 19 19 19 19 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 14
+
+Testing card number 9
+
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 10  Card Cost: 4  Card: 13
+
+
+Round 6
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 13
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 9  Card Cost: 4  Card: 13
+
+
+Round 8
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 13
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 8  Card Cost: 4  Card: 13
+
+
+Round 10
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 13
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 7  Card Cost: 4  Card: 13
+
+
+Round 12
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 13
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 6  Card Cost: 4  Card: 13
+
+
+Round 14
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 13
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 5  Card Cost: 4  Card: 13
+
+
+Round 16
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 13
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 4  Card Cost: 4  Card: 13
+
+
+Round 18
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 13
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: 3  Card Cost: 4  Card: 13
+
+
+Round 20
+Results of buy: 0
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 13 13 13 13 13 13 13 13 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 13 13 13 13 13 13 13 13 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 8
+Played card count: 0
+Buys available: 0
+Coins available: 15
+
+Testing card number 10
+
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 1
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 2
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 3
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 4
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 5
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 6
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 7
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 8
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 9
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 10
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 11
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 12
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 13
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 14
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 15
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 16
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 17
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 18
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 19
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+Num of Cards: -1  Card Cost: 3  Card: 20
+
+
+Round 20
+Results of buy: -1
+Game State vs Compare Game State, player 1.
+Testing game vs compare state for player 1.
+Player 1: okay.
+Testing game vs compare state for player 2.
+Player 2: okay.
+
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 1 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 1 4 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 19
+
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 0
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 19
+
+Problems found: 0
+
+
+<--- buyCard Testing Completed successfully --->
+
+Testing updateCoins.
+
+
+***Testing 0 copper in hand for player 2.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 0
+Coins in compare state for player 2: 0
+
+***Testing with only a bonus of 5 (no coins).
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 5
+Coins in compare state for player 2: 5
+
+***Testing 1 copper in hand.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 1
+Coins in compare state for player 2: 1
+
+***Testing 1 copper and 1 silver in hand.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 3
+Coins in compare state for player 2: 3
+
+***Testing 1 copper, 1 silver, and 1 gold in hand.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 6
+Coins in compare state for player 2: 6
+
+***Testing 1 copper, 1 silver, 1 gold, and 1 smithy in hand.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 6
+Coins in compare state for player 2: 6
+
+***Testing 1 copper, 1 silver, 1 gold, 1 smithy, and 1 steward in hand with a bonus of 5.
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 1: 4
+Coins in compare state for player 1: 4
+
+Player 1: No changes (as expected).
+Player 1: No changes (as expected).
+Coins in regular state for player 2: 11
+Coins in compare state for player 2: 11
+
+
+Problems found: 0
+
+<--- updateCoins Testing Completed successfully --->
+
+Testing fullDeckCount.
+
+Testing with: empty hand, empty discard, looking for copper
+count: 7  counttest: 7
+
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+Testing with: 1 card in hand, empty discard, looking for copper
+count: 8  counttest: 8
+
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+Testing with: 1 card in hand, 1 in discard, looking for copper
+count: 9  counttest: 9
+
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+Testing with: 1 card in hand, 1 in discard, looking for ambassador
+count: 0  counttest: 0
+
+Testing game vs compare state for player 2.
+Player 2: okay.
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+
+
+Problems found: 0
+
+<--- fullDeckCount Testing Completed successfully --->
+
+Testing smithy.
+
++++++ Testing game vs compare state for player 2. +++++
+Player 2: Added cards to game state okay.
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+
+
+Calling using smithy from position 1 in hand.
+Testing game vs compare state for player 2.
+***Hand count does not match.
+***Hand does not match.
+***Deck count does not match.
+***Discard count does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 1 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 4 4 4 4 4 4 1 4 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 4 1 4 1 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 1 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 4 4 4 4 4 4 1 
+Cards in Player 2's discard pile: 13 
+Cards in Player 2's deck: 4 4 4 1 4 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 8
+Player 1 cards in deck: 5
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 -1 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 7
+Player 1 cards in deck: 5
+Player 2 cards in deck: 7
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 -1 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+
+
+Calling using smithy from position 1 in hand, with empty deck.
+Testing game vs compare state for player 2.
+***Hand count does not match.
+***Hand does not match.
+***Deck count does not match.
+***Deck does not match.
+***Discard count does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 1 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 4 4 4 4 4 4 1 4 4 1 4 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 1 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 1 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 4 
+Cards played this turn: 
+Cards in Player 2's hand: 1 4 4 4 4 4 1 4 4 
+Cards in Player 2's discard pile: 4 
+Cards in Player 2's deck: 4 4 1 13 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 11
+Player 1 cards in deck: 5
+Player 2 cards in deck: 2
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 -1 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 9
+Player 1 cards in deck: 5
+Player 2 cards in deck: 5
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 0
+Buys available: 1
+Coins available: 4
+Supply count for players: 10 8 8 8 46 40 30 -1 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+
+
+Number of operations where problems were found: 2
+
+<--- smithy Testing Completed successfully --->
+
+Testing adventurer.
+
++++++ Testing game vs compare state for player 2. +++++
+***Hand count does not match.
+***Hand does not match.
+***Deck does not match.
+***Discard count does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 
+Cards in Player 2's hand: 7 4 4 4 4 4 4 4 
+Cards in Player 2's discard pile: 1 
+Cards in Player 2's deck: 4 1 4 4 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 
+Cards in Player 2's hand: 7 4 4 4 4 4 4 
+Cards in Player 2's discard pile: 1 1 
+Cards in Player 2's deck: 4 4 1 4 4 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 8
+Player 1 cards in deck: 5
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 0
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 7
+Player 1 cards in deck: 5
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 2
+Played card count: 0
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
++++++ Testing game vs compare state for player 2. +++++
+***Hand count does not match.
+***Deck count does not match.
+***Deck does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 
+Cards in Player 2's hand: 7 4 4 4 4 4 4 4 
+Cards in Player 2's discard pile: 1 
+Cards in Player 2's deck: 4 1 4 4 1 4 
+Cards played this turn: 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 
+Cards in Player 2's hand: 7 4 4 4 4 4 4 
+Cards in Player 2's discard pile: 1 
+Cards in Player 2's deck: 4 4 4 4 1 1 4 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 8
+Player 1 cards in deck: 5
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 0
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 7
+Player 1 cards in deck: 5
+Player 2 cards in deck: 7
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 0
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+Player 1: No changes (as expected).
+Game and start state unchanged (for player 1) as expected.
+Compare and start state unchanged (for player 1) as expected.
+
+
+Number of operations where problems were found: 2
+
+<--- adventurer Testing Completed successfully --->
+
+Testing council room.
+
++++++ Testing game vs compare state for player 2. +++++
+Comparing player 2 in game vs compare game. 
+***Hand count does not match.
+***Hand does not match.
+***Deck count does not match.
+***Buys do not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 8 
+Cards in Player 2's hand: 4 4 4 4 4 1 4 1 4 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 
+Cards played this turn: 8 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 1 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 
+Cards played this turn: 8 
+Cards in Player 2's hand: 4 4 4 4 4 1 4 1 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 
+Cards played this turn: 8 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 9
+Player 1 cards in deck: 5
+Player 2 cards in deck: 5
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 1
+Buys available: 0
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 6
+Player 2 cards in hand: 8
+Player 1 cards in deck: 4
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 1
+Buys available: 2
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+Comparing player 1 in game vs compare game. 
+***Hand count does not match.
+***Deck count does not match.
+***Buys do not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 8 
+Cards in Player 2's hand: 4 4 4 4 4 1 4 1 4 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 
+Cards played this turn: 8 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 1 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 
+Cards played this turn: 8 
+Cards in Player 2's hand: 4 4 4 4 4 1 4 1 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 
+Cards played this turn: 8 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 9
+Player 1 cards in deck: 5
+Player 2 cards in deck: 5
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 1
+Buys available: 0
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 6
+Player 2 cards in hand: 8
+Player 1 cards in deck: 4
+Player 2 cards in deck: 6
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 1
+Buys available: 2
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1 
+
+
+Number of operations where problems were found: 2
+
+<--- Council room Testing Completed successfully --->
+
+Testing remodel.
+
++++++ Testing game vs compare state for player 2. +++++
+Remodel function call results match.
+***Hand does not match.
+***Played card count does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 7 13 
+Cards in Player 2's hand: 4 12 4 
+Cards in Player 2's discard pile: 7 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 4 1 
+Cards played this turn: 7 13 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 12 
+Cards in Player 2's hand: 7 4 4 
+Cards in Player 2's discard pile: 7 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 4 1 
+Cards played this turn: 12 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 3
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 2
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 9 -1 -1 8 
+10 -1 10 10 -1 -1 -1 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 3
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 1
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 9 -1 -1 8 
+10 -1 10 10 -1 -1 -1 -1 10 -1 10 10 -1 -1 10 -1 
+
+
++++++ Testing game vs compare state for player 2. +++++
+-- Remodel function call results do not match.
+Game function call result: 0  Compare function call result: -1
+***Hand count does not match.
+***Hand does not match.
+***Discard count does not match.
+***Played card count does not match.
+***Supply count does not match.
+
+***Cards held by regular G state***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 12 4 
+Cards in Player 2's hand: 4 7 13 
+Cards in Player 2's discard pile: 7 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 4 1 
+Cards played this turn: 12 4 
+***Cards held by memcopy G state.***
+Cards in Player 1's hand: 4 4 4 4 4 
+Cards in Player 1's discard pile: 
+Cards in Player 1's deck: 1 4 1 4 1 
+Cards played this turn: 
+Cards in Player 2's hand: 12 7 13 4 4 
+Cards in Player 2's discard pile: 
+Cards in Player 2's deck: 4 4 1 4 4 4 4 1 4 1 
+Cards played this turn: 
+
+***Number of cards in regular G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 3
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 1
+Played card count: 2
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 9 -1 -1 8 
+10 -1 10 10 -1 -1 -1 -1 10 -1 10 10 -1 -1 10 -1 
+***Number of cards in memcopy G state.***
+Player 1 cards in hand: 5
+Player 2 cards in hand: 5
+Player 1 cards in deck: 5
+Player 2 cards in deck: 10
+Player 1 cards in discard: 0
+Player 2 cards in discard: 0
+Played card count: 0
+Buys available: 1
+Coins available: 5
+Supply count for players: 10 8 8 8 46 40 30 10 -1 -1 8 
+10 -1 10 10 -1 -1 -1 -1 10 -1 10 10 -1 -1 10 -1 
+Unmatched card: 7 Card amounts: 10 and 9
+
+
+Number of operations where problems were found: 3
+
+<--- Remodel Testing Completed successfully --->
+
+File 'dominion.c'
+Lines executed:37.70% of 557
+Branches executed:37.32% of 418
+Taken at least once:29.67% of 418
+Calls executed:26.88% of 93
+Creating 'dominion.c.gcov'
+
+        -:    0:Source:dominion.c
+        -:    0:Graph:dominion.gcno
+        -:    0:Data:dominion.gcda
+        -:    0:Runs:8
+        -:    0:Programs:8
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function adventurerCard called 2 returned 100% blocks executed 100%
+        2:    8:int adventurerCard(int currentPlayer, struct gameState *state){
+        -:    9:      int i;
+        2:   10:      int z = 0;
+        -:   11:      int cardDrawn;
+        2:   12:      int drawntreasure = 0;
+        -:   13:      int temphand[MAX_HAND];
+        -:   14:
+       12:   15:      while(drawntreasure<3){
+branch  0 taken 80%
+branch  1 taken 20% (fallthrough)
+        8:   16:	if (state->deckCount[currentPlayer] >= 0){//if the deck is empty we need to shuffle discard and add to deck
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        8:   17:	  shuffle(currentPlayer, state);
+call    0 returned 100%
+        -:   18:	}
+        8:   19:	drawCard(currentPlayer, state);
+call    0 returned 100%
+        8:   20:	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+        8:   21:	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+branch  0 taken 25% (fallthrough)
+branch  1 taken 75%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+        6:   22:	  drawntreasure++;
+        -:   23:	else{
+        2:   24:	  temphand[z]=cardDrawn;
+        2:   25:	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+        2:   26:	  z++;
+        -:   27:	}
+        -:   28:      }
+        6:   29:      while(z-1>=0){
+branch  0 taken 50%
+branch  1 taken 50% (fallthrough)
+        2:   30:	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+        2:   31:	z=z-1;
+        -:   32:      }
+        2:   33:      return 0;
+        -:   34:}
+        -:   35:			
+function council_roomCard called 1 returned 100% blocks executed 100%
+        1:   36:int council_roomCard(int currentPlayer, int handPos, struct gameState *state){
+        -:   37:      int i;
+        -:   38:
+        -:   39:      //+4 Cards
+        5:   40:      for (i = 0; i < 4; i++)
+branch  0 taken 80%
+branch  1 taken 20% (fallthrough)
+        -:   41:	{
+        4:   42:	  drawCard(currentPlayer, state);
+call    0 returned 100%
+        -:   43:	}
+        -:   44:			
+        -:   45:      //+1 Buy
+        1:   46:      state->numBuys--;
+        -:   47:			
+        -:   48:      //Each other player draws a card
+        3:   49:      for (i = 0; i < state->numPlayers; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:   50:	{
+        2:   51:	  if ( i == currentPlayer )
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:   52:	    {
+        1:   53:	      drawCard(i, state);
+call    0 returned 100%
+        -:   54:	    }
+        -:   55:	}
+        -:   56:			
+        -:   57:      //put played card in played card pile
+        1:   58:      discardCard(handPos, currentPlayer, state, 0);
+call    0 returned 100%
+        -:   59:			
+        1:   60:      return 0;
+        -:   61:}
+        -:   62:			
+function feastCard called 0 returned 0% blocks executed 0%
+    #####:   63:int feastCard(int currentPlayer, int choice1, struct gameState *state){
+        -:   64:      int i;
+        -:   65:      int x;
+        -:   66:      int temphand[MAX_HAND];
+        -:   67:
+        -:   68:      //gain card with cost up to 5
+        -:   69:      //Backup hand
+    #####:   70:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:   71:	temphand[i] = state->hand[currentPlayer][i];//Backup card
+    #####:   72:	state->hand[currentPlayer][i] = -1;//Set to nothing
+        -:   73:      }
+        -:   74:      //Backup hand
+        -:   75:
+        -:   76:      //Update Coins for Buy
+    #####:   77:      updateCoins(currentPlayer, state, 5);
+call    0 never executed
+    #####:   78:      x = 2;//Condition to loop on
+    #####:   79:      while( x > 0) {//Buy one card
+branch  0 never executed
+branch  1 never executed
+    #####:   80:	if (supplyCount(choice1, state) <= 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   81:	  if (DEBUG)
+        -:   82:	    printf("None of that card left, sorry!\n");
+        -:   83:
+        -:   84:	  if (DEBUG){
+        -:   85:	    printf("Cards Left: %d\n", supplyCount(choice1, state));
+        -:   86:	  }
+        -:   87:	}
+    #####:   88:	else if (state->coins < getCost(choice1)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:	  printf("That card is too expensive!\n");
+call    0 never executed
+        -:   90:
+        -:   91:	  if (DEBUG){
+        -:   92:	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
+        -:   93:	  }
+        -:   94:	}
+        -:   95:	else{
+        -:   96:
+        -:   97:	  if (DEBUG){
+        -:   98:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:   99:	  }
+        -:  100:
+    #####:  101:	  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+call    0 never executed
+    #####:  102:	  x--;//No more buying cards
+        -:  103:
+        -:  104:	  if (DEBUG){
+        -:  105:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  106:	  }
+        -:  107:
+        -:  108:	}
+        -:  109:      }     
+        -:  110:
+        -:  111:      //Reset Hand
+    #####:  112:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  113:	state->hand[currentPlayer][i] = temphand[i];
+    #####:  114:	temphand[i] = -1;
+        -:  115:      }
+        -:  116:      //Reset Hand
+        -:  117:      			
+    #####:  118:      return 0;
+        -:  119:}
+        -:  120:
+function remodelCard called 2 returned 100% blocks executed 94%
+        2:  121:int remodelCard(int currentPlayer, int handPos, int choice1, int choice2, struct gameState *state){
+        -:  122:
+        2:  123:      if(handPos > 0) handPos -= 1;
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  124:
+        -:  125:      int i;
+        -:  126:      int j;
+        -:  127:
+        2:  128:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  129:
+        2:  130:      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+        -:  131:	{
+    #####:  132:	  return -1;
+        -:  133:	}
+        -:  134:
+        2:  135:      gainCard(choice2, state, 0, currentPlayer);
+call    0 returned 100%
+        -:  136:
+        -:  137:      //discard card from hand
+        2:  138:      discardCard(handPos, currentPlayer, state, 0);
+call    0 returned 100%
+        -:  139:
+        -:  140:      //discard trashed card
+        4:  141:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 taken 100%
+branch  1 taken 0% (fallthrough)
+        -:  142:	{
+        4:  143:	  if (state->hand[currentPlayer][i] == j)
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  144:	    {
+        2:  145:	      discardCard(i, currentPlayer, state, 0);			
+call    0 returned 100%
+        2:  146:	      break;
+        -:  147:	    }
+        -:  148:	}
+        -:  149:
+        -:  150:
+        2:  151:      return 0;
+        -:  152:}
+        -:  153:		
+function smithyCard called 2 returned 100% blocks executed 100%
+        2:  154:int smithyCard(int currentPlayer, int handPos, struct gameState *state){
+        -:  155:      int i;
+        -:  156:
+        -:  157:      //+3 Cards
+       10:  158:      for (i = 0; i < 4; i++)
+branch  0 taken 80%
+branch  1 taken 20% (fallthrough)
+        -:  159:	{
+        8:  160:	  drawCard(currentPlayer, state);
+call    0 returned 100%
+        -:  161:	}
+        -:  162:			
+        -:  163:      //discard card from hand
+        2:  164:      discardCard(handPos, currentPlayer, state, 1);
+call    0 returned 100%
+        2:  165:      return 0;
+        -:  166:}
+        -:  167:
+function compare called 770 returned 100% blocks executed 100%
+      770:  168:int compare(const void* a, const void* b) {
+      770:  169:  if (*(int*)a > *(int*)b)
+branch  0 taken 6% (fallthrough)
+branch  1 taken 94%
+       49:  170:    return 1;
+      721:  171:  if (*(int*)a < *(int*)b)
+branch  0 taken 24% (fallthrough)
+branch  1 taken 76%
+      173:  172:    return -1;
+      548:  173:  return 0;
+        -:  174:}
+        -:  175:
+function newGame called 0 returned 0% blocks executed 0%
+    #####:  176:struct gameState* newGame() {
+    #####:  177:  struct gameState* g = malloc(sizeof(struct gameState));
+    #####:  178:  return g;
+        -:  179:}
+        -:  180:
+function kingdomCards called 0 returned 0% blocks executed 0%
+    #####:  181:int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
+        -:  182:		  int k8, int k9, int k10) {
+    #####:  183:  int* k = malloc(10 * sizeof(int));
+    #####:  184:  k[0] = k1;
+    #####:  185:  k[1] = k2;
+    #####:  186:  k[2] = k3;
+    #####:  187:  k[3] = k4;
+    #####:  188:  k[4] = k5;
+    #####:  189:  k[5] = k6;
+    #####:  190:  k[6] = k7;
+    #####:  191:  k[7] = k8;
+    #####:  192:  k[8] = k9;
+    #####:  193:  k[9] = k10;
+    #####:  194:  return k;
+        -:  195:}
+        -:  196:
+function initializeGame called 20 returned 100% blocks executed 88%
+       20:  197:int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+        -:  198:		   struct gameState *state) {
+        -:  199:
+        -:  200:  int i;
+        -:  201:  int j;
+        -:  202:  int it;			
+        -:  203:  //set up random number generator
+       20:  204:  SelectStream(1);
+call    0 returned 100%
+       20:  205:  PutSeed((long)randomSeed);
+call    0 returned 100%
+        -:  206:  
+        -:  207:  //check number of players
+       20:  208:  if (numPlayers > MAX_PLAYERS || numPlayers < 2)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+        -:  209:    {
+    #####:  210:      return -1;
+        -:  211:    }
+        -:  212:
+        -:  213:  //set number of players
+       20:  214:  state->numPlayers = numPlayers;
+        -:  215:
+        -:  216:  //check selected kingdom cards are different
+      220:  217:  for (i = 0; i < 10; i++)
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+        -:  218:    {
+     2200:  219:      for (j = 0; j < 10; j++)
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+        -:  220:        {
+     2000:  221:	  if (j != i && kingdomCards[j] == kingdomCards[i])
+branch  0 taken 90% (fallthrough)
+branch  1 taken 10%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+        -:  222:	    {
+    #####:  223:	      return -1;
+        -:  224:	    }
+        -:  225:        }
+        -:  226:    }
+        -:  227:
+        -:  228:
+        -:  229:  //initialize supply
+        -:  230:  ///////////////////////////////
+        -:  231:
+        -:  232:  //set number of Curse cards
+       20:  233:  if (numPlayers == 2)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  234:    {
+       20:  235:      state->supplyCount[curse] = 10;
+        -:  236:    }
+    #####:  237:  else if (numPlayers == 3)
+branch  0 never executed
+branch  1 never executed
+        -:  238:    {
+    #####:  239:      state->supplyCount[curse] = 20;
+        -:  240:    }
+        -:  241:  else
+        -:  242:    {
+    #####:  243:      state->supplyCount[curse] = 30;
+        -:  244:    }
+        -:  245:
+        -:  246:  //set number of Victory cards
+       20:  247:  if (numPlayers == 2)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  248:    {
+       20:  249:      state->supplyCount[estate] = 8;
+       20:  250:      state->supplyCount[duchy] = 8;
+       20:  251:      state->supplyCount[province] = 8;
+        -:  252:    }
+        -:  253:  else
+        -:  254:    {
+    #####:  255:      state->supplyCount[estate] = 12;
+    #####:  256:      state->supplyCount[duchy] = 12;
+    #####:  257:      state->supplyCount[province] = 12;
+        -:  258:    }
+        -:  259:
+        -:  260:  //set number of Treasure cards
+       20:  261:  state->supplyCount[copper] = 60 - (7 * numPlayers);
+       20:  262:  state->supplyCount[silver] = 40;
+       20:  263:  state->supplyCount[gold] = 30;
+        -:  264:
+        -:  265:  //set number of Kingdom cards
+      420:  266:  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
+branch  0 taken 95%
+branch  1 taken 5% (fallthrough)
+        -:  267:    {
+     3342:  268:      for (j = 0; j < 10; j++)           		//loop chosen cards
+branch  0 taken 94%
+branch  1 taken 6% (fallthrough)
+        -:  269:	{
+     3137:  270:	  if (kingdomCards[j] == i)
+branch  0 taken 6% (fallthrough)
+branch  1 taken 94%
+        -:  271:	    {
+        -:  272:	      //check if card is a 'Victory' Kingdom card
+      195:  273:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 10% (fallthrough)
+branch  3 taken 90%
+        -:  274:		{
+       40:  275:		  if (numPlayers == 2){ 
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       20:  276:		    state->supplyCount[i] = 8; 
+        -:  277:		  }
+    #####:  278:		  else{ state->supplyCount[i] = 12; }
+        -:  279:		}
+        -:  280:	      else
+        -:  281:		{
+      175:  282:		  state->supplyCount[i] = 10;
+        -:  283:		}
+      195:  284:	      break;
+        -:  285:	    }
+        -:  286:	  else    //card is not in the set choosen for the game
+        -:  287:	    {
+     2942:  288:	      state->supplyCount[i] = -1;
+        -:  289:	    }
+        -:  290:	}
+        -:  291:
+        -:  292:    }
+        -:  293:
+        -:  294:  ////////////////////////
+        -:  295:  //supply intilization complete
+        -:  296:
+        -:  297:  //set player decks
+       60:  298:  for (i = 0; i < numPlayers; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  299:    {
+       40:  300:      state->deckCount[i] = 0;
+      160:  301:      for (j = 0; j < 3; j++)
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+        -:  302:	{
+      120:  303:	  state->deck[i][j] = estate;
+      120:  304:	  state->deckCount[i]++;
+        -:  305:	}
+      320:  306:      for (j = 3; j < 10; j++)
+branch  0 taken 88%
+branch  1 taken 13% (fallthrough)
+        -:  307:	{
+      280:  308:	  state->deck[i][j] = copper;
+      280:  309:	  state->deckCount[i]++;		
+        -:  310:	}
+        -:  311:    }
+        -:  312:
+        -:  313:  //shuffle player decks
+       60:  314:  for (i = 0; i < numPlayers; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  315:    {
+       40:  316:      if ( shuffle(i, state) < 0 )
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+        -:  317:	{
+    #####:  318:	  return -1;
+        -:  319:	}
+        -:  320:    }
+        -:  321:
+        -:  322:  //draw player hands
+       60:  323:  for (i = 0; i < numPlayers; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  324:    {  
+        -:  325:      //initialize hand size to zero
+       40:  326:      state->handCount[i] = 0;
+       40:  327:      state->discardCount[i] = 0;
+        -:  328:      //draw 5 cards
+        -:  329:      // for (j = 0; j < 5; j++)
+        -:  330:      //	{
+        -:  331:      //	  drawCard(i, state);
+        -:  332:      //	}
+        -:  333:    }
+        -:  334:  
+        -:  335:  //set embargo tokens to 0 for all supply piles
+      560:  336:  for (i = 0; i <= treasure_map; i++)
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+        -:  337:    {
+      540:  338:      state->embargoTokens[i] = 0;
+        -:  339:    }
+        -:  340:
+        -:  341:  //initialize first player's turn
+       20:  342:  state->outpostPlayed = 0;
+       20:  343:  state->phase = 0;
+       20:  344:  state->numActions = 1;
+       20:  345:  state->numBuys = 1;
+       20:  346:  state->playedCardCount = 0;
+       20:  347:  state->whoseTurn = 0;
+       20:  348:  state->handCount[state->whoseTurn] = 0;
+        -:  349:  //int it; move to top
+        -:  350:
+        -:  351:  //Moved draw cards to here, only drawing at the start of a turn
+      120:  352:  for (it = 0; it < 5; it++){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+      100:  353:    drawCard(state->whoseTurn, state);
+call    0 returned 100%
+        -:  354:  }
+        -:  355:
+       20:  356:  updateCoins(state->whoseTurn, state, 0);
+call    0 returned 100%
+        -:  357:
+       20:  358:  return 0;
+        -:  359:}
+        -:  360:
+function shuffle called 53 returned 100% blocks executed 100%
+       53:  361:int shuffle(int player, struct gameState *state) {
+        -:  362: 
+        -:  363:
+        -:  364:  int newDeck[MAX_DECK];
+       53:  365:  int newDeckPos = 0;
+        -:  366:  int card;
+        -:  367:  int i;
+        -:  368:
+       53:  369:  if (state->deckCount[player] < 1)
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+        2:  370:    return -1;
+       51:  371:  qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
+call    0 returned 100%
+        -:  372:  /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
+        -:  373:
+      594:  374:  while (state->deckCount[player] > 0) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+      492:  375:    card = floor(Random() * state->deckCount[player]);
+call    0 returned 100%
+      492:  376:    newDeck[newDeckPos] = state->deck[player][card];
+      492:  377:    newDeckPos++;
+     1663:  378:    for (i = card; i < state->deckCount[player]-1; i++) {
+branch  0 taken 70%
+branch  1 taken 30% (fallthrough)
+     1171:  379:      state->deck[player][i] = state->deck[player][i+1];
+        -:  380:    }
+      492:  381:    state->deckCount[player]--;
+        -:  382:  }
+      543:  383:  for (i = 0; i < newDeckPos; i++) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+      492:  384:    state->deck[player][i] = newDeck[i];
+      492:  385:    state->deckCount[player]++;
+        -:  386:  }
+        -:  387:
+       51:  388:  return 0;
+        -:  389:}
+        -:  390:
+function playCard called 0 returned 0% blocks executed 0%
+    #####:  391:int playCard(int handPos, int choice1, int choice2, int choice3, struct gameState *state) 
+        -:  392:{	
+        -:  393:  int card;
+    #####:  394:  int coin_bonus = 0; 		//tracks coins gain from actions
+        -:  395:
+        -:  396:  //check if it is the right phase
+    #####:  397:  if (state->phase != 0)
+branch  0 never executed
+branch  1 never executed
+        -:  398:    {
+    #####:  399:      return -1;
+        -:  400:    }
+        -:  401:	
+        -:  402:  //check if player has enough actions
+    #####:  403:  if ( state->numActions < 1 )
+branch  0 never executed
+branch  1 never executed
+        -:  404:    {
+    #####:  405:      return -1;
+        -:  406:    }
+        -:  407:	
+        -:  408:  //get card played
+    #####:  409:  card = handCard(handPos, state);
+call    0 never executed
+        -:  410:	
+        -:  411:  //check if selected card is an action
+    #####:  412:  if ( card < adventurer || card > treasure_map )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  413:    {
+    #####:  414:      return -1;
+        -:  415:    }
+        -:  416:	
+        -:  417:  //play card
+    #####:  418:  if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  419:    {
+    #####:  420:      return -1;
+        -:  421:    }
+        -:  422:	
+        -:  423:  //reduce number of actions
+    #####:  424:  state->numActions--;
+        -:  425:
+        -:  426:  //update coins (Treasure cards may be added with card draws)
+    #####:  427:  updateCoins(state->whoseTurn, state, coin_bonus);
+call    0 never executed
+        -:  428:	
+    #####:  429:  return 0;
+        -:  430:}
+        -:  431:
+function buyCard called 220 returned 100% blocks executed 100%
+      220:  432:int buyCard(int supplyPos, struct gameState *state) {
+        -:  433:  int who;
+        -:  434:  if (DEBUG){
+        -:  435:    printf("Entering buyCard...\n");
+        -:  436:  }
+        -:  437:
+        -:  438:  // I don't know what to do about the phase thing.
+        -:  439:
+      220:  440:  who = state->whoseTurn;
+        -:  441:
+      220:  442:  if (state->numBuys < 1){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  443:    if (DEBUG)
+        -:  444:      printf("You do not have any buys left\n");
+      110:  445:    return -1;
+      110:  446:  } else if (supplyCount(supplyPos, state) <1){
+call    0 returned 100%
+branch  1 taken 9% (fallthrough)
+branch  2 taken 91%
+        -:  447:    if (DEBUG)
+        -:  448:      printf("There are not any of that type of card left\n");
+       10:  449:    return -1;
+      100:  450:  } else if (state->coins < getCost(supplyPos)){
+call    0 returned 100%
+branch  1 taken 19% (fallthrough)
+branch  2 taken 81%
+        -:  451:    if (DEBUG) 
+        -:  452:      printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
+       19:  453:    return -1;
+        -:  454:  } else {
+       81:  455:    state->phase=1;
+        -:  456:    //state->supplyCount[supplyPos]--;
+       81:  457:    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+call    0 returned 100%
+        -:  458:  
+       81:  459:    state->coins = (state->coins) - (getCost(supplyPos));
+call    0 returned 100%
+       81:  460:    state->numBuys--;
+        -:  461:    if (DEBUG)
+        -:  462:      printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
+        -:  463:  }
+        -:  464:
+        -:  465:  //state->discard[who][state->discardCount[who]] = supplyPos;
+        -:  466:  //state->discardCount[who]++;
+        -:  467:    
+       81:  468:  return 0;
+        -:  469:}
+        -:  470:
+function numHandCards called 0 returned 0% blocks executed 0%
+    #####:  471:int numHandCards(struct gameState *state) {
+    #####:  472:  return state->handCount[ whoseTurn(state) ];
+call    0 never executed
+        -:  473:}
+        -:  474:
+function handCard called 0 returned 0% blocks executed 0%
+    #####:  475:int handCard(int handPos, struct gameState *state) {
+    #####:  476:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  477:  return state->hand[currentPlayer][handPos];
+        -:  478:}
+        -:  479:
+function supplyCount called 748 returned 100% blocks executed 100%
+      748:  480:int supplyCount(int card, struct gameState *state) {
+      748:  481:  return state->supplyCount[card];
+        -:  482:}
+        -:  483:
+function fullDeckCount called 4 returned 100% blocks executed 100%
+        4:  484:int fullDeckCount(int player, int card, struct gameState *state) {
+        -:  485:  int i;
+        4:  486:  int count = 0;
+        -:  487:
+       44:  488:  for (i = 0; i < state->deckCount[player]; i++)
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+        -:  489:    {
+       40:  490:      if (state->deck[player][i] == card) count++;
+branch  0 taken 52% (fallthrough)
+branch  1 taken 48%
+        -:  491:    }
+        -:  492:
+        7:  493:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 taken 43%
+branch  1 taken 57% (fallthrough)
+        -:  494:    {
+        3:  495:      if (state->hand[player][i] == card) count++;
+branch  0 taken 67% (fallthrough)
+branch  1 taken 33%
+        -:  496:    }
+        -:  497:
+        7:  498:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 taken 43%
+branch  1 taken 57% (fallthrough)
+        -:  499:    {
+        3:  500:      if (state->discard[player][i] == card) count++;
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        -:  501:    }
+        -:  502:
+        4:  503:  return count;
+        -:  504:}
+        -:  505:
+function whoseTurn called 0 returned 0% blocks executed 0%
+    #####:  506:int whoseTurn(struct gameState *state) {
+    #####:  507:  return state->whoseTurn;
+        -:  508:}
+        -:  509:
+function endTurn called 0 returned 0% blocks executed 0%
+    #####:  510:int endTurn(struct gameState *state) {
+        -:  511:  int k;
+        -:  512:  int i;
+    #####:  513:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+        -:  514:  
+        -:  515:  //Discard hand
+    #####:  516:  for (i = 0; i < state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  517:    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
+    #####:  518:    state->hand[currentPlayer][i] = -1;//Set card to -1
+        -:  519:  }
+    #####:  520:  state->handCount[currentPlayer] = 0;//Reset hand count
+        -:  521:    
+        -:  522:  //Code for determining the player
+    #####:  523:  if (currentPlayer < (state->numPlayers - 1)){ 
+branch  0 never executed
+branch  1 never executed
+    #####:  524:    state->whoseTurn = currentPlayer + 1;//Still safe to increment
+        -:  525:  }
+        -:  526:  else{
+    #####:  527:    state->whoseTurn = 0;//Max player has been reached, loop back around to player 1
+        -:  528:  }
+        -:  529:
+    #####:  530:  state->outpostPlayed = 0;
+    #####:  531:  state->phase = 0;
+    #####:  532:  state->numActions = 1;
+    #####:  533:  state->coins = 0;
+    #####:  534:  state->numBuys = 1;
+    #####:  535:  state->playedCardCount = 0;
+    #####:  536:  state->handCount[state->whoseTurn] = 0;
+        -:  537:
+        -:  538:  //int k; move to top
+        -:  539:  //Next player draws hand
+    #####:  540:  for (k = 0; k < 5; k++){
+branch  0 never executed
+branch  1 never executed
+    #####:  541:    drawCard(state->whoseTurn, state);//Draw a card
+call    0 never executed
+        -:  542:  }
+        -:  543:
+        -:  544:  //Update money
+    #####:  545:  updateCoins(state->whoseTurn, state , 0);
+call    0 never executed
+        -:  546:
+    #####:  547:  return 0;
+        -:  548:}
+        -:  549:
+function isGameOver called 0 returned 0% blocks executed 0%
+    #####:  550:int isGameOver(struct gameState *state) {
+        -:  551:  int i;
+        -:  552:  int j;
+        -:  553:	
+        -:  554:  //if stack of Province cards is empty, the game ends
+    #####:  555:  if (state->supplyCount[province] == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  556:    {
+    #####:  557:      return 1;
+        -:  558:    }
+        -:  559:
+        -:  560:  //if three supply pile are at 0, the game ends
+    #####:  561:  j = 0;
+    #####:  562:  for (i = 0; i < 25; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  563:    {
+    #####:  564:      if (state->supplyCount[i] == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  565:	{
+    #####:  566:	  j++;
+        -:  567:	}
+        -:  568:    }
+    #####:  569:  if ( j >= 3)
+branch  0 never executed
+branch  1 never executed
+        -:  570:    {
+    #####:  571:      return 1;
+        -:  572:    }
+        -:  573:
+    #####:  574:  return 0;
+        -:  575:}
+        -:  576:
+function scoreFor called 0 returned 0% blocks executed 0%
+    #####:  577:int scoreFor (int player, struct gameState *state) {
+        -:  578:
+        -:  579:  int i;
+    #####:  580:  int score = 0;
+        -:  581:  //score from hand
+    #####:  582:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  583:    {
+    #####:  584:      if (state->hand[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  585:      if (state->hand[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  586:      if (state->hand[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  587:      if (state->hand[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  588:      if (state->hand[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  589:      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  590:    }
+        -:  591:
+        -:  592:  //score from discard
+    #####:  593:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  594:    {
+    #####:  595:      if (state->discard[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  596:      if (state->discard[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  597:      if (state->discard[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  598:      if (state->discard[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  599:      if (state->discard[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  600:      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  601:    }
+        -:  602:
+        -:  603:  //score from deck
+    #####:  604:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  605:    {
+    #####:  606:      if (state->deck[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  607:      if (state->deck[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  608:      if (state->deck[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  609:      if (state->deck[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  610:      if (state->deck[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  611:      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  612:    }
+        -:  613:
+    #####:  614:  return score;
+        -:  615:}
+        -:  616:
+function getWinners called 0 returned 0% blocks executed 0%
+    #####:  617:int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+        -:  618:  int i;	
+        -:  619:  int j;
+        -:  620:  int highScore;
+        -:  621:  int currentPlayer;
+        -:  622:
+        -:  623:  //get score for each player
+    #####:  624:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  625:    {
+        -:  626:      //set unused player scores to -9999
+    #####:  627:      if (i >= state->numPlayers)
+branch  0 never executed
+branch  1 never executed
+        -:  628:	{
+    #####:  629:	  players[i] = -9999;
+        -:  630:	}
+        -:  631:      else
+        -:  632:	{
+    #####:  633:	  players[i] = scoreFor (i, state);
+call    0 never executed
+        -:  634:	}
+        -:  635:    }
+        -:  636:
+        -:  637:  //find highest score
+    #####:  638:  j = 0;
+    #####:  639:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  640:    {
+    #####:  641:      if (players[i] > players[j])
+branch  0 never executed
+branch  1 never executed
+        -:  642:	{
+    #####:  643:	  j = i;
+        -:  644:	}
+        -:  645:    }
+    #####:  646:  highScore = players[j];
+        -:  647:
+        -:  648:  //add 1 to players who had less turns
+    #####:  649:  currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  650:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  651:    {
+    #####:  652:      if ( players[i] == highScore && i > currentPlayer )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  653:	{
+    #####:  654:	  players[i]++;
+        -:  655:	}
+        -:  656:    }
+        -:  657:
+        -:  658:  //find new highest score
+    #####:  659:  j = 0;
+    #####:  660:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  661:    {
+    #####:  662:      if ( players[i] > players[j] )
+branch  0 never executed
+branch  1 never executed
+        -:  663:	{
+    #####:  664:	  j = i;
+        -:  665:	}
+        -:  666:    }
+    #####:  667:  highScore = players[j];
+        -:  668:
+        -:  669:  //set winners in array to 1 and rest to 0
+    #####:  670:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  671:    {
+    #####:  672:      if ( players[i] == highScore )
+branch  0 never executed
+branch  1 never executed
+        -:  673:	{
+    #####:  674:	  players[i] = 1;
+        -:  675:	}
+        -:  676:      else
+        -:  677:	{
+    #####:  678:	  players[i] = 0;
+        -:  679:	}
+        -:  680:    }
+        -:  681:
+    #####:  682:  return 0;
+        -:  683:}
+        -:  684:
+function drawCard called 139 returned 100% blocks executed 92%
+      139:  685:int drawCard(int player, struct gameState *state)
+        -:  686:{	int count;
+        -:  687:  int deckCounter;
+      139:  688:  if (state->deckCount[player] <= 0){//Deck is empty
+branch  0 taken 3% (fallthrough)
+branch  1 taken 97%
+        -:  689:    
+        -:  690:    //Step 1 Shuffle the discard pile back into a deck
+        -:  691:    int i;
+        -:  692:    //Move discard to deck
+       38:  693:    for (i = 0; i < state->discardCount[player];i++){
+branch  0 taken 89%
+branch  1 taken 11% (fallthrough)
+       34:  694:      state->deck[player][i] = state->discard[player][i];
+       34:  695:      state->discard[player][i] = -1;
+        -:  696:    }
+        -:  697:
+        4:  698:    state->deckCount[player] = state->discardCount[player];
+        4:  699:    state->discardCount[player] = 0;//Reset discard
+        -:  700:
+        -:  701:    //Shufffle the deck
+        4:  702:    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
+call    0 returned 100%
+        -:  703:   
+        -:  704:    if (DEBUG){//Debug statements
+        -:  705:      printf("Deck count now: %d\n", state->deckCount[player]);
+        -:  706:    }
+        -:  707:    
+        4:  708:    state->discardCount[player] = 0;
+        -:  709:
+        -:  710:    //Step 2 Draw Card
+        4:  711:    count = state->handCount[player];//Get current player's hand count
+        -:  712:    
+        -:  713:    if (DEBUG){//Debug statements
+        -:  714:      printf("Current hand count: %d\n", count);
+        -:  715:    }
+        -:  716:    
+        4:  717:    deckCounter = state->deckCount[player];//Create a holder for the deck count
+        -:  718:
+        4:  719:    if (deckCounter == 0)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  720:      return -1;
+        -:  721:
+        4:  722:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
+        4:  723:    state->deckCount[player]--;
+        4:  724:    state->handCount[player]++;//Increment hand count
+        -:  725:  }
+        -:  726:
+        -:  727:  else{
+      135:  728:    int count = state->handCount[player];//Get current hand count for player
+        -:  729:    int deckCounter;
+        -:  730:    if (DEBUG){//Debug statements
+        -:  731:      printf("Current hand count: %d\n", count);
+        -:  732:    }
+        -:  733:
+      135:  734:    deckCounter = state->deckCount[player];//Create holder for the deck count
+      135:  735:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+      135:  736:    state->deckCount[player]--;
+      135:  737:    state->handCount[player]++;//Increment hand count
+        -:  738:  }
+        -:  739:
+      139:  740:  return 0;
+        -:  741:}
+        -:  742:
+function getCost called 686 returned 100% blocks executed 47%
+      686:  743:int getCost(int cardNumber)
+        -:  744:{
+      686:  745:  switch( cardNumber ) 
+branch  0 taken 0%
+branch  1 taken 0%
+branch  2 taken 0%
+branch  3 taken 0%
+branch  4 taken 1%
+branch  5 taken 0%
+branch  6 taken 0%
+branch  7 taken 10%
+branch  8 taken 0%
+branch  9 taken 0%
+branch 10 taken 10%
+branch 11 taken 10%
+branch 12 taken 0%
+branch 13 taken 10%
+branch 14 taken 10%
+branch 15 taken 0%
+branch 16 taken 0%
+branch 17 taken 10%
+branch 18 taken 0%
+branch 19 taken 10%
+branch 20 taken 3%
+branch 21 taken 10%
+branch 22 taken 10%
+branch 23 taken 0%
+branch 24 taken 0%
+branch 25 taken 10%
+branch 26 taken 0%
+branch 27 taken 0%
+        -:  746:    {
+        -:  747:    case curse:
+    #####:  748:      return 0;
+        -:  749:    case estate:
+    #####:  750:      return 2;
+        -:  751:    case duchy:
+    #####:  752:      return 5;
+        -:  753:    case province:
+    #####:  754:      return 8;
+        -:  755:    case copper:
+        1:  756:      return 0;
+        -:  757:    case silver:
+    #####:  758:      return 3;
+        -:  759:    case gold:
+    #####:  760:      return 6;
+        -:  761:    case adventurer:
+       66:  762:      return 6;
+        -:  763:    case council_room:
+    #####:  764:      return 5;
+        -:  765:    case feast:
+    #####:  766:      return 4;
+        -:  767:    case gardens:
+       66:  768:      return 4;
+        -:  769:    case mine:
+       66:  770:      return 5;
+        -:  771:    case remodel:
+    #####:  772:      return 4;
+        -:  773:    case smithy:
+       67:  774:      return 4;
+        -:  775:    case village:
+       68:  776:      return 3;
+        -:  777:    case baron:
+    #####:  778:      return 4;
+        -:  779:    case great_hall:
+    #####:  780:      return 3;
+        -:  781:    case minion:
+       66:  782:      return 5;
+        -:  783:    case steward:
+    #####:  784:      return 3;
+        -:  785:    case tribute:
+       66:  786:      return 5;
+        -:  787:    case ambassador:
+       20:  788:      return 3;
+        -:  789:    case cutpurse:
+       66:  790:      return 4;
+        -:  791:    case embargo: 
+       68:  792:      return 2;
+        -:  793:    case outpost:
+    #####:  794:      return 5;
+        -:  795:    case salvager:
+    #####:  796:      return 4;
+        -:  797:    case sea_hag:
+       66:  798:      return 4;
+        -:  799:    case treasure_map:
+    #####:  800:      return 4;
+        -:  801:    }
+        -:  802:	
+    #####:  803:  return -1;
+        -:  804:}
+        -:  805:
+function cardEffect called 0 returned 0% blocks executed 0%
+    #####:  806:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+        -:  807:{
+        -:  808:  int i;
+        -:  809:  int j;
+        -:  810:  int k;
+        -:  811:  int x;
+        -:  812:  int index;
+    #####:  813:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  814:  int nextPlayer = currentPlayer + 1;
+        -:  815:
+    #####:  816:  int tributeRevealedCards[2] = {-1, -1};
+        -:  817:  int temphand[MAX_HAND];// moved above the if statement
+    #####:  818:  int drawntreasure=0;
+        -:  819:  int cardDrawn;
+    #####:  820:  int z = 0;// this is the counter for the temp hand
+    #####:  821:  if (nextPlayer > (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  822:    nextPlayer = 0;
+        -:  823:  }
+        -:  824:  
+        -:  825:	
+        -:  826:  //uses switch to select card and perform actions
+    #####:  827:  switch( card ) 
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+        -:  828:    {
+        -:  829:    case adventurer:
+    #####:  830:      return adventurerCard(currentPlayer, state);
+call    0 never executed
+        -:  831:			
+        -:  832:    case council_room:
+    #####:  833:      return council_roomCard(currentPlayer, handPos, state);
+call    0 never executed
+        -:  834:			
+        -:  835:    case feast:
+    #####:  836:      return feastCard(currentPlayer, choice1, state);
+call    0 never executed
+        -:  837:			
+        -:  838:   case remodel:
+    #####:  839:      return remodelCard(currentPlayer, handPos, choice1, choice2, state);
+call    0 never executed
+        -:  840:
+        -:  841:    case smithy:
+    #####:  842:      return smithyCard(currentPlayer, handPos, state);
+call    0 never executed
+        -:  843:
+        -:  844:    case gardens:
+    #####:  845:      return -1;
+        -:  846:			
+        -:  847:    case mine:
+    #####:  848:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  849:
+    #####:  850:      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  851:	{
+    #####:  852:	  return -1;
+        -:  853:	}
+        -:  854:		
+    #####:  855:      if (choice2 > treasure_map || choice2 < curse)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  856:	{
+    #####:  857:	  return -1;
+        -:  858:	}
+        -:  859:
+    #####:  860:      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  861:	{
+    #####:  862:	  return -1;
+        -:  863:	}
+        -:  864:
+    #####:  865:      gainCard(choice2, state, 2, currentPlayer);
+call    0 never executed
+        -:  866:
+        -:  867:      //discard card from hand
+    #####:  868:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  869:
+        -:  870:      //discard trashed card
+    #####:  871:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  872:	{
+    #####:  873:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  874:	    {
+    #####:  875:	      discardCard(i, currentPlayer, state, 0);			
+call    0 never executed
+    #####:  876:	      break;
+        -:  877:	    }
+        -:  878:	}
+        -:  879:			
+    #####:  880:      return 0;
+        -:  881:	
+        -:  882:    case baron:
+    #####:  883:      state->numBuys++;//Increase buys by 1!
+    #####:  884:      if (choice1 > 0){//Boolean true or going to discard an estate
+branch  0 never executed
+branch  1 never executed
+    #####:  885:	int p = 0;//Iterator for hand!
+    #####:  886:	int card_not_discarded = 1;//Flag for discard set!
+    #####:  887:	while(card_not_discarded){
+branch  0 never executed
+branch  1 never executed
+    #####:  888:	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
+branch  0 never executed
+branch  1 never executed
+    #####:  889:	    state->coins += 4;//Add 4 coins to the amount of coins
+    #####:  890:	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
+    #####:  891:	    state->discardCount[currentPlayer]++;
+    #####:  892:	    for (;p < state->handCount[currentPlayer]; p++){
+branch  0 never executed
+branch  1 never executed
+    #####:  893:	      state->hand[currentPlayer][p] = state->hand[currentPlayer][p+1];
+        -:  894:	    }
+    #####:  895:	    state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
+    #####:  896:	    state->handCount[currentPlayer]--;
+    #####:  897:	    card_not_discarded = 0;//Exit the loop
+        -:  898:	  }
+    #####:  899:	  else if (p > state->handCount[currentPlayer]){
+branch  0 never executed
+branch  1 never executed
+        -:  900:	    if(DEBUG) {
+        -:  901:	      printf("No estate cards in your hand, invalid choice\n");
+        -:  902:	      printf("Must gain an estate if there are any\n");
+        -:  903:	    }
+    #####:  904:	    if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  905:	      gainCard(estate, state, 0, currentPlayer);
+call    0 never executed
+    #####:  906:	      state->supplyCount[estate]--;//Decrement estates
+    #####:  907:	      if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  908:		isGameOver(state);
+call    0 never executed
+        -:  909:	      }
+        -:  910:	    }
+    #####:  911:	    card_not_discarded = 0;//Exit the loop
+        -:  912:	  }
+        -:  913:			    
+        -:  914:	  else{
+    #####:  915:	    p++;//Next card
+        -:  916:	  }
+        -:  917:	}
+        -:  918:      }
+        -:  919:			    
+        -:  920:      else{
+    #####:  921:	if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  922:	  gainCard(estate, state, 0, currentPlayer);//Gain an estate
+call    0 never executed
+    #####:  923:	  state->supplyCount[estate]--;//Decrement Estates
+    #####:  924:	  if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  925:	    isGameOver(state);
+call    0 never executed
+        -:  926:	  }
+        -:  927:	}
+        -:  928:      }
+        -:  929:	    
+        -:  930:      
+    #####:  931:      return 0;
+        -:  932:		
+        -:  933:    case great_hall:
+        -:  934:      //+1 Card
+    #####:  935:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  936:			
+        -:  937:      //+1 Actions
+    #####:  938:      state->numActions++;
+        -:  939:			
+        -:  940:      //discard card from hand
+    #####:  941:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  942:      return 0;
+        -:  943:		
+        -:  944:    case minion:
+        -:  945:      //+1 action
+    #####:  946:      state->numActions++;
+        -:  947:			
+        -:  948:      //discard card from hand
+    #####:  949:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  950:			
+    #####:  951:      if (choice1)		//+2 coins
+branch  0 never executed
+branch  1 never executed
+        -:  952:	{
+    #####:  953:	  state->coins = state->coins + 2;
+        -:  954:	}
+        -:  955:			
+    #####:  956:      else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+branch  0 never executed
+branch  1 never executed
+        -:  957:	{
+        -:  958:	  //discard hand
+    #####:  959:	  while(numHandCards(state) > 0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  960:	    {
+    #####:  961:	      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  962:	    }
+        -:  963:				
+        -:  964:	  //draw 4
+    #####:  965:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  966:	    {
+    #####:  967:	      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  968:	    }
+        -:  969:				
+        -:  970:	  //other players discard hand and redraw if hand size > 4
+    #####:  971:	  for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  972:	    {
+    #####:  973:	      if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -:  974:		{
+    #####:  975:		  if ( state->handCount[i] > 4 )
+branch  0 never executed
+branch  1 never executed
+        -:  976:		    {
+        -:  977:		      //discard hand
+    #####:  978:		      while( state->handCount[i] > 0 )
+branch  0 never executed
+branch  1 never executed
+        -:  979:			{
+    #####:  980:			  discardCard(handPos, i, state, 0);
+call    0 never executed
+        -:  981:			}
+        -:  982:							
+        -:  983:		      //draw 4
+    #####:  984:		      for (j = 0; j < 4; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  985:			{
+    #####:  986:			  drawCard(i, state);
+call    0 never executed
+        -:  987:			}
+        -:  988:		    }
+        -:  989:		}
+        -:  990:	    }
+        -:  991:				
+        -:  992:	}
+    #####:  993:      return 0;
+        -:  994:		
+        -:  995:    case steward:
+    #####:  996:      if (choice1 == 1)
+branch  0 never executed
+branch  1 never executed
+        -:  997:	{
+        -:  998:	  //+2 cards
+    #####:  999:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1000:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1001:	}
+    #####: 1002:      else if (choice1 == 2)
+branch  0 never executed
+branch  1 never executed
+        -: 1003:	{
+        -: 1004:	  //+2 coins
+    #####: 1005:	  state->coins = state->coins + 2;
+        -: 1006:	}
+        -: 1007:      else
+        -: 1008:	{
+        -: 1009:	  //trash 2 cards in hand
+    #####: 1010:	  discardCard(choice2, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1011:	  discardCard(choice3, currentPlayer, state, 1);
+call    0 never executed
+        -: 1012:	}
+        -: 1013:			
+        -: 1014:      //discard card from hand
+    #####: 1015:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1016:      return 0;
+        -: 1017:		
+        -: 1018:    case tribute:
+    #####: 1019:      if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
+branch  0 never executed
+branch  1 never executed
+    #####: 1020:	if (state->deckCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1021:	  tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1022:	  state->deckCount[nextPlayer]--;
+        -: 1023:	}
+    #####: 1024:	else if (state->discardCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1025:	  tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
+    #####: 1026:	  state->discardCount[nextPlayer]--;
+        -: 1027:	}
+        -: 1028:	else{
+        -: 1029:	  //No Card to Reveal
+        -: 1030:	  if (DEBUG){
+        -: 1031:	    printf("No cards to reveal\n");
+        -: 1032:	  }
+        -: 1033:	}
+        -: 1034:      }
+        -: 1035:	    
+        -: 1036:      else{
+    #####: 1037:	if (state->deckCount[nextPlayer] == 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1038:	  for (i = 0; i < state->discardCount[nextPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1039:	    state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
+    #####: 1040:	    state->deckCount[nextPlayer]++;
+    #####: 1041:	    state->discard[nextPlayer][i] = -1;
+    #####: 1042:	    state->discardCount[nextPlayer]--;
+        -: 1043:	  }
+        -: 1044:			    
+    #####: 1045:	  shuffle(nextPlayer,state);//Shuffle the deck
+call    0 never executed
+        -: 1046:	} 
+    #####: 1047:	tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1048:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1049:	state->deckCount[nextPlayer]--;
+    #####: 1050:	tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1051:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1052:	state->deckCount[nextPlayer]--;
+        -: 1053:      }    
+        -: 1054:		       
+    #####: 1055:      if (tributeRevealedCards[0] == tributeRevealedCards[1]){//If we have a duplicate card, just drop one 
+branch  0 never executed
+branch  1 never executed
+    #####: 1056:	state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
+    #####: 1057:	state->playedCardCount++;
+    #####: 1058:	tributeRevealedCards[1] = -1;
+        -: 1059:      }
+        -: 1060:
+    #####: 1061:      for (i = 0; i <= 2; i ++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1062:	if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1063:	  state->coins += 2;
+        -: 1064:	}
+        -: 1065:		    
+    #####: 1066:	else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####: 1067:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1068:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1069:	}
+        -: 1070:	else{//Action Card
+    #####: 1071:	  state->numActions = state->numActions + 2;
+        -: 1072:	}
+        -: 1073:      }
+        -: 1074:	    
+    #####: 1075:      return 0;
+        -: 1076:		
+        -: 1077:    case ambassador:
+    #####: 1078:      j = 0;		//used to check if player has enough cards to discard
+        -: 1079:
+    #####: 1080:      if (choice2 > 2 || choice2 < 0)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1081:	{
+    #####: 1082:	  return -1;				
+        -: 1083:	}
+        -: 1084:
+    #####: 1085:      if (choice1 == handPos)
+branch  0 never executed
+branch  1 never executed
+        -: 1086:	{
+    #####: 1087:	  return -1;
+        -: 1088:	}
+        -: 1089:
+    #####: 1090:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1091:	{
+    #####: 1092:	  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -: 1093:	    {
+    #####: 1094:	      j++;
+        -: 1095:	    }
+        -: 1096:	}
+    #####: 1097:      if (j < choice2)
+branch  0 never executed
+branch  1 never executed
+        -: 1098:	{
+    #####: 1099:	  return -1;				
+        -: 1100:	}
+        -: 1101:
+        -: 1102:      if (DEBUG) 
+        -: 1103:	printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
+        -: 1104:
+        -: 1105:      //increase supply count for choosen card by amount being discarded
+    #####: 1106:      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+        -: 1107:			
+        -: 1108:      //each other player gains a copy of revealed card
+    #####: 1109:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1110:	{
+    #####: 1111:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1112:	    {
+    #####: 1113:	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+call    0 never executed
+        -: 1114:	    }
+        -: 1115:	}
+        -: 1116:
+        -: 1117:      //discard played card from hand
+    #####: 1118:      discardCard(handPos, currentPlayer, state, 0);			
+call    0 never executed
+        -: 1119:
+        -: 1120:      //trash copies of cards returned to supply
+    #####: 1121:      for (j = 0; j < choice2; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1122:	{
+    #####: 1123:	  for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1124:	    {
+    #####: 1125:	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
+branch  0 never executed
+branch  1 never executed
+        -: 1126:		{
+    #####: 1127:		  discardCard(i, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1128:		  break;
+        -: 1129:		}
+        -: 1130:	    }
+        -: 1131:	}			
+        -: 1132:
+    #####: 1133:      return 0;
+        -: 1134:		
+        -: 1135:    case cutpurse:
+        -: 1136:
+    #####: 1137:      updateCoins(currentPlayer, state, 2);
+call    0 never executed
+    #####: 1138:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1139:	{
+    #####: 1140:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1141:	    {
+    #####: 1142:	      for (j = 0; j < state->handCount[i]; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1143:		{
+    #####: 1144:		  if (state->hand[i][j] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1145:		    {
+    #####: 1146:		      discardCard(j, i, state, 0);
+call    0 never executed
+    #####: 1147:		      break;
+        -: 1148:		    }
+    #####: 1149:		  if (j == state->handCount[i])
+branch  0 never executed
+branch  1 never executed
+        -: 1150:		    {
+    #####: 1151:		      for (k = 0; k < state->handCount[i]; k++)
+branch  0 never executed
+branch  1 never executed
+        -: 1152:			{
+        -: 1153:			  if (DEBUG)
+        -: 1154:			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+        -: 1155:			}	
+    #####: 1156:		      break;
+        -: 1157:		    }		
+        -: 1158:		}
+        -: 1159:					
+        -: 1160:	    }
+        -: 1161:				
+        -: 1162:	}				
+        -: 1163:
+        -: 1164:      //discard played card from hand
+    #####: 1165:      discardCard(handPos, currentPlayer, state, 0);			
+call    0 never executed
+        -: 1166:
+    #####: 1167:      return 0;
+        -: 1168:
+        -: 1169:		
+        -: 1170:    case embargo: 
+        -: 1171:      //+2 Coins
+    #####: 1172:      state->coins = state->coins + 2;
+        -: 1173:			
+        -: 1174:      //see if selected pile is in play
+    #####: 1175:      if ( state->supplyCount[choice1] == -1 )
+branch  0 never executed
+branch  1 never executed
+        -: 1176:	{
+    #####: 1177:	  return -1;
+        -: 1178:	}
+        -: 1179:			
+        -: 1180:      //add embargo token to selected supply pile
+    #####: 1181:      state->embargoTokens[choice1]++;
+        -: 1182:			
+        -: 1183:      //trash card
+    #####: 1184:      discardCard(handPos, currentPlayer, state, 1);		
+call    0 never executed
+    #####: 1185:      return 0;
+        -: 1186:		
+        -: 1187:    case outpost:
+        -: 1188:      //set outpost flag
+    #####: 1189:      state->outpostPlayed++;
+        -: 1190:			
+        -: 1191:      //discard card
+    #####: 1192:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1193:      return 0;
+        -: 1194:		
+        -: 1195:    case salvager:
+        -: 1196:      //+1 buy
+    #####: 1197:      state->numBuys++;
+        -: 1198:			
+    #####: 1199:      if (choice1)
+branch  0 never executed
+branch  1 never executed
+        -: 1200:	{
+        -: 1201:	  //gain coins equal to trashed card
+    #####: 1202:	  state->coins = state->coins + getCost( handCard(choice1, state) );
+call    0 never executed
+call    1 never executed
+        -: 1203:	  //trash card
+    #####: 1204:	  discardCard(choice1, currentPlayer, state, 1);	
+call    0 never executed
+        -: 1205:	}
+        -: 1206:			
+        -: 1207:      //discard card
+    #####: 1208:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1209:      return 0;
+        -: 1210:		
+        -: 1211:    case sea_hag:
+    #####: 1212:      for (i = 0; i < state->numPlayers; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1213:	if (i != currentPlayer){
+branch  0 never executed
+branch  1 never executed
+    #####: 1214:	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+    #####: 1215:	  state->discardCount[i]++;
+    #####: 1216:	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+        -: 1217:	}
+        -: 1218:      }
+    #####: 1219:      return 0;
+        -: 1220:		
+        -: 1221:    case treasure_map:
+        -: 1222:      //search hand for another treasure_map
+    #####: 1223:      index = -1;
+    #####: 1224:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1225:	{
+    #####: 1226:	  if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1227:	    {
+    #####: 1228:	      index = i;
+    #####: 1229:	      break;
+        -: 1230:	    }
+        -: 1231:	}
+    #####: 1232:      if (index > -1)
+branch  0 never executed
+branch  1 never executed
+        -: 1233:	{
+        -: 1234:	  //trash both treasure cards
+    #####: 1235:	  discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1236:	  discardCard(index, currentPlayer, state, 1);
+call    0 never executed
+        -: 1237:
+        -: 1238:	  //gain 4 Gold cards
+    #####: 1239:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1240:	    {
+    #####: 1241:	      gainCard(gold, state, 1, currentPlayer);
+call    0 never executed
+        -: 1242:	    }
+        -: 1243:				
+        -: 1244:	  //return success
+    #####: 1245:	  return 1;
+        -: 1246:	}
+        -: 1247:			
+        -: 1248:      //no second treasure_map found in hand
+    #####: 1249:      return -1;
+        -: 1250:    }
+        -: 1251:	
+    #####: 1252:  return -1;
+        -: 1253:}
+        -: 1254:
+function discardCard called 12 returned 100% blocks executed 78%
+       12: 1255:int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+        -: 1256:{
+        -: 1257:	
+        -: 1258:  //if card is not trashed, added to Played pile 
+       12: 1259:  if (trashFlag < 1)
+branch  0 taken 75% (fallthrough)
+branch  1 taken 25%
+        -: 1260:    {
+        -: 1261:      //add card to played pile
+        9: 1262:      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+        9: 1263:      state->playedCardCount++;
+        -: 1264:    }
+        -: 1265:	
+        -: 1266:  //set played card to -1
+       12: 1267:  state->hand[currentPlayer][handPos] = -1;
+        -: 1268:	
+        -: 1269:  //remove card from player's hand
+       12: 1270:  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1271:    {
+        -: 1272:      //reduce number of cards in hand
+    #####: 1273:      state->handCount[currentPlayer]--;
+        -: 1274:    }
+       12: 1275:  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1276:    {
+        -: 1277:      //reduce number of cards in hand
+    #####: 1278:      state->handCount[currentPlayer]--;
+        -: 1279:    }
+        -: 1280:  else 	
+        -: 1281:    {
+        -: 1282:      //replace discarded card with last card in hand
+       12: 1283:      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        -: 1284:      //set last card to -1
+       12: 1285:      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        -: 1286:      //reduce number of cards in hand
+       12: 1287:      state->handCount[currentPlayer]--;
+        -: 1288:    }
+        -: 1289:	
+       12: 1290:  return 0;
+        -: 1291:}
+        -: 1292:
+function gainCard called 198 returned 100% blocks executed 100%
+      198: 1293:int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
+        -: 1294:{
+        -: 1295:  //Note: supplyPos is enum of choosen card
+        -: 1296:	
+        -: 1297:  //check if supply pile is empty (0) or card is not used in game (-1)
+      198: 1298:  if ( supplyCount(supplyPos, state) < 1 )
+call    0 returned 100%
+branch  1 taken 2% (fallthrough)
+branch  2 taken 98%
+        -: 1299:    {
+        3: 1300:	return -1;
+        -: 1301:    }
+        -: 1302:	
+        -: 1303:  //added card for [whoseTurn] current player:
+        -: 1304:  // toFlag = 0 : add to discard
+        -: 1305:  // toFlag = 1 : add to deck
+        -: 1306:  // toFlag = 2 : add to hand
+        -: 1307:
+      195: 1308:  if (toFlag == 1)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        -: 1309:    {
+       10: 1310:      state->deck[ player ][ state->deckCount[player] ] = supplyPos;
+       10: 1311:      state->deckCount[player]++;
+        -: 1312:    }
+      185: 1313:  else if (toFlag == 2)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        -: 1314:    {
+       10: 1315:      state->hand[ player ][ state->handCount[player] ] = supplyPos;
+       10: 1316:      state->handCount[player]++;
+        -: 1317:    }
+        -: 1318:  else
+        -: 1319:    {
+      175: 1320:      state->discard[player][ state->discardCount[player] ] = supplyPos;
+      175: 1321:      state->discardCount[player]++;
+        -: 1322:    }
+        -: 1323:	
+        -: 1324:  //decrease number in supply pile
+      195: 1325:  state->supplyCount[supplyPos]--;
+        -: 1326:	 
+      195: 1327:  return 0;
+        -: 1328:}
+        -: 1329:
+function updateCoins called 34 returned 100% blocks executed 100%
+       34: 1330:int updateCoins(int player, struct gameState *state, int bonus)
+        -: 1331:{
+        -: 1332:  int i;
+        -: 1333:	
+        -: 1334:  //reset coin count
+       34: 1335:  state->coins = 0;
+        -: 1336:
+        -: 1337:  //add coins for each Treasure card in player's hand
+      184: 1338:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 taken 82%
+branch  1 taken 18% (fallthrough)
+        -: 1339:    {
+      150: 1340:      if (state->hand[player][i] == copper)
+branch  0 taken 79% (fallthrough)
+branch  1 taken 21%
+        -: 1341:	{
+      118: 1342:	  state->coins += 1;
+        -: 1343:	}
+       32: 1344:      else if (state->hand[player][i] == silver)
+branch  0 taken 13% (fallthrough)
+branch  1 taken 88%
+        -: 1345:	{
+        4: 1346:	  state->coins += 2;
+        -: 1347:	}
+       28: 1348:      else if (state->hand[player][i] == gold)
+branch  0 taken 11% (fallthrough)
+branch  1 taken 89%
+        -: 1349:	{
+        3: 1350:	  state->coins += 3;
+        -: 1351:	}	
+        -: 1352:    }	
+        -: 1353:
+        -: 1354:  //add bonus
+       34: 1355:  state->coins += bonus;
+        -: 1356:
+       34: 1357:  return 0;
+        -: 1358:}
+        -: 1359:
+        -: 1360:
+        -: 1361://end of dominion.c
+        -: 1362:
