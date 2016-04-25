@@ -14,17 +14,6 @@
 #define DEBUG 0
 #define NOISY_TEST 1
 
-/*
-struct gameState {
-  int outpostPlayed;
-  int outpostTurn;
-  int whoseTurn;
-  int phase;
-  int numActions; 
-  int coins; 
-  int numBuys;
-*/
-
 int main(void) {
 	srand(time(NULL));
 	int number_of_players = 2,
