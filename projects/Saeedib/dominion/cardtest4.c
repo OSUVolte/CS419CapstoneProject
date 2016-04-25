@@ -44,19 +44,7 @@ int main(int argc, char ** argv)
 	testG.supplyCount[province] = rand() % 5 + 1;
 	//Total should add up to 6
 	// Starting test
-	printf("\n\nTesting card: %s\n\n", UNITTEST);
+	printf("\n\nNot enough time: %s\n\n", UNITTEST);
 
-
-	printf("Test 1: Checking the function.\n");
-	printf("Test 1 Passed\n");
-
-	printf("\nTest 2: testing decrease in province cards.\n");
-	printf("Test 2 Passed\n");
-
-	printf("\nTest 3: Testing 3 piles are at 0.\n");
-	printf("Test 3 Passed\n");
-
-	printf("\nTest 4: Checking unexpected input/Output\n");
-	printf("Test 4 Passed\n");
 	return 0;	//No bugs found
 }
