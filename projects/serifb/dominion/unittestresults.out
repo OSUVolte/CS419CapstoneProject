@@ -1,5 +1,3 @@
-Result for running tests:
-unittest1.c:
 
 -----Testing Update Coins-----
 Player 0 has 1 treasure cards and a max bonus of 0.
@@ -904,11 +902,6 @@ Test 3: Testing with Gold Cards
 Actual Coins: 24. Expected coins: 24. Success!
 
 -----Testing of Update Coins Complete-----
-File 'dominion.c'
-Lines executed:15.86% of 561
-Creating 'dominion.c.gcov'
-
-unittest2.c:
 
 -----Testing Is Game Over-----
 
@@ -952,11 +945,6 @@ Expected: Game is Over. Actual: Game is over. Success!
 Expected: Game is Over. Actual: Game is over. Success!
 
 -----Testing Is Game Over Complete---
-File 'dominion.c'
-Lines executed:17.29% of 561
-Creating 'dominion.c.gcov'
-
-unittest3.c:
 
 -----Testing Get Cost-----
 
@@ -1042,22 +1030,9 @@ Testing Tresure Map:
 Expected Cost: 4. Actual Cost 4. Success!
 
 -----Testing of Get Cost Complete-----
-File 'dominion.c'
-Lines executed:5.17% of 561
-Creating 'dominion.c.gcov'
 
-unittest4.c:
-
------Testing Whose Turn-----
-Expected value: 0. Actual Value 0. Success!
-Expected value: 1. Actual Value 1. Success!
-
-----Testing of Whose Turn Complete-----
-File 'dominion.c'
-Lines executed:15.86% of 561
-Creating 'dominion.c.gcov'
-
-cardtest1.c:
+-----Testing Full Deck-----
+Expected Cards: 500. Actual Cards: 0. Success!
 
 -----Testing for Smithy Card-----
 Testing for player 0, hand count 0:
@@ -1092,11 +1067,6 @@ Expected played count: 1. Actual played count: 1. Success!
 Expected hand count: 7. Actual hand count: 5. Failed!
 
 -----Smithy Card Testing Complete-----
-File 'dominion.c'
-Lines executed:20.68% of 561
-Creating 'dominion.c.gcov'
-
-cardtest2.c:
 
 -----Testing for Adventurer Card-----
 Testing for player 0.
@@ -1109,11 +1079,6 @@ Expected cards: 4, 5, or 6. Actual Card: 4. Success!
 Expected cards: 4, 5, or 6. Actual Card: 4. Success!
 
 -----Adevnturer Card Testing Complete-----
-File 'dominion.c'
-Lines executed:18.72% of 561
-Creating 'dominion.c.gcov'
-
-cardtest3.c:
 
 -----Testing for Great Hall Card-----
 Testing for player 0.
@@ -1124,11 +1089,6 @@ Expected hand count: 0. Actual hand count: 0. Success!
 Expected number of actions: 1. Actual number of Actions: 0. Failure!
 
 -----Great Hall Card Testing Complete-----
-File 'dominion.c'
-Lines executed:18.89% of 561
-Creating 'dominion.c.gcov'
-
-cardtest4.c:
 
 -----Testing for Council Room Card-----
 Testing for player 0.
@@ -1141,10 +1101,6 @@ Expected hand count: 6. Actual hand count: 6. Success!
 Expected hand count: 3. Actual hand count: 3. Success!
 
 -----Council Room Card Testing Complete-----
-File 'dominion.c'
-Lines executed:19.61% of 561
-Creating 'dominion.c.gcov'
-
 Function 'playCouncilRoom'
 Lines executed:100.00% of 10
 Branches executed:100.00% of 6
@@ -1152,9 +1108,9 @@ Taken at least once:100.00% of 6
 Calls executed:100.00% of 3
 
 Function 'playGreatHall'
-Lines executed:0.00% of 5
+Lines executed:100.00% of 5
 No branches
-Calls executed:0.00% of 2
+Calls executed:100.00% of 2
 
 Function 'playVillage'
 Lines executed:0.00% of 6
@@ -1162,20 +1118,20 @@ No branches
 Calls executed:0.00% of 3
 
 Function 'playSmithy'
-Lines executed:0.00% of 4
+Lines executed:100.00% of 4
 No branches
-Calls executed:0.00% of 2
+Calls executed:100.00% of 2
 
 Function 'playAdventurer'
-Lines executed:0.00% of 17
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 2
+Lines executed:94.12% of 17
+Branches executed:100.00% of 10
+Taken at least once:80.00% of 10
+Calls executed:50.00% of 2
 
 Function 'updateCoins'
-Lines executed:81.82% of 11
+Lines executed:100.00% of 11
 Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Taken at least once:100.00% of 8
 No calls
 
 Function 'gainCard'
@@ -1185,21 +1141,21 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:84.62% of 13
+Lines executed:92.31% of 13
 Branches executed:100.00% of 6
-Taken at least once:50.00% of 6
+Taken at least once:66.67% of 6
 No calls
 
 Function 'cardEffect'
-Lines executed:0.00% of 207
-Branches executed:0.00% of 179
-Taken at least once:0.00% of 179
-Calls executed:0.00% of 58
+Lines executed:4.83% of 207
+Branches executed:12.85% of 179
+Taken at least once:1.68% of 179
+Calls executed:3.45% of 58
 
 Function 'getCost'
-Lines executed:0.00% of 30
-Branches executed:0.00% of 28
-Taken at least once:0.00% of 28
+Lines executed:96.67% of 30
+Branches executed:100.00% of 28
+Taken at least once:96.43% of 28
 No calls
 
 Function 'drawCard'
@@ -1221,9 +1177,9 @@ Taken at least once:0.00% of 42
 Calls executed:0.00% of 3
 
 Function 'isGameOver'
-Lines executed:0.00% of 10
-Branches executed:0.00% of 8
-Taken at least once:0.00% of 8
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
 No calls
 
 Function 'endTurn'
@@ -1233,14 +1189,14 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 3
 
 Function 'whoseTurn'
-Lines executed:0.00% of 2
+Lines executed:100.00% of 2
 No branches
 No calls
 
 Function 'fullDeckCount'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
+Lines executed:88.89% of 9
+Branches executed:83.33% of 12
+Taken at least once:58.33% of 12
 No calls
 
 Function 'supplyCount'
@@ -1299,9 +1255,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:19.61% of 561
-Branches executed:18.89% of 413
-Taken at least once:15.01% of 413
-Calls executed:10.42% of 96
+Lines executed:35.12% of 561
+Branches executed:38.01% of 413
+Taken at least once:28.57% of 413
+Calls executed:17.71% of 96
 Creating 'dominion.c.gcov'
 
