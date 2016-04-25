@@ -19,7 +19,7 @@ The player also gains two actions. The card is discarded after use.
 #include <string.h>
 
 int main() {
-	int i, j, k, x,handPos;
+	int i, j, x,handPos;
 	int seed = 1000;
 	int numPlayers = 2;
 	int k[10] = {feast, gardens, embargo, adventurer, village, mine, cutpurse, ambassador, great_hall, smithy};
@@ -57,10 +57,10 @@ int main() {
             int handC = (T.handCount[i] + 1);
             int playedC = (T.playedCardCount + 1);
             int deckC = (T.deckCount[i] - 1);
-            int actionsC = (T.numActions[i] + 2);
+            int actionsC = (T.numActions + 2);
 
             // Print results
-            printf("TEST 1: hand count = %d. Expected result = %d.\n", G.handCount[i], handC));
+            printf("TEST 1: hand count = %d. Expected result = %d.\n", G.handCount[i], handC);
 
             // Error message if hand count unexpected
 			if (G.handCount[i] != handC){
@@ -68,7 +68,7 @@ int main() {
 			}
 
             // Print results
-            printf("TEST 2: played count = %d. Expected result = %d.\n", G.playedCardCount, playedC));
+            printf("TEST 2: played count = %d. Expected result = %d.\n", G.playedCardCount, playedC);
 
 			// Error message if played count unexpected
 			if (G.playedCardCount != playedC){
@@ -76,7 +76,7 @@ int main() {
 			}
 
             // Print results
-            printf("TEST 3: deck count= %d. Expected result = %d.\n", G.deckCount[i], deckC));
+            printf("TEST 3: deck count= %d. Expected result = %d.\n", G.deckCount[i], deckC);
 
 			// Error message if deck count unexpected
 			if (G.deckCount[i] != deckC){
@@ -84,15 +84,15 @@ int main() {
 			}
 
             // Print results
-            printf("TEST 4: number actions = %d. Expected result = %d.\n", G.numActions[i], actionsC));
+            printf("TEST 4: number actions = %d. Expected result = %d.\n", G.numActions, actionsC);
 
 			// Error message if number of actions unexpected
-			if (G.numActions[i] != actionsC){
+			if (G.numActions != actionsC){
                 printf("TEST 4 FAILED!\n");
 			}
 
 			// Print passed message if all tests passed
-			if (G.handCount[i] == handC && G.playedCardCount == playedC && G.deckCount[i] == deckC && G.numActions[i] == actionsC){
+			if (G.handCount[i] == handC && G.playedCardCount == playedC && G.deckCount[i] == deckC && G.numActions == actionsC){
                 printf("All 4 tests passed!\n");
 			}
 		}
