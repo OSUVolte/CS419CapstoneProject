@@ -31,7 +31,7 @@ runtests: testDrawCard
 
 unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c unittest2.c unittest3.c unittest4.c dominion.c dominion.o rngs.o
 	
-	echo "Result for running unit tests cards:" > unittestresults.out
+	echo "Program by James Guerra Result for running unit- tests for cards:" > unittestresults.out
 	
 	echo "cardtest1.c:" >> unittestresults.out
 	gcc -w -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
@@ -53,6 +53,8 @@ unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c
 	cardtest4 >> unittestresults.out
 	gcov -b cardtest4.c >> unittestresults.out
 	
+	echo "results for running unit-tests for functions" >> unittestresults.out
+	
 	echo "unittest1.c:" >> unittestresults.out
 	gcc -w -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
 	unittest1 >> unittestresults.out
@@ -73,8 +75,8 @@ unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c
 	unittest4 >> unittestresults.out
 	gcov -b unittest4.c >> unittestresults.out
 	
-	echo "code coverage for dominon.c:" >> unittestsresults.out
-	gcov -b dominion.c >> unittestsresults.out
+	echo "code coverage for dominon.c:" >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
 		
 
 

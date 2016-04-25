@@ -1,4 +1,4 @@
-Result for running unit tests cards:
+Program by James Guerra Result for running unit- tests for cards:
 cardtest1.c:
 TESTING Smithy Card:
 G.handCount = 2, expected = 3
@@ -51,6 +51,7 @@ Taken at least once:50.00% of 8
 Calls executed:76.92% of 13
 Creating 'cardtest4.c.gcov'
 
+results for running unit-tests for functions
 unittest1.c:
 TESTING updateCoins function
 Test 1 passed, expected coins in gamestate 
@@ -100,4 +101,12 @@ Branches executed:100.00% of 8
 Taken at least once:50.00% of 8
 Calls executed:80.00% of 15
 Creating 'unittest4.c.gcov'
+
+code coverage for dominon.c:
+File 'dominion.c'
+Lines executed:36.74% of 558
+Branches executed:45.06% of 415
+Taken at least once:27.95% of 415
+Calls executed:27.37% of 95
+Creating 'dominion.c.gcov'
 
