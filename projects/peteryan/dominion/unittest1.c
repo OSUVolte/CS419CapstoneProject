@@ -14,22 +14,23 @@ void testBuyCard()
 {
 	int r;
 	struct gameState state;
+	int player = 1;
 	
 	/*Tests when player doesn't have a buy.*/
 	state.numBuys = 0;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == -1)
 		printf("buyCard(): PASS when numBuys is 0.\n");
 	else
 		printf("buyCard(): FAIL when numBuys is 0.\n");
 	
 	/*Test when player has one buy*/
-	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.numBuys = village;
+	state.supplyCount[player] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == 0)
 		printf("buyCard(): PASS when numBuys is 1.\n");
 	else
@@ -37,9 +38,9 @@ void testBuyCard()
 	
 	/*Test when the player has multiple buys*/
 	state.numBuys = 100;
-	state.supplyCount[1] = 1;
+	state.supplyCount[player] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == 0)
 		printf("buyCard(): PASS when numBuys is 100.\n");
 	else
@@ -47,9 +48,9 @@ void testBuyCard()
 	
 	/*Test when trying to buy a card when the card has none left to buy.*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 0;
+	state.supplyCount[player] = 0;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == -1)
 		printf("buyCard(): PASS when supplyCount is 0.\n");
 	else
@@ -57,9 +58,9 @@ void testBuyCard()
 	
 	/*Test when there is a card to buy*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == 0)
 		printf("buyCard(): PASS when supplyCount is 1.\n");
 	else
@@ -67,9 +68,9 @@ void testBuyCard()
 	
 	/*Test when play does not have enough coins to the chosen card.*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 1;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(r == -1)
 		printf("buyCard(): PASS when player has insuffienct coins.\n");
 	else
@@ -77,9 +78,9 @@ void testBuyCard()
 	
 	/*Test number of buys decrements after buying card.*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(state.numBuys == 0)
 		printf("buyCard(): PASS numBuys decremented.\n");
 	else
@@ -87,9 +88,9 @@ void testBuyCard()
 	
 	/*Test the game phase changes.*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	r = buyCard(1, &state);
+	r = buyCard(village, &state);
 	if(state.phase == 1)
 		printf("buyCard(): PASS state.phase is 1.\n");
 	else
@@ -97,36 +98,36 @@ void testBuyCard()
 
 	/*Test that the bought card is added to the player's hand*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	state.whoseTurn = 1;
-	state.handCount[1] = 1;
-	r = buyCard(1, &state);
-	if(state.handCount[1] == 2)
+	state.whoseTurn = player;
+	state.handCount[player] = 1;
+	r = buyCard(village, &state);
+	if(state.handCount[player] == 2)
 		printf("buyCard(): PASS add card to hand.\n");
 	else
 		printf("buyCard(): FAIL add card to hand.\n");
 	
 	/*Test that the bought card is added to the player's deck*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
-	state.whoseTurn = 1;
-	state.handCount[1] = 1;
-	r = buyCard(1, &state);
-	if(state.deckCount[1] == 2)
+	state.whoseTurn = player;
+	state.handCount[player] = 1;
+	r = buyCard(village, &state);
+	if(state.deckCount[player] == 2)
 		printf("buyCard(): PASS add card to player deck.\n");
 	else
 		printf("buyCard(): FAIL add card to player deck.\n");
 	
 	/*Test that the bought card is removed from the stack.*/
 	state.numBuys = 1;
-	state.supplyCount[1] = 1;
+	state.supplyCount[village] = 1;
 	state.coins = 10;
 	state.whoseTurn = 1;
-	state.handCount[1] = 1;
-	r = buyCard(1, &state);
-	if(state.supplyCount[1] == 0)
+	state.handCount[player] = 1;
+	r = buyCard(village, &state);
+	if(state.supplyCount[player] == 0)
 		printf("buyCard(): PASS card removed from supply.\n");
 	else
 		printf("buyCard(): FAIL card removed from supply.\n");

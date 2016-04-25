@@ -3,8 +3,6 @@ Behnam Saeedi
 Saeedib
 93227697
 Unit test
-
-testing updateCoin:
 */
 
 #include <stdlib.h>
@@ -17,20 +15,13 @@ testing updateCoin:
 #include "dominion_helpers.h"
 #include "rngs.h"
 
-#define UNITTEST "updateCoins"
+#define UNITTEST "Smithy"
 
 int main(int argc, char ** argv)
 {
 	srand(time(NULL));
 	//Generating player:
 	int out;
-	int newCards = 0;
-	int discarded = 1;
-	int xtraCoins = 0;
-	int shuffledCards = 0;
-	int i, j, m;
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 10;
-	int remove1, remove2;
 	int seed = 1000;
 	int numPlayers = 2;
 	int thisPlayer = 0;
@@ -45,86 +36,78 @@ int main(int argc, char ** argv)
 	count = testG.handCount[thisPlayer];
 	for(int i = 0; i < count; i++)
 		testG.hand[thisPlayer][i] = estate;
+	for(int i = 0; i < 25; i++)
+		testG.supplyCount[i] = 10;
 	testG.hand[thisPlayer][0] = gold;	//3
 	testG.hand[thisPlayer][1] = silver;	//2
 	testG.hand[thisPlayer][2] = copper;	//1
+	testG.supplyCount[province] = rand() % 5 + 1;
 	//Total should add up to 6
 	// Starting test
-	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+	printf("\n\nTesting card: %s\n\n", UNITTEST);
 
 
-	printf("Test 1: Checking validity of value (in range).\n");
-	int bef = testG.handCount[thisPlayer];
-	printf("getting initial handCount\n");
-	out = updateCoins(thisPlayer,&testG, bonus);
-
-	printf("coinUpdate returned: %d\n",out);
-	printf("bonus is: %d\n",bonus);
-	printf("Number of playing player is: %d\n",thisPlayer);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus+6);
-	assert(testG.coins == bonus + 6);
-	printf("handCount is: %d (%d is expected)\n",testG.handCount[thisPlayer],bef);
-	assert(testG.handCount[thisPlayer] == bef);
+	printf("Test 1: Checking the function.\n");
+	out = isGameOver(&testG);
+	if(out != 1)
+		printf("Game is not over(expected)\n");
+	else
+		printf("Game is over(unexpected)\n");
+	assert(out != 1);
+	printf("Setting the province cards to 0\n");
+	testG.supplyCount[province] = 0;
+	out = isGameOver(&testG);
+	if(out == 1)
+		printf("Game is over(expected)\n");
+	else
+		printf("Game is Not over(unexpected)\n");
+	assert(out == 1);
 	printf("Test 1 Passed\n");
 
-	printf("\nTest 2: Checking addition of coins (all the possible ways to add coin, bonus and cards).\n");
-	bonus++;
-	printf("bonus is: %d\n",bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus-1+6);
-	assert(testG.coins == bonus-1 + 6);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus+6);
-	assert(testG.coins == bonus + 6);
+	printf("\nTest 2: testing decrease in province cards.\n");
+	testG.supplyCount[province] = 5;
+	for(int i = 0; i < 5; i++)
+	{
+		testG.supplyCount[province] = testG.supplyCount[province] -1;
+		out = isGameOver(&testG);
+		printf("value of %d: %d\n",i,out);
+		if(i != 4)
+			assert(out == 0);
+		else
+			assert(out == 1);
+	}
 	printf("Test 2 Passed\n");
 
-	printf("\nTest 3: Checking looking for copper, silver and gold coins.\n");
-	bonus = 0;
-	printf("bonus is: %d\n",bonus);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,6);
-	assert(testG.coins == 6);
-	testG.hand[thisPlayer][3] = gold;
-	printf("adding an aditional gold card...\n");
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,9);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	assert(testG.coins == 9);
-	printf("cards are:\n");
-	for(int i =0; i < count; i++)
+	printf("\nTest 3: Testing 3 piles are at 0.\n");
+	for(int i = 0; i < 3; i++)
 	{
-		if(testG.hand[thisPlayer][i] == gold)
-			printf("gold");
-		else if(testG.hand[thisPlayer][i] == silver)
-			printf("silver");
-		else if(testG.hand[thisPlayer][i] == copper)
-			printf("copper");
-		else
-			printf("Empty");
-		if(i != count -1)
-			if(i != count -2)
-				printf(", ");
-			else
-				printf(" and ");
-		else
-			printf("\n");
+		printf("supply count of %d was %d.\n",i,testG.supplyCount[i]);
+		for(; testG.supplyCount[i] != 0; testG.supplyCount[i] = testG.supplyCount[i] -1);
+		printf("supply count of %d now is %d.\n",i,testG.supplyCount[i]);
 	}
-	assert(testG.hand[thisPlayer][0] == gold);
-	assert(testG.hand[thisPlayer][1] == silver);
-	assert(testG.hand[thisPlayer][2] == copper);
-	assert(testG.hand[thisPlayer][3] == gold);
+	testG.supplyCount[province] = 10;
+	out = isGameOver(&testG);
+	assert(out == 1);
 	printf("Test 3 Passed\n");
 
-	printf("\nTest 4: Checking unexpected input\n");
-
-	bonus = 9999999999999999999999;
-	out = updateCoins(thisPlayer,&testG, bonus);
-	assert(testG.coins == bonus + 9);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,9 + bonus);
-	if(testG.coins < 0)
-		printf("Test 4 failed: Failed to return a positive value.\n");
-	else
-		printf("Test 4 Passed\n");
-//	assert(testG.coins >= 0);
-	bonus = 0;
-
+	printf("\nTest 4: Checking unexpected input/Output\n");
+	for(int i = 0; i < 10; i++)
+	{
+		int mem[3] = {0,0,0};
+		for(int i = 0; i < 3; i++)
+		{
+			mem[i] = rand() % 25;
+		}
+		testG.supplyCount[mem[0]] = 0;
+		testG.supplyCount[mem[1]] = 0;
+		testG.supplyCount[mem[2]] = 0;
+		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
+		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
+			assert(isGameOver(&testG) == 1);
+		for(int j = 0; j < 25; j++)
+			testG.supplyCount[j] = 10;
+	}
+	
+	printf("Test 4 Passed\n");
 	return 0;	//No bugs found
 }

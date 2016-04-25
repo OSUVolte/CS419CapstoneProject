@@ -2,7 +2,7 @@ Result for running unit tests:
 unittest1.c:
 buyCard(): PASS when numBuys is 0.
 buyCard(): PASS when numBuys is 1.
-buyCard(): PASS when numBuys is 100.
+buyCard(): FAIL when numBuys is 100.
 buyCard(): PASS when supplyCount is 0.
 buyCard(): PASS when supplyCount is 1.
 buyCard(): PASS when player has insuffienct coins.
@@ -41,26 +41,27 @@ buyCard(): PASS coins removed for treasure_map.
 buyCard(): PASS coins removed for invalid card.
 buyCard(): PASS coins removed for invalid card.
 File 'dominion.c'
-Lines executed:48.40% of 564
-Branches executed:52.52% of 417
-Taken at least once:40.29% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 unittest2.c:
-isGameOver: PASS game is not over.
-isGameOver: PASS game is not over.
-isGameOver: PASS game is not over.
-isGameOver: PASS game is not over.
-isGameOver: PASS game is over.
-isGameOver: PASS game is over.
-isGameOver: FAIL game is over.
-isGameOver: PASS game is over.
+isGameOver: PASS game is not over, each stack has one card.
+isGameOver: PASS game is not over, stacks have different number of cards.
+isGameOver: PASS game is not over, one stack has zero cards.
+isGameOver: PASS game is not over, two stacks have zero cards.
+isGameOver: PASS game is not over, three stacks have zero cards.
+isGameOver: FAIL game is over, salvager, sea_hag, treasure_map have zero cards.
+isGameOver: PASS game is over, all stacks are empty.
+isGameOver: FAIL game is over, all stacks have a negative value.
+isGameOver: PASS game is over, province has zero cards.
 File 'dominion.c'
-Lines executed:48.76% of 564
-Branches executed:52.52% of 417
-Taken at least once:40.77% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 unittest3.c
@@ -73,10 +74,10 @@ updateCoins: PASS have 100 copper in hand.
 updateCoins: PASS hand with different cards.
 updateCoins: PASS have no coins in hand.
 File 'dominion.c'
-Lines executed:48.76% of 564
-Branches executed:52.52% of 417
-Taken at least once:40.77% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 unittest4.c
@@ -113,45 +114,115 @@ gainCard: PASS add card to player 4 discard, negative flag.
 gainCard: PASS remove from supply stack.
 gainCard: PASS using invalid card.
 File 'dominion.c'
-Lines executed:49.65% of 564
-Branches executed:52.52% of 417
-Taken at least once:41.49% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 cardtest1.c
 playSmithy: FAIL smithy completed execution.
 playSmithy: FAIL 3 cards drawn and smithy discarded.
+playSmithy: FAIL 3 cards drawn from deck.
 playSmithy: PASS card added to played stack.
+playSmithy: PASS other player did not draw card.
+playSmithy: PASS other player did not draw card.
+playSmithy: PASS card to drawn from supply posistion 0.
+playSmithy: PASS card to drawn from supply posistion 1.
+playSmithy: PASS card to drawn from supply posistion 2.
+playSmithy: PASS card to drawn from supply posistion 3.
+playSmithy: PASS card to drawn from supply posistion 4.
+playSmithy: PASS card to drawn from supply posistion 5.
+playSmithy: PASS card to drawn from supply posistion 6.
+playSmithy: PASS card to drawn from supply posistion 7.
+playSmithy: PASS card to drawn from supply posistion 8.
+playSmithy: PASS card to drawn from supply posistion 9.
+playSmithy: PASS card to drawn from supply posistion 10.
+playSmithy: PASS card to drawn from supply posistion 11.
+playSmithy: PASS card to drawn from supply posistion 12.
+playSmithy: PASS card to drawn from supply posistion 13.
+playSmithy: PASS card to drawn from supply posistion 14.
+playSmithy: PASS card to drawn from supply posistion 15.
+playSmithy: PASS card to drawn from supply posistion 16.
+playSmithy: PASS card to drawn from supply posistion 17.
+playSmithy: PASS card to drawn from supply posistion 18.
+playSmithy: PASS card to drawn from supply posistion 19.
+playSmithy: PASS card to drawn from supply posistion 20.
+playSmithy: PASS card to drawn from supply posistion 21.
+playSmithy: PASS card to drawn from supply posistion 22.
+playSmithy: PASS card to drawn from supply posistion 23.
+playSmithy: PASS card to drawn from supply posistion 24.
+playSmithy: PASS card to drawn from supply posistion 25.
+playSmithy: PASS card to drawn from supply posistion 26.
 File 'dominion.c'
-Lines executed:49.65% of 564
-Branches executed:52.52% of 417
-Taken at least once:41.73% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 cardtest2.c
 playAdventurer: FAIL two cards added to player hand.
 playAdventurer: PASS exit code 0.
 playAdventurer: FAIL draw two treasure cards.
+playAdventurer: PASS other player did not draw card.
+playAdventurer: PASS other player did not draw card.
+playAdventurer: PASS player discarded cards.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS treasure not discarded.
 File 'dominion.c'
-Lines executed:49.65% of 564
-Branches executed:52.52% of 417
-Taken at least once:41.73% of 417
-Calls executed:29.47% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 cardtest3.c
 villageEffect: PASS net gain 0 cards.
 villageEffect: PASS exit code 0.
 villageEffect: PASS gain 2 actions.
+villageEffect: PASS other player did not draw a card.
+villageEffect: PASS other player deck did not change.
 villageEffect: Hand before play - 6 14 5 
 villageEffect: Hand after play - 6 4 5 
+villageEffect: PASS card to drawn from supply posistion 0.
+villageEffect: PASS card to drawn from supply posistion 1.
+villageEffect: PASS card to drawn from supply posistion 2.
+villageEffect: PASS card to drawn from supply posistion 3.
+villageEffect: PASS card to drawn from supply posistion 4.
+villageEffect: PASS card to drawn from supply posistion 5.
+villageEffect: PASS card to drawn from supply posistion 6.
+villageEffect: PASS card to drawn from supply posistion 7.
+villageEffect: PASS card to drawn from supply posistion 8.
+villageEffect: PASS card to drawn from supply posistion 9.
+villageEffect: PASS card to drawn from supply posistion 10.
+villageEffect: PASS card to drawn from supply posistion 11.
+villageEffect: PASS card to drawn from supply posistion 12.
+villageEffect: PASS card to drawn from supply posistion 13.
+villageEffect: PASS card to drawn from supply posistion 14.
+villageEffect: PASS card to drawn from supply posistion 15.
+villageEffect: PASS card to drawn from supply posistion 16.
+villageEffect: PASS card to drawn from supply posistion 17.
+villageEffect: PASS card to drawn from supply posistion 18.
+villageEffect: PASS card to drawn from supply posistion 19.
+villageEffect: PASS card to drawn from supply posistion 20.
+villageEffect: PASS card to drawn from supply posistion 21.
+villageEffect: PASS card to drawn from supply posistion 22.
+villageEffect: PASS card to drawn from supply posistion 23.
+villageEffect: PASS card to drawn from supply posistion 24.
+villageEffect: PASS card to drawn from supply posistion 25.
+villageEffect: PASS card to drawn from supply posistion 26.
 File 'dominion.c'
-Lines executed:50.35% of 564
-Branches executed:52.52% of 417
-Taken at least once:41.97% of 417
-Calls executed:31.58% of 95
+Lines executed:53.01% of 564
+Branches executed:54.44% of 417
+Taken at least once:44.84% of 417
+Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 
 cardtest4.c
@@ -163,10 +234,37 @@ council_roomEffect: PASS player 1 card removed from deck.
 council_roomEffect: PASS player 3 card added to hand.
 council_roomEffect: PASS player 3 card removed from deck.
 council_roomEffect: PASS number of buys increases by one.
+council_roomEffect: PASS card to drawn from supply posistion 0.
+council_roomEffect: PASS card to drawn from supply posistion 1.
+council_roomEffect: PASS card to drawn from supply posistion 2.
+council_roomEffect: PASS card to drawn from supply posistion 3.
+council_roomEffect: PASS card to drawn from supply posistion 4.
+council_roomEffect: PASS card to drawn from supply posistion 5.
+council_roomEffect: PASS card to drawn from supply posistion 6.
+council_roomEffect: PASS card to drawn from supply posistion 7.
+council_roomEffect: PASS card to drawn from supply posistion 8.
+council_roomEffect: PASS card to drawn from supply posistion 9.
+council_roomEffect: PASS card to drawn from supply posistion 10.
+council_roomEffect: PASS card to drawn from supply posistion 11.
+council_roomEffect: PASS card to drawn from supply posistion 12.
+council_roomEffect: PASS card to drawn from supply posistion 13.
+council_roomEffect: PASS card to drawn from supply posistion 14.
+council_roomEffect: PASS card to drawn from supply posistion 15.
+council_roomEffect: PASS card to drawn from supply posistion 16.
+council_roomEffect: PASS card to drawn from supply posistion 17.
+council_roomEffect: PASS card to drawn from supply posistion 18.
+council_roomEffect: PASS card to drawn from supply posistion 19.
+council_roomEffect: PASS card to drawn from supply posistion 20.
+council_roomEffect: PASS card to drawn from supply posistion 21.
+council_roomEffect: PASS card to drawn from supply posistion 22.
+council_roomEffect: PASS card to drawn from supply posistion 23.
+council_roomEffect: PASS card to drawn from supply posistion 24.
+council_roomEffect: PASS card to drawn from supply posistion 25.
+council_roomEffect: PASS card to drawn from supply posistion 26.
 File 'dominion.c'
-Lines executed:52.84% of 564
+Lines executed:53.01% of 564
 Branches executed:54.44% of 417
-Taken at least once:44.60% of 417
+Taken at least once:44.84% of 417
 Calls executed:34.74% of 95
 Creating 'dominion.c.gcov'
 

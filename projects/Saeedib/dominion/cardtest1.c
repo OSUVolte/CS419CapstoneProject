@@ -3,8 +3,6 @@ Behnam Saeedi
 Saeedib
 93227697
 Unit test
-
-testing updateCoin:
 */
 
 #include <stdlib.h>
@@ -17,20 +15,13 @@ testing updateCoin:
 #include "dominion_helpers.h"
 #include "rngs.h"
 
-#define UNITTEST "updateCoins"
+#define UNITTEST "Smithy"
 
 int main(int argc, char ** argv)
 {
 	srand(time(NULL));
 	//Generating player:
 	int out;
-	int newCards = 0;
-	int discarded = 1;
-	int xtraCoins = 0;
-	int shuffledCards = 0;
-	int i, j, m;
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 10;
-	int remove1, remove2;
 	int seed = 1000;
 	int numPlayers = 2;
 	int thisPlayer = 0;
@@ -45,86 +36,30 @@ int main(int argc, char ** argv)
 	count = testG.handCount[thisPlayer];
 	for(int i = 0; i < count; i++)
 		testG.hand[thisPlayer][i] = estate;
-	testG.hand[thisPlayer][0] = gold;	//3
-	testG.hand[thisPlayer][1] = silver;	//2
-	testG.hand[thisPlayer][2] = copper;	//1
-	//Total should add up to 6
+	for(int i = 0; i < 25; i++)
+		testG.supplyCount[i] = 10;
+	testG.hand[thisPlayer][0] = gold;	
+	testG.hand[thisPlayer][1] = silver;	
+	testG.hand[thisPlayer][2] = copper;	
+	testG.discardCount[thisPlayer] = 0;
 	// Starting test
-	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+	printf("\n\nTesting card: %s\n\n", UNITTEST);
 
-
-	printf("Test 1: Checking validity of value (in range).\n");
-	int bef = testG.handCount[thisPlayer];
-	printf("getting initial handCount\n");
-	out = updateCoins(thisPlayer,&testG, bonus);
-
-	printf("coinUpdate returned: %d\n",out);
-	printf("bonus is: %d\n",bonus);
-	printf("Number of playing player is: %d\n",thisPlayer);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus+6);
-	assert(testG.coins == bonus + 6);
-	printf("handCount is: %d (%d is expected)\n",testG.handCount[thisPlayer],bef);
-	assert(testG.handCount[thisPlayer] == bef);
-	printf("Test 1 Passed\n");
-
-	printf("\nTest 2: Checking addition of coins (all the possible ways to add coin, bonus and cards).\n");
-	bonus++;
-	printf("bonus is: %d\n",bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus-1+6);
-	assert(testG.coins == bonus-1 + 6);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,bonus+6);
-	assert(testG.coins == bonus + 6);
-	printf("Test 2 Passed\n");
-
-	printf("\nTest 3: Checking looking for copper, silver and gold coins.\n");
-	bonus = 0;
-	printf("bonus is: %d\n",bonus);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,6);
-	assert(testG.coins == 6);
-	testG.hand[thisPlayer][3] = gold;
-	printf("adding an aditional gold card...\n");
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,9);
-	out = updateCoins(thisPlayer,&testG, bonus);
-	assert(testG.coins == 9);
-	printf("cards are:\n");
-	for(int i =0; i < count; i++)
-	{
-		if(testG.hand[thisPlayer][i] == gold)
-			printf("gold");
-		else if(testG.hand[thisPlayer][i] == silver)
-			printf("silver");
-		else if(testG.hand[thisPlayer][i] == copper)
-			printf("copper");
-		else
-			printf("Empty");
-		if(i != count -1)
-			if(i != count -2)
-				printf(", ");
-			else
-				printf(" and ");
-		else
-			printf("\n");
-	}
-	assert(testG.hand[thisPlayer][0] == gold);
-	assert(testG.hand[thisPlayer][1] == silver);
-	assert(testG.hand[thisPlayer][2] == copper);
-	assert(testG.hand[thisPlayer][3] == gold);
-	printf("Test 3 Passed\n");
-
-	printf("\nTest 4: Checking unexpected input\n");
-
-	bonus = 9999999999999999999999;
-	out = updateCoins(thisPlayer,&testG, bonus);
-	assert(testG.coins == bonus + 9);
-	printf("coinUpdate set the coin value to: %d (expected value is: %d)\n",testG.coins,9 + bonus);
-	if(testG.coins < 0)
-		printf("Test 4 failed: Failed to return a positive value.\n");
+	printf("Test 1: Checking the function.\n");
+	out = Smithy(thisPlayer, 3, &testG);
+	printf("smithy function should return cost of smithy card : %d.\n",out);
+	assert(out==4);
+	printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
+	if(testG.handCount[thisPlayer] < 7)
+		printf("Test 1 failed, it needs to return: %d\n", 5 - 1 + 3);
 	else
-		printf("Test 4 Passed\n");
-//	assert(testG.coins >= 0);
-	bonus = 0;
+		printf("Test 1 Passed\n");
 
+	printf("Test 2: Discard Pile.\n");
+	printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
+	if(testG.discardCount[thisPlayer] == 1 )
+		printf("Test 2 passed.\n");
+	else
+		printf("Test 2 failed, discard count is not correct.\n");
 	return 0;	//No bugs found
 }

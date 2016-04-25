@@ -65,8 +65,7 @@ void test(int card, int expectedcost, struct gameState* pre, struct gameState* p
 ** Description: entrypoint for unit test.
 ** Parameters: None
 ** Pre-Conditions: None
-** Post-Conditions: Exit code reports the number of failed tests, 0 if all
-**		tests succeeded, or greater than if some tests failed.
+** Post-Conditions: Exit code 0 if all tests succeeded, otherwise 1.
 *******************************************************************************/
 int main()
 {
@@ -80,7 +79,7 @@ int main()
 	int passes = 0; /* tests passed */
 	int failures = 0; /* tests failed */
 
-	if (OUTPUTLEVEL > 0) printf("*** BEGIN " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
+	if (OUTPUTLEVEL > 0) printf("\n*** BEGIN " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
 
 	/* test games with each allowed number of players */
 	for (players = 2; players <= MAX_PLAYERS; players++)
@@ -121,12 +120,17 @@ int main()
 			test(salvager, 4, &pre, &post, &passes, &failures); /* salvager = $4 */
 			test(sea_hag, 4, &pre, &post, &passes, &failures); /* sea_hag = $4 */
 			test(treasure_map, 4, &pre, &post, &passes, &failures); /* treasure_map = $4 */
+
+			/* boundaries, all should return invalid -1  */
+			test(curse - 1, -1, &pre, &post, &passes, &failures);
+			test(treasure_map + 1, -1, &pre, &post, &passes, &failures);
 		}
 	}
 
 	if (OUTPUTLEVEL > 0)
 	{
-		printf("\nSUMMARY for " FILENAME " (" xstr(TESTFUNC) "): ");
+		if (OUTPUTLEVEL > 1) printf("\n");
+		printf("SUMMARY for " FILENAME " (" xstr(TESTFUNC) "): ");
 		if (failures == 0) printf("passed all %d tests.\nTesting Outcome: SUCCESS!\n", passes);
 		else
 		{
@@ -137,5 +141,5 @@ int main()
 		if (OUTPUTLEVEL > 0) printf("*** END " FILENAME " (unit test for " xstr(TESTFUNC) ") ***\n");
 	}
 
-	return failures;
+	return failures != 0 ? 1 : 0;
 }
