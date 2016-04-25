@@ -15,4 +15,7 @@ test fails due to a bug introduced during previous assignment. It produces more 
 
 cardtest1.c:  adventurer
 it fails due to bug introduced during previous assignment. non treasure cards added to hand.
-/*
+
+cardtest4.c:  counicl_room
+test fails due to a bug introduced during previous assignment. It draws more cards than it should.
+*/
