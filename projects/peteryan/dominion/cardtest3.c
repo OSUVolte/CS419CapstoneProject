@@ -55,6 +55,24 @@ void testVillage()
 	else
 		printf("villageEffect: FAIL gain 2 actions.\n");
 	
+	/*Test other players did nto draw cards*/
+	memset(&state, 0, sizeof(struct gameState));  
+    initializeGame(numPlayer, k, seed, &state);
+	handPos = 1;
+	state.whoseTurn = player;
+	state.numActions = 0;
+	state.handCount[0] = 3;
+	state.deckCount[0] = 10;
+	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
+	if(state.handCount[0] == 3)
+		printf("villageEffect: PASS other player did not draw a card.\n");
+	else
+		printf("villageEffect: FAIL other player did not draw a card.\n");
+	if(state.deckCount[0] == 10)
+		printf("villageEffect: PASS other player deck did not change.\n");
+	else
+		printf("villageEffect: FAIL other player deck did not change.\n");
+	
 	/*Test village card is replaced with new card*/
 	memset(&state, 0, sizeof(struct gameState));  
     initializeGame(numPlayer, k, seed, &state);
@@ -78,6 +96,27 @@ void testVillage()
 		printf("%d ", state.hand[player][i]);
 	}
 	printf("\n");
+	
+	/*Test supply stacks do not change*/
+	for(i = 0; i <= treasure_map; i++)
+	{
+		state.supplyCount[i] = 10;
+	}
+	player = 1;
+	handPos = 0;	
+	state.handCount[player] = 3;
+	state.deckCount[player] = 10;
+	state.handCount[0] = 3;
+	state.deckCount[0] = 10;
+	state.playedCardCount = 0;
+	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
+	for(i = 0; i <= treasure_map; i++)
+	{
+		if(state.supplyCount[i] == 10)
+			printf("villageEffect: PASS card to drawn from supply posistion %d.\n", i);
+		else
+			printf("villageEffect: FAIL  card to drawn from supply posistion %d.\n", i);
+	}
 }
 
 int main(int argc, char *argv[])

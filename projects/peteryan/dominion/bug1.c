@@ -25,6 +25,9 @@ isGameOver()
 	If there is a miscalculation in the number of cards in the supple stacks
 	and a stack or stacks ended up with a negative number it will not be viewed
 	as empty.  Game over was not triggered when all stacks had negative values.
+	The loop for checking the count for each supply card does not check every
+	card.  When salvager, sea_hag, and treasure_map have 0 cards isGameOver() 
+	does not return 1, indicating the game is over.
 	
 updateCoins()
 	There is no input validation for updateCoins().  When passed a bonus that
