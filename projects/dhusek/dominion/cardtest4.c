@@ -61,13 +61,13 @@ int main() {
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     
-    printDeck(thisPlayer, &testG);
-    printHand(thisPlayer, &testG);
+    //printDeck(thisPlayer, &testG);
+    //printHand(thisPlayer, &testG);
     
     // play council room card in testG game
     cardEffect(council_room, choice1, choice2, choice3, &testG, handpos, &bonus);
     
-    printHand(thisPlayer, &testG);
+    //printHand(thisPlayer, &testG);
     
     newCards = 4;
     extraActions = 0;
