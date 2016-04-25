@@ -1,78 +1,275 @@
-/*
-Write unit tests for four functions (not card implementations or cardEffect) in 
-dominion.c. Check these tests in as unittest1.c,unittest2.c, unittest3.c, and 
-unittest4.c. (for example, you can create a test for updateCoins() method)
+/******************************************************************************
+** coverage1.c 
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** Discusses coverage provided by test suite.
+*******************************************************************************
 
-endTurn (line 350)
+unittest1.c - getCost()
+
+	getCost() should return the correct cost in coins for the card that is
+	passed as a parameter. The tests compare the cost returned by the function
+	to the costs given at http://wiki.dominionstrategy.com/.
+
+  All tests pass successfully, no bugs found.	
+ 
+  GCOV
+		Function 'getCost'
+		Lines executed:100.00% of 30
+		Branches executed:100.00% of 28
+		Taken at least once:100.00% of 28
+
+  Since all the costs returned for all cards are tested, these tests provide
+  100% coverage of the function.
+
+unittest2.c - shuffle()
+
+  shuffle() should only reorder the cards in the deck. 
+		-	It should not affect the number of cards in any of the card piles for any 
+			of the players. 
+		-	It should return a value of -1 if the deck is empty when the function is 
+			called. 
+		- It should not change the cards that are in the deck when it shuffles.
+
+  All tests pass successfully, no bugs found.
+ 
+  GCOV
+		Function 'shuffle'
+		Lines executed:100.00% of 16
+		Branches executed:100.00% of 8
+		Taken at least once:100.00% of 8
+		Calls executed:100.00% of 2
+
+  The unit tests cover 100% of the shuffle() function.
+
+unittest3.c - discardCard()
+
+  discardCard():
+    - If a card is played not trashed, the card should be added to the discard
+      pile and the played card count should increase.
+    - If a card is trashed, the card should not be added to the discard pile
+      and the played card count should increase.
+    - No other players' counts should change
+
+	Bugs found and discussed in bug1.c
+
+	GCOV
+		Function 'discardCard'
+		Lines executed:100.00% of 13
+		Branches executed:100.00% of 6
+		Taken at least once:100.00% of 6
+		No calls
   
-  Requirements:
-	 - After discard all cards in the hand of the current player should be set to
-     -1
-   - After discard the current player's hand count should be 0
-   - All other players hands should be zero before and after (draw at the end
-     of the the player that comes prior's turn)
-   - Current player should be set to the next player
-   - Beginning of next player's turn
-       - 1 action and 1 buy allowed per rules
-       - hand count should begin at 0 and be 5 after, all other players hand 
-         counts should remain 0.
-       - state->coins should be 0 before hand and not zero after ?
+  The unit tests cover 100% of the discardCard() function.
 
-isGameOver (line 390)
+unittest4.c - gameOver()
 
-  Requirements:
-   - All Province cards are used up or three supply piles are 0 game is won
-   - Otherwise game is not over
+  gameOver():
+		- The Province Supply pile is empty.
+    - Any three Supply piles are empty. This includes all the Supply piles, not 
+      just the 10 Kingdom card piles that are selected for each game. So, for 
+      instance, if the Estate pile, the Curse pile, and one of the Kingdom card 
+      piles is empty, the game ends.
+   ** information from http://boardgamegeek.com/wiki/page/Dominion_FAQ **
 
-discardCard (line 1047)
+  Bugs found and discussed in bug1.c
 
-  Requirements:
-    - If a card is played not trashed, the played card count increases and it
-      is added to the playedCards array
-    - The card at the current position is changed to -1 and the hand count is
-      decreased. No other players' hand counts should change (from 0)
-    - If there are more cards in the hand, the new card at the same position
-      should not be -1
+	GCOV
+		Function 'isGameOver'
+		Lines executed:100.00% of 10
+		Branches executed:100.00% of 8
+		Taken at least once:100.00% of 8
+		No calls
 
-gainCard (line 1085)
+  The unit tests cover 100% of the discardCard() function.
 
-  Requirements:
-    - supply count must be >= 1
-    - Card should go to discard, the deck or the hand of the current player,
-      depening on the flag used. The locations not indicated should not be 
-      affected.
-    - Number of cards in the supply file should decrease by one when the card
-      is moved to a different location.
+cardtest1.c - Smithy card
+ 
+	From http://wiki.dominionstrategy.com/index.php/Smithy
+		+3 Cards
+
+	-	Current player's hand should add three cards, discard the smithy card,
+    and remove 3 cards from their deck.
+	- Played cards count should increase.
+	- No other players' piles should change.
+
+	GCOV
+		Function 'smithyEffect'
+		Lines executed:100.00% of 5
+		Branches executed:100.00% of 2
+		Taken at least once:100.00% of 2
+		Calls executed:100.00% of 2
+	
+	The unit tests cover 100% of the smithyEffect() function.
+
+cardtest2.c - Adventurer card
+
+	http://wiki.dominionstrategy.com/index.php/Adventurer
+	Reveal cards from your deck until you reveal 2 Treasure cards. 
+	Put those Treasure cards into your hand and discard the other revealed cards.
+
+	Current player:
+		- Number of cards in deck will be decreased by the number of cards drawn
+      before finding 2 treasure cards.	
+		- Hand will be increased by up to 2, depending on how many treasure cards
+			are found.
+		- Discard pile will be increased by 1 for the adventurer card, plus 1 for
+			each of the non-treasure cards drawn.
+		- Cards played count will increase by one.
+	Other players:
+		- No changes should be made.
+
+	GCOV
+		Function 'adventurerEffect'
+		Lines executed:100.00% of 16
+		Branches executed:100.00% of 10
+		Taken at least once:90.00% of 10
+		Calls executed:100.00% of 2
+
+cardtest3.c - Great Hall card
+
+	http://wiki.dominionstrategy.com/index.php/Great_Hall
+	When you play it, you draw a card and may play another Action.
+
+	Current player:
+		- Hand will be increased by 1, Great Hall card will be discarded, for net
+			change of 0.
+		- Discard will increase by 1.
+		- Cards played count will increase by one.
+		- Number of actions is increased by 1.
+	Other players:
+		- No changes should be made.
+
+	GCOV: 100% coverage for the great_hall case
+
+						-:  829:    case great_hall:
+						-:  830:      //+1 Card
+						1:  831:      drawCard(currentPlayer, state);
+		call    0 returned 100%
+						-:  832:      
+						-:  833:      //+1 Actions
+						1:  834:      state->numActions++;
+						-:  835:      
+						-:  836:      //discard card from hand
+						1:  837:      discardCard(handPos, currentPlayer, state, 0);
+		call    0 returned 100%
+						1:  838:      return 0;
+
+cardtest4.c - Council Room card
+
+	http://wiki.dominionstrategy.com/index.php/Council_Room
+	+4 Cards
+	+1 Buy
+	Each other player draws a card.
+
+	Current player:
+		- Hand will be increased by 4, Great Hall card will be discarded, for net
+			change of 3.
+		- Discard will increase by 1.
+		- Cards played count will increase by one.
+		- Number of buys is increased by 1.
+	Other players:
+		- Hand increased by 1.
+		- Deck decreased by 1.
+
+	GCOV: 100% coverage for the council_room case
+
+						-:  670:    case council_room:
+						-:  671:      //+4 Cards
+						5:  672:      for (i = 0; i < 4; i++)
+		branch  0 taken 80%
+		branch  1 taken 20% (fallthrough)
+						-:  673:      {
+						4:  674:        drawCard(currentPlayer, state);
+		call    0 returned 100%
+						-:  675:      }
+						-:  676:      
+						-:  677:      //+1 Buy
+						1:  678:      state->numBuys++;
+						-:  679:      
+						-:  680:      //Each other player draws a card
+						5:  681:      for (i = 0; i < state->numPlayers; i++)
+		branch  0 taken 80%
+		branch  1 taken 20% (fallthrough)
+						-:  682:      {
+						4:  683:        if ( i != currentPlayer )
+		branch  0 taken 75% (fallthrough)
+		branch  1 taken 25%
+						-:  684:          {
+						3:  685:            drawCard(i, state);
+		call    0 returned 100%
+						-:  686:          }
+						-:  687:      }
+						-:  688:      
+						-:  689:      //put played card in played card pile
+						1:  690:      discardCard(handPos, currentPlayer, state, 0);
+		call    0 returned 100%
+						-:  691:      
+						1:  692:      return 0;
 
 
+--------------------------- CARD EFFECT COVERAGE ------------------------------
+	Function 'cardEffect'
+ 		Lines executed:11.49% of 148
+ 		Branches executed:24.37% of 119
+ 		Taken at least once:7.56% of 119
+ 		Calls executed:12.50% of 48
 
-Write unit tests for four Dominion cards implemented in dominion.c.  These tests 
-should be checked in as cardtest1.c, cardtest2.c,cardtest3.c, and cardtest4.c. 
-(For example, create a test for smithy card.). It is mandatory to test smithy 
-and adventurer card. 
+--------------------------- DOMINION COVERAGE ------------------------------
+	File 'dominion.c'
+		Lines executed:34.86% of 568
+		Branches executed:37.35% of 415
+		Taken at least once:29.88% of 415
+		Calls executed:18.95% of 95
+		Creating 'dominion.c.gcov'
 
-Execute your unit tests and describe any bugs you find in a file named bug1.c. 
+	Uncovered functions: 
+		'tributeEffect'
+		'minionEffect'
+		'baronEffect'
+		'gainCard'
+		'getWinners'
+		'scoreFor'
+		'endTurn'
+		'fullDeckCount'
+		'supplyCount'
+		'handCard'
+		'numHandCards'
+		'buyCard'
+		'playCard'
+		'kingdomCards'
+		'newGame'
 
-Use gcov to measure code coverage for all of these tests. Report your findings 
-by discussing your tests' coverages (statement, branch, boundary, etc.), and 
-describe their implications for the tests in a file called coverage1.c, also 
-checked in to your dominion directory. I want you to look at the dominion code 
-coverage and find out what parts of your code are not covered so that in future 
-you can improve your test suite. 
+	Partially Covered Functions
+		Function 'updateCoins'
+			Lines executed:81.82% of 11
+			Branches executed:100.00% of 8
+			Taken at least once:75.00% of 8
+			No calls
 
-Add a rule in Makefile that will generate and execute all of these tests, and 
-append complete testing results (including % coverage) into a file called 
-unittestresults.out. The rule should be named unittestresults.out and should 
-depend on all your test code as well as the dominion code. The .out files 
-contain the output of your running tests and coverage information. Basically 
-.out file should act as a proof that your tests run correctly and you collected 
-coverage information correctly.
-Note: we prefer to run a single command "make unittestresults.out". This command 
-should do everything. Compile all 8 tests, execute them, add any output 
-information to unittestresult.out file,  collect coverage information and append 
-it to the unittestresult.out file.
+		Function 'cardEffect'
+			Lines executed:11.49% of 148
+			Branches executed:24.37% of 119
+			Taken at least once:7.56% of 119
+			Calls executed:12.50% of 48
 
-Update your refactor.c  file of Assignment 2 with some information about the 
-bugs that you introduced in Assignment 2 in case you have not done it already 
-and resubmit the file.
+		Function 'drawCard'
+			Lines executed:77.27% of 22
+			Branches executed:100.00% of 6
+			Taken at least once:66.67% of 6
+			Calls executed:100.00% of 1
+
+		Function 'initializeGame'
+			Lines executed:93.55% of 62
+			Branches executed:100.00% of 46
+			Taken at least once:89.13% of 46
+			Calls executed:100.00% of 5
+
+		Function 'compare'
+			Lines executed:83.33% of 6
+			Branches executed:100.00% of 4
+			Taken at least once:75.00% of 4
+			No calls
+
 
