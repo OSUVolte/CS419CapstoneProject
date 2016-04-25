@@ -32,8 +32,8 @@ int main() {
     }
 
 	handCount=5;
-    printf ("Unit Test #3 \n");
-    printf ("TESTING updateCoins():\n");
+    printf ("Unit Test #4\n");
+    printf ("TESTING fullDeckCount():\n");
     for (p = 0; p < numPlayer; p++)
     {
             for (handCount = 0; handCount <= maxHandCount; handCount++)
@@ -90,7 +90,7 @@ int main() {
             }
     }
 
-    printf("End Unit Test #1\n");
+    printf("End Unit Test #4\n");
 
     return 0;
 }
