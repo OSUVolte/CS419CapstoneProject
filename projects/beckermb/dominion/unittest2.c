@@ -88,4 +88,7 @@ int main () {
   } else {
     printf("FAIL: returned %d with hand valued at 5.\n", game.coins);
   }
+
+  return 0;
+
 }
