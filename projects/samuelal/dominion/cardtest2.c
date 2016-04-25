@@ -61,10 +61,13 @@ int main() {
         }
     }
 
-    printf("Treasure in hand count = %d, expected treasure in hand count= %d\n", treasureAfter, treasureBefore + newCards);
+    int NottreasureBefore = G.handCount[PlayerID] - treasureBefore;
+    int NottreasureAfter = testG.handCount[PlayerID] - treasureAfter;
+
+    printf("Non-Treasure Cards = %d, expected non-treasure cards = %d\n", NottreasureAfter, NottreasureBefore);
 
     //Test 2 fails because of bug introduced in refactor.c where 3 treasure cards are added instead of 2
-    if (treasureAfter != (treasureBefore + newCards)) {
+    if (NottreasureBefore != NottreasureAfter) {
         printf("TEST 2 HAS FAILED\n\n");
         errorFlag = 1;
      }
@@ -132,10 +135,10 @@ int main() {
     //Compares whether any change to Player 2 hand or deck
     if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
         memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-            printf("\n\nTEST 3 HAS PASSED");
+            printf("\n\nTEST 3 HAS PASSED\n\n");
     }
     else {
-        printf("\n\nTEST 3 HAS FAILED\n");
+        printf("\n\nTEST 3 HAS FAILED\n\n");
     }
 
     return 0;
