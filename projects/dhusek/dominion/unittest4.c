@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "interface.h"
 
-#define TESTFUNCTION "discardCard()"
+#define TESTFUNCTION "drawCard()"
 
 int main() {
     int trashed;

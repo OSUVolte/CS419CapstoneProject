@@ -27,3 +27,4 @@ updateCoins Bugs:
 - No bugs were found!
 
 gainCard Bugs:
+- No bugs were found!
