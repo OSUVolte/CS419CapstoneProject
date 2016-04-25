@@ -9,10 +9,10 @@
 First of all, I modified smithy, village, adventurer, council_room and mine into individual function and they will be called in switch.
 
 smithy:
-    The variable i is not declared in the function(after changed in assignment3, it is now), and in for loop i is decreasing instead of increasing.
+    The variable i is not declared in the function, and in for loop i is decreasing instead of increasing.
 
 village:
-    After updated in assignment3, numActions is -2 instead of +2.
+    The currentPlayer is not specified using whoseTurn funcion. And hand posision is not passing when calling discardCard.
 
 adventurer:
     It will discard the card while drawn treasure cards are equal or more than 2 instead of less 2.

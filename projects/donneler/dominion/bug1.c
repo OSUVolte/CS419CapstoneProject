@@ -43,4 +43,13 @@
 * 10 - playCutpurse is adding three additional coins to the current'
 * player instead of two. Other player's bronze is not being removed.
 * These are bugs already documented in refactor.c
+*
+* 11 - playCutpurse the if statement on line 1391 will never be true. 
+* This condititonal should actually be if (j == state->handCount[i] - 1)
+* which is when the players last card has been reached.
+*
+* 12 - When a player end's their turn, their hand is discarded and only
+* the nextPlayers hand is filled. This presented an issue for playCutpurse
+* as the other players wont have any cards in their hand and thus they will
+* never have to get rid of a bronze. 
 **************************************************************************/

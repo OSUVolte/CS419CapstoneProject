@@ -18,8 +18,6 @@ int main() {
     int newCards = 0;
     int discarded = 1;
     int extraCoins = 0;
-    int extraActions = 0;
-    int extraBuys = 0;
     int shuffledCards = 0;
     
     int i;
@@ -35,8 +33,6 @@ int main() {
     int GnewDeckCount;
     int GnewCoins;
     int GdeckCount;
-    int GnewActionCount;
-    int GnewBuyCount;
     int GtempHandSize;
     int num;
     int GnumTreasureCards = 0;
@@ -89,13 +85,9 @@ int main() {
     //printHand(thisPlayer, &testG);
     
     newCards = 2;
-    extraActions = 0;
-    extraBuys = 0;
     extraCoins = COPPER_VALUE + SILVER_VALUE;
     GnewHandCount = G.handCount[thisPlayer] + newCards - discarded;
     GnewDeckCount = GdeckCount - newCards - GtempHandSize + shuffledCards;
-    GnewActionCount = G.numActions + extraActions;
-    GnewBuyCount = G.numBuys + extraBuys;
     GnewCoins = G.coins + extraCoins;
     
     // count treasure cards in testG hand
@@ -110,8 +102,6 @@ int main() {
     printf("\thand count = %d, expected = %d\n", testG.handCount[thisPlayer], GnewHandCount);
     printf("\tdeck count = %d, expected = %d\n", testG.deckCount[thisPlayer], GnewDeckCount);
     printf("\tcoins = %d, expected = %d\n", testG.coins, GnewCoins);
-    printf("\tactions = %d, expected = %d\n", testG.numActions, GnewActionCount);
-    printf("\tbuys = %d, expected = %d\n", testG.numBuys, GnewBuyCount);
     printf("\n");
     
     // ----------- Current player should receive exactly 2 treasure cards --------------
@@ -186,40 +176,6 @@ int main() {
         passedTests++;
     } else {
         printf("\n");
-    }
-    
-    // ----------- Current player should receive no additional actions --------------
-    printf("Testing: Current player should receive no additional actions.\n");
-    if(testG.numActions != GnewActionCount) {
-        if(testG.numActions < GnewActionCount) {
-            num = GnewActionCount - testG.numActions;
-            printf("\t**FAILED**: Current player has %d too few actions.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many actions
-            num = testG.numActions - GnewActionCount;
-            printf("\t**FAILED**: Current player has %d too many actions.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of actions.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player should receive no additional buys --------------
-    printf("Testing: Current player should receive no additional buys.\n");
-    if(testG.numBuys != GnewBuyCount) {
-        if(testG.numBuys < GnewBuyCount) {
-            num = GnewBuyCount - testG.numBuys;
-            printf("\t**FAILED**: Current player has %d too few buys.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many buys
-            num = testG.numBuys - GnewBuyCount;
-            printf("\t**FAILED**: Current player has %d too many buys.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of buys.\n\n");
-        passedTests++;
     }
     
     // ----------- No state change should occur for other players. --------------
@@ -300,7 +256,7 @@ int main() {
         printf("\n");
     }
     
-    // ----------- No state change should occur for the kingdom card piles. --------------
+    // ----------- No state change should occur for the victory card piles. --------------
     printf("Testing: No state change should occur for the kingdom card piles.\n");
     errorCount = 0;
     for(i = 0; i < 10; i++) {
@@ -312,7 +268,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the kingdom card piles.\n\n");
+        printf("\tPASSED: No state change has occured for the victory card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");

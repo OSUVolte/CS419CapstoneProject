@@ -109,12 +109,12 @@ int main() {
     //Compares whether any change to Player 2 hand or deck
     if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
         memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-            printf("\n\nTEST 2 HAS PASSED");
+            printf("\n\nTEST 2 HAS PASSED\n\n");
     }
 
 
     if (errorFlag == 0) {
-        printf("ALL TESTS PASSED");
+        printf("ALL TESTS PASSED\n\n");
     }
 
     return 0;
