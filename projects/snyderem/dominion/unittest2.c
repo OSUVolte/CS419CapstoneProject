@@ -22,8 +22,8 @@ void playerCounts(int[PLAYERS+1][PILES], int[PLAYERS+1][PILES]);
 
 
 enum pile {
-	hand = 0,
-	deck,
+  hand = 0,
+  deck,
   discard,
   played 
 };
@@ -32,7 +32,7 @@ int main() {
  
   struct gameState state;
   int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, 
-													remodel, smithy, village, baron, great_hall};
+                          remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
   int player;
   int countsBefore[PLAYERS+1][PILES];
@@ -57,9 +57,9 @@ int main() {
   // test that all card piles remain the same size
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
   player = state.whoseTurn;
-	cardCounts(&state, countsBefore);
+  cardCounts(&state, countsBefore);
   shuffle(player, &state);
-	cardCounts(&state, countsAfter);
+  cardCounts(&state, countsAfter);
   playerCounts(countsBefore, countsAfter);
 
   printf("\n------- TESTING THAT CARDS ARE NOT CHANGED -------\n");
@@ -75,13 +75,13 @@ int main() {
   }
   for (i = 0; i < 10; i++) {
     printf("Count of card %d - Before: %d  After: %d\n", i, preShuffleCounts[i], postShuffleCounts[i]);
-		if(preShuffleCounts[i] != postShuffleCounts[i]) {
+    if(preShuffleCounts[i] != postShuffleCounts[i]) {
       printf("ERROR - count has changed\n");
       bugFound = 1;
     }
   }
   if (!bugFound) {
-  	printf("SUCCESS: same cards are in the deck after shuffling\n");
+    printf("SUCCESS: same cards are in the deck after shuffling\n");
   }
     
   return 0;
@@ -93,9 +93,9 @@ int main() {
 ** in the 2d array that is passed in as a parameter.
 ******************************************************************************/
 void cardCounts(
-	struct gameState	*state, 
-	int 							counts[PLAYERS+1][PILES]
-	) 
+  struct gameState  *state, 
+  int               counts[PLAYERS+1][PILES]
+  ) 
 {
    
   int i;
@@ -105,7 +105,7 @@ void cardCounts(
     counts[i][1] = state->deckCount[i];
     counts[i][2] = state->discardCount[i];
   }
-  counts[i][0] = state->playedCardCount;		
+  counts[i][0] = state->playedCardCount;    
 }
 
 /******************************************************************************
@@ -113,8 +113,8 @@ void cardCounts(
 ** shuffle() function.
 ******************************************************************************/
 void testEmptyDeck(
-	struct gameState *state
-	) 
+  struct gameState *state
+  ) 
 {
   int player = state->whoseTurn;
   int i;
@@ -135,37 +135,37 @@ void testEmptyDeck(
 ** are the same before and after. 
 ******************************************************************************/
 void playerCounts(
-	int countsBefore[PLAYERS+1][PILES], 
-	int countsAfter[PLAYERS+1][PILES]
-	) 
+  int countsBefore[PLAYERS+1][PILES], 
+  int countsAfter[PLAYERS+1][PILES]
+  ) 
 {
   
-	int i;
+  int i;
   int bugFound = 0;
 
   printf("\n------- Status of Players' Piles -------\n");
-	for (i = 0; i < PLAYERS; i++) {	
-		printf("Player %d", i);
-		printf("\tBefore\tAfter\n");
-		printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
-		if (countsAfter[i][hand] != countsBefore[i][hand]) {
-			printf("ERROR - should not be altered\n");
+  for (i = 0; i < PLAYERS; i++) {  
+    printf("Player %d", i);
+    printf("\tBefore\tAfter\n");
+    printf("  Hand\t\t%d\t%d\n", countsBefore[i][hand], countsAfter[i][hand]); 
+    if (countsAfter[i][hand] != countsBefore[i][hand]) {
+      printf("ERROR - should not be altered\n");
       bugFound = 1;
-		}
-		printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
-		if (countsAfter[i][deck] != countsBefore[i][deck]) {
-			printf("ERROR - should not be altered\n");
+    }
+    printf("  Deck\t\t%d\t%d\n", countsBefore[i][deck], countsAfter[i][deck]); 
+    if (countsAfter[i][deck] != countsBefore[i][deck]) {
+      printf("ERROR - should not be altered\n");
       bugFound = 1;
-		}
-		printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
-		if (countsAfter[i][discard] != countsBefore[i][discard]) {
-			printf("ERROR - should not be altered\n");
+    }
+    printf("  Discard\t%d\t%d\n", countsBefore[i][discard], countsAfter[i][discard]); 
+    if (countsAfter[i][discard] != countsBefore[i][discard]) {
+      printf("ERROR - should not be altered\n");
       bugFound = 1;
-		}
-	}
+    }
+  }
 
   if (!bugFound) {
-		printf("SUCCESS: no card piles were changed\n");
+    printf("SUCCESS: no card piles were changed\n");
   }
 }
 

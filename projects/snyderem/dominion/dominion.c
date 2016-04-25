@@ -1158,7 +1158,7 @@ int adventurerEffect (
   int drawntreasure = 0;
   int cardDrawn;
   int temphand[MAX_HAND];
-  int z;
+  int z = 0;
  
   while(drawntreasure < 2) {
     //if the deck is empty we need to shuffle discard and add to deck
