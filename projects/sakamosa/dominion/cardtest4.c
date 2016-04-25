@@ -7,7 +7,7 @@
 //testing of getCost function
 
 int main(){
-    printf("*********************BEGIN UNIT TESTS OF GREAT HALL*********************\n\n");
+    printf("*********************BEGIN UNIT TESTS OF OUTPOST*********************\n\n");
 //compare returned value to correct value for each card type
     struct gameState T;
     int total_cards;
@@ -19,24 +19,23 @@ int main(){
             sea_hag, tribute, smithy};
     
     initializeGame(2, k, 5, &T);
-    int pre_actions = T.numActions;
-   
 
     T.hand[0][0] = great_hall;
+    T.outpostPlayed = 0;
     total_cards = T.handCount[0] + T.deckCount[0] + T.discardCount[0];
 
-    cardEffect(great_hall, 0, 0, 0, &T, 0, 0);
-   
-    //check that one card has been added and one discarded
-    if(T.handCount[0] != playerCount){
+    cardEffect(outpost, 0, 0, 0, &T, 0, 0);
+
+    //check that outposts were updated
+     if(T.outpostPlayed != 1){
+        printf("FAIL incorrect number of outposts played\n");
+    }
+    
+    //check that one card has been discarded
+    if(T.handCount[0] != playerCount - 1){
         printf("FAIL incorrect number of cards in player hand\n");
     }
     
-    //check that actions are increased
-    if(T.numActions != pre_actions + 1){
-        printf("FAIL incorrect number of action cards\n");
-    }
-
     //check that the card was added to discard pile
     if(T.discardCount[0] != playerDiscard + 1){
         printf("FAIL incorrect number of cards in player discard pile\n");

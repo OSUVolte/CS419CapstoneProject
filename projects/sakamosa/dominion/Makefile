@@ -42,19 +42,31 @@ cardtest1: cardtest1.o cardtest1.c
 cardtest2: cardtest2.o cardtest2.c
 	gcc -o cardtest2 cardtest2.c -g dominion.o rngs.o $(CFLAGS)
     
-unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 runtests
+cardtest3: cardtest3.o cardtest3.c
+	gcc -o cardtest3 cardtest3.c -g dominion.o rngs.o $(CFLAGS)
+    
+cardtest4: cardtest4.o cardtest4.c
+	gcc -o cardtest4 cardtest4.c -g dominion.o rngs.o $(CFLAGS)
+    
+unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 runtests
 
 runtests:
 	./unittest1 &> unittestresults.out
-	#gcov unittest1 -f -b >> unittestresults.out	  
+	gcov unittest1 -f -b >> unittestresults.out	  
 	./unittest2 >> unittestresults.out
-	#gcov unittest2 -f -b >> unittestresults.out	  
+	gcov unittest2 -f -b >> unittestresults.out	  
 	./unittest3 >> unittestresults.out
-	#gcov unittest3 -f -b >> unittestresults.out	  
+	gcov unittest3 -f -b >> unittestresults.out	  
 	./unittest4 >> unittestresults.out
-	#gcov unittests4 -f -b >> unittestresults.out	
+	gcov unittests4 -f -b >> unittestresults.out	
 	./cardtest1 >> unittestresults.out
-	./cardtest2 
+	gcov cardtest1 -f -b >> unittestresults.out    
+	./cardtest2 >> unittestresults.out
+	gcov cardtest2 -f -b >> unittestresults.out    
+	./cardtest3 >> unittestresults.out
+	gcov cardtest3 -f -b >> unittestresults.out 
+	./cardtest4 >> unittestresults.out
+	gcov cardtest4 -f -b >> unittestresults.out       
 	gcov dominion.c -f -b >> unittestresults.out
   
 
