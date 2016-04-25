@@ -17,9 +17,19 @@ void printCards(int *phand, int numCards, char *dtype);
 char *getCardName(int card);
 void printHand(struct gameState *state, int player);
 int countCardInHand(struct gameState *state, int player, int card);
-int countTreasureInHand(struct gameState *state, int targetPlayer);
-void testAdventurer(struct gameState *state, int treasure1, int treasure2);
-void checkPlayAdventurer(struct gameState *state, int targetPlayer);
+void checkPlayCard(struct gameState *state, int targetPlayer, int card);
+
+int CARD = village;
+char *CARD_NAME = "Village";
+int NUM_CARD_DRAW = 1;
+int NUM_ACTIONS = 2;
+int NUM_BUYS = 0;
+char *FUNCTION = "playVillage";
+
+// change function depending on card used :: CARD MUST only affect cards and actions
+void playFunction(int targetPlayer, int pos, struct gameState *state) {
+    playVillage(targetPlayer, pos, state);
+}
 
 int main() {
     int players = 4;
@@ -34,8 +44,9 @@ int main() {
     struct gameState *state = &game;
     initializeGame(players, cards, seed, &game);
     
-    drawSpecificCard(state, targetPlayer, village);
-    printHand(state, targetPlayer);
+    printf("TESTING village card\n");
+
+    checkPlayCard(state, targetPlayer, CARD);
     return 0;
 }
 
@@ -140,53 +151,66 @@ int countCardInHand(struct gameState *state, int player, int card) {
     return count;
 }
 
-int countTreasureInHand(struct gameState *state, int targetPlayer) {
-    int treasureCount = 0;
-    treasureCount += countCardInHand(state, targetPlayer, copper);
-    treasureCount += countCardInHand(state, targetPlayer, silver);
-    treasureCount += countCardInHand(state, targetPlayer, gold);
-    return treasureCount;
-}
+void checkPlayCard(struct gameState *state, int targetPlayer, int card) {
+    // count targetCard
+    int preCardCount = countCardInHand(state, targetPlayer, card);
+    // count actions
+    int preActionCount = state->numActions;
+    // count number of card
+    int preHandCount = state->handCount[targetPlayer];
+    // count buys
+    int preNumBuys = state->numBuys;
 
-void testAdventurer(struct gameState *state, int treasure1, int treasure2) {
-    int targetPlayer = 0;
-    // put two copper on top so that when we play adventurer they should be drawn
-    placeOnDeck(state, targetPlayer, treasure1);
-    placeOnDeck(state, targetPlayer, treasure2);
-    // get card order and count before smithy
-    checkPlayAdventurer(state, targetPlayer);
-
-}
-
-void checkPlayAdventurer(struct gameState *state, int targetPlayer) {
-    int oldCount = state->handCount[targetPlayer];
-    int oldPos[oldCount];
-    memcpy(oldPos, state->hand[targetPlayer], oldCount * sizeof(int));
-    // count treasure
-    int treasureCount = countTreasureInHand(state, targetPlayer);
-    // count adventurer 
-    int adventCount = countCardInHand(state, targetPlayer, adventurer);
-    // draw adventurer
-    int adventurerPos = drawSpecificCard(state, targetPlayer, adventurer);
+    // draw target card
+    int pos = drawSpecificCard(state, targetPlayer, card);
    
-    // play adventurer from previously acquired position
-    playAdventurer(targetPlayer, state);
-    
-    // check treasure count has increased by 2
-    if (countTreasureInHand(state, targetPlayer) != treasureCount + 2) {
-        printf("FAIL: [playAdventurer] We did not gain two treasure cards\n");
+    // play target card from previously acquired position
+    if (card == CARD) {
+        playFunction(targetPlayer, pos, state);
     }
     else {
-        printf("SUCCESS: [playAdventurer] Correct number of treasure cards gained\n");
+        printf("INVALID FUNCTION USAGE SEE CODE\n");
     }
-    // check adventurer count is same before drawing adventurer and after playing him
-    if (countCardInHand(state, targetPlayer, adventurer) != adventCount) {
-        printf("FAIL: [playAdventurer] Adventurer card was not discarded\n");
-    }
-    else {
-        printf("SUCCESS: [playAdventurer] Adventurer card was discarded\n");
-    }
-    // check hand is 2 bigger than before drawing adventurer and after playing him
 
+    // get post play stats
+    int postCardCount = countCardInHand(state, targetPlayer, card);
+    int postActionCount = state->numActions;
+    int postHandCount = state->handCount[targetPlayer];
+    int postNumBuys = state->numBuys;
+    
+    // test results
+    // count of target card post-pre 
+    int numCard = postCardCount - preCardCount;
+   
+    if (numCard != 0) {
+        printf("FAIL: [%s] %s was not discarded\n", FUNCTION, CARD_NAME);
+    }
+    else {
+        printf("SUCCESS: [%s] %s was correctly discarded\n", FUNCTION, CARD_NAME);
+    }
+    // number of actions
+    int actionCount = postActionCount - preActionCount;
+    if (actionCount != NUM_ACTIONS) {
+        printf("FAIL: [%s] number of actions should have increased by [%d] but increased by [%d]\n", FUNCTION, NUM_ACTIONS, actionCount);
+    }
+    else {
+        printf("SUCCESS: [%s] actions increased by [%d]\n", FUNCTION, actionCount);
+    }
+    // number of cards drawn
+    int cardDraw = postHandCount - preHandCount;
+    if (cardDraw != NUM_CARD_DRAW) {
+        printf("FAIL: [%s] should have drawn [%d] card(s) but drew [%d]\n", FUNCTION, NUM_CARD_DRAW, cardDraw);
+    }
+    else {
+        printf("SUCCESS: [%s] correctly drew [%d] card(s)\n", FUNCTION, cardDraw);
+    }
+    // number of buys
+    int buyCount = postNumBuys - preNumBuys;
+    if (buyCount != NUM_BUYS) {
+        printf("FAIL: [%s] buy count should have increased by [%d] but increased by [%d]\n", FUNCTION, NUM_BUYS, buyCount);
+    }
+    else {
+        printf("SUCCESS: [%s] buy count increased by [%d]\n", FUNCTION, buyCount);
+    }
 }
 

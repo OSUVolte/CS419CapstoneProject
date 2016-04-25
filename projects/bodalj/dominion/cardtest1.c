@@ -2,7 +2,7 @@
  * Filename: cardtest1.c
  * Author: Jens Bodal
  * Date: April 23, 2016
- * Description: 
+ * Description: Testing smithy
  *****************************************************************************/
 
 #include "dominion.h"
@@ -27,6 +27,8 @@ int main() {
     struct gameState game;
     struct gameState *state = &game;
     initializeGame(players, cards, seed, &game);
+
+    printf("TESTING smithy card\n");
 
     // get card order and count before smithy
     int oldCount = state->handCount[targetPlayer];
