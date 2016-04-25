@@ -15,99 +15,27 @@ Unit test
 #include "dominion_helpers.h"
 #include "rngs.h"
 
-#define UNITTEST "isGameOver"
+#define UNITTEST "kingdomCards"
 
 int main(int argc, char ** argv)
 {
 	srand(time(NULL));
 	//Generating player:
-	int out;
-	int seed = 1000;
-	int numPlayers = 2;
-	int thisPlayer = 0;
-	struct gameState G, testG;
-
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
 	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	// generating a random state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	int count;
-	count = testG.handCount[thisPlayer];
-	for(int i = 0; i < count; i++)
-		testG.hand[thisPlayer][i] = estate;
-	for(int i = 0; i < 25; i++)
-		testG.supplyCount[i] = 10;
-	testG.hand[thisPlayer][0] = gold;	//3
-	testG.hand[thisPlayer][1] = silver;	//2
-	testG.hand[thisPlayer][2] = copper;	//1
-	testG.supplyCount[province] = rand() % 5 + 1;
 	//Total should add up to 6
 	// Starting test
 	printf("\n\nTesting Unit %s\n\n", UNITTEST);
 
 
-	printf("Test 1: Checking the function.\n");
-	out = isGameOver(&testG);
-	if(out != 1)
-		printf("Game is not over(expected)\n");
-	else
-		printf("Game is over(unexpected)\n");
-	assert(out != 1);
-	printf("Setting the province cards to 0\n");
-	testG.supplyCount[province] = 0;
-	out = isGameOver(&testG);
-	if(out == 1)
-		printf("Game is over(expected)\n");
-	else
-		printf("Game is Not over(unexpected)\n");
-	assert(out == 1);
-	printf("Test 1 Passed\n");
-
-	printf("\nTest 2: testing decrease in province cards.\n");
-	testG.supplyCount[province] = 5;
-	for(int i = 0; i < 5; i++)
-	{
-		testG.supplyCount[province] = testG.supplyCount[province] -1;
-		out = isGameOver(&testG);
-		printf("value of %d: %d\n",i,out);
-		if(i != 4)
-			assert(out == 0);
-		else
-			assert(out == 1);
-	}
-	printf("Test 2 Passed\n");
-
-	printf("\nTest 3: Testing 3 piles are at 0.\n");
-	for(int i = 0; i < 3; i++)
-	{
-		printf("supply count of %d was %d.\n",i,testG.supplyCount[i]);
-		for(; testG.supplyCount[i] != 0; testG.supplyCount[i] = testG.supplyCount[i] -1);
-		printf("supply count of %d now is %d.\n",i,testG.supplyCount[i]);
-	}
-	testG.supplyCount[province] = 10;
-	out = isGameOver(&testG);
-	assert(out == 1);
-	printf("Test 3 Passed\n");
-
-	printf("\nTest 4: Checking unexpected input/Output\n");
+	printf("Test 1: cecking for match between two copies.\n");
+	int * k2 = kingdomCards(k[0],k[1],k[2],k[3],k[4],k[5],k[6],k[7],k[8],k[9]);
 	for(int i = 0; i < 10; i++)
 	{
-		int mem[3] = {0,0,0};
-		for(int i = 0; i < 3; i++)
-		{
-			mem[i] = rand() % 25;
-		}
-		testG.supplyCount[mem[0]] = 0;
-		testG.supplyCount[mem[1]] = 0;
-		testG.supplyCount[mem[2]] = 0;
-		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
-		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
-			assert(isGameOver(&testG) == 1);
-		for(int j = 0; j < 25; j++)
-			testG.supplyCount[j] = 10;
+		printf("Member %d holds value of %d.\n",i, k[i]);
+		assert(k2[i] == k[i]);
 	}
-	
-	printf("Test 4 Passed\n");
+	printf("Test 1 Passed\n");
+
 	return 0;	//No bugs found
 }

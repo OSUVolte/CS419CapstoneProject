@@ -77,9 +77,27 @@ testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardte
 	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 	./cardtest4 >> unittestresults.txt
 	echo "_________________________________________________________" >> unittestresults.txt
+
+	echo "Coverage test: " >> unittestresults.txt
+	gcov unittest1.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov unittest2.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov unittest3.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov unittest4.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov cardtest1.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov cardtest2.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov cardtest3.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
+	gcov cardtest4.gnda >> unittestresults.txt
+	echo "_________________________________________________________" >> unittestresults.txt
 	echo "End of tests" >> unittestresults.txt
 
-	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 
+	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
 unittestresults.out:
 	make testresults
