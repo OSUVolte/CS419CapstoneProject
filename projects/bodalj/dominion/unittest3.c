@@ -2,9 +2,7 @@
  * Filename: unittest3.c
  * Author: Jens Bodal
  * Date: April 23, 2016
- * Description: 
- * Input: 
- * Output: 
+ * Description: testing drawCard function
  *****************************************************************************/
 
 #include "dominion.h"
@@ -32,7 +30,8 @@ int main() {
     int targetPlayer = 0;
     struct gameState game;
     struct gameState *state = &game;
-
+    
+    printf("TESTING drawCard function\n");
     
     // draw 5 adventurers
     printf("-- CONTROL TEST INTERNAL COUNT FUNCTION --\n");

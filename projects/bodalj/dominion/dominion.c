@@ -1061,6 +1061,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   return -1;
 }
 
+// ## Effect: +1 Card +2 Action ## //
 int playVillage(int currentPlayer, int handPos, struct gameState *state) {
   //+1 Card
   drawCard(currentPlayer, state);
@@ -1074,6 +1075,7 @@ int playVillage(int currentPlayer, int handPos, struct gameState *state) {
   return 0;
 }
 
+// ## Effect: +1 Card +1 Action ## //
 int playGreatHall(int currentPlayer, int handPos, struct gameState *state) {
   //+1 Card
   drawCard(currentPlayer, state);
