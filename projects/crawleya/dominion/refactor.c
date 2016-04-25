@@ -23,6 +23,9 @@ Postcondition: The state of the game will show three additional cards in the cur
 Return Value: 0
 
 Bug introduced: In the for loop, changed < to <= so 4 cards will be added to the player's hand instead of 3
+How it affects the game: It makes any player end up with the wrong number of cards in their piles.
+Why it affects the game: It puts the game in an incorret game state. 
+When it affect the game: Any time anyone plays the smithy card.
 **********
 
 **********
@@ -38,7 +41,12 @@ Postcondition: The state of the game will be updated to show two additional trea
 
 Return value: 0
 
-Bug introduced: In the switch statement, under case adventurer, the function is called, but nothing is returned. The line is "doAdventurer(state, handPos, currentPlayer)" but it should be "return doAdventurer(state, handPos, currentPlayer)". Also, in the first while loop, <2 was changed to <=2 so that 3 Treasure Cards will be added (instead of 2).
+Bug introduced: In the switch statement, under case adventurer, the function is called, but nothing is returned. The line is "doAdventurer(state, handPos, currentPlayer)" but it should be "return doAdventurer(state, handPos, currentPlayer)". 
+
+Also, in the first while loop, <2 was changed to <=2 so that 3 Treasure Cards will be added (instead of 2).
+How it affects the game: It makes any player end up with the wrong number of treasure cards in their piles.
+Why it affects the game: It puts the game in an incorret game state. 
+When it affect the game: Any time anyone plays the adventurer card.
 **********
 
 **********
@@ -55,6 +63,10 @@ Postcondition: The state of the game will show an extra card in the player's cur
 Return Value: 0
 
 Bug introduced: Changed line state->numActions = state->numActions + 2 to state->numActions++ so only one additional action will be added.
+How it affects the game: It makes any player end up with the wrong number of actions.
+Why it affects the game: It puts the game in an incorret game state. 
+When it affect the game: Any time anyone plays the village card.
+
 ************
 
 **********
