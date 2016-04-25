@@ -20,6 +20,23 @@ int main(int argc, char const *argv[])
 
     Council Room - Does not allow the zero'th player to draw a card.
 
+    ####
+
+    Assignment 3 test suite bugs found:
+    cardtest1.c:
+    * Player gets more than three cards when playing smithy
+
+    cardtest2.c:
+    * Player who plays adventurer gets incorrect amt of cards
+    * adventurer does not go to playCards pile
+
+    cardtest3.c:
+    * Player does not get two additional actions after play of Village
+
+    cardtest4.c: 
+    * Each other player does not get card after council_room played
+    * Council room does not go to playedCards
+
     */
 
     return 0;

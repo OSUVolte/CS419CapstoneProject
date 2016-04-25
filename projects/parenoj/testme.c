@@ -3,17 +3,27 @@
 #include<stdlib.h>
 #include<time.h>
 
+/*
+ * I've made this very loose. I've had it run for over 1 million iterations, 
+ * but it always eventually finds the error by outputting "reset".
+ *
+ * It might take awhile, but I think it is worth it for range testing
+ */
+
+
 char inputChar()
 {
-
-	int v = rand() % 128;
+	//This will give a random  ascii values 0 - 127
+	char v = rand() % 128;
    
     return v;
 }
 
 char *inputString()
 {
-    char w[6];
+    //This will assign a random ascii value between 101 and 116 to the first 5 characters with the 6th character being null to terminate the string
+    //(101 - 116) because this encompasses all of the lower cases letters of reset
+    static char w[6];
     int i = 0;
     w[5] = '\0';
     for(i; i<5; i++)

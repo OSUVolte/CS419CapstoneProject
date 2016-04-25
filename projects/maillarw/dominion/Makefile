@@ -64,7 +64,7 @@ unittestresults.out: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4
 	./cardtest2 >> unittestresults.out 
 	./cardtest3 >> unittestresults.out  
 	./cardtest4 >> unittestresults.out
-	printf "\n************Coverage Info**************\n" >> unittestresults.out
+	printf "\n************************    Begin Coverage Information   **********************\n\n" >> unittestresults.out
 	gcov -b -f dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 	

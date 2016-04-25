@@ -528,6 +528,7 @@ int drawCard(int player, struct gameState *state) {
         }
 
         // Take the last card from the deck and place it in the last position of the hand.
+
         deckCounter = state->deckCount[player];//Create holder for the deck count
         state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
         state->deckCount[player]--;
@@ -1174,7 +1175,7 @@ int playSmithy(struct gameState *state, int handPos) {
     for (i = 0; i < 3; i++) {
         drawCard(currentPlayer, state);
     }
-    discardCard(handPos, currentPlayer, state, 0);
+    discardCard(handPos, currentPlayer, state, 1);
     return 0;
 }
 

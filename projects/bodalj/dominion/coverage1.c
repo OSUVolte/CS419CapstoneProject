@@ -2,14 +2,57 @@
 impliciations for tests here.  **
 
 
-## Unit Test 1: initializeGame function
+## Unit Test 1: shuffle function
 
-    initializeGame(int numPlayers, int kingdomCards[10], int randomSeed, struct gameState *state);
-
-* number of players needs to be between 2 - max players
-* kingdom cards must be different
-* must be 10 kingdom cards total (not a requirement?) it's a game requirement, so I should add it
-* number of curse cards 
+    int shuffle(int player, struct gameState *state)
 
 
+## Unit Test 2: getCost function
+
+    int getCost(int cardNumber)
+
+* get all card values from wiki that are declared in dominion.h and compare their values to getCost function
+* ensure that getCost returns -1 if card is invalid; test invalid with negative and with large number
+
+## Unit Test 3: drawCard function
+
+    int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+
+* Error with incrementing discard deck and count, nothing being placed into it and it's not incrementing
+
+## Card Test 1: smithy
+
+    int playSmithy(int currentPlayer, int handPos, struct gameState *state);
+
+Smithy effect: Draw 3 cards
+
+* Check that Smithy draws 3 cards
+* Check that cards we had before Smithy are still there
+* Check that Smithy has been discarded
+
+## Card Test 2: adventurer
+
+    int playAdventurer(currentPlayer, struct gameState *state) 
+
+Adventurer effect: Draw cards until 2 treasure cards drawn into hand; discard non-treasure cards
+
+* Check that drawing silver, gold, and copper cause original hand size to only change by two
+* Check that drawing non-treasure cards are discarded
+* Check that if deck is empty we will shuffle discard and gain two treasure
+
+## Card Test 3: village
+    
+    int playVillage(int currentPlayer, int handPos, struct gameState *state)
+
+* Check that we drew only 1 card
+* Check that we gained only 2 actions
+* Check that card was discarded
+* Check that numBuys is the same
+
+## Card Test 4: great_hall
+
+* Check that we drew only 1 card
+* Check that we gained only 1 actions
+* Check that card was discarded
+* Check that numBuys is the same
 
