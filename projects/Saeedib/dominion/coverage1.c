@@ -15,12 +15,12 @@ Creating 'unittest3.c.gcov'
 
 _________________________________________________________
 File 'unittest4.c'
-Lines executed:97.37% of 38
+Lines executed:97.22% of 36
 Creating 'unittest4.c.gcov'
 
 _________________________________________________________
 File 'cardtest1.c'
-Lines executed:96.97% of 66
+Lines executed:93.75% of 32
 Creating 'cardtest1.c.gcov'
 
 _________________________________________________________

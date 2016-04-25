@@ -15,7 +15,7 @@ Unit test
 #include "dominion_helpers.h"
 #include "rngs.h"
 
-#define UNITTEST "isGameOver"
+#define UNITTEST "Smithy"
 
 int main(int argc, char ** argv)
 {
@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
 	testG.supplyCount[province] = rand() % 5 + 1;
 	//Total should add up to 6
 	// Starting test
-	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+	printf("\n\nTesting card: %s\n\n", UNITTEST);
 
 
 	printf("Test 1: Checking the function.\n");

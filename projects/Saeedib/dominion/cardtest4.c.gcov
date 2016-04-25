@@ -20,7 +20,7 @@
         -:   15:#include "dominion_helpers.h"
         -:   16:#include "rngs.h"
         -:   17:
-        -:   18:#define UNITTEST "isGameOver"
+        -:   18:#define UNITTEST "Smithy"
         -:   19:
         1:   20:int main(int argc, char ** argv)
         -:   21:{
@@ -49,7 +49,7 @@
         1:   44:	testG.supplyCount[province] = rand() % 5 + 1;
         -:   45:	//Total should add up to 6
         -:   46:	// Starting test
-        1:   47:	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+        1:   47:	printf("\n\nTesting card: %s\n\n", UNITTEST);
         -:   48:
         -:   49:
         1:   50:	printf("Test 1: Checking the function.\n");
@@ -108,7 +108,7 @@
        10:  103:		testG.supplyCount[mem[2]] = 0;
        10:  104:		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
        10:  105:		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
-        9:  106:			assert(isGameOver(&testG) == 1);
+        8:  106:			assert(isGameOver(&testG) == 1);
       260:  107:		for(int j = 0; j < 25; j++)
       250:  108:			testG.supplyCount[j] = 10;
         -:  109:	}
