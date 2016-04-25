@@ -136,5 +136,12 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+//Headers for refactored card functions
+int cardSmithy(int currentPlayer, struct gameState *state, int handPos);
+int cardAdventurer(int currentPlayer, struct gameState *state);
+int cardVillage(int currentPlayer, struct gameState *state, int handPos);
+int cardCouncil_room(int currentPlayer, struct gameState *state, int handPos);
+int cardOutpost(int currentPlayer, struct gameState *state, int handPos);
+
 
 #endif

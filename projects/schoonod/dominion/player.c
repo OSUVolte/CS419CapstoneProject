@@ -30,7 +30,7 @@ int main2(int argc, char *argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-		char *add  = "add";
+    char *add  = "add";
 	char *buyC = "buy";
 	char *endT = "end";
 	char *exit = "exit";

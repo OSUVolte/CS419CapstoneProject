@@ -1,0 +1,48 @@
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function main called 1 returned 100% blocks executed 91%
+        1:    8:int main(){
+        -:    9:	int effect, handCountShouldBe;
+        -:   10:	struct gameState game;	
+        1:   11:	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+        -:   12:    
+        1:   13:	printf("\n\nRunning Unit Test: Smithy\n");
+call    0 returned 100%
+        -:   14://create game
+        -:   15://4 players, cards, seed, 
+        1:   16:	initializeGame(4, k, 10, &game);
+call    0 returned 100%
+        1:   17:	handCountShouldBe = game.handCount[0] + 2;
+        1:   18:	printf("Current Hand: %d \n", game.handCount[0]);	
+call    0 returned 100%
+        -:   19://line 646 dominion.c
+        -:   20://pass card (smithy since we are testing it), choice1-3, struct gameState, the handPos and the bonus (which we have none yet)
+        1:   21:	effect = cardEffect(smithy, 0, 0, 0, &game, 0, 0);
+call    0 returned 100%
+        1:   22:	printf("\nSmithy played for first player. \n\n");
+call    0 returned 100%
+        1:   23:	if(game.handCount[0] != handCountShouldBe)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:   24:    {
+    #####:   25:		printf("error: Hands don't match. Hand Should be: %d. returned: %d \n", handCountShouldBe, game.handCount[0]);
+call    0 never executed
+        -:   26:	}
+        -:   27:	else{
+        1:   28:		printf("Hand Count: %d \ntest successful: Card properly drawn.\n", game.handCount[0]);
+call    0 returned 100%
+        -:   29:	}
+        1:   30:	printf("\nunit Test: Smithy test successful \n");
+call    0 returned 100%
+        1:   31:return 0;
+        -:   32:}

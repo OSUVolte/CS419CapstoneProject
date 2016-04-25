@@ -1,0 +1,9 @@
+*
+!*/
+!*.*
+*.gcno
+*.gcda
+*.o
+*.gcov
+*.out
+*.vim

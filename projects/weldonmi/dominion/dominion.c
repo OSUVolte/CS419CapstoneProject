@@ -696,7 +696,7 @@ int councilRoomCard(struct gameState *state, int currentPlayer, int handPos){
       while(i < state->numPlayers && i != currentPlayer){
 	  drawCard(i, state);
 	  i++
-	}
+      }
 			
       //put played card in played card pile
       discardCard(handPos, currentPlayer, state, 0);

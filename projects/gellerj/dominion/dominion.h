@@ -16,6 +16,7 @@
 /* http://dominion.isotropic.org has other stuff */
 
 /* hand# means index of a card in current active player's hand */
+int compare(const void *a, const void *b);
 
 enum CARD
   {curse = 0,
