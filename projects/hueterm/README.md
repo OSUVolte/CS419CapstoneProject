@@ -3,6 +3,7 @@ hueterm | hueterm@oregonstate.edu | @mhueter
 
 #### Assignment 3 [24 April 2016]
 Unit testing. New Files:
+
 1. unittest1.c
 2. unittest2.c
 3. unittest3.c
@@ -16,6 +17,7 @@ Unit testing. New Files:
 
 #### Random Testing Quiz 2 [23 April 2016]
 New Files:
+
 1. randomstring.c
 2. testme.c
 
