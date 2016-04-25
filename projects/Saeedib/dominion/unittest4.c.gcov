@@ -62,16 +62,12 @@
         1:   57:	printf("Test 1 Passed\n");
         -:   58:
         1:   59:	printf("\nTest 2: discarding a card.\n");
-        1:   60:	out = discardCard(4,thisPlayer,&testG,1);
+        1:   60:	out = discardCard(4,thisPlayer,&testG,0);
         1:   61:	out = discardCard(3,thisPlayer,&testG,0);
         1:   62:	out = scoreFor(thisPlayer,&testG);
-        -:   63:
-        1:   64:	printf("new ScoreFor returned: %d (expected 10).\n",out);
-        1:   65:	assert(out == 10);
-        1:   66:	printf("Test 2 Passed\n");
-        -:   67:
-        1:   68:	printf("\nTest 3: Testing 3 piles are at 0.\n");
-        1:   69:	printf("Test 3 Passed\n");
-        -:   70:
-        1:   71:	return 0;	//No bugs found
-        -:   72:}
+        1:   63:	printf("new ScoreFor returned: %d (expected 10).\n",out);
+        1:   64:	assert(out == 10);
+        1:   65:	printf("Test 2 Passed\n");
+        -:   66:
+        1:   67:	return 0;	//No bugs found
+        -:   68:}
