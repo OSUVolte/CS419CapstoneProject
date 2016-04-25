@@ -32,11 +32,9 @@ int main() {
     printf ("TESTING updateCoins function\n"); 
    
             
-#if (NOISY_TEST == 1)
 				p = 0;
 				handCount =0;
-                printf("Test player %d with %d card(s) in hand before given salvager and later mine \n", p, handCount);
-#endif
+    
                 memset(&G, 23, sizeof(struct gameState));   // clear the game state
                 r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
                 G.handCount[p] = handCount;                 // set the number of cards on hand
