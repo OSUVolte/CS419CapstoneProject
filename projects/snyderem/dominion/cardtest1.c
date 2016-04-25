@@ -32,7 +32,7 @@ int main() {
  
   struct gameState state;
   int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, 
-  												remodel, smithy, village, baron, great_hall};
+                          remodel, smithy, village, baron, great_hall};
   int randomSeed = 1000;   // example unittest
 
   int player;
@@ -75,8 +75,8 @@ int main() {
 ** in the 2d array that is passed in as a parameter.
 ******************************************************************************/
 void cardCounts(
-  struct gameState 	*state, 
-  int 							counts[PLAYERS+1][PILES]
+  struct gameState   *state, 
+  int               counts[PLAYERS+1][PILES]
   ) 
 {
    
@@ -86,7 +86,7 @@ void cardCounts(
     counts[i][1] = state->deckCount[i];
     counts[i][2] = state->discardCount[i];
   }
-  counts[i][0] = state->playedCardCount;  	
+  counts[i][0] = state->playedCardCount;    
 }
 
 /******************************************************************************
@@ -107,22 +107,22 @@ void otherPlayerCounts(
 
   for (i = 0; i < PLAYERS; i++) {
     if (i != currentPlayer) {
-  		if (countsAfter[i][hand] != countsBefore[i][hand]) {
-  			printf("  Hand Before: %d After %d\n", countsBefore[i][hand], countsAfter[i][hand]); 
-  			bugFound = 1;
-  		}
-  		if (countsAfter[i][deck] != countsBefore[i][deck]) {
-  			printf("  Deck Before: %d After %d\n", countsBefore[i][deck], countsAfter[i][deck]); 
-  			bugFound = 1;
-  		}
-  		if (countsAfter[i][discard] != countsBefore[i][discard]) {
-  			printf("  Discard Before: %d After %d\n", countsBefore[i][discard], countsAfter[i][discard]); 
-  			bugFound = 1;
-  		}
+      if (countsAfter[i][hand] != countsBefore[i][hand]) {
+        printf("  Hand Before: %d After %d\n", countsBefore[i][hand], countsAfter[i][hand]); 
+        bugFound = 1;
+      }
+      if (countsAfter[i][deck] != countsBefore[i][deck]) {
+        printf("  Deck Before: %d After %d\n", countsBefore[i][deck], countsAfter[i][deck]); 
+        bugFound = 1;
+      }
+      if (countsAfter[i][discard] != countsBefore[i][discard]) {
+        printf("  Discard Before: %d After %d\n", countsBefore[i][discard], countsAfter[i][discard]); 
+        bugFound = 1;
+      }
     }
   }
   if (!bugFound) {
-  	printf("SUCCESS: other players' piles were not changed.\n\n");
+    printf("SUCCESS: other players' piles were not changed.\n\n");
   }
 }
 
@@ -141,9 +141,9 @@ void printComparison(
   int i;
   for (i = 0; i < PLAYERS; i++) {
     printf("Player %d\tBefore\tAfter\n", i);
-  	printf("  Hand\t\t%d\t%d\n", countsBefore[i][0], countsAfter[i][0]); 
-  	printf("  Deck\t\t%d\t%d\n", countsBefore[i][1], countsAfter[i][1]); 
-  	printf("  Discard\t%d\t%d\n", countsBefore[i][2], countsAfter[i][2]); 
+    printf("  Hand\t\t%d\t%d\n", countsBefore[i][0], countsAfter[i][0]); 
+    printf("  Deck\t\t%d\t%d\n", countsBefore[i][1], countsAfter[i][1]); 
+    printf("  Discard\t%d\t%d\n", countsBefore[i][2], countsAfter[i][2]); 
   }
   printf("Played Cards -  Before: %d After: %d\n", countsBefore[i][0], countsAfter[i][0]); 
   
