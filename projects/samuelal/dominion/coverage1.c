@@ -69,8 +69,13 @@ Calls executed:100.00% of 2
 than the ones I tested. 3 of my 4 unit tests had 100% line, branch, and function call coverage. My unittest1 which tested the 
 getCost() had nearly 100% coverage and could be slightly improved to ensure that every line is executed at least once. For my 
 cardtests, I would improve my cardtest2 so I could increase my branch and function call coverage. My cardtests for smithy, 
-village, and greathall all had 100% line and function call coverage. Based on these results, I would focus my attention on 
-increasing coverage of other portions of dominion.c. I would especially like to focus on sections that had poor test coverage 
-and are important to the core functions of the program. I would likely focus on the initializeGame function where more than 
-2 players are playing. Initialization of the correct number of supplies is important to gameplay and from my test results, 
-I could improve my coverage in this area. 
+village, and greathall all had 100% line and function call coverage. Although the village card was not implemented in a function, 
+the gcov data indicates that the non-commented lines of the code were all executed at least once.
+	Based on these results, I would focus my attention on increasing coverage of other portions of dominion.c. My line, branch, and 
+especially function call coverage could be imroved significantly. I would especially like to focus on sections that had poor 
+test coverage and are important to the core functions of the program. I would likely focus on the initializeGame function where
+more than 2 players are playing. Initialization of the correct number of supplies is important to gameplay and from my test 
+results, I could improve my coverage in this area. In addition, I think writing tests for playCard(), buyCard(), and endTurn() 
+would also help increase testing coverage of areas that currently do not have adequate coverage and play a critical role in the 
+overall program. Since a limited number of the cards were tested, I could also test more cards but I think the functions I 
+listed previously are more important to the overall behavior of the game.
