@@ -17,7 +17,6 @@
 int updateCoins(int player, struct gameState *state, int bonus);
 
 int main() {
-    int seed = 1000;
     int bonus = 0;
 
     struct gameState state;
@@ -34,9 +33,6 @@ int main() {
     state.hand[0][2] = gold;
     state.hand[0][3] = gardens;
     state.hand[0][4] = silver;
-
-    // initialize game state and player cards
-	//initializeGame(numPlayers, k, seed, &G);
 
     printf("----------------- Unit Test 1, 3 Cases: updateCoins() ----------------\n");
     // ------------------------- CASE 1: bonus == 0 ----------------------------	

@@ -1,0 +1,95 @@
+Unit Test Results
+unittest1.c
+----------------- Unit Test 1, 3 Cases: updateCoins() ----------------
+updateCoins(), case1: PASS with 0 as bonus
+updateCoins(), case2: PASS with 3 as bonus
+updateCoins(), case3: FAIL updateCoins allows player number greater than max. This means
+               updateCoins will read or write memory outside of array bounds!
+File 'dominion.c'
+Lines executed:2.01% of 548
+Creating 'dominion.c.gcov'
+
+unittest2.c
+----------------- Unit Test 2, 4 Cases: isGameOver() ----------------
+isGameOver(), case1: PASS detected 0 provinces for game over state
+isGameOver(), case2: PASS detected non-zero provinces for non-game-over state
+isGameOver(), case3: FAIL did not give game over state for three 0 supply cards
+isGameOver(), case4: PASS detected non-game-over state for two 0 supply cards
+File 'dominion.c'
+Lines executed:3.65% of 548
+Creating 'dominion.c.gcov'
+
+unittest3.c
+----------------- Unit Test 3, 4 Cases: buyCard() ----------------
+buyCard(), case1: PASS detected no buys available
+buyCard(), case2: PASS detected non-zero provinces for non-game-over state
+buyCard(), case3: PASS detected not enough coins to buy province (8 required)
+buyCard(), case4: PASS return val indicates province card bought
+buyCard(), case4: PASS province supply correctly updated
+buyCard(), case4: PASS number of coins correctly updated
+buyCard(), case4: PASS province card correctly in discard pile
+buyCard(), case4: PASS discard count correctly updated
+File 'dominion.c'
+Lines executed:8.39% of 548
+Creating 'dominion.c.gcov'
+
+unittest4.c
+----------------- Unit Test 1, 3 Cases: updateCoins() ----------------
+updateCoins(), case1: PASS with 0 as bonus
+updateCoins(), case2: PASS with 3 as bonus
+updateCoins(), case3: FAIL updateCoins allows player number greater than max. This means
+               updateCoins will read or write memory outside of array bounds!
+File 'dominion.c'
+Lines executed:8.39% of 548
+Creating 'dominion.c.gcov'
+
+cardtest1.c
+----------------- Unit Test 1, 3 Cases: updateCoins() ----------------
+updateCoins(), case1: PASS with 0 as bonus
+updateCoins(), case2: PASS with 3 as bonus
+updateCoins(), case3: FAIL updateCoins allows player number greater than max. This means
+               updateCoins will read or write memory outside of array bounds!
+File 'dominion.c'
+Lines executed:8.39% of 548
+Creating 'dominion.c.gcov'
+
+cardtest2.c
+----------------- Unit Test 2, 4 Cases: isGameOver() ----------------
+isGameOver(), case1: PASS detected 0 provinces for game over state
+isGameOver(), case2: PASS detected non-zero provinces for non-game-over state
+isGameOver(), case3: FAIL did not give game over state for three 0 supply cards
+isGameOver(), case4: PASS detected non-game-over state for two 0 supply cards
+File 'dominion.c'
+Lines executed:8.39% of 548
+Creating 'dominion.c.gcov'
+
+cardtest3.c
+----------------- Unit Test 3, 4 Cases: buyCard() ----------------
+buyCard(), case1: PASS detected no buys available
+buyCard(), case2: PASS detected non-zero provinces for non-game-over state
+buyCard(), case3: PASS detected not enough coins to buy province (8 required)
+buyCard(), case4: PASS return val indicates province card bought
+buyCard(), case4: PASS province supply correctly updated
+buyCard(), case4: PASS number of coins correctly updated
+buyCard(), case4: PASS province card correctly in discard pile
+buyCard(), case4: PASS discard count correctly updated
+File 'dominion.c'
+Lines executed:8.39% of 548
+Creating 'dominion.c.gcov'
+
+cardtest4.c
+----------------- Unit Test 4, 4 Cases: gainCard() ----------------
+gainCard(), case1: PASS detected no supply available
+gainCard(), case2: PASS return val indicates card to discard successful
+gainCard(), case2: PASS province in discard slot
+gainCard(), case2: PASS discard count correctly incremented
+gainCard(), case3: PASS return val indicates card to deck successful
+gainCard(), case2: PASS province in deck slot
+gainCard(), case2: PASS deck count correctly incremented
+gainCard(), case3: PASS return val indicates card to hand successful
+gainCard(), case2: PASS province in hand slot
+gainCard(), case2: PASS hand count correctly incremented
+File 'dominion.c'
+Lines executed:9.31% of 548
+Creating 'dominion.c.gcov'
+

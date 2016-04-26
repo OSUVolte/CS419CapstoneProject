@@ -37,7 +37,7 @@ int main() {
         printf("Two cards were not drawn from the deck\n");
     }
 
-    if (finalHand - initialHand != 2) {
+    if (finalHand - initialHand != 1) {
         printf("Two cards were not added to the players hand!\n");
     }
 
