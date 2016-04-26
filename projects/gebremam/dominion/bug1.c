@@ -8,7 +8,7 @@
  */
 /*
 unittest2.c:  isGameOver()
-test failed becuase function does not check all card values. It misses to check 3 kingdom cards.
+test failed becuase function does not check all card values. It misses to check 2 kingdom cards.
 
 cardtest2.c:  smithy
 test fails due to a bug introduced during previous assignment. It produces more cards in hand than it should.

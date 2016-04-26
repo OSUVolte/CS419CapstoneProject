@@ -20,10 +20,15 @@
 #include <assert.h>
 
 int main() {
+    printf("\n\n*************************\n");
+    printf ("TESTING smithy card\n");
+    printf("*************************\n\n");  
 	int seed = 1000;
 	int player = 0;
 	int numPlayers = 2;
 	int handPos = 0;
+    int passedTest=0;
+    int failedTest=0;
 	struct gameState G;
 	int k[10] = {adventurer, council_room, feast, mine, remodel, smithy, village, salvager, sea_hag, treasure_map};
 	initializeGame(numPlayers, k, seed, &G);
@@ -36,7 +41,15 @@ int main() {
 
 	cardEffect(smithy, 0, 0, 0, &G, 4, 0);
 	printf("Expected HandSize: %d - Result %d\n", origCount+3-1, G.handCount[player]);
-	assert(G.handCount[player] == origCount+3-1); 
-			
+    if (G.handCount[player] == origCount+3-1){
+        printf("Passed test\n\n");
+        passedTest++;
+    }
+    else{
+        printf("failed test\n\n");
+        failedTest++;
+    }
+	//assert(G.handCount[player] == origCount+3-1); 
+	printf("Passed %d and failed %d of the cardtest2 tests\n", passedTest, failedTest);			
 	return 0;
 }

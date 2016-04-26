@@ -20,10 +20,15 @@
 #include <assert.h>
 
 int main() {
+    printf("\n\n*************************\n");
+    printf ("TESTING council_room card\n");
+    printf("*************************\n\n");  
         int seed = 1000;
         int player = 0;
         int numPlayers = 2;
         //int handPos = 0;
+        int passedTest=0;
+        int failedTest=0;
         struct gameState G;
         int k[10] = {adventurer, council_room, feast, mine, remodel, smithy, village, salvager, sea_hag, treasure_map};
         initializeGame(numPlayers, k, seed, &G);
@@ -37,12 +42,30 @@ int main() {
 
         cardEffect(council_room, 0, 0, 0, &G, 4, 0);
         printf("Expected number of buys: %d - Result %d\n", origBuys+1, G.numBuys);
-        assert(G.handCount[player] == origCount);
+        if (G.handCount[player] == origCount){
+            printf("Passed test\n\n");
+            passedTest++;
+        }
+        else{
+            printf("failed test\n\n");
+            failedTest++;
+        }
+        //assert(G.handCount[player] == origCount);
 
         printf("Expected handSize: %d - Result %d\n", origCount+3, G.handCount[player]);
-        assert(G.handCount[player] == origCount+3);
+        if (G.handCount[player] == origCount+3){
+            printf("Passed test\n\n");
+            passedTest++;
+        }
+        else{
+            printf("failed test\n\n");
+            failedTest++;
+        }
+        //assert(G.handCount[player] == origCount+3);
 
 
-        printf("It passed!\n");
+        printf("Passed %d and failed %d of the cardtest4 tests\n", passedTest, failedTest);
+        printf("*********************************************************************\n");
+        printf("*********************************************************************\n\n");
         return 0;
 }

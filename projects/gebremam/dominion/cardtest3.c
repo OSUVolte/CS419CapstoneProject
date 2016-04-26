@@ -20,26 +20,44 @@
 #include <assert.h>
 
 int main() {
-        int seed = 1000;
-        int player = 0;
-        int numPlayers = 2;
+    printf("\n\n*************************\n");
+    printf ("TESTING village card\n");
+    printf("*************************\n\n");  
+    int seed = 1000;
+    int player = 0;
+    int numPlayers = 2;
+    int passedTest=0;
+    int failedTest=0;
         struct gameState G;
         int k[10] = {adventurer, council_room, feast, mine, remodel, smithy, village, salvager, sea_hag, treasure_map};
         initializeGame(numPlayers, k, seed, &G);
         int testHand1[]= {copper, silver, estate, feast, village};
-        int origCount=G.handCount[player];
-        //int s=villageRefactored(&G, player, handPos);
-
         memcpy(G.hand[0], testHand1, sizeof(int)*5);
-
- 	printf("orig numActions: %d\n", G.numActions);
+        int origCount=G.handCount[player];
+ 	    printf("orig numActions: %d\n", G.numActions);
         cardEffect(village, 0, 0, 0, &G, 4, 0);
         printf("Expected handSize: %d - Result %d\n", origCount, G.handCount[player]);
-        assert(G.handCount[player] == origCount);
+        if (G.handCount[player] == origCount){
+            printf("Passed test\n\n");
+            passedTest++;
+        }
+        else{
+            printf("failed test\n\n");
+            failedTest++;
+        }
+        //assert(G.handCount[player] == origCount);
 
         printf("Expected number of actions: %d - Result %d\n", 3, G.numActions);
-        assert(G.numActions == 3);
+        if (G.numActions == 3){
+            printf("Passed test\n\n");
+            passedTest++;
+        }
+        else{
+            printf("failed test\n\n");
+            failedTest++;
+        }
+        //assert(G.numActions == 3);
 
-	printf("It passed!\n");
+	   printf("Passed %d and failed %d of the cardtest3 tests\n", passedTest, failedTest);		
         return 0;
 }
