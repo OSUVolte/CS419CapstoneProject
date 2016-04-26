@@ -12,6 +12,9 @@ The present test suite executed 32.80% , 41.69 % branches and performed 17.89% c
 Naturally these results are expected as a limited number of functions were covered by the test suit. 
 In general, the coverage results show that several of the functions tested on the test suite present 100 % coverage results: scoreFor, smithyCard, isGameOver, fullDeckCount etc.
 The functions that presented low coverage and thus present an opportunity for further testing are: shuffle, discardCard, remodelCard among others.
+Overall, in order to improve the test suite coverage further tests will need to be wrtten to cover a wider range of functions
+within the dominion game implementation. 
+
 
 Unit Test #1 
 TESTING updateCoins():
