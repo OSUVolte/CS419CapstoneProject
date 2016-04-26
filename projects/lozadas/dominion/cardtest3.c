@@ -46,7 +46,6 @@ int main() {
 	xtraCoins = 0;
 
 	printf("Test 1: player 0 draws 4 cards from deck\n");
-	//Determine the number of treasure cards in player hand for G game  
 	if (testG.handCount[thisPlayer]==G.handCount[thisPlayer]+ newCards -discarded)
 	{
 		printf("PASS: test = %d, expected = %d\n",testG.handCount[thisPlayer],G.handCount[thisPlayer]+ newCards -discarded);
