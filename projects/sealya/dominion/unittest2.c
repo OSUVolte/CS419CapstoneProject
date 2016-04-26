@@ -17,7 +17,7 @@ Tested behavior:  Function returns what card is at the given hand position
 #include <string.h>
 
 int main() {
-	int i, j, k, x,handPos;
+	int i, j, x,handPos;
 	int seed = 1000;
 	int numPlayers = 2;
 	int player = 0;

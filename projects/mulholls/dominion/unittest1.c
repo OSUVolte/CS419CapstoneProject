@@ -266,7 +266,7 @@ int unitTest(){
 int main(){
    int testVal = unitTest();
    printf("Outcome: %i\n", testVal);
-   return testVal;
+   return 0;
 }
 
 

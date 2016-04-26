@@ -9,8 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/unittest1.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unittest2.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/unittest3.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/unittest4.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cardTest3.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bug1.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cardtest3.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/betterTestDrawCard.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/supplyTest.c" isTestSource="false" />
@@ -18,17 +18,18 @@
       <sourceFolder url="file://$MODULE_DIR$/badTestDrawCard.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dominion.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dominion_helpers.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cardTest1.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cardTest2.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cardtest1.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cardtest2.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testShuffle.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testInit.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playdom.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cardTest4.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cardtest4.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/player.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rngs.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/interface.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dominion.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/interface.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unittest4.c" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
