@@ -1,0 +1,99 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * randomtestadventurer.c
+        -:    4: * Due Date: April 24, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h"
+        -:    8:#include <stdio.h>
+        -:    9:#include <math.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#define MAX_TEST 1500
+        -:   15:
+        1:   16:int main(){
+        1:   17:	printf("\n------------------------Random Test Adventurer Card-----------------------------\n\n");
+        -:   18:	
+        1:   19:	printf("Running %d tests of the Adventurer Card\n", MAX_TEST);
+        1:   20:	int cards[10] = {adventurer, village, gardens, mine, minion, smithy, embargo, tribute, feast, great_hall};
+        -:   21:	
+        -:   22:	int i;
+        -:   23:	int flag;	
+        -:   24:	int numPlayers;
+        -:   25:	int player;
+        -:   26:	int preHandCount;
+        -:   27:	int preDeckCount;
+        -:   28:	int randGen;
+        1:   29:	int failedCards = 0;
+        1:   30:	int failedTreas = 0;
+        1:   31:	int failedDecks = 0;
+        -:   32:
+        1:   33:	srand(time(NULL));
+        -:   34:	
+        -:   35:	struct gameState G;
+        -:   36:
+        -:   37:	
+     1501:   38:	for (i = 0; i < MAX_TEST; i++){
+        -:   39:		// set the random number generator and the number of players to a random number 
+     1500:   40:		randGen = rand();
+     1500:   41:		numPlayers = rand() % 3 + 2;
+        -:   42:		
+        -:   43:		// printf("\nInitialize Game...\n");
+        -:   44:	
+     1500:   45:		initializeGame(numPlayers, cards, randGen, &G);
+        -:   46:			// after game is started set the deckCount, handCount and discardCount to a random number	
+     1500:   47:			player = 0;
+     1500:   48:			G.deckCount[player] = rand() % MAX_DECK;
+     1500:   49:			G.discardCount[player] = rand() % MAX_DECK;
+     1500:   50:			G.handCount[player] = rand() % MAX_HAND;
+        -:   51:		
+     1500:   52:			preHandCount = G.handCount[player];
+     1500:   53:			preDeckCount = G.deckCount[player];
+        -:   54:	
+        -:   55:		// use cardEffect to check for function return value
+        -:   56:		// printf("\nTesting that Adventurer cardEffect function return value is 0...\n");
+     1500:   57:		flag = cardEffect(adventurer, 0, 0, 0, &G, 0, 0);
+        -:   58:		if(flag == 0){
+        -:   59:			// printf("PASS\n");
+        -:   60:		}
+        -:   61:		
+        -:   62:		// adventurer() action should be take cards until you get two treasure cards, put back other cards
+        -:   63:		// printf("\nTesting if Adventurer card gave player 2 new treasure cards...\n");
+        -:   64:		
+     1500:   65:		if(G.handCount[player] != preHandCount + 2){
+        -:   66:			// printf("FAIL: Player %d did not get 2 new cards\n", player);
+        -:   67:			// printf("Current handCount: %d, Previous handCount: %d\n", G.handCount[player], preHandCount);
+     1498:   68:			failedCards++;
+        -:   69:		}
+        -:   70:			
+     1502:   71:		if(G.hand[player][G.handCount[player] - 2] != copper &&
+        4:   72:			G.hand[player][G.handCount[player] - 2] != silver &&
+        2:   73:			G.hand[player][G.handCount[player] - 2] != gold){
+        -:   74:				
+        -:   75:			// printf("FAIL: Player %d did not get 2 treasure cards\n", player);
+        2:   76:			failedTreas++;   
+        -:   77:		}
+        -:   78:
+        -:   79:		// adventurer() action should result in 2 cards missing from the deck 
+        -:   80:		// printf("\nTesting if Adventurer card removed 2 cards from the deck...\n");
+     1500:   81:		if(G.deckCount[player] != preDeckCount - 2){  
+        -:   82:			// printf("FAIL\n");
+        -:   83:			// printf("Current deckCount: %d, Previous deckCount: %d\n", G.deckCount[player], preDeckCount);
+     1495:   84:			failedDecks++;
+        -:   85:		}
+        -:   86:	}
+        -:   87:	
+        1:   88:	printf("\n--- Adventurer Tests Complete! Number of tests run: %d ---\n", MAX_TEST);
+        1:   89:	printf("Adventurer card gave two new cards: Number of tests FAILED %d\n", failedCards);
+        1:   90:	printf("Adventurer card gave two treasure cards: Number of tests FAILED %d\n", failedTreas);
+        1:   91:	printf("Adventurer card removed two cards from deck: Number of tests FAILED %d\n", failedDecks);
+        -:   92:	
+        1:   93:	return 0;
+        -:   94:}

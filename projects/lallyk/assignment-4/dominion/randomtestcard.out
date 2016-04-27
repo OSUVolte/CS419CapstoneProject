@@ -1,0 +1,17 @@
+
+------------------------Random Test Village Card-----------------------------
+
+Running 1500 tests of the Village Card
+
+--- Village Tests Complete! Number of tests run: 1500 ---
+Village card gave one card: Number of tests FAILED 0
+Village card gave two actions: Number of tests FAILED 0
+Village card did not change the discardCount: Number of tests FAILED 3
+File 'randomtestcard.c'
+Lines executed:93.55% of 31
+Creating 'randomtestcard.c.gcov'
+
+File 'dominion.c'
+Lines executed:24.02% of 562
+Creating 'dominion.c.gcov'
+
