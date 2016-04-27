@@ -6,7 +6,7 @@
         -:    1:/********************************************************************
         -:    2: * Kara Franco
         -:    3: * randomtestadventurer.c
-        -:    4: * Due Date: April 24, 2016
+        -:    4: * Due Date: May 8, 2016
         -:    5: * ****************************************************************/
         -:    6:
         -:    7:#include "dominion.h"
@@ -70,15 +70,15 @@
      1500:   65:		if(G.handCount[player] != preHandCount + 2){
         -:   66:			// printf("FAIL: Player %d did not get 2 new cards\n", player);
         -:   67:			// printf("Current handCount: %d, Previous handCount: %d\n", G.handCount[player], preHandCount);
-     1498:   68:			failedCards++;
+     1497:   68:			failedCards++;
         -:   69:		}
         -:   70:			
-     1502:   71:		if(G.hand[player][G.handCount[player] - 2] != copper &&
-        4:   72:			G.hand[player][G.handCount[player] - 2] != silver &&
-        2:   73:			G.hand[player][G.handCount[player] - 2] != gold){
+     1501:   71:		if(G.hand[player][G.handCount[player] - 2] != copper &&
+        2:   72:			G.hand[player][G.handCount[player] - 2] != silver &&
+        1:   73:			G.hand[player][G.handCount[player] - 2] != gold){
         -:   74:				
         -:   75:			// printf("FAIL: Player %d did not get 2 treasure cards\n", player);
-        2:   76:			failedTreas++;   
+        1:   76:			failedTreas++;   
         -:   77:		}
         -:   78:
         -:   79:		// adventurer() action should result in 2 cards missing from the deck 
@@ -86,14 +86,14 @@
      1500:   81:		if(G.deckCount[player] != preDeckCount - 2){  
         -:   82:			// printf("FAIL\n");
         -:   83:			// printf("Current deckCount: %d, Previous deckCount: %d\n", G.deckCount[player], preDeckCount);
-     1495:   84:			failedDecks++;
+     1496:   84:			failedDecks++;
         -:   85:		}
         -:   86:	}
         -:   87:	
         1:   88:	printf("\n--- Adventurer Tests Complete! Number of tests run: %d ---\n", MAX_TEST);
         1:   89:	printf("Adventurer card gave two new cards: Number of tests FAILED %d\n", failedCards);
         1:   90:	printf("Adventurer card gave two treasure cards: Number of tests FAILED %d\n", failedTreas);
-        1:   91:	printf("Adventurer card removed two cards from deck: Number of tests FAILED %d\n", failedDecks);
+        1:   91:	printf("Adventurer card removed two cards from deck: Number of tests FAILED %d\n\n", failedDecks);
         -:   92:	
         1:   93:	return 0;
         -:   94:}

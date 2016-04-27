@@ -6,7 +6,7 @@
         -:    1:/********************************************************************
         -:    2: * Kara Franco
         -:    3: * randomtestcard.c
-        -:    4: * Due Date: April 24, 2016
+        -:    4: * Due Date: May 8, 2016
         -:    5: * ****************************************************************/
         -:    6:
         -:    7:#include "dominion.h"
@@ -94,7 +94,7 @@
         1:   89:	printf("\n--- Village Tests Complete! Number of tests run: %d ---\n", MAX_TEST);
         1:   90:	printf("Village card gave one card: Number of tests FAILED %d\n", failedCards);
         1:   91:	printf("Village card gave two actions: Number of tests FAILED %d\n", failedActions);
-        1:   92:	printf("Village card did not change the discardCount: Number of tests FAILED %d\n", failedDiscs);
+        1:   92:	printf("Village card did not change the discardCount: Number of tests FAILED %d\n\n", failedDiscs);
         -:   93:	
         1:   94:	return 0;
         -:   95:}

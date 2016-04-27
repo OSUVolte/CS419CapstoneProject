@@ -1,7 +1,7 @@
 /********************************************************************
  * Kara Franco
  * randomtestadventurer.c
- * Due Date: April 24, 2016
+ * Due Date: May 8, 2016
  * ****************************************************************/
 
 #include "dominion.h"
@@ -88,7 +88,7 @@ int main(){
 	printf("\n--- Adventurer Tests Complete! Number of tests run: %d ---\n", MAX_TEST);
 	printf("Adventurer card gave two new cards: Number of tests FAILED %d\n", failedCards);
 	printf("Adventurer card gave two treasure cards: Number of tests FAILED %d\n", failedTreas);
-	printf("Adventurer card removed two cards from deck: Number of tests FAILED %d\n", failedDecks);
+	printf("Adventurer card removed two cards from deck: Number of tests FAILED %d\n\n", failedDecks);
 	
 	return 0;
 }
