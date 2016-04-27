@@ -41,23 +41,18 @@ int main() {
     int seed = 777;
 		int players = 2;
 		int player = 0;
-    int bonus = 0;
     int k[10] = {smithy, village, council_room, adventurer, feast
                , gardens, mine, remodel, baron, great_hall};
     struct gameState G, Gtest;
-		initalizeGame( players, k, seed, &G );
+		initializeGame( players, k, seed, &G );
 		
 		G.coins = 0;
-		int handCount = 5;
 		int failFlag = 0;
 		int successCount = 0;
 		int failCount = 0;
 		int retValue;
-		int discard = 0;
-		int deck = 1;
-		int hand = 2;
 		int cardDest;
-		Card currentCard;
+		enum CARD currentCard;
 
     printf ("TESTING updateCoins():\n");
 		
@@ -68,12 +63,12 @@ int main() {
 		
 		//Loop over all cards. supply is set to zero for all. 
 		for( i=0; i< treasure_map+1; i++ ){
-			currentCard = (CARD) i;
+			currentCard = i;
 			Gtest.supplyCount[currentCard] = 0;
 		
 		
 		//All cards should return -1 because supply is 0, or they aren't used in the game
-		retValue = gainCard( currentCard; Gtest, 0, player ); //toFlag shouldn't matter because we should return -1 and exit
+		retValue = gainCard( currentCard, &Gtest, 0, player ); //toFlag shouldn't matter because we should return -1 and exit
 		
 		printf( "%s Return value = %d, expected = -1\n", stringify( currentCard  ), retValue );
 		if( !(retValue == -1 ) ){
@@ -112,12 +107,12 @@ int main() {
 		
 		//Loop over all cards. supply is set to 2 for all. 
 		for( i=0; i< treasure_map+1; i++ ){
-			currentCard = (CARD) i;
+			currentCard = i;
 			Gtest.supplyCount[currentCard] = 2;
 		
 			for( cardDest = 0; cardDest< 3; cardDest++ ){
 				//All cards should return 1 because supply is 2, so they are used in the game
-				retValue = gainCard( currentCard; Gtest, cardDest, player ); 
+				retValue = gainCard( currentCard, &Gtest, cardDest, player ); 
 		
 				printf( "%s Dest: %d Return value = %d, expected = 0\n", stringify( currentCard  ), cardDest, retValue );
 				if( !(retValue == 0 ) ){
@@ -146,16 +141,16 @@ int main() {
 					} 
 
 					//Testing Card only is in discard
-					if ( !( Gtest.discard[player][state->discardCount[player]] == currentCard ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", currentCard, Gtest.discard[player][state->discardCount[player]] );
+					if ( !( Gtest.discard[player][Gtest.discardCount[player]] == currentCard ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", currentCard, Gtest.discard[player][Gtest.discardCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.deck[player][state->deckCount[player]] == G.deck[player][state->deckCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", G.deck[player][state->deckCount[player]], Gtest.deck[player][state->deckCount[player]] );
+					if ( !( Gtest.deck[player][Gtest.deckCount[player]] == G.deck[player][G.deckCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", G.deck[player][G.deckCount[player]], Gtest.deck[player][Gtest.deckCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.hand[player][state->handCount[player]] == G.hand[player][state->handCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", G.hand[player][state->handCount[player]], Gtest.hand[player][state->handCount[player]] );
+					if ( !( Gtest.hand[player][Gtest.handCount[player]] == G.hand[player][G.handCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", G.hand[player][G.handCount[player]], Gtest.hand[player][Gtest.handCount[player]] );
 						failFlag = 1;
 					}
 				
@@ -177,16 +172,16 @@ int main() {
 					} 
  
 					//Testing Card only is in Deck
-					if ( !( Gtest.discard[player][state->discardCount[player]] == G.discard[player][state->discardCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", G.discard[player][state->discardCount[player]], Gtest.discard[player][state->discardCount[player]] );
+					if ( !( Gtest.discard[player][Gtest.discardCount[player]] == G.discard[player][G.discardCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", G.discard[player][G.discardCount[player]], Gtest.discard[player][Gtest.discardCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.deck[player][state->deckCount[player]] == currentCard ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", currentCard, Gtest.deck[player][state->deckCount[player]] );
+					if ( !( Gtest.deck[player][Gtest.deckCount[player]] == currentCard ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", currentCard, Gtest.deck[player][Gtest.deckCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.hand[player][state->handCount[player]] == G.hand[player][state->handCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", G.hand[player][state->handCount[player]], Gtest.hand[player][state->handCount[player]] );
+					if ( !( Gtest.hand[player][Gtest.handCount[player]] == G.hand[player][G.handCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", G.hand[player][G.handCount[player]], Gtest.hand[player][Gtest.handCount[player]] );
 						failFlag = 1;
 					}
 
@@ -208,16 +203,16 @@ int main() {
 					} 
 
 					//Testing Card only is in hand
-					if ( !( Gtest.discard[player][state->discardCount[player]] == G.discard[player][state->discardCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", G.discard[player][state->discardCount[player]], Gtest.discard[player][state->discardCount[player]] );
+					if ( !( Gtest.discard[player][Gtest.discardCount[player]] == G.discard[player][G.discardCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in discard \n", G.discard[player][G.discardCount[player]], Gtest.discard[player][Gtest.discardCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.deck[player][state->deckCount[player]] == G.deck[player][state->deckCount[player]] ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", G.deck[player][state->deckCount[player]], Gtest.deck[player][state->deckCount[player]] );
+					if ( !( Gtest.deck[player][Gtest.deckCount[player]] == G.deck[player][G.deckCount[player]] ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in deck \n", G.deck[player][G.deckCount[player]], Gtest.deck[player][Gtest.deckCount[player]] );
 						failFlag = 1;
 					}
-					if ( !( Gtest.hand[player][state->handCount[player]] == currentCard ) ){
-						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", currentCard, Gtest.hand[player][state->handCount[player]] );
+					if ( !( Gtest.hand[player][Gtest.handCount[player]] == currentCard ) ){
+						printf( "TEST 2 Failed: %d enum expected != %d found in hand \n", currentCard, Gtest.hand[player][Gtest.handCount[player]] );
 						failFlag = 1;
 					}
 				}

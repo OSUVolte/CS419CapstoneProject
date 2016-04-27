@@ -18,8 +18,9 @@
 #include "rngs.h"
 #include <assert.h>
 #include <stdlib.h>
+#include "interface.h"
+#include "interface.c"
 
-#define stringify( s ) #s
 
 int main() {
 
@@ -30,18 +31,16 @@ int main() {
     int k[10] = {smithy, village, council_room, adventurer, feast
                , gardens, mine, remodel, baron, great_hall};
     struct gameState G, Gest;
-		initalizeGame( players, k, seed, &G );
+		initializeGame( players, k, seed, &G );
 		
-		int failFlag = 0;
 		int passCount = 0;
 		int failCount = 0;
-		int tests = 17;
-		int passList[tests] = { 0 };
-		int failList[tests] = { 0 };
-		Card currentCard;
-
-	memcpy( &Gest, &G, sizeof(struct gameState));
-	endTurn( &Gest );
+		int passList[17] = { 0 };
+		int failList[17] = { 0 };
+		char *cardName = NULL;
+		cardNumToName( 1, cardName );
+		memcpy( &Gest, &G, sizeof(struct gameState));
+		endTurn( &Gest );
 	
 	printf( "***TEST 1. Player count shouldn't change./n" );
   if( Gest.numPlayers != G.numPlayers ){
@@ -69,13 +68,13 @@ int main() {
 
 	printf( "TEST 3. Embargo Count Shouldn't Change./n" );	
   for( i=0; i<=treasure_map; i++ ){
-		currentCard = i;
+		cardNumToName( i, cardName );
 		if( Gest.embargoTokens[i] != G.embargoTokens[i] ){
-			printf( "TEST 3 FAILED. Embargo Count for %s = %d, expected = %d./n", ( currentCard ), Gest.embargoTokens[i], G.embargoTokens[i] );
+			printf( "TEST 3 FAILED. Embargo Count for %s = %d, expected = %d./n", cardName, Gest.embargoTokens[i], G.embargoTokens[i] );
 			failList[failCount] = 3;
 			failCount++;
 		} else {
-			printf( "TEST 3 PASSED. Embargo Count for %s = %d, expected = %d./n", ( currentCard ), Gest.embargoTokens[i], G.embargoTokens[i] );
+			printf( "TEST 3 PASSED. Embargo Count for %s = %d, expected = %d./n", cardName, Gest.embargoTokens[i], G.embargoTokens[i] );
 			passList[passCount] = 3;
 			passCount++;
 		}
@@ -120,7 +119,7 @@ int main() {
 		failList[failCount] = 7;
 		failCount++;
 	} else {
-		printf( "TEST 7 PASSED. Phase = %d, expected = %d./n", Gest.phase != G.phase );
+		printf( "TEST 7 PASSED. Phase = %d, expected = %d./n", Gest.phase, G.phase );
 		passList[passCount] = 7;
 		passCount++;
 	}
@@ -148,7 +147,7 @@ int main() {
 	}
 
 	printf( "TEST 10: numBuys resets to 1 ./n" );	
-  if( Gest.numBuys != 1 );
+  if( Gest.numBuys != 1 ){
 		printf( "TEST 10 FAILED. numBuys = %d, expected = 1./n", Gest.numBuys );
 		failList[failCount] = 10;
 		failCount++;
