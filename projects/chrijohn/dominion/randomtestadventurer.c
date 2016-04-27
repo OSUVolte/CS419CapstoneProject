@@ -188,10 +188,10 @@ int main() {
 			errorHand++;
 		}
 		// check if sum of discard and deck lost 1 card (drew 2, discarded 1)
-		if ((numDiscard + numDeck - 1) != (G.discardCount[0] + G.deckCount[0]))
+		if ((numDiscard + numDeck - 1) != (G.discardCount[0] + G.deckCount[0] + G.playedCardCount))
 		{
-//			printf("Error with discard and deck count: ");
-//			printf("Expected: %i.  Actual: %i\n", (numDiscard + numDeck - 1), (G.discardCount[0] + G.deckCount[0]));
+//			printf("Error with discard and deck and played count: ");
+//			printf("Expected: %i.  Actual: %i\n", (numDiscard + numDeck - 1), (G.discardCount[0] + G.deckCount[0] + G.playedCardCount));
 			error = 1;
 			errorDisDeck++;
 		}
@@ -305,9 +305,9 @@ int main() {
 	printf("Error in Buys: %d\n", (errorBuy));
 	printf("Error in Coins: %d\n", (errorCoin));
 	printf("Error in Hand Count: %d\n", (errorHand));
-	printf("Error in Discard+Deck Count: %d\n", (errorDisDeck));
+	printf("Error in Discard+Deck+Played Count: %d\n", (errorDisDeck));
 	printf("Error in Treasure Cards in Hand: %d\n", (errorTreasureHand));
-	printf("Error in Treausre Cards in Discard+Deck: %d\n", (errorTreasureDisDeck));
+	printf("Error in Treausre Cards in Discard+Deck+Played: %d\n", (errorTreasureDisDeck));
 	printf("Error in Supplies: %d\n", (errorSupplies));
 	printf("Error in Opponents Deck: %d\n", (erroroppDeck));
 	printf("Error in Opponents Discard: %d\n", (errorOppDiscard));
