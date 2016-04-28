@@ -90,4 +90,6 @@ int main() {
   } else {
     printf("FAIL: supplies changed. Last cards supply changed was #%d\n.", changed_card);
   }
+
+  return 0;
 }

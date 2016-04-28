@@ -17,6 +17,38 @@ badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
+	
+unittestresults.out: unitTest1.c unitTest2.c unitTest3.c unitTest4.c dominion.o 
+	echo "%-------------------------------------UNITTEST1-------------------------------------%" >> unittestresults.out
+
+	gcc -o unitTest1 unitTest1.c -g dominion.o rngs.o $(CFLAGS)
+	./unitTest1 >> unittestresults.out
+	gcov unitTest1.c >> unittestresults.out
+	gcov unitTest1.c -b >> unittestresults.out
+	cat unitTest1.c.gcov >> unittestresults.out
+	
+	echo "%-------------------------------------UNITTEST2-------------------------------------%" >> unittestresults.out
+
+	gcc -o unitTest2 unitTest2.c -g dominion.o rngs.o $(CFLAGS)
+	./unitTest2 >> unittestresults.out
+	gcov unitTest2.c >> unittestresults.out
+	gcov unitTest2.c -b >> unittestresults.out
+	cat unitTest2.c.gcov >> unittestresults.out
+	
+	echo "%-------------------------------------UNITTEST3-------------------------------------%" >> unittestresults.out
+
+	gcc -o unitTest3 unitTest3.c -g dominion.o rngs.o $(CFLAGS)
+	./unitTest3 >> unittestresults.out
+	gcov unitTest3.c >> unittestresults.out
+	gcov unitTest3.c -b >> unittestresults.out
+	cat unitTest3.c.gcov >> unittestresults.out
+	
+	echo "%-------------------------------------UNITTEST4-------------------------------------%" >> unittestresults.out
+	gcc -o unitTest4 unitTest4.c -g dominion.o rngs.o $(CFLAGS)
+	./unitTest4 >> unittestresults.out
+	gcov unitTest4.c >> unittestresults.out
+	gcov unitTest4.c -b >> unittestresults.out
+	cat unitTest4.c.gcov >> unittestresults.out
 
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)

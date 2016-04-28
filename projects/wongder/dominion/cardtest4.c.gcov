@@ -1,0 +1,381 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:
+function main called 1 returned 100% blocks executed 82%
+        1:    9:int main() {
+        -:   10:    int i;
+        1:   11:    int seed = 1000;
+        1:   12:    int numPlayer = 2;
+        1:   13:	int player1 = 0;
+        1:   14:	int player2 = 1;
+        1:   15:	int handPos = 0;
+        -:   16:	int gameOver;
+        -:   17:	int tempCard;
+        -:   18:	int bonus;
+        1:   19:	int c1, c2, c3 = 0;
+        -:   20:	int blah;
+        1:   21:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   22:               , remodel, smithy, village, baron, great_hall};
+        -:   23:    struct gameState G, RESET;
+        -:   24:	
+        1:   25:	initializeGame(numPlayer, k, seed, &RESET);
+call    0 returned 100%
+        1:   26:	RESET.hand[player1][handPos] = smithy;
+        1:   27:	memcpy(&G, &RESET, sizeof(struct gameState));	
+        -:   28:	
+        -:   29:	//Test stewardCard function
+        1:   30:	printf("~~~Testing stewardCard Function~~~\n");
+call    0 returned 100%
+        -:   31:
+        1:   32:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        1:   33:	cardEffect(steward, 1, c2, c3, &G, handPos, &bonus);
+call    0 returned 100%
+        1:   34:	printf("Test if player 1 hand count increase by 1 (+2 cards -1 played card) (choice1 = 1)\n");
+call    0 returned 100%
+        -:   35://	printf("Before G.handCount = %d\n",G.handCount[player1]);
+        -:   36://	cardEffect(steward, 1, c2, c3, &G, handPos, &bonus);
+        1:   37:	printf("After G.handCount = %d, expected = 6\n", G.handCount[player1]);
+call    0 returned 100%
+        1:   38:	if (G.handCount[player1] == 6){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   39:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   40:	}
+        -:   41:	else{
+    #####:   42:		printf("FAILED.\n");
+call    0 never executed
+        -:   43:	}
+        -:   44:	
+        1:   45:	printf("\nTest if player 1 deck count decrease by 2 (choice1 = 1)\n");
+call    0 returned 100%
+        1:   46:	printf("After G.deckCount = %d, expected = 3\n", G.deckCount[player1]);
+call    0 returned 100%
+        1:   47:	if (G.deckCount[player1] == 3){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   48:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   49:	}
+        -:   50:	else{
+    #####:   51:		printf("FAILED.\n");
+call    0 never executed
+        -:   52:	}
+        -:   53:	
+        1:   54:	printf("\nTest if player 1 coins stay the same (choice1 = 1)\n");
+call    0 returned 100%
+        1:   55:	printf("After G.coins = %d, expected = 4\n", G.coins);
+call    0 returned 100%
+        1:   56:	if (G.coins == 4){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   57:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   58:	}
+        -:   59:	else{
+    #####:   60:		printf("FAILED.\n");
+call    0 never executed
+        -:   61:	}
+        -:   62:	
+        1:   63:	printf("\nTest if played pile increase by 1 (choice1 = 1)\n");
+call    0 returned 100%
+        1:   64:	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+call    0 returned 100%
+        1:   65:	if (G.playedCardCount == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   66:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   67:	}
+        -:   68:	else{
+    #####:   69:		printf("FAILED.\n");
+call    0 never executed
+        -:   70:	}
+        -:   71:	
+        1:   72:	printf("\nTest if player 1 discard pile stayed the same (choice1 = 1)\n");
+call    0 returned 100%
+        1:   73:	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+call    0 returned 100%
+        1:   74:	if (G.discardCount[player1]	== 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   75:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   76:	}
+        -:   77:	else{
+    #####:   78:		printf("FAILED.\n");
+call    0 never executed
+        -:   79:	}
+        -:   80:	
+        1:   81:	printf("\nTest if player 1 numActions stayed the same (choice1 = 1)\n");
+call    0 returned 100%
+        1:   82:	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+call    0 returned 100%
+        1:   83:	if (G.numActions == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   84:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   85:	}
+        -:   86:	else{
+    #####:   87:		printf("FAILED.\n");
+call    0 never executed
+        -:   88:	}
+        -:   89:	
+        1:   90:	printf("\nTest if player 1 numBuys stayed the same (choice1 = 1)\n");
+call    0 returned 100%
+        1:   91:	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+call    0 returned 100%
+        1:   92:	if (G.numBuys == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   93:		printf("PASSED.\n");
+call    0 returned 100%
+        -:   94:	}
+        -:   95:	else{
+    #####:   96:		printf("FAILED.\n");
+call    0 never executed
+        -:   97:	}
+        -:   98:	
+        1:   99:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  100:	
+        1:  101:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:  102:
+        1:  103:	cardEffect(steward, 2, c2, c3, &G, handPos, &bonus);
+call    0 returned 100%
+        1:  104:	printf("Test if player 1 hand count stayed the same (choice1 = 2)\n");
+call    0 returned 100%
+        1:  105:	printf("After G.handCount = %d, expected = 5\n", G.handCount[player1]);
+call    0 returned 100%
+        1:  106:	if (G.handCount[player1] == 5){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  107:		printf("PASSED.\n");
+call    0 never executed
+        -:  108:	}
+        -:  109:	else{
+        1:  110:		printf("FAILED.\n");
+call    0 returned 100%
+        -:  111:	}
+        -:  112:	
+        1:  113:	printf("\nTest if player 1 deck count stayed the same (choice1 = 2)\n");
+call    0 returned 100%
+        1:  114:	printf("After G.deckCount = %d, expected = 5\n", G.deckCount[player1]);
+call    0 returned 100%
+        1:  115:	if (G.deckCount[player1] == 5){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  116:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  117:	}
+        -:  118:	else{
+    #####:  119:		printf("FAILED.\n");
+call    0 never executed
+        -:  120:	}
+        -:  121:	
+        1:  122:	printf("\nTest if player 1 coins increase by 2 (choice1 = 2)\n");
+call    0 returned 100%
+        1:  123:	printf("After G.coins = %d, expected = 6\n", G.coins);
+call    0 returned 100%
+        1:  124:	if (G.coins == 6){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  125:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  126:	}
+        -:  127:	else{
+    #####:  128:		printf("FAILED.\n");
+call    0 never executed
+        -:  129:	}
+        -:  130:	
+        1:  131:	printf("\nTest if played pile increase by 1 (choice1 = 2)\n");
+call    0 returned 100%
+        1:  132:	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+call    0 returned 100%
+        1:  133:	if (G.playedCardCount == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  134:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  135:	}
+        -:  136:	else{
+    #####:  137:		printf("FAILED.\n");
+call    0 never executed
+        -:  138:	}
+        -:  139:	
+        1:  140:	printf("\nTest if player 1 discard pile stayed the same (choice1 = 2)\n");
+call    0 returned 100%
+        1:  141:	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+call    0 returned 100%
+        1:  142:	if (G.discardCount[player1]	== 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  143:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  144:	}
+        -:  145:	else{
+    #####:  146:		printf("FAILED.\n");
+call    0 never executed
+        -:  147:	}
+        -:  148:	
+        1:  149:	printf("\nTest if player 1 numActions stayed the same (choice1 = 2)\n");
+call    0 returned 100%
+        1:  150:	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+call    0 returned 100%
+        1:  151:	if (G.numActions == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  152:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  153:	}
+        -:  154:	else{
+    #####:  155:		printf("FAILED.\n");
+call    0 never executed
+        -:  156:	}
+        -:  157:	
+        1:  158:	printf("\nTest if player 1 numBuys stayed the same (choice1 = 2)\n");
+call    0 returned 100%
+        1:  159:	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+call    0 returned 100%
+        1:  160:	if (G.numBuys == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  161:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  162:	}
+        -:  163:	else{
+    #####:  164:		printf("FAILED.\n");
+call    0 never executed
+        -:  165:	}
+        -:  166:	
+        1:  167:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  168:	
+        1:  169:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:  170:	
+        1:  171:	cardEffect(steward, 3, 0, 1, &G, handPos, &bonus);
+call    0 returned 100%
+        1:  172:	printf("Test if player 1 hand count decrease by 3 (-2 cards -1 played card) (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  173:	printf("After G.handCount = %d, expected = 2\n", G.handCount[player1]);
+call    0 returned 100%
+        1:  174:	if (G.handCount[player1] == 2){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  175:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  176:	}
+        -:  177:	else{
+    #####:  178:		printf("FAILED.\n");
+call    0 never executed
+        -:  179:	}
+        -:  180:	
+        1:  181:	printf("\nTest if player 1 deck count stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  182:	printf("After G.deckCount = %d, expected = 5\n", G.deckCount[player1]);
+call    0 returned 100%
+        1:  183:	if (G.deckCount[player1] == 5){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  184:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  185:	}
+        -:  186:	else{
+    #####:  187:		printf("FAILED.\n");
+call    0 never executed
+        -:  188:	}
+        -:  189:	
+        1:  190:	printf("\nTest if player 1 coins stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  191:	printf("After G.coins = %d, expected = 4\n", G.coins);
+call    0 returned 100%
+        1:  192:	if (G.coins == 4){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  193:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  194:	}
+        -:  195:	else{
+    #####:  196:		printf("FAILED.\n");
+call    0 never executed
+        -:  197:	}
+        -:  198:	
+        1:  199:	printf("\nTest if played pile increase by 1 (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  200:	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+call    0 returned 100%
+        1:  201:	if (G.playedCardCount == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  202:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  203:	}
+        -:  204:	else{
+    #####:  205:		printf("FAILED.\n");
+call    0 never executed
+        -:  206:	}
+        -:  207:	
+        1:  208:	printf("\nTest if player 1 discard pile stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  209:	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+call    0 returned 100%
+        1:  210:	if (G.discardCount[player1]	== 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  211:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  212:	}
+        -:  213:	else{
+    #####:  214:		printf("FAILED.\n");
+call    0 never executed
+        -:  215:	}
+        -:  216:	
+        1:  217:	printf("\nTest if player 1 numActions stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  218:	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+call    0 returned 100%
+        1:  219:	if (G.numActions == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  220:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  221:	}
+        -:  222:	else{
+    #####:  223:		printf("FAILED.\n");
+call    0 never executed
+        -:  224:	}
+        -:  225:	
+        1:  226:	printf("\nTest if player 1 numBuys stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+call    0 returned 100%
+        1:  227:	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+call    0 returned 100%
+        1:  228:	if (G.numBuys == 1){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:  229:		printf("PASSED.\n");
+call    0 returned 100%
+        -:  230:	}
+        -:  231:	else{
+    #####:  232:		printf("FAILED.\n");
+call    0 never executed
+        -:  233:	}
+        -:  234:	
+        1:  235:	printf("--------------------------------------------\n");
+call    0 returned 100%
+        -:  236:	
+        1:  237:	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+        -:  238:
+        1:  239:	return 0;
+        -:  240:}

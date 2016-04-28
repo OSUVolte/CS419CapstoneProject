@@ -39,7 +39,7 @@ cardtest1: smithy
 	This test records number of actions / buys / coins and ensures they stay the same before and after playing card
 	This test records opponents counts in their deck / discard / hand to ensure they stay the same
 	This test records number of cards in each supply to ensure they are the same
-	This test tests that the discard pile increased 1, players hand increased 2 and deck decreases 3.
+	This test tests that the discard pile and played cards increased 1, players hand increased 2 and deck decreases 3.
 
 	Of dominion.c, this test executed 18% of lines, 22% of branches and 11% of calls
 	Of card effect, this test returned 100% of times and executed 3% of blocks
@@ -53,7 +53,7 @@ cardtest2: Adventurer
 	This test records the number of treasure in deck/discard (combined since they can be shuffled) before and after.  
 		This is expected to decrease by 2
 	This test records the hand count before and after.  This is expected to increase by 1.
-	This test records the deck/discard count before and after.  This is expected to decrease by 1.
+	This test records the deck/discard/played count before and after.  This is expected to decrease by 1.
 
 	Of dominion.c, this test executed 20% of lines, 23% of branches and 11% of calls
 	of card effect, this test returned 100% and executed 3% of blocks
@@ -64,7 +64,7 @@ cardtest3: Gardens
 	This test records opponents counts in their deck / discard / hand to ensure they stay the same
 	This test records number of cards in each supply to ensure they are the same
 	This test records the hand count before and after.This is expected to decrease by 1.
-	This test records the deck / discard count before and after.This is expected to increase by 1.
+	This test records the deck / discard  / played count before and after.This is expected to increase by 1.
 
 	of dominion.c, this test executed 19% of lines, 22% of branches and 10% of calls
 	of card effect, this test returned 100% and executed 3% of blocks
@@ -76,7 +76,7 @@ cardtest4: Village
 	This test records number of cards in each supply to ensure they are the same
 	This test records the hand count before and after.This is expected to remain the same
 	This test records the deck counts before and after.  This is expected to decrease 1.
-	This test record the discard count before and after.  This is expected to increase 1.
+	This test record the discard and played count before and after.  This is expected to increase 1.
 	This test records the number of actions before and after.  This is expected to increase 2.
 
 	Of dominion.c, this test exeucted 20% of lines, 23% of breanches and 11% of calls

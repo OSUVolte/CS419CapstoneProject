@@ -1,0 +1,363 @@
+TESTING discardCard():
+
+
+Beginning hand:
+4	4	1	4	4	
+Beginning playedCard count = 0
+Beginning discardCard count = 0
+Card at handPos 4 = 4 
+--------- Test 1---------------
+Played Card Count: actual 1, expected 1
+TEST PASSED
+
+--------- Test 2 ---------------
+HandCount: actual 4, expected 4
+TEST PASSED
+
+--------- Test 3 ---------------
+Final hand composition:
+Actual:  4	4	1	4	
+Expected: 4	4	1	4	
+
+--------- Test 4 ---------------
+Played Card Count (when trashflag is 0): 
+actual: 1, expected 1
+TEST PASSED
+
+
+--------- Test 5 ---------------
+Played Card Count (when trashflag is 1): 
+actual: 0, expected 0
+TEST PASSED
+
+------------- TESTING COMPLETE -----------
+
+TESTING gainCard():
+
+
+------------ Test 1 (toFlag = 0) -------------- 
+Discard count: actual: 1, expected 1
+TEST PASSED
+
+supplyPos is discarded: actual 1, expected 1
+TEST PASSED
+
+SupplyCount: actual 7, expected: 7
+TEST PASSED
+
+
+------------ Test 2 (toFlag = 1) -------------- 
+Deck count: actual: 6, expected 6
+TEST PASSED
+
+supplyPos is added to deck: actual 1, expected 1
+TEST PASSED
+
+SupplyCount: actual 7, expected: 7
+TEST PASSED
+
+
+------------ Test 3 (toFlag = 2) -------------- 
+Hand count: actual: 6, expected 6
+TEST FAILED
+
+supplyPos is added to hand: actual 1, expected 1
+TEST PASSED
+
+SupplyCount: actual 7, expected: 7
+TEST PASSED
+
+
+------------ Test 4 supplyCount is 0 -------------- 
+TEST PASSED
+
+ --------------- TESTS FINISHED ---------------TESTING isGameOver():
+
+
+--------- Test 1---------------
+If stack of province cards is empty
+isGameOver returns: 1
+TEST PASSED
+
+--------- Test 2---------------
+If no supply piles are empty
+
+isGameOver returns: 0
+TEST PASSED
+
+--------- Test 3---------------
+If two supply piles are empty
+
+isGameOver returns: 0
+TEST PASSED
+
+--------- Test 4---------------
+If three supply piles are empty
+
+isGameOver returns: 1
+TEST PASSED
+
+
+
+------- TESTS FINISHED ----------------
+TESTING updateCoins():
+--------- Test 1---------------
+Testing all copper. No bonus
+Coin Count: actual: 5, expected 5
+TEST PASSED
+
+Testing all silver. No bonus
+Coin Count: actual: 10, expected 10
+TEST PASSED
+
+Testing all gold. No bonus
+Coin Count: actual: 15, expected 15
+TEST PASSED
+
+--------- Test 2---------------
+Testing all copper. 3 bonus
+Coin Count: actual: 8, expected 8
+TEST PASSED
+
+Testing all silver. 3 bonus
+Coin Count: actual: 13, expected 13
+TEST PASSED
+
+Testing all gold. 3 bonus
+Coin Count: actual: 18, expected 18
+TEST PASSED
+
+--------- Test 3---------------
+Testing no treasure. No bonus
+Coin Count: actual: 0, expected 0
+TEST PASSED
+
+--------- Test 4---------------
+Testing no treasure. 5 bonus
+Coin Count: actual: 5, expected 5
+TEST PASSED
+
+--------- Test 5---------------
+Mixed hand. 10 bonus
+Coin Count: actual: 14, expected 14
+TEST PASSED
+
+--------- Test 6---------------
+Mixed hand. 0 bonus
+Coin Count: actual: 6, expected 6
+TEST PASSED
+
+------- TESTS FINISHED ---------- 
+
+----------------- Testing Card: smithy ----------------
+TEST 1: player 0 = +3 cards
+hand count = 8, expected = 7
+deck count = 1, expected = 2
+handcount test failed
+deck count test failed
+
+ >>>>> Testing complete smithy <<<<<
+
+----------------- Testing Card: adventurer ----------------
+TEST 1: Draw two treasure cards 
+Treasure in hand: actual 5, expected 6
+TEST FAILED
+
+TEST 2: Deck count should reflect loss of treasure cards 
+Deck Count: actual 4, expected 3
+TEST FAILED
+
+TEST 3: Hand count should reflect addition of treasure cards 
+Deck Count: actual 6, expected 7
+TEST FAILED
+
+----------------- Testing Card: Village ----------------
+TEST 1: Draw card 
+Hand count: actual: 5, expected 5
+TEST PASSED
+
+TEST 2: Add two actions 
+Action count: actual 0, expected 3
+TEST FAILED
+
+----------------- Testing Card: Village ----------------
+TEST 1: Draw 4 cards 
+Hand Count: actual 8, expected 8
+TEST PASSED
+
+TEST 2: Other player draws a card 
+Hand Count for other player: actual 1, expected 1
+TEST PASSED
+
+TEST 3: Number of Buys + 1 
+NumBuys: actual: 2, expected 2
+TEST PASSED
+
+Function 'compare'
+Lines executed:100.00% of 7
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'kingdomCards'
+Lines executed:0.00% of 14
+No branches
+No calls
+
+Function 'initializeGame'
+Lines executed:86.75% of 83
+Branches executed:95.65% of 46
+Taken at least once:80.43% of 46
+No calls
+
+Function 'shuffle'
+Lines executed:95.65% of 23
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+No calls
+
+Function 'playCard'
+Lines executed:81.25% of 16
+Branches executed:100.00% of 10
+Taken at least once:60.00% of 10
+No calls
+
+Function 'buyCard'
+Lines executed:80.00% of 15
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'numHandCards'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:100.00% of 3
+No branches
+No calls
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'endTurn'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+No calls
+
+Function 'isGameOver'
+Lines executed:100.00% of 15
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'scoreFor'
+Lines executed:100.00% of 28
+Branches executed:100.00% of 42
+Taken at least once:66.67% of 42
+No calls
+
+Function 'getWinners'
+Lines executed:0.00% of 38
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+No calls
+
+Function 'drawCard'
+Lines executed:96.55% of 29
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'getCost'
+Lines executed:25.81% of 31
+Branches executed:100.00% of 28
+Taken at least once:17.86% of 28
+No calls
+
+Function 'cardEffect'
+Lines executed:14.02% of 264
+Branches executed:15.43% of 175
+Taken at least once:6.29% of 175
+No calls
+
+Function 'discardCard'
+Lines executed:87.50% of 16
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'gainCard'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'updateCoins'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'playSmithy'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+Function 'playAdventurer'
+Lines executed:55.56% of 18
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+No calls
+
+Function 'playCouncilRoom'
+Lines executed:100.00% of 12
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+No calls
+
+Function 'playEmbargo'
+Lines executed:0.00% of 8
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+No calls
+
+Function 'playVillage'
+Lines executed:100.00% of 5
+No branches
+No calls
+
+Function 'playSeaHag'
+Lines executed:0.00% of 12
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:49.38% of 725
+Branches executed:54.87% of 421
+Taken at least once:37.05% of 421
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
