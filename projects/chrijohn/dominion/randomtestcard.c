@@ -184,7 +184,7 @@ int main() {
 	printf("Error in Buys: %d\n", (errorBuy));
 	printf("Error in Coins: %d\n", (errorCoin));
 	printf("Error in Hand Count: %d\n", (errorHand));
-	printf("Error in Discard+Deck+played Count: %d\n", (errorDisDeck));
+	printf("Error in Discard+Deck+Played Count: %d\n", (errorDisDeck));
 	printf("Error in Supplies: %d\n", (errorSupplies));
 	printf("Error in Opponents Deck: %d\n", (erroroppDeck));
 	printf("Error in Opponents Discard: %d\n", (errorOppDiscard));
