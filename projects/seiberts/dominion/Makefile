@@ -62,7 +62,7 @@ card3:
 card4:
 	gcc -coverage dominion.c cardtest4.c rngs.c -o cardtest4 -lm 
 	
-run: unit1 unit2 unit3 unit4 card1 card2 card3 card4
+run: 
 	echo "----------UNIT TEST 1-------------"
 	./unittest1 &> unittestresults.out
 	gcov unittest1.c >> unittestresults.out
