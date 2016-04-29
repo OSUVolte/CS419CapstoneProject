@@ -45,7 +45,7 @@ int main() {
 		gs.whoseTurn = player;
 
 		//Initiate valid state variables
-		gs.deckCount[player] = 10 + (rand() % 400); //Pick random deck size out of MAX DECK size
+		gs.deckCount[player] = 10 + (rand() % 400); 
 		deckCount = gs.deckCount[player];
 		gs.discardCount[player] = rand() % (deckCount);
 		gs.handCount[player] = rand() % MAX_HAND;
@@ -80,6 +80,7 @@ int main() {
 	printf("Final Results.\n");
 	printf("Number of passed tests: %d\n", testsPassed);
 	printf("Number of failed tests: %d\n", testsFailed);
+	return 0;
 }
 
 /*

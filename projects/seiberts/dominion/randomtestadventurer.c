@@ -25,12 +25,14 @@ int main() {
 	int i, gameInit, cardEff, players, player, handCount, deckCount, discardCount, seed, numAction;
 	int testsFailed = 0;
 	int testsPassed = 0;
-	struct gameState gs = *newGame();
+	struct gameState state, gs = *newGame();
 	printf("***Runnings Random Adventurer Test***\n");
 
 	srand(time(NULL));
 	for (i = 0; i < MAX_TESTS; i++) {
-
+		memcpy(&gs, &state, sizeof(struct gameState));
+		
+	
 		printf("<------------- Test %d ------------------>*\n", i);
 		players = 2 + (rand() % 3); //Set players between 2 and 4
 		printf("Current player: %d\n", players);
