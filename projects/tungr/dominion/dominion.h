@@ -3,8 +3,8 @@
 
 // Code from various sources, baseline from Kristen Bartosz
 
-#define MAX_HAND 500
-#define MAX_DECK 500
+#define MAX_HAND 50
+#define MAX_DECK 50
 
 #define MAX_PLAYERS 4
 
