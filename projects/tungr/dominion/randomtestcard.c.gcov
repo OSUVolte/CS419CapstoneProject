@@ -1,0 +1,209 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:	Rosa Tung
+        -:    3:	CS 362 Assignment 4
+        -:    4:	randomtestadventurer.c
+        -:    5:		Write a random tester for two Dominion cards, one of which has to be the adventurer card.
+        -:    6:*/
+        -:    7:
+        -:    8:#include <stdio.h>
+        -:    9:#include <stdlib.h> //rand()
+        -:   10:#include <time.h> //time
+        -:   11:
+        -:   12:#include "dominion.h"
+        -:   13:
+        -:   14://global variables
+        -:   15:#define MAX_TESTS 10
+        -:   16:/* dominion.h
+        -:   17:
+        -:   18:#define MAX_HAND 500 
+        -:   19:#define MAX_DECK 500 
+        -:   20:#define MAX_PLAYERS 4	
+        -:   21:
+        -:   22:*/
+        -:   23:
+function main called 1 returned 100% blocks executed 95%
+        1:   24:int main(){
+        -:   25:
+        -:   26:	//make new game object
+        1:   27:	struct gameState* G = newGame();
+call    0 returned 100%
+        1:   28:  	const char *cardNames[] = {"curse", "estate", "duchy", "province", "copper", "silver", "gold", "adventurer", "council_room", "feast", 
+        -:   29:  								"gardens", "mine", "remodel", "smithy", "village", "baron", "great_hall", "minion", "steward", "tribute", 
+        -:   30:  								"ambassador", "cutpurse", "embargo", "outpost", "salvager", "sea_hag", "treasure_map"};
+        -:   31:	
+        1:   32:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   33:	
+        -:   34:	int randPlayers;
+        -:   35:	int randState;
+        -:   36:	int test, player, card; 
+        -:   37:	int cardEnum, cardsBefore, cardsAfter, actionsBefore, actionsAfter;
+        -:   38:	int choice1, choice2, choice3;
+        1:   39:	int cardFail = 0, returnPass = 0, actionPass = 0, actionFail = 0, cardPass = 0,  returnFail = 0, returnValue; 
+        -:   40:	int handPosition;
+        -:   41:
+        -:   42:	//random seed
+        1:   43:	srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        -:   44:
+        1:   45:	printf("---Random Testing Village Card START---\n\n");
+call    0 returned 100%
+        -:   46:	
+        -:   47:	/*loop through MAX_TEST times*/
+       11:   48:	for(test = 0; test < MAX_TESTS; test++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:   49:		randPlayers = (rand() % 3) + 2; //2-4 players
+call    0 returned 100%
+       10:   50:		randState = (rand() % 9) + 1; //1-9 state
+call    0 returned 100%
+       10:   51:		printf("initializing game with %d players and state of %d\n", randPlayers, randState);
+call    0 returned 100%
+       10:   52:		initializeGame(randPlayers, k, randState, G);
+call    0 returned 100%
+        -:   53:		
+        -:   54:		/*loop through players times - set decks*/
+       41:   55:		for(player = 0; player < randPlayers; player++){
+branch  0 taken 76%
+branch  1 taken 24% (fallthrough)
+       31:   56:			cardsBefore = 0;
+       31:   57:			cardsAfter = 0;
+       31:   58:			actionsBefore = 0;
+       31:   59:			actionsAfter = 0;
+       31:   60:			G->deckCount[player] = rand() % MAX_DECK; //each player gets random deck size
+call    0 returned 100%
+       31:   61:			printf("player %d gets deck size of %d\n", player+1, G->deckCount[player]);
+call    0 returned 100%
+        -:   62:
+        -:   63:			/*loop through players deck*/
+      847:   64:			for(card = 0; card < G->deckCount[player]; card++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+      816:   65:				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
+call    0 returned 100%
+      816:   66:				printf(" %s  | ", cardNames[G->deck[player][card]]);	
+call    0 returned 100%
+       31:   67:			}printf("\n");
+call    0 returned 100%
+       31:   68:			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
+call    0 returned 100%
+       31:   69:			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
+call    0 returned 100%
+        -:   70:
+        -:   71:			/*loop throuhg players discard pile*/
+      831:   72:			for(card = 0; card < G->discardCount[player]; card++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+      800:   73:				G->discard[player][card] = rand() % 27; //random discard
+call    0 returned 100%
+      800:   74:				printf(" %s  | ", cardNames[G->discard[player][card]]);
+call    0 returned 100%
+       31:   75:			} printf("\n");
+call    0 returned 100%
+       31:   76:			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
+call    0 returned 100%
+       31:   77:			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
+call    0 returned 100%
+        -:   78:			
+        -:   79:			/*loop through players hand - count treasures*/
+      788:   80:			for(card = 0; card < G->handCount[player]; card++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+      757:   81:				G->hand[player][card] = rand() % 27; //random hand
+call    0 returned 100%
+      757:   82:				cardEnum = G->hand[player][card];
+      757:   83:				printf(" %s  | ", cardNames[G->hand[player][card]]);
+call    0 returned 100%
+       31:   84:			} printf("\n");
+call    0 returned 100%
+        -:   85:
+       31:   86:			cardsBefore = G->handCount[player];
+       31:   87:			actionsBefore = G->numActions;
+       31:   88:			printf("Card Count Before: %d\n", cardsBefore);
+call    0 returned 100%
+       31:   89:			printf("Action Count Before: %d\n", actionsBefore);
+call    0 returned 100%
+        -:   90:
+       31:   91:			choice1 = rand() % 2; //0 or 1
+call    0 returned 100%
+       31:   92:			choice2 = rand() % 2; 
+call    0 returned 100%
+       31:   93:			choice3 = rand() % 2;	
+call    0 returned 100%
+       31:   94:			handPosition = rand() % 4; //no bonus
+call    0 returned 100%
+       31:   95:			printf("Card Effect with choice1 = %d choice2 = %d choice3 = %d handPosition = %d\n", choice1, choice2, choice3, handPosition);
+call    0 returned 100%
+        -:   96:
+        -:   97:			/*card effect - return value pass or fail*/
+       31:   98:			returnValue = cardEffect(village, choice1, choice2, choice3, G, handPosition, 0);
+call    0 returned 100%
+       31:   99:			if(returnValue == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       31:  100:				returnPass++;
+       31:  101:				printf("	RETURN VALUE PASS\n");
+call    0 returned 100%
+        -:  102:			} else {
+    #####:  103:				returnFail++;
+    #####:  104:				printf("	RETURN VALUE FAIL\n");
+call    0 never executed
+        -:  105:			}
+        -:  106:
+       31:  107:			cardsAfter = G->handCount[player];
+       31:  108:			actionsAfter = G->numActions;
+       31:  109:			printf("Card Count After: %d\n", cardsAfter);
+call    0 returned 100%
+       31:  110:			printf("Action Count After: %d\n", actionsAfter);
+call    0 returned 100%
+        -:  111:
+       31:  112:			if(cardsAfter == cardsBefore){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       31:  113:				cardPass++;
+       31:  114:				printf("	CARD COUNT PASS\n");
+call    0 returned 100%
+        -:  115:			} else {
+    #####:  116:				cardFail++;
+    #####:  117:				printf("	CARD COUNT FAIL\n");
+call    0 never executed
+        -:  118:			}
+        -:  119:
+       31:  120:			if(actionsAfter == actionsBefore + 2){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  121:				actionPass++;
+    #####:  122:				printf("	ACTION COUNT PASS\n");
+call    0 never executed
+        -:  123:			} else {
+       31:  124:				actionFail++;
+       31:  125:				printf("	ACTION COUNT FAIL\n");
+call    0 returned 100%
+        -:  126:			}
+        -:  127:
+        -:  128:		}
+        -:  129:
+        -:  130:		/*print out results*/
+       10:  131:		printf("Times Card Count Passes: %d\n", cardPass);
+call    0 returned 100%
+       10:  132:		printf("Times Card Count Fails: %d\n", cardFail);
+call    0 returned 100%
+       10:  133:		printf("Times Actions Count Passes: %d\n", actionPass);
+call    0 returned 100%
+       10:  134:		printf("Times Actions Count Fails: %d\n", actionFail);
+call    0 returned 100%
+       10:  135:		printf("Times Return Value Passes: %d\n", returnPass);
+call    0 returned 100%
+       10:  136:		printf("Times Return Value Passes: %d\n", returnFail);
+call    0 returned 100%
+        -:  137:	}
+        -:  138:
+        1:  139:	printf("---Random Testing Village Card COMPLETE---\n\n\n\n");
+call    0 returned 100%
+        1:  140:	return 0;
+        -:  141:}

@@ -61,16 +61,17 @@ int main(){
 			/*loop through players deck*/
 			for(card = 0; card < G->deckCount[player]; card++){
 				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
-				printf("	%s\n", cardNames[G->deck[player][card]]);	
-			}
+				printf(" %s  | ", cardNames[G->deck[player][card]]);	
+			} printf("\n");
 			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
 			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
 
 			/*loop throuhg players discard pile*/
 			for(card = 0; card < G->discardCount[player]; card++){
 				G->discard[player][card] = rand() % 27; //random discard
-				printf("	%s\n", cardNames[G->discard[player][card]]);
-			}
+				printf(" %s  | ", cardNames[G->discard[player][card]]);
+			}printf("\n");
+
 			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
 			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
 			
@@ -78,13 +79,12 @@ int main(){
 			for(card = 0; card < G->handCount[player]; card++){
 				G->hand[player][card] = rand() % 27; //random hand
 				cardEnum = G->hand[player][card];
-				printf("	%s\n", cardNames[G->hand[player][card]]);
+				printf(" %s  | ", cardNames[G->hand[player][card]]);
 				/*if it's a treasure card, tally it up*/
 				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
 					treasuresBefore++;
-					printf("add\n");
 				}
-			}
+			} printf("\n");
 			printf("Treasures Before: %d\n", treasuresBefore);
 
 			choice1 = rand() % 2; //0 or 1
@@ -108,7 +108,6 @@ int main(){
 				cardEnum = G->hand[player][card]; //get card type
 				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
 					treasuresAfter++;
-					printf("add1\n");
 				}
 			}
 			printf("Treasures After: %d\n", treasuresAfter);

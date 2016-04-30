@@ -56,14 +56,22 @@ randomtestadventurer.out: dominion.o randomtestadventurer rngs.o
 	randomtestadventurer >> randomtestadventurer.out
 		gcov randomtestadventurer.c >> randomtestadventurer.out
 		gcov randomtestadventurer.c -b >> randomtestadventurer.out
-	echo "* * * * * * * * * * * RANDOMTESTCARD * * * * * * * * * * *" >> randomtestadventurer.out	
+	echo "* * * * * * * * * * * DOMINION * * * * * * * * * * *" >> randomtestadventurer.out
+		gcov dominion.c >> randomtestadventurer.out
+		gcov dominion.c -b >> randomtestadventurer.out
+	echo "* * * * * * * * * * * DOMINION1 * * * * * * * * * * *" >> randomtestadventurer.out
+		gcov -f -b dominion.c >> randomtestadventurer.out
 
 randomtestcard.out: dominion.o randomtestcard rngs.o
 	echo "* * * * * * * * * * *  RANDOMTESTADVENTURER * * * * * * * * * * *" > randomtestcard.out
 	randomtestcard >> randomtestcard.out
 		gcov randomtestcard.c >> randomtestcard.out
 		gcov randomtestcard.c -b >> randomtestcard.out
-	echo "* * * * * * * * * * * RANDOMTESTCARD * * * * * * * * * * *" >> randomtestcard.out
+	echo "* * * * * * * * * * * DOMINION * * * * * * * * * * *" >> randomtestcard.out
+		gcov dominion.c >> randomtestcard.out
+		gcov dominion.c -b >> randomtestcard.out
+	echo "* * * * * * * * * * * DOMINION1 * * * * * * * * * * *" >> randomtestcard.out
+		gcov -f -b dominion.c >> randomtestcard.out
 
 unittestresults.out: dominion.o unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 rngs.o
 	echo "* * * * * * * * * * * UNITTEST1 * * * * * * * * * * *" > unittestresults.out
