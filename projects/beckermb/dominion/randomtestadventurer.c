@@ -189,7 +189,7 @@ int main() {
   if (failed == 0) {
     printf("All tests passed!\n");
   } else {
-    printf("FAILED:  Numer of failed tests: %d. Last failure was for iteration #%d.\n", failed, fail_iteration);
+    printf("FAILED:  Number of failed tests: %d. Last failure was for iteration #%d.\n", failed, fail_iteration);
   }
   return 0;
 }
