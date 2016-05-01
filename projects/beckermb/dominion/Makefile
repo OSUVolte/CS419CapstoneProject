@@ -69,10 +69,15 @@ unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2
 	gcov -b -f dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+randomtestadventurer.out: randTestAdventurer
+	./randTestAdventurer &> randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -rf *.o playdom.exe .DS_Store unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4 playdom test.exe test player player.exe testInit testInit.exe unittestresult.out *.gcov *.gcda *.gcno *.so *.dSYM
+	rm -rf *.o playdom.exe .DS_Store unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4 playdom test.exe test player player.exe testInit testInit.exe unittestresult.out randTestAdventurer randomtestadventurer.out *.gcov *.gcda *.gcno *.so *.dSYM

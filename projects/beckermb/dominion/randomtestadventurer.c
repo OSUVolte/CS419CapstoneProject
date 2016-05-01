@@ -53,7 +53,7 @@ void genRandomDiscard(int player, struct gameState *game) {
 }
 
 //Returns 1 if player has at least two money cards in deck or discard pile
-int moneyCount(int player, struct gameState *game) {
+int moneyCountDeck(int player, struct gameState *game) {
   int total = 0;
   int i;
   for (i = 0; i < game->deckCount[player]; i++) {
@@ -71,6 +71,17 @@ int moneyCount(int player, struct gameState *game) {
   return total;
 }
 
+int moneyCountHand(int player, struct gameState *game) {
+  int total = 0;
+  int i;
+  for (i = 0; i < game->handCount[player]; i++) {
+    if (game->hand[player][i] >= copper && game->hand[player][i] <= gold ) {
+      total++;
+    }
+  }
+  return total;
+}
+
 int main() {
 
   srand(time(NULL));
@@ -83,8 +94,10 @@ int main() {
   int failed = 0;
   int fail_iteration;
 
+  printf("Starting random testing for adventurerCardEffect.\n");
+
   int i;
-  for (i = 0; i < 100000; i++) {
+  for (i = 0; i < 10000; i++) {
     //Randomize the game
     initializeGame(2, cards, 1, &game);
     game.playedCardCount = 0;
@@ -96,7 +109,8 @@ int main() {
     game.hand[player][card_pos] = adventurer;
 
     //Capture preconditions
-    int money_count = moneyCount(player, &game);
+    int pre_money_count_deck = moneyCountDeck(player, &game);
+    int pre_money_count_hand = moneyCountHand(player, &game);
     int start_hand_size = game.handCount[player];
     int total_cards = game.deckCount[player] + game.handCount[player] + game.discardCount[player];
 
@@ -115,25 +129,44 @@ int main() {
     adventurerCardEffect(player, card_pos, &game);
 
     //Check postconditions
+    int post_money_count_deck = moneyCountDeck(player, &game);
+    int post_money_count_hand = moneyCountHand(player, &game);
 
-    if (money_count == 0) {
+    if (pre_money_count_deck == 0) {
       if (start_hand_size - 1 != game.handCount[player]) {
         printf("Failed: No money in deck or discard, so handsize should decrease by 1.\n");
         failed++;
         fail_iteration = i;
       }
-    } else if (money_count == 1) {
+      if (post_money_count_deck != pre_money_count_deck || post_money_count_hand != pre_money_count_hand) {
+        printf("Failed: No money in deck or discard, so number of coins should be unchanged in hand and deck.\n");
+        failed++;
+        fail_iteration = i;
+      }
+
+    } else if (pre_money_count_deck == 1) {
       if (start_hand_size != game.handCount[player] ) {
         printf("Failed: One money in deck or discard, so handsize should stay the same.\n");
         failed++;
         fail_iteration = i;
       }
-    } else if (money_count > 1) {
-        if (start_hand_size + 1 != game.handCount[player]) {
-          printf("Failed: At least two money in deck or discard, so handsize should increase by 1.\n");
-          failed++;
-          fail_iteration = i;
-        }
+      if (post_money_count_deck != pre_money_count_deck - 1 || post_money_count_hand != pre_money_count_hand + 1) {
+        printf("Failed: One money in deck or discard, so number of coins should be +1 in hand and -1 in deck.\n");
+        failed++;
+        fail_iteration = i;
+      }
+
+    } else if (pre_money_count_deck > 1) {
+      if (start_hand_size + 1 != game.handCount[player]) {
+        printf("Failed: At least two money in deck or discard, so handsize should increase by 1.\n");
+        failed++;
+        fail_iteration = i;
+      }
+      if (post_money_count_deck != pre_money_count_deck - 2 || post_money_count_hand != pre_money_count_hand + 2) {
+        printf("Failed: Two money in deck or discard, so number of coins should be +2 in hand and -2 in deck.\n");
+        failed++;
+        fail_iteration = i;
+      }
     }
 
     int post_total_cards = game.deckCount[player] + game.handCount[player] + game.discardCount[player] + game.playedCardCount;
@@ -156,7 +189,7 @@ int main() {
   if (failed == 0) {
     printf("All tests passed!\n");
   } else {
-    printf("FAILED: Tests failed for %d iterations. Last failure was %d.\n", failed, fail_iteration);
+    printf("FAILED:  Numer of failed tests: %d. Last failure was for iteration #%d.\n", failed, fail_iteration);
   }
   return 0;
 }
