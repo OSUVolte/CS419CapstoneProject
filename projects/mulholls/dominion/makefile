@@ -6,7 +6,7 @@ CXXFLAGS += -pedantic-errors
 
 default: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
-unittestresults.out: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	./unittest1 > unittestresults.out
 	./unittest2 >> unittestresults.out
 	./unittest3 >> unittestresults.out
@@ -59,4 +59,4 @@ cardtest4: cardtest4.c unitTestLib dominion.o
 	${CXX} ${CXXFLAGS} cardtest4.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest4
 	
 clean:
-	rm -f  *.o *~ *.gch  ${PROG}
+	rm  *.o *.c.gcov *.gcda *.gcno unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out
