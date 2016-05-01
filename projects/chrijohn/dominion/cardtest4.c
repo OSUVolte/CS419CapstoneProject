@@ -67,10 +67,10 @@ int main() {
 		error = 1;
 	}
 	// check discard pile increased by 1
-	if ((numDiscard + 1) != G.discardCount[0])
+	if ((numDiscard + 1) != G.discardCount[0] + G.playedCardCount)
 	{
-		printf("Error with discard count: ");
-		printf("Expected: %i.  Actual: %i\n", (numDiscard + 1), G.discardCount[0]);
+		printf("Error with discard/Played count: ");
+		printf("Expected: %i.  Actual: %i\n", (numDiscard + 1), (G.discardCount[0] + G.playedCardCount));
 		error = 1;
 	}
 	// check players deck lost 1 card

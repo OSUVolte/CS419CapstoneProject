@@ -30,7 +30,7 @@ Adventurer
 	According to the source code, the adventurer is (incorrectly) never discarded
 
 	Bug2: Discard/DeckCount
-	This players combined amount of cards in their deck and discard is expected to decrease 1 but decreased 2
+	This players combined amount of cards in their deck and discard and played cards is expected to decrease 1 but decreased 2
 	This is also caused by not discarding the adventurer card.
 
 Gardens
@@ -45,9 +45,3 @@ Gardens
 	Bug3: DiscardCount
 	The players discard pile is suppose to increase by 1, but it remained the same.
 	The code incorrectly does not discard the garden card
-
-Village
-	Bug1: DiscardCount 
-	The number of cards should in the discard should increase 1, but it remains the same.
-	The discardcard() function has a bug where it does not place the card in the discard pile.
-	

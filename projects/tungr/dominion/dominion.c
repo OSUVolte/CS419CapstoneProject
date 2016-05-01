@@ -664,7 +664,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	switch( card ) {
 		case adventurer:
 			playAdventurer(state);
-			//break;
+			//return 0; //break;
 		case council_room:
 			playCouncil_Room(state, handPos);
 			break;
@@ -722,7 +722,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			//break;
 		case village:
 			playVillage(state, handPos);
-			break;
+			return 0; break;
 		case baron:
 			//printf("**Baron Case**\n");
 			state->numBuys++;//Increase buys by 1!

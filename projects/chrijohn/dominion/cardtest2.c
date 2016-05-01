@@ -116,11 +116,11 @@ int main() {
 		printf("Expected: %i.  Actual: %i\n", (numHand +1), G.handCount[0]);
 		error = 1;
 	}
-	// check if sum of discard and deck lost 1 card (drew 2, discarded 1)
-	if ((numDiscard + numDeck -1 ) != (G.discardCount[0] + G.deckCount[0]))
+	// check if sum of discard and deck  and played lost 1 card (drew 2, discarded 1)
+	if ((numDiscard + numDeck -1 ) != (G.discardCount[0] + G.deckCount[0] + G.playedCardCount))
 	{
-		printf("Error with discard and deck count: ");
-		printf("Expected: %i.  Actual: %i\n", (numDiscard + numDeck - 1), (G.discardCount[0] + G.deckCount[0]));
+		printf("Error with discard and deck count and played: ");
+		printf("Expected: %i.  Actual: %i\n", (numDiscard + numDeck - 1), (G.discardCount[0] + G.deckCount[0] + G.playedCardCount));
 		error = 1;
 	}
 	// check card supplies are still at 10

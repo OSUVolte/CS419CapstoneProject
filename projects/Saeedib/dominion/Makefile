@@ -77,11 +77,44 @@ testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardte
 	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 	./cardtest4 >> unittestresults.txt
 	echo "_________________________________________________________" >> unittestresults.txt
-	echo "End of tests" >> unittestresults.txt
 
-	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 
+	echo "Coverage test: " > coverage1.c
+	gcov unittest1.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest2.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest3.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov unittest4.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest1.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest2.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest3.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	gcov cardtest4.gnda >> coverage1.c
+	echo "_________________________________________________________" >> coverage1.c
+	echo "End of tests" >> coverage1.c
 
-unittestresults.out:
+	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+
+unittestresults.out: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	make testresults
-	cat unittestresults.txt
+	cat coverage1.c >> unittestresults.txt
+	cat unittestresults.txt >> unittestresults.out
 	rm unittestresults.txt
+
+randomtest: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestcard.out -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestadventurer.out -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard.out > randomtestResult.c
+	./randomtestcard.out
+	./randomtestadventurer.out >> randomtestResult.c
+	./randomtestadventurer.out
+	echo "___________________________________________________" >> randomtestResult.c
+	echo "Coverage: " >> randomtestResult.c
+	gcov randomtestcard.gnda >> randomtestResult.c
+	gcov randomtestadventurer.gnda >> randomtestResult.c
+	cat randomtestResult.c
+	rm -f randomtestcard.out randomtestadventurer.out

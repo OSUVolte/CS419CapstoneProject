@@ -9,7 +9,7 @@ unittest2.c - Testing fullDeckCount() function
 -No bugs found
 
 unittest3.c - Testing isGameOver() function
--No bugs found
+BUG: Function only iterates between curse and salvager cards and fails to check if sea_hag and treasure_map piles are empty.
 
 unittest4.c - Testing scoreFor() function
 BUG: scoreFor does not calculate the total scores for each player correctly. scoreFor()
