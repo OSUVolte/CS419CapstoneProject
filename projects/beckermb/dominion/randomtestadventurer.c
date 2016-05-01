@@ -9,7 +9,7 @@
 
 
 int genRandomCard() {
-  // Generate a random number of the leagal cards
+  // Generate a random number of the legal cards
   int r = (rand() % treasure_map);
   return r;
 }
@@ -32,9 +32,9 @@ void genRandomDeck(int player, struct gameState *game) {
 
 void genRandomHand(int player, struct gameState *game) {
   //Generate a random hand size
-  int num_cards = (rand() % 30);
+  int num_cards = (rand() % 29) + 1;
 
-  game-handCount[player] = num_cards;
+  game->handCount[player] = num_cards;
   int i;
   for (i = 0; i < num_cards; i++) {
     game->hand[player][i] = genRandomCard();
@@ -62,13 +62,13 @@ int main() {
 
   int i;
   for (i = 0; i < 10000; i++) {
-    printf("Random iteration #%d", i);
+    printf("Random iteration #%d\n", i);
     genRandomDeck(player, &game);
     genRandomHand(player, &game);
     genRandomDiscard(player, &game);
     int card_pos = pickHandCard(player, &game);
     game.hand[player][card_pos] = adventurer;
-    adventurerCardEffect(player, card_pos, &game);
+    // adventurerCardEffect(player, card_pos, &game);
   }
   return 0;
 }
