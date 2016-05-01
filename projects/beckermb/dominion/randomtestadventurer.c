@@ -43,7 +43,7 @@ void genRandomHand(int player, struct gameState *game) {
 
 void genRandomDiscard(int player, struct gameState *game) {
   //Generate a random discard size
-  int num_cards = (rand() % 12);
+  int num_cards = (rand() % 30);
 
   game->discardCount[player] = num_cards;
   int i;
@@ -61,14 +61,14 @@ int main() {
   int player = 0;
 
   int i;
-  for (i = 0; i < 10000; i++) {
-    printf("Random iteration #%d\n", i);
+  for (i = 0; i < 100000; i++) {
     genRandomDeck(player, &game);
     genRandomHand(player, &game);
     genRandomDiscard(player, &game);
+    printf("Random iteration #%d, Deck size: %d, Hand size: %d, Discard size: %d\n", i, game.deckCount[player], game.handCount[player], game.discardCount[player]);
     int card_pos = pickHandCard(player, &game);
     game.hand[player][card_pos] = adventurer;
-    // adventurerCardEffect(player, card_pos, &game);
+    adventurerCardEffect(player, card_pos, &game);
   }
   return 0;
 }
