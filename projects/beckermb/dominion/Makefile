@@ -45,6 +45,8 @@ cardTest4: cardtest4.c dominion.o rngs.o
 randTestAdventurer: randomtestadventurer.c dominion.o rngs.o
 	gcc -o randTestAdventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 
+randTestCard: randomtestcard.c dominion.o rngs.o
+	gcc -o randTestCard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
 
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)

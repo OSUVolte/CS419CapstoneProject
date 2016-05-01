@@ -184,6 +184,21 @@ int main() {
       failed++;
       fail_iteration = i;
     }
+
+    int changed = 0;
+    int changed_card;
+
+    for (j = 0; j < 17; j++) {
+      if (orig_supplies[j] != game.supplyCount[all_cards[j]]) {
+        changed = 1;
+        changed_card = all_cards[j];
+      }
+    }
+    if (changed != 0) {
+      printf("FAIL: supplies changed. Last cards supply changed was #%d\n.", changed_card);
+      failed++;
+      fail_iteration = i;
+    }
   }
 
   if (failed == 0) {
