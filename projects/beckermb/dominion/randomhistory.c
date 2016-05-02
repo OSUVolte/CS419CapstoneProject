@@ -27,6 +27,7 @@ Each of these tests were run on each iteration of the random testing:
 
 The random testing had 100% branch and statement coverage over adventurerCardEffect method. Two bugs were revealed by the testing. The first is that the adventurer card is not discarded after it is played. That bug can be revealed in the testing. The second bug revealed during random testing is the one I introduced during the random testing. That bug limited the size of the temporary array for cards to 7, so that a seg fault would occur if the player had to draw more than 7 cards to find 2 coins. I have since fixed that bug so that the tests can complete, but the bug was usually discovered in less than 10 iterations.
 
+During development, changes had to be made based on the state of the game. Most of the time, the adventurer should net the player two coins. However, testing revealed this would not happen when there not two cards in the deck or discard. This is correct behavior, so the tests had to be modified to accommodate this scenario.
 
 randomtestcard.c Testing --
 Run using: make randomtestcard.out
@@ -51,5 +52,7 @@ The following tests are run on each iteration
 * Check to make sure other player's cards are unaffected.
 
 The random testing had 100% statement coverage on the villageCardEffect method. It has no branches. The testing revealed the bug introduced in a previous assignment where the actions that the card was supposed to deliver are not actually added to the player's hand.
+
+Durin the development of this test, I originally had a test that checked if size of the deck decreased by 1 (indicating a card was drawn). However, when there are no cards in the player's deck, the discard pile has to be shuffled in, so this test would fail erroneously. The test was then modified to account for this condition.
 
 */
