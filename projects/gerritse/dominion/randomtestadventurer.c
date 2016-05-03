@@ -208,13 +208,25 @@ int main()
 			{
 				test3Bugs++;
 			}
-		}
+		}	
 		
 
 		if(test3Bugs != 0)
 		{
 			test3Fail++;
 			printf("TEST 3 ERROR: Other Player's Deck Count Changed on  Iteration: %d\n", i);
+			
+			for (j = 1; j < numberOfPlayers; j++)
+			{
+		
+				if (testState.deckCount[j] != State.deckCount[j])
+				{	
+					printf("Actual : %d                 Expected: %d \n", testState.deckCount[j], State.deckCount[j]);
+				}
+			}	
+		
+
+
 			totalBugs++;
 			
 			
@@ -243,7 +255,7 @@ int main()
 			test4Fail++;
 			totalBugs++;
 			printf("TEST 4 ERROR: Hand Count is off on Iteration %d\n", i);
-		
+			printf("Actual:   %d                       Expected: %d\n", testState.handCount[currentPlayer], State.handCount[currentPlayer]+1);
 		}
 		
 		
