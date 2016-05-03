@@ -14,7 +14,7 @@ int main() {
 //4 players, cards, seed, game struct
 	initializeGame(2, k, 10, &game);
 	memcpy(&afterCard, &game, sizeof(struct gameState));
-	playCouncil_Room(&afterCard, 1, 0);
+	playCouncil_Room(&afterCard);
 	
 	printf("hand count: %d, After card played: %d (council room should increase the players hand by 4)\n", game.handCount[0], afterCard.handCount[0]);
 	printf("number of buys: %d, After card played number of buys: %d (card increases buys by 1)\n", game.numBuys, afterCard.numBuys);

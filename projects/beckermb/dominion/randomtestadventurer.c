@@ -97,7 +97,7 @@ int main() {
   printf("Starting random testing for adventurerCardEffect.\n");
 
   int i;
-  for (i = 0; i < 10000; i++) {
+  for (i = 0; i < 30000; i++) {
     //Randomize the game
     initializeGame(2, cards, 1, &game);
     game.playedCardCount = 0;

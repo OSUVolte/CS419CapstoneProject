@@ -29,3 +29,7 @@ Bug found in cutpurseCard
 Bug found. When a card is discarded using the discardCard function, it is added to a playedCard pile. When the turn is over,
 	the played card pile, should be moved to the discardCard pile, with the discardCount increased, but it is not.
 	
+Possible bug: According to my understanding of Dominion, every player has a hand at all times, but it seems like only the 
+	current player has an active hand. This could be an issue with how I was testing but I wanted to mention it.
+	
+*/

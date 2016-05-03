@@ -66,13 +66,14 @@ int main() {
   int fail_iteration;
 
   int i;
-  for (i = 0; i < 10000; i++) {
+  for (i = 0; i < 30000; i++) {
     //Randomize the game
     initializeGame(2, cards, 1, &game);
     game.playedCardCount = 0;
     genRandomDeck(player, &game);
     genRandomHand(player, &game);
     genRandomDiscard(player, &game);
+    game.numActions = (rand() % 20);
     printf("Random iteration #%d, Deck size: %d, Hand size: %d, Discard size: %d\n", i, game.deckCount[player], game.handCount[player], game.discardCount[player]);
     int card_pos = pickHandCard(player, &game);
     game.hand[player][card_pos] = village;
@@ -107,14 +108,14 @@ int main() {
     }
 
 
+    //Check to see if actions happened
     if (pre_actions + 2 != post_actions) {
       printf("FAIL: Actions not increased by 2.\n");
       failed++;
       fail_iteration = i;
     }
 
-
-    //Check to see if actions happened
+    //Check to see if hand size correct
     if (pre_deck_size + pre_discard_size > 0) {
       if (pre_hand_size != post_hand_size) {
         printf("FAIL: hand size should be the same with one card discarded and one drawn.\n");
