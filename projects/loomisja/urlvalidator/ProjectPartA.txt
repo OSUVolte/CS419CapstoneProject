@@ -1,6 +1,9 @@
 /*******************************************************************************
 ** Filename: ProjectPartA.txt
-** Group Members: Osbaldo Esquivel, Preston From, Jason Loomis
+** Group Members:
+**  Osbaldo Esquivel (esquiveo)
+**  Preston From (fromp)
+**  Jason Loomis (loomisja)
 ** Date: 5/8/16
 ** Description: CS 362, Final Project, Part A
 **  Inspection of Apache Commons URLValidator testing.
