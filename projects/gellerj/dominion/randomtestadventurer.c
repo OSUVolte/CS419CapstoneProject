@@ -46,15 +46,17 @@ int main() {
     int handCount = 1;
     int discardCount = 1;
 
-    for (test = 1; test <= 50; test++) {
+    // run 500 tests
+    for (test = 1; test <= 500; test++) {
 
+        // if sub-tests fail, entire unit test fails
         localPass = 1;
         localFail = 0;
 
         printf("------------------------\n");
-        printf("RUNNING RANDOM TEST CASE #%d...\n", test);
+        printf("ADVENTURER: RUNNING RANDOM TEST CASE #%d...\n", test);
 
-        // use random game state configurations
+        // use random configurations to initialize game
         numPlayers = (rand() % (MAX_PLAYERS - 1)) + 2;
         seed = (rand() % 5000) + 1;
 
@@ -62,7 +64,7 @@ int main() {
         bzero(&G1, sizeof(struct gameState));
         initializeGame(numPlayers, kingdomCards, seed, &G1);
 
-        // random decks/hands for each player
+        // random hands, decks, and discard piles for each player
         for (i = 0; i < numPlayers; i++) {
             handCount = randrange(2, MAX_HAND);
             deckCount = randrange(2, MAX_DECK);
@@ -82,6 +84,7 @@ int main() {
         }
 
         // make sure player has at least 2 treasure cards in their deck
+        // encourages valid inputs for the random tester
         for (i = 0; i < 2; i++) {
             // select either 4 (silver), 5 (silver), or 6 (gold)
             int randTreasure = randrange(4, 6);
@@ -89,12 +92,13 @@ int main() {
         }
 
         // insert an adventurer card randomly into the player's deck
-        handPos = (rand() % G1.handCount[player1]);
+        handPos = (rand() % G1.handCount[player1] - 1);
         G1.hand[player1][handPos] = adventurer;
 
         printf("RANDOM CONFIG: PLAYERS: %d, SEED: %d, HANDPOS: %d\n\n", numPlayers, seed, handPos);
 
         // make a copy of the state, play the card in the new state
+        // the two copies are used for state comparisons to determine pass/fail
         memcpy(&G2, &G1, sizeof(struct gameState));
         cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
 
@@ -122,7 +126,6 @@ int main() {
         printf("Check that hand count is incremented by 2 (+2 new treasure cards)...\n");
         printf("Initial hand count was %d, new hand count is %d, expected %d...", G1.handCount[player1],
                G2.handCount[player1], G1.handCount[player1] + 2);
-        // make sure the new hand count is +2. two new treasure cards should be gained.
         if (G2.handCount[player1] == G1.handCount[player1] + 2) {
             printf("PASSED.\n");
         } else {
@@ -137,6 +140,7 @@ int main() {
         int copperDiff = diffSupplies[copper];
         int silverDiff = diffSupplies[silver];
         int goldDiff = diffSupplies[gold];
+        // add up the net treasure card differences in the player's deck
         int netDiff = copperDiff + silverDiff + goldDiff;
         printf("Net difference in deck treasure card supply is %d, expected 2...", netDiff);
         printf("-%d copper, -%d silver, -%d gold...", copperDiff, silverDiff, goldDiff);
@@ -149,17 +153,16 @@ int main() {
         }
 
         // ensure other players' hands/decks were not modified
-        int x;
-        for (x = 1; x < numPlayers; x++) {
-            printf("Check player %d hand is untouched...", x + 1);
-            if (handIsUntouched(&G1, &G2, x) == 1) {
+        for (i = 1; i < numPlayers; i++) {
+            printf("Check player %d hand is untouched...", i + 1);
+            if (handIsUntouched(&G1, &G2, i) == 1) {
                 printf("PASSED.\n");
             } else {
                 printf("FAILED.\n");
                 localFail = 1;
             }
-            printf("Check player %d, deck is untouched...", x + 1);
-            if (deckIsUntouched(&G1, &G2, x) == 1) {
+            printf("Check player %d deck is untouched...", i + 1);
+            if (deckIsUntouched(&G1, &G2, i) == 1) {
                 printf("PASSED.\n");
             } else {
                 printf("FAILED.\n");
@@ -178,8 +181,10 @@ int main() {
         }
 
 
-        printf("Check that copper treasure cards are gained by adventurer...\n");
+        printf("Check that Adventurer recognizes copper as a treasure card...\n");
         memcpy(&G2, &G1, sizeof(struct gameState));
+        // set all deck, hand, and display cards to copper to ensure these are
+        // the only options when drawing, even after shuffling.
         for (i = 0; i < G2.deckCount[player1]; i++) {
             G2.deck[player1][i] = copper;
         }
@@ -192,7 +197,7 @@ int main() {
         cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
         printf("Initial hand count was %d, new hand count is %d, expected %d...", G1.handCount[player1],
                G2.handCount[player1], G1.handCount[player1] + 2);
-        // make sure the new hand count is +2. two new treasure cards should be gained.
+        // make sure the new hand count is +2. two new copper cards should be gained.
         if (G2.handCount[player1] == G1.handCount[player1] + 2) {
             printf("PASSED.\n");
         } else {
@@ -201,8 +206,10 @@ int main() {
         }
 
 
-        printf("Check that silver treasure cards are gained by adventurer...\n");
+        printf("Check that Adventurer recognizes silver as a treasure card...\n");
         memcpy(&G2, &G1, sizeof(struct gameState));
+        // set all deck, hand, and display cards to silver to ensure these are
+        // the only options when drawing, even after shuffling.
         for (i = 0; i < G2.deckCount[player1]; i++) {
             G2.deck[player1][i] = silver;
         }
@@ -223,8 +230,10 @@ int main() {
             localFail = 1;
         }
 
-//        THIS TEST IS DISABLED BECAUSE IT RESULTS IN FREQUENT SEGFAULTS DUE TO THE
-//        BUG THAT WAS IMPLEMENTED IN AN EARLIER ASSIGNMENT.
+//        THIS TEST IS DISABLED BECAUSE IT RESULTS IN FREQUENT SEG FAULTS DUE TO THE
+//        BUG THAT WAS IMPLEMENTED IN AN EARLIER ASSIGNMENT. THE BUG CAUSES ADVENTURER
+//        TO NOT REGOGNIZE GOLD AS A TREASURE CARD, RESULTING IN INVALID GAME STATE.
+//        SEE DOCUMENTATION FOR MORE.
 //
 //        printf("Check that gold treasure cards are gained by adventurer...\n");
 //        memcpy(&G2, &G1, sizeof(struct gameState));
@@ -248,6 +257,7 @@ int main() {
 //            localFail = 1;
 //        }
 
+        // if any of the sub-tests failed, mark this whole unit test as a failure
         if (localFail == 1) {
             failures++;
         } else {
