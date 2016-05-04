@@ -1,8 +1,8 @@
 /*
-	Name:
-	Course:
-	Date Created:
-	Last Modification Date:
+	Name:						Daniel OFarrell
+	Course:						cs362-400
+	Date Created:					22 April 2016
+	Last Modification Date:				24 April 2016
 
 	Summary:
 		bug1.c is a report of all bugs found through all 8 tests performed.

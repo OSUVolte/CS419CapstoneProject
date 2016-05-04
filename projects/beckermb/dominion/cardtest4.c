@@ -7,37 +7,6 @@
 
 // This is a test for the adventurer card / function from dominion.c
 
-
-//
-// int adventurerCardEffect(int currentPlayer, int handPos, struct gameState *state) {
-//   int cardDrawn; //temp storage for card drawing
-//   int drawntreasure = 0; //counter for treasure drawn
-//   int z = 0; //counter for temp hand
-//   int temphand[7]; //array to hold hands temporarily drawn
-//
-//   while (drawntreasure < 2) {
-//     if (state->deckCount[currentPlayer] < 1) { //if the deck is empty we need to shuffle discard and add to deck
-//       shuffle(currentPlayer, state);
-//     }
-//     drawCard(currentPlayer, state);
-//
-//     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
-//     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-//       drawntreasure++;
-//     else {
-//       temphand[z] = cardDrawn;
-//       state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-//       z++;
-//     }
-//   }
-//   while (z - 1 >= 0) {
-//     state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z - 1]; // discard all cards in play that have been drawn
-//     z = z - 1;
-//   }
-//
-//   return 0;
-// }
-
 int main() {
   printf("*** Testing adventurerCardEffect *** \n");
 
@@ -49,16 +18,73 @@ int main() {
   initializeGame(2, cards, 1, &game);
 
   //Test if two treatures added to hand with normal deck
+  int handSize = game.handCount[player] + 1;
+  adventurerCardEffect(player, 0, &game);
+  if (handSize == game.handCount[player]) {
+    printf("Player hand size increased by one.\n");
+  } else {
+    printf("FAIL: Player hand size failed to increase. Got %d, expected %d.\n", game.handCount[player], handSize);
+  }
+  int hand_count = game.handCount[player];
+  int top_hand = game.hand[player][hand_count - 1];
+  int sec_hand = game.hand[player][hand_count - 2];
 
-  //Test if two treatures added to hand with empty deck
-
-  //Test to make sure only two cards added to hand
+  if ((top_hand >= 4 && top_hand <=6) && (sec_hand >= 4 && sec_hand <=6) ) {
+    printf("Two treasure cards added to hand.\n");
+  } else {
+    printf("FAIL: two treasure cards not drawn.\n");
+  }
 
   //Test to make sure additional treasures not added to deck
+  int orig_copp = fullDeckCount(player, copper, &game);
+  int orig_silv = fullDeckCount(player, silver, &game);
+  int orig_gold = fullDeckCount(player, gold, &game);
+  adventurerCardEffect(player, 0, &game);
+  int new_copp = fullDeckCount(player, copper, &game);
+  int new_silv = fullDeckCount(player, silver, &game);
+  int new_gold = fullDeckCount(player, gold, &game);
+  if ((orig_copp == new_copp) && (orig_silv == new_silv) && (orig_gold == new_gold)) {
+    printf("No new treasures added to take.\n");
+  } else {
+    printf("FAIL: treasures added or removed from deck.\n");
+  }
+  // Test if other players are unaffected.
+  int orig_deck_count = game.deckCount[other_player];
+  int orig_hand_count = game.handCount[other_player];
+  villageCardEffect(player, 0, &game);
+  if (orig_deck_count == game.deckCount[other_player]) {
+    printf("Other player's deck unaffected.\n");
+  } else {
+    printf("FAIL: other player's deck changed\n");
+  }
 
-  //Test to make sure adventurer card is discarded
+  if (orig_hand_count == game.handCount[other_player]) {
+    printf("Other player's hand unaffected.\n");
+  } else {
+    printf("FAIL: other player's hand changed\n");
+  }
 
-  //Test to make sure other player unaffected
+  // Test if global supplies unaffected
+  int i;
+  int changed = 0;
+  int changed_card;
+  int orig_supplies[17];
+  for (i = 0; i < 17; i++) {
+    orig_supplies[i] = game.supplyCount[all_cards[i]];
+  }
+  adventurerCardEffect(player, 0, &game);
+  for (i = 0; i < 17; i++) {
+    if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
+      changed = 1;
+      changed_card = all_cards[i];
+    }
+  }
+  if (changed == 0) {
+    printf("Supplies unchanged.\n");
+  } else {
+    printf("FAIL: supplies changed. Last cards supply changed was #%d\n.", changed_card);
+  }
 
-  //Test to make sure global supply unaffected
+  return 0;
+
 }

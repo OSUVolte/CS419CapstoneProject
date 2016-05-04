@@ -27,33 +27,47 @@ function main called 1 returned 100% blocks executed 84%
         1:   21:	int* bigger = &big;
         -:   22:	
         -:   23:	int flag;
-        1:   24:	printf("---Testing compare function START---\n\n");				call    0 returned 100%
+        1:   24:	printf("---Testing compare function START---\n\n");
+call    0 returned 100%
         -:   25:	
-        1:   26:	printf("Testing [left < right]...\n");							call    0 returned 100%
-        1:   27:	if(compare(smaller, bigger) == -1){								call    0 returned 100%
+        1:   26:	printf("Testing [left < right]...\n");
+call    0 returned 100%
+        1:   27:	if(compare(smaller, bigger) == -1){
+call    0 returned 100%
 branch  1 taken 100% (fallthrough)
 branch  2 taken 0%
-        1:   28:		printf("	PASS\n");										call    0 returned 100%
+        1:   28:		printf("	PASS\n");
+call    0 returned 100%
         -:   29:	} else {
-    #####:   30:		printf("	FAIL\n");										call    0 never executed
+    #####:   30:		printf("	FAIL\n");
+call    0 never executed
         -:   31:	}
-        1:   32:	printf("Testing [left > right]...\n");							call    0 returned 100%
-        1:   33:	if(compare(bigger, smaller) == 1){								call    0 returned 100%
+        1:   32:	printf("Testing [left > right]...\n");
+call    0 returned 100%
+        1:   33:	if(compare(bigger, smaller) == 1){
+call    0 returned 100%
 branch  1 taken 100% (fallthrough)
 branch  2 taken 0%
-        1:   34:		printf("	PASS\n");										call    0 returned 100%
+        1:   34:		printf("	PASS\n");
+call    0 returned 100%
         -:   35:	} else {
-    #####:   36:		printf("	FAIL\n");										call    0 never executed
+    #####:   36:		printf("	FAIL\n");
+call    0 never executed
         -:   37:	}
-        1:   38:	printf("Testing [left = right]...\n");							call    0 returned 100%
-        1:   39:	if(compare(smaller, smaller) == 0){								call    0 returned 100%
+        1:   38:	printf("Testing [left = right]...\n");
+call    0 returned 100%
+        1:   39:	if(compare(smaller, smaller) == 0){
+call    0 returned 100%
 branch  1 taken 100% (fallthrough)
 branch  2 taken 0%
-        1:   40:		printf("	PASS\n\n");										call    0 returned 100%
+        1:   40:		printf("	PASS\n\n");
+call    0 returned 100%
         -:   41:	} else {
-    #####:   42:		printf("	FAIL\n\ns");									call    0 never executed
+    #####:   42:		printf("	FAIL\n\ns");
+call    0 never executed
         -:   43:	}
         -:   44:	
-        1:   45:	printf("---Testing compare function COMPLETE---\n\n\n\n");		call    0 returned 100%
+        1:   45:	printf("---Testing compare function COMPLETE---\n\n\n\n");
+call    0 returned 100%
         1:   46:	return 0;
         -:   47:}

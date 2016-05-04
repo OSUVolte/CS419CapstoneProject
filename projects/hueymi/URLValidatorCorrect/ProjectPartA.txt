@@ -1,0 +1,38 @@
+Explain testIsValid Function of UrlValidator test code. It is available under aburasali/UrlValidator folder. 
+------------------------------------------------------------------------------------------------------------------------------
+There are two overloaded testIsValid functions. The first one, with no parameters, essentially has the function of calling the second one, then calling the setUp() function to reset the testPartsIndex array. 
+The second function’s purpose is to build arrays of all possible combinations of url strings of the object inputted, combining all the varieties of url schemes, url authorities, url ports, paths, and url queries, along with the expected validity of each of those parts. It then evaluates whether they are true (they are only if all of them are) and passes these constructed url strings to the UrlValidator’s isValid function to see whether the validator thinks that they are true. Then, it checks to make sure that they match. Plus, if the url is validated by the UrlValidator, it prints out the url String to the console. 
+ 
+ 
+ 
+Give how many total number of urls it is testing. 
+------------------------------------------------------------------------------------------------------------------------------
+Overall, it’s testing 31,922 urls – 2 of google.com (the first two assertsions), and then 31,922 in the for loop. 
+
+
+
+
+
+Also, explain how it is building all the urls. 
+------------------------------------------------------------------------------------------------------------------------------
+First, the testIsValid function calls another method testIsValid that pass in an object with four parts: testUrlScheme, testUrlAuthority, testUrlPort, testPath, and testUrlQuery. The testUrlScheme is a series of 9 “ResultPairs”, or pairs of and their expected results. In testUrlScheme, only 4 tests, like “http://”, are true, while other random combinations, like “http:” will be false, since it lacks the double slash. Similarily, testUrlAuthority comprises of 19 ResultPairs of base urls or IP addresses, 7 ResultPairs of ports, 10 ResultPairs of paths, 3 ResultsPairs of url queries at the end of the url. 
+When the function enters the do-while loop, it uses the testPartsIndex to add up all the parts of the testObject, or the one with testUrlParts, at the declared index. By AND-ing expected (true) with the expected validity of that part. Essentially, by ANDing up the total expected validity of each of the parts, the expected validity of the entire URL string will only be true if the expected validity of all the parts combined are true. 
+It converts the StringBuffer object “testBuffer” to a String object, assigning this to the String “url”. It evaluates the result by calling UrlValidator’s function “urlValid.isValid” on that url, and storing that result in the boolean “result”, and prints out the string if valid. Then, to build the next string, the index object testUrlParts is incremented by the function incrementTestPartsIndex. It does a for loop from right to left, incrementing only one index at a time until it runs out, after which it resets that digit to 0 and starts incrementing the next index. 
+Finally, it does a bitwise comparison to see whether each index has reached its maximum, so that once all the indices have reached their maximum, the incrementTestPartsIndex will return false. After all 31,920 combinations have been exhausted, the testIsValid function will break out of the while loop because it’s run out of url combinations to build and test. 
+
+
+	
+	
+	
+Give an example of valid url being tested and an invalid url being tested by testIsValid() method.  
+------------------------------------------------------------------------------------------------------------------------------
+For example, a valid url being tested includes http://www.google.com:80/test1?action=view.
+An invalid url tested includes http://www.google.com:80/..?action=view, which was expected to be invalid because of the urlPath “/..”. 
+
+
+
+
+
+Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines. 
+------------------------------------------------------------------------------------------------------------------------------
+The concepts and complexity are not all that different from the unit tests and card tests except in terms of scale. Both of them created a mock state to be tested, tested the assumptions, and then tested the results. However, as opposed to the individual unit tests, which were easy to predict the outcome of, this comprehensive tests required that each input part be paired with its expected outcome, so that a bitwise AND operation to keep track of and calculate the predicted outcome across all 31,922 urls tested. 
