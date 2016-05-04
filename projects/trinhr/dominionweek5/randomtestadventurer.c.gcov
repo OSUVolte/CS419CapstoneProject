@@ -1,0 +1,293 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <math.h>
+        -:    9:#include <time.h>
+        -:   10://This is a unit test for the card Adventurer function using randomtest.
+        -:   11://int adventurerCard(struct gameState *state, int currentPlayer, int handPos);
+        -:   12://Input: int currentplayer --> current player
+        -:   13://	 struct gamestate
+        -:   14://	 int handPos
+        -:   15://Business Rules:
+        -:   16://1. It needs to draw cards from the players own deck until
+        -:   17://two treasure cards are revealed. 
+        -:   18://2. The two treasure cards are added to the the player's hand.
+        -:   19:
+function main called 1 returned 100% blocks executed 84%
+        1:   20:int main () {
+        -:   21:
+        -:   22:        //Set Random Generator.
+        1:   23:	srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        -:   24: 	struct gameState pre,post;
+        -:   25:
+        -:   26: 	int i;
+        -:   27: 	int player;
+        1:   28:	int pass = 1;
+        1:   29:	int passCtr = 0;
+        1:   30:	int runs = 10000;
+        1:   31:	int failedTests[runs];
+        1:   32:	int testsCtr = 0;
+        -:   33:
+    10001:   34: 	for(i = 0; i < runs; i++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   35:
+    10000:   36:        	printf("\nRANDOM GAME: %i\n",i);
+call    0 returned 100%
+        -:   37:		//Set up a Random player:0,1,2,3
+    10000:   38: 		player = floor( rand() % MAX_PLAYERS);
+call    0 returned 100%
+    10000:   39:		printf("CURRENT PLAYER: %i\n",player);
+call    0 returned 100%
+        -:   40:
+    10000:   41:		int deckCount = 0;
+    10000:   42:		int discardCount = 0;
+        -:   43: 
+        -:   44:		//Randomize the card count in DECK, DISCARD AND HAND.
+        -:   45:		//Has to be at least four cards total between the two decks. 
+    30000:   46:		while( deckCount + discardCount < 4 ){
+branch  0 taken 50%
+branch  1 taken 50% (fallthrough)
+        -:   47:		
+    10000:   48:			pre.deckCount[player] = floor( rand() % MAX_DECK);
+call    0 returned 100%
+    10000:   49:			printf("DECK COUNT: %i\n", pre.deckCount[player]);
+call    0 returned 100%
+    10000:   50:			pre.discardCount[player] = floor( rand() % MAX_DECK);
+call    0 returned 100%
+    10000:   51:			printf("DISCARD COUNT: %i\n", pre.discardCount[player]);
+call    0 returned 100%
+    10000:   52:			pre.handCount[player] = floor( rand() % MAX_HAND +1);
+call    0 returned 100%
+    10000:   53:			printf("HAND COUNT: %i\n", pre.handCount[player]);
+call    0 returned 100%
+        -:   54:
+    10000:   55:			deckCount = pre.deckCount[player];
+    10000:   56:			discardCount = pre.discardCount[player];
+        -:   57:		}
+        -:   58:
+        -:   59:		//Randomize the cards in the DECK and DISCARD.
+        -:   60:		int i;
+  2520782:   61:		for( i = 0; i < deckCount; i++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+  2510782:   62:			pre.deck[player][i] = village;
+        -:   63:		}
+        -:   64:
+        -:   65:		int j;
+  2492042:   66:		for( j = 0; j < discardCount; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+  2482042:   67:			pre.discard[player][j] = village;
+        -:   68:		}
+        -:   69:
+        -:   70:		//Ensure there are at least two treasure cards in the combined decks.
+        -:   71:		//Randomize the position of the treasures. 
+        -:   72:		int firstPos;
+        -:   73:		int secPos;
+        -:   74:
+        -:   75:		//Randomize the treasure.
+    10000:   76:		int randTres1 = floor( rand() % 3 );
+call    0 returned 100%
+    10000:   77:		int randTres2 = floor( rand() % 3 );
+call    0 returned 100%
+        -:   78:		int treasure1;
+        -:   79:		int treasure2;
+        -:   80:
+    10000:   81:		if(randTres1 == 0){
+branch  0 taken 34% (fallthrough)
+branch  1 taken 66%
+     3425:   82:			treasure1 = copper;
+     6575:   83:		}else if(randTres1 == 1){
+branch  0 taken 51% (fallthrough)
+branch  1 taken 49%
+     3386:   84:			treasure1 = silver;
+        -:   85:		}else{
+     3189:   86:			treasure1 = gold;
+        -:   87:		}
+        -:   88:
+    10000:   89:		if(randTres2 == 0){
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+     3341:   90:			treasure2 = copper;
+     6659:   91:		}else if(randTres2 == 1){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+     3334:   92:			treasure2 = silver;
+        -:   93:		}else{
+     3325:   94:			treasure2 = gold;
+        -:   95:		}
+        -:   96:
+        -:   97:		
+    10000:   98:		if( pre.deckCount[player] > 1 ){
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+     9973:   99:			firstPos = floor( rand() % deckCount);	
+call    0 returned 100%
+        -:  100:		}	
+        -:  101:	
+    10000:  102:		if( pre.deckCount[player] > 1 ){
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+     9973:  103:			firstPos = floor( rand() % deckCount);	
+call    0 returned 100%
+     9973:  104:			secPos = floor( rand() % deckCount );
+call    0 returned 100%
+        -:  105:		
+    20096:  106:			while( firstPos == secPos ){
+branch  0 taken 1%
+branch  1 taken 99% (fallthrough)
+      150:  107:				secPos = floor( rand() % deckCount );
+call    0 returned 100%
+        -:  108:			}
+        -:  109:
+     9973:  110:			pre.deck[player][firstPos] = treasure1;
+     9973:  111:			printf("The first treasure card is at pos %i on the deck.\n", firstPos);	
+call    0 returned 100%
+     9973:  112:			pre.deck[player][secPos] = treasure2;
+     9973:  113:			printf("The second treasure card is at pos %i on the deck.\n", secPos);
+call    0 returned 100%
+        -:  114:
+        -:  115:		}else{
+       27:  116:			firstPos = floor( rand() % discardCount);	
+call    0 returned 100%
+       27:  117:			secPos = floor( rand() % discardCount );
+call    0 returned 100%
+        -:  118:		
+       54:  119:			while( firstPos == secPos ){
+branch  0 taken 0%
+branch  1 taken 100% (fallthrough)
+    #####:  120:				secPos = floor( rand() % discardCount );
+call    0 never executed
+        -:  121:			}
+        -:  122:
+       27:  123:			pre.discard[player][firstPos] = treasure1;
+       27:  124:			printf("The first treasure card is at pos %i on the discard deck.\n", firstPos); 
+call    0 returned 100%
+       27:  125:			pre.discard[player][secPos] = treasure2;
+       27:  126:			printf("The second treasure card is at pos %i on the discard deck.\n", secPos);
+call    0 returned 100%
+        -:  127:		}
+        -:  128:
+    10000:  129: 		memcpy( &post, &pre, sizeof(struct gameState));
+        -:  130:
+        -:  131:		//Call the function.
+    10000:  132:		printf("Calling the function.\n");
+call    0 returned 100%
+        -:  133:		
+        -:  134:		//Save the state of the game.
+    10000:  135:		int returnVal = 0 ;
+    10000:  136:		returnVal = adventurerCard(player, &post);
+call    0 returned 100%
+        -:  137:/*
+        -:  138:		//Print the DECK.
+        -:  139:		for( i = 0; i < deckCount; i++){
+        -:  140:			printf("Pos%i DECK CARD#%i\n", i, pre.deck[player][i]);
+        -:  141:		}
+        -:  142:
+        -:  143:		for( j = 0; j < discardCount; j++){
+        -:  144:			printf("Pos%i DISCARD DECK CARD#%i\n", j, pre.discard[player][j]);
+        -:  145:		}
+        -:  146:
+        -:  147:*/
+        -:  148:		//Oracle Code: Check that it works.
+        -:  149:
+        -:  150:		//Check that the last two cards in the player's hand are treasure cards.
+    10000:  151:		int postHC = post.handCount[player];
+    10000:  152:		int lastCard = post.hand[player][postHC-1];
+    10000:  153:		int seclastCard = post.hand[player][postHC-2];
+        -:  154:	
+    10000:  155:		if( lastCard == copper || lastCard == gold || lastCard == silver ){
+branch  0 taken 66% (fallthrough)
+branch  1 taken 34%
+branch  2 taken 50% (fallthrough)
+branch  3 taken 50%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+    20000:  156:			if( seclastCard == copper || seclastCard == gold || seclastCard == silver ){
+branch  0 taken 66% (fallthrough)
+branch  1 taken 34%
+branch  2 taken 51% (fallthrough)
+branch  3 taken 49%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+    10000:  157:				printf("The player has successfully drawn two treasure cards.\n");
+call    0 returned 100%
+        -:  158:
+        -:  159:			}else{
+    #####:  160:				printf("ERROR: The second to last in his hand is not a treasure card.\n");
+call    0 never executed
+    #####:  161:				pass = 0;	
+        -:  162:			}
+        -:  163:		}else{
+    #####:  164:			printf("ERROR: The last card in hand is not a treasure card.\n");
+call    0 never executed
+    #####:  165:			pass = 0;
+        -:  166:		} 
+        -:  167:		
+        -:  168:		//Check tht the handCount has only increased by two cards.
+    10000:  169:		if( post.handCount[player] != 2 + pre.handCount[player] ){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  170:			printf("ERROR: POST HAND COUNT WAS NOT INCREMENTED BY TWO CARDS.\n");
+call    0 never executed
+    #####:  171:			pass = 0;	
+        -:  172:		}
+        -:  173:
+    10000:  174:		printf("POST HAND COUNT: %i\n", post.handCount[player]);
+call    0 returned 100%
+        -:  175:	
+        -:  176:		//Check that the game had no issues.
+    10000:  177:		if(  returnVal != 0 ){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  178:			printf("ERROR:CALLED FN RETURNED AN ERROR.\n");
+call    0 never executed
+    #####:  179:			pass = 0;
+        -:  180:		}
+        -:  181:
+        -:  182:
+        -:  183:		//CHECK IF ALL TESTS PASSED.
+    10000:  184:		if( pass == 1 ){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+    10000:  185:			printf("ALL TESTS PASSED.\n");
+call    0 returned 100%
+    10000:  186:			passCtr++;
+        -:  187:		}else{
+    #####:  188:			printf("ERROR: TEST(S) FAILED.\n");
+call    0 never executed
+    #####:  189:			failedTests[testsCtr] = i;
+    #####:  190:			testsCtr++;
+        -:  191:		}
+        -:  192:
+        -:  193:		//RESET THE PASS BOOLEAN.
+    10000:  194:		pass = 1;	
+        -:  195:
+        -:  196:  	}
+        -:  197:
+        1:  198:	printf("%i passed out of  %i RUNS\n\n\n", passCtr, runs );
+call    0 returned 100%
+        -:  199:	int k;
+        1:  200:	for( k = 0; k < testsCtr; k++){
+branch  0 taken 0%
+branch  1 taken 100% (fallthrough)
+    #####:  201:		printf("FAILED: RUN %i", failedTests[k]);
+call    0 never executed
+        -:  202:	}
+        -:  203:	
+        1:  204:	return 0;
+        -:  205: 
+        -:  206:} 
+        -:  207:

@@ -1,3 +1,4 @@
+
 CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
@@ -29,11 +30,49 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
+unittestresults.out: unittest1.c unittest2.c cardtest1.c cardtest2.c dominion.o rngs.o interface.o
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "dimuzioa Assignment 3 Unit Test Results" > unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "" >> unittestresults.out
+	
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "unittest1" >> unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
+	unittest1 >> unittestresults.out
+	echo "" >> unittestresults.out
+	
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "unittest2" >> unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
+	unittest2 >> unittestresults.out
+	echo "" >> unittestresults.out
+	
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "cardtest1" >> unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o interface.o $(CFLAGS)
+	cardtest1 >> unittestresults.out
+	echo "" >> unittestresults.out
+	
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "cardtest2" >> unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o interface.o $(CFLAGS)
+	cardtest2 >> unittestresults.out
+	echo "" >> unittestresults.out
+	
+	echo "--------------------------------------------" >> unittestresults.out
+	echo "gcov results" >> unittestresults.out
+	echo "--------------------------------------------" >> unittestresults.out
+	gcov -f -b dominion.c >> unittestresults.out
+
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.out *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so

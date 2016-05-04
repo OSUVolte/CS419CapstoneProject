@@ -644,13 +644,18 @@ int getCost(int cardNumber)
 }
 
 void adventurerCard(struct gameState *state, int currentPlayer, int* temphand){
+	
+	int z = 0;
+	int drawntreasure = 0;
+	int cardDrawn;
+	
 	while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn = copper || cardDrawn = silver || cardDrawn = gold)
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
 	else{
 	  temphand[z]=cardDrawn;
@@ -665,6 +670,8 @@ void adventurerCard(struct gameState *state, int currentPlayer, int* temphand){
       return 0;
 }
 void smithyCard(struct gameState* state, int currentPlayer, int handPos){
+	
+	int i;
 	      //+3 Cards
       for (i = 0; i < 3; i++)
 	{
@@ -677,6 +684,9 @@ void smithyCard(struct gameState* state, int currentPlayer, int handPos){
 }
 
 void council_roomCard(struct gameState* state, int currentPlayer, int handPos){
+	
+	int i = 0;
+	
 	      //+4 Cards
       for (i = 0; i < 4; i++)
 	{
@@ -710,7 +720,7 @@ void villageCard(struct gameState* state, int currentPlayer, int handPos){
       return 0;
 }
 
-void stewardCard(struct gameState* state, int currentPlayer, int handPos){
+void stewardCard(struct gameState* state, int currentPlayer, int handPos, int choice1, int choice2, int choice3){
 	      if (choice1 == 1)
 	{
 	  //+2 cards
@@ -1003,7 +1013,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case steward:
-      stewardCard(state, currentPlayer, handPos);
+      stewardCard(state, currentPlayer, handPos, choice1, choice2, choice3);
       return 0;
 		
     case tribute:

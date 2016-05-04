@@ -1,0 +1,63 @@
+/*******************************************************************************
+** Filename: ProjectPartA.txt
+** Group Members:
+**  Osbaldo Esquivel (esquiveo)
+**  Preston From (fromp)
+**  Jason Loomis (loomisja)
+** Date: 5/8/16
+** Description: CS 362, Final Project, Part A
+**  Inspection of Apache Commons URLValidator testing.
+*******************************************************************************/
+
+=== Explain testIsValid Function of UrlValidator test code. ===
+
+The testIsValid function is an entrypoint for execution of unit testing of the UrlValidator.isValid method. URLValidator is one of the many input validation libraries available in the Apache Commons Validator suite of input validation tools. URLValidator is used for checking the validity of URL strings; the UrlValidator.isValid method is the workhorse that is called to perform this check.
+
+The testIsValid function generates a series of permutations of URLs to be checked by URLValidator.isValid. When it generates each URL, it also determines an expected result, whether URLValidator.isValid should find the generated URL to be valid or invalid. With this information, testIsValid then calls URLValidator.isValid, passing it the generated URL, and checking the result produced by URLValidator.isValid against the expected result. URLs that URLValidator.isValid finds to be valid are printed to the console.
+
+If URLValidator.isValid produces the expected result, the function continues testing, trying the next permutation. If it does NOT produce the expected result, the JUnit testing assertEquals causes an exception to be thrown that ends the test (and indicates that the test failed).
+
+
+=== Give how many total number of urls it is testing. Also, explain how it is building all the urls. ===
+
+For the purpose of validation, URLs are composed of 5 distinct parts--the scheme (e.g. http), the authority (e.g. a server hostname, like www.google.com), the port number (e.g. 80 for http), the path (to the resource requested), and the query (an extra string passed to the server).
+
+testIsValid makes use of pre-defined collections of these distinct parts to generate the URLs it is testing. The predefined collections consist of 9 choices for scheme, 19 choices for authority, 7 choices for port, 10 choices for path, and 3 choices for query.
+
+This is a total of 9 * 19 * 7 * 10 * 3 = 35910 permutations of URLs that it generates. Plus, before testIsValid starts generating URLs, it tests the following two URLs: http://www.google.com and http://www.google.com/
+
+So in TOTAL, testIsValid is testing 35912 URLs (assuming no test fails and throws an exception that causes the testing to end).
+
+testIsValid generates URLs simply by selecting one value from EACH of the collections of URL component parts (scheme, authority, port, path, and query) defined in the UrlValidatorTest.java class, and concatenating the values together into a single URL as follows: <scheme><authority><port><path><query>. Importantly, the pre-defined collections also include "" (blanks) that allow parts of the URL to be omitted.
+
+In addition to generating the URL, testIsValid also determines whether each URL it generates should be valid. For the purpose of validation, a URL is valid if all of its component parts are valid. To that end, each of the URL component parts in the pre-defined collections of are associated with a value indicating whether the component part is valid or not (presumably this validity is based on knowledge from the specification for URLs). When testIsValid generates a URL by concatenating the component parts, it also ANDs together the validities of each of the components to determine the overall validity of the URL. This is the expected result that is used to validate the result returned by URLValidator.isValid.
+
+
+=== Give an example of valid url being tested and an invalid url being tested by testIsValid() method. ===
+
+A valid URL (all component parts valid):
+http://www.google.com:80/test1?action=edit&mode=up
+
+comprised of the following component parts:
+scheme: http://
+authority: www.google.com
+port: :80
+path: /test1
+query: ?action=edit&mode=up
+
+An invalid URL:
+http://www.google.com:-1/..?action=edit&mode=up
+scheme: http://
+authority: www.google.com
+port: :-1 (invalid)
+path: /.. (invalid)
+query: ?action=edit&mode=up
+
+
+=== Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines. ===
+
+The "real world" test performed by URLValidator's testIsValid is not very different at all from the unit tests and card tests that we wrote for the Dominion code testing. These real world tests employ similar concepts and are of a similar complexity to the card and unit tests defined for the Dominion game.
+
+In testing the URLs, pre-defined information is used to define a URL and determine whether that URL should be valid. After the URLValidator.isValid method is run, a result is returned that can be compared to the expected result. Similarly, in the card and unit testing, the game state and players' hands are configured in a particular fashion and after the test (e.g. execution of a card effect), the game state and players' hands are checked for an expected outcome. In both cases, there are a well-defined set of rules--for URLs, the specification laid out in RFC 3986 and for Dominion, the game's rules as laid out by its creator (Donald Vaccarino) that define whether a string or state is valid or not.
+
+The primary difference is the "subject matter" of the tests and the complexity of the oracle that is used to determine whether the tests passed. In the case of the URLValidator, we are validating strings of characters; these strings of characters are known to either be valid URLs or invalid URLs (based on the validity of their component parts)--the oracle is simply a check of whether the expected URL validity matches the URL validity returned by URLValidator.isValid. In the case of the unit and card tests, we were validating the state of the Dominion game and the oracle is somewhat more complex--we are validating that the changes to the game state match our expectations (i.e. the game rules) and it requires checking a variety of values (e.g. number of cards in the current player's hand, number of discards, etc.)to make this determination.

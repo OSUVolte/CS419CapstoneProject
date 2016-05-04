@@ -783,8 +783,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(state, handPos, currentPlayer);
-      /*while(drawntreasure<2){
+      //return playAdventurer(state, handPos, currentPlayer);
+      while(drawntreasure<2){
         if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
           shuffle(currentPlayer, state);
         }
@@ -802,7 +802,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
         z=z-1;
       } 
-      return 0;*/
+      return 0;
 			
     case council_room:
       //+4 Cards
@@ -885,8 +885,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return -1;
 			
     case mine:
-      return playMine(state, handPos, currentPlayer, choice1, choice2);
-      /*j = state->hand[currentPlayer][choice1];  //store card we will trash
+      //return playMine(state, handPos, currentPlayer, choice1, choice2);
+      j = state->hand[currentPlayer][choice1];  //store card we will trash
 
       if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
@@ -918,11 +918,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	    }
 	}
 			
-      return 0;*/
+      return 0;
 			
     case remodel:
-      return playRemodel(state, handPos, currentPlayer, choice1, choice2);
-      /*j = state->hand[currentPlayer][choice1];  //store card we will trash
+      //return playRemodel(state, handPos, currentPlayer, choice1, choice2);
+      j = state->hand[currentPlayer][choice1];  //store card we will trash
 
       if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
 	{
@@ -945,11 +945,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	}
 
 
-      return 0;*/
+      return 0;
 		
     case smithy:
-      return playSmithy(state, handPos, currentPlayer);
-      /*//+3 Cards
+      //return playSmithy(state, handPos, currentPlayer);
+      //+3 Cards
       for (i = 0; i < 3; i++)
       {
         drawCard(currentPlayer, state);
@@ -957,11 +957,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
-      return 0;*/
+      return 0;
 		
     case village:
-      return playVillage(state, handPos, currentPlayer);
-      /*//+1 Card
+      //return playVillage(state, handPos, currentPlayer);
+      //+1 Card
       drawCard(currentPlayer, state);
 			
       //+2 Actions
@@ -969,7 +969,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
-      return 0;*/
+      return 0;
 		
     case baron:
       state->numBuys++;//Increase buys by 1!

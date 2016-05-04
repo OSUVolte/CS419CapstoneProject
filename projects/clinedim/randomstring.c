@@ -1,4 +1,7 @@
 /*
+	FileName:  randomstring.c
+	Author:    Marc Clinedinst
+
 	*** Introduction ***
 
 	This file contains my write up for the testme.c program, which is the second quiz for OSU CS 362.

@@ -1,8 +1,8 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
-default:  unittestresults.out
+default:  unittestresults.out randomtestadventurer.out randomtestcard.out
 
-unittestresults.out: unittest1.c dominion.o 
+unittestresults.out: unittest1.c dominion.o
 	echo "Result for running unit tests:" > unittestresults.out
 	echo "--------------------------------------------------------------------" >> unittestresults.out
 
@@ -66,6 +66,42 @@ unittestresults.out: unittest1.c dominion.o
 	echo "--------------------DOMINION CODE COVERAGE--------------------" >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	gcov dominion.c -b >> unittestresults.out
+	
+randomtestadventurer.out: randomtestadventurer.c dominion.o 
+	echo "Result for running random test:" > randomtestadventurer.out
+	echo "--------------------------------------------------------------------" >> randomtestadventurer.out
+
+	
+	echo "randomtestadventurer.c:" >> randomtestadventurer.out
+	echo "-------------------------RANDOM TESTER ADVENTURER---------------------------------" >> randomtestadventurer.out
+
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+	randomtestadventurer >> randomtestadventurer.out
+	gcov randomtestadventurer.c >> randomtestadventurer.out
+	gcov randomtestadventurer.c -b >> randomtestadventurer.out
+
+	echo "dominion.c:" >> unittestresults.out
+	echo "--------------------------DOMINION CODE COVERAGE---------------------------------------"
+	gcov dominion.c >> randomtestadventurer.out
+	gcov dominion.c -b >> randomtestadventurer.out
+
+randomtestcard.out: randomtestcard.c dominion.o 
+	echo "Result for running random test:" > randomtestcard.out
+	echo "--------------------------------------------------------------------" >> randomtestcard.out
+
+	
+	echo "randomtestcard.c:" >> randomtestcard.out
+	echo "-------------------------RANDOM TESTER SMITHY---------------------------------" >> randomtestcard.out
+
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+	randomtestcard >> randomtestcard.out
+	gcov randomtestcard.c >> randomtestcard.out
+	gcov randomtestcard.c -b >> randomtestcard.out
+
+	echo "dominion.c:" >> unittestresults.out
+	echo "--------------------------DOMINION CODE COVERAGE---------------------------------------"
+	gcov dominion.c >> randomtestcard.out
+	gcov dominion.c -b >> randomtestcard.out
 
 	
 
@@ -105,4 +141,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o tests.out unittest1 playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o *.out randomtestadventurer randomtestcard unittest1 playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so

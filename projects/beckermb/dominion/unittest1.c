@@ -47,4 +47,6 @@ int main () {
   } else {
     printf("FAIL: isGameOver returned false for game with three empty stacks.\n");
   }
+
+  return 0;
 }
