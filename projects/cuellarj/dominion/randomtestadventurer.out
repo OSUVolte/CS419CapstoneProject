@@ -1,0 +1,7960 @@
+TEST Adventurer Card.
+
+ TEST 1 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 2 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 3 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 4 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 5 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 6 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 7 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 8 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 9 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 10 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 11 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 12 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 13 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 14 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 15 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 16 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 17 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 18 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 19 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 20 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 21 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 22 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 23 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 24 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 25 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 26 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 27 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 28 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 29 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 30 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 31 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 32 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 33 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 34 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 35 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 36 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 37 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 38 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 39 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 40 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 41 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 42 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 43 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 44 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 45 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 46 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 47 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 48 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 49 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 50 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 51 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 52 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 53 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 54 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 55 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 56 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 57 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 58 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 59 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 60 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 61 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 62 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 63 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 64 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 65 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 66 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 67 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 68 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 69 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 70 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 71 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 72 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 73 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 74 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 75 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 76 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 77 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 78 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 79 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 80 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 81 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 82 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 83 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 84 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 85 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 86 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 87 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 88 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 89 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 90 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 91 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 92 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 93 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 94 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 95 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 96 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 97 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 98 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 99 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 100 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 101 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 102 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 103 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 104 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 105 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 106 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 107 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 108 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 109 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 110 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 111 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 112 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 113 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 114 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 115 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 116 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 117 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 118 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 119 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 120 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 121 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 122 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 123 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 124 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 125 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 126 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 127 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 128 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 129 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 130 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 131 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 132 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 133 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 134 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 135 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 136 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 137 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 138 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 139 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 140 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 141 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 142 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 143 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 144 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 145 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 146 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 147 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 148 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 149 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 150 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 151 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 152 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 153 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 154 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 155 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 156 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 157 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 158 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 159 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 160 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 161 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 162 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 163 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 164 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 165 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 166 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 167 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 168 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 169 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 170 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 171 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 172 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 173 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 174 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 175 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 176 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 177 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 178 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 179 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 180 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 181 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 182 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 183 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 184 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 185 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 186 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 187 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 188 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 189 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 190 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 191 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 192 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 193 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 194 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 195 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 196 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 197 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 198 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 199 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 200 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 201 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 202 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 203 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 204 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 205 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 206 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 207 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 208 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 209 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 210 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 211 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 212 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 213 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 214 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 215 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 216 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 217 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 218 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 219 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 220 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 221 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 222 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 223 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 224 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 225 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 226 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 227 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 228 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 229 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 230 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 231 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 232 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 233 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 234 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 235 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 236 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 237 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 238 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 239 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 240 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 241 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 242 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 243 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 244 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 245 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 246 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 247 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 248 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 249 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 250 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 251 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 252 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 253 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 254 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 255 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 256 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 257 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 258 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 259 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 260 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 261 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 262 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 263 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 264 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 265 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 266 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 267 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 268 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 269 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 270 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 271 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 272 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 273 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 274 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 275 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 276 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 277 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 278 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 279 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 280 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 281 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 282 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 283 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 284 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 285 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 286 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 287 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 288 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 289 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 290 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 291 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 292 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 293 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 294 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 295 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 296 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 297 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 298 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 299 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 300 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 301 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 302 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 303 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 304 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 305 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 306 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 307 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 308 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 309 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 310 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 311 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 312 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 313 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 314 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 315 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 316 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 317 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 318 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 319 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 320 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 321 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 322 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 323 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 324 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 325 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 326 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 327 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 328 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 329 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 330 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 331 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 332 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 333 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 334 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 335 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 336 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 337 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 338 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 339 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 340 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 341 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 342 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 343 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 344 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 345 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 346 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 347 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 348 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 349 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 350 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 351 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 352 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 353 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 354 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 355 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 356 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 357 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 358 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 359 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 360 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 361 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 362 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 363 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 364 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 365 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 366 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 367 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 368 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 369 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 370 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 371 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 372 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 373 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 374 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 375 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 376 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 377 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 378 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 379 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 380 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 381 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 382 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 383 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 384 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 385 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 386 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 387 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 388 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 389 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 390 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 391 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 392 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 393 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 394 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 395 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 396 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 397 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 398 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 399 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 400 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 401 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 402 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 403 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 404 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 405 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 406 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 407 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 408 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 409 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 410 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 411 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 412 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 413 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 414 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 415 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 416 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 417 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 418 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 419 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 420 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 421 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 422 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 423 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 424 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 425 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 426 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 427 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 428 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 429 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 430 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 431 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 432 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 433 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 434 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 435 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 436 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 437 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 438 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 439 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 440 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 441 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 442 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 443 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 444 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 445 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 446 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 447 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 448 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 449 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 450 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 451 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 452 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 453 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 454 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 455 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 456 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 457 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 458 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 459 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 460 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 461 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 462 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 463 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 464 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 465 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 466 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 467 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 468 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 469 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 470 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 471 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 472 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 473 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 474 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 475 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 476 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 477 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 478 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 479 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 480 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 481 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 482 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 483 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 484 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 485 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 486 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 487 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 488 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 489 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 490 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 491 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 492 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 493 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 494 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 495 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 496 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 497 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 498 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 499 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 500 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 501 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 502 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 503 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 504 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 505 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 506 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 507 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 508 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 509 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 510 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 511 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 512 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 513 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 514 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 515 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 516 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 517 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 518 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 519 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 520 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 521 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 522 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 523 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 524 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 525 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 526 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 527 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 528 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 529 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 530 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 531 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 532 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 533 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 534 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 535 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 536 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 537 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 538 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 539 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 540 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 541 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 542 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 543 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 544 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 545 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 546 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 547 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 548 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 549 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 550 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 551 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 552 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 553 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 554 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 555 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 556 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 557 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 558 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 559 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 560 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 561 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 562 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 563 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 564 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 565 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 566 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 567 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 568 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 569 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 570 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 571 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 572 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 573 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 574 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 575 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 576 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 577 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 578 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 579 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 580 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 581 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 582 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 583 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 584 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 585 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 586 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 587 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 588 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 589 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 590 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 591 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 592 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 593 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 594 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 595 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 596 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 597 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 598 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 599 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 600 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 601 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 602 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 603 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 604 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 605 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 606 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 607 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 608 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 609 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 610 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 611 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 612 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 613 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 614 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 615 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 616 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 617 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 618 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 619 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 620 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 621 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 622 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 623 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 624 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 625 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 626 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 627 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 628 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 629 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 630 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 631 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 632 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 633 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 634 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 635 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 636 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 637 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 638 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 639 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 640 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 641 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 642 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 643 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 644 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 645 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 646 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 647 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 648 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 649 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 650 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 651 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 652 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 653 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 654 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 655 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 656 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 657 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 658 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 659 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 660 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 661 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 662 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 663 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 664 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 665 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 666 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 667 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 668 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 669 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 670 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 671 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 672 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 673 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 674 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 675 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 676 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 677 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 678 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 679 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 680 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 681 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 682 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 683 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 684 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 685 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 686 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 687 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 688 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 689 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 690 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 691 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 692 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 693 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 694 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 695 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 696 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 697 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 698 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 699 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 700 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 701 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 702 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 703 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 704 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 705 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 706 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 707 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 708 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 709 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 710 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 711 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 712 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 713 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 714 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 715 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 716 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 717 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 718 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 719 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 720 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 721 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 722 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 723 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 724 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 725 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 726 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 727 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 728 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 729 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 730 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 731 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 732 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 733 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 734 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 735 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 736 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 737 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 738 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 739 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 740 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 741 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 742 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 743 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 744 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 745 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 746 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 747 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 748 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 749 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 750 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 751 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 752 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 753 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 754 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 755 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 756 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 757 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 758 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 759 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 760 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 761 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 762 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 763 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 764 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 765 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 766 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 767 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 768 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 769 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 770 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 771 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 772 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 773 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 774 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 775 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 776 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 777 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 778 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 779 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 780 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 781 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 782 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 783 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 784 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 785 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 786 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 787 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 788 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 789 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 790 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 791 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 792 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 793 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 794 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 795 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 796 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 797 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 798 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 799 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 800 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 801 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 802 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 803 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 804 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 805 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 806 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 807 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 808 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 809 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 810 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 811 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 812 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 813 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 814 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 815 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 816 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 817 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 818 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 819 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 820 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 821 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 822 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 823 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 824 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 825 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 826 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 827 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 828 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 829 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 830 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 831 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 832 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 833 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 834 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 835 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 836 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 837 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 838 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 839 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 840 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 841 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 842 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 843 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 844 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 845 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 846 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 847 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 848 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 849 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 850 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 851 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 852 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 853 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 854 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 855 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 856 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 857 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 858 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 859 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 860 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 861 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 862 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 863 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 864 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 865 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 866 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 867 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 868 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 869 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 870 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 871 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 872 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 873 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 874 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 875 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 876 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 877 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 878 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 879 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 880 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 881 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 882 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 883 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 884 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 885 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 886 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 887 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 888 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 889 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 890 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 891 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 892 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 893 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 894 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 895 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 896 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 897 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 898 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 899 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 900 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 901 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 902 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 903 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 904 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 905 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 906 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 907 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 908 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 909 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 910 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 911 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 912 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 913 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 914 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 915 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 916 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 917 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 918 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 919 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 920 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 921 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 922 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 923 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 924 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 925 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 926 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 927 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 928 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 929 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 930 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 931 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 932 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 933 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 934 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 935 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 936 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 937 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 938 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 939 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 940 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 941 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 942 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 943 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 944 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 945 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 946 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 947 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 948 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 949 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 950 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 951 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 952 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 953 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 954 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 955 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 956 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 957 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 958 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 959 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 960 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 961 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 962 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 963 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 964 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 965 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 966 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 967 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 968 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 969 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 970 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 971 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 972 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 973 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 974 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 975 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 976 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 977 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 978 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 979 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 980 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 981 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 982 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 983 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 984 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 985 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 986 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 987 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 988 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 989 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 990 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 991 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 992 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 993 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 994 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 995 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 996 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 997 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 998 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 999 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ TEST 1000 
+
+Seg Test Before callAdventurerCard.
+Seg Test After callAdventurerCard.
+SUCCESS: Game states are the same.
+
+ DONE 
+
+File 'dominion.c'
+Lines executed:6.80% of 559
+Branches executed:4.80% of 417
+Taken at least once:4.08% of 417
+Calls executed:3.19% of 94
+Creating 'dominion.c.gcov'
+
+        -:    0:Source:dominion.c
+        -:    0:Graph:dominion.gcno
+        -:    0:Data:dominion.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function compare called 0 returned 0% blocks executed 0%
+    #####:    8:int compare(const void* a, const void* b) {
+    #####:    9:  if (*(int*)a > *(int*)b)
+branch  0 never executed
+branch  1 never executed
+    #####:   10:    return 1;
+    #####:   11:  if (*(int*)a < *(int*)b)
+branch  0 never executed
+branch  1 never executed
+    #####:   12:    return -1;
+    #####:   13:  return 0;
+        -:   14:}
+        -:   15:
+function newGame called 0 returned 0% blocks executed 0%
+    #####:   16:struct gameState* newGame() {
+    #####:   17:  struct gameState* g = malloc(sizeof(struct gameState));
+    #####:   18:  return g;
+        -:   19:}
+        -:   20:
+function kingdomCards called 0 returned 0% blocks executed 0%
+    #####:   21:int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
+        -:   22:		  int k8, int k9, int k10) {
+    #####:   23:  int* k = malloc(10 * sizeof(int));
+    #####:   24:  k[0] = k1;
+    #####:   25:  k[1] = k2;
+    #####:   26:  k[2] = k3;
+    #####:   27:  k[3] = k4;
+    #####:   28:  k[4] = k5;
+    #####:   29:  k[5] = k6;
+    #####:   30:  k[6] = k7;
+    #####:   31:  k[7] = k8;
+    #####:   32:  k[8] = k9;
+    #####:   33:  k[9] = k10;
+    #####:   34:  return k;
+        -:   35:}
+        -:   36:
+function initializeGame called 0 returned 0% blocks executed 0%
+    #####:   37:int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+        -:   38:		   struct gameState *state) {
+        -:   39:
+        -:   40:  int i;
+        -:   41:  int j;
+        -:   42:  int it;			
+        -:   43:  //set up random number generator
+    #####:   44:  SelectStream(1);
+call    0 never executed
+    #####:   45:  PutSeed((long)randomSeed);
+call    0 never executed
+        -:   46:  
+        -:   47:  //check number of players
+    #####:   48:  if (numPlayers > MAX_PLAYERS || numPlayers < 2)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   49:    {
+    #####:   50:      return -1;
+        -:   51:    }
+        -:   52:
+        -:   53:  //set number of players
+    #####:   54:  state->numPlayers = numPlayers;
+        -:   55:
+        -:   56:  //check selected kingdom cards are different
+    #####:   57:  for (i = 0; i < 10; i++)
+branch  0 never executed
+branch  1 never executed
+        -:   58:    {
+    #####:   59:      for (j = 0; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:   60:        {
+    #####:   61:	  if (j != i && kingdomCards[j] == kingdomCards[i])
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   62:	    {
+    #####:   63:	      return -1;
+        -:   64:	    }
+        -:   65:        }
+        -:   66:    }
+        -:   67:
+        -:   68:
+        -:   69:  //initialize supply
+        -:   70:  ///////////////////////////////
+        -:   71:
+        -:   72:  //set number of Curse cards
+    #####:   73:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   74:    {
+    #####:   75:      state->supplyCount[curse] = 10;
+        -:   76:    }
+    #####:   77:  else if (numPlayers == 3)
+branch  0 never executed
+branch  1 never executed
+        -:   78:    {
+    #####:   79:      state->supplyCount[curse] = 20;
+        -:   80:    }
+        -:   81:  else
+        -:   82:    {
+    #####:   83:      state->supplyCount[curse] = 30;
+        -:   84:    }
+        -:   85:
+        -:   86:  //set number of Victory cards
+    #####:   87:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   88:    {
+    #####:   89:      state->supplyCount[estate] = 8;
+    #####:   90:      state->supplyCount[duchy] = 8;
+    #####:   91:      state->supplyCount[province] = 8;
+        -:   92:    }
+        -:   93:  else
+        -:   94:    {
+    #####:   95:      state->supplyCount[estate] = 12;
+    #####:   96:      state->supplyCount[duchy] = 12;
+    #####:   97:      state->supplyCount[province] = 12;
+        -:   98:    }
+        -:   99:
+        -:  100:  //set number of Treasure cards
+    #####:  101:  state->supplyCount[copper] = 60 - (7 * numPlayers);
+    #####:  102:  state->supplyCount[silver] = 40;
+    #####:  103:  state->supplyCount[gold] = 30;
+        -:  104:
+        -:  105:  //set number of Kingdom cards
+    #####:  106:  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
+branch  0 never executed
+branch  1 never executed
+        -:  107:    {
+    #####:  108:      for (j = 0; j < 10; j++)           		//loop chosen cards
+branch  0 never executed
+branch  1 never executed
+        -:  109:	{
+    #####:  110:	  if (kingdomCards[j] == i)
+branch  0 never executed
+branch  1 never executed
+        -:  111:	    {
+        -:  112:	      //check if card is a 'Victory' Kingdom card
+    #####:  113:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  114:		{
+    #####:  115:		  if (numPlayers == 2){ 
+branch  0 never executed
+branch  1 never executed
+    #####:  116:		    state->supplyCount[i] = 8; 
+        -:  117:		  }
+    #####:  118:		  else{ state->supplyCount[i] = 12; }
+        -:  119:		}
+        -:  120:	      else
+        -:  121:		{
+    #####:  122:		  state->supplyCount[i] = 10;
+        -:  123:		}
+    #####:  124:	      break;
+        -:  125:	    }
+        -:  126:	  else    //card is not in the set choosen for the game
+        -:  127:	    {
+    #####:  128:	      state->supplyCount[i] = -1;
+        -:  129:	    }
+        -:  130:	}
+        -:  131:
+        -:  132:    }
+        -:  133:
+        -:  134:  ////////////////////////
+        -:  135:  //supply intilization complete
+        -:  136:
+        -:  137:  //set player decks
+    #####:  138:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  139:    {
+    #####:  140:      state->deckCount[i] = 0;
+    #####:  141:      for (j = 0; j < 3; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  142:	{
+    #####:  143:	  state->deck[i][j] = estate;
+    #####:  144:	  state->deckCount[i]++;
+        -:  145:	}
+    #####:  146:      for (j = 3; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  147:	{
+    #####:  148:	  state->deck[i][j] = copper;
+    #####:  149:	  state->deckCount[i]++;		
+        -:  150:	}
+        -:  151:    }
+        -:  152:
+        -:  153:  //shuffle player decks
+    #####:  154:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  155:    {
+    #####:  156:      if ( shuffle(i, state) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  157:	{
+    #####:  158:	  return -1;
+        -:  159:	}
+        -:  160:    }
+        -:  161:
+        -:  162:  //draw player hands
+    #####:  163:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  164:    {  
+        -:  165:      //initialize hand size to zero
+    #####:  166:      state->handCount[i] = 0;
+    #####:  167:      state->discardCount[i] = 0;
+        -:  168:      //draw 5 cards
+        -:  169:      // for (j = 0; j < 5; j++)
+        -:  170:      //	{
+        -:  171:      //	  drawCard(i, state);
+        -:  172:      //	}
+        -:  173:    }
+        -:  174:  
+        -:  175:  //set embargo tokens to 0 for all supply piles
+    #####:  176:  for (i = 0; i <= treasure_map; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  177:    {
+    #####:  178:      state->embargoTokens[i] = 0;
+        -:  179:    }
+        -:  180:
+        -:  181:  //initialize first player's turn
+    #####:  182:  state->outpostPlayed = 0;
+    #####:  183:  state->phase = 0;
+    #####:  184:  state->numActions = 1;
+    #####:  185:  state->numBuys = 1;
+    #####:  186:  state->playedCardCount = 0;
+    #####:  187:  state->whoseTurn = 0;
+    #####:  188:  state->handCount[state->whoseTurn] = 0;
+        -:  189:  //int it; move to top
+        -:  190:
+        -:  191:  //Moved draw cards to here, only drawing at the start of a turn
+    #####:  192:  for (it = 0; it < 5; it++){
+branch  0 never executed
+branch  1 never executed
+    #####:  193:    drawCard(state->whoseTurn, state);
+call    0 never executed
+        -:  194:  }
+        -:  195:
+    #####:  196:  updateCoins(state->whoseTurn, state, 0);
+call    0 never executed
+        -:  197:
+    #####:  198:  return 0;
+        -:  199:}
+        -:  200:
+function shuffle called 1440 returned 100% blocks executed 25%
+     1440:  201:int shuffle(int player, struct gameState *state) {
+        -:  202: 
+        -:  203:
+        -:  204:  int newDeck[MAX_DECK];
+     1440:  205:  int newDeckPos = 0;
+        -:  206:  int card;
+        -:  207:  int i;
+        -:  208:
+     1440:  209:  if (state->deckCount[player] < 1)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+     1440:  210:    return -1;
+    #####:  211:  qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
+call    0 never executed
+        -:  212:  /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
+        -:  213:
+    #####:  214:  while (state->deckCount[player] > 0) {
+branch  0 never executed
+branch  1 never executed
+    #####:  215:    card = floor(Random() * state->deckCount[player]);
+call    0 never executed
+    #####:  216:    newDeck[newDeckPos] = state->deck[player][card];
+    #####:  217:    newDeckPos++;
+    #####:  218:    for (i = card; i < state->deckCount[player]-1; i++) {
+branch  0 never executed
+branch  1 never executed
+    #####:  219:      state->deck[player][i] = state->deck[player][i+1];
+        -:  220:    }
+    #####:  221:    state->deckCount[player]--;
+        -:  222:  }
+    #####:  223:  for (i = 0; i < newDeckPos; i++) {
+branch  0 never executed
+branch  1 never executed
+    #####:  224:    state->deck[player][i] = newDeck[i];
+    #####:  225:    state->deckCount[player]++;
+        -:  226:  }
+        -:  227:
+    #####:  228:  return 0;
+        -:  229:}
+        -:  230:
+function playCard called 0 returned 0% blocks executed 0%
+    #####:  231:int playCard(int handPos, int choice1, int choice2, int choice3, struct gameState *state) 
+        -:  232:{	
+        -:  233:  int card;
+    #####:  234:  int coin_bonus = 0; 		//tracks coins gain from actions
+        -:  235:
+        -:  236:  //check if it is the right phase
+    #####:  237:  if (state->phase != 0)
+branch  0 never executed
+branch  1 never executed
+        -:  238:    {
+    #####:  239:      return -1;
+        -:  240:    }
+        -:  241:	
+        -:  242:  //check if player has enough actions
+    #####:  243:  if ( state->numActions < 1 )
+branch  0 never executed
+branch  1 never executed
+        -:  244:    {
+    #####:  245:      return -1;
+        -:  246:    }
+        -:  247:	
+        -:  248:  //get card played
+    #####:  249:  card = handCard(handPos, state);
+call    0 never executed
+        -:  250:	
+        -:  251:  //check if selected card is an action
+    #####:  252:  if ( card < adventurer || card > treasure_map )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  253:    {
+    #####:  254:      return -1;
+        -:  255:    }
+        -:  256:	
+        -:  257:  //play card
+    #####:  258:  if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  259:    {
+    #####:  260:      return -1;
+        -:  261:    }
+        -:  262:	
+        -:  263:  //reduce number of actions
+    #####:  264:  state->numActions--;
+        -:  265:
+        -:  266:  //update coins (Treasure cards may be added with card draws)
+    #####:  267:  updateCoins(state->whoseTurn, state, coin_bonus);
+call    0 never executed
+        -:  268:	
+    #####:  269:  return 0;
+        -:  270:}
+        -:  271:
+function buyCard called 0 returned 0% blocks executed 0%
+    #####:  272:int buyCard(int supplyPos, struct gameState *state) {
+        -:  273:  int who;
+        -:  274:  if (DEBUG){
+        -:  275:    printf("Entering buyCard...\n");
+        -:  276:  }
+        -:  277:
+        -:  278:  // I don't know what to do about the phase thing.
+        -:  279:
+    #####:  280:  who = state->whoseTurn;
+        -:  281:
+    #####:  282:  if (state->numBuys < 1){
+branch  0 never executed
+branch  1 never executed
+        -:  283:    if (DEBUG)
+        -:  284:      printf("You do not have any buys left\n");
+    #####:  285:    return -1;
+    #####:  286:  } else if (supplyCount(supplyPos, state) <1){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  287:    if (DEBUG)
+        -:  288:      printf("There are not any of that type of card left\n");
+    #####:  289:    return -1;
+    #####:  290:  } else if (state->coins < getCost(supplyPos)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  291:    if (DEBUG) 
+        -:  292:      printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
+    #####:  293:    return -1;
+        -:  294:  } else {
+    #####:  295:    state->phase=1;
+        -:  296:    //state->supplyCount[supplyPos]--;
+    #####:  297:    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+call    0 never executed
+        -:  298:  
+    #####:  299:    state->coins = (state->coins) - (getCost(supplyPos));
+call    0 never executed
+    #####:  300:    state->numBuys--;
+        -:  301:    if (DEBUG)
+        -:  302:      printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
+        -:  303:  }
+        -:  304:
+        -:  305:  //state->discard[who][state->discardCount[who]] = supplyPos;
+        -:  306:  //state->discardCount[who]++;
+        -:  307:    
+    #####:  308:  return 0;
+        -:  309:}
+        -:  310:
+function numHandCards called 0 returned 0% blocks executed 0%
+    #####:  311:int numHandCards(struct gameState *state) {
+    #####:  312:  return state->handCount[ whoseTurn(state) ];
+call    0 never executed
+        -:  313:}
+        -:  314:
+function handCard called 0 returned 0% blocks executed 0%
+    #####:  315:int handCard(int handPos, struct gameState *state) {
+    #####:  316:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  317:  return state->hand[currentPlayer][handPos];
+        -:  318:}
+        -:  319:
+function supplyCount called 0 returned 0% blocks executed 0%
+    #####:  320:int supplyCount(int card, struct gameState *state) {
+    #####:  321:  return state->supplyCount[card];
+        -:  322:}
+        -:  323:
+function fullDeckCount called 0 returned 0% blocks executed 0%
+    #####:  324:int fullDeckCount(int player, int card, struct gameState *state) {
+        -:  325:  int i;
+    #####:  326:  int count = 0;
+        -:  327:
+    #####:  328:  for (i = 0; i < state->deckCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  329:    {
+    #####:  330:      if (state->deck[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  331:    }
+        -:  332:
+    #####:  333:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  334:    {
+    #####:  335:      if (state->hand[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  336:    }
+        -:  337:
+    #####:  338:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  339:    {
+    #####:  340:      if (state->discard[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  341:    }
+        -:  342:
+    #####:  343:  return count;
+        -:  344:}
+        -:  345:
+function whoseTurn called 0 returned 0% blocks executed 0%
+    #####:  346:int whoseTurn(struct gameState *state) {
+    #####:  347:  return state->whoseTurn;
+        -:  348:}
+        -:  349:
+function endTurn called 0 returned 0% blocks executed 0%
+    #####:  350:int endTurn(struct gameState *state) {
+        -:  351:  int k;
+        -:  352:  int i;
+    #####:  353:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+        -:  354:  
+        -:  355:  //Discard hand
+    #####:  356:  for (i = 0; i < state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  357:    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
+    #####:  358:    state->hand[currentPlayer][i] = -1;//Set card to -1
+        -:  359:  }
+    #####:  360:  state->handCount[currentPlayer] = 0;//Reset hand count
+        -:  361:    
+        -:  362:  //Code for determining the player
+    #####:  363:  if (currentPlayer < (state->numPlayers - 1)){ 
+branch  0 never executed
+branch  1 never executed
+    #####:  364:    state->whoseTurn = currentPlayer + 1;//Still safe to increment
+        -:  365:  }
+        -:  366:  else{
+    #####:  367:    state->whoseTurn = 0;//Max player has been reached, loop back around to player 1
+        -:  368:  }
+        -:  369:
+    #####:  370:  state->outpostPlayed = 0;
+    #####:  371:  state->phase = 0;
+    #####:  372:  state->numActions = 1;
+    #####:  373:  state->coins = 0;
+    #####:  374:  state->numBuys = 1;
+    #####:  375:  state->playedCardCount = 0;
+    #####:  376:  state->handCount[state->whoseTurn] = 0;
+        -:  377:
+        -:  378:  //int k; move to top
+        -:  379:  //Next player draws hand
+    #####:  380:  for (k = 0; k < 5; k++){
+branch  0 never executed
+branch  1 never executed
+    #####:  381:    drawCard(state->whoseTurn, state);//Draw a card
+call    0 never executed
+        -:  382:  }
+        -:  383:
+        -:  384:  //Update money
+    #####:  385:  updateCoins(state->whoseTurn, state , 0);
+call    0 never executed
+        -:  386:
+    #####:  387:  return 0;
+        -:  388:}
+        -:  389:
+function isGameOver called 0 returned 0% blocks executed 0%
+    #####:  390:int isGameOver(struct gameState *state) {
+        -:  391:  int i;
+        -:  392:  int j;
+        -:  393:	
+        -:  394:  //if stack of Province cards is empty, the game ends
+    #####:  395:  if (state->supplyCount[province] == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  396:    {
+    #####:  397:      return 1;
+        -:  398:    }
+        -:  399:
+        -:  400:  //if three supply pile are at 0, the game ends
+    #####:  401:  j = 0;
+    #####:  402:  for (i = 0; i < 25; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  403:    {
+    #####:  404:      if (state->supplyCount[i] == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  405:	{
+    #####:  406:	  j++;
+        -:  407:	}
+        -:  408:    }
+    #####:  409:  if ( j >= 3)
+branch  0 never executed
+branch  1 never executed
+        -:  410:    {
+    #####:  411:      return 1;
+        -:  412:    }
+        -:  413:
+    #####:  414:  return 0;
+        -:  415:}
+        -:  416:
+function scoreFor called 0 returned 0% blocks executed 0%
+    #####:  417:int scoreFor (int player, struct gameState *state) {
+        -:  418:
+        -:  419:  int i;
+    #####:  420:  int score = 0;
+        -:  421:  //score from hand
+    #####:  422:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  423:    {
+    #####:  424:      if (state->hand[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  425:      if (state->hand[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  426:      if (state->hand[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  427:      if (state->hand[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  428:      if (state->hand[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  429:      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  430:    }
+        -:  431:
+        -:  432:  //score from discard
+    #####:  433:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  434:    {
+    #####:  435:      if (state->discard[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  436:      if (state->discard[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  437:      if (state->discard[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  438:      if (state->discard[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  439:      if (state->discard[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  440:      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  441:    }
+        -:  442:
+        -:  443:  //score from deck
+    #####:  444:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  445:    {
+    #####:  446:      if (state->deck[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  447:      if (state->deck[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  448:      if (state->deck[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  449:      if (state->deck[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  450:      if (state->deck[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  451:      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  452:    }
+        -:  453:
+    #####:  454:  return score;
+        -:  455:}
+        -:  456:
+function getWinners called 0 returned 0% blocks executed 0%
+    #####:  457:int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+        -:  458:  int i;	
+        -:  459:  int j;
+        -:  460:  int highScore;
+        -:  461:  int currentPlayer;
+        -:  462:
+        -:  463:  //get score for each player
+    #####:  464:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  465:    {
+        -:  466:      //set unused player scores to -9999
+    #####:  467:      if (i >= state->numPlayers)
+branch  0 never executed
+branch  1 never executed
+        -:  468:	{
+    #####:  469:	  players[i] = -9999;
+        -:  470:	}
+        -:  471:      else
+        -:  472:	{
+    #####:  473:	  players[i] = scoreFor (i, state);
+call    0 never executed
+        -:  474:	}
+        -:  475:    }
+        -:  476:
+        -:  477:  //find highest score
+    #####:  478:  j = 0;
+    #####:  479:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  480:    {
+    #####:  481:      if (players[i] > players[j])
+branch  0 never executed
+branch  1 never executed
+        -:  482:	{
+    #####:  483:	  j = i;
+        -:  484:	}
+        -:  485:    }
+    #####:  486:  highScore = players[j];
+        -:  487:
+        -:  488:  //add 1 to players who had less turns
+    #####:  489:  currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  490:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  491:    {
+    #####:  492:      if ( players[i] == highScore && i > currentPlayer )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  493:	{
+    #####:  494:	  players[i]++;
+        -:  495:	}
+        -:  496:    }
+        -:  497:
+        -:  498:  //find new highest score
+    #####:  499:  j = 0;
+    #####:  500:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  501:    {
+    #####:  502:      if ( players[i] > players[j] )
+branch  0 never executed
+branch  1 never executed
+        -:  503:	{
+    #####:  504:	  j = i;
+        -:  505:	}
+        -:  506:    }
+    #####:  507:  highScore = players[j];
+        -:  508:
+        -:  509:  //set winners in array to 1 and rest to 0
+    #####:  510:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  511:    {
+    #####:  512:      if ( players[i] == highScore )
+branch  0 never executed
+branch  1 never executed
+        -:  513:	{
+    #####:  514:	  players[i] = 1;
+        -:  515:	}
+        -:  516:      else
+        -:  517:	{
+    #####:  518:	  players[i] = 0;
+        -:  519:	}
+        -:  520:    }
+        -:  521:
+    #####:  522:  return 0;
+        -:  523:}
+        -:  524:
+function drawCard called 35764 returned 100% blocks executed 85%
+    35764:  525:int drawCard(int player, struct gameState *state)
+        -:  526:{	int count;
+        -:  527:  int deckCounter;
+    35764:  528:  if (state->deckCount[player] <= 0){//Deck is empty
+branch  0 taken 2% (fallthrough)
+branch  1 taken 98%
+        -:  529:    
+        -:  530:    //Step 1 Shuffle the discard pile back into a deck
+        -:  531:    int i;
+        -:  532:    //Move discard to deck
+      720:  533:    for (i = 0; i < state->discardCount[player];i++){
+branch  0 taken 0%
+branch  1 taken 100% (fallthrough)
+    #####:  534:      state->deck[player][i] = state->discard[player][i];
+    #####:  535:      state->discard[player][i] = -1;
+        -:  536:    }
+        -:  537:
+      720:  538:    state->deckCount[player] = state->discardCount[player];
+      720:  539:    state->discardCount[player] = 0;//Reset discard
+        -:  540:
+        -:  541:    //Shufffle the deck
+      720:  542:    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
+call    0 returned 100%
+        -:  543:   
+        -:  544:    if (DEBUG){//Debug statements
+        -:  545:      printf("Deck count now: %d\n", state->deckCount[player]);
+        -:  546:    }
+        -:  547:    
+      720:  548:    state->discardCount[player] = 0;
+        -:  549:
+        -:  550:    //Step 2 Draw Card
+      720:  551:    count = state->handCount[player];//Get current player's hand count
+        -:  552:    
+        -:  553:    if (DEBUG){//Debug statements
+        -:  554:      printf("Current hand count: %d\n", count);
+        -:  555:    }
+        -:  556:    
+      720:  557:    deckCounter = state->deckCount[player];//Create a holder for the deck count
+        -:  558:
+      720:  559:    if (deckCounter == 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+      720:  560:      return -1;
+        -:  561:
+    #####:  562:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
+    #####:  563:    state->deckCount[player]--;
+    #####:  564:    state->handCount[player]++;//Increment hand count
+        -:  565:  }
+        -:  566:
+        -:  567:  else{
+    35044:  568:    int count = state->handCount[player];//Get current hand count for player
+        -:  569:    int deckCounter;
+        -:  570:    if (DEBUG){//Debug statements
+        -:  571:      printf("Current hand count: %d\n", count);
+        -:  572:    }
+        -:  573:
+    35044:  574:    deckCounter = state->deckCount[player];//Create holder for the deck count
+    35044:  575:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+    35044:  576:    state->deckCount[player]--;
+    35044:  577:    state->handCount[player]++;//Increment hand count
+        -:  578:  }
+        -:  579:
+    35044:  580:  return 0;
+        -:  581:}
+        -:  582:
+function getCost called 0 returned 0% blocks executed 0%
+    #####:  583:int getCost(int cardNumber)
+        -:  584:{
+    #####:  585:  switch( cardNumber ) 
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+branch 20 never executed
+branch 21 never executed
+branch 22 never executed
+branch 23 never executed
+branch 24 never executed
+branch 25 never executed
+branch 26 never executed
+branch 27 never executed
+        -:  586:    {
+        -:  587:    case curse:
+    #####:  588:      return 0;
+        -:  589:    case estate:
+    #####:  590:      return 2;
+        -:  591:    case duchy:
+    #####:  592:      return 5;
+        -:  593:    case province:
+    #####:  594:      return 8;
+        -:  595:    case copper:
+    #####:  596:      return 0;
+        -:  597:    case silver:
+    #####:  598:      return 3;
+        -:  599:    case gold:
+    #####:  600:      return 6;
+        -:  601:    case adventurer:
+    #####:  602:      return 6;
+        -:  603:    case council_room:
+    #####:  604:      return 5;
+        -:  605:    case feast:
+    #####:  606:      return 4;
+        -:  607:    case gardens:
+    #####:  608:      return 4;
+        -:  609:    case mine:
+    #####:  610:      return 5;
+        -:  611:    case remodel:
+    #####:  612:      return 4;
+        -:  613:    case smithy:
+    #####:  614:      return 4;
+        -:  615:    case village:
+    #####:  616:      return 3;
+        -:  617:    case baron:
+    #####:  618:      return 4;
+        -:  619:    case great_hall:
+    #####:  620:      return 3;
+        -:  621:    case minion:
+    #####:  622:      return 5;
+        -:  623:    case steward:
+    #####:  624:      return 3;
+        -:  625:    case tribute:
+    #####:  626:      return 5;
+        -:  627:    case ambassador:
+    #####:  628:      return 3;
+        -:  629:    case cutpurse:
+    #####:  630:      return 4;
+        -:  631:    case embargo: 
+    #####:  632:      return 2;
+        -:  633:    case outpost:
+    #####:  634:      return 5;
+        -:  635:    case salvager:
+    #####:  636:      return 4;
+        -:  637:    case sea_hag:
+    #####:  638:      return 4;
+        -:  639:    case treasure_map:
+    #####:  640:      return 4;
+        -:  641:    }
+        -:  642:	
+    #####:  643:  return -1;
+        -:  644:}
+        -:  645:
+        -:  646:// BOOKMARKER1
+        -:  647:// START - Modified Cards
+function callAdventurerCard called 1000 returned 100% blocks executed 100%
+     1000:  648:int callAdventurerCard(struct gameState *state, int currentPlayer){
+        -:  649:    int cardDrawn;
+     1000:  650:    int drawntreasure = 0;
+     1000:  651:    int z = 0;
+        -:  652:    int temphand[MAX_HAND];
+        -:  653:
+    19882:  654:    while(drawntreasure<2){
+branch  0 taken 95%
+branch  1 taken 5% (fallthrough)
+    17882:  655:        if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
+branch  0 taken 2% (fallthrough)
+branch  1 taken 98%
+      360:  656:          shuffle(currentPlayer, state);
+call    0 returned 100%
+        -:  657:        }
+    17882:  658:        drawCard(currentPlayer, state);
+call    0 returned 100%
+    17882:  659:        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+    17882:  660:        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+branch  4 taken 4% (fallthrough)
+branch  5 taken 96%
+     2000:  661:          drawntreasure++;
+        -:  662:        else{
+    15882:  663:          temphand[z]=cardDrawn;
+    15882:  664:          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+    15882:  665:          z++;
+        -:  666:        }
+        -:  667:    }
+        -:  668:
+    17882:  669:    while(z-1>=0){
+branch  0 taken 94%
+branch  1 taken 6% (fallthrough)
+    15882:  670:        state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    15882:  671:        z=z-1;
+        -:  672:    }
+        -:  673:
+     1000:  674:    return 0;
+        -:  675:  }
+        -:  676:
+        -:  677:
+function callSmithyCard called 0 returned 0% blocks executed 0%
+    #####:  678:int callSmithyCard(struct gameState *state, int currentPlayer, int handPos){
+        -:  679:  int i;
+        -:  680:  
+        -:  681:  //+3 Cards
+    #####:  682:  for (i = 0; i < 6; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  683:    drawCard(currentPlayer, state);
+call    0 never executed
+        -:  684:  }
+        -:  685:  
+        -:  686:  //discard card from hand
+    #####:  687:  discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  688:  return 0;
+        -:  689:}
+        -:  690:
+function callVillageCard called 0 returned 0% blocks executed 0%
+    #####:  691:int callVillageCard(int currentPlayer, struct gameState *state, int handPos){
+        -:  692:     
+        -:  693:     
+        -:  694:     
+        -:  695:      //+2 Actions
+    #####:  696:      state->numActions = state->numActions + 2;
+        -:  697:      
+        -:  698:      //discard played card from hand
+    #####:  699:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  700:      return 0;
+        -:  701:}
+        -:  702:
+function callEmbargoCard called 0 returned 0% blocks executed 0%
+    #####:  703:int callEmbargoCard(struct gameState *state, int choice1, int currentPlayer, int handPos){ 
+        -:  704:      //+2 Coins
+    #####:  705:      state->coins = state->coins;
+        -:  706:      
+        -:  707:      //see if selected pile is in play
+    #####:  708:      if ( state->supplyCount[choice1] == -1 )
+branch  0 never executed
+branch  1 never executed
+        -:  709:  {
+    #####:  710:    return -1;
+        -:  711:  }
+        -:  712:      
+        -:  713:      //add embargo token to selected supply pile
+    #####:  714:      state->embargoTokens[choice1]++;
+        -:  715:      
+        -:  716:      //trash card
+    #####:  717:      discardCard(handPos, currentPlayer, state, 1);    
+call    0 never executed
+    #####:  718:      return 0;
+        -:  719:}
+        -:  720:
+        -:  721://This one does not have any bugs ... at least it shouldn't 
+function callOutpostCard called 0 returned 0% blocks executed 0%
+    #####:  722:int callOutpostCard(struct gameState *state, int handPos, int currentPlayer){
+        -:  723:  //set outpost flag
+    #####:  724:  state->outpostPlayed++;
+        -:  725:  
+        -:  726:  //discard card
+    #####:  727:  discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  728:  return 0;
+        -:  729:}
+        -:  730:
+        -:  731:// END - Modified Cards
+        -:  732:
+        -:  733:
+function cardEffect called 0 returned 0% blocks executed 0%
+    #####:  734:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+        -:  735:{
+        -:  736:  int i;
+        -:  737:  int j;
+        -:  738:  int k;
+        -:  739:  int x;
+        -:  740:  int index;
+    #####:  741:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  742:  int nextPlayer = currentPlayer + 1;
+        -:  743:
+    #####:  744:  int tributeRevealedCards[2] = {-1, -1};
+        -:  745:  int temphand[MAX_HAND];// moved above the if statement
+    #####:  746:  int drawntreasure=0;
+        -:  747:  int cardDrawn;
+    #####:  748:  int z = 0;// this is the counter for the temp hand
+    #####:  749:  if (nextPlayer > (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  750:    nextPlayer = 0;
+        -:  751:  }
+        -:  752:  
+        -:  753:	
+        -:  754:  //uses switch to select card and perform actions
+    #####:  755:  switch( card ) 
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+branch 20 never executed
+        -:  756:    {
+        -:  757:    case adventurer:
+    #####:  758:      return callAdventurerCard(state, currentPlayer);
+call    0 never executed
+        -:  759:			
+        -:  760:    case council_room:
+        -:  761:      //+4 Cards
+    #####:  762:      for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  763:	{
+    #####:  764:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -:  765:	}
+        -:  766:			
+        -:  767:      //+1 Buy
+    #####:  768:      state->numBuys++;
+        -:  769:			
+        -:  770:      //Each other player draws a card
+    #####:  771:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  772:	{
+    #####:  773:	  if ( i != currentPlayer )
+branch  0 never executed
+branch  1 never executed
+        -:  774:	    {
+    #####:  775:	      drawCard(i, state);
+call    0 never executed
+        -:  776:	    }
+        -:  777:	}
+        -:  778:			
+        -:  779:      //put played card in played card pile
+    #####:  780:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  781:			
+    #####:  782:      return 0;
+        -:  783:			
+        -:  784:    case feast:
+        -:  785:      //gain card with cost up to 5
+        -:  786:      //Backup hand
+    #####:  787:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  788:	temphand[i] = state->hand[currentPlayer][i];//Backup card
+    #####:  789:	state->hand[currentPlayer][i] = -1;//Set to nothing
+        -:  790:      }
+        -:  791:      //Backup hand
+        -:  792:
+        -:  793:      //Update Coins for Buy
+    #####:  794:      updateCoins(currentPlayer, state, 5);
+call    0 never executed
+    #####:  795:      x = 1;//Condition to loop on
+    #####:  796:      while( x == 1) {//Buy one card
+branch  0 never executed
+branch  1 never executed
+    #####:  797:	if (supplyCount(choice1, state) <= 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  798:	  if (DEBUG)
+        -:  799:	    printf("None of that card left, sorry!\n");
+        -:  800:
+        -:  801:	  if (DEBUG){
+        -:  802:	    printf("Cards Left: %d\n", supplyCount(choice1, state));
+        -:  803:	  }
+        -:  804:	}
+    #####:  805:	else if (state->coins < getCost(choice1)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  806:	  printf("That card is too expensive!\n");
+call    0 never executed
+        -:  807:
+        -:  808:	  if (DEBUG){
+        -:  809:	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
+        -:  810:	  }
+        -:  811:	}
+        -:  812:	else{
+        -:  813:
+        -:  814:	  if (DEBUG){
+        -:  815:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  816:	  }
+        -:  817:
+    #####:  818:	  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+call    0 never executed
+    #####:  819:	  x = 0;//No more buying cards
+        -:  820:
+        -:  821:	  if (DEBUG){
+        -:  822:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  823:	  }
+        -:  824:
+        -:  825:	}
+        -:  826:      }     
+        -:  827:
+        -:  828:      //Reset Hand
+    #####:  829:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  830:	state->hand[currentPlayer][i] = temphand[i];
+    #####:  831:	temphand[i] = -1;
+        -:  832:      }
+        -:  833:      //Reset Hand
+        -:  834:      			
+    #####:  835:      return 0;
+        -:  836:			
+        -:  837:    case gardens:
+    #####:  838:      return -1;
+        -:  839:			
+        -:  840:    case mine:
+    #####:  841:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  842:
+    #####:  843:      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  844:	{
+    #####:  845:	  return -1;
+        -:  846:	}
+        -:  847:		
+    #####:  848:      if (choice2 > treasure_map || choice2 < curse)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  849:	{
+    #####:  850:	  return -1;
+        -:  851:	}
+        -:  852:
+    #####:  853:      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  854:	{
+    #####:  855:	  return -1;
+        -:  856:	}
+        -:  857:
+    #####:  858:      gainCard(choice2, state, 2, currentPlayer);
+call    0 never executed
+        -:  859:
+        -:  860:      //discard card from hand
+    #####:  861:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  862:
+        -:  863:      //discard trashed card
+    #####:  864:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  865:	{
+    #####:  866:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  867:	    {
+    #####:  868:	      discardCard(i, currentPlayer, state, 0);			
+call    0 never executed
+    #####:  869:	      break;
+        -:  870:	    }
+        -:  871:	}
+        -:  872:			
+    #####:  873:      return 0;
+        -:  874:			
+        -:  875:    case remodel:
+    #####:  876:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  877:
+    #####:  878:      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  879:	{
+    #####:  880:	  return -1;
+        -:  881:	}
+        -:  882:
+    #####:  883:      gainCard(choice2, state, 0, currentPlayer);
+call    0 never executed
+        -:  884:
+        -:  885:      //discard card from hand
+    #####:  886:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  887:
+        -:  888:      //discard trashed card
+    #####:  889:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  890:	{
+    #####:  891:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  892:	    {
+    #####:  893:	      discardCard(i, currentPlayer, state, 0);			
+call    0 never executed
+    #####:  894:	      break;
+        -:  895:	    }
+        -:  896:	}
+        -:  897:
+        -:  898:
+    #####:  899:      return 0;
+        -:  900:		
+        -:  901:    case smithy:
+    #####:  902:      return callSmithyCard(state, currentPlayer, handPos);
+call    0 never executed
+        -:  903:		
+        -:  904:    case village:
+    #####:  905:      return callVillageCard(currentPlayer, state, handPos);
+call    0 never executed
+        -:  906:		
+        -:  907:    case baron:
+    #####:  908:      state->numBuys++;//Increase buys by 1!
+    #####:  909:      if (choice1 > 0){//Boolean true or going to discard an estate
+branch  0 never executed
+branch  1 never executed
+    #####:  910:	int p = 0;//Iterator for hand!
+    #####:  911:	int card_not_discarded = 1;//Flag for discard set!
+    #####:  912:	while(card_not_discarded){
+branch  0 never executed
+branch  1 never executed
+    #####:  913:	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
+branch  0 never executed
+branch  1 never executed
+    #####:  914:	    state->coins += 4;//Add 4 coins to the amount of coins
+    #####:  915:	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
+    #####:  916:	    state->discardCount[currentPlayer]++;
+    #####:  917:	    for (;p < state->handCount[currentPlayer]; p++){
+branch  0 never executed
+branch  1 never executed
+    #####:  918:	      state->hand[currentPlayer][p] = state->hand[currentPlayer][p+1];
+        -:  919:	    }
+    #####:  920:	    state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
+    #####:  921:	    state->handCount[currentPlayer]--;
+    #####:  922:	    card_not_discarded = 0;//Exit the loop
+        -:  923:	  }
+    #####:  924:	  else if (p > state->handCount[currentPlayer]){
+branch  0 never executed
+branch  1 never executed
+        -:  925:	    if(DEBUG) {
+        -:  926:	      printf("No estate cards in your hand, invalid choice\n");
+        -:  927:	      printf("Must gain an estate if there are any\n");
+        -:  928:	    }
+    #####:  929:	    if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  930:	      gainCard(estate, state, 0, currentPlayer);
+call    0 never executed
+    #####:  931:	      state->supplyCount[estate]--;//Decrement estates
+    #####:  932:	      if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  933:		isGameOver(state);
+call    0 never executed
+        -:  934:	      }
+        -:  935:	    }
+    #####:  936:	    card_not_discarded = 0;//Exit the loop
+        -:  937:	  }
+        -:  938:			    
+        -:  939:	  else{
+    #####:  940:	    p++;//Next card
+        -:  941:	  }
+        -:  942:	}
+        -:  943:      }
+        -:  944:			    
+        -:  945:      else{
+    #####:  946:	if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  947:	  gainCard(estate, state, 0, currentPlayer);//Gain an estate
+call    0 never executed
+    #####:  948:	  state->supplyCount[estate]--;//Decrement Estates
+    #####:  949:	  if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  950:	    isGameOver(state);
+call    0 never executed
+        -:  951:	  }
+        -:  952:	}
+        -:  953:      }
+        -:  954:	    
+        -:  955:      
+    #####:  956:      return 0;
+        -:  957:		
+        -:  958:    case great_hall:
+        -:  959:      //+1 Card
+    #####:  960:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  961:			
+        -:  962:      //+1 Actions
+    #####:  963:      state->numActions++;
+        -:  964:			
+        -:  965:      //discard card from hand
+    #####:  966:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  967:      return 0;
+        -:  968:		
+        -:  969:    case minion:
+        -:  970:      //+1 action
+    #####:  971:      state->numActions++;
+        -:  972:			
+        -:  973:      //discard card from hand
+    #####:  974:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  975:			
+    #####:  976:      if (choice1)		//+2 coins
+branch  0 never executed
+branch  1 never executed
+        -:  977:	{
+    #####:  978:	  state->coins = state->coins + 2;
+        -:  979:	}
+        -:  980:			
+    #####:  981:      else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+branch  0 never executed
+branch  1 never executed
+        -:  982:	{
+        -:  983:	  //discard hand
+    #####:  984:	  while(numHandCards(state) > 0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  985:	    {
+    #####:  986:	      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  987:	    }
+        -:  988:				
+        -:  989:	  //draw 4
+    #####:  990:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  991:	    {
+    #####:  992:	      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  993:	    }
+        -:  994:				
+        -:  995:	  //other players discard hand and redraw if hand size > 4
+    #####:  996:	  for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  997:	    {
+    #####:  998:	      if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -:  999:		{
+    #####: 1000:		  if ( state->handCount[i] > 4 )
+branch  0 never executed
+branch  1 never executed
+        -: 1001:		    {
+        -: 1002:		      //discard hand
+    #####: 1003:		      while( state->handCount[i] > 0 )
+branch  0 never executed
+branch  1 never executed
+        -: 1004:			{
+    #####: 1005:			  discardCard(handPos, i, state, 0);
+call    0 never executed
+        -: 1006:			}
+        -: 1007:							
+        -: 1008:		      //draw 4
+    #####: 1009:		      for (j = 0; j < 4; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1010:			{
+    #####: 1011:			  drawCard(i, state);
+call    0 never executed
+        -: 1012:			}
+        -: 1013:		    }
+        -: 1014:		}
+        -: 1015:	    }
+        -: 1016:				
+        -: 1017:	}
+    #####: 1018:      return 0;
+        -: 1019:		
+        -: 1020:    case steward:
+    #####: 1021:      if (choice1 == 1)
+branch  0 never executed
+branch  1 never executed
+        -: 1022:	{
+        -: 1023:	  //+2 cards
+    #####: 1024:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1025:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1026:	}
+    #####: 1027:      else if (choice1 == 2)
+branch  0 never executed
+branch  1 never executed
+        -: 1028:	{
+        -: 1029:	  //+2 coins
+    #####: 1030:	  state->coins = state->coins + 2;
+        -: 1031:	}
+        -: 1032:      else
+        -: 1033:	{
+        -: 1034:	  //trash 2 cards in hand
+    #####: 1035:	  discardCard(choice2, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1036:	  discardCard(choice3, currentPlayer, state, 1);
+call    0 never executed
+        -: 1037:	}
+        -: 1038:			
+        -: 1039:      //discard card from hand
+    #####: 1040:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1041:      return 0;
+        -: 1042:		
+        -: 1043:    case tribute:
+    #####: 1044:      if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
+branch  0 never executed
+branch  1 never executed
+    #####: 1045:	if (state->deckCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1046:	  tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1047:	  state->deckCount[nextPlayer]--;
+        -: 1048:	}
+    #####: 1049:	else if (state->discardCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1050:	  tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
+    #####: 1051:	  state->discardCount[nextPlayer]--;
+        -: 1052:	}
+        -: 1053:	else{
+        -: 1054:	  //No Card to Reveal
+        -: 1055:	  if (DEBUG){
+        -: 1056:	    printf("No cards to reveal\n");
+        -: 1057:	  }
+        -: 1058:	}
+        -: 1059:      }
+        -: 1060:	    
+        -: 1061:      else{
+    #####: 1062:	if (state->deckCount[nextPlayer] == 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1063:	  for (i = 0; i < state->discardCount[nextPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1064:	    state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
+    #####: 1065:	    state->deckCount[nextPlayer]++;
+    #####: 1066:	    state->discard[nextPlayer][i] = -1;
+    #####: 1067:	    state->discardCount[nextPlayer]--;
+        -: 1068:	  }
+        -: 1069:			    
+    #####: 1070:	  shuffle(nextPlayer,state);//Shuffle the deck
+call    0 never executed
+        -: 1071:	} 
+    #####: 1072:	tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1073:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1074:	state->deckCount[nextPlayer]--;
+    #####: 1075:	tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1076:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1077:	state->deckCount[nextPlayer]--;
+        -: 1078:      }    
+        -: 1079:		       
+    #####: 1080:      if (tributeRevealedCards[0] == tributeRevealedCards[1]){//If we have a duplicate card, just drop one 
+branch  0 never executed
+branch  1 never executed
+    #####: 1081:	state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
+    #####: 1082:	state->playedCardCount++;
+    #####: 1083:	tributeRevealedCards[1] = -1;
+        -: 1084:      }
+        -: 1085:
+    #####: 1086:      for (i = 0; i <= 2; i ++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1087:	if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1088:	  state->coins += 2;
+        -: 1089:	}
+        -: 1090:		    
+    #####: 1091:	else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####: 1092:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1093:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1094:	}
+        -: 1095:	else{//Action Card
+    #####: 1096:	  state->numActions = state->numActions + 2;
+        -: 1097:	}
+        -: 1098:      }
+        -: 1099:	    
+    #####: 1100:      return 0;
+        -: 1101:		
+        -: 1102:    case ambassador:
+    #####: 1103:      j = 0;		//used to check if player has enough cards to discard
+        -: 1104:
+    #####: 1105:      if (choice2 > 2 || choice2 < 0)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1106:	{
+    #####: 1107:	  return -1;				
+        -: 1108:	}
+        -: 1109:
+    #####: 1110:      if (choice1 == handPos)
+branch  0 never executed
+branch  1 never executed
+        -: 1111:	{
+    #####: 1112:	  return -1;
+        -: 1113:	}
+        -: 1114:
+    #####: 1115:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1116:	{
+    #####: 1117:	  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -: 1118:	    {
+    #####: 1119:	      j++;
+        -: 1120:	    }
+        -: 1121:	}
+    #####: 1122:      if (j < choice2)
+branch  0 never executed
+branch  1 never executed
+        -: 1123:	{
+    #####: 1124:	  return -1;				
+        -: 1125:	}
+        -: 1126:
+        -: 1127:      if (DEBUG) 
+        -: 1128:	printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
+        -: 1129:
+        -: 1130:      //increase supply count for choosen card by amount being discarded
+    #####: 1131:      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+        -: 1132:			
+        -: 1133:      //each other player gains a copy of revealed card
+    #####: 1134:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1135:	{
+    #####: 1136:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1137:	    {
+    #####: 1138:	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+call    0 never executed
+        -: 1139:	    }
+        -: 1140:	}
+        -: 1141:
+        -: 1142:      //discard played card from hand
+    #####: 1143:      discardCard(handPos, currentPlayer, state, 0);			
+call    0 never executed
+        -: 1144:
+        -: 1145:      //trash copies of cards returned to supply
+    #####: 1146:      for (j = 0; j < choice2; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1147:	{
+    #####: 1148:	  for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1149:	    {
+    #####: 1150:	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
+branch  0 never executed
+branch  1 never executed
+        -: 1151:		{
+    #####: 1152:		  discardCard(i, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1153:		  break;
+        -: 1154:		}
+        -: 1155:	    }
+        -: 1156:	}			
+        -: 1157:
+    #####: 1158:      return 0;
+        -: 1159:		
+        -: 1160:    case cutpurse:
+        -: 1161:
+    #####: 1162:      updateCoins(currentPlayer, state, 2);
+call    0 never executed
+    #####: 1163:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1164:	{
+    #####: 1165:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1166:	    {
+    #####: 1167:	      for (j = 0; j < state->handCount[i]; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1168:		{
+    #####: 1169:		  if (state->hand[i][j] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1170:		    {
+    #####: 1171:		      discardCard(j, i, state, 0);
+call    0 never executed
+    #####: 1172:		      break;
+        -: 1173:		    }
+    #####: 1174:		  if (j == state->handCount[i])
+branch  0 never executed
+branch  1 never executed
+        -: 1175:		    {
+    #####: 1176:		      for (k = 0; k < state->handCount[i]; k++)
+branch  0 never executed
+branch  1 never executed
+        -: 1177:			{
+        -: 1178:			  if (DEBUG)
+        -: 1179:			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+        -: 1180:			}	
+    #####: 1181:		      break;
+        -: 1182:		    }		
+        -: 1183:		}
+        -: 1184:					
+        -: 1185:	    }
+        -: 1186:				
+        -: 1187:	}				
+        -: 1188:
+        -: 1189:      //discard played card from hand
+    #####: 1190:      discardCard(handPos, currentPlayer, state, 0);			
+call    0 never executed
+        -: 1191:
+    #####: 1192:      return 0;
+        -: 1193:
+        -: 1194:		
+        -: 1195:    case embargo: 
+    #####: 1196:      return callEmbargoCard(state, choice1, currentPlayer, handPos);   
+call    0 never executed
+        -: 1197:		
+        -: 1198:    case outpost:
+    #####: 1199:      return callOutpostCard(state, handPos, currentPlayer);
+call    0 never executed
+        -: 1200:		
+        -: 1201:    case salvager:
+        -: 1202:      //+1 buy
+    #####: 1203:      state->numBuys++;
+        -: 1204:			
+    #####: 1205:      if (choice1)
+branch  0 never executed
+branch  1 never executed
+        -: 1206:	{
+        -: 1207:	  //gain coins equal to trashed card
+    #####: 1208:	  state->coins = state->coins + getCost( handCard(choice1, state) );
+call    0 never executed
+call    1 never executed
+        -: 1209:	  //trash card
+    #####: 1210:	  discardCard(choice1, currentPlayer, state, 1);	
+call    0 never executed
+        -: 1211:	}
+        -: 1212:			
+        -: 1213:      //discard card
+    #####: 1214:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1215:      return 0;
+        -: 1216:		
+        -: 1217:    case sea_hag:
+    #####: 1218:      for (i = 0; i < state->numPlayers; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1219:	if (i != currentPlayer){
+branch  0 never executed
+branch  1 never executed
+    #####: 1220:	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+    #####: 1221:	  state->discardCount[i]++;
+    #####: 1222:	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+        -: 1223:	}
+        -: 1224:      }
+    #####: 1225:      return 0;
+        -: 1226:		
+        -: 1227:    case treasure_map:
+        -: 1228:      //search hand for another treasure_map
+    #####: 1229:      index = -1;
+    #####: 1230:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1231:	{
+    #####: 1232:	  if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1233:	    {
+    #####: 1234:	      index = i;
+    #####: 1235:	      break;
+        -: 1236:	    }
+        -: 1237:	}
+    #####: 1238:      if (index > -1)
+branch  0 never executed
+branch  1 never executed
+        -: 1239:	{
+        -: 1240:	  //trash both treasure cards
+    #####: 1241:	  discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1242:	  discardCard(index, currentPlayer, state, 1);
+call    0 never executed
+        -: 1243:
+        -: 1244:	  //gain 4 Gold cards
+    #####: 1245:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1246:	    {
+    #####: 1247:	      gainCard(gold, state, 1, currentPlayer);
+call    0 never executed
+        -: 1248:	    }
+        -: 1249:				
+        -: 1250:	  //return success
+    #####: 1251:	  return 1;
+        -: 1252:	}
+        -: 1253:			
+        -: 1254:      //no second treasure_map found in hand
+    #####: 1255:      return -1;
+        -: 1256:    }
+        -: 1257:	
+    #####: 1258:  return -1;
+        -: 1259:}
+        -: 1260:
+function discardCard called 0 returned 0% blocks executed 0%
+    #####: 1261:int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+        -: 1262:{
+        -: 1263:	
+        -: 1264:  //if card is not trashed, added to Played pile 
+    #####: 1265:  if (trashFlag < 1)
+branch  0 never executed
+branch  1 never executed
+        -: 1266:    {
+        -: 1267:      //add card to played pile
+    #####: 1268:      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+    #####: 1269:      state->playedCardCount++;
+        -: 1270:    }
+        -: 1271:	
+        -: 1272:  //set played card to -1
+    #####: 1273:  state->hand[currentPlayer][handPos] = -1;
+        -: 1274:	
+        -: 1275:  //remove card from player's hand
+    #####: 1276:  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+branch  0 never executed
+branch  1 never executed
+        -: 1277:    {
+        -: 1278:      //reduce number of cards in hand
+    #####: 1279:      state->handCount[currentPlayer]--;
+        -: 1280:    }
+    #####: 1281:  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+branch  0 never executed
+branch  1 never executed
+        -: 1282:    {
+        -: 1283:      //reduce number of cards in hand
+    #####: 1284:      state->handCount[currentPlayer]--;
+        -: 1285:    }
+        -: 1286:  else 	
+        -: 1287:    {
+        -: 1288:      //replace discarded card with last card in hand
+    #####: 1289:      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        -: 1290:      //set last card to -1
+    #####: 1291:      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        -: 1292:      //reduce number of cards in hand
+    #####: 1293:      state->handCount[currentPlayer]--;
+        -: 1294:    }
+        -: 1295:	
+    #####: 1296:  return 0;
+        -: 1297:}
+        -: 1298:
+function gainCard called 0 returned 0% blocks executed 0%
+    #####: 1299:int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
+        -: 1300:{
+        -: 1301:  //Note: supplyPos is enum of choosen card
+        -: 1302:	
+        -: 1303:  //check if supply pile is empty (0) or card is not used in game (-1)
+    #####: 1304:  if ( supplyCount(supplyPos, state) < 1 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1305:    {
+    #####: 1306:      return -1;
+        -: 1307:    }
+        -: 1308:	
+        -: 1309:  //added card for [whoseTurn] current player:
+        -: 1310:  // toFlag = 0 : add to discard
+        -: 1311:  // toFlag = 1 : add to deck
+        -: 1312:  // toFlag = 2 : add to hand
+        -: 1313:
+    #####: 1314:  if (toFlag == 1)
+branch  0 never executed
+branch  1 never executed
+        -: 1315:    {
+    #####: 1316:      state->deck[ player ][ state->deckCount[player] ] = supplyPos;
+    #####: 1317:      state->deckCount[player]++;
+        -: 1318:    }
+    #####: 1319:  else if (toFlag == 2)
+branch  0 never executed
+branch  1 never executed
+        -: 1320:    {
+    #####: 1321:      state->hand[ player ][ state->handCount[player] ] = supplyPos;
+    #####: 1322:      state->handCount[player]++;
+        -: 1323:    }
+        -: 1324:  else
+        -: 1325:    {
+    #####: 1326:      state->discard[player][ state->discardCount[player] ] = supplyPos;
+    #####: 1327:      state->discardCount[player]++;
+        -: 1328:    }
+        -: 1329:	
+        -: 1330:  //decrease number in supply pile
+    #####: 1331:  state->supplyCount[supplyPos]--;
+        -: 1332:	 
+    #####: 1333:  return 0;
+        -: 1334:}
+        -: 1335:
+function updateCoins called 0 returned 0% blocks executed 0%
+    #####: 1336:int updateCoins(int player, struct gameState *state, int bonus)
+        -: 1337:{
+        -: 1338:  int i;
+        -: 1339:	
+        -: 1340:  //reset coin count
+    #####: 1341:  state->coins = 0;
+        -: 1342:
+        -: 1343:  //add coins for each Treasure card in player's hand
+    #####: 1344:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1345:    {
+    #####: 1346:      if (state->hand[player][i] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1347:	{
+    #####: 1348:	  state->coins += 1;
+        -: 1349:	}
+    #####: 1350:      else if (state->hand[player][i] == silver)
+branch  0 never executed
+branch  1 never executed
+        -: 1351:	{
+    #####: 1352:	  state->coins += 2;
+        -: 1353:	}
+    #####: 1354:      else if (state->hand[player][i] == gold)
+branch  0 never executed
+branch  1 never executed
+        -: 1355:	{
+    #####: 1356:	  state->coins += 3;
+        -: 1357:	}	
+        -: 1358:    }	
+        -: 1359:
+        -: 1360:  //add bonus
+    #####: 1361:  state->coins += bonus;
+        -: 1362:
+    #####: 1363:  return 0;
+        -: 1364:}
+        -: 1365:
+        -: 1366://end of dominion.c

@@ -26,7 +26,7 @@ import junit.framework.TestCase;
  * @version $Revision: 1128446 $ $Date: 2011-05-27 13:29:27 -0700 (Fri, 27 May 2011) $
  */
 public class UrlValidatorTest extends TestCase {
-
+    private int numTests = 0;
    private boolean printStatus = false;
    private boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
 
@@ -43,12 +43,12 @@ public class UrlValidatorTest extends TestCase {
    public void testIsValid() {
         testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);
         setUp();
-        //long options =
-        //    UrlValidator.ALLOW_2_SLASHES
-        //        + UrlValidator.ALLOW_ALL_SCHEMES
-        //        + UrlValidator.NO_FRAGMENTS;
-
-        //testIsValid(testUrlPartsOptions, options);
+//        long options =
+//            UrlValidator.ALLOW_2_SLASHES
+//                + UrlValidator.ALLOW_ALL_SCHEMES
+//                + UrlValidator.NO_FRAGMENTS;
+//
+//        testIsValid(testUrlPartsOptions, options);
    }
 
    public void testIsValidScheme() {
@@ -102,10 +102,10 @@ public class UrlValidatorTest extends TestCase {
          }
          //System.out.println(testPartsIndex[0]);
          String url = testBuffer.toString();
+          numTests++;
          boolean result = urlVal.isValid(url);
-         
-         if(result == true)
-        	 System.out.println(url);
+
+          //System.out.println(url);
          assertEquals(url, expected, result);
          
          if (printStatus) {
@@ -125,6 +125,7 @@ public class UrlValidatorTest extends TestCase {
             }
          }
       } while (incrementTestPartsIndex(testPartsIndex, testObjects));
+       System.out.println(numTests);
       if (printStatus) {
          System.out.println();
       }
