@@ -67,4 +67,10 @@ unittestresults.out: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4
 	printf "\n************************    Begin Coverage Information   **********************\n\n" >> unittestresults.out
 	gcov -b -f dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
+randomtestadventurer:
+	gcc -std=c99 dominion.o randomtestadventurer.c rngs.c -o ta $(MYFLAGS)
+	./ta >> randomtestadventurer.out
+	printf "\n************************    Begin Coverage Information   **********************\n\n" >> randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
 	
