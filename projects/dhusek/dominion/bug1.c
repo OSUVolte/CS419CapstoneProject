@@ -7,15 +7,23 @@ Adventurer Bugs:
 - Discard pile is empty after Adventurer is played (Adventurer and non-treasure drawn cards are not discarded).
 
 Village Bugs:
-
+- The discard pile is empty and does not contain the Village card that was played.
 
 Council Room Bugs:
-
+- The current player draws 1 extra card.
+- First card does not seem to come from current player's deck.
+- Other player does not draw any cards
+- Due to not drawing cards, other player's hand and deck counts are also incorrect.
+- The discard pile is empty and does not contain the Council Room card that was played.
 
 discardCard Bugs:
-
+- Does not add cards to the discard pile.
 
 drawCard Bugs:
-
+- No bugs were found!
 
 updateCoins Bugs:
+- No bugs were found!
+
+gainCard Bugs:
+- No bugs were found!

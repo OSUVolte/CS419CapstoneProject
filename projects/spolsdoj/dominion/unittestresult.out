@@ -1,0 +1,406 @@
+Testing numHandCards.
+  numHandCards(): PASS with result 7
+  numHandCards(): PASS with result 6
+  numHandCards(): PASS with result 6
+  numHandCards(): PASS with result 0
+  numHandCards(): PASS with result 7
+  numHandCards(): PASS with result 9
+  numHandCards(): PASS with result 9
+  numHandCards(): PASS with result 3
+  numHandCards(): PASS with result 1
+  numHandCards(): PASS with result 9
+Test complete.
+Testing updateCoins.
+  updateCoins(): PASS with G.coins = 1, expected = 1
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 21, expected = 21
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 22, expected = 22
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 21, expected = 21
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 22, expected = 22
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 23, expected = 23
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 24, expected = 24
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 25, expected = 25
+  updateCoins(): PASS with G.coins = 1, expected = 1
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 2, expected = 2
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 3, expected = 3
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 4, expected = 4
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 21, expected = 21
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 22, expected = 22
+  updateCoins(): PASS with G.coins = 5, expected = 5
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 6, expected = 6
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 7, expected = 7
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 8, expected = 8
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 9, expected = 9
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 10, expected = 10
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 11, expected = 11
+  updateCoins(): PASS with G.coins = 16, expected = 16
+  updateCoins(): PASS with G.coins = 21, expected = 21
+  updateCoins(): PASS with G.coins = 12, expected = 12
+  updateCoins(): PASS with G.coins = 17, expected = 17
+  updateCoins(): PASS with G.coins = 22, expected = 22
+  updateCoins(): PASS with G.coins = 13, expected = 13
+  updateCoins(): PASS with G.coins = 18, expected = 18
+  updateCoins(): PASS with G.coins = 23, expected = 23
+  updateCoins(): PASS with G.coins = 14, expected = 14
+  updateCoins(): PASS with G.coins = 19, expected = 19
+  updateCoins(): PASS with G.coins = 24, expected = 24
+  updateCoins(): PASS with G.coins = 15, expected = 15
+  updateCoins(): PASS with G.coins = 20, expected = 20
+  updateCoins(): PASS with G.coins = 25, expected = 25
+Test complete.
+Testing buyCard.
+  buyCard(): PASS with numBuys = 0
+  buyCard(): PASS with supplyCount = 0
+  buyCard(): PASS with G.coins = 0
+  buyCard(): PASS with G.coins = 0
+Test complete.
+Testing discardCard.
+  discardCard(): PASS with trashFlag < 1
+  discardCard(): PASS with removing card from player hand
+  discardCard(): PASS with only one card in hand
+  discardCard(): PASS replace discarded card with last card in hand
+Test complete.
+Testing Smithy
+TEST 1: current player should get three cards
+hand count = 7, expected = 8
+TEST 2:  3 cards should come from his pile
+deck count = 2, expected = 2
+TEST 3: no state change should occur for other player
+next player deck count = 0, expected = 0
+TEST 4: no state change should occur to the victory pile
+estate count = 8, expected = 8
+Test complete.
+Testing Adventurer
+TEST 1: make sure other players deck untouched
+  adventurer: PASS other player's deck count unchanged.
+TEST 2: make sure that correct number of treasure cards are drawn
+  adventurer: PASS correct number of treasure cards were taken from deck.
+TEST 3: make sure that kingdom cards not altered
+  adventurer: PASS kingdom cards were not altered.
+Test Complete
+Testing Steward
+TEST 1: +2 cards
+hand count = 6, expected = 6
+deck count = 3, expected = 3
+coins = 4, expected = 4
+TEST 2: +2 coins
+hand count = 4, expected = 4
+deck count = 5, expected = 5
+coins = 6, expected = 6
+TEST 3: trash two cards
+starting cards: (18)(4)(2)(1)(9);
+ starting cards: (18)(4)(2)(1)(9);
+ starting cards: (18)(4)(2)(1)(9);
+ starting cards: (18)(4)(2)(1)(9);
+ starting cards: (18)(4)(2)(1)(9);
+ starting cards: (18)(4)(2)(1)(9);
+ Test Complete
+Testing Village
+TEST 1: make sure that only one card is drawn
+  village: PASS only one card drawn.
+TEST 2: make sure that the card is drawn from the correct players deck
+  village: PASS other player's deck count unchanged.
+TEST 3: make sure the correct number of action points are calculted
+  village: PASS other player's deck count unchanged.
+Test Complete
+File 'dominion.c'
+Lines executed:20.44% of 548
+Branches executed:22.78% of 417
+Taken at least once:13.91% of 417
+Calls executed:11.11% of 90
+Creating 'dominion.c.gcov'
+

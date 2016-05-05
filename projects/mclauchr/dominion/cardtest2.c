@@ -12,7 +12,7 @@
 **		3. All drawn cards / discarded cards are from current player's
 **		   Deck.
 **		4. cardEffect for Adventurer returns successfully
-**		5. cardEffect for Adventurer returns a Zero even if discarded
+**		5. cardEffect for Adventurer returns a Zero, even if discarded
 **		   the player's deckCount = 0;
 **
 ** Makefile: gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)

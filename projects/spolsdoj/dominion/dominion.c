@@ -662,6 +662,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     nextPlayer = 0;
   }
   
+/*
   if(card == adventurer){
     int playAdventurer(drawntreasure, state, currentPlayer, cardDrawn, temphand, z);
     return 0;
@@ -691,7 +692,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     int playerSalvager(state, choice1, currentPlayer, handPos);
     return 0; 
   }  
-	
+*/	
   //uses switch to select card and perform actions
   switch( card ) 
     {
@@ -1362,7 +1363,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 
 //refactor code for function implementation of cards
-
+/*
 int playAdventurer(drawtreasure, state, currentPlayer, cardDrawn, temphand, z){
   while(drawntreasure<3){
     if(state->deckCount[currentPlayer] <1){
@@ -1422,3 +1423,5 @@ int playerSalvager(state, choice1, currentPlayer, handPos){
   discardCard(choice1, currentPlayer, state, 1);
   return 0; 
 }
+*/
+
