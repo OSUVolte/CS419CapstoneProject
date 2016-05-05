@@ -50,6 +50,21 @@ unittestresults.out: cardtest1.c unittest1.c cardtest2.c unittest2.c cardtest3.c
 	gcov -b -f dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 	
+randomtestcard.out: randomtestcard.c
+	make dominion.o
+	gcc -o rtc randomtestcard.c rngs.c dominion.o $(CFLAGS) 
+	./rtc
+	gcov -b -f dominion.c &> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	
+randomtestadventurer.out: randomtestadventurer.c
+	make dominion.o
+	gcc -o rta randomtestadventurer.c rngs.c dominion.o $(CFLAGS) 
+	./rta
+	gcov -b -f dominion.c &> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	
+	
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
