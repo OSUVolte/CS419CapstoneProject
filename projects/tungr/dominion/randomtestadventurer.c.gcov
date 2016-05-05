@@ -68,125 +68,125 @@ call    0 returned 100%
 call    0 returned 100%
         -:   53:		
         -:   54:		/*loop through players times - set decks*/
-       41:   55:		for(player = 0; player < randPlayers; player++){
-branch  0 taken 76%
-branch  1 taken 24% (fallthrough)
-       31:   56:			treasuresBefore = 0; //reset treasure counts
-       31:   57:			treasuresAfter = 0;
-       31:   58:			G->deckCount[player] = rand() % MAX_DECK; //each player gets random deck size
+       37:   55:		for(player = 0; player < randPlayers; player++){
+branch  0 taken 73%
+branch  1 taken 27% (fallthrough)
+       27:   56:			treasuresBefore = 0; //reset treasure counts
+       27:   57:			treasuresAfter = 0;
+       27:   58:			G->deckCount[player] = rand() % MAX_DECK; //each player gets random deck size
 call    0 returned 100%
-       31:   59:			printf("player %d gets deck size of %d\n", player+1, G->deckCount[player]);
+       27:   59:			printf("player %d gets deck size of %d\n", player+1, G->deckCount[player]);
 call    0 returned 100%
         -:   60:
         -:   61:			/*loop through players deck*/
-      841:   62:			for(card = 0; card < G->deckCount[player]; card++){
+      657:   62:			for(card = 0; card < G->deckCount[player]; card++){
 branch  0 taken 96%
 branch  1 taken 4% (fallthrough)
-      810:   63:				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
+      630:   63:				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
 call    0 returned 100%
-      810:   64:				printf(" %s  | ", cardNames[G->deck[player][card]]);	
+      630:   64:				printf(" %s  | ", cardNames[G->deck[player][card]]);	
 call    0 returned 100%
-       31:   65:			} printf("\n");
+       27:   65:			} printf("\n");
 call    0 returned 100%
-       31:   66:			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
+       27:   66:			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
 call    0 returned 100%
-       31:   67:			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
+       27:   67:			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
 call    0 returned 100%
         -:   68:
         -:   69:			/*loop throuhg players discard pile*/
-      948:   70:			for(card = 0; card < G->discardCount[player]; card++){
-branch  0 taken 97%
-branch  1 taken 3% (fallthrough)
-      917:   71:				G->discard[player][card] = rand() % 27; //random discard
+      716:   70:			for(card = 0; card < G->discardCount[player]; card++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+      689:   71:				G->discard[player][card] = rand() % 27; //random discard
 call    0 returned 100%
-      917:   72:				printf(" %s  | ", cardNames[G->discard[player][card]]);
+      689:   72:				printf(" %s  | ", cardNames[G->discard[player][card]]);
 call    0 returned 100%
-       31:   73:			}printf("\n");
+       27:   73:			}printf("\n");
 call    0 returned 100%
         -:   74:
-       31:   75:			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
+       27:   75:			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
 call    0 returned 100%
-       31:   76:			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
+       27:   76:			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
 call    0 returned 100%
         -:   77:			
         -:   78:			/*loop through players hand - count treasures*/
-      797:   79:			for(card = 0; card < G->handCount[player]; card++){
-branch  0 taken 96%
-branch  1 taken 4% (fallthrough)
-      766:   80:				G->hand[player][card] = rand() % 27; //random hand
+      838:   79:			for(card = 0; card < G->handCount[player]; card++){
+branch  0 taken 97%
+branch  1 taken 3% (fallthrough)
+      811:   80:				G->hand[player][card] = rand() % 27; //random hand
 call    0 returned 100%
-      766:   81:				cardEnum = G->hand[player][card];
-      766:   82:				printf(" %s  | ", cardNames[G->hand[player][card]]);
+      811:   81:				cardEnum = G->hand[player][card];
+      811:   82:				printf(" %s  | ", cardNames[G->hand[player][card]]);
 call    0 returned 100%
         -:   83:				/*if it's a treasure card, tally it up*/
-      766:   84:				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
-branch  0 taken 97% (fallthrough)
-branch  1 taken 3%
-branch  2 taken 97% (fallthrough)
-branch  3 taken 3%
-branch  4 taken 3% (fallthrough)
-branch  5 taken 97%
-       72:   85:					treasuresBefore++;
+      811:   84:				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
+branch  0 taken 95% (fallthrough)
+branch  1 taken 5%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+branch  4 taken 4% (fallthrough)
+branch  5 taken 96%
+      102:   85:					treasuresBefore++;
         -:   86:				}
-       31:   87:			} printf("\n");
+       27:   87:			} printf("\n");
 call    0 returned 100%
-       31:   88:			printf("Treasures Before: %d\n", treasuresBefore);
+       27:   88:			printf("Treasures Before: %d\n", treasuresBefore);
 call    0 returned 100%
         -:   89:
-       31:   90:			choice1 = rand() % 2; //0 or 1
+       27:   90:			choice1 = rand() % 2; //0 or 1
 call    0 returned 100%
-       31:   91:			choice2 = rand() % 2; 
+       27:   91:			choice2 = rand() % 2; 
 call    0 returned 100%
-       31:   92:			choice3 = rand() % 2;	
+       27:   92:			choice3 = rand() % 2;	
 call    0 returned 100%
-       31:   93:			handPosition = rand() % 4; //no bonus
+       27:   93:			handPosition = rand() % 4; //no bonus
 call    0 returned 100%
-       31:   94:			printf("Card Effect with choice1 = %d choice2 = %d choice3 = %d handPosition = %d\n", choice1, choice2, choice3, handPosition);
+       27:   94:			printf("Card Effect with choice1 = %d choice2 = %d choice3 = %d handPosition = %d\n", choice1, choice2, choice3, handPosition);
 call    0 returned 100%
         -:   95:
         -:   96:			/*card effect - return value pass or fail*/
-       31:   97:			returnValue = cardEffect(adventurer, choice1, choice2, choice3, G, handPosition, 0);
+       27:   97:			returnValue = cardEffect(adventurer, choice1, choice2, choice3, G, handPosition, 0);
 call    0 returned 100%
-       31:   98:			if(returnValue == 0){
+       27:   98:			if(returnValue == 0){
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
     #####:   99:				returnPass++;
     #####:  100:				printf("	RETURN VALUE PASS\n");
 call    0 never executed
         -:  101:			} else {
-       31:  102:				returnFail++;
-       31:  103:				printf("	RETURN VALUE FAIL\n");
+       27:  102:				returnFail++;
+       27:  103:				printf("	RETURN VALUE FAIL\n");
 call    0 returned 100%
         -:  104:			}
         -:  105:
         -:  106:			/*loop through players hand again - compare tresaures counts*/
-      857:  107:			for(card = 0; card < G->handCount[player]; card++){
-branch  0 taken 96%
-branch  1 taken 4% (fallthrough)
-      826:  108:				cardEnum = G->hand[player][card]; //get card type
-      826:  109:				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
-branch  0 taken 96% (fallthrough)
-branch  1 taken 4%
-branch  2 taken 96% (fallthrough)
-branch  3 taken 4%
-branch  4 taken 4% (fallthrough)
-branch  5 taken 96%
-       99:  110:					treasuresAfter++;
+      897:  107:			for(card = 0; card < G->handCount[player]; card++){
+branch  0 taken 97%
+branch  1 taken 3% (fallthrough)
+      870:  108:				cardEnum = G->hand[player][card]; //get card type
+      870:  109:				if(cardEnum == copper || cardEnum == silver || cardEnum == gold){
+branch  0 taken 94% (fallthrough)
+branch  1 taken 6%
+branch  2 taken 95% (fallthrough)
+branch  3 taken 5%
+branch  4 taken 5% (fallthrough)
+branch  5 taken 95%
+      133:  110:					treasuresAfter++;
         -:  111:				}
         -:  112:			}
-       31:  113:			printf("Treasures After: %d\n", treasuresAfter);
+       27:  113:			printf("Treasures After: %d\n", treasuresAfter);
 call    0 returned 100%
         -:  114:
         -:  115:			/*treasure count fail or pass*/
-       31:  116:			if(treasuresAfter == treasuresBefore + 2){
-branch  0 taken 13% (fallthrough)
-branch  1 taken 87%
-        4:  117:				treasurePass++;
-        4:  118:				printf("	TREASURE COUNT PASS\n");
+       27:  116:			if(treasuresAfter == treasuresBefore + 2){
+branch  0 taken 22% (fallthrough)
+branch  1 taken 78%
+        6:  117:				treasurePass++;
+        6:  118:				printf("	TREASURE COUNT PASS\n");
 call    0 returned 100%
         -:  119:			} else {
-       27:  120:				treasureFail++;
-       27:  121:				printf("	TREASURE COUNT FAIL\n");
+       21:  120:				treasureFail++;
+       21:  121:				printf("	TREASURE COUNT FAIL\n");
 call    0 returned 100%
         -:  122:			}
         -:  123:		}

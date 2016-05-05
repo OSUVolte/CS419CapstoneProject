@@ -59,7 +59,8 @@ public class UrlValidatorTest extends TestCase {
       //UrlValidator urlVal = new UrlValidator(schemes,false,false,false);
       UrlValidator urlVal = new UrlValidator(schemes, 0);
       for (int sIndex = 0; sIndex < testScheme.length; sIndex++) {
-         ResultPair testPair = testScheme[sIndex];
+    	  
+    	  ResultPair testPair = testScheme[sIndex];
          boolean result = urlVal.isValidScheme(testPair.item);
          assertEquals(testPair.item, testPair.valid, result);
          if (printStatus) {
@@ -88,6 +89,8 @@ public class UrlValidatorTest extends TestCase {
       assertTrue(urlVal.isValid("http://www.google.com/"));
       int statusPerLine = 60;
       int printed = 0;
+      int countURLS = 0;
+      
       if (printIndex)  {
          statusPerLine = 6;
       }
@@ -95,7 +98,8 @@ public class UrlValidatorTest extends TestCase {
          StringBuffer testBuffer = new StringBuffer();
          boolean expected = true;
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
-            int index = testPartsIndex[testPartsIndexIndex];
+          // System.out.println(testPartsIndex.length);
+        	 int index = testPartsIndex[testPartsIndexIndex];
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
             expected &= part[index].valid;
@@ -103,7 +107,8 @@ public class UrlValidatorTest extends TestCase {
          //System.out.println(testPartsIndex[0]);
          String url = testBuffer.toString();
          boolean result = urlVal.isValid(url);
-         
+         countURLS++;
+         // System.out.println(countURLS);
          if(result == true)
         	 System.out.println(url);
          assertEquals(url, expected, result);
