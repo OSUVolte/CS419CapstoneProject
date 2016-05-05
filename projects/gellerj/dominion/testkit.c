@@ -132,6 +132,7 @@ void diffDeckSupply(struct gameState *before, struct gameState *after, int playe
     for (i = 0; i < MAX_DECK; i++) {
         supplyDiff[i] = supplyBefore[i] - supplyAfter[i];
     }
+
 }
 
 void diffHandSupply(struct gameState *before, struct gameState *after, int player, int supplyDiff[MAX_HAND]) {
