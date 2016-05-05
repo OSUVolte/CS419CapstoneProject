@@ -66,7 +66,7 @@ int main() {
 			
 		if(returnVal == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] && game.deckCount[currentPlayer] + game.discardCount[currentPlayer] > 0) {//checking that net cards added to hand is 0 with valid game state - if there are enough cards in discard or deck piles
 			printf("ERROR IN NUMBER OF CARDS ADDED TO HAND: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
-		}	
+		}
 	}
 
 	return 0;
