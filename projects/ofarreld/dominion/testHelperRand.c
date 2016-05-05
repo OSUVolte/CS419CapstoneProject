@@ -63,8 +63,11 @@ void genericTest(struct gameState G, struct gameState testG, int otherPlayer, in
 		printf("ERROR: State gold count = %d, expected = %d\n", testG.supplyCount[gold], G.supplyCount[gold]);
 		pass = 0;
 	}
-	
-	if (pass ==1) {
+
+	if (pass == 1) {
 		printf("SUPPLEMENTARY TESTING COMPLETE\t\n");
 	}
 }
+
+
+
