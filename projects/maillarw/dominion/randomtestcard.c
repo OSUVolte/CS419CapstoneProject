@@ -3,11 +3,11 @@ CS 372
 Assignment 4
 5/5/2016*/
 
-//randomtestadventurer: random testing of the adventurer card
+//randomtestcard: random testing of the smithycard
 
-//This programs defaults to 100,000 tests, printing one failed example, and 
+//This programs defaults to 10 tests, printing one failed example, and 
 //printing the percentage of passed tests.  To change this use
-//the command line arguments randomtestadventurer <noisy> <numTests> where
+//the command line arguments randomtestcard <noisy> <numTests> where
 //noisy is 1 to the results of all tests and 0 is to just print 1 failed test
 //and numTests is the number of tests to run.
 
@@ -20,24 +20,28 @@ void addToHand(int player, int card, struct gameState *state);
 void addToDiscard(int player, int card, struct gameState *state);
 
 
+
 int main (int argc, char **argv) {
+	
+	
 	int printOne = 0;
 	int noisy = 0;
-	int numTests = 100000;
+	int numTests = 10;  //Set this to default so low because the current bugs cause this test to take take forever,
+						//if the bug is found several times. 10 gets the bug once in a while (~every 3 times)
 
 	if(argc == 3){
 		noisy = atoi(argv[1]);
 		numTests = atoi(argv[2]);
 	}
 		
-	printf("\n********************   Random Testing of Adventurer Card  ******************\n\n");
+	printf("\n********************   Random Testing of Smithy Card  ******************\n\n");
 
 	int k[10] = {adventurer, council_room, feast, gardens, mine,
 		   remodel, smithy, village, baron, great_hall};
 
-//Create game with random # players?
-//Create fill hand, discard, handCount, discardCount, deck with randoms; max 500 per
-//Play adventurer 
+
+
+
 	srand(time(NULL));
 	
 	int numPassed = 0;
@@ -48,24 +52,22 @@ int main (int argc, char **argv) {
 		initializeGame(2, k, 1, state);  
 
 		int numSupplies = treasure_map + 1;
-		int player = 0; //random player?
+		int player = 0;
 
 		state->whoseTurn = player;
 
 		state->deckCount[player] = 0;  //Empty the player's hand, discard, and deck
 		state->handCount[player] = 0;
 		state->discardCount[player] = 0;
-		int numTreasure = 0;			//Stores the number of treasure cards in the deck
+	
+										//Create fill hand, discard, handCount, discardCount, deck with randoms
 
-		for(int i = 0; i < numSupplies; i++){
+		for(int i = 0; i < numSupplies; i++){ 
 			if(state->supplyCount[i] > 0){
 				int toAdd = rand() % state->supplyCount[i]; //Add a random valid number of each supply to deck
 				for(int j = 0; j < toAdd; j++){
-					addToDeck(player, i, state);
-					if(i == gold || i == silver || i == copper){
-						if(numTreasure < 2){
-							numTreasure++;
-						}
+					if(i != smithy || state->supplyCount[smithy] > 1){ //Save one smithy so we can add to hand and play later
+						addToDeck(player, i, state);
 					}
 				}
 			}
@@ -73,22 +75,25 @@ int main (int argc, char **argv) {
 		for(int i = 0; i < numSupplies; i++){
 			if(state->supplyCount[i] > 0){
 				int toAdd = rand() % state->supplyCount[i]; //Add a random valid number of each supply to discard
-				for(int j = 0; j < toAdd; j++){
-					addToDiscard(player, i, state);
+				for(int j = 0; j < toAdd; j++){				//Save one smithy so we can add to hand and play later
+					if(i != smithy || state->supplyCount[smithy] > 1){
+						addToDiscard(player, i, state);
+					}
 				}
 			}
 		}
 		for(int i = 0; i < numSupplies; i++){
 			if(state->supplyCount[i] > 0){
 				int toAdd = rand() % state->supplyCount[i]; //Add a random valid number of each supply to hand
-				for(int j = 0; j < toAdd; j++){
-					addToHand(player, i, state);
+				for(int j = 0; j < toAdd; j++){				//Save one smithy so we can add to hand and play later
+					if(i != smithy || state->supplyCount[smithy] > 1){
+						addToHand(player, i, state);
+					}
 				}
 			}
 		}
 
 		shuffle(player, state);
-		
 
 		int expectedDeckCount = state->deckCount[player];
 		int expectedDiscardCount = state->discardCount[player];
@@ -98,24 +103,25 @@ int main (int argc, char **argv) {
 		int testDiscardCount = expectedDiscardCount;
 		int testHandCount = expectedHandCount;
 		
-		int foundTreasure = 0;
-		
-		//Calculated expected values
-		for(int i = 0; i < state->deckCount[player] && foundTreasure < numTreasure; i++){
-			if(state->deck[player][i] == gold || state->deck[player][i] == silver || state->deck[player][i] == copper){
-				foundTreasure++;
-				expectedHandCount++; //Add every treasure card to hand
-			}
-			else{
-				expectedDiscardCount++; //Add every other card to the discard pile
-			}
-			expectedDeckCount--;  		//Either way, remove card from deck
+		int spotForSmithy;
+		if(state->handCount[player] > 0){
+			int spotForSmithy = rand() % state->handCount[player];  //Add smithy to hand somewhere, replacing a card
+			state->supplyCount[state->hand[player][spotForSmithy]]++;
 		}
-		expectedHandCount--;
-		expectedDiscardCount++; //discard adventurer
+		else{
+			state->supplyCount[smithy]--;
+			spotForSmithy = 0;
+		}
+		state->hand[player][spotForSmithy] = smithy;
 		
-		//Play adventurer
-		playAdventurer(state);
+
+		playSmithy(state, spotForSmithy);
+		
+		//Calculate expected values
+		expectedDeckCount -= 3;
+		expectedHandCount += 2;  //Lose the smithy, gain 3 cards
+		expectedDiscardCount++; //Lose smithy
+		
 
 
 
@@ -142,7 +148,6 @@ int main (int argc, char **argv) {
 				printf("Expected Discard Count: %i, Actual Discard Count: %i\n", expectedDiscardCount, state->discardCount[player]);
 			}
 		}
-		free(state);
 	}
 	printf("\nTotal number of tests: %i\n", numTests);
 	printf("Number of tests passed: %i\n", numPassed);
