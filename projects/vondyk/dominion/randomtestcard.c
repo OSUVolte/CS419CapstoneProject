@@ -104,7 +104,7 @@ int main(){
 	int numPlayers;											// number of players
 	struct gameState g;										// game state
 	int maxDeck;											// max deck amount, boundary upper
-	int numTests = 20;									// loop random tests
+	int numTests = 2000;									// loop random tests
 	int k[10] = {duchy, gardens, province, estate, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 	int deckSize = 27;										// will randomize, establishing max size
 

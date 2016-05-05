@@ -325,7 +325,7 @@ void allRandom(int p, int numPlayers, int maxDeck, int position, struct gameStat
 
 int main(){	
 	int i, j;														// counter
-	int numTests = 20; 											// large testing spread
+	int numTests = 2000; 											// large testing spread
 	int numPlayers;													// player amount
 	int maxDeck;													// deck size
 	int position;													// position of card
