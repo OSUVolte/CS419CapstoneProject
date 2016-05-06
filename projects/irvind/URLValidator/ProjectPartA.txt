@@ -1,0 +1,60 @@
+﻿ProjectPartA.txt: Review of Existing Test Cases 
+Dane Schoonover -schoonod@oregonstate.edu  
+Aleksandr Balab - balaba@oregonstate.edu
+Brett Irvin - irvind@oregonstate.edu 
+
+Final Project Part A
+
+1. Explain testIsValid Function of UrlValidator test code.
+
+The testIsValid() function from the UrlValidatorTest class tests the isValid() function from the UrlValidator class.  
+The testIsValid function receives pre-populated testURL arrays(testUrlParts, testUrlPartsOptions, and testPartsIndex), 
+and runs through all of the possible permutations of their combinations.  Test URLS are constructed by choosing a protocol, 
+domain, port, directory path, and query parameters.  Once a URL is formed, it is paired with a Boolean true or false depending 
+on whether the URL is expected to be valid or not. For a URL to be marked as valid/true, then all of its various components must
+ be valid; if any single component or portion of the URL is found to be invalid, then the entire URL is considered invalid. 
+
+
+As each URL is tested, the previously defined ‘expected’ value is compared with what actually is returned by calling the isValid() 
+method.  If the method does not return the expected result, then the unit test is considered a failure.
+
+
+2. Give how many total number of urls it is testing.
+
+
+A complete URL is composed of a scheme+authority+port+path+query it follows: 
+Schemes: 8 
+Authority: 19 
+Port: 7
+Path: 10 
+Query: 3 
+Total possible combinations = 8 * 19 * 7 * 10 * 3 = 31,920 URLs being tested. 
+
+
+Note even though there are 9 testUrlScheme() to be tested the new ResultPair("ftp://", true) will not be tested since in the 
+function testScheme only “http” is marked as true and others including ftp one is marked as false. This is why we get 8 schemes instead of 9.
+
+
+3. Explain how it is building all the urls.
+
+The URLs are composed of five components: protocol, domain, port, directory path, and query.  The ‘testPartsIndex’ array is designed to keep 
+track of the five components as the URL is built.  Once the entire ‘testPartsIndex’ array has been iterated through, then all of the URL 
+components are accounted for and the test URL can be built.  The final step is to designate the completed URL as either valid or invalid.  
+If any of the individual components of the URL are deemed invalid (meaning they return a false Boolean), then the entire URL is marked as 
+being invalid.  This Boolean value is included to act as a basis of comparison against the Boolean returned by the testIsValid function.
+
+
+1. Give an example of valid url being tested and an invalid url being tested by testIsValid() method. 
+An example of a valid URL being tested is "http://255.com”.
+An example of an invalid URL being tested is “http://256.256.256.256:80/test1//file”
+
+
+1. Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests
+that we wrote (in terms of concepts & complexity)? Explain in few lines. 
+
+
+In general terms, testIsValid() isn’t very different than the tests we’ve written for Dominion. The major difference is that testIsValid() 
+does not use random testing, it uses combinatorial testing, in terms of complexity, we would say that - yes  it’s notably more complex than Dominion. 
+Dominion is relatively straightforward code that primarily uses integer variables and switches. UrlValidator uses a number of bitwise operators 
+and a number of external libraries plus there are a larger range of potential inputs across multiple components of a URL. This raises the complexity 
+quite a bit.
