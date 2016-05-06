@@ -58,6 +58,31 @@ cardtest3: cardtest3.c dominion.o rngs.o
 cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+randomtestcard.out:
+	make randomtestcard
+	echo "-----------------Running randomtestcard (cutpurse) test-------------" >> randomtestcard.out
+	echo "*Please note- Failing asserts have been commented out so that program runs through.*" >> randomtestcard.out
+	./randomtestcard >> randomtestcard.out
+	echo "------------------Coverage Tests----------------------" >> randomtestcard.out
+	gcov -f -b dominion.c >> randomtestcard.out
+
+randomtestadventurer.out:
+	make randomtestadventurer 
+	echo "-----------------Running randomtestadventurer test-------------" >> randomtestadventurer.out
+	echo "*Please note- Failing asserts have been commented out so that program runs through.*" >> randomtestadventurer.out
+	./randomtestadventurer >> randomtestadventurer.out
+	echo "------------------Coverage Tests----------------------" >> randomtestadventurer.out
+	gcov -f -b dominion.c >> randomtestadventurer.out
+
+randomtestresults.out:
+	make randomtestcard.out
+	make randomtestadventurer.out
 
 unittestresults.out:
 	make unittest1
