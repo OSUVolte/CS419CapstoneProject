@@ -35,7 +35,7 @@ int main () {
 	SelectStream(1);
 	PutSeed(73);
 	
-	/*
+
 	// Randomize game variables--always need at least 2 players, but can have 4 maximum
 	for(i = 0; i < NUM_TESTS; i++){
 		numPlayers = 2 + floor(Random() * (MAX_PLAYERS - 1));
@@ -62,7 +62,6 @@ int main () {
 		}
 		
 		// Create a random deck	
-		//https://github.com/aburasali/cs362sp16/blob/master/projects/chrijohn/dominion/randomtestadventurer.c
 		for(i = 0; i < G.numPlayers; i++){
 			remCards = MAX_DECK - G.handCount[i]; //maximum possible cards left for deck
 			deckCount = floor(Random() * remCards);	//random number of cards in deck 0 to remCards
@@ -72,8 +71,8 @@ int main () {
 					//printf("deck: %i, %i\n", i, G.deck[i][j]);
 				}
 		}
-		*/
-		
+
+/*		
 		    // Randomize game variables
 	for(i = 0; i < NUM_TESTS; i++){
 		numPlayers = floor(Random() * (MAX_PLAYERS - 2)) + 2; 
@@ -100,12 +99,12 @@ int main () {
 				G.deck[i][j] = floor(Random() * (treasure_map + 1));
 			}
 		}
-		
+*/		
 		// Initialize a game with the adventurer card in Player 1's hand
 		gainCard(adventurer, &G, 2, thisPlayer);
 		memcpy(&testG, &G, sizeof(struct gameState));
 		playCard((G.handCount[thisPlayer] - 1), 0, 0, 0, &G);
-		
+
 		/*---------------------------------------------------------*/
 		// Testing the Adventurer card's effect on current player
 	
