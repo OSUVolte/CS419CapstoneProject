@@ -33,8 +33,11 @@ int main() {
     struct gameState G;
     int maxHandCount = 5;
     int c, s, g;
-
-    printf ("TESTING updateCoins():\n");
+    int passedTest=0;
+    int failedTest=0;
+    printf("\n\n*************************\n");
+    printf ("TESTING updateCoins()\n");
+    printf("*************************\n\n");
     //int coins[MAX_HAND]={0};
     for (p = 0; p < numPlayer; p++)
     {
@@ -73,9 +76,17 @@ int main() {
                                     
                             memcpy(G.hand[p], coins, sizeof(int) * handCount); // set all the cards to copper
                             updateCoins(p, &G, bonus);
-			    printf("G.coins = %d, expected = %d\n", G.coins, expectedValue + bonus);
-                            assert(G.coins == expectedValue + bonus); // check if the number of coins is correct
-			 
+			                printf("G.coins = %d, expected = %d\n", G.coins, expectedValue + bonus);
+                            // check if the number of coins is correct
+                            if(G.coins == expectedValue + bonus){
+                                printf("Passed test\n");
+                                passedTest++;
+                            }
+                                
+                            else{
+                                printf("failed test\n");
+                                failedTest++;
+                            }
                         }
                     }
                 }
@@ -83,7 +94,6 @@ int main() {
         }
     }
 
-    printf("All tests passed!\n");
-
+    printf("Passed %d and failed %d of the unittest1 tests\n", passedTest, failedTest);
     return 0;
 }

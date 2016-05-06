@@ -1,9 +1,9 @@
 Overall coverage:
 ------------------------------------
 File 'dominion.c'
-Lines executed:28.44% of 654
-Branches executed:28.54% of 417
-Taken at least once:20.86% of 417
+Lines executed:30.73% of 654
+Branches executed:29.50% of 417
+Taken at least once:21.82% of 417
 
 My overall coverage is fairly low, but if you look more closely at the coverage
 for the functions that I was testing, the coverage is a lot better.  It makes
@@ -57,12 +57,12 @@ Taken at least once:100.00% of 6
 
 unittest4.c covers the drawCard() function:
 Function 'drawCard'
-Lines executed:33.33% of 24
-Branches executed:33.33% of 6
-Taken at least once:16.67% of 6
+Lines executed:95.83% of 24
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
 
 You will notice that the above function tests provide 100% branch execution for
-all 7 functions tested (I have not finished drawCard yet).  This shows that the testing was fairly thourough.  The
+all 8 functions tested.  This shows that the testing was fairly thourough.  The
 functions like smithy, and adventurer which don't have 100% line execution reflect
 the bugs that were inserted for Assignment2.  For this assignment, I found an
 additional bug in discardCard which explains why it doesn't have 100% line execution.

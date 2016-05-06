@@ -34,7 +34,6 @@ void testWhereCardsComeFrom(struct gameState *state)
 	int choice2=0;
 	int choice3=0;
 	int bonus=0;
-	int i=0;
 	int beforeDraw = state->deckCount[state->whoseTurn];
 	int afterDraw;
 	cardEffect( smithy , choice1, choice2, choice3, state, 0, &bonus);

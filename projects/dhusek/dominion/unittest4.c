@@ -15,8 +15,8 @@
 #define TESTFUNCTION "drawCard()"
 
 int main() {
-    int trashed;
-    int discarded;
+    int hand;
+    int deck;
     
     int seed = 1000;
     int numPlayers = 2;
@@ -27,8 +27,8 @@ int main() {
     int i;
     int num;
     int GnewHandCount;
+    int GnewDeckCount;
     int GnewDiscardCount;
-    int GnewTrashCount;
     int errorCount = 0;
     int failedTests = 0;
     int passedTests = 0;
@@ -38,19 +38,115 @@ int main() {
     
     printf("----------------- Testing Function: %s ----------------\n", TESTFUNCTION);
     
-    for(i = 0; i < G.deckCount[thisPlayer]; i++) {
-        G.discard[thisPlayer][G.discardCount[thisPlayer]] = G.deck[thisPlayer][i];
-        G.discardCount[thisPlayer]++;
-    }
-    
-    G.deckCount[thisPlayer] = 0;
-    
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     
+    for(i = 0; i < testG.deckCount[thisPlayer]; i++) {
+        testG.discard[thisPlayer][testG.discardCount[thisPlayer]] = testG.deck[thisPlayer][i];
+        testG.discardCount[thisPlayer]++;
+    }
     
+    testG.deckCount[thisPlayer] = 0;
     
+    hand = 1;
+    deck = 1;
+    GnewHandCount = G.handCount[thisPlayer] + hand;
+    GnewDeckCount = G.deckCount[thisPlayer] - deck;
+    GnewDiscardCount = 0;
     
+    drawCard(thisPlayer, &testG);
+    
+    // ----------- Draw a card from an empty deck. --------------
+    printf("Testing: Draw a card from an empty deck.\n");
+    if(testG.handCount[thisPlayer] != GnewHandCount) {
+        if(testG.handCount[thisPlayer] < GnewHandCount) {
+            num = GnewHandCount - testG.handCount[thisPlayer];
+            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too few cards.\n", num);
+            failedTests++;
+            errorCount++;
+        } else { // hand count is too big
+            num = testG.handCount[thisPlayer] - GnewHandCount;
+            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too many cards.\n", num);
+            failedTests++;
+            errorCount++;
+        }
+    }
+    if(testG.deckCount[thisPlayer] != GnewDeckCount) {
+        if(testG.deckCount[thisPlayer] < GnewDeckCount) {
+            num = GnewDeckCount - testG.deckCount[thisPlayer];
+            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too few cards.\n", num);
+            failedTests++;
+            errorCount++;
+        } else { // deck count is too big
+            num = testG.deckCount[thisPlayer] - GnewDeckCount;
+            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too many cards.\n", num);
+            failedTests++;
+            errorCount++;
+        }
+    }
+    if(testG.discardCount[thisPlayer] != GnewDiscardCount) {
+        if(testG.discardCount[thisPlayer] < GnewDiscardCount) {
+            num = GnewDiscardCount - testG.discardCount[thisPlayer];
+            printf("\t**FAILED**: Discard count was not updated correctly.  There are %d too few cards.\n", num);
+            failedTests++;
+            errorCount++;
+        } else { // discard count is too big
+            num = testG.discardCount[thisPlayer] - GnewDiscardCount;
+            printf("\t**FAILED**: Discard count was not updated correctly.  There are %d too many cards.\n", num);
+            failedTests++;
+            errorCount++;
+        }
+    }
+    
+    if(errorCount == 0) {
+        printf("\tPASSED: Discard, deck, and hand counts are all correct.\n\n");
+        passedTests++;
+    } else {
+        printf("\n");
+    }
+    
+    hand = 1;
+    deck = 1;
+    GnewHandCount = GnewHandCount + hand;
+    GnewDeckCount = GnewDeckCount - deck;
+    
+    drawCard(thisPlayer, &testG);
+    
+    // ----------- Draw a card from a deck. --------------
+    printf("Testing: Draw a card from a deck.\n");
+    if(testG.handCount[thisPlayer] != GnewHandCount) {
+        if(testG.handCount[thisPlayer] < GnewHandCount) {
+            num = GnewHandCount - testG.handCount[thisPlayer];
+            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too few cards.\n", num);
+            failedTests++;
+            errorCount++;
+        } else { // hand count is too big
+            num = testG.handCount[thisPlayer] - GnewHandCount;
+            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too many cards.\n", num);
+            failedTests++;
+            errorCount++;
+        }
+    }
+    if(testG.deckCount[thisPlayer] != GnewDeckCount) {
+        if(testG.deckCount[thisPlayer] < GnewDeckCount) {
+            num = GnewDeckCount - testG.deckCount[thisPlayer];
+            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too few cards.\n", num);
+            failedTests++;
+            errorCount++;
+        } else { // deck count is too big
+            num = testG.deckCount[thisPlayer] - GnewDeckCount;
+            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too many cards.\n", num);
+            failedTests++;
+            errorCount++;
+        }
+    }
+    
+    if(errorCount == 0) {
+        printf("\tPASSED: Discard, deck, and hand counts are all correct.\n\n");
+        passedTests++;
+    } else {
+        printf("\n");
+    }
     
     
     
