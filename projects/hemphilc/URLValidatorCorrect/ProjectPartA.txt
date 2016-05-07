@@ -1,0 +1,52 @@
+Cherie Lo
+Corey Hemphill
+Dat Tran
+CS362_400 - Spring 2016
+Team Project - Part  A
+
+Apache URL Validator Testing
+ 
+URL Validator Test Explained
+Apache Commons provides several packages to validate the integrity of user inputs. The 
+section that we focus on in this project is the UrlValidator class. The primary function 
+that performs the actual URL validation through levels of testing is testIsValid() method. 
+First, the function creates a UrlValidator object and uses it to run the test on a given 
+input URL against five different categories–scheme, authority, port, path, and query–to see 
+if it matches any of them. The submethod call for this process is isValid(). There are two 
+URLs used as test cases in the testIsValid() method: 
+
+http://www.google.com and http://www.google.com/
+
+The “result” part of the test is just running these inputs through isValid(). The “expected” 
+part is done by breaking the URL into smaller chunks (testPartsIndex()) and running through 
+all possible character permutations to see if they are valid, then reassembling the URL back 
+to its original state. The boolean variables “result,” and “expect,” are then compared via 
+the assertEquals() method. If the expected result matches the actual result outputted from 
+the isValid() method, the program prints out “.”. Otherwise, it prints out “X”. The function 
+setup() simply sets the parts index to 0.
+
+URL Component Inputs
+The test loops through five variables: scheme, authority, port, path and query. These represent 
+the separate components of a URL. Each component has the following test values/options:
+	Scheme: 9 – protocol inputs (i.e. “http://”).
+	Authority: 19 – test inputs for IP address.
+	Port: 7 – port input format.
+	Path: 10 – path inputs (i.e. “/test1/”).
+	Query: 3 – query inputs (i.e. “?action=value”).
+Therefore, the total number of permutations that we can test is 9 * 19 * 7 * 10 * 3 = 35910 cases. 
+This is the number of URLs being tested by UrlValidatorTest. Using testIsValid() method, the URL 
+“http://www.google.com” would pass as valid, and “http:www.google.com” would not.
+
+Comparison with Dominion Game testing
+From evaluating the test code from UrlValidatorTest, it’s safe to say that the testing concepts 
+we used with Dominion are the same core concepts used in real world professional software testing. 
+On one hand, we can test results by running random inputs through the program. On the other, we 
+can test calculated, expected outputs using the same set of inputs. We can then create a tool to 
+automate the process of comparing those two sets of tests. The primary differences here are the 
+scope and complexity a real world software test. For the size and relative simplicity of our 
+Dominion game, some combination of random testing and calculated output testing would probably 
+suffice to catch the majority of important bugs. However, in the case of the URL validator, since 
+the size of user population is so large, and the complexity of the potential inputs is fairly great, 
+it requires much more rigorous testing. And that’s why with the UrlValidator we see the use of 
+combinatorial testing.
+
