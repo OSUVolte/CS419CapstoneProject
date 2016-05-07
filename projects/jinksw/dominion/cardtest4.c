@@ -32,7 +32,7 @@ int main() {
 		int actions = 1;
 		int buys = 0;
 		int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int i, j, m;
+    int i, m;
     int seed = 1000;
     int numPlayers = 2;
     int thisPlayer = 0;
@@ -40,15 +40,16 @@ int main() {
 		int failFlag = 0;
 		int passCount = 0;
 		int tests = 4;
-		int tE = 0, tH = 0; //treasureExpected, treasureInHand
 		int newActions = 0;	
 
 		struct gameState G, testG;
 		int k[10] = {council_room, embargo, adventurer, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, village};
+		int kTest[10];
+		memcpy(kTest, k, sizeof(k));
 
 	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
+	initializeGame(numPlayers, kTest, seed, &G);
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
@@ -190,7 +191,7 @@ int main() {
 			}
 			printf(", expected cards: ");
 			for (m=0; m<G.handCount[thisPlayer]; m++) {
-				if ( m <G.handCount[thisPlayer]; m++ ){
+				if ( m <G.handCount[thisPlayer] ){
 					if ( m != i  ) {
 						printf("(%d)", G.hand[thisPlayer][m]);
 					} else {
@@ -201,7 +202,7 @@ int main() {
 			printf("(drawn Card),(drawn Card)\n");
 
 			for (m=0; m<G.handCount[thisPlayer]; m++) {
-				if( m=i ){
+				if( m==i ){
 					if( G.hand[thisPlayer][m] == testG.hand[thisPlayer][m] ){
 						printf( "Test 3 Failed: council_room remained in same position in hand for iteration # %d, but was in starting position: %d.\n", i+1, i );
 						failFlag = 1;
@@ -232,11 +233,11 @@ int main() {
 	printf("Player turn = %d, expected = %d\n", testG.whoseTurn, G.whoseTurn );
 	printf("Kingdom cards = ");
 	for( i=0; i< 10; i++ ){ 
-		printf( "(%s = %d)", testG->kingdomCards[i], testG.supplyCount[i] );
+		printf( "( %d Count = %d)", kTest[i], testG.supplyCount[i] );
 	}
 	printf(", expected = ");
 	for( i=0; i< 10; i++ ){
-		printf( "(%s = %d)", G->kingdomCards[i], G.supplyCount[i] );
+		printf( "(Enum %d = Count %d)", k[i], G.supplyCount[i] );
 	}
 	
 	//Tests
@@ -261,12 +262,12 @@ int main() {
 		failFlag = 1;
 	}
 	for( i=0; i< 10; i++ ){
-		if( !( testG.kingdomCards[i] == G.kingdomCards[i] ) ){
-			printf( "Test 4 Failed:Kingdom card %s changed to %s \n", G.kingdomCards[i], testG.kingdomCards[i] );
+		if( !( kTest[i] == k[i] ) ){
+			printf( "Test 4 Failed:Kingdom card %d changed to %d \n", k[i], kTest[i] );
 			failFlag = 1;
 		}
 		if( !( testG.supplyCount[i] == G.supplyCount[i] ) ){
-			printf( "Test 4 Failed:Kingdom card count %d for %s changed to %d for %s \n", G.supplyCount[i], G.kingdomCards[i], testG.supplycount[i], testG.kingdomCards[i] );
+			printf( "Test 4 Failed:Kingdom card count %d for %d changed to %d \n", G.supplyCount[i], k[i], testG.supplyCount[i] );
 			failFlag = 1;
 		}
 

@@ -191,10 +191,10 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:36.36% of 22
-Branches executed:33.33% of 6
-Taken at least once:16.67% of 6
-Calls executed:0.00% of 1
+Lines executed:95.45% of 22
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 1
 
 Function 'getWinners'
 Lines executed:0.00% of 24
@@ -287,9 +287,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:28.62% of 559
-Branches executed:27.95% of 415
-Taken at least once:23.61% of 415
-Calls executed:16.67% of 96
+Lines executed:30.95% of 559
+Branches executed:28.92% of 415
+Taken at least once:24.58% of 415
+Calls executed:17.71% of 96
 Creating 'dominion.c.gcov'
 

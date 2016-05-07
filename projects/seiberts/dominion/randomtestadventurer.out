@@ -1,0 +1,4397 @@
+***Runnings Random Adventurer Test***
+<------------- Test 0 ------------------>*
+Current player: 4
+Seed: 867600774
+Current Hand Count: 272
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 0 Completed. -------------->
+
+
+
+<------------- Test 1 ------------------>*
+Current player: 2
+Seed: 2092833660
+Current Hand Count: 77
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 1 Completed. -------------->
+
+
+
+<------------- Test 2 ------------------>*
+Current player: 3
+Seed: 62973284
+Current Hand Count: 146
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 2 Completed. -------------->
+
+
+
+<------------- Test 3 ------------------>*
+Current player: 2
+Seed: 1681485990
+Current Hand Count: 293
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 3 Completed. -------------->
+
+
+
+<------------- Test 4 ------------------>*
+Current player: 3
+Seed: 1999972112
+Current Hand Count: 80
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 4 Completed. -------------->
+
+
+
+<------------- Test 5 ------------------>*
+Current player: 3
+Seed: 139535400
+Current Hand Count: 498
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 5 Completed. -------------->
+
+
+
+<------------- Test 6 ------------------>*
+Current player: 2
+Seed: 597463387
+Current Hand Count: 198
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 6 Completed. -------------->
+
+
+
+<------------- Test 7 ------------------>*
+Current player: 2
+Seed: 20750995
+Current Hand Count: 182
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 7 Completed. -------------->
+
+
+
+<------------- Test 8 ------------------>*
+Current player: 4
+Seed: 148671810
+Current Hand Count: 382
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 8 Completed. -------------->
+
+
+
+<------------- Test 9 ------------------>*
+Current player: 3
+Seed: 1922283425
+Current Hand Count: 24
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 9 Completed. -------------->
+
+
+
+<------------- Test 10 ------------------>*
+Current player: 3
+Seed: 533163745
+Current Hand Count: 408
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 10 Completed. -------------->
+
+
+
+<------------- Test 11 ------------------>*
+Current player: 2
+Seed: 1885003817
+Current Hand Count: 120
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 11 Completed. -------------->
+
+
+
+<------------- Test 12 ------------------>*
+Current player: 4
+Seed: 1361366052
+Current Hand Count: 236
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 12 Completed. -------------->
+
+
+
+<------------- Test 13 ------------------>*
+Current player: 2
+Seed: 447372528
+Current Hand Count: 477
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 13 Completed. -------------->
+
+
+
+<------------- Test 14 ------------------>*
+Current player: 3
+Seed: 1676150036
+Current Hand Count: 495
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 14 Completed. -------------->
+
+
+
+<------------- Test 15 ------------------>*
+Current player: 2
+Seed: 904131963
+Current Hand Count: 419
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 15 Completed. -------------->
+
+
+
+<------------- Test 16 ------------------>*
+Current player: 4
+Seed: 1142147635
+Current Hand Count: 475
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 16 Completed. -------------->
+
+
+
+<------------- Test 17 ------------------>*
+Current player: 4
+Seed: 796310664
+Current Hand Count: 339
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 17 Completed. -------------->
+
+
+
+<------------- Test 18 ------------------>*
+Current player: 3
+Seed: 1204215145
+Current Hand Count: 424
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 18 Completed. -------------->
+
+
+
+<------------- Test 19 ------------------>*
+Current player: 2
+Seed: 524851470
+Current Hand Count: 247
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 19 Completed. -------------->
+
+
+
+<------------- Test 20 ------------------>*
+Current player: 3
+Seed: 1512986834
+Current Hand Count: 337
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 20 Completed. -------------->
+
+
+
+<------------- Test 21 ------------------>*
+Current player: 4
+Seed: 2075633550
+Current Hand Count: 415
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 21 Completed. -------------->
+
+
+
+<------------- Test 22 ------------------>*
+Current player: 2
+Seed: 594941928
+Current Hand Count: 436
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 22 Completed. -------------->
+
+
+
+<------------- Test 23 ------------------>*
+Current player: 3
+Seed: 272503325
+Current Hand Count: 201
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 23 Completed. -------------->
+
+
+
+<------------- Test 24 ------------------>*
+Current player: 3
+Seed: 972952002
+Current Hand Count: 302
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 24 Completed. -------------->
+
+
+
+<------------- Test 25 ------------------>*
+Current player: 3
+Seed: 1409421828
+Current Hand Count: 474
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 25 Completed. -------------->
+
+
+
+<------------- Test 26 ------------------>*
+Current player: 2
+Seed: 1549118000
+Current Hand Count: 77
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 26 Completed. -------------->
+
+
+
+<------------- Test 27 ------------------>*
+Current player: 2
+Seed: 931628471
+Current Hand Count: 440
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 27 Completed. -------------->
+
+
+
+<------------- Test 28 ------------------>*
+Current player: 3
+Seed: 802568220
+Current Hand Count: 339
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 28 Completed. -------------->
+
+
+
+<------------- Test 29 ------------------>*
+Current player: 4
+Seed: 1991877275
+Current Hand Count: 119
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 29 Completed. -------------->
+
+
+
+<------------- Test 30 ------------------>*
+Current player: 2
+Seed: 440180662
+Current Hand Count: 221
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 30 Completed. -------------->
+
+
+
+<------------- Test 31 ------------------>*
+Current player: 4
+Seed: 1497203714
+Current Hand Count: 481
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 31 Completed. -------------->
+
+
+
+<------------- Test 32 ------------------>*
+Current player: 3
+Seed: 884544293
+Current Hand Count: 20
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 32 Completed. -------------->
+
+
+
+<------------- Test 33 ------------------>*
+Current player: 4
+Seed: 1432367647
+Current Hand Count: 25
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 33 Completed. -------------->
+
+
+
+<------------- Test 34 ------------------>*
+Current player: 2
+Seed: 755170077
+Current Hand Count: 274
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 34 Completed. -------------->
+
+
+
+<------------- Test 35 ------------------>*
+Current player: 3
+Seed: 2115495511
+Current Hand Count: 178
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 35 Completed. -------------->
+
+
+
+<------------- Test 36 ------------------>*
+Current player: 4
+Seed: 748117762
+Current Hand Count: 163
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 36 Completed. -------------->
+
+
+
+<------------- Test 37 ------------------>*
+Current player: 3
+Seed: 1992856946
+Current Hand Count: 95
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 37 Completed. -------------->
+
+
+
+<------------- Test 38 ------------------>*
+Current player: 3
+Seed: 706480843
+Current Hand Count: 366
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 38 Completed. -------------->
+
+
+
+<------------- Test 39 ------------------>*
+Current player: 4
+Seed: 2010048719
+Current Hand Count: 256
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 39 Completed. -------------->
+
+
+
+<------------- Test 40 ------------------>*
+Current player: 3
+Seed: 1323660779
+Current Hand Count: 468
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 40 Completed. -------------->
+
+
+
+<------------- Test 41 ------------------>*
+Current player: 2
+Seed: 992981149
+Current Hand Count: 323
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 41 Completed. -------------->
+
+
+
+<------------- Test 42 ------------------>*
+Current player: 4
+Seed: 2131663418
+Current Hand Count: 258
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 42 Completed. -------------->
+
+
+
+<------------- Test 43 ------------------>*
+Current player: 3
+Seed: 1904178579
+Current Hand Count: 159
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 43 Completed. -------------->
+
+
+
+<------------- Test 44 ------------------>*
+Current player: 3
+Seed: 994114484
+Current Hand Count: 181
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 44 Completed. -------------->
+
+
+
+<------------- Test 45 ------------------>*
+Current player: 4
+Seed: 1749119370
+Current Hand Count: 65
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 45 Completed. -------------->
+
+
+
+<------------- Test 46 ------------------>*
+Current player: 2
+Seed: 960745487
+Current Hand Count: 350
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 46 Completed. -------------->
+
+
+
+<------------- Test 47 ------------------>*
+Current player: 2
+Seed: 1044789487
+Current Hand Count: 192
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 47 Completed. -------------->
+
+
+
+<------------- Test 48 ------------------>*
+Current player: 4
+Seed: 361816984
+Current Hand Count: 11
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 48 Completed. -------------->
+
+
+
+<------------- Test 49 ------------------>*
+Current player: 3
+Seed: 1889403002
+Current Hand Count: 34
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 49 Completed. -------------->
+
+
+
+<------------- Test 50 ------------------>*
+Current player: 4
+Seed: 663252881
+Current Hand Count: 54
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 50 Completed. -------------->
+
+
+
+<------------- Test 51 ------------------>*
+Current player: 2
+Seed: 1662248435
+Current Hand Count: 287
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 51 Completed. -------------->
+
+
+
+<------------- Test 52 ------------------>*
+Current player: 2
+Seed: 649335273
+Current Hand Count: 340
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 52 Completed. -------------->
+
+
+
+<------------- Test 53 ------------------>*
+Current player: 3
+Seed: 935414286
+Current Hand Count: 104
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 53 Completed. -------------->
+
+
+
+<------------- Test 54 ------------------>*
+Current player: 2
+Seed: 280169511
+Current Hand Count: 227
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 54 Completed. -------------->
+
+
+
+<------------- Test 55 ------------------>*
+Current player: 3
+Seed: 244905064
+Current Hand Count: 99
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 55 Completed. -------------->
+
+
+
+<------------- Test 56 ------------------>*
+Current player: 3
+Seed: 1316203003
+Current Hand Count: 426
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 56 Completed. -------------->
+
+
+
+<------------- Test 57 ------------------>*
+Current player: 3
+Seed: 763487895
+Current Hand Count: 476
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 57 Completed. -------------->
+
+
+
+<------------- Test 58 ------------------>*
+Current player: 4
+Seed: 1409429131
+Current Hand Count: 439
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 58 Completed. -------------->
+
+
+
+<------------- Test 59 ------------------>*
+Current player: 3
+Seed: 417640412
+Current Hand Count: 34
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 59 Completed. -------------->
+
+
+
+<------------- Test 60 ------------------>*
+Current player: 4
+Seed: 963108485
+Current Hand Count: 341
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 60 Completed. -------------->
+
+
+
+<------------- Test 61 ------------------>*
+Current player: 3
+Seed: 936573667
+Current Hand Count: 303
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 61 Completed. -------------->
+
+
+
+<------------- Test 62 ------------------>*
+Current player: 3
+Seed: 360533098
+Current Hand Count: 41
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 62 Completed. -------------->
+
+
+
+<------------- Test 63 ------------------>*
+Current player: 3
+Seed: 1867308028
+Current Hand Count: 190
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 63 Completed. -------------->
+
+
+
+<------------- Test 64 ------------------>*
+Current player: 2
+Seed: 412328742
+Current Hand Count: 335
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 64 Completed. -------------->
+
+
+
+<------------- Test 65 ------------------>*
+Current player: 2
+Seed: 220882707
+Current Hand Count: 386
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 65 Completed. -------------->
+
+
+
+<------------- Test 66 ------------------>*
+Current player: 3
+Seed: 429370482
+Current Hand Count: 80
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 66 Completed. -------------->
+
+
+
+<------------- Test 67 ------------------>*
+Current player: 2
+Seed: 201004318
+Current Hand Count: 470
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 67 Completed. -------------->
+
+
+
+<------------- Test 68 ------------------>*
+Current player: 3
+Seed: 159215080
+Current Hand Count: 82
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 68 Completed. -------------->
+
+
+
+<------------- Test 69 ------------------>*
+Current player: 3
+Seed: 1479188933
+Current Hand Count: 496
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 69 Completed. -------------->
+
+
+
+<------------- Test 70 ------------------>*
+Current player: 4
+Seed: 1132885645
+Current Hand Count: 149
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 70 Completed. -------------->
+
+
+
+<------------- Test 71 ------------------>*
+Current player: 2
+Seed: 326251755
+Current Hand Count: 318
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 71 Completed. -------------->
+
+
+
+<------------- Test 72 ------------------>*
+Current player: 3
+Seed: 1996845616
+Current Hand Count: 396
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 72 Completed. -------------->
+
+
+
+<------------- Test 73 ------------------>*
+Current player: 3
+Seed: 457278486
+Current Hand Count: 165
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 73 Completed. -------------->
+
+
+
+<------------- Test 74 ------------------>*
+Current player: 4
+Seed: 1152828576
+Current Hand Count: 133
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 74 Completed. -------------->
+
+
+
+<------------- Test 75 ------------------>*
+Current player: 4
+Seed: 1812376516
+Current Hand Count: 416
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 75 Completed. -------------->
+
+
+
+<------------- Test 76 ------------------>*
+Current player: 3
+Seed: 61555174
+Current Hand Count: 106
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 76 Completed. -------------->
+
+
+
+<------------- Test 77 ------------------>*
+Current player: 3
+Seed: 111801718
+Current Hand Count: 257
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 77 Completed. -------------->
+
+
+
+<------------- Test 78 ------------------>*
+Current player: 4
+Seed: 601800616
+Current Hand Count: 176
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 78 Completed. -------------->
+
+
+
+<------------- Test 79 ------------------>*
+Current player: 3
+Seed: 933381331
+Current Hand Count: 470
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 79 Completed. -------------->
+
+
+
+<------------- Test 80 ------------------>*
+Current player: 2
+Seed: 614600782
+Current Hand Count: 122
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 80 Completed. -------------->
+
+
+
+<------------- Test 81 ------------------>*
+Current player: 2
+Seed: 311181931
+Current Hand Count: 488
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 81 Completed. -------------->
+
+
+
+<------------- Test 82 ------------------>*
+Current player: 4
+Seed: 408394225
+Current Hand Count: 460
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 82 Completed. -------------->
+
+
+
+<------------- Test 83 ------------------>*
+Current player: 4
+Seed: 1472856163
+Current Hand Count: 266
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 83 Completed. -------------->
+
+
+
+<------------- Test 84 ------------------>*
+Current player: 2
+Seed: 1502313851
+Current Hand Count: 205
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 84 Completed. -------------->
+
+
+
+<------------- Test 85 ------------------>*
+Current player: 3
+Seed: 1380565970
+Current Hand Count: 497
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 85 Completed. -------------->
+
+
+
+<------------- Test 86 ------------------>*
+Current player: 3
+Seed: 370791081
+Current Hand Count: 479
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 86 Completed. -------------->
+
+
+
+<------------- Test 87 ------------------>*
+Current player: 4
+Seed: 1864990359
+Current Hand Count: 43
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 87 Completed. -------------->
+
+
+
+<------------- Test 88 ------------------>*
+Current player: 2
+Seed: 2080359721
+Current Hand Count: 437
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 88 Completed. -------------->
+
+
+
+<------------- Test 89 ------------------>*
+Current player: 4
+Seed: 573755854
+Current Hand Count: 198
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 89 Completed. -------------->
+
+
+
+<------------- Test 90 ------------------>*
+Current player: 4
+Seed: 1299380306
+Current Hand Count: 193
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 90 Completed. -------------->
+
+
+
+<------------- Test 91 ------------------>*
+Current player: 3
+Seed: 1220388629
+Current Hand Count: 288
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 91 Completed. -------------->
+
+
+
+<------------- Test 92 ------------------>*
+Current player: 2
+Seed: 972471276
+Current Hand Count: 311
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 92 Completed. -------------->
+
+
+
+<------------- Test 93 ------------------>*
+Current player: 3
+Seed: 1710082002
+Current Hand Count: 466
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 93 Completed. -------------->
+
+
+
+<------------- Test 94 ------------------>*
+Current player: 2
+Seed: 545001378
+Current Hand Count: 423
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 94 Completed. -------------->
+
+
+
+<------------- Test 95 ------------------>*
+Current player: 4
+Seed: 398480070
+Current Hand Count: 102
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 95 Completed. -------------->
+
+
+
+<------------- Test 96 ------------------>*
+Current player: 3
+Seed: 603317197
+Current Hand Count: 82
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 96 Completed. -------------->
+
+
+
+<------------- Test 97 ------------------>*
+Current player: 4
+Seed: 390209097
+Current Hand Count: 467
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 97 Completed. -------------->
+
+
+
+<------------- Test 98 ------------------>*
+Current player: 3
+Seed: 885405652
+Current Hand Count: 167
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 98 Completed. -------------->
+
+
+
+<------------- Test 99 ------------------>*
+Current player: 3
+Seed: 1164629130
+Current Hand Count: 392
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 99 Completed. -------------->
+
+
+
+<------------- Test 100 ------------------>*
+Current player: 3
+Seed: 1781762011
+Current Hand Count: 309
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 100 Completed. -------------->
+
+
+
+<------------- Test 101 ------------------>*
+Current player: 3
+Seed: 125327931
+Current Hand Count: 459
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 101 Completed. -------------->
+
+
+
+<------------- Test 102 ------------------>*
+Current player: 3
+Seed: 1507457075
+Current Hand Count: 139
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 102 Completed. -------------->
+
+
+
+<------------- Test 103 ------------------>*
+Current player: 3
+Seed: 529166546
+Current Hand Count: 165
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 103 Completed. -------------->
+
+
+
+<------------- Test 104 ------------------>*
+Current player: 4
+Seed: 974971990
+Current Hand Count: 23
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 104 Completed. -------------->
+
+
+
+<------------- Test 105 ------------------>*
+Current player: 2
+Seed: 863538315
+Current Hand Count: 23
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 105 Completed. -------------->
+
+
+
+<------------- Test 106 ------------------>*
+Current player: 2
+Seed: 213617341
+Current Hand Count: 250
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 106 Completed. -------------->
+
+
+
+<------------- Test 107 ------------------>*
+Current player: 3
+Seed: 417922040
+Current Hand Count: 338
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 107 Completed. -------------->
+
+
+
+<------------- Test 108 ------------------>*
+Current player: 4
+Seed: 1273924456
+Current Hand Count: 100
+After Hand Count is: -1502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 108 Completed. -------------->
+
+
+
+<------------- Test 109 ------------------>*
+Current player: 3
+Seed: 556474237
+Current Hand Count: 393
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 109 Completed. -------------->
+
+
+
+<------------- Test 110 ------------------>*
+Current player: 2
+Seed: 1594157695
+Current Hand Count: 361
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 110 Completed. -------------->
+
+
+
+<------------- Test 111 ------------------>*
+Current player: 3
+Seed: 2040007845
+Current Hand Count: 196
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 111 Completed. -------------->
+
+
+
+<------------- Test 112 ------------------>*
+Current player: 2
+Seed: 179618996
+Current Hand Count: 490
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 112 Completed. -------------->
+
+
+
+<------------- Test 113 ------------------>*
+Current player: 2
+Seed: 2116757997
+Current Hand Count: 373
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 113 Completed. -------------->
+
+
+
+<------------- Test 114 ------------------>*
+Current player: 2
+Seed: 384747581
+Current Hand Count: 455
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 114 Completed. -------------->
+
+
+
+<------------- Test 115 ------------------>*
+Current player: 3
+Seed: 949520388
+Current Hand Count: 94
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 115 Completed. -------------->
+
+
+
+<------------- Test 116 ------------------>*
+Current player: 3
+Seed: 1031603532
+Current Hand Count: 485
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 116 Completed. -------------->
+
+
+
+<------------- Test 117 ------------------>*
+Current player: 3
+Seed: 1022312412
+Current Hand Count: 240
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 117 Completed. -------------->
+
+
+
+<------------- Test 118 ------------------>*
+Current player: 2
+Seed: 1344617460
+Current Hand Count: 118
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 118 Completed. -------------->
+
+
+
+<------------- Test 119 ------------------>*
+Current player: 3
+Seed: 1678857232
+Current Hand Count: 143
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 119 Completed. -------------->
+
+
+
+<------------- Test 120 ------------------>*
+Current player: 2
+Seed: 917018024
+Current Hand Count: 42
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 120 Completed. -------------->
+
+
+
+<------------- Test 121 ------------------>*
+Current player: 2
+Seed: 1047203071
+Current Hand Count: 100
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 121 Completed. -------------->
+
+
+
+<------------- Test 122 ------------------>*
+Current player: 2
+Seed: 2003614381
+Current Hand Count: 304
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 122 Completed. -------------->
+
+
+
+<------------- Test 123 ------------------>*
+Current player: 4
+Seed: 1251039209
+Current Hand Count: 50
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 123 Completed. -------------->
+
+
+
+<------------- Test 124 ------------------>*
+Current player: 2
+Seed: 389015781
+Current Hand Count: 287
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 124 Completed. -------------->
+
+
+
+<------------- Test 125 ------------------>*
+Current player: 2
+Seed: 1554272518
+Current Hand Count: 168
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 125 Completed. -------------->
+
+
+
+<------------- Test 126 ------------------>*
+Current player: 3
+Seed: 790798600
+Current Hand Count: 11
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 126 Completed. -------------->
+
+
+
+<------------- Test 127 ------------------>*
+Current player: 4
+Seed: 1245371802
+Current Hand Count: 116
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 127 Completed. -------------->
+
+
+
+<------------- Test 128 ------------------>*
+Current player: 3
+Seed: 2023479945
+Current Hand Count: 342
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 128 Completed. -------------->
+
+
+
+<------------- Test 129 ------------------>*
+Current player: 3
+Seed: 2037929125
+Current Hand Count: 430
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 129 Completed. -------------->
+
+
+
+<------------- Test 130 ------------------>*
+Current player: 2
+Seed: 405415362
+Current Hand Count: 309
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 130 Completed. -------------->
+
+
+
+<------------- Test 131 ------------------>*
+Current player: 2
+Seed: 1079350864
+Current Hand Count: 413
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 131 Completed. -------------->
+
+
+
+<------------- Test 132 ------------------>*
+Current player: 4
+Seed: 1536307293
+Current Hand Count: 417
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 132 Completed. -------------->
+
+
+
+<------------- Test 133 ------------------>*
+Current player: 3
+Seed: 743405024
+Current Hand Count: 428
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 133 Completed. -------------->
+
+
+
+<------------- Test 134 ------------------>*
+Current player: 2
+Seed: 752205599
+Current Hand Count: 269
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 134 Completed. -------------->
+
+
+
+<------------- Test 135 ------------------>*
+Current player: 4
+Seed: 267673786
+Current Hand Count: 469
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 135 Completed. -------------->
+
+
+
+<------------- Test 136 ------------------>*
+Current player: 2
+Seed: 423235918
+Current Hand Count: 350
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 136 Completed. -------------->
+
+
+
+<------------- Test 137 ------------------>*
+Current player: 2
+Seed: 959829219
+Current Hand Count: 258
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 137 Completed. -------------->
+
+
+
+<------------- Test 138 ------------------>*
+Current player: 3
+Seed: 1379082622
+Current Hand Count: 374
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 138 Completed. -------------->
+
+
+
+<------------- Test 139 ------------------>*
+Current player: 4
+Seed: 1583482711
+Current Hand Count: 119
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 139 Completed. -------------->
+
+
+
+<------------- Test 140 ------------------>*
+Current player: 2
+Seed: 523225885
+Current Hand Count: 28
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 140 Completed. -------------->
+
+
+
+<------------- Test 141 ------------------>*
+Current player: 2
+Seed: 1306201920
+Current Hand Count: 310
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 141 Completed. -------------->
+
+
+
+<------------- Test 142 ------------------>*
+Current player: 4
+Seed: 940853412
+Current Hand Count: 30
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 142 Completed. -------------->
+
+
+
+<------------- Test 143 ------------------>*
+Current player: 2
+Seed: 70692779
+Current Hand Count: 457
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 143 Completed. -------------->
+
+
+
+<------------- Test 144 ------------------>*
+Current player: 3
+Seed: 411715758
+Current Hand Count: 308
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 144 Completed. -------------->
+
+
+
+<------------- Test 145 ------------------>*
+Current player: 4
+Seed: 1443335389
+Current Hand Count: 216
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 145 Completed. -------------->
+
+
+
+<------------- Test 146 ------------------>*
+Current player: 4
+Seed: 2033487893
+Current Hand Count: 341
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 146 Completed. -------------->
+
+
+
+<------------- Test 147 ------------------>*
+Current player: 4
+Seed: 1910778121
+Current Hand Count: 232
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 147 Completed. -------------->
+
+
+
+<------------- Test 148 ------------------>*
+Current player: 2
+Seed: 589162089
+Current Hand Count: 366
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 148 Completed. -------------->
+
+
+
+<------------- Test 149 ------------------>*
+Current player: 3
+Seed: 503851047
+Current Hand Count: 28
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 149 Completed. -------------->
+
+
+
+<------------- Test 150 ------------------>*
+Current player: 3
+Seed: 743811281
+Current Hand Count: 94
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 150 Completed. -------------->
+
+
+
+<------------- Test 151 ------------------>*
+Current player: 3
+Seed: 1041547435
+Current Hand Count: 74
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 151 Completed. -------------->
+
+
+
+<------------- Test 152 ------------------>*
+Current player: 4
+Seed: 1224058363
+Current Hand Count: 372
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 152 Completed. -------------->
+
+
+
+<------------- Test 153 ------------------>*
+Current player: 2
+Seed: 1310471007
+Current Hand Count: 96
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 153 Completed. -------------->
+
+
+
+<------------- Test 154 ------------------>*
+Current player: 2
+Seed: 2008560511
+Current Hand Count: 317
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 154 Completed. -------------->
+
+
+
+<------------- Test 155 ------------------>*
+Current player: 3
+Seed: 934018631
+Current Hand Count: 340
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 155 Completed. -------------->
+
+
+
+<------------- Test 156 ------------------>*
+Current player: 4
+Seed: 1652471324
+Current Hand Count: 356
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 156 Completed. -------------->
+
+
+
+<------------- Test 157 ------------------>*
+Current player: 4
+Seed: 953478597
+Current Hand Count: 460
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 157 Completed. -------------->
+
+
+
+<------------- Test 158 ------------------>*
+Current player: 4
+Seed: 1897485623
+Current Hand Count: 69
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 158 Completed. -------------->
+
+
+
+<------------- Test 159 ------------------>*
+Current player: 3
+Seed: 223901255
+Current Hand Count: 87
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 159 Completed. -------------->
+
+
+
+<------------- Test 160 ------------------>*
+Current player: 4
+Seed: 582334727
+Current Hand Count: 415
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 160 Completed. -------------->
+
+
+
+<------------- Test 161 ------------------>*
+Current player: 3
+Seed: 2124227015
+Current Hand Count: 477
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 161 Completed. -------------->
+
+
+
+<------------- Test 162 ------------------>*
+Current player: 2
+Seed: 1689174290
+Current Hand Count: 278
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 162 Completed. -------------->
+
+
+
+<------------- Test 163 ------------------>*
+Current player: 3
+Seed: 1312742823
+Current Hand Count: 217
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 163 Completed. -------------->
+
+
+
+<------------- Test 164 ------------------>*
+Current player: 4
+Seed: 504931827
+Current Hand Count: 200
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 164 Completed. -------------->
+
+
+
+<------------- Test 165 ------------------>*
+Current player: 2
+Seed: 2071893717
+Current Hand Count: 11
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 165 Completed. -------------->
+
+
+
+<------------- Test 166 ------------------>*
+Current player: 4
+Seed: 1014453824
+Current Hand Count: 443
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 166 Completed. -------------->
+
+
+
+<------------- Test 167 ------------------>*
+Current player: 2
+Seed: 1197787943
+Current Hand Count: 38
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 167 Completed. -------------->
+
+
+
+<------------- Test 168 ------------------>*
+Current player: 4
+Seed: 124268452
+Current Hand Count: 490
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 168 Completed. -------------->
+
+
+
+<------------- Test 169 ------------------>*
+Current player: 2
+Seed: 893986154
+Current Hand Count: 105
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 169 Completed. -------------->
+
+
+
+<------------- Test 170 ------------------>*
+Current player: 2
+Seed: 435376012
+Current Hand Count: 5
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 170 Completed. -------------->
+
+
+
+<------------- Test 171 ------------------>*
+Current player: 2
+Seed: 302962130
+Current Hand Count: 359
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 171 Completed. -------------->
+
+
+
+<------------- Test 172 ------------------>*
+Current player: 2
+Seed: 700909752
+Current Hand Count: 406
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 172 Completed. -------------->
+
+
+
+<------------- Test 173 ------------------>*
+Current player: 2
+Seed: 858468281
+Current Hand Count: 352
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 173 Completed. -------------->
+
+
+
+<------------- Test 174 ------------------>*
+Current player: 4
+Seed: 1253299540
+Current Hand Count: 100
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 174 Completed. -------------->
+
+
+
+<------------- Test 175 ------------------>*
+Current player: 2
+Seed: 993047120
+Current Hand Count: 326
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 175 Completed. -------------->
+
+
+
+<------------- Test 176 ------------------>*
+Current player: 4
+Seed: 1167889985
+Current Hand Count: 114
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 176 Completed. -------------->
+
+
+
+<------------- Test 177 ------------------>*
+Current player: 3
+Seed: 541478393
+Current Hand Count: 260
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 177 Completed. -------------->
+
+
+
+<------------- Test 178 ------------------>*
+Current player: 4
+Seed: 375704699
+Current Hand Count: 179
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 178 Completed. -------------->
+
+
+
+<------------- Test 179 ------------------>*
+Current player: 2
+Seed: 1777118271
+Current Hand Count: 152
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 179 Completed. -------------->
+
+
+
+<------------- Test 180 ------------------>*
+Current player: 3
+Seed: 167228524
+Current Hand Count: 104
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 180 Completed. -------------->
+
+
+
+<------------- Test 181 ------------------>*
+Current player: 2
+Seed: 1141138108
+Current Hand Count: 359
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 181 Completed. -------------->
+
+
+
+<------------- Test 182 ------------------>*
+Current player: 3
+Seed: 938519302
+Current Hand Count: 232
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 182 Completed. -------------->
+
+
+
+<------------- Test 183 ------------------>*
+Current player: 3
+Seed: 1409131186
+Current Hand Count: 469
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 183 Completed. -------------->
+
+
+
+<------------- Test 184 ------------------>*
+Current player: 3
+Seed: 562180423
+Current Hand Count: 350
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 184 Completed. -------------->
+
+
+
+<------------- Test 185 ------------------>*
+Current player: 2
+Seed: 1723714061
+Current Hand Count: 66
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 185 Completed. -------------->
+
+
+
+<------------- Test 186 ------------------>*
+Current player: 2
+Seed: 1638044520
+Current Hand Count: 257
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 186 Completed. -------------->
+
+
+
+<------------- Test 187 ------------------>*
+Current player: 4
+Seed: 351200637
+Current Hand Count: 59
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 187 Completed. -------------->
+
+
+
+<------------- Test 188 ------------------>*
+Current player: 4
+Seed: 1480560135
+Current Hand Count: 146
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 188 Completed. -------------->
+
+
+
+<------------- Test 189 ------------------>*
+Current player: 4
+Seed: 591335945
+Current Hand Count: 423
+After Hand Count is: -1502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 189 Completed. -------------->
+
+
+
+<------------- Test 190 ------------------>*
+Current player: 3
+Seed: 701712182
+Current Hand Count: 194
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 190 Completed. -------------->
+
+
+
+<------------- Test 191 ------------------>*
+Current player: 3
+Seed: 121487136
+Current Hand Count: 142
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 191 Completed. -------------->
+
+
+
+<------------- Test 192 ------------------>*
+Current player: 2
+Seed: 1378387382
+Current Hand Count: 397
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 192 Completed. -------------->
+
+
+
+<------------- Test 193 ------------------>*
+Current player: 2
+Seed: 1008819299
+Current Hand Count: 288
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 193 Completed. -------------->
+
+
+
+<------------- Test 194 ------------------>*
+Current player: 3
+Seed: 1515227043
+Current Hand Count: 39
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 194 Completed. -------------->
+
+
+
+<------------- Test 195 ------------------>*
+Current player: 4
+Seed: 1931759577
+Current Hand Count: 384
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 195 Completed. -------------->
+
+
+
+<------------- Test 196 ------------------>*
+Current player: 3
+Seed: 297983714
+Current Hand Count: 175
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 196 Completed. -------------->
+
+
+
+<------------- Test 197 ------------------>*
+Current player: 2
+Seed: 514671681
+Current Hand Count: 332
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 197 Completed. -------------->
+
+
+
+<------------- Test 198 ------------------>*
+Current player: 4
+Seed: 955585212
+Current Hand Count: 358
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 198 Completed. -------------->
+
+
+
+<------------- Test 199 ------------------>*
+Current player: 3
+Seed: 1339400239
+Current Hand Count: 131
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 199 Completed. -------------->
+
+
+
+<------------- Test 200 ------------------>*
+Current player: 4
+Seed: 161513236
+Current Hand Count: 263
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 200 Completed. -------------->
+
+
+
+<------------- Test 201 ------------------>*
+Current player: 4
+Seed: 734010835
+Current Hand Count: 119
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 201 Completed. -------------->
+
+
+
+<------------- Test 202 ------------------>*
+Current player: 3
+Seed: 1603164874
+Current Hand Count: 441
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 202 Completed. -------------->
+
+
+
+<------------- Test 203 ------------------>*
+Current player: 4
+Seed: 263243378
+Current Hand Count: 322
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 203 Completed. -------------->
+
+
+
+<------------- Test 204 ------------------>*
+Current player: 3
+Seed: 716025771
+Current Hand Count: 170
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 204 Completed. -------------->
+
+
+
+<------------- Test 205 ------------------>*
+Current player: 3
+Seed: 2134012943
+Current Hand Count: 475
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 205 Completed. -------------->
+
+
+
+<------------- Test 206 ------------------>*
+Current player: 2
+Seed: 165778758
+Current Hand Count: 278
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 206 Completed. -------------->
+
+
+
+<------------- Test 207 ------------------>*
+Current player: 3
+Seed: 259044031
+Current Hand Count: 397
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 207 Completed. -------------->
+
+
+
+<------------- Test 208 ------------------>*
+Current player: 3
+Seed: 731167479
+Current Hand Count: 223
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 208 Completed. -------------->
+
+
+
+<------------- Test 209 ------------------>*
+Current player: 4
+Seed: 30126122
+Current Hand Count: 367
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 209 Completed. -------------->
+
+
+
+<------------- Test 210 ------------------>*
+Current player: 3
+Seed: 304620851
+Current Hand Count: 1
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 210 Completed. -------------->
+
+
+
+<------------- Test 211 ------------------>*
+Current player: 3
+Seed: 1310506203
+Current Hand Count: 23
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 211 Completed. -------------->
+
+
+
+<------------- Test 212 ------------------>*
+Current player: 3
+Seed: 1250407136
+Current Hand Count: 76
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 212 Completed. -------------->
+
+
+
+<------------- Test 213 ------------------>*
+Current player: 4
+Seed: 451873174
+Current Hand Count: 144
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 213 Completed. -------------->
+
+
+
+<------------- Test 214 ------------------>*
+Current player: 3
+Seed: 644439194
+Current Hand Count: 65
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 214 Completed. -------------->
+
+
+
+<------------- Test 215 ------------------>*
+Current player: 2
+Seed: 1600439240
+Current Hand Count: 456
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 215 Completed. -------------->
+
+
+
+<------------- Test 216 ------------------>*
+Current player: 3
+Seed: 101532679
+Current Hand Count: 42
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 216 Completed. -------------->
+
+
+
+<------------- Test 217 ------------------>*
+Current player: 4
+Seed: 365371867
+Current Hand Count: 29
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 217 Completed. -------------->
+
+
+
+<------------- Test 218 ------------------>*
+Current player: 4
+Seed: 945266469
+Current Hand Count: 417
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 218 Completed. -------------->
+
+
+
+<------------- Test 219 ------------------>*
+Current player: 3
+Seed: 1665115697
+Current Hand Count: 431
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 219 Completed. -------------->
+
+
+
+<------------- Test 220 ------------------>*
+Current player: 2
+Seed: 1496445938
+Current Hand Count: 365
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 220 Completed. -------------->
+
+
+
+<------------- Test 221 ------------------>*
+Current player: 2
+Seed: 344713039
+Current Hand Count: 15
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 221 Completed. -------------->
+
+
+
+<------------- Test 222 ------------------>*
+Current player: 3
+Seed: 1446618923
+Current Hand Count: 146
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 222 Completed. -------------->
+
+
+
+<------------- Test 223 ------------------>*
+Current player: 2
+Seed: 1623921730
+Current Hand Count: 357
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 223 Completed. -------------->
+
+
+
+<------------- Test 224 ------------------>*
+Current player: 2
+Seed: 348082750
+Current Hand Count: 180
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 224 Completed. -------------->
+
+
+
+<------------- Test 225 ------------------>*
+Current player: 2
+Seed: 777420718
+Current Hand Count: 363
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 225 Completed. -------------->
+
+
+
+<------------- Test 226 ------------------>*
+Current player: 2
+Seed: 289221617
+Current Hand Count: 34
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 226 Completed. -------------->
+
+
+
+<------------- Test 227 ------------------>*
+Current player: 3
+Seed: 1211297139
+Current Hand Count: 420
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 227 Completed. -------------->
+
+
+
+<------------- Test 228 ------------------>*
+Current player: 4
+Seed: 1296872305
+Current Hand Count: 117
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 228 Completed. -------------->
+
+
+
+<------------- Test 229 ------------------>*
+Current player: 3
+Seed: 271134703
+Current Hand Count: 54
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 229 Completed. -------------->
+
+
+
+<------------- Test 230 ------------------>*
+Current player: 3
+Seed: 2096382439
+Current Hand Count: 452
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 230 Completed. -------------->
+
+
+
+<------------- Test 231 ------------------>*
+Current player: 4
+Seed: 645773399
+Current Hand Count: 109
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 231 Completed. -------------->
+
+
+
+<------------- Test 232 ------------------>*
+Current player: 2
+Seed: 463392976
+Current Hand Count: 366
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 232 Completed. -------------->
+
+
+
+<------------- Test 233 ------------------>*
+Current player: 3
+Seed: 1252735308
+Current Hand Count: 124
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 233 Completed. -------------->
+
+
+
+<------------- Test 234 ------------------>*
+Current player: 2
+Seed: 1089451731
+Current Hand Count: 178
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 234 Completed. -------------->
+
+
+
+<------------- Test 235 ------------------>*
+Current player: 3
+Seed: 1833376896
+Current Hand Count: 27
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 235 Completed. -------------->
+
+
+
+<------------- Test 236 ------------------>*
+Current player: 2
+Seed: 747561584
+Current Hand Count: 459
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 236 Completed. -------------->
+
+
+
+<------------- Test 237 ------------------>*
+Current player: 3
+Seed: 911471018
+Current Hand Count: 186
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 237 Completed. -------------->
+
+
+
+<------------- Test 238 ------------------>*
+Current player: 3
+Seed: 1215870609
+Current Hand Count: 369
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 238 Completed. -------------->
+
+
+
+<------------- Test 239 ------------------>*
+Current player: 3
+Seed: 2143794175
+Current Hand Count: 278
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 239 Completed. -------------->
+
+
+
+<------------- Test 240 ------------------>*
+Current player: 2
+Seed: 471773209
+Current Hand Count: 336
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 240 Completed. -------------->
+
+
+
+<------------- Test 241 ------------------>*
+Current player: 2
+Seed: 1865118374
+Current Hand Count: 292
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 241 Completed. -------------->
+
+
+
+<------------- Test 242 ------------------>*
+Current player: 3
+Seed: 187088773
+Current Hand Count: 455
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 242 Completed. -------------->
+
+
+
+<------------- Test 243 ------------------>*
+Current player: 3
+Seed: 239350316
+Current Hand Count: 457
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 243 Completed. -------------->
+
+
+
+<------------- Test 244 ------------------>*
+Current player: 4
+Seed: 1940186051
+Current Hand Count: 301
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 244 Completed. -------------->
+
+
+
+<------------- Test 245 ------------------>*
+Current player: 3
+Seed: 1564653409
+Current Hand Count: 371
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 245 Completed. -------------->
+
+
+
+<------------- Test 246 ------------------>*
+Current player: 2
+Seed: 948853786
+Current Hand Count: 406
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 246 Completed. -------------->
+
+
+
+<------------- Test 247 ------------------>*
+Current player: 2
+Seed: 1819274192
+Current Hand Count: 121
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 247 Completed. -------------->
+
+
+
+<------------- Test 248 ------------------>*
+Current player: 2
+Seed: 23256559
+Current Hand Count: 313
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 248 Completed. -------------->
+
+
+
+<------------- Test 249 ------------------>*
+Current player: 3
+Seed: 654297861
+Current Hand Count: 434
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 249 Completed. -------------->
+
+
+
+<------------- Test 250 ------------------>*
+Current player: 2
+Seed: 1534792915
+Current Hand Count: 199
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 250 Completed. -------------->
+
+
+
+<------------- Test 251 ------------------>*
+Current player: 4
+Seed: 160483315
+Current Hand Count: 347
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 251 Completed. -------------->
+
+
+
+<------------- Test 252 ------------------>*
+Current player: 3
+Seed: 733238106
+Current Hand Count: 111
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 252 Completed. -------------->
+
+
+
+<------------- Test 253 ------------------>*
+Current player: 4
+Seed: 926207251
+Current Hand Count: 285
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 253 Completed. -------------->
+
+
+
+<------------- Test 254 ------------------>*
+Current player: 4
+Seed: 744059934
+Current Hand Count: 226
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 254 Completed. -------------->
+
+
+
+<------------- Test 255 ------------------>*
+Current player: 2
+Seed: 796999642
+Current Hand Count: 40
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 255 Completed. -------------->
+
+
+
+<------------- Test 256 ------------------>*
+Current player: 3
+Seed: 390740108
+Current Hand Count: 222
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 256 Completed. -------------->
+
+
+
+<------------- Test 257 ------------------>*
+Current player: 2
+Seed: 1211341377
+Current Hand Count: 494
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 257 Completed. -------------->
+
+
+
+<------------- Test 258 ------------------>*
+Current player: 2
+Seed: 732935382
+Current Hand Count: 356
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 258 Completed. -------------->
+
+
+
+<------------- Test 259 ------------------>*
+Current player: 3
+Seed: 2062673874
+Current Hand Count: 43
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 259 Completed. -------------->
+
+
+
+<------------- Test 260 ------------------>*
+Current player: 2
+Seed: 411639314
+Current Hand Count: 95
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 260 Completed. -------------->
+
+
+
+<------------- Test 261 ------------------>*
+Current player: 2
+Seed: 407088461
+Current Hand Count: 347
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 261 Completed. -------------->
+
+
+
+<------------- Test 262 ------------------>*
+Current player: 2
+Seed: 779806011
+Current Hand Count: 496
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 262 Completed. -------------->
+
+
+
+<------------- Test 263 ------------------>*
+Current player: 2
+Seed: 1921635777
+Current Hand Count: 413
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 263 Completed. -------------->
+
+
+
+<------------- Test 264 ------------------>*
+Current player: 3
+Seed: 273466216
+Current Hand Count: 197
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 264 Completed. -------------->
+
+
+
+<------------- Test 265 ------------------>*
+Current player: 2
+Seed: 897049346
+Current Hand Count: 226
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 265 Completed. -------------->
+
+
+
+<------------- Test 266 ------------------>*
+Current player: 2
+Seed: 1110729741
+Current Hand Count: 353
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 266 Completed. -------------->
+
+
+
+<------------- Test 267 ------------------>*
+Current player: 2
+Seed: 1399587411
+Current Hand Count: 373
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 267 Completed. -------------->
+
+
+
+<------------- Test 268 ------------------>*
+Current player: 4
+Seed: 953037702
+Current Hand Count: 150
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 268 Completed. -------------->
+
+
+
+<------------- Test 269 ------------------>*
+Current player: 2
+Seed: 1568220001
+Current Hand Count: 43
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 269 Completed. -------------->
+
+
+
+<------------- Test 270 ------------------>*
+Current player: 3
+Seed: 968284354
+Current Hand Count: 223
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 270 Completed. -------------->
+
+
+
+<------------- Test 271 ------------------>*
+Current player: 2
+Seed: 1600154394
+Current Hand Count: 125
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 271 Completed. -------------->
+
+
+
+<------------- Test 272 ------------------>*
+Current player: 4
+Seed: 677453840
+Current Hand Count: 66
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 272 Completed. -------------->
+
+
+
+<------------- Test 273 ------------------>*
+Current player: 4
+Seed: 2141832648
+Current Hand Count: 172
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 273 Completed. -------------->
+
+
+
+<------------- Test 274 ------------------>*
+Current player: 2
+Seed: 168034291
+Current Hand Count: 231
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 274 Completed. -------------->
+
+
+
+<------------- Test 275 ------------------>*
+Current player: 2
+Seed: 1948224238
+Current Hand Count: 128
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 275 Completed. -------------->
+
+
+
+<------------- Test 276 ------------------>*
+Current player: 2
+Seed: 609853994
+Current Hand Count: 299
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 276 Completed. -------------->
+
+
+
+<------------- Test 277 ------------------>*
+Current player: 2
+Seed: 367586742
+Current Hand Count: 482
+After Hand Count is: -73
+TEST FAILED: Two cards were not discarded.
+<-------------Test 277 Completed. -------------->
+
+
+
+<------------- Test 278 ------------------>*
+Current player: 3
+Seed: 2091258720
+Current Hand Count: 84
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 278 Completed. -------------->
+
+
+
+<------------- Test 279 ------------------>*
+Current player: 3
+Seed: 1713683989
+Current Hand Count: 2
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 279 Completed. -------------->
+
+
+
+<------------- Test 280 ------------------>*
+Current player: 3
+Seed: 1078261969
+Current Hand Count: 440
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 280 Completed. -------------->
+
+
+
+<------------- Test 281 ------------------>*
+Current player: 2
+Seed: 1206563143
+Current Hand Count: 169
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 281 Completed. -------------->
+
+
+
+<------------- Test 282 ------------------>*
+Current player: 2
+Seed: 2127613373
+Current Hand Count: 370
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 282 Completed. -------------->
+
+
+
+<------------- Test 283 ------------------>*
+Current player: 4
+Seed: 161249182
+Current Hand Count: 10
+After Hand Count is: -1573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 283 Completed. -------------->
+
+
+
+<------------- Test 284 ------------------>*
+Current player: 4
+Seed: 456111562
+Current Hand Count: 134
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 284 Completed. -------------->
+
+
+
+<------------- Test 285 ------------------>*
+Current player: 4
+Seed: 39270326
+Current Hand Count: 288
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 285 Completed. -------------->
+
+
+
+<------------- Test 286 ------------------>*
+Current player: 2
+Seed: 63936651
+Current Hand Count: 105
+After Hand Count is: -502
+TEST FAILED: Two cards were not discarded.
+<-------------Test 286 Completed. -------------->
+
+
+
+<------------- Test 287 ------------------>*
+Current player: 2
+Seed: 1720927480
+Current Hand Count: 468
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 287 Completed. -------------->
+
+
+
+<------------- Test 288 ------------------>*
+Current player: 3
+Seed: 601714135
+Current Hand Count: 129
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 288 Completed. -------------->
+
+
+
+<------------- Test 289 ------------------>*
+Current player: 3
+Seed: 907717327
+Current Hand Count: 167
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 289 Completed. -------------->
+
+
+
+<------------- Test 290 ------------------>*
+Current player: 4
+Seed: 1403547382
+Current Hand Count: 265
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 290 Completed. -------------->
+
+
+
+<------------- Test 291 ------------------>*
+Current player: 4
+Seed: 1641355740
+Current Hand Count: 359
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 291 Completed. -------------->
+
+
+
+<------------- Test 292 ------------------>*
+Current player: 3
+Seed: 993868716
+Current Hand Count: 258
+After Hand Count is: -1002
+TEST FAILED: Two cards were not discarded.
+<-------------Test 292 Completed. -------------->
+
+
+
+<------------- Test 293 ------------------>*
+Current player: 3
+Seed: 1518637115
+Current Hand Count: 64
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 293 Completed. -------------->
+
+
+
+<------------- Test 294 ------------------>*
+Current player: 4
+Seed: 1240153337
+Current Hand Count: 127
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 294 Completed. -------------->
+
+
+
+<------------- Test 295 ------------------>*
+Current player: 3
+Seed: 2011603084
+Current Hand Count: 381
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 295 Completed. -------------->
+
+
+
+<------------- Test 296 ------------------>*
+Current player: 2
+Seed: 1742073607
+Current Hand Count: 108
+After Hand Count is: -2
+TEST FAILED: Two cards were not discarded.
+<-------------Test 296 Completed. -------------->
+
+
+
+<------------- Test 297 ------------------>*
+Current player: 3
+Seed: 200779202
+Current Hand Count: 114
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 297 Completed. -------------->
+
+
+
+<------------- Test 298 ------------------>*
+Current player: 4
+Seed: 1081211920
+Current Hand Count: 448
+After Hand Count is: -1073
+TEST FAILED: Two cards were not discarded.
+<-------------Test 298 Completed. -------------->
+
+
+
+<------------- Test 299 ------------------>*
+Current player: 3
+Seed: 1969196710
+Current Hand Count: 472
+After Hand Count is: -573
+TEST FAILED: Two cards were not discarded.
+<-------------Test 299 Completed. -------------->
+
+
+
+Final Results.
+Number of passed tests: 0
+Number of failed tests: 300
+File 'randomtestadventurer.c'
+Lines executed:90.24% of 41
+Creating 'randomtestadventurer.c.gcov'
+
+File 'randomtestadventurer.c'
+Lines executed:90.24% of 41
+Branches executed:100.00% of 8
+Taken at least once:62.50% of 8
+Calls executed:85.19% of 27
+Creating 'randomtestadventurer.c.gcov'
+
+File 'dominion.c'
+Lines executed:25.62% of 566
+Creating 'dominion.c.gcov'
+
+        -:    0:Source:dominion.c
+        -:    0:Graph:dominion.gcno
+        -:    0:Data:dominion.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+        -:    8:
+        -:    9:
+   128491:   10:int compare(const void* a, const void* b) {
+   128491:   11:  if (*(int*)a > *(int*)b)
+      185:   12:    return 1;
+   128306:   13:  if (*(int*)a < *(int*)b)
+     3508:   14:    return -1;
+   124798:   15:  return 0;
+        -:   16:}
+        -:   17:
+        1:   18:struct gameState* newGame() {
+        1:   19:  struct gameState* g = malloc(sizeof(struct gameState));
+        1:   20:  return g;
+        -:   21:}
+        -:   22:
+    #####:   23:int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
+        -:   24:		  int k8, int k9, int k10) {
+    #####:   25:  int* k = malloc(10 * sizeof(int));
+    #####:   26:  k[0] = k1;
+    #####:   27:  k[1] = k2;
+    #####:   28:  k[2] = k3;
+    #####:   29:  k[3] = k4;
+    #####:   30:  k[4] = k5;
+    #####:   31:  k[5] = k6;
+    #####:   32:  k[6] = k7;
+    #####:   33:  k[7] = k8;
+    #####:   34:  k[8] = k9;
+    #####:   35:  k[9] = k10;
+    #####:   36:  return k;
+        -:   37:}
+        -:   38:
+      300:   39:int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+        -:   40:		   struct gameState *state) {
+        -:   41:
+        -:   42:  int i;
+        -:   43:  int j;
+        -:   44:  int it;			
+        -:   45:  //set up random number generator
+      300:   46:  SelectStream(1);
+      300:   47:  PutSeed((long)randomSeed);
+        -:   48:  
+        -:   49:  //check number of players
+      300:   50:  if (numPlayers > MAX_PLAYERS || numPlayers < 2)
+        -:   51:    {
+    #####:   52:      return -1;
+        -:   53:    }
+        -:   54:
+        -:   55:  //set number of players
+      300:   56:  state->numPlayers = numPlayers;
+        -:   57:
+        -:   58:  //check selected kingdom cards are different
+     3300:   59:  for (i = 0; i < 10; i++)
+        -:   60:    {
+    33000:   61:      for (j = 0; j < 10; j++)
+        -:   62:        {
+    30000:   63:	  if (j != i && kingdomCards[j] == kingdomCards[i])
+        -:   64:	    {
+    #####:   65:	      return -1;
+        -:   66:	    }
+        -:   67:        }
+        -:   68:    }
+        -:   69:
+        -:   70:
+        -:   71:  //initialize supply
+        -:   72:  ///////////////////////////////
+        -:   73:
+        -:   74:  //set number of Curse cards
+      300:   75:  if (numPlayers == 2)
+        -:   76:    {
+      106:   77:      state->supplyCount[curse] = 10;
+        -:   78:    }
+      194:   79:  else if (numPlayers == 3)
+        -:   80:    {
+      116:   81:      state->supplyCount[curse] = 20;
+        -:   82:    }
+        -:   83:  else
+        -:   84:    {
+       78:   85:      state->supplyCount[curse] = 30;
+        -:   86:    }
+        -:   87:
+        -:   88:  //set number of Victory cards
+      300:   89:  if (numPlayers == 2)
+        -:   90:    {
+      106:   91:      state->supplyCount[estate] = 8;
+      106:   92:      state->supplyCount[duchy] = 8;
+      106:   93:      state->supplyCount[province] = 8;
+        -:   94:    }
+        -:   95:  else
+        -:   96:    {
+      194:   97:      state->supplyCount[estate] = 12;
+      194:   98:      state->supplyCount[duchy] = 12;
+      194:   99:      state->supplyCount[province] = 12;
+        -:  100:    }
+        -:  101:
+        -:  102:  //set number of Treasure cards
+      300:  103:  state->supplyCount[copper] = 60 - (7 * numPlayers);
+      300:  104:  state->supplyCount[silver] = 40;
+      300:  105:  state->supplyCount[gold] = 30;
+        -:  106:
+        -:  107:  //set number of Kingdom cards
+     6300:  108:  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
+        -:  109:    {
+    49500:  110:      for (j = 0; j < 10; j++)           		//loop chosen cards
+        -:  111:	{
+    46500:  112:	  if (kingdomCards[j] == i)
+        -:  113:	    {
+        -:  114:	      //check if card is a 'Victory' Kingdom card
+     3000:  115:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+        -:  116:		{
+      600:  117:		  if (numPlayers == 2){ 
+      106:  118:		    state->supplyCount[i] = 8; 
+        -:  119:		  }
+      194:  120:		  else{ state->supplyCount[i] = 12; }
+        -:  121:		}
+        -:  122:	      else
+        -:  123:		{
+     2700:  124:		  state->supplyCount[i] = 10;
+        -:  125:		}
+     3000:  126:	      break;
+        -:  127:	    }
+        -:  128:	  else    //card is not in the set choosen for the game
+        -:  129:	    {
+    43500:  130:	      state->supplyCount[i] = -1;
+        -:  131:	    }
+        -:  132:	}
+        -:  133:
+        -:  134:    }
+        -:  135:
+        -:  136:  ////////////////////////
+        -:  137:  //supply intilization complete
+        -:  138:
+        -:  139:  //set player decks
+     1172:  140:  for (i = 0; i < numPlayers; i++)
+        -:  141:    {
+      872:  142:      state->deckCount[i] = 0;
+     3488:  143:      for (j = 0; j < 3; j++)
+        -:  144:	{
+     2616:  145:	  state->deck[i][j] = estate;
+     2616:  146:	  state->deckCount[i]++;
+        -:  147:	}
+     6976:  148:      for (j = 3; j < 10; j++)
+        -:  149:	{
+     6104:  150:	  state->deck[i][j] = copper;
+     6104:  151:	  state->deckCount[i]++;		
+        -:  152:	}
+        -:  153:    }
+        -:  154:
+        -:  155:  //shuffle player decks
+     1172:  156:  for (i = 0; i < numPlayers; i++)
+        -:  157:    {
+      872:  158:      if ( shuffle(i, state) < 0 )
+        -:  159:	{
+    #####:  160:	  return -1;
+        -:  161:	}
+        -:  162:    }
+        -:  163:
+        -:  164:  //draw player hands
+     1172:  165:  for (i = 0; i < numPlayers; i++)
+        -:  166:    {  
+        -:  167:      //initialize hand size to zero
+      872:  168:      state->handCount[i] = 0;
+      872:  169:      state->discardCount[i] = 0;
+        -:  170:      //draw 5 cards
+        -:  171:      // for (j = 0; j < 5; j++)
+        -:  172:      //	{
+        -:  173:      //	  drawCard(i, state);
+        -:  174:      //	}
+        -:  175:    }
+        -:  176:  
+        -:  177:  //set embargo tokens to 0 for all supply piles
+     8400:  178:  for (i = 0; i <= treasure_map; i++)
+        -:  179:    {
+     8100:  180:      state->embargoTokens[i] = 0;
+        -:  181:    }
+        -:  182:
+        -:  183:  //initialize first player's turn
+      300:  184:  state->outpostPlayed = 0;
+      300:  185:  state->phase = 0;
+      300:  186:  state->numActions = 1;
+      300:  187:  state->numBuys = 1;
+      300:  188:  state->playedCardCount = 0;
+      300:  189:  state->whoseTurn = 0;
+      300:  190:  state->handCount[state->whoseTurn] = 0;
+        -:  191:  //int it; move to top
+        -:  192:
+        -:  193:  //Moved draw cards to here, only drawing at the start of a turn
+     1800:  194:  for (it = 0; it < 5; it++){
+     1500:  195:    drawCard(state->whoseTurn, state);
+        -:  196:  }
+        -:  197:
+      300:  198:  updateCoins(state->whoseTurn, state, 0);
+        -:  199:
+      300:  200:  return 0;
+        -:  201:}
+        -:  202:
+   475492:  203:int shuffle(int player, struct gameState *state) {
+        -:  204: 
+        -:  205:
+        -:  206:  int newDeck[MAX_DECK];
+   475492:  207:  int newDeckPos = 0;
+        -:  208:  int card;
+        -:  209:  int i;
+        -:  210:
+   475492:  211:  if (state->deckCount[player] < 1)
+   474323:  212:    return -1;
+     1169:  213:  qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
+        -:  214:  /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
+        -:  215:
+    43845:  216:  while (state->deckCount[player] > 0) {
+    41507:  217:    card = floor(Random() * state->deckCount[player]);
+    41507:  218:    newDeck[newDeckPos] = state->deck[player][card];
+    41507:  219:    newDeckPos++;
+  1621719:  220:    for (i = card; i < state->deckCount[player]-1; i++) {
+  1580212:  221:      state->deck[player][i] = state->deck[player][i+1];
+        -:  222:    }
+    41507:  223:    state->deckCount[player]--;
+        -:  224:  }
+    42676:  225:  for (i = 0; i < newDeckPos; i++) {
+    41507:  226:    state->deck[player][i] = newDeck[i];
+    41507:  227:    state->deckCount[player]++;
+        -:  228:  }
+        -:  229:
+     1169:  230:  return 0;
+        -:  231:}
+        -:  232:
+    #####:  233:int playCard(int handPos, int choice1, int choice2, int choice3, struct gameState *state) 
+        -:  234:{	
+        -:  235:  int card;
+    #####:  236:  int coin_bonus = 0; 		//tracks coins gain from actions
+        -:  237:
+        -:  238:  //check if it is the right phase
+    #####:  239:  if (state->phase != 0)
+        -:  240:    {
+    #####:  241:      return -1;
+        -:  242:    }
+        -:  243:	
+        -:  244:  //check if player has enough actions
+    #####:  245:  if ( state->numActions < 1 )
+        -:  246:    {
+    #####:  247:      return -1;
+        -:  248:    }
+        -:  249:	
+        -:  250:  //get card played
+    #####:  251:  card = handCard(handPos, state);
+        -:  252:	
+        -:  253:  //check if selected card is an action
+    #####:  254:  if ( card < adventurer || card > treasure_map )
+        -:  255:    {
+    #####:  256:      return -1;
+        -:  257:    }
+        -:  258:	
+        -:  259:  //play card
+    #####:  260:  if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
+        -:  261:    {
+    #####:  262:      return -1;
+        -:  263:    }
+        -:  264:	
+        -:  265:  //reduce number of actions
+    #####:  266:  state->numActions--;
+        -:  267:
+        -:  268:  //update coins (Treasure cards may be added with card draws)
+    #####:  269:  updateCoins(state->whoseTurn, state, coin_bonus);
+        -:  270:	
+    #####:  271:  return 0;
+        -:  272:}
+        -:  273:
+    #####:  274:int buyCard(int supplyPos, struct gameState *state) {
+        -:  275:  int who;
+        -:  276:  if (DEBUG){
+        -:  277:    printf("Entering buyCard...\n");
+        -:  278:  }
+        -:  279:
+        -:  280:  // I don't know what to do about the phase thing.
+        -:  281:
+    #####:  282:  who = state->whoseTurn;
+        -:  283:
+    #####:  284:  if (state->numBuys < 1){
+        -:  285:    if (DEBUG)
+        -:  286:      printf("You do not have any buys left\n");
+    #####:  287:    return -1;
+    #####:  288:  } else if (supplyCount(supplyPos, state) <1){
+        -:  289:    if (DEBUG)
+        -:  290:      printf("There are not any of that type of card left\n");
+    #####:  291:    return -1;
+    #####:  292:  } else if (state->coins < getCost(supplyPos)){
+        -:  293:    if (DEBUG) 
+        -:  294:      printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
+    #####:  295:    return -1;
+        -:  296:  } else {
+    #####:  297:    state->phase=1;
+        -:  298:    //state->supplyCount[supplyPos]--;
+    #####:  299:    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+        -:  300:  
+    #####:  301:    state->coins = (state->coins) - (getCost(supplyPos));
+    #####:  302:    state->numBuys--;
+        -:  303:    if (DEBUG)
+        -:  304:      printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
+        -:  305:  }
+        -:  306:
+        -:  307:  //state->discard[who][state->discardCount[who]] = supplyPos;
+        -:  308:  //state->discardCount[who]++;
+        -:  309:    
+    #####:  310:  return 0;
+        -:  311:}
+        -:  312:
+    #####:  313:int numHandCards(struct gameState *state) {
+    #####:  314:  return state->handCount[ whoseTurn(state) ];
+        -:  315:}
+        -:  316:
+    #####:  317:int handCard(int handPos, struct gameState *state) {
+    #####:  318:  int currentPlayer = whoseTurn(state);
+    #####:  319:  return state->hand[currentPlayer][handPos];
+        -:  320:}
+        -:  321:
+    #####:  322:int supplyCount(int card, struct gameState *state) {
+    #####:  323:  return state->supplyCount[card];
+        -:  324:}
+        -:  325:
+    #####:  326:int fullDeckCount(int player, int card, struct gameState *state) {
+        -:  327:  int i;
+    #####:  328:  int count = 0;
+        -:  329:
+    #####:  330:  for (i = 0; i < state->deckCount[player]; i++)
+        -:  331:    {
+    #####:  332:      if (state->deck[player][i] == card) count++;
+        -:  333:    }
+        -:  334:
+    #####:  335:  for (i = 0; i < state->handCount[player]; i++)
+        -:  336:    {
+    #####:  337:      if (state->hand[player][i] == card) count++;
+        -:  338:    }
+        -:  339:
+    #####:  340:  for (i = 0; i < state->discardCount[player]; i++)
+        -:  341:    {
+    #####:  342:      if (state->discard[player][i] == card) count++;
+        -:  343:    }
+        -:  344:
+    #####:  345:  return count;
+        -:  346:}
+        -:  347:
+      300:  348:int whoseTurn(struct gameState *state) {
+      300:  349:  return state->whoseTurn;
+        -:  350:}
+        -:  351:
+    #####:  352:int endTurn(struct gameState *state) {
+        -:  353:  int k;
+        -:  354:  int i;
+    #####:  355:  int currentPlayer = whoseTurn(state);
+        -:  356:  
+        -:  357:  //Discard hand
+    #####:  358:  for (i = 0; i < state->handCount[currentPlayer]; i++){
+    #####:  359:    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
+    #####:  360:    state->hand[currentPlayer][i] = -1;//Set card to -1
+        -:  361:  }
+    #####:  362:  state->handCount[currentPlayer] = 0;//Reset hand count
+        -:  363:    
+        -:  364:  //Code for determining the player
+    #####:  365:  if (currentPlayer < (state->numPlayers - 1)){ 
+    #####:  366:    state->whoseTurn = currentPlayer + 1;//Still safe to increment
+        -:  367:  }
+        -:  368:  else{
+    #####:  369:    state->whoseTurn = 0;//Max player has been reached, loop back around to player 1
+        -:  370:  }
+        -:  371:
+    #####:  372:  state->outpostPlayed = 0;
+    #####:  373:  state->phase = 0;
+    #####:  374:  state->numActions = 1;
+    #####:  375:  state->coins = 0;
+    #####:  376:  state->numBuys = 1;
+    #####:  377:  state->playedCardCount = 0;
+    #####:  378:  state->handCount[state->whoseTurn] = 0;
+        -:  379:
+        -:  380:  //int k; move to top
+        -:  381:  //Next player draws hand
+    #####:  382:  for (k = 0; k < 5; k++){
+    #####:  383:    drawCard(state->whoseTurn, state);//Draw a card
+        -:  384:  }
+        -:  385:
+        -:  386:  //Update money
+    #####:  387:  updateCoins(state->whoseTurn, state , 0);
+        -:  388:
+    #####:  389:  return 0;
+        -:  390:}
+        -:  391:
+    #####:  392:int isGameOver(struct gameState *state) {
+        -:  393:  int i;
+        -:  394:  int j;
+        -:  395:	
+        -:  396:  //if stack of Province cards is empty, the game ends
+    #####:  397:  if (state->supplyCount[province] == 0)
+        -:  398:    {
+    #####:  399:      return 1;
+        -:  400:    }
+        -:  401:
+        -:  402:  //if three supply pile are at 0, the game ends
+    #####:  403:  j = 0;
+    #####:  404:  for (i = 0; i < 25; i++)
+        -:  405:    {
+    #####:  406:      if (state->supplyCount[i] == 0)
+        -:  407:	{
+    #####:  408:	  j++;
+        -:  409:	}
+        -:  410:    }
+    #####:  411:  if ( j >= 3)
+        -:  412:    {
+    #####:  413:      return 1;
+        -:  414:    }
+        -:  415:
+    #####:  416:  return 0;
+        -:  417:}
+        -:  418:
+    #####:  419:int scoreFor (int player, struct gameState *state) {
+        -:  420:
+        -:  421:  int i;
+    #####:  422:  int score = 0;
+        -:  423:  //score from hand
+    #####:  424:  for (i = 0; i < state->handCount[player]; i++)
+        -:  425:    {
+    #####:  426:      if (state->hand[player][i] == curse) { score = score - 1; };
+    #####:  427:      if (state->hand[player][i] == estate) { score = score + 1; };
+    #####:  428:      if (state->hand[player][i] == duchy) { score = score + 3; };
+    #####:  429:      if (state->hand[player][i] == province) { score = score + 6; };
+    #####:  430:      if (state->hand[player][i] == great_hall) { score = score + 1; };
+    #####:  431:      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+        -:  432:    }
+        -:  433:
+        -:  434:  //score from discard
+    #####:  435:  for (i = 0; i < state->discardCount[player]; i++)
+        -:  436:    {
+    #####:  437:      if (state->discard[player][i] == curse) { score = score - 1; };
+    #####:  438:      if (state->discard[player][i] == estate) { score = score + 1; };
+    #####:  439:      if (state->discard[player][i] == duchy) { score = score + 3; };
+    #####:  440:      if (state->discard[player][i] == province) { score = score + 6; };
+    #####:  441:      if (state->discard[player][i] == great_hall) { score = score + 1; };
+    #####:  442:      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+        -:  443:    }
+        -:  444:
+        -:  445:  //score from deck
+    #####:  446:  for (i = 0; i < state->discardCount[player]; i++)
+        -:  447:    {
+    #####:  448:      if (state->deck[player][i] == curse) { score = score - 1; };
+    #####:  449:      if (state->deck[player][i] == estate) { score = score + 1; };
+    #####:  450:      if (state->deck[player][i] == duchy) { score = score + 3; };
+    #####:  451:      if (state->deck[player][i] == province) { score = score + 6; };
+    #####:  452:      if (state->deck[player][i] == great_hall) { score = score + 1; };
+    #####:  453:      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+        -:  454:    }
+        -:  455:
+    #####:  456:  return score;
+        -:  457:}
+        -:  458:
+    #####:  459:int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+        -:  460:  int i;	
+        -:  461:  int j;
+        -:  462:  int highScore;
+        -:  463:  int currentPlayer;
+        -:  464:
+        -:  465:  //get score for each player
+    #####:  466:  for (i = 0; i < MAX_PLAYERS; i++)
+        -:  467:    {
+        -:  468:      //set unused player scores to -9999
+    #####:  469:      if (i >= state->numPlayers)
+        -:  470:	{
+    #####:  471:	  players[i] = -9999;
+        -:  472:	}
+        -:  473:      else
+        -:  474:	{
+    #####:  475:	  players[i] = scoreFor (i, state);
+        -:  476:	}
+        -:  477:    }
+        -:  478:
+        -:  479:  //find highest score
+    #####:  480:  j = 0;
+    #####:  481:  for (i = 0; i < MAX_PLAYERS; i++)
+        -:  482:    {
+    #####:  483:      if (players[i] > players[j])
+        -:  484:	{
+    #####:  485:	  j = i;
+        -:  486:	}
+        -:  487:    }
+    #####:  488:  highScore = players[j];
+        -:  489:
+        -:  490:  //add 1 to players who had less turns
+    #####:  491:  currentPlayer = whoseTurn(state);
+    #####:  492:  for (i = 0; i < MAX_PLAYERS; i++)
+        -:  493:    {
+    #####:  494:      if ( players[i] == highScore && i > currentPlayer )
+        -:  495:	{
+    #####:  496:	  players[i]++;
+        -:  497:	}
+        -:  498:    }
+        -:  499:
+        -:  500:  //find new highest score
+    #####:  501:  j = 0;
+    #####:  502:  for (i = 0; i < MAX_PLAYERS; i++)
+        -:  503:    {
+    #####:  504:      if ( players[i] > players[j] )
+        -:  505:	{
+    #####:  506:	  j = i;
+        -:  507:	}
+        -:  508:    }
+    #####:  509:  highScore = players[j];
+        -:  510:
+        -:  511:  //set winners in array to 1 and rest to 0
+    #####:  512:  for (i = 0; i < MAX_PLAYERS; i++)
+        -:  513:    {
+    #####:  514:      if ( players[i] == highScore )
+        -:  515:	{
+    #####:  516:	  players[i] = 1;
+        -:  517:	}
+        -:  518:      else
+        -:  519:	{
+    #####:  520:	  players[i] = 0;
+        -:  521:	}
+        -:  522:    }
+        -:  523:
+    #####:  524:  return 0;
+        -:  525:}
+        -:  526:
+   335890:  527:int drawCard(int player, struct gameState *state)
+        -:  528:{	int count;
+        -:  529:  int deckCounter;
+   335890:  530:  if (state->deckCount[player] <= 0){//Deck is empty
+        -:  531:    
+        -:  532:    //Step 1 Shuffle the discard pile back into a deck
+        -:  533:    int i;
+        -:  534:    //Move discard to deck
+   270097:  535:    for (i = 0; i < state->discardCount[player];i++){
+    32787:  536:      state->deck[player][i] = state->discard[player][i];
+    32787:  537:      state->discard[player][i] = -1;
+        -:  538:    }
+        -:  539:
+   237310:  540:    state->deckCount[player] = state->discardCount[player];
+   237310:  541:    state->discardCount[player] = 0;//Reset discard
+        -:  542:
+        -:  543:    //Shufffle the deck
+   237310:  544:    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
+        -:  545:   
+        -:  546:    if (DEBUG){//Debug statements
+        -:  547:      printf("Deck count now: %d\n", state->deckCount[player]);
+        -:  548:    }
+        -:  549:    
+   237310:  550:    state->discardCount[player] = 0;
+        -:  551:
+        -:  552:    //Step 2 Draw Card
+   237310:  553:    count = state->handCount[player];//Get current player's hand count
+        -:  554:    
+        -:  555:    if (DEBUG){//Debug statements
+        -:  556:      printf("Current hand count: %d\n", count);
+        -:  557:    }
+        -:  558:    
+   237310:  559:    deckCounter = state->deckCount[player];//Create a holder for the deck count
+        -:  560:
+   237310:  561:    if (deckCounter == 0)
+   237013:  562:      return -1;
+        -:  563:
+      297:  564:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
+      297:  565:    state->deckCount[player]--;
+      297:  566:    state->handCount[player]++;//Increment hand count
+        -:  567:  }
+        -:  568:
+        -:  569:  else{
+    98580:  570:    int count = state->handCount[player];//Get current hand count for player
+        -:  571:    int deckCounter;
+        -:  572:    if (DEBUG){//Debug statements
+        -:  573:      printf("Current hand count: %d\n", count);
+        -:  574:    }
+        -:  575:
+    98580:  576:    deckCounter = state->deckCount[player];//Create holder for the deck count
+    98580:  577:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+    98580:  578:    state->deckCount[player]--;
+    98580:  579:    state->handCount[player]++;//Increment hand count
+        -:  580:  }
+        -:  581:
+    98877:  582:  return 0;
+        -:  583:}
+        -:  584:
+    #####:  585:int getCost(int cardNumber)
+        -:  586:{
+    #####:  587:  switch( cardNumber ) 
+        -:  588:    {
+        -:  589:    case curse:
+    #####:  590:      return 0;
+        -:  591:    case estate:
+    #####:  592:      return 2;
+        -:  593:    case duchy:
+    #####:  594:      return 5;
+        -:  595:    case province:
+    #####:  596:      return 8;
+        -:  597:    case copper:
+    #####:  598:      return 0;
+        -:  599:    case silver:
+    #####:  600:      return 3;
+        -:  601:    case gold:
+    #####:  602:      return 6;
+        -:  603:    case adventurer:
+    #####:  604:      return 6;
+        -:  605:    case council_room:
+    #####:  606:      return 5;
+        -:  607:    case feast:
+    #####:  608:      return 4;
+        -:  609:    case gardens:
+    #####:  610:      return 4;
+        -:  611:    case mine:
+    #####:  612:      return 5;
+        -:  613:    case remodel:
+    #####:  614:      return 4;
+        -:  615:    case smithy:
+    #####:  616:      return 4;
+        -:  617:    case village:
+    #####:  618:      return 3;
+        -:  619:    case baron:
+    #####:  620:      return 4;
+        -:  621:    case great_hall:
+    #####:  622:      return 3;
+        -:  623:    case minion:
+    #####:  624:      return 5;
+        -:  625:    case steward:
+    #####:  626:      return 3;
+        -:  627:    case tribute:
+    #####:  628:      return 5;
+        -:  629:    case ambassador:
+    #####:  630:      return 3;
+        -:  631:    case cutpurse:
+    #####:  632:      return 4;
+        -:  633:    case embargo: 
+    #####:  634:      return 2;
+        -:  635:    case outpost:
+    #####:  636:      return 5;
+        -:  637:    case salvager:
+    #####:  638:      return 4;
+        -:  639:    case sea_hag:
+    #####:  640:      return 4;
+        -:  641:    case treasure_map:
+    #####:  642:      return 4;
+        -:  643:    }
+        -:  644:	
+    #####:  645:  return -1;
+        -:  646:}
+        -:  647:
+      300:  648:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+        -:  649:{
+        -:  650:  int i;
+        -:  651:  int j;
+        -:  652:  int k;
+        -:  653:  int x;
+        -:  654:  int index;
+      300:  655:  int currentPlayer = whoseTurn(state);
+      300:  656:  int nextPlayer = currentPlayer + 1;
+        -:  657:
+      300:  658:  int tributeRevealedCards[2] = {-1, -1};
+        -:  659:  int temphand[MAX_HAND];// moved above the if statement
+      300:  660:  int drawntreasure=0;
+        -:  661:  int cardDrawn;
+      300:  662:  int z = 0;// this is the counter for the temp hand
+      300:  663:  if (nextPlayer > (state->numPlayers - 1)){
+      108:  664:    nextPlayer = 0;
+        -:  665:  }
+        -:  666:  
+        -:  667:	
+        -:  668:  //uses switch to select card and perform actions
+      300:  669:  switch( card ) 
+        -:  670:    {
+        -:  671:    case adventurer:
+      300:  672:		return adventureCard(handPos, currentPlayer, state);
+        -:  673:		
+        -:  674:			
+        -:  675:    case council_room:
+    #####:  676:		return councilRoomCard(handPos, currentPlayer, state);
+        -:  677: 		
+        -:  678:   	
+        -:  679:    case feast:
+        -:  680:      //gain card with cost up to 5
+        -:  681:      //Backup hand
+    #####:  682:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+    #####:  683:	temphand[i] = state->hand[currentPlayer][i];//Backup card
+    #####:  684:	state->hand[currentPlayer][i] = -1;//Set to nothing
+        -:  685:      }
+        -:  686:      //Backup hand
+        -:  687:
+        -:  688:      //Update Coins for Buy
+    #####:  689:      updateCoins(currentPlayer, state, 5);
+    #####:  690:      x = 1;//Condition to loop on
+    #####:  691:      while( x == 1) {//Buy one card
+    #####:  692:	if (supplyCount(choice1, state) <= 0){
+        -:  693:	  if (DEBUG)
+        -:  694:	    printf("None of that card left, sorry!\n");
+        -:  695:
+        -:  696:	  if (DEBUG){
+        -:  697:	    printf("Cards Left: %d\n", supplyCount(choice1, state));
+        -:  698:	  }
+        -:  699:	}
+    #####:  700:	else if (state->coins < getCost(choice1)){
+    #####:  701:	  printf("That card is too expensive!\n");
+        -:  702:
+        -:  703:	  if (DEBUG){
+        -:  704:	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
+        -:  705:	  }
+        -:  706:	}
+        -:  707:	else{
+        -:  708:
+        -:  709:	  if (DEBUG){
+        -:  710:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  711:	  }
+        -:  712:
+    #####:  713:	  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+    #####:  714:	  x = 0;//No more buying cards
+        -:  715:
+        -:  716:	  if (DEBUG){
+        -:  717:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  718:	  }
+        -:  719:
+        -:  720:	}
+        -:  721:      }     
+        -:  722:
+        -:  723:      //Reset Hand
+    #####:  724:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+    #####:  725:	state->hand[currentPlayer][i] = temphand[i];
+    #####:  726:	temphand[i] = -1;
+        -:  727:      }
+        -:  728:      //Reset Hand
+        -:  729:      			
+    #####:  730:      return 0;
+        -:  731:			
+        -:  732:    case gardens:
+    #####:  733:      return -1;
+        -:  734:			
+        -:  735:    case mine:
+    #####:  736:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  737:
+    #####:  738:      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+        -:  739:	{
+    #####:  740:	  return -1;
+        -:  741:	}
+        -:  742:		
+    #####:  743:      if (choice2 > treasure_map || choice2 < curse)
+        -:  744:	{
+    #####:  745:	  return -1;
+        -:  746:	}
+        -:  747:
+    #####:  748:      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+        -:  749:	{
+    #####:  750:	  return -1;
+        -:  751:	}
+        -:  752:
+    #####:  753:      gainCard(choice2, state, 2, currentPlayer);
+        -:  754:
+        -:  755:      //discard card from hand
+    #####:  756:      discardCard(handPos, currentPlayer, state, 0);
+        -:  757:
+        -:  758:      //discard trashed card
+    #####:  759:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+        -:  760:	{
+    #####:  761:	  if (state->hand[currentPlayer][i] == j)
+        -:  762:	    {
+    #####:  763:	      discardCard(i, currentPlayer, state, 0);			
+    #####:  764:	      break;
+        -:  765:	    }
+        -:  766:	}
+        -:  767:			
+    #####:  768:      return 0;
+        -:  769:			
+        -:  770:    case remodel:
+    #####:  771:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  772:
+    #####:  773:      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+        -:  774:	{
+    #####:  775:	  return -1;
+        -:  776:	}
+        -:  777:
+    #####:  778:      gainCard(choice2, state, 0, currentPlayer);
+        -:  779:
+        -:  780:      //discard card from hand
+    #####:  781:      discardCard(handPos, currentPlayer, state, 0);
+        -:  782:
+        -:  783:      //discard trashed card
+    #####:  784:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+        -:  785:	{
+    #####:  786:	  if (state->hand[currentPlayer][i] == j)
+        -:  787:	    {
+    #####:  788:	      discardCard(i, currentPlayer, state, 0);			
+    #####:  789:	      break;
+        -:  790:	    }
+        -:  791:	}
+        -:  792:
+        -:  793:
+    #####:  794:      return 0;
+        -:  795:		
+        -:  796:    case smithy:
+    #####:  797:      smithyCard(handPos, currentPlayer, state);
+    #####:  798:	  return 0;
+        -:  799:		
+        -:  800:    case village:
+        -:  801:      //+1 Card
+    #####:  802:      drawCard(currentPlayer, state);
+        -:  803:			
+        -:  804:      //+2 Actions
+    #####:  805:      state->numActions = state->numActions + 2;
+        -:  806:			
+        -:  807:      //discard played card from hand
+    #####:  808:      discardCard(handPos, currentPlayer, state, 0);
+    #####:  809:      return 0;
+        -:  810:		
+        -:  811:    case baron:
+    #####:  812:      state->numBuys++;//Increase buys by 1!
+    #####:  813:      if (choice1 > 0){//Boolean true or going to discard an estate
+    #####:  814:	int p = 0;//Iterator for hand!
+    #####:  815:	int card_not_discarded = 1;//Flag for discard set!
+    #####:  816:	while(card_not_discarded){
+    #####:  817:	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
+    #####:  818:	    state->coins += 4;//Add 4 coins to the amount of coins
+    #####:  819:	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
+    #####:  820:	    state->discardCount[currentPlayer]++;
+    #####:  821:	    for (;p < state->handCount[currentPlayer]; p++){
+    #####:  822:	      state->hand[currentPlayer][p] = state->hand[currentPlayer][p+1];
+        -:  823:	    }
+    #####:  824:	    state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
+    #####:  825:	    state->handCount[currentPlayer]--;
+    #####:  826:	    card_not_discarded = 0;//Exit the loop
+        -:  827:	  }
+    #####:  828:	  else if (p > state->handCount[currentPlayer]){
+        -:  829:	    if(DEBUG) {
+        -:  830:	      printf("No estate cards in your hand, invalid choice\n");
+        -:  831:	      printf("Must gain an estate if there are any\n");
+        -:  832:	    }
+    #####:  833:	    if (supplyCount(estate, state) > 0){
+    #####:  834:	      gainCard(estate, state, 0, currentPlayer);
+    #####:  835:	      state->supplyCount[estate]--;//Decrement estates
+    #####:  836:	      if (supplyCount(estate, state) == 0){
+    #####:  837:		isGameOver(state);
+        -:  838:	      }
+        -:  839:	    }
+    #####:  840:	    card_not_discarded = 0;//Exit the loop
+        -:  841:	  }
+        -:  842:			    
+        -:  843:	  else{
+    #####:  844:	    p++;//Next card
+        -:  845:	  }
+        -:  846:	}
+        -:  847:      }
+        -:  848:			    
+        -:  849:      else{
+    #####:  850:	if (supplyCount(estate, state) > 0){
+    #####:  851:	  gainCard(estate, state, 0, currentPlayer);//Gain an estate
+    #####:  852:	  state->supplyCount[estate]--;//Decrement Estates
+    #####:  853:	  if (supplyCount(estate, state) == 0){
+    #####:  854:	    isGameOver(state);
+        -:  855:	  }
+        -:  856:	}
+        -:  857:      }
+        -:  858:	    
+        -:  859:      
+    #####:  860:      return 0;
+        -:  861:		
+        -:  862:    case great_hall:
+    #####:  863:      return greatHallCard(handPos, currentPlayer, state);
+        -:  864:	  
+        -:  865:		
+        -:  866:    case minion:
+    #####:  867:     return  minionCard(handPos, currentPlayer, state);
+        -:  868:	  
+        -:  869:	  
+        -:  870:		
+        -:  871:    case steward:
+    #####:  872:      if (choice1 == 1)
+        -:  873:	{
+        -:  874:	  //+2 cards
+    #####:  875:	  drawCard(currentPlayer, state);
+    #####:  876:	  drawCard(currentPlayer, state);
+        -:  877:	}
+    #####:  878:      else if (choice1 == 2)
+        -:  879:	{
+        -:  880:	  //+2 coins
+    #####:  881:	  state->coins = state->coins + 2;
+        -:  882:	}
+        -:  883:      else
+        -:  884:	{
+        -:  885:	  //trash 2 cards in hand
+    #####:  886:	  discardCard(choice2, currentPlayer, state, 1);
+    #####:  887:	  discardCard(choice3, currentPlayer, state, 1);
+        -:  888:	}
+        -:  889:			
+        -:  890:      //discard card from hand
+    #####:  891:      discardCard(handPos, currentPlayer, state, 0);
+    #####:  892:      return 0;
+        -:  893:		
+        -:  894:    case tribute:
+    #####:  895:      if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
+    #####:  896:	if (state->deckCount[nextPlayer] > 0){
+    #####:  897:	  tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####:  898:	  state->deckCount[nextPlayer]--;
+        -:  899:	}
+    #####:  900:	else if (state->discardCount[nextPlayer] > 0){
+    #####:  901:	  tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
+    #####:  902:	  state->discardCount[nextPlayer]--;
+        -:  903:	}
+        -:  904:	else{
+        -:  905:	  //No Card to Reveal
+        -:  906:	  if (DEBUG){
+        -:  907:	    printf("No cards to reveal\n");
+        -:  908:	  }
+        -:  909:	}
+        -:  910:      }
+        -:  911:	    
+        -:  912:      else{
+    #####:  913:	if (state->deckCount[nextPlayer] == 0){
+    #####:  914:	  for (i = 0; i < state->discardCount[nextPlayer]; i++){
+    #####:  915:	    state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
+    #####:  916:	    state->deckCount[nextPlayer]++;
+    #####:  917:	    state->discard[nextPlayer][i] = -1;
+    #####:  918:	    state->discardCount[nextPlayer]--;
+        -:  919:	  }
+        -:  920:			    
+    #####:  921:	  shuffle(nextPlayer,state);//Shuffle the deck
+        -:  922:	} 
+    #####:  923:	tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####:  924:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####:  925:	state->deckCount[nextPlayer]--;
+    #####:  926:	tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####:  927:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####:  928:	state->deckCount[nextPlayer]--;
+        -:  929:      }    
+        -:  930:		       
+    #####:  931:      if (tributeRevealedCards[0] == tributeRevealedCards[1]){//If we have a duplicate card, just drop one 
+    #####:  932:	state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
+    #####:  933:	state->playedCardCount++;
+    #####:  934:	tributeRevealedCards[1] = -1;
+        -:  935:      }
+        -:  936:
+    #####:  937:      for (i = 0; i <= 2; i ++){
+    #####:  938:	if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+    #####:  939:	  state->coins += 2;
+        -:  940:	}
+        -:  941:		    
+    #####:  942:	else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+    #####:  943:	  drawCard(currentPlayer, state);
+    #####:  944:	  drawCard(currentPlayer, state);
+        -:  945:	}
+        -:  946:	else{//Action Card
+    #####:  947:	  state->numActions = state->numActions + 2;
+        -:  948:	}
+        -:  949:      }
+        -:  950:	    
+    #####:  951:      return 0;
+        -:  952:		
+        -:  953:    case ambassador:
+    #####:  954:      j = 0;		//used to check if player has enough cards to discard
+        -:  955:
+    #####:  956:      if (choice2 > 2 || choice2 < 0)
+        -:  957:	{
+    #####:  958:	  return -1;				
+        -:  959:	}
+        -:  960:
+    #####:  961:      if (choice1 == handPos)
+        -:  962:	{
+    #####:  963:	  return -1;
+        -:  964:	}
+        -:  965:
+    #####:  966:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+        -:  967:	{
+    #####:  968:	  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+        -:  969:	    {
+    #####:  970:	      j++;
+        -:  971:	    }
+        -:  972:	}
+    #####:  973:      if (j < choice2)
+        -:  974:	{
+    #####:  975:	  return -1;				
+        -:  976:	}
+        -:  977:
+        -:  978:      if (DEBUG) 
+        -:  979:	printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
+        -:  980:
+        -:  981:      //increase supply count for choosen card by amount being discarded
+    #####:  982:      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+        -:  983:			
+        -:  984:      //each other player gains a copy of revealed card
+    #####:  985:      for (i = 0; i < state->numPlayers; i++)
+        -:  986:	{
+    #####:  987:	  if (i != currentPlayer)
+        -:  988:	    {
+    #####:  989:	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+        -:  990:	    }
+        -:  991:	}
+        -:  992:
+        -:  993:      //discard played card from hand
+    #####:  994:      discardCard(handPos, currentPlayer, state, 0);			
+        -:  995:
+        -:  996:      //trash copies of cards returned to supply
+    #####:  997:      for (j = 0; j < choice2; j++)
+        -:  998:	{
+    #####:  999:	  for (i = 0; i < state->handCount[currentPlayer]; i++)
+        -: 1000:	    {
+    #####: 1001:	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
+        -: 1002:		{
+    #####: 1003:		  discardCard(i, currentPlayer, state, 1);
+    #####: 1004:		  break;
+        -: 1005:		}
+        -: 1006:	    }
+        -: 1007:	}			
+        -: 1008:
+    #####: 1009:      return 0;
+        -: 1010:		
+        -: 1011:    case cutpurse:
+        -: 1012:
+    #####: 1013:      updateCoins(currentPlayer, state, 2);
+    #####: 1014:      for (i = 0; i < state->numPlayers; i++)
+        -: 1015:	{
+    #####: 1016:	  if (i != currentPlayer)
+        -: 1017:	    {
+    #####: 1018:	      for (j = 0; j < state->handCount[i]; j++)
+        -: 1019:		{
+    #####: 1020:		  if (state->hand[i][j] == copper)
+        -: 1021:		    {
+    #####: 1022:		      discardCard(j, i, state, 0);
+    #####: 1023:		      break;
+        -: 1024:		    }
+    #####: 1025:		  if (j == state->handCount[i])
+        -: 1026:		    {
+    #####: 1027:		      for (k = 0; k < state->handCount[i]; k++)
+        -: 1028:			{
+        -: 1029:			  if (DEBUG)
+        -: 1030:			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+        -: 1031:			}	
+    #####: 1032:		      break;
+        -: 1033:		    }		
+        -: 1034:		}
+        -: 1035:					
+        -: 1036:	    }
+        -: 1037:				
+        -: 1038:	}				
+        -: 1039:
+        -: 1040:      //discard played card from hand
+    #####: 1041:      discardCard(handPos, currentPlayer, state, 0);			
+        -: 1042:
+    #####: 1043:      return 0;
+        -: 1044:
+        -: 1045:		
+        -: 1046:    case embargo: 
+        -: 1047:      //+2 Coins
+    #####: 1048:      state->coins = state->coins + 2;
+        -: 1049:			
+        -: 1050:      //see if selected pile is in play
+    #####: 1051:      if ( state->supplyCount[choice1] == -1 )
+        -: 1052:	{
+    #####: 1053:	  return -1;
+        -: 1054:	}
+        -: 1055:			
+        -: 1056:      //add embargo token to selected supply pile
+    #####: 1057:      state->embargoTokens[choice1]++;
+        -: 1058:			
+        -: 1059:      //trash card
+    #####: 1060:      discardCard(handPos, currentPlayer, state, 1);		
+    #####: 1061:      return 0;
+        -: 1062:		
+        -: 1063:    case outpost:
+        -: 1064:      //set outpost flag
+    #####: 1065:      state->outpostPlayed++;
+        -: 1066:			
+        -: 1067:      //discard card
+    #####: 1068:      discardCard(handPos, currentPlayer, state, 0);
+    #####: 1069:      return 0;
+        -: 1070:		
+        -: 1071:    case salvager:
+        -: 1072:      //+1 buy
+    #####: 1073:      state->numBuys++;
+        -: 1074:			
+    #####: 1075:      if (choice1)
+        -: 1076:	{
+        -: 1077:	  //gain coins equal to trashed card
+    #####: 1078:	  state->coins = state->coins + getCost( handCard(choice1, state) );
+        -: 1079:	  //trash card
+    #####: 1080:	  discardCard(choice1, currentPlayer, state, 1);	
+        -: 1081:	}
+        -: 1082:			
+        -: 1083:      //discard card
+    #####: 1084:      discardCard(handPos, currentPlayer, state, 0);
+    #####: 1085:      return 0;
+        -: 1086:		
+        -: 1087:    case sea_hag:
+    #####: 1088:      for (i = 0; i < state->numPlayers; i++){
+    #####: 1089:	if (i != currentPlayer){
+    #####: 1090:	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+    #####: 1091:	  state->discardCount[i]++;
+    #####: 1092:	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+        -: 1093:	}
+        -: 1094:      }
+    #####: 1095:      return 0;
+        -: 1096:		
+        -: 1097:    case treasure_map:
+        -: 1098:      //search hand for another treasure_map
+    #####: 1099:      index = -1;
+    #####: 1100:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+        -: 1101:	{
+    #####: 1102:	  if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
+        -: 1103:	    {
+    #####: 1104:	      index = i;
+    #####: 1105:	      break;
+        -: 1106:	    }
+        -: 1107:	}
+    #####: 1108:      if (index > -1)
+        -: 1109:	{
+        -: 1110:	  //trash both treasure cards
+    #####: 1111:	  discardCard(handPos, currentPlayer, state, 1);
+    #####: 1112:	  discardCard(index, currentPlayer, state, 1);
+        -: 1113:
+        -: 1114:	  //gain 4 Gold cards
+    #####: 1115:	  for (i = 0; i < 4; i++)
+        -: 1116:	    {
+    #####: 1117:	      gainCard(gold, state, 1, currentPlayer);
+        -: 1118:	    }
+        -: 1119:				
+        -: 1120:	  //return success
+    #####: 1121:	  return 1;
+        -: 1122:	}
+        -: 1123:			
+        -: 1124:      //no second treasure_map found in hand
+    #####: 1125:      return -1;
+        -: 1126:    }
+        -: 1127:	
+    #####: 1128:  return -1;
+        -: 1129:}
+        -: 1130:
+    #####: 1131:int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+        -: 1132:{
+        -: 1133:	
+        -: 1134:  //if card is not trashed, added to Played pile 
+    #####: 1135:  if (trashFlag < 1)
+        -: 1136:    {
+        -: 1137:      //add card to played pile
+    #####: 1138:      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+    #####: 1139:      state->playedCardCount++;
+        -: 1140:    }
+        -: 1141:	
+        -: 1142:  //set played card to -1
+    #####: 1143:  state->hand[currentPlayer][handPos] = -1;
+        -: 1144:	
+        -: 1145:  //remove card from player's hand
+    #####: 1146:  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+        -: 1147:    {
+        -: 1148:      //reduce number of cards in hand
+    #####: 1149:      state->handCount[currentPlayer]--;
+        -: 1150:    }
+    #####: 1151:  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+        -: 1152:    {
+        -: 1153:      //reduce number of cards in hand
+    #####: 1154:      state->handCount[currentPlayer]--;
+        -: 1155:    }
+        -: 1156:  else 	
+        -: 1157:    {
+        -: 1158:      //replace discarded card with last card in hand
+    #####: 1159:      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        -: 1160:      //set last card to -1
+    #####: 1161:      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        -: 1162:      //reduce number of cards in hand
+    #####: 1163:      state->handCount[currentPlayer]--;
+        -: 1164:    }
+        -: 1165:	
+    #####: 1166:  return 0;
+        -: 1167:}
+        -: 1168:
+    #####: 1169:int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
+        -: 1170:{
+        -: 1171:  //Note: supplyPos is enum of choosen card
+        -: 1172:	
+        -: 1173:  //check if supply pile is empty (0) or card is not used in game (-1)
+    #####: 1174:  if ( supplyCount(supplyPos, state) < 1 )
+        -: 1175:    {
+    #####: 1176:      return -1;
+        -: 1177:    }
+        -: 1178:	
+        -: 1179:  //added card for [whoseTurn] current player:
+        -: 1180:  // toFlag = 0 : add to discard
+        -: 1181:  // toFlag = 1 : add to deck
+        -: 1182:  // toFlag = 2 : add to hand
+        -: 1183:
+    #####: 1184:  if (toFlag == 1)
+        -: 1185:    {
+    #####: 1186:      state->deck[ player ][ state->deckCount[player] ] = supplyPos;
+    #####: 1187:      state->deckCount[player]++;
+        -: 1188:    }
+    #####: 1189:  else if (toFlag == 2)
+        -: 1190:    {
+    #####: 1191:      state->hand[ player ][ state->handCount[player] ] = supplyPos;
+    #####: 1192:      state->handCount[player]++;
+        -: 1193:    }
+        -: 1194:  else
+        -: 1195:    {
+    #####: 1196:      state->discard[player][ state->discardCount[player] ] = supplyPos;
+    #####: 1197:      state->discardCount[player]++;
+        -: 1198:    }
+        -: 1199:	
+        -: 1200:  //decrease number in supply pile
+    #####: 1201:  state->supplyCount[supplyPos]--;
+        -: 1202:	 
+    #####: 1203:  return 0;
+        -: 1204:}
+        -: 1205:
+      300: 1206:int updateCoins(int player, struct gameState *state, int bonus)
+        -: 1207:{
+        -: 1208:  int i;
+        -: 1209:	
+        -: 1210:  //reset coin count
+      300: 1211:  state->coins = 0;
+        -: 1212:
+        -: 1213:  //add coins for each Treasure card in player's hand
+     1800: 1214:  for (i = 0; i < state->handCount[player]; i++)
+        -: 1215:    {
+     1500: 1216:      if (state->hand[player][i] == copper)
+        -: 1217:	{
+     1068: 1218:	  state->coins += 1;
+        -: 1219:	}
+      432: 1220:      else if (state->hand[player][i] == silver)
+        -: 1221:	{
+    #####: 1222:	  state->coins += 2;
+        -: 1223:	}
+      432: 1224:      else if (state->hand[player][i] == gold)
+        -: 1225:	{
+    #####: 1226:	  state->coins += 3;
+        -: 1227:	}	
+        -: 1228:    }	
+        -: 1229:
+        -: 1230:  //add bonus
+      300: 1231:  state->coins += bonus;
+        -: 1232:
+      300: 1233:  return 0;
+        -: 1234:}
+        -: 1235:
+    #####: 1236:int smithyCard(int handPos, int currentPlayer, struct gameState *state)
+        -: 1237:{
+    #####: 1238:	int i = 0;
+        -: 1239:      //+3 Cards
+    #####: 1240:      for (i = 0; i <= 3; i++) //Use i <= 3
+        -: 1241:	{
+    #####: 1242:	  drawCard(currentPlayer, state);
+        -: 1243:	}
+        -: 1244:			
+        -: 1245:      //discard card from hand
+    #####: 1246:      discardCard(handPos, currentPlayer, state, 0);
+    #####: 1247:      return 0;
+        -: 1248:		
+        -: 1249:}
+        -: 1250:
+      300: 1251:int adventureCard(int handPos, int currentPlayer, struct gameState *state)
+        -: 1252:{
+      300: 1253:    int cardDrawn = 0;
+        -: 1254:	int temphand[MAX_HAND];
+      300: 1255:	int drawntreasure = 0;
+      300: 1256:	int z = 0;
+        -: 1257:	
+   334990: 1258:	while(drawntreasure<2){
+   334390: 1259:	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+   237310: 1260:	  shuffle(currentPlayer, state);
+        -: 1261:	}
+   334390: 1262:	drawCard(currentPlayer, state);
+   334390: 1263:	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]]-1;//top card of hand is most recently drawn card.
+        -: 1264:
+        -: 1265:	
+   334390: 1266:	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+      600: 1267:	  drawntreasure++;
+        -: 1268:	else{
+   333790: 1269:	  temphand[z]=cardDrawn;
+   333790: 1270:	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+   333790: 1271:	  z++;
+        -: 1272:	}
+        -: 1273:      }
+    74034: 1274:      while(z-1>=0){
+    73434: 1275:	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    73434: 1276:	z=z-1;
+        -: 1277:      }
+      300: 1278:      return 0;
+        -: 1279:}
+        -: 1280:
+    #####: 1281:int greatHallCard(int handPos, int currentPlayer, struct gameState *state)
+        -: 1282:{
+        -: 1283:	 //+1 Card
+    #####: 1284:	  drawCard(currentPlayer, state);
+        -: 1285:	
+    #####: 1286:      state->numActions+=2;
+        -: 1287:			
+        -: 1288:      //discard card from hand
+    #####: 1289:      discardCard(handPos, currentPlayer, state, 0);
+    #####: 1290:	  return 0;
+        -: 1291:}
+    #####: 1292:int councilRoomCard(int handPos, int currentPlayer, struct gameState *state)
+        -: 1293:{
+    #####: 1294:	int i = 0;
+        -: 1295:	     //+4 Cards
+    #####: 1296:      for (i = 0; i <= 4; i++)
+        -: 1297:	{
+    #####: 1298:	  drawCard(currentPlayer, state);
+        -: 1299:	}
+        -: 1300:			
+        -: 1301:      //+1 Buy
+    #####: 1302:      state->numActions++;
+        -: 1303:			
+        -: 1304:      //Each other player draws a card
+    #####: 1305:      for (i = 0; i < state->numPlayers; i++)
+        -: 1306:	{
+    #####: 1307:	  if ( i != currentPlayer )
+        -: 1308:	    {
+    #####: 1309:	      drawCard(i, state);
+        -: 1310:	    }
+        -: 1311:	}
+        -: 1312:			
+        -: 1313:      //put played card in played card pile
+    #####: 1314:      discardCard(handPos, currentPlayer, state, 0);
+    #####: 1315:	  return 0;
+        -: 1316:}
+        -: 1317:
+    #####: 1318:minionCard(int choice1, int choice2, int choice3, int handPos, int currentPlayer, struct gameState *state)
+        -: 1319:{
+        -: 1320://+1 action
+    #####: 1321:	 int i = 0;
+    #####: 1322:	 int j = 0;
+    #####: 1323:	 state->numBuys++;
+        -: 1324:			
+        -: 1325:      //discard card from hand
+    #####: 1326:      discardCard(handPos, currentPlayer, state, 0);
+        -: 1327:			
+    #####: 1328:      if (choice1)		//+2 coins
+        -: 1329:	{
+    #####: 1330:	  state->coins = state->coins + 2;
+        -: 1331:	}
+        -: 1332:			
+    #####: 1333:      else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+        -: 1334:	{
+        -: 1335:	  //discard hand
+    #####: 1336:	  while(numHandCards(state) > 0)
+        -: 1337:	    {
+    #####: 1338:	      discardCard(handPos, currentPlayer, state, 0);
+        -: 1339:	    }
+        -: 1340:				
+        -: 1341:	  //draw 4
+    #####: 1342:	  for (i = 0; i <= 4; i++)
+        -: 1343:	    {
+    #####: 1344:	      drawCard(currentPlayer, state);
+        -: 1345:	    }
+        -: 1346:				
+        -: 1347:	  //other players discard hand and redraw if hand size > 4
+    #####: 1348:	  for (i = 0; i < state->numPlayers; i++)
+        -: 1349:	    {
+    #####: 1350:	      if (i != currentPlayer)
+        -: 1351:		{
+    #####: 1352:		  if ( state->handCount[i] > 4 )
+        -: 1353:		    {
+        -: 1354:		      //discard hand
+    #####: 1355:		      while( state->handCount[i] > 0 )
+        -: 1356:			{
+    #####: 1357:			  discardCard(handPos, i, state, 0);
+        -: 1358:			}
+        -: 1359:							
+        -: 1360:		      //draw 4
+    #####: 1361:		      for (j = 0; j <= 4; j++)
+        -: 1362:			{
+    #####: 1363:			  drawCard(i, state);
+        -: 1364:			}
+        -: 1365:		    }
+        -: 1366:		}
+        -: 1367:	    }
+        -: 1368:				
+        -: 1369:	}
+    #####: 1370:     return 0;
+        -: 1371:}
+        -: 1372://end of dominion.c
+        -: 1373:
