@@ -788,7 +788,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
 	
-	return adventurer_card(currentPlayer, state, &temphand);
+	return adventurer_card(currentPlayer, state, temphand);
 	/*
       while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck

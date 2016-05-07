@@ -1,0 +1,98 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8://This is a unit test for the isGameOver function.
+        -:    9://Input:
+        -:   10://struct gameState *state-> state of the game.
+        -:   11://Business Rules:
+        -:   12://1. If the game is out of Province Cards --> Game Over 
+        -:   13://2. If three supply piles are out of stock ---> Game Over 
+        -:   14://3. If neither is true --> No Game Over.
+        -:   15://4. Game State should remain unchanged. 
+function main called 2 returned 100% blocks executed 71%
+        2:   16:int main () {
+        -:   17:
+        2:   18:  int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   19:	       remodel, smithy, village, baron, great_hall};
+        -:   20:
+        -:   21:  struct gameState expected, actual;
+        2:   22:  int numPlayers = 2;
+        2:   23:  int seed = 500;
+        2:   24:  int player = 1;  
+        2:   25:  int gameOver = 1;
+        -:   26:
+        2:   27:  initializeGame(numPlayers, k, seed, &actual);
+call    0 returned 100%
+        -:   28:
+        -:   29:  //Copy the game state to the post game state test case.
+        2:   30:  memcpy(&expected, &actual, sizeof(struct gameState));
+        2:   31:  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        2:   32:  printf("Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.\n");
+call    0 returned 100%
+        2:   33:  assert(isGameOver(&actual) != gameOver);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+call    3 never executed
+        2:   34:  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        2:   35:  printf("Game Over was successfully handled when conditions were not met and game state was unchanged.\n");
+call    0 returned 100%
+        -:   36:
+        -:   37:  //Set Up Case for out of stock province cards Game Over.
+        2:   38:  actual.supplyCount[province] = expected.supplyCount[province] = 0;
+        -:   39: 
+        -:   40: //Copy the game state to the post game state test case.
+        -:   41:  //Expected Results.
+        2:   42:  assert(isGameOver(&actual) == gameOver );
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+call    3 never executed
+        2:   43:  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        2:   44:  printf("Game Over successfully handled with out of stock province cards and Game state was unchanged.\n");
+call    0 returned 100%
+        -:   45:
+        -:   46:  //Set Up Case for 3 out of stock supply piles Game Over.
+        2:   47:  actual.supplyCount[province] = expected.supplyCount[province] = 3;
+        2:   48:  actual.supplyCount[silver] = expected.supplyCount[silver] = 0;
+        2:   49:  actual.supplyCount[gold] = expected.supplyCount[gold] = 0;
+        2:   50:  actual.supplyCount[copper] = expected.supplyCount[copper] = 0;
+        -:   51:
+        -:   52:  //Expected Results.
+        2:   53:  assert(isGameOver(&actual) == gameOver );
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+call    3 never executed
+        2:   54:  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        2:   55:  printf("Game Over successfully handled with three out of supply cards and Game state was unchanged.\n");
+call    0 returned 100%
+        -:   56:
+        -:   57:  
+        2:   58:  return 0;
+        -:   59:
+        -:   60:}
+        -:   61:
+        -:   62:
+        -:   63:
