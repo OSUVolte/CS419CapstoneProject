@@ -137,6 +137,9 @@ int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(int currentPlayer, struct gameState * state, int handPos);
 
 int playGreatHall(int currentPlayer, struct gameState * state, int handPos);
+int setRandomValue();
+int getRandomCard();
+int getTreasureCount(int hand, struct gameState * game, int player);
 
 
 #endif
