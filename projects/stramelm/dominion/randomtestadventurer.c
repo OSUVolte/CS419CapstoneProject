@@ -10,12 +10,9 @@
 void printState(struct gameState *state) {
   int i, j;
 
-  printf("\n-----------------\n");
-  printf("contents of state\n");
-  printf("-----------------\n");
-  printf("numPlayers=%d\n", state->numPlayers);
+  printf("  state->numPlayers=%d\n", state->numPlayers);
 
-  printf("supplyCount=[");
+  printf("  state->supplyCount=[");
   for (i = 0; i <= treasure_map; i++) {
     printf("%d", state->supplyCount[i]);
     if (i != treasure_map) {
@@ -23,7 +20,7 @@ void printState(struct gameState *state) {
     }
   }  printf("]\n");
 
-  printf("embargoTokens=[");
+  printf("  state->embargoTokens=[");
   for (i = 0; i <= treasure_map; i++) {
     printf("%d", state->embargoTokens[i]);
     if (i != treasure_map) {
@@ -32,18 +29,18 @@ void printState(struct gameState *state) {
   }
   printf("]\n");
 
-  printf("outpostPlayed=%d\n", state->outpostPlayed);
-  printf("outpostTurn=%d\n", state->outpostTurn);
-  printf("whoseTurn=%d\n", state->whoseTurn);
-  printf("phase=%d\n", state->phase);
-  printf("numActions=%d\n", state->numActions);
-  printf("coins=%d\n", state->coins);
-  printf("numBuys=%d\n", state->numBuys);
+  printf("  state->outpostPlayed=%d\n", state->outpostPlayed);
+  printf("  state->outpostTurn=%d\n", state->outpostTurn);
+  printf("  state->whoseTurn=%d\n", state->whoseTurn);
+  printf("  state->phase=%d\n", state->phase);
+  printf("  state->numActions=%d\n", state->numActions);
+  printf("  state->coins=%d\n", state->coins);
+  printf("  state->numBuys=%d\n", state->numBuys);
 
   for (i = 0; i < state->numPlayers; i++) {
-    printf("\nplayer %d:\n", i);
-    printf("handCount=%d\n", state->handCount[i]);
-    printf("hand=[");
+    printf("  state->player %d:\n", i);
+    printf("    handCount=%d\n", state->handCount[i]);
+    printf("    hand=[");
     for (j = 0; j < state->handCount[i]; j++) {
       printf("%d", state->hand[i][j]);
       if (j + 1 != state->handCount[i]) {
@@ -51,8 +48,8 @@ void printState(struct gameState *state) {
       }
     }
     printf("]\n");
-    printf("deckCount=%d\n", state->deckCount[i]);
-    printf("deck=[");
+    printf("    deckCount=%d\n", state->deckCount[i]);
+    printf("    deck=[");
     for (j = 0; j < state->deckCount[i]; j++) {
       printf("%d", state->deck[i][j]);
       if (j + 1 != state->deckCount[i]) {
@@ -60,8 +57,8 @@ void printState(struct gameState *state) {
       }
     }
     printf("]\n");
-    printf("discardCount=%d\n", state->discardCount[i]);
-    printf("discard=[");
+    printf("    discardCount=%d\n", state->discardCount[i]);
+    printf("    discard=[");
     for (j = 0; j < state->discardCount[i]; j++) {
       printf("%d", state->discard[i][j]);
       if (j + 1 != state->discardCount[i]) {
@@ -69,10 +66,10 @@ void printState(struct gameState *state) {
       }
     }
     printf("]\n");
+  }
 
-}
-
-  printf("playedCards=[");
+  printf("  state->playedCardCount=%d\n", state->playedCardCount);
+  printf("  state->playedCards=[");
   for (i = 0; i < state->playedCardCount; i++) {
     printf("%d", state->playedCards[i]);
     if (i + 1 != state->playedCardCount) {
@@ -81,9 +78,6 @@ void printState(struct gameState *state) {
   }
   printf("]\n");
 
-  printf("-----------------\n");
-  printf("contents of state\n");
-  printf("-----------------\n");
   fflush(stdout);
 }
 
@@ -94,8 +88,7 @@ void printMemory(void const *memLoc, int totalSize, int numBytes)
 
   if (numBytes > totalSize || numBytes < 0) {
     numBytes = totalSize;
-
-}
+  }
 
   for (i = 0; i < numBytes; i++) {
     if ((i % 16) == 0 && i != 0) {
@@ -128,16 +121,16 @@ int main(int argc, char *argv[]) {
   srand(time(NULL));
 
   // set dominion cards - arbitrary for this test
-  int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
+  int kc[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
     sea_hag, tribute, smithy};
-  int maxBytes = 32;
+  //int maxBytes = 32;
   int np, pn; // number of players, player number
-  int i, j, changed, seed, card;
+  int i, j, k, changed, seed, card;
   int r, calls = 0; // result of test smithy, number of calls to smithy
   int pass[] = {0, 0, 0, 0, 0, 0, 0}, fail[] = {0, 0, 0, 0, 0, 0, 0}, t; // test
   int before, after; // ints used to assess pass/fail criteria
 
-  for (i = 0; i < 2; i++) { // different sets of input conds to test
+  for (i = 0; i < 100000; i++) { // different sets of input conds to test
     t = -1;
 
     struct gameState* state;
@@ -153,7 +146,7 @@ int main(int argc, char *argv[]) {
       // create/initialize state
       state = malloc(sizeof(struct gameState));
       seed = rand() % 100 + 1; // random seed value between 1 and 100
-      initializeGame(np, k, seed, state);
+      initializeGame(np, kc, seed, state);
     }
     else { // gameState completely random bytes (similar to lecture example)
 
@@ -162,15 +155,24 @@ int main(int argc, char *argv[]) {
       randomizeMemory(state, sizeof(*state));
 
       // the following statements help the segfaults go away
+      // and make the cards in the deck/discard/hand more rational
       state->numPlayers = np;
-      state->deckCount[pn] = rand() % MAX_DECK + 1;
-      state->discardCount[pn] = rand() % MAX_DECK + 1;
-      state->handCount[pn] = rand() % MAX_HAND + 1;
-
-      printState(state);
-      break;
+      for (j = 0; j < np; j++) {
+        state->deckCount[j] = rand() % MAX_DECK + 1;
+        for (k = 0; k < state->deckCount[j]; k++) {
+          state->deck[j][k] = rand() % 27;
+        }
+        state->discardCount[j] = rand() % MAX_DECK + 1;
+        for (k = 0; k < state->discardCount[j]; k++) {
+          state->discard[j][k] = rand() % 27;
+        }
+        state->handCount[j] = rand() % MAX_HAND + 1;
+        for (k = 0; k < state->handCount[j]; k++) {
+          state->hand[j][k] = rand() % 27;
+        }
+      }
+      state->playedCardCount = rand() % MAX_DECK + 1;
     }
-
 
     // copy game state
     copy = malloc(sizeof(struct gameState));
@@ -187,11 +189,12 @@ int main(int argc, char *argv[]) {
     if (r == 0) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of REQT #1...\n");
         printf("FUNCTION SUCCESSFULLY COMPLETES\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -205,12 +208,13 @@ int main(int argc, char *argv[]) {
     if (after - before == 1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
-        printf("CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS,\n");
-        printf("BUT ADVENTURER TO BE DISCARDED, NET 1\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("\nInputs that caused first failure of REQT #2...\n");
+        printf("  CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS,\n");
+        printf("  BUT ADVENTURER TO BE DISCARDED, NET 1\n");
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -224,12 +228,13 @@ int main(int argc, char *argv[]) {
     if (after - before == 1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
-        printf("CARDS SHOULD COME FROM HIS OWN PILE,\n");
-        printf("BUT ADVENTURER WILL BE ADDED BACK TO THE DISCARD, NET -1\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("\nInputs that caused first failure of REQT #3...\n");
+        printf("  CARDS SHOULD COME FROM HIS OWN PILE,\n");
+        printf("  BUT ADVENTURER WILL BE ADDED BACK TO THE DISCARD, NET -1\n");
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -247,11 +252,12 @@ int main(int argc, char *argv[]) {
       if (after == before) { pass[t]++; } else {
         fail[t]++;
         if (fail[t] == 1) { // first failure of this test
-          printf("\nInputs that caused first failure of ...\n");
-          printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
-          printf("pn=%d\n", pn);
-          printf("1st %d bytes of state=\n", maxBytes);
-          printMemory(state, sizeof(*state), maxBytes);
+          printf("\nInputs that caused first failure of REQT #4a...\n");
+          printf("  NO STATE CHANGE FOR OTHER PLAYER(S)\n");
+          printf("  pn=%d\n", pn);
+          printState(state);
+          //printf("1st %d bytes of state=\n", maxBytes);
+          //printMemory(state, sizeof(*state), maxBytes);
         }
       }
 
@@ -261,11 +267,12 @@ int main(int argc, char *argv[]) {
       if (after == before) { pass[t]++; } else {
         fail[t]++;
         if (fail[t] == 1) { // first failure of this test
-          printf("\nInputs that caused first failure of ...\n");
-          printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
-          printf("pn=%d\n", pn);
-          printf("1st %d bytes of state=\n", maxBytes);
-          printMemory(state, sizeof(*state), maxBytes);
+          printf("\nInputs that caused first failure of REQT #4b...\n");
+          printf("  NO STATE CHANGE FOR OTHER PLAYER(S)\n");
+          printf("  pn=%d\n", pn);
+          printState(state);
+          //printf("1st %d bytes of state=\n", maxBytes);
+          //printMemory(state, sizeof(*state), maxBytes);
         }
       }
     }
@@ -286,11 +293,12 @@ int main(int argc, char *argv[]) {
     if (changed == -1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
-        printf("NO STATE CHANGE FOR VICTORY CARD PILE\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("\nInputs that caused first failure of REQT #5...\n");
+        printf("  NO STATE CHANGE FOR VICTORY CARD PILE\n");
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -310,11 +318,12 @@ int main(int argc, char *argv[]) {
     if (changed == -1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
-        printf("NO STATE CHANGE FOR KINGDOM CARD PILE\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("\nInputs that caused first failure of REQT #6...\n");
+        printf("  NO STATE CHANGE FOR KINGDOM CARD PILE\n");
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -339,12 +348,13 @@ int main(int argc, char *argv[]) {
     if (after - before == 2) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("\nInputs that caused first failure of ...\n");
-        printf("BOTH CARDS REC'VD BY CURRENT PLAYER ");
-        printf("SHOULD BE TREASURE CARDS\n");
-        printf("pn=%d\n", pn);
-        printf("1st %d bytes of state=\n", maxBytes);
-        printMemory(state, sizeof(*state), maxBytes);
+        printf("\nInputs that caused first failure of REQT #7...\n");
+        printf("  BOTH CARDS REC'VD BY CURRENT PLAYER ");
+        printf("  SHOULD BE TREASURE CARDS\n");
+        printf("  pn=%d\n", pn);
+        printState(state);
+        //printf("1st %d bytes of state=\n", maxBytes);
+        //printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -357,7 +367,7 @@ int main(int argc, char *argv[]) {
   // print summary reports from tests that were run
 
   t = -1;
-  printf("\nTOTAL CALLS TO smithyCardEffect(): %d\n\n", calls);
+  printf("\nTOTAL CALLS TO adventurerCardEffect(): %d\n\n", calls);
 
   t++;
   printf("FUNCTION SUCCESSFULLY COMPLETES\n");

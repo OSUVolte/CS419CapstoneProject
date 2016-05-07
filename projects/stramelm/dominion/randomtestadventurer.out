@@ -5,6 +5,226 @@ Stramel CS362 Assignment 3 Random Test Adventurer Results
 --------------------------------------------
 randomtestadventurer
 --------------------------------------------
+CARD TEST #2: ADVENTURER
+
+Inputs that caused first failure of REQT #2...
+  CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS,
+  BUT ADVENTURER TO BE DISCARDED, NET 1
+  pn=1
+  state->numPlayers=4
+  state->supplyCount=[30 12 12 12 32 40 30 10 -1 -1 12 10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1]
+  state->embargoTokens=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  state->outpostPlayed=0
+  state->outpostTurn=0
+  state->whoseTurn=0
+  state->phase=0
+  state->numActions=1
+  state->coins=3
+  state->numBuys=1
+  state->player 0:
+    handCount=5
+    hand=[4 4 1 1 4]
+    deckCount=5
+    deck=[1 4 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 1:
+    handCount=3
+    hand=[4 4 4]
+    deckCount=7
+    deck=[4 4 1 4 1 1 4]
+    discardCount=0
+    discard=[]
+  state->player 2:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[1 4 1 4 4 4 1 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 3:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 4 1 4 4 1 4 4 1 4]
+    discardCount=0
+    discard=[]
+  state->playedCardCount=0
+  state->playedCards=[]
+
+Inputs that caused first failure of REQT #3...
+  CARDS SHOULD COME FROM HIS OWN PILE,
+  BUT ADVENTURER WILL BE ADDED BACK TO THE DISCARD, NET -1
+  pn=1
+  state->numPlayers=4
+  state->supplyCount=[30 12 12 12 32 40 30 10 -1 -1 12 10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1]
+  state->embargoTokens=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  state->outpostPlayed=0
+  state->outpostTurn=0
+  state->whoseTurn=0
+  state->phase=0
+  state->numActions=1
+  state->coins=3
+  state->numBuys=1
+  state->player 0:
+    handCount=5
+    hand=[4 4 1 1 4]
+    deckCount=5
+    deck=[1 4 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 1:
+    handCount=3
+    hand=[4 4 4]
+    deckCount=7
+    deck=[4 4 1 4 1 1 4]
+    discardCount=0
+    discard=[]
+  state->player 2:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[1 4 1 4 4 4 1 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 3:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 4 1 4 4 1 4 4 1 4]
+    discardCount=0
+    discard=[]
+  state->playedCardCount=0
+  state->playedCards=[]
+
+Inputs that caused first failure of REQT #7...
+  BOTH CARDS REC'VD BY CURRENT PLAYER   SHOULD BE TREASURE CARDS
+  pn=1
+  state->numPlayers=4
+  state->supplyCount=[30 12 12 12 32 40 30 10 -1 -1 12 10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1]
+  state->embargoTokens=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  state->outpostPlayed=0
+  state->outpostTurn=0
+  state->whoseTurn=0
+  state->phase=0
+  state->numActions=1
+  state->coins=3
+  state->numBuys=1
+  state->player 0:
+    handCount=5
+    hand=[4 4 1 1 4]
+    deckCount=5
+    deck=[1 4 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 1:
+    handCount=3
+    hand=[4 4 4]
+    deckCount=7
+    deck=[4 4 1 4 1 1 4]
+    discardCount=0
+    discard=[]
+  state->player 2:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[1 4 1 4 4 4 1 4 4 4]
+    discardCount=0
+    discard=[]
+  state->player 3:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 4 1 4 4 1 4 4 1 4]
+    discardCount=0
+    discard=[]
+  state->playedCardCount=0
+  state->playedCards=[]
+
+Inputs that caused first failure of REQT #4b...
+  NO STATE CHANGE FOR OTHER PLAYER(S)
+  pn=0
+  state->numPlayers=4
+  state->supplyCount=[30 12 12 12 32 40 30 10 -1 -1 12 10 -1 10 10 -1 -1 10 -1 10 -1 10 10 -1 -1 10 -1]
+  state->embargoTokens=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  state->outpostPlayed=0
+  state->outpostTurn=-688158346
+  state->whoseTurn=0
+  state->phase=0
+  state->numActions=1
+  state->coins=4
+  state->numBuys=1
+  state->player 0:
+    handCount=8
+    hand=[4 1 4 4 4 4 4 4]
+    deckCount=1
+    deck=[1]
+    discardCount=1
+    discard=[1]
+  state->player 1:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 4 4 1 4 4 1 4 4 1]
+    discardCount=0
+    discard=[]
+  state->player 2:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 1 4 1 4 4 4 1 4 4]
+    discardCount=0
+    discard=[]
+  state->player 3:
+    handCount=0
+    hand=[]
+    deckCount=10
+    deck=[4 1 4 4 4 4 1 4 4 1]
+    discardCount=0
+    discard=[]
+  state->playedCardCount=0
+  state->playedCards=[]
+
+TOTAL CALLS TO adventurerCardEffect(): 100000
+
+FUNCTION SUCCESSFULLY COMPLETES
+-------------------------------
+Pass: 100000
+Fail: 0
+
+CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS,
+BUT ADVENTURER TO BE DISCARDED, NET 1
+-------------------------------
+Pass: 29
+Fail: 99971
+
+3 CARDS SHOULD COME FROM HIS OWN PILE,
+BUT ADVENTURER WILL BE ADDED BACK TO THE DISCARD, NET -1
+-------------------------------
+Pass: 0
+Fail: 100000
+
+NO STATE CHANGE FOR OTHER PLAYER(S)
+-------------------------------
+Pass: 469405
+Fail: 3081
+
+NO STATE CHANGE FOR VICTORY CARD PILE
+-------------------------------
+Pass: 100000
+Fail: 0
+
+NO STATE CHANGE FOR KINGDOM CARD PILE
+-------------------------------
+Pass: 100000
+Fail: 0
+
+BOTH CARDS REC'VD BY CURRENT PLAYER
+SHOULD BE TREASURE CARDS
+-------------------------------
+Pass: 2668
+Fail: 97332
+
 
 --------------------------------------------
 gcov results
@@ -50,10 +270,10 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 3
 
 Function 'adventurerCardEffect'
-Lines executed:0.00% of 17
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 2
+Lines executed:100.00% of 17
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+Calls executed:100.00% of 2
 
 Function 'smithyCardEffect'
 Lines executed:100.00% of 5
@@ -68,9 +288,9 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:77.27% of 22
+Lines executed:100.00% of 22
 Branches executed:100.00% of 6
-Taken at least once:66.67% of 6
+Taken at least once:100.00% of 6
 Calls executed:100.00% of 1
 
 Function 'getWinners'
@@ -158,15 +378,15 @@ No branches
 No calls
 
 Function 'compare'
-Lines executed:83.33% of 6
+Lines executed:100.00% of 6
 Branches executed:100.00% of 4
-Taken at least once:75.00% of 4
+Taken at least once:100.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:21.85% of 563
-Branches executed:19.18% of 417
-Taken at least once:16.79% of 417
-Calls executed:10.53% of 95
+Lines executed:25.93% of 563
+Branches executed:22.06% of 417
+Taken at least once:20.38% of 417
+Calls executed:12.63% of 95
 Creating 'dominion.c.gcov'
 
