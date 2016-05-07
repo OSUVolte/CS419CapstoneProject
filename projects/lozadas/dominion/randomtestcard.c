@@ -3,10 +3,7 @@
 *Assignment #4
 *CS 362
 *Reference:testUpdateCoins.c cardtest4.c testDrawCard.c 
-*Test description:
-*1.Test player hand contains two treasure cards after drawing adventurer card.
-*2.Test if deck was decreased by 2.
-*3.Test other player hand remains unchanged.
+*Test Council Room card
 * -----------------------------------------------------------------------
  */
 #include "dominion.h"
