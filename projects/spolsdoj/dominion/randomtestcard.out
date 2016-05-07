@@ -1,3 +1,9 @@
+STARTED: Running random Village card test.
+Test Complete: ran 1000 tests with SUCCESS!
+File 'dominion.c'
+Lines executed:20.44% of 548
+Creating 'dominion.c.gcov'
+
         -:    0:Source:dominion.c
         -:    0:Graph:dominion.gcno
         -:    0:Data:dominion.gcda
