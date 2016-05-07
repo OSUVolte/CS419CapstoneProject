@@ -101,7 +101,7 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	echo "--------------------------------------------" >> unittestresults.out
 	gcov -f -b dominion.c >> unittestresults.out
 
-randomtestresults.out: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
+randomtestresults: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
 	echo "--------------------------------------------" > randomtestcard.out
 	echo "Stramel CS362 Assignment 3 Random Test Card Results" >> randomtestcard.out
 	echo "--------------------------------------------" >> randomtestcard.out
