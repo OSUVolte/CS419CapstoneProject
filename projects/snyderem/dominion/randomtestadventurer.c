@@ -1,4 +1,10 @@
-
+/******************************************************************************
+** Filename: randomtestadventurer.c
+** Emily Snyder
+** Spring 2016
+** CS 362-400
+** Random tests for Adventurer Card
+******************************************************************************/ 
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -38,7 +44,7 @@ int main () {
 
 
 
-  for (t = 0; t < 10000; t++) {
+ // for (t = 0; t < 10000; t++) {
   	printf("******************* TEST #%d *******************\n", t);
     
   	numPlayers = rand() % (MAX_PLAYERS - 1) + MIN_PLAYERS; 
@@ -65,7 +71,7 @@ int main () {
 			printf("TEST PASSED\n");
 		}
   	printf("************************************************\n");
-  }
+ // }
 
 	return 0;
 }
