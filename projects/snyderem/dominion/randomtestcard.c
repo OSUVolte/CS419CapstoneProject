@@ -279,7 +279,7 @@ int checkResults1(
 	printf("Played\t%d\t%d\t%d\n", preState->playedCardCount, postState->playedCardCount, newPlayedCardCount);
 
   // Supply counts and embargo tokens should not be changed
-  for (i = 0; i < treasure_map + 1; i++) {
+  for (i = 0; i <= MAX_CARD; i++) {
 		if (preState->supplyCount[i] != postState->supplyCount[i]) {
 			status = -1;	
 			printf("FAIL: Supply Count for card %d has changed\n", i);

@@ -69,12 +69,14 @@ randomtestcard: dominion.o randomtestcard.c rngs.o
 
 randomtestcard.out: randomtestcard
 	./randomtestcard >> randomtestcard.out
+	gcov -b dominion.c >> randomtestcard.out
 
 randomtestadventurer: dominion.o randomtestadventurer.c rngs.o
 	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 
 randomtestadventurer.out: randomtestadventurer
 	./randomtestadventurer >> randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
