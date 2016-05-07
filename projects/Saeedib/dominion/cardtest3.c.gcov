@@ -49,19 +49,7 @@
         1:   44:	testG.supplyCount[province] = rand() % 5 + 1;
         -:   45:	//Total should add up to 6
         -:   46:	// Starting test
-        1:   47:	printf("\n\nTesting card: %s\n\n", UNITTEST);
+        1:   47:	printf("\n\nNot enough time: %s\n\n", UNITTEST);
         -:   48:
-        -:   49:
-        1:   50:	printf("Test 1: Checking the function.\n");
-        1:   51:	printf("Test 1 Passed\n");
-        -:   52:
-        1:   53:	printf("\nTest 2: testing decrease in province cards.\n");
-        1:   54:	printf("Test 2 Passed\n");
-        -:   55:
-        1:   56:	printf("\nTest 3: Testing 3 piles are at 0.\n");
-        1:   57:	printf("Test 3 Passed\n");
-        -:   58:
-        1:   59:	printf("\nTest 4: Checking unexpected input/Output\n");
-        1:   60:	printf("Test 4 Passed\n");
-        1:   61:	return 0;	//No bugs found
-        -:   62:}
+        1:   49:	return 0;	//No bugs found
+        -:   50:}

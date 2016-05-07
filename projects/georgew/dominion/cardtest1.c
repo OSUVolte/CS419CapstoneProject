@@ -26,6 +26,12 @@ int main() {	// copy the game state to a test case
 	// initialize a game state and player cards
 	initializeGame(numPlayers, k, seed, &G);
 	//set initial game state
+	printf("Testing for: ");
+	printf("1. 3 Cards Taken From Deck");
+	printf("2. 3 Cards Added To Hand");
+	printf("3. 1 Card Discarded From Hand");
+	printf("4. 1 Cards Added To Discarded Pile");
+
 	memcpy(&testG, &G, sizeof(struct gameState));
 	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
 	printf("---------------TEST 1: CHECKING DRAW CARD FUNCTION\n-----------");
@@ -53,7 +59,7 @@ int main() {	// copy the game state to a test case
 		printf("DECK COUNT CHANGED INCORRECTLY: FAILURE\n");
 	//check hand count
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
-	if ((currHandCount + 3) == testG.handCount[thisPlayer]){
+	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
 		printf("HAND COUNT INCREASED BY 3: SUCCESS\n");
 	}
 	else if (currHandCount == testG.handCount[thisPlayer])

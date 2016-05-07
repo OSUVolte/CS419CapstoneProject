@@ -48,7 +48,7 @@ int main() {
     int k[10] = {smithy, village, council_room, adventurer, feast
                , gardens, mine, remodel, baron, great_hall};
     struct gameState gState, gTest;
-		initalizeGame( players, k, seed, &gState );
+		initializeGame( players, k, seed, &gState );
 		
 		gTest.coins = 0;
 		int handCount = 5;
@@ -185,7 +185,7 @@ int main() {
 			printf( "TEST 5 Failed: G.coins != 10\n" );
 			failFlag = 1;
 		} 
-		if( failFlag = 0 ){
+		if( failFlag == 0 ){
 			printf( "TEST 6 Passed: G.coins = 10 = gold + 2*silver + 2*bronze + bonus\n" );
 			successCount++;
 		}
@@ -217,7 +217,7 @@ int main() {
 			printf( "TEST 6 Failed: G.coins != 12\n" );
 			failFlag = 1;
 		} 
-		if( failFlag = 0 ){
+		if( failFlag == 0 ){
 			printf( "TEST 6 Passed: G.coins = 12 = gold + 2*silver + 2*bronze + bonus\n" );
 			successCount++;
 		}
@@ -252,7 +252,7 @@ int main() {
 			printf( "TEST 7 Failed: G.coins != 7\n" );
 			failFlag = 1;
 		} 
-		if( failFlag = 0 ){
+		if( failFlag == 0 ){
 			printf( "TEST 7 Passed: G.coins = 7 = gold + silver + 2*bronze + bonus\n" );
 			successCount++;
 		}
@@ -287,7 +287,7 @@ int main() {
 			printf( "TEST 9 Failed: G.coins != 9\n" );
 			failFlag = 1;
 		} 
-		if( failFlag = 0 ){
+		if( failFlag == 0 ){
 			printf( "TEST 8 Passed: G.coins = 9 = gold + silver + 2*bronze + bonus\n" );
 			successCount++;
 		}
@@ -313,7 +313,7 @@ int main() {
 			printf( "TEST 9 Failed: G.coins != 4\n" );
 			failFlag = 1;
 		} 
-		if( failFlag = 0 ){
+		if( failFlag == 0 ){
 			printf( "TEST 9 Passed: G.coins = 4 =  bonus\n" );
 			successCount++;
 		}
@@ -417,6 +417,6 @@ int main() {
 			printf("All tests passed!\n");
 		} else {
 			printf("%d tests passed -- %d tests failed\n", successCount, 9-successCount);
-
+		}
     return 0;
 }

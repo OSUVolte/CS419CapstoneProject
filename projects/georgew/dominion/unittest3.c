@@ -15,7 +15,7 @@ int main() {
 	int seed = 1000;
 	int numPlayers = 2;
 	int thisPlayer = 0;
-	int bonus = 0;
+	int bonus;
 	int copper = 0;
 	int newCopper = 0; 
 	int silver = 0;
@@ -31,12 +31,89 @@ int main() {
 	//initialize game, state and player cards
 	initializeGame(numPlayers, k, seed, &G);
 	memcpy(&testG, &G, sizeof(struct gameState));
-	printf("\n\n\n\n----------------- Testing Function: %s ----------------\n", FUNCTION);	
-	for (i=0; i < numPlayers; i++){
+		printf("\n---------------------Zero Bonus TEST---------------------\n");
 		//revert to starting game state
 		memcpy(&G, &testG, sizeof(struct gameState));
 		//set player to i
 		thisPlayer = i;
+		bonus = 0;
+		printf("\n---------------------Counting Coins---------------------\n");
+		printf("Player %d\n Coins: %d",  testG.coins);
+		for (j = 0; j < testG.handCount[thisPlayer]; j++){
+			if (testG.hand[thisPlayer][i] == copper){
+				copper++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				silver++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				gold++;
+			}
+		}
+		printf("Copper: %d Silver: %d Gold: %d ", copper, silver, gold);
+		printf("Bonus Added : %d\n", bonus);
+		//run function
+		updateCoins(thisPlayer, &testG, bonus);
+		printf("\n-----------------Counting Coins After Update---------------------\n");
+		printf("Player %d\n Coins: %d",  testG.coins);
+		//count changes
+		for (j = 0; j < testG.handCount[thisPlayer]; j++){
+			if (testG.hand[thisPlayer][i] == copper){
+				newCopper++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				newSilver++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				newGold++;
+			}
+		}
+		printf("Copper: %d Silver: %d Gold: %d ", newCopper, newSilver, newGold);
+		printf("\n-------------------Positive Bonus TEST-------------------\n");
+
+		//revert to starting game state
+		memcpy(&G, &testG, sizeof(struct gameState));
+		//set player to i
+		thisPlayer = i;
+		bonus = 10;
+		printf("\n---------------------Counting Coins---------------------\n");
+		printf("Player %d\n Coins: %d",  testG.coins);
+		for (j = 0; j < testG.handCount[thisPlayer]; j++){
+			if (testG.hand[thisPlayer][i] == copper){
+				copper++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				silver++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				gold++;
+			}
+		}
+		printf("Copper: %d Silver: %d Gold: %d ", copper, silver, gold);
+		printf("Bonus Added : %d\n", bonus);
+		//run function
+		updateCoins(thisPlayer, &testG, bonus);
+		printf("\n-----------------Counting Coins After Update---------------------\n");
+		printf("Player %d\n Coins: %d",  testG.coins);
+		//count changes
+		for (j = 0; j < testG.handCount[thisPlayer]; j++){
+			if (testG.hand[thisPlayer][i] == copper){
+				newCopper++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				newSilver++;
+			}
+			if (testG.hand[thisPlayer][i] == silver){
+				newGold++;
+			}
+		}
+		printf("Copper: %d Silver: %d Gold: %d ", newCopper, newSilver, newGold);
+		printf("\n---------------------Negative Bonus TEST---------------------\n");
+		//revert to starting game state
+		memcpy(&G, &testG, sizeof(struct gameState));
+		//set player to i
+		thisPlayer = i;
+		bonus = -10;
 		printf("\n---------------------Counting Coins---------------------\n");
 		printf("Player %d\n Coins: %d",  testG.coins);
 		for (j = 0; j < testG.handCount[thisPlayer]; j++){
@@ -71,6 +148,8 @@ int main() {
 		printf("Copper: %d Silver: %d Gold: %d ", newCopper, newSilver, newGold);
 		//assert(testG.deckCount[thisPlayer] == testG.deckCount[thisPlayer]);
 		//assert(testG.coins == testG.coins);
+	printf("\n\n\n\n----------------- Testing Function: %s ----------------\n", FUNCTION);	
+	for (i=0; i < numPlayers; i++){
 		//assert(testG.playedCardCount == testG.playedCardCount);
 		//assert(testG.numPlayers == testG.numPlayers);
 	}

@@ -644,7 +644,7 @@ int getCost(int cardNumber)
 }
 
 int playAdventurer(int drawntreasure, int currentPlayer, struct gameState *state, int *temphand){
-   int z=0, cardDrawn;
+   int z=0, cardDrawn,i=0;
    for(;;){
       if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
          shuffle(currentPlayer, state);
@@ -658,6 +658,9 @@ int playAdventurer(int drawntreasure, int currentPlayer, struct gameState *state
          temphand[++z]=cardDrawn;
          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       }
+		
+		i++;
+		if (i == MAX_HAND) break;
    }
    
    for(;;){

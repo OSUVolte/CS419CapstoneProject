@@ -1,5 +1,5 @@
 CFLAGS = -Wall -fpic -coverage -lm
-MYFLAGS = -fpic -coverage -lm
+MYFLAGS = -fpic -coverage -lm -w
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -37,7 +37,7 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest[1-4] cardtest[1-4]
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest[1-4] cardtest[1-4] randomtestcard randomtestadventurer
 
 unit1:
 	gcc -std=c99 dominion.o unittest1.c rngs.c -o unittest1 $(MYFLAGS)
@@ -67,4 +67,34 @@ unittestresults.out: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4
 	printf "\n************************    Begin Coverage Information   **********************\n\n" >> unittestresults.out
 	gcov -b -f dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
-	
+randomtestadventurer.out: dominion.o
+	gcc -std=c99 dominion.o randomtestadventurer.c rngs.c -o randomtestadventurer $(MYFLAGS)
+	./randomtestadventurer >> randomtestadventurer.out
+	printf "\n************************    Begin Coverage Information   **********************\n\n" >> randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+randomtestcard.out: dominion.o
+	gcc -std=c99 dominion.o randomtestcard.c rngs.c -o randomtestcard $(MYFLAGS)
+	./randomtestcard >> randomtestcard.out
+	printf "\n************************    Begin Coverage Information   **********************\n\n" >> randomtestcard.out
+	gcov -b -f dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+randomtests: randomtestadventurer.out
+	rm dominion.o 
+	make randomtestcard.out 
+runUnitThenRandom: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4 
+	gcc -std=c99 dominion.o randomtestadventurer.c rngs.c -o randomtestadventurer $(MYFLAGS)
+	gcc -std=c99 dominion.o randomtestcard.c rngs.c -o randomtestcard $(MYFLAGS)
+	./unittest1 
+	./unittest2 
+	./unittest3  
+	./unittest4  
+	./cardtest1  
+	./cardtest2 
+	./cardtest3  
+	./cardtest4
+	./randomtestadventurer
+	./randomtestcard
+	printf "\n************************    Begin Coverage Information   **********************\n\n" >> combinedRandomUnit.out
+	gcov -b -f dominion.c >> combinedRandomUnit.out
+	cat dominion.c.gcov >> combinedRandomUnit.out

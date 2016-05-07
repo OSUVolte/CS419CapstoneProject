@@ -108,8 +108,22 @@ run: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardt
    
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 run
 
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS) 
+	./randomtestadventurer > randomtestadventurer.out
+	echo "Coverage Test: randomtestadventurer" >> randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
+	gcov -b randomtestadventurer.c >> randomtestadventurer.out
+
+randomtestcard.out: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestcard > randomtestcard.out
+	echo "Coverage Test: randomtestcard" >> randomtestcard.out
+	gcov -b dominion.c >> randomtestcard.out
+	gcov -b randomtestcard.c >> randomtestcard.out
+
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittestresults.out *.gcov *.gcda *.gcno *.so
-	rm -rf ./results *.dSYM unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+	rm -rf ./results *.dSYM unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestadventurer randomtestcard
