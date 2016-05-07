@@ -7,6 +7,87 @@
 #include <string.h>
 #include <time.h>
 
+void printState(struct gameState *state) {
+  int i, j;
+
+  printf("\n-----------------\n");
+  printf("contents of state\n");
+  printf("-----------------\n");
+  printf("numPlayers=%d\n", state->numPlayers);
+
+  printf("supplyCount=[");
+  for (i = 0; i <= treasure_map; i++) {
+    printf("%d", state->supplyCount[i]);
+    if (i != treasure_map) {
+      printf(" ");
+    }
+  }
+  printf("]\n");
+
+  printf("embargoTokens=[");
+  for (i = 0; i <= treasure_map; i++) {
+    printf("%d", state->embargoTokens[i]);
+    if (i != treasure_map) {
+      printf(" ");
+    }
+  }
+  printf("]\n");
+
+  printf("outpostPlayed=%d\n", state->outpostPlayed);
+  printf("outpostTurn=%d\n", state->outpostTurn);
+  printf("whoseTurn=%d\n", state->whoseTurn);
+  printf("phase=%d\n", state->phase);
+  printf("numActions=%d\n", state->numActions);
+  printf("coins=%d\n", state->coins);
+  printf("numBuys=%d\n", state->numBuys);
+
+  for (i = 0; i < state->numPlayers; i++) {
+    printf("\nplayer %d:\n", i);
+    printf("handCount=%d\n", state->handCount[i]);
+    printf("hand=[");
+    for (j = 0; j < state->handCount[i]; j++) {
+      printf("%d", state->hand[i][j]);
+      if (j + 1 != state->handCount[i]) {
+        printf(" ");
+      }
+    }
+    printf("]\n");
+    printf("deckCount=%d\n", state->deckCount[i]);
+    printf("deck=[");
+    for (j = 0; j < state->deckCount[i]; j++) {
+      printf("%d", state->deck[i][j]);
+      if (j + 1 != state->deckCount[i]) {
+        printf(" ");
+      }
+    }
+    printf("]\n");
+    printf("discardCount=%d\n", state->discardCount[i]);
+    printf("discard=[");
+    for (j = 0; j < state->discardCount[i]; j++) {
+      printf("%d", state->discard[i][j]);
+      if (j + 1 != state->discardCount[i]) {
+        printf(" ");
+      }
+    }
+    printf("]\n");
+
+}
+
+  printf("playedCards=[");
+  for (i = 0; i < state->playedCardCount; i++) {
+    printf("%d", state->playedCards[i]);
+    if (i + 1 != state->playedCardCount) {
+      printf(" ");
+    }
+  }
+  printf("]\n");
+
+  printf("-----------------\n");
+  printf("contents of state\n");
+  printf("-----------------\n");
+  fflush(stdout);
+}
+
 void printMemory(void const *memLoc, int totalSize, int numBytes)
 {
   unsigned const char *mem = memLoc;
@@ -43,7 +124,7 @@ void randomizeMemory(void *memLoc, int totalSize)
 
 int main(int argc, char *argv[]) {
 
-  printf("CARD TEST #1: SMITHY\n\n");
+  printf("CARD TEST #1: SMITHY\n");
 
   srand(time(NULL));
 
@@ -57,7 +138,7 @@ int main(int argc, char *argv[]) {
   int pass[] = {0, 0, 0, 0, 0, 0}, fail[] = {0, 0, 0, 0, 0, 0}, t; // test cnt
   int before, after; // ints used to assess pass/fail criteria
 
-  for (i = 0; i < 200; i++) { // 200 different sets of input conds to test
+  for (i = 0; i < 2; i++) { // different sets of input conds to test
     t = -1;
 
     struct gameState* state;
@@ -104,7 +185,7 @@ int main(int argc, char *argv[]) {
     if (r == 0) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("Inputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of ...\n");
         printf("FUNCTION SUCCESSFULLY COMPLETES\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
@@ -123,7 +204,7 @@ int main(int argc, char *argv[]) {
     if (after - before == 2) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("Inputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of ...\n");
         printf("CURRENT PLAYER SHOULD REC'V 3 CARDS,\n");
         printf("BUT SMITHY TO BE DISCARDED, NET 2 IN HAND\n");
         printf("pn=%d\n", pn);
@@ -143,7 +224,7 @@ int main(int argc, char *argv[]) {
     if (after - before == 2) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("Inputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of ...\n");
         printf("CARDS SHOULD COME FROM HIS OWN PILE,\n");
         printf("BUT SMITHY WILL BE ADDED BACK TO THE DISCARD, NET -2\n");
         printf("pn=%d\n", pn);
@@ -167,7 +248,7 @@ int main(int argc, char *argv[]) {
       if (after == before) { pass[t]++; } else {
         fail[t]++;
         if (fail[t] == 1) { // first failure of this test
-          printf("Inputs that caused first failure of ...\n");
+          printf("\nInputs that caused first failure of ...\n");
           printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
           printf("pn=%d\n", pn);
           printf("hp=%d\n", hp);
@@ -182,7 +263,7 @@ int main(int argc, char *argv[]) {
       if (after == before) { pass[t]++; } else {
         fail[t]++;
         if (fail[t] == 1) { // first failure of this test
-          printf("Inputs that caused first failure of ...\n");
+          printf("\nInputs that caused first failure of ...\n");
           printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
           printf("pn=%d\n", pn);
           printf("hp=%d\n", hp);
@@ -208,7 +289,7 @@ int main(int argc, char *argv[]) {
     if (changed == -1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("Inputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of ...\n");
         printf("NO STATE CHANGE FOR VICTORY CARD PILE\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
@@ -233,7 +314,7 @@ int main(int argc, char *argv[]) {
     if (changed == -1) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
-        printf("Inputs that caused first failure of ...\n");
+        printf("\nInputs that caused first failure of ...\n");
         printf("NO STATE CHANGE FOR KINGDOM CARD PILE\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
