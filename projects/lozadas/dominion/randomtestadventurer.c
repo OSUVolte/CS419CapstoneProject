@@ -107,7 +107,7 @@ int main() {
 			failure++;
 		}	
 		printf("Test 3: determine if other players hands remain unchanged.\n");
-		//Determine if the number of cards in deck is reduced by at least two cards. 
+		//Loop over players in game and determine if hand remains intact after adventurer card is drawn by thisPlayer
 		for (p=0; p<numPlayers; p++)		
 		{
 			if (p!=thisPlayer)
