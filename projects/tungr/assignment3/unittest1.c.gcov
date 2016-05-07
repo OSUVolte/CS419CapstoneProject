@@ -1,0 +1,189 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:	Rosa Tung
+        -:    3:	CS362
+        -:    4:	(20 points) Write unit tests for four functions (not card implementations or cardEffect) in dominion.c. 
+        -:    5:	Check these tests in as unittest1.c,unittest2.c, unittest3.c, and unittest4.c. 
+        -:    6:	(for example, you can create a test for updateCoins() method)
+        -:    7:	
+        -:    8:	Testing:
+        -:    9:		int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed, struct gameState *state);
+        -:   10:*/
+        -:   11:
+        -:   12:#include "dominion.h" 
+        -:   13:
+        -:   14:#include <stdio.h> //printf scanf
+        -:   15:
+function main called 2 returned 100% blocks executed 74%
+        2:   16:int main(){
+        -:   17:	//create gameState object, hand, and flag for function state
+        -:   18:	struct gameState G;
+        2:   19:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   20:	int flag;
+        -:   21:	int numPlayers;
+        -:   22:	
+        2:   23:	printf("---Testing initializeGame function START---\n\n");
+call    0 returned 100%
+        -:   24:	
+        -:   25:	//go through 2-4 players and attempt to initialize the game 
+        8:   26:	for(numPlayers = 2; numPlayers <= MAX_PLAYERS; numPlayers++){
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+        6:   27:		printf("Initialize Game...\n");
+call    0 returned 100%
+        6:   28:		printf("	Testing gameState for %d players...\n", numPlayers);
+call    0 returned 100%
+        6:   29:		flag = initializeGame(numPlayers, k, 4, &G);
+call    0 returned 100%
+        6:   30:		if (flag == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   31:			printf("		Function succeeded including all below\n");
+call    0 returned 100%
+        6:   32:			printf("			1. correct number of players\n");
+call    0 returned 100%
+        6:   33:			printf("			2. selected kingdom cards are different\n");
+call    0 returned 100%
+        6:   34:			printf("			3. deck is shuffled\n");
+call    0 returned 100%
+        -:   35:		} else{
+    #####:   36:			printf("		Function failed for one or more below\n");	
+call    0 never executed
+    #####:   37:			printf("			1. incorrect number of players\n");
+call    0 never executed
+    #####:   38:			printf("			2. selected kingdom cards are not different\n");
+call    0 never executed
+    #####:   39:			printf("			3. deck is not shuffled\n");
+call    0 never executed
+        -:   40:		}		
+        6:   41:		if(G.numPlayers = numPlayers){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   42:			printf("		Correct Number of Players\n");
+call    0 returned 100%
+        -:   43:		} else {
+    #####:   44:			printf("		Incorrect Number of Players\n");
+call    0 never executed
+        -:   45:		} //kingdom cards has -1 return value
+        6:   46:		if(G.supplyCount[curse] == (numPlayers-1)*10){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   47:			printf("		Correct # of Curse Cards\n");
+call    0 returned 100%
+        -:   48:		} else {
+    #####:   49:			printf("		Incorrect # of Curse Cards\n");
+call    0 never executed
+        -:   50:		}
+        6:   51:		if(numPlayers == 2){
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        2:   52:			if(G.supplyCount[estate] == 8){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        2:   53:				printf("		Correct # of Estate cards\n");
+call    0 returned 100%
+        -:   54:			} else {
+    #####:   55:				printf("		Incorrect # of Estate Cards\n");
+call    0 never executed
+        -:   56:			}
+        2:   57:			if(G.supplyCount[duchy] == 8){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        2:   58:				printf("		Correct # of Duchy cards\n");
+call    0 returned 100%
+        -:   59:			} else {
+    #####:   60:				printf("		Incorrect # of Duchy Cards\n");	
+call    0 never executed
+        -:   61:			}
+        2:   62:			if(G.supplyCount[province] = 8){
+        2:   63:				printf("		Correct # of Province cards\n");
+call    0 returned 100%
+        -:   64:			} else {
+        -:   65:				printf("		Incorrect # of Province Cards\n");
+        -:   66:			}
+        -:   67:		}
+        6:   68:		if(numPlayers != 2){
+branch  0 taken 67% (fallthrough)
+branch  1 taken 33%
+        4:   69:			if(G.supplyCount[estate] == 12){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   70:				printf("		Correct # of Estate cards\n");
+call    0 returned 100%
+        -:   71:			} else {
+    #####:   72:				printf("		Incorrect # of Estate Cards\n");
+call    0 never executed
+        -:   73:			}
+        4:   74:			if(G.supplyCount[duchy] == 12){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   75:				printf("		Correct # of Duchy cards\n");
+call    0 returned 100%
+        -:   76:			} else {
+    #####:   77:				printf("		Incorrect # of Duchy Cards\n");	
+call    0 never executed
+        -:   78:			}
+        4:   79:			if(G.supplyCount[province] = 12){
+        4:   80:				printf("		Correct # of Province cards\n");
+call    0 returned 100%
+        -:   81:			} else {
+        -:   82:				printf("		Incorrect # of Province Cards\n");
+        -:   83:			}			
+        -:   84:		}
+        6:   85:		if(G.supplyCount[copper] == 60 - (7 * numPlayers)){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   86:			printf("		Correct # copper cards\n");
+call    0 returned 100%
+        -:   87:		} else {
+    #####:   88:			printf("		Incorrect # copper cards\n");
+call    0 never executed
+        -:   89:		}
+        6:   90:		if(G.supplyCount[silver] == 40){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   91:			printf("		Correct # silver cards\n");
+call    0 returned 100%
+        -:   92:		} else {
+    #####:   93:			printf("		Incorrect # silver cards\n");
+call    0 never executed
+        -:   94:		}
+        6:   95:		if(G.supplyCount[gold] == 30){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:   96:			printf("		Correct # gold cards\n");
+call    0 returned 100%
+        -:   97:		} else {
+    #####:   98:			printf("		Incorrect # gold cards\n");
+call    0 never executed
+        -:   99:		}
+        6:  100:		if(G.handCount[G.whoseTurn] == 5){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:  101:			printf("		Correct Cards in currentPlayers Hand\n");
+call    0 returned 100%
+        -:  102:		} else {
+    #####:  103:			printf("		Incorrect Cards in currentPlayers Hand\n");
+call    0 never executed
+        -:  104:		}
+        6:  105:		if(G.deckCount[G.whoseTurn] == 5){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        6:  106:			printf("		Correct Cards in currentPlayers Deck\n\n");
+call    0 returned 100%
+        -:  107:		} else {
+    #####:  108:			printf("		Incorrect Cards in currentPlayers Deck\n\n");
+call    0 never executed
+        -:  109:		}
+        -:  110:	}
+        -:  111:
+        2:  112:	printf("\n---Testing initializeGame function COMPLETE---\n\n\n\n");
+call    0 returned 100%
+        -:  113:	
+        2:  114:	return 0;
+        -:  115:}
+        -:  116:

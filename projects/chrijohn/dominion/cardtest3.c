@@ -66,11 +66,11 @@ int main() {
 		printf("Expected: %i.  Actual: %i\n", (numHand - 1), G.handCount[0]);
 		error = 1;
 	}
-	// check discard pile increased by 1
-	if ((numDiscard + 1) != G.discardCount[0])
+	// check discard pile and played card count increased by 1
+	if ((numDiscard + 1) != G.discardCount[0]+ G.playedCardCount)
 	{
-		printf("Error with discard count: ");
-		printf("Expected: %i.  Actual: %i\n", (numDiscard + 1), G.discardCount[0]);
+		printf("Error with discard count and played card: ");
+		printf("Expected: %i.  Actual: %i\n", (numDiscard + 1), (G.discardCount[0]+G.playedCardCount));
 		error = 1;
 	}
 	// check players deck is the same

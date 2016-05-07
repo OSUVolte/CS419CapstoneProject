@@ -55,7 +55,7 @@ interface.o: interface.h interface.c
 #	gcov dominion.c >> unittestresult.out
 #	cat dominion.c.gcov >> unittestresult.out
 
-runtests:
+runtests: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 unittest4
 	./unittest1 &> unittestresults.out
 	gcov unittest1 -f -b >> unittestresults.out	  
 	./unittest2 >> unittestresults.out

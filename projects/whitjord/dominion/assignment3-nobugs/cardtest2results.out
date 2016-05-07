@@ -1,0 +1,10 @@
+>>> testing adventurer cardEffect 
+last card in hand is 6, expecting 6
+second to last card in hand is 4, expecting 4
+cards in hand is 7, expecting 7
+adventurer cardEffect returned 0, expecting 0
+cards in hand is 7, expecting 7
+last card in hand is 4, expecting 4 or 5 or 6
+second to last card in hand is 4, expecting 4 or 5 or 6
+>>> end of adventurer cardEffect test 
+

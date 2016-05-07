@@ -11,8 +11,9 @@ dominion.c - updated file to reflect changes as required by Assignment 2.  The f
              cards now contain a bug (outlined below).
 
 Bugs:
-     newAdventurer() - changed drawntreasue<2 to drawntreasure<3 so 3 cards are drawn.
-     newSmithy() - changed i = 0 in the for loop to (i = 1; i < 3; i++).
-     newVillage() - changed state->numActions = state->numActions + 2 to state->numActions = state->numActions + 4.
-     newCutpurse() - changed if (state->hand[i][j] == copper) to if (state->hand[i][j] == gold).
-     new_sea_hag() - no changes
+     playAdventurer() - changed drawntreasue<2 to drawntreasure<3 so 3 cards are drawn.
+     playSmithy() - changed i = 0 in the for loop to (i = 1; i < 3; i++).
+     playVillage() - changed state->numActions = state->numActions + 2 to state->numActions = state->numActions + 4.
+     playCutpurse() - changed if (state->hand[i][j] == copper) to if (state->hand[i][j] == gold).
+     play_sea_hag() - no changes
+     playSalvager() - no changes, just moved to its own function for testing

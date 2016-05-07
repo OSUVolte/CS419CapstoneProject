@@ -43,10 +43,10 @@ int main() {
     int failedTests = 0;
     int passedTests = 0;
     const char* cards[27] = {"curse", "estate", "duchy", "province", "copper", "silver",
-        "gold", "adventurer", "council room", "feast", "gardens",
-        "mine", "remodel", "smithy", "village", "baron", "great hall",
-        "minion", "steward", "tribute", "ambassador", "cutpurse",
-        "embargo", "outpost", "salvager", "sea hag", "treasure map"};
+                             "gold", "adventurer", "council room", "feast", "gardens",
+                             "mine", "remodel", "smithy", "village", "baron", "great hall",
+                             "minion", "steward", "tribute", "ambassador", "cutpurse",
+                             "embargo", "outpost", "salvager", "sea hag", "treasure map"};
     
     // initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &G);
