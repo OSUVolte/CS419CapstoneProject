@@ -33,7 +33,7 @@ int main() {
 	struct gameState G, testG;
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
-	int numTests=500;
+	int numTests=100;
 	srand(time(NULL));
 	
 	printf("*****************Randon Testing Adventurer Card******************\n\n");
@@ -131,5 +131,4 @@ int main() {
 	printf("\n***************************************************************\n");
 	return 0;
 }
-
 
