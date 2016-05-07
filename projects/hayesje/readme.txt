@@ -11,3 +11,7 @@ Changes   1) Added dominion/unittest1.c dominion/unittest2.c dominion/unittest3.
           4) Added quiz2/testme.c  quiz2/randomtest.c
           5) Modified dominion/Makefile dominion/dominion.c
 
+Date: 05/06/2016
+Changes   1) Added dominion/randomtestcard.c dominion/randomtestadventurer.c 
+          2) Added dominion/randomhistory.c
+          3) Modified dominion/Makefile to include randomtestcard.out and randomtestadventurer.out rules.

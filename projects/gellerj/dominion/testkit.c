@@ -56,7 +56,7 @@ int kingdomPileIsUntouched(struct gameState *before, struct gameState *after) {
 }
 
 int playedPileIsUntouched(struct gameState *before, struct gameState *after) {
-    int i = 0, card;
+    int i = 0;
     for (i = 0; i < after->playedCardCount; i++) {
         if (before->playedCards[i] != after->playedCards[i]) {
             return 0;
@@ -132,6 +132,7 @@ void diffDeckSupply(struct gameState *before, struct gameState *after, int playe
     for (i = 0; i < MAX_DECK; i++) {
         supplyDiff[i] = supplyBefore[i] - supplyAfter[i];
     }
+
 }
 
 void diffHandSupply(struct gameState *before, struct gameState *after, int player, int supplyDiff[MAX_HAND]) {
@@ -158,8 +159,8 @@ void diffHandSupply(struct gameState *before, struct gameState *after, int playe
 }
 
 int countHandSupply(struct gameState *game, int player, int card) {
-    int supply = 0;
-    for (int i = 0; i < game->handCount[player]; i++) {
+    int supply = 0, i = 0;
+    for (i = 0; i < game->handCount[player]; i++) {
         if (game->hand[player][i] == card) {
             supply++;
         }
@@ -168,8 +169,8 @@ int countHandSupply(struct gameState *game, int player, int card) {
 }
 
 int countDeckSupply(struct gameState *game, int player, int card) {
-    int supply = 0;
-    for (int i = 0; i < game->deckCount[player]; i++) {
+    int supply = 0, i = 0;
+    for (i = 0; i < game->deckCount[player]; i++) {
         if (game->deck[player][i] == card) {
             supply++;
         }

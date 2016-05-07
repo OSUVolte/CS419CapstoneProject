@@ -95,4 +95,6 @@
 
 			*** playGardens:  The Gardens card is worth 1 victory point for every 10 cards in the deck.  In the original
 			version of the code, the function simply returned -1.  I introduced a bug by making it return 0 instead.
+
+	*** UPDATE:  I ran unit tests on these cards above, and my unit tests found all of the bugs I introduced.  Yay!
 */

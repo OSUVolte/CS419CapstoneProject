@@ -87,4 +87,7 @@ int main () {
   } else {
     printf("FAIL: returned %d when 6 instances (including end of hand/deck/discard arrays).\n", counter);
   }
+
+  return 0;
+
 }

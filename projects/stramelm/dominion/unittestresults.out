@@ -277,11 +277,11 @@ cardtest2
 --------------------------------------------
 CARD TEST #2: ADVENTURER
 PASSED: CARD EXECUTION
-FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO -496
         EXPECTATION IS +1 CARDS
-FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 3
+FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 0
         EXPECTATION IS +2 TREASURE CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
+FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 4
         EXPECTATION IS -1 CARDS
 PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
         EXPECTATION IS NO CHANGE
@@ -379,10 +379,10 @@ Taken at least once:100.00% of 6
 Calls executed:100.00% of 3
 
 Function 'adventurerCardEffect'
-Lines executed:94.12% of 17
+Lines executed:100.00% of 17
 Branches executed:100.00% of 12
-Taken at least once:75.00% of 12
-Calls executed:50.00% of 2
+Taken at least once:83.33% of 12
+Calls executed:100.00% of 2
 
 Function 'smithyCardEffect'
 Lines executed:100.00% of 5
@@ -397,10 +397,10 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:36.36% of 22
-Branches executed:33.33% of 6
-Taken at least once:16.67% of 6
-Calls executed:0.00% of 1
+Lines executed:100.00% of 22
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
 
 Function 'getWinners'
 Lines executed:0.00% of 24
@@ -465,9 +465,9 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:93.75% of 16
+Lines executed:100.00% of 16
 Branches executed:100.00% of 8
-Taken at least once:87.50% of 8
+Taken at least once:100.00% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
@@ -493,9 +493,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:32.15% of 563
-Branches executed:36.93% of 417
-Taken at least once:33.33% of 417
-Calls executed:18.95% of 95
+Lines executed:34.99% of 563
+Branches executed:37.89% of 417
+Taken at least once:35.01% of 417
+Calls executed:21.05% of 95
 Creating 'dominion.c.gcov'
 

@@ -1,0 +1,295 @@
+EXPECTED COINS:9  ACTUAL COINS:9
+Both EXPECTED & ACTUAL GAME STATES ARE EQUIVALENT before calling the function.
+---Testing UpdateCoins()-----
+Both EXPECTED & ACTUAL game states are equivalent after calling the function.
+EXPECTED COINS:9  ACTUAL COINS:9
+Function 'main'
+Lines executed:100.00% of 27
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:66.67% of 9
+
+File 'unittest1.c'
+Lines executed:100.00% of 27
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:66.67% of 9
+Creating 'unittest1.c.gcov'
+
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+ The discardCard() was called successfully for a played card with one card left in the hand.
+ EXPECTED HAND COUNT: 0 ACTUAL HAND COUNT: 0
+ EXPECTED PLAYED CARD COUNT: 1 ACTUAL PLAYED CARD COUNT: 1
+ The card was successfully discarded from the player's hand.
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+The discardCard() was called successfully for a nonplayed card with multiple cards in hand.
+ EXPECTED HAND COUNT: 1 ACTUAL HAND COUNT: 1
+ EXPECTED PLAYED CARD COUNT: 0 ACTUAL PLAYED CARD COUNT: 0
+ The card was successfully discarded from the player's hand.
+Function 'main'
+Lines executed:95.74% of 47
+Branches executed:100.00% of 20
+Taken at least once:50.00% of 20
+Calls executed:58.33% of 24
+
+File 'unittest2.c'
+Lines executed:95.74% of 47
+Branches executed:100.00% of 20
+Taken at least once:50.00% of 20
+Calls executed:58.33% of 24
+Creating 'unittest2.c.gcov'
+
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+Game Over was successfully handled when conditions were not met and game state was unchanged.
+Game Over successfully handled with out of stock province cards and Game state was unchanged.
+Game Over successfully handled with three out of supply cards and Game state was unchanged.
+Function 'main'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+
+File 'unittest3.c'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+Creating 'unittest3.c.gcov'
+
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+The player's full deck count was calculated correctly.
+The player's hand, deck, discard count piles were not altered.
+The game state was unaltered.
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+The smithy card was called successfully.
+The cards were drawn from the player's own deck.
+The player's hand count matched before and after the call to the function.
+The kingdom and treasure piles were unaffected./nFunction 'main'
+Lines executed:96.55% of 29
+Branches executed:100.00% of 16
+Taken at least once:50.00% of 16
+Calls executed:46.67% of 15
+
+File 'cardtest1.c'
+Lines executed:96.55% of 29
+Branches executed:100.00% of 16
+Taken at least once:50.00% of 16
+Calls executed:46.67% of 15
+Creating 'cardtest1.c.gcov'
+
+The state of the actual and expected both initialized in the same state.
+The adventurer card was called successfully.
+ACTUAL HANDCOUNT:3 EXPECTED HANDCOUNT: 3
+ACTUAL DISCARD COUNT:3 EXPECTED DISCARD COUNT: 3
+ACTUAL DECKCOUNT:1 EXPECTED DECKCOUNT: 1
+The kingdom and treasure piles were unaffected./nFunction 'main'
+Lines executed:97.50% of 40
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+
+File 'cardtest2.c'
+Lines executed:97.50% of 40
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+Creating 'cardtest2.c.gcov'
+
+The state of the actual and expected both initialized the same.
+The village card was called successfully.
+The function executed successfully for the player.
+The function didn't alter other player's state.
+Function 'main'
+Lines executed:96.30% of 27
+Branches executed:100.00% of 16
+Taken at least once:50.00% of 16
+Calls executed:42.86% of 14
+
+File 'cardtest3.c'
+Lines executed:96.30% of 27
+Branches executed:100.00% of 16
+Taken at least once:50.00% of 16
+Calls executed:42.86% of 14
+Creating 'cardtest3.c.gcov'
+
+Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.
+The cutPurse card was called successfully.
+EXPECTED COINS: 2, ACTUAL: 2
+EXPECTED HAND COUNT: 0 ACTUAL HAND COUNT: 0 for CURRENT PLAYER.
+EXPECTED HAND COUNT: 1 ACTUAL HAND COUNT: 1 for CURRENT PLAYER.
+The kingdom and treasure piles were unaffected.
+Function 'main'
+Lines executed:97.22% of 36
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+
+File 'cardtest4.c'
+Lines executed:97.22% of 36
+Branches executed:100.00% of 14
+Taken at least once:50.00% of 14
+Calls executed:53.33% of 15
+Creating 'cardtest4.c.gcov'
+
+Function 'updateCoins'
+Lines executed:100.00% of 11
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:92.31% of 13
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:0.00% of 197
+Branches executed:0.00% of 169
+Taken at least once:0.00% of 169
+Calls executed:0.00% of 55
+
+Function 'cutPurseCard'
+Lines executed:84.62% of 13
+Branches executed:83.33% of 12
+Taken at least once:66.67% of 12
+Calls executed:100.00% of 3
+
+Function 'stewardCard'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 5
+
+Function 'villageCard'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+
+Function 'adventurerCard'
+Lines executed:94.44% of 18
+Branches executed:100.00% of 12
+Taken at least once:83.33% of 12
+Calls executed:66.67% of 3
+
+Function 'smithyCard'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:95.45% of 22
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:83.87% of 62
+Branches executed:95.65% of 46
+Taken at least once:80.43% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:30.95% of 559
+Branches executed:28.92% of 415
+Taken at least once:24.58% of 415
+Calls executed:17.71% of 96
+Creating 'dominion.c.gcov'
+

@@ -42,7 +42,7 @@ int card_Adventurer(struct gameState *state)
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn = gold)
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn != gold)
 	  drawntreasure++;
 	else{
 	  temphand[z]=cardDrawn;
@@ -68,13 +68,13 @@ int card_Adventurer(struct gameState *state)
 int card_Council_Room(struct gameState *state, int handPos){
   int i;
   int currentPlayer = whoseTurn(state);
-      for (i = 0; i <= 4; i++)
+      for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 
       //+1 Buy
-      state->numBuys++;
+      //state->numBuys++;
 
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
@@ -82,6 +82,7 @@ int card_Council_Room(struct gameState *state, int handPos){
 	  if ( i != currentPlayer )
 	    {
 	      drawCard(i, state);
+	      //drawCard(i, state);
 	    }
 	}
 

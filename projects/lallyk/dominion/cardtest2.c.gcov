@@ -1,0 +1,112 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * cardtest2: smithy() function
+        -:    4: * Due Date: April 24, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h" 
+        -:    8:#include <stdio.h>
+        -:    9:
+function main called 1 returned 100% blocks executed 81%
+        1:   10:int main(){
+        -:   11:
+        1:   12:	printf("\n------------------------Card Test 2-----------------------------\n\n");
+call    0 returned 100%
+        1:   13:	printf("---Test smithy()---\n");
+call    0 returned 100%
+        -:   14:	
+        -:   15:	// create a game to test 
+        -:   16:	struct gameState G;
+        -:   17:
+        1:   18:	int cards[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   19:	
+        1:   20:	printf("Initialize Game...\n");
+call    0 returned 100%
+        1:   21:	initializeGame(2, cards, 10, &G);	
+call    0 returned 100%
+        -:   22:	// set up variables to track cards and players
+        -:   23:	int flag;
+        -:   24:	int thisPlayer; 
+        -:   25:	int preHandCount;
+        -:   26:	int preDeckCount;	
+        -:   27:	int victoryCheck;
+        -:   28:
+        1:   29:	thisPlayer = G.whoseTurn;
+        1:   30:	preHandCount = G.handCount[thisPlayer];
+        1:   31:	preDeckCount = G.deckCount[thisPlayer];
+        1:   32:	victoryCheck = G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province];
+        -:   33:	
+        -:   34:	// use cardEffect to check for function return value
+        1:   35:	printf("Testing that smithy() cardEffect function return value is 0...\n");
+call    0 returned 100%
+        1:   36:	flag = cardEffect(smithy, 0, 0, 0, &G, 0, 0);
+call    0 returned 100%
+        1:   37:	if(flag == 0){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   38:		printf("PASS\n");
+call    0 returned 100%
+        -:   39:	} else {
+    #####:   40:		printf("FAIL\n");
+call    0 never executed
+        -:   41:	}
+        -:   42:	
+        -:   43:	// smithy() action is take 3 cards
+        -:   44:
+        1:   45:	printf("Testing if smithy() card gave player 3 new cards...\n");
+call    0 returned 100%
+        -:   46:	
+        1:   47:	if(G.handCount[thisPlayer] == preHandCount + 3){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   48:		printf("PASS\n"); 	
+call    0 never executed
+        -:   49:	} 
+        -:   50:	else {
+        1:   51:		printf("FAIL\n");
+call    0 returned 100%
+        1:   52:		printf("current handCount: %d, previous handCount: %d\n", G.handCount[thisPlayer], preHandCount);
+call    0 returned 100%
+        -:   53:	}
+        -:   54:	
+        -:   55:	// smithy() action should result in 3 cards missing from the deck 
+        1:   56:	printf("Testing if smithy() card removed 3 cards from the deck...\n");
+call    0 returned 100%
+        1:   57:	if(G.deckCount[thisPlayer] == preDeckCount - 3){  
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   58:		printf("PASS\n"); 		
+call    0 never executed
+        -:   59:	} 
+        -:   60:	else {
+        1:   61:		printf("FAIL\n");
+call    0 returned 100%
+        1:   62:		printf("current deckCount: %d, previous deckCount: %d\n", G.deckCount[thisPlayer], preDeckCount);
+call    0 returned 100%
+        -:   63:	}
+        -:   64:	
+        -:   65:	// smithy() action should not effect the victory card pile 
+        1:   66:	printf("Testing if smithy() action did not alter victory points...\n");
+call    0 returned 100%
+        1:   67:	if((G.supplyCount[estate] + G.supplyCount[duchy] + G.supplyCount[province]) == victoryCheck){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   68:		printf("PASS\n");
+call    0 returned 100%
+        -:   69:	} 
+        -:   70:	else {
+    #####:   71:		printf("FAIL\n");
+call    0 never executed
+    #####:   72:		printf("victory points have been changed\n");
+call    0 never executed
+        -:   73:	}
+        -:   74:	
+        1:   75:	printf("---smithy() Test Complete---\n\n");
+call    0 returned 100%
+        1:   76:return 0;
+        -:   77:}

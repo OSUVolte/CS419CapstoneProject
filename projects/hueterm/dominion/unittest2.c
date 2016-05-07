@@ -1,7 +1,7 @@
 /**
 Michael Hueter
 CS 362 Assignment 3
-unitTest2.c - testing the isGameOver function
+unittest2.c - testing the isGameOver function
 **/
 
 #include "dominion.h"

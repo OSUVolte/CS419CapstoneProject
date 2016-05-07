@@ -25,9 +25,9 @@ interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
 runtests: testDrawCard 
-	./testDrawCard &> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	cat dominion.c.gcov >> unittestresults.out
+	./testDrawCard &> unittestresult.out
+	gcov dominion.c >> unittestresult.out
+	cat dominion.c.gcov >> unittestresult.out
 
 unit1:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm -g
@@ -68,31 +68,69 @@ myTest:
 
 unittestresults.out:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest2.c rngs.c -o unittest2 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest3.c rngs.c -o unittest3 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest4.c rngs.c -o unittest4 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest1.c rngs.c -o cardtest1 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
 	./unittest1 &> unittestresults.out
-	gcov unittest1.c >> unittestresults.out
+	gcov dominion.c -b  >> unittestresults.out
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest2.c rngs.c -o unittest2 -lm -g
 	./unittest2 >> unittestresults.out
-	gcov unittest2.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest3.c rngs.c -o unittest3 -lm -g
 	./unittest3 >> unittestresults.out
-	gcov unittest3.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest4.c rngs.c -o unittest4 -lm -g
 	./unittest4 >> unittestresults.out
-	gcov unittest4.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest1.c rngs.c -o cardtest1 -lm -g
 	./cardtest1 >> unittestresults.out
-	gcov cardtest1.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm -g
 	./cardtest2 >> unittestresults.out
-	gcov cardtest2.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out	
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm -g
 	./cardtest3 >> unittestresults.out
-	gcov cardtest3.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out	
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
 	./cardtest4 >> unittestresults.out
-	gcov cardtest4.c >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
+
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+
+
+
+randomtestadventurer.out: clean randomtestadventurer
+	./randomtestadventurer >> randomtestadventurer.out
+	@echo "--------------------------------" >> randomtestadventurer.out
+	@echo "Dominion Function Coverage" >> randomtestadventurer.out
+	@echo "---------------------------------" >> randomtestadventurer.out
+	gcov dominion.c -b -f >> randomtestadventurer.out
+	@echo "--------------------------------" >> randomtestadventurer.out
+	@echo "Dominion Coverage " >> randomtestadventurer.out
+	@echo "-----------------------------------" >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestcard.out: clean randomtestcard
+	./randomtestcard >> randomtestcard.out
+	@echo "----------------------------------" >> randomtestcard.out
+	@echo "Dominion Function Coverage" >> randomtestcard.out
+	@echo "----------------------------------" >> randomtestcard.out
+	gcov dominion.c -b -f >> randomtestcard.out
+	@echo "----------------------------------" >> randomtestcard.out
+	@echo "Dominion Coverage " >> randomtestcard.out	
+	@echo "----------------------------------" >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+
+
+ 
+
+
+
+
+
+
 	
 
 player: player.c interface.o

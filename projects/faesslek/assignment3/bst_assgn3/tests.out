@@ -1,0 +1,46 @@
+Result for running BST tests:
+unittest1.c:
+containsBSTree(): PASS when test containing 50 as root
+containsBSTree(): PASS when test containing 13 as left of root
+containsBSTree(): PASS when test containing 110 as right of root
+containsBSTree(): PASS when test containing 10 as left of left of root
+containsBSTree(): PASS when test containing 111, which is not in the tree
+File 'bst.c'
+Lines executed:38.20% of 89
+Creating 'bst.c.gcov'
+
+unittest2.c:
+_leftMost(): PASS left most of root
+_leftMost(): PASS left most of left of root
+_leftMost(): PASS left most of left of left of root
+_leftMost(): PASS left most of right of root
+File 'bst.c'
+Lines executed:32.58% of 89
+Creating 'bst.c.gcov'
+
+unittest3.c:
+_removeLeftMost: PASS removing leftmost of root 1st try
+_removeLeftMost: PASS removing leftmost of right of root 1st try
+_removeLeftMost: PASS removing leftmost of root 2st try
+File 'bst.c'
+Lines executed:35.96% of 89
+Creating 'bst.c.gcov'
+
+unittest4.c:
+_removeNode(): PASS remove left of left of root 1st try
+_removeNode(): PASS remove right of root 2st try
+_removeNode(): PASS remove left of root 3st try
+_removeNode(): PASS remove root 4st try
+File 'bst.c'
+Lines executed:39.33% of 89
+Creating 'bst.c.gcov'
+
+unittest5.c:
+addNode() test: PASS when adding 50 as root
+addNode() test: PASS when adding 13 as left of root
+addNode() test: PASS when adding 110 as right of root
+addNode() test: PASS when adding 10 as left of left of root
+File 'bst.c'
+Lines executed:28.09% of 89
+Creating 'bst.c.gcov'
+

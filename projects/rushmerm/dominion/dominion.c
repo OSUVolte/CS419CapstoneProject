@@ -1369,5 +1369,14 @@ int updateCoins(int player, struct gameState *state, int bonus)
 }
 
 
+/************************************************
+Start of function unit tests
+*************************************************/
+
+int testUpdateCoins(int player, struct gameState *state, int bonus) {
+  
+}
+
+
 //end of dominion.c
 

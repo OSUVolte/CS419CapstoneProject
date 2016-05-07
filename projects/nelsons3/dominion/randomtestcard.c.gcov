@@ -1,0 +1,174 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <time.h>
+        -:    9:
+function testCouncilRoom called 5000 returned 100% blocks executed 89%
+     5000:   10:int testCouncilRoom(struct gameState *beforeCardPlayedStruct)
+        -:   11:{
+     5000:   12:    printf(".");
+call    0 returned 100%
+        -:   13:    //break loop
+        -:   14:    time_t endwait;
+     5000:   15:    int seconds = 5;
+        -:   16:
+        -:   17:    int counter;
+        -:   18:     //create test game
+        -:   19:    struct gameState afterCardPlayedStruct;
+     5000:   20:    memcpy(&afterCardPlayedStruct,beforeCardPlayedStruct,sizeof(struct gameState));
+     5000:   21:    assert (memcmp(&afterCardPlayedStruct,beforeCardPlayedStruct, sizeof(struct gameState))==0);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   22:
+     5000:   23:    endwait = time (NULL) + seconds ;
+call    0 returned 100%
+    10000:   24:    while (time (NULL) < endwait)
+call    0 returned 100%
+branch  1 taken 100%
+branch  2 taken 0% (fallthrough)
+        -:   25:     {
+        -:   26:        // play council room;
+     5000:   27:       playCouncil_Room(&afterCardPlayedStruct);
+call    0 returned 100%
+     5000:   28:       int currentPlayer = beforeCardPlayedStruct->whoseTurn;
+        -:   29:       //draw 4 cards for pre play struct
+     5000:   30:       drawCard(currentPlayer,beforeCardPlayedStruct);
+call    0 returned 100%
+     5000:   31:       drawCard(currentPlayer,beforeCardPlayedStruct);
+call    0 returned 100%
+     5000:   32:       drawCard(currentPlayer,beforeCardPlayedStruct);
+call    0 returned 100%
+     5000:   33:       drawCard(currentPlayer,beforeCardPlayedStruct);
+call    0 returned 100%
+        -:   34:       //increase buy by 1 for pre play struct
+     5000:   35:       beforeCardPlayedStruct->numBuys += 1;
+        -:   36:       //Each other player draws a card
+     5000:   37:       printf("%d- ", currentPlayer);
+call    0 returned 100%
+    14981:   38:       for (counter = 0; counter < beforeCardPlayedStruct->numPlayers; counter++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:   39:       {
+     9981:   40:         if ( counter != currentPlayer )
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:   41:         {
+     4981:   42:              drawCard(counter, beforeCardPlayedStruct);
+call    0 returned 100%
+        -:   43:         }
+     9981:   44:         printf("player %d expected %d test  %d, \n", counter,  beforeCardPlayedStruct->handCount[counter], afterCardPlayedStruct.handCount[counter]);
+call    0 returned 100%
+        -:   45:       }
+     5000:   46:       if(memcmp(&afterCardPlayedStruct,beforeCardPlayedStruct, sizeof(struct gameState))==0)
+branch  0 taken 43% (fallthrough)
+branch  1 taken 57%
+        -:   47:       {      
+     2152:   48:         printf("Council Room Test PASS\n");
+call    0 returned 100%
+        -:   49:       }
+        -:   50:       else
+        -:   51:       {
+     2848:   52:         printf("Council room Test FAIL\n");
+call    0 returned 100%
+        -:   53:       }
+     5000:   54:    return 0;
+        -:   55:    }
+    #####:   56:    printf("timeout");
+call    0 never executed
+    #####:   57:    return 0;
+        -:   58:}
+        -:   59:
+        -:   60:
+function main called 1 returned 100% blocks executed 100%
+        1:   61:int main()
+        -:   62:{
+        1:   63:    printf("PlayCouncil_Room test - randomtestcard\n");
+call    0 returned 100%
+        -:   64:    //array of cards
+        1:   65:    int k[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+        -:   66:    struct gameState beforeCardPlayedState;
+        -:   67:    int counter,innerCounter,innerInnerCounter;
+        -:   68:    //create random seed
+        1:   69:    SelectStream(2);
+call    0 returned 100%
+        1:   70:    PutSeed(3);
+call    0 returned 100%
+        -:   71:    //cycle through 5k tests
+     5001:   72:    for (counter = 0; counter < 5000; counter++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   73:    {
+     5000:   74:        printf("-");
+call    0 returned 100%
+131505000:   75:        for (innerCounter = 0; innerCounter < sizeof(struct gameState); innerCounter++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   76:          //fill game state with random bits
+131500000:   77:          ((char*)&beforeCardPlayedState)[innerCounter] = Random() * 256;
+call    0 returned 100%
+        -:   78:        }
+        -:   79:        //fill in required preconditions
+        -:   80:        //set players and current play
+     5000:   81:        beforeCardPlayedState.numPlayers = Random() * (MAX_PLAYERS-1)+1;   //Will select 0,1,2,3 being 4 players but with an offset of 1 it will pick 1,2,3,4 excluding 0 players
+call    0 returned 100%
+        -:   82:        //sets players turn
+     5000:   83:        beforeCardPlayedState.whoseTurn = Random() * beforeCardPlayedState.numPlayers;
+call    0 returned 100%
+        -:   84:        //keep track of players turn
+     5000:   85:        int currentPlayer = beforeCardPlayedState.whoseTurn;
+        -:   86:        //setup number of buys field in pre play struct
+     5000:   87:        beforeCardPlayedState.numBuys = Random() * 10;
+call    0 returned 100%
+        -:   88:        
+        -:   89:        //setup each players handCount, deckCount, discardCount, 
+    14981:   90:        for (innerCounter = 0; innerCounter < beforeCardPlayedState.numPlayers; innerCounter++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:   91:        {
+     9981:   92:            beforeCardPlayedState.handCount[innerCounter] = Random() * (499); // non zero handcount
+call    0 returned 100%
+     9981:   93:            beforeCardPlayedState.deckCount[innerCounter] = Random() * (10);
+call    0 returned 100%
+     9981:   94:            beforeCardPlayedState.discardCount[innerCounter] = Random() * (10);
+call    0 returned 100%
+        -:   95:
+  2478775:   96:            for(innerInnerCounter=0;innerInnerCounter<beforeCardPlayedState.handCount[innerCounter];innerInnerCounter++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   97:            {
+  2468794:   98:                beforeCardPlayedState.hand[innerCounter][innerInnerCounter] = Random() * 10;
+call    0 returned 100%
+        -:   99:            }
+    54753:  100:            for(innerInnerCounter=0;innerInnerCounter<beforeCardPlayedState.deckCount[innerCounter];innerInnerCounter++)
+branch  0 taken 82%
+branch  1 taken 18% (fallthrough)
+        -:  101:            {
+    44772:  102:                beforeCardPlayedState.hand[innerCounter][innerInnerCounter] = Random() * 10;
+call    0 returned 100%
+        -:  103:            }
+    55777:  104:            for(innerInnerCounter=0;innerInnerCounter<beforeCardPlayedState.discardCount[innerCounter];innerInnerCounter++)
+branch  0 taken 82%
+branch  1 taken 18% (fallthrough)
+        -:  105:            {
+    45796:  106:                beforeCardPlayedState.discard[innerCounter][innerInnerCounter] = Random() * 10;
+call    0 returned 100%
+        -:  107:            }
+        -:  108:        }
+        -:  109:        //run test
+     5000:  110:        testCouncilRoom(&beforeCardPlayedState);
+call    0 returned 100%
+        -:  111:    }
+        -:  112:
+        1:  113:return 0;
+        -:  114:}
+        -:  115:
