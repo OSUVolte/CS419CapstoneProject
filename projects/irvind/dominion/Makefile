@@ -73,14 +73,26 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	cat >> unittestresults.out
 
 randomtestcard: randomtestcard.c dominion.o rngs.o
-	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
-	./randomtestcard >> randomtestcard.out
-	gcov -b dominion.c >> randomtestcard.out
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)	
 	
 randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
-	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)	
-	./randomtestadventurer >> randomtestadventurer.out
-	gcov -b dominion.c >> randomtestadventurer.out
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+randomtestcard.out: 
+		make clean
+		make randomtestcard
+		@echo ****Running random tests, please wait...****
+		./randomtestcard >> randomtestcard.out
+		gcov -b dominion.c  >> randomtestcard.out
+		cat dominion.c.gcov >> randomtestcard.out
+
+randomtestadventurer.out:
+		make clean
+		make randomtestadventurer
+		@echo ****Running random tests, please wait...****
+		./randomtestadventurer >> randomtestadventurer.out
+		gcov -b dominion.c >> randomtestadventurer.out
+		cat dominion.c.gcov >> randomtestadventurer.out
 	
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
@@ -88,4 +100,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 randomtestcard randomtestadventurer
 
 clean:
-	rm -f *.o unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out randomtestcard randomtestadventurer playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out randomtestcard randomtestcard.out randomtestadventurer randomtestadventurer.out playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
