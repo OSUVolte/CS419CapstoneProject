@@ -2,13 +2,13 @@ Assignment 2 - refactor.c
 
 Lauren Miller
 Software Engineering II (CS362)
-4/6/2016
+4/24/2016
 
-The refactored cards are Adventurer, Smithy, Council Room, Sea Hag, and Treasure Map. Their implementation is below. Comments in the code indicate where errors have been introductd. These comments were not included in dominion.c. The errors introduced are as follows:
+The refactored cards are Adventurer, Smithy, Council Room, Sea Hag, and Treasure Map. Their implementation is below. Comments in the code indicate where errors have been introductd. These comments were not included in dominion.c. The errors for these functions are as follows:
 
-adventure_card: z, the counter of cards in the temp hand is not incremented when a card is added to temp_hand
+adventurer_card: z, the counter of cards in the temp hand is not incremented when a card is added to temp_hand. The unit test for this function  indicated that while at least two treasure cards required for the card were added to the player's hand, the total number of cards in the players hand was one higher than it should have been, indicating that either the adventurer card wasn't removed from the player's hand or an additional card, (possibly an additional treasure card although the value was unchecked), was added.
 
-smithy_card: the loop adding cards increments until i <= 3 instead of until i < 3, so that 4 cards are drawn rather than the desired 3
+smithy_card: the loop adding cards increments until i <= 3 instead of until i < 3, so that 4 cards are drawn rather than the desired 3. This is demonstrated in the unit tests for Assignment 3.
 
 council_room_card: in council room, the loop letting other players other than the current one draw an extra card only increments until the currentPlayer, rather than through all other players
 

@@ -99,9 +99,22 @@ testresults: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardte
 
 	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
-unittestresults.out:
+unittestresults.out: unittest1.c  unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
 	make testresults
 	cat coverage1.c >> unittestresults.txt
 	cat unittestresults.txt >> unittestresults.out
 	rm unittestresults.txt
-	
+
+randomtest: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestcard.out -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestadventurer.out -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard.out > randomtestResult.c
+	./randomtestcard.out
+	./randomtestadventurer.out >> randomtestResult.c
+	./randomtestadventurer.out
+	echo "___________________________________________________" >> randomtestResult.c
+	echo "Coverage: " >> randomtestResult.c
+	gcov randomtestcard.gnda >> randomtestResult.c
+	gcov randomtestadventurer.gnda >> randomtestResult.c
+	cat randomtestResult.c
+	rm -f randomtestcard.out randomtestadventurer.out

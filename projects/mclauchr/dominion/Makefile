@@ -31,11 +31,6 @@ runtests: testDrawCard
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
-
-all: playdom player testDrawCard testBuyCard badTestDrawCard
-
-clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittest1 unittest1.txt unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe *.gcov *.gcda *.gcno *.so *.out
 	
 unittest1: unittest1.c dominion.o rngs.o
 	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
@@ -108,4 +103,37 @@ runts:
 	@echo "************************************" >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 	
-unittestresults.out: all unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 runts
+unittestresults.out: clean all unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 runts
+
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)	
+	
+randomtestadventurer.out: clean randomtestadventurer
+		./randomtestadventurer >> randomtestadventurer.out
+		@echo "************************************" >> randomtestadventurer.out
+		@echo "* Dom Function Coverage...         *" >> randomtestadventurer.out
+		@echo "************************************" >> randomtestadventurer.out
+		gcov dominion.c -b -f >> randomtestadventurer.out
+		@echo "************************************" >> randomtestadventurer.out
+		@echo "* Dominion Coverage...             *" >> randomtestadventurer.out
+		@echo "************************************" >> randomtestadventurer.out
+		cat dominion.c.gcov >> randomtestadventurer.out
+	
+randomtestcard.out: clean randomtestcard
+		./randomtestcard >> randomtestcard.out
+		@echo "************************************" >> randomtestcard.out
+		@echo "* Dom Function Coverage...         *" >> randomtestcard.out
+		@echo "************************************" >> randomtestcard.out
+		gcov dominion.c -b -f >> randomtestcard.out
+		@echo "************************************" >> randomtestcard.out
+		@echo "* Dominion Coverage...             *" >> randomtestcard.out
+		@echo "************************************" >> randomtestcard.out
+		cat dominion.c.gcov >> randomtestcard.out
+		
+all: playdom player testDrawCard testBuyCard badTestDrawCard
+
+clean:
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe unittest1 unittest1.txt unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe randomtestadventurer randomtestadventurer.exe randomtestcard randomtestcard.exe *.gcov *.gcda *.gcno *.so *.out

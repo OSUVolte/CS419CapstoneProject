@@ -1,0 +1,175 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:6
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* unittest1.c
+        -:    5:* updatecoins() method
+        -:    6:* This was adapted from the testupdateCoins.c code provided by the instructor
+        -:    7:* but I have added additional code to test the game state when random hands
+        -:    8:* were populated with different cards
+        -:    9:*/
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:#include <time.h>
+        -:   17:#include <stdlib.h>
+        -:   18:
+        -:   19:
+        -:   20:// set NOISY_TEST to 0 to remove printfs from output
+        -:   21:#define NOISY_TEST 1
+        -:   22:
+function main called 6 returned 100% blocks executed 92%
+        6:   23:int main() {
+        6:   24:    srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        -:   25:    int i;
+        6:   26:    int seed = 1000;
+        6:   27:    int numPlayer = 2;
+        6:   28:    int maxBonus = 10;
+        -:   29:    int p, r, handCount;
+        -:   30:    int bonus;
+        6:   31:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   32:               , remodel, smithy, village, baron, great_hall};
+        -:   33:    struct gameState G;
+        6:   34:    int maxHandCount = 5;
+        -:   35:    // arrays of all coppers, silvers, and golds
+        -:   36:    int coppers[MAX_HAND];
+        -:   37:    int silvers[MAX_HAND];
+        -:   38:    int golds[MAX_HAND];
+        -:   39:    int testhand[MAX_HAND];
+        -:   40:
+     3006:   41:    for (i = 0; i < MAX_HAND; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   42:    {
+     3000:   43:        coppers[i] = copper;
+     3000:   44:        silvers[i] = silver;
+     3000:   45:        golds[i] = gold;
+        -:   46:    }
+        -:   47:
+        6:   48:    printf ("Testing updateCoins():\n");
+call    0 returned 100%
+       18:   49:    for (p = 0; p < numPlayer; p++){
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+       84:   50:        for (handCount = 0; handCount <= maxHandCount; handCount++){
+branch  0 taken 86%
+branch  1 taken 14% (fallthrough)
+      864:   51:            for (bonus = 0; bonus <= maxBonus; bonus++){
+branch  0 taken 92%
+branch  1 taken 8% (fallthrough)
+        -:   52:                #if (NOISY_TEST == 1)
+      792:   53:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+call    0 returned 100%
+        -:   54:                #endif
+        -:   55:                // clear the game state
+      792:   56:                memset(&G, 23, sizeof(struct gameState));
+        -:   57:                // initialize a new game
+      792:   58:                r = initializeGame(numPlayer, k, seed, &G);
+call    0 returned 100%
+        -:   59:                // set the number of cards in hand to 
+      792:   60:                G.handCount[p] = handCount;
+      792:   61:                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+      792:   62:                updateCoins(p, &G, bonus);
+call    0 returned 100%
+        -:   63:                #if (NOISY_TEST == 1)
+      792:   64:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+call    0 returned 100%
+        -:   65:                #endif
+      792:   66:                assert(G.coins == handCount * 1 + bonus); //check coins number correct
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   67:
+      792:   68:                memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+      792:   69:                updateCoins(p, &G, bonus);
+call    0 returned 100%
+        -:   70:                #if (NOISY_TEST == 1)
+      792:   71:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
+call    0 returned 100%
+        -:   72:                #endif
+      792:   73:                assert(G.coins == handCount * 2 + bonus); // check if the number of coins is correct
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   74:
+      792:   75:                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+      792:   76:                updateCoins(p, &G, bonus);
+call    0 returned 100%
+        -:   77:                #if (NOISY_TEST == 1)
+      792:   78:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
+call    0 returned 100%
+        -:   79:                #endif
+      792:   80:                assert(G.coins == handCount * 3 + bonus); // check if the number of coins is correct
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   81:
+        -:   82:                // We would also like to check random hand compositions
+        -:   83:                int t;
+    41184:   84:                for(t=0; t <= 50; t++){
+branch  0 taken 98%
+branch  1 taken 2% (fallthrough)
+    40392:   85:                    int testHandSum = 0;
+   141372:   86:                    for(i=0; i < handCount; i++){
+branch  0 taken 71%
+branch  1 taken 29% (fallthrough)
+   100980:   87:                        int t = rand() % 3;
+call    0 returned 100%
+   100980:   88:                        if(t == 0){
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+    33592:   89:                            testhand[i] = copper;
+    33592:   90:                            testHandSum += 1;
+        -:   91:                            #if (NOISY_TEST == 1)
+    33592:   92:                            printf("hand position %d is copper\n", i);
+call    0 returned 100%
+        -:   93:                            #endif
+    67388:   94:                        }else if(t == 1){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+    33581:   95:                            testhand[i] = silver;
+    33581:   96:                            testHandSum += 2;
+        -:   97:                            #if (NOISY_TEST == 1)
+    33581:   98:                            printf("hand position %d is silver\n", i);
+call    0 returned 100%
+        -:   99:                            #endif
+    33807:  100:                        }else if(t == 2){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+    33807:  101:                            testhand[i] = gold;
+    33807:  102:                            testHandSum += 3;
+        -:  103:                            #if (NOISY_TEST == 1)
+    33807:  104:                            printf("hand position %d is gold\n", i);
+call    0 returned 100%
+        -:  105:                            #endif
+        -:  106:                        }
+        -:  107:                    }
+    40392:  108:                    memcpy(G.hand[p], testhand, sizeof(int) * handCount);
+    40392:  109:                    updateCoins(p, &G, bonus);
+call    0 returned 100%
+        -:  110:                    #if (NOISY_TEST == 1)
+    40392:  111:                    printf("Random iteration %d: G.coins = %d, expected = %d\n", t, G.coins, testHandSum + bonus);
+call    0 returned 100%
+        -:  112:                    #endif
+    40392:  113:                    assert(G.coins == testHandSum + bonus );
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:  114:
+        -:  115:                }
+        -:  116:
+        -:  117:            }
+        -:  118:
+        -:  119:        }
+        -:  120:    }
+        6:  121:    return 0;
+        -:  122:}

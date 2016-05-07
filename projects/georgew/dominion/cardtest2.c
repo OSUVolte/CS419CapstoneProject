@@ -30,6 +30,11 @@ int main() {
 
 	// initialize a game state and player cards
 	initializeGame(numPlayers, k, seed, &G);
+	printf("Testing for: ");
+	printf("1. 2 Cards Added To Hand");
+	printf("2. 2 Cards Added Are Treasure Cards");
+	printf("3. All Cards that are either added to Hand or Taken from deck are Accounted For");
+	printf("4. If At End of Pile Add Discarded Back and Shuffle");
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
 	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);

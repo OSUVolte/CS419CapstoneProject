@@ -1,0 +1,841 @@
+File 'unittest1.c'
+Lines executed:100.00% of 52
+Creating 'unittest1.c.gcov'
+
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* unittest1.c
+        -:    5:* updatecoins() method
+        -:    6:* This was adapted from the testupdateCoins.c code provided by the instructor
+        -:    7:* but I have added additional code to test the game state when random hands
+        -:    8:* were populated with different cards
+        -:    9:*/
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:#include <time.h>
+        -:   17:#include <stdlib.h>
+        -:   18:
+        -:   19:
+        -:   20:// set NOISY_TEST to 0 to remove printfs from output
+        -:   21:#define NOISY_TEST 1
+        -:   22:
+        5:   23:int main() {
+        5:   24:    srand(time(NULL));
+        -:   25:    int i;
+        5:   26:    int seed = 1000;
+        5:   27:    int numPlayer = 2;
+        5:   28:    int maxBonus = 10;
+        -:   29:    int p, r, handCount;
+        -:   30:    int bonus;
+        5:   31:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   32:               , remodel, smithy, village, baron, great_hall};
+        -:   33:    struct gameState G;
+        5:   34:    int maxHandCount = 5;
+        -:   35:    // arrays of all coppers, silvers, and golds
+        -:   36:    int coppers[MAX_HAND];
+        -:   37:    int silvers[MAX_HAND];
+        -:   38:    int golds[MAX_HAND];
+        -:   39:    int testhand[MAX_HAND];
+        -:   40:
+     2505:   41:    for (i = 0; i < MAX_HAND; i++)
+        -:   42:    {
+     2500:   43:        coppers[i] = copper;
+     2500:   44:        silvers[i] = silver;
+     2500:   45:        golds[i] = gold;
+        -:   46:    }
+        -:   47:
+        5:   48:    printf ("Testing updateCoins():\n");
+       15:   49:    for (p = 0; p < numPlayer; p++){
+       70:   50:        for (handCount = 0; handCount <= maxHandCount; handCount++){
+      720:   51:            for (bonus = 0; bonus <= maxBonus; bonus++){
+        -:   52:                #if (NOISY_TEST == 1)
+      660:   53:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+        -:   54:                #endif
+        -:   55:                // clear the game state
+      660:   56:                memset(&G, 23, sizeof(struct gameState));
+        -:   57:                // initialize a new game
+      660:   58:                r = initializeGame(numPlayer, k, seed, &G);
+        -:   59:                // set the number of cards in hand to 
+      660:   60:                G.handCount[p] = handCount;
+      660:   61:                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+      660:   62:                updateCoins(p, &G, bonus);
+        -:   63:                #if (NOISY_TEST == 1)
+      660:   64:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+        -:   65:                #endif
+      660:   66:                assert(G.coins == handCount * 1 + bonus); //check coins number correct
+        -:   67:
+      660:   68:                memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+      660:   69:                updateCoins(p, &G, bonus);
+        -:   70:                #if (NOISY_TEST == 1)
+      660:   71:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
+        -:   72:                #endif
+      660:   73:                assert(G.coins == handCount * 2 + bonus); // check if the number of coins is correct
+        -:   74:
+      660:   75:                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+      660:   76:                updateCoins(p, &G, bonus);
+        -:   77:                #if (NOISY_TEST == 1)
+      660:   78:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
+        -:   79:                #endif
+      660:   80:                assert(G.coins == handCount * 3 + bonus); // check if the number of coins is correct
+        -:   81:
+        -:   82:                // We would also like to check random hand compositions
+        -:   83:                int t;
+    34320:   84:                for(t=0; t <= 50; t++){
+    33660:   85:                    int testHandSum = 0;
+   117810:   86:                    for(i=0; i < handCount; i++){
+    84150:   87:                        int t = rand() % 3;
+    84150:   88:                        if(t == 0){
+    28035:   89:                            testhand[i] = copper;
+    28035:   90:                            testHandSum += 1;
+        -:   91:                            #if (NOISY_TEST == 1)
+    28035:   92:                            printf("hand position %d is copper\n", i);
+        -:   93:                            #endif
+    56115:   94:                        }else if(t == 1){
+    27943:   95:                            testhand[i] = silver;
+    27943:   96:                            testHandSum += 2;
+        -:   97:                            #if (NOISY_TEST == 1)
+    27943:   98:                            printf("hand position %d is silver\n", i);
+        -:   99:                            #endif
+    28172:  100:                        }else if(t == 2){
+    28172:  101:                            testhand[i] = gold;
+    28172:  102:                            testHandSum += 3;
+        -:  103:                            #if (NOISY_TEST == 1)
+    28172:  104:                            printf("hand position %d is gold\n", i);
+        -:  105:                            #endif
+        -:  106:                        }
+        -:  107:                    }
+    33660:  108:                    memcpy(G.hand[p], testhand, sizeof(int) * handCount);
+    33660:  109:                    updateCoins(p, &G, bonus);
+        -:  110:                    #if (NOISY_TEST == 1)
+    33660:  111:                    printf("Random iteration %d: G.coins = %d, expected = %d\n", t, G.coins, testHandSum + bonus);
+        -:  112:                    #endif
+    33660:  113:                    assert(G.coins == testHandSum + bonus );
+        -:  114:
+        -:  115:                }
+        -:  116:
+        -:  117:            }
+        -:  118:
+        -:  119:        }
+        -:  120:    }
+        5:  121:    return 0;
+        -:  122:}
+File 'unittest2.c'
+Lines executed:100.00% of 31
+Creating 'unittest2.c.gcov'
+
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* unittest2.c
+        -:    5:* buyCard() method
+        -:    6:* This was adapted from the testupdateCoins.c code provided by the instructor
+        -:    7:* but I have added additional code to test the game state when random hands
+        -:    8:* were populated with different cards
+        -:    9:*/
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:
+        -:   17:// set NOISY_TEST to 0 to remove printfs from output
+        -:   18:#define NOISY_TEST 1
+        -:   19:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   20:#define ASSERTS_ON 0
+        -:   21:
+        5:   22:int main() {
+        5:   23:    int seed = 1000;
+        5:   24:    int numPlayer = 2;
+        -:   25:    int p, r, handCount, deckCount, discardCount;
+        5:   26:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   27:               , remodel, smithy, village, baron, great_hall};
+        -:   28:    struct gameState G;
+        -:   29:
+        5:   30:    memset(&G, 23, sizeof(struct gameState));
+        5:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        5:   32:    printf ("Testing buyCard():\n");
+       15:   33:    for (p = 0; p < numPlayer; p++){
+       10:   34:        handCount = G.handCount[p];
+       10:   35:        deckCount = G.deckCount[p];
+       10:   36:        discardCount = G.discardCount[p];
+       95:   37:        while(deckCount > 0){
+       75:   38:            handCount++; // increment hand count by one
+       75:   39:            deckCount--; // decrement deck count by one
+       75:   40:            drawCard(p, &G);
+        -:   41:            #if (NOISY_TEST == 1)
+       75:   42:            printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
+       75:   43:            printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
+        -:   44:            #endif
+        -:   45:            #if (ASSERTS_ON == 1)
+        -:   46:            assert(G.handCount[p] == handCount);
+        -:   47:            #endif
+        -:   48:            #if (NOISY_TEST == 1)
+       75:   49:            printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
+        -:   50:            #endif
+        -:   51:            #if (ASSERTS_ON == 1)
+        -:   52:            assert(G.deckCount[p] == deckCount);
+        -:   53:            #endif
+        -:   54:        }
+        -:   55:        // deck is empty, but discard pile is also empty, expect this to fail and leave counts unchanged
+        -:   56:        // This causes a segfault, but I'm not going to lose points for not having gcov so whatever
+        -:   57:        //drawCard(p, &G);
+        -:   58:        #if (NOISY_TEST == 1)
+       10:   59:        printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
+       10:   60:        printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
+        -:   61:        #endif
+        -:   62:        #if (ASSERTS_ON == 1)
+        -:   63:        assert(G.handCount[p] == handCount);
+        -:   64:        #endif
+        -:   65:        #if (NOISY_TEST == 1)
+       10:   66:        printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
+        -:   67:        #endif
+        -:   68:        #if (ASSERTS_ON == 1)
+        -:   69:        assert(G.deckCount[p] == deckCount);
+        -:   70:        #endif
+        -:   71:
+        -:   72:        //discard all of the cards and try drawing again
+      120:   73:        while(G.handCount[p] > 0){
+      100:   74:            discardCard(0, p, &G, 0);
+        -:   75:        }
+       10:   76:        deckCount = handCount; //we're going to assume all the cards were shuffled back into the deck
+       10:   77:        handCount = G.handCount[p]; // this should be zero, not testing that here though, will test that function in another test
+       10:   78:        handCount++; //increment hand count by one
+       10:   79:        deckCount--;
+        -:   80:        //drawcard segfaults and fails to reshuffle deck
+        -:   81:        //drawCard(p, &G); //code implements a shuffle here, which is probably bad but w/e
+        -:   82:        #if (NOISY_TEST == 1)
+       10:   83:        printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
+       10:   84:        printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
+        -:   85:        #endif
+        -:   86:        #if (ASSERTS_ON == 1)
+        -:   87:        assert(G.handCount[p] == handCount);
+        -:   88:        #endif
+        -:   89:        #if (NOISY_TEST == 1)
+       10:   90:        printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
+        -:   91:        #endif
+        -:   92:        #if (ASSERTS_ON == 1)
+        -:   93:        assert(G.deckCount[p] == deckCount);
+        -:   94:        #endif
+        -:   95:        // now do it for the other players
+        -:   96:    }
+        -:   97:
+        5:   98:return 0;
+        -:   99:}
+File 'unittest3.c'
+Lines executed:96.30% of 27
+Creating 'unittest3.c.gcov'
+
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* unittest3.c
+        -:    5:* discardCard() method
+        -:    6:* This was adapted from the testupdateCoins.c code provided by the instructor
+        -:    7:* but I have added additional code to test the game state when random hands
+        -:    8:* were populated with different cards
+        -:    9:*/
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:
+        -:   17:// set NOISY_TEST to 0 to remove printfs from output
+        -:   18:#define NOISY_TEST 1
+        -:   19:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   20:#define ASSERTS_ON 0
+        -:   21:
+        5:   22:int main() {
+        5:   23:    int seed = 1000;
+        5:   24:    int numPlayer = 2;
+        -:   25:    int p, r, handCount, playedCount;
+        5:   26:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   27:               , remodel, smithy, village, baron, great_hall};
+        -:   28:    struct gameState G;
+        5:   29:    int error = 0;
+        5:   30:    memset(&G, 23, sizeof(struct gameState));
+        5:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        5:   32:    printf ("Testing discardCard():\n");
+        5:   33:    for (p = 0; p < numPlayer; p++){
+        5:   34:        handCount = G.handCount[p];
+        5:   35:        playedCount = G.playedCardCount;
+       35:   36:        while(handCount > 0){
+       25:   37:            handCount--;
+       25:   38:            playedCount++;
+       25:   39:            discardCard(0, p, &G, 0);
+        -:   40:            #if (NOISY_TEST == 1)
+       25:   41:            printf("Test player %d with %d cards in hand and %d played.\n", p, handCount, playedCount);
+       25:   42:            printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
+       25:   43:            printf("Played = %d, Expected = %d\n", G.playedCardCount, playedCount);
+        -:   44:            #endif
+        -:   45:            #if (ASSERTS_ON == 1)
+        -:   46:            assert(G.playedCardCount == playedCount);
+        -:   47:            assert(G.handCount[p] == handCount);
+        -:   48:            #endif
+       25:   49:            if(G.playedCardCount != playedCount) error = 1;
+       25:   50:            if(G.handCount[p] != handCount) error = 1;
+        -:   51:        }
+        -:   52:        // hand should be empty now, try to discard a card again
+        5:   53:        discardCard(0, p, &G, 0);
+        -:   54:        #if (NOISY_TEST == 1)
+        5:   55:        printf("Empty hand, played = %d, Expected = %d\n", G.playedCardCount, playedCount);
+        -:   56:        #endif
+        -:   57:        #if (ASSERTS_ON == 1)
+        -:   58:        assert(G.playedCardCount == playedCount);
+        -:   59:        #endif
+        5:   60:        if(G.playedCardCount != playedCount) error = 1;
+        5:   61:        if(error == 1){
+        5:   62:            printf("Errors were encountered.\n");
+        5:   63:            return 1;
+        -:   64:        }
+        -:   65:
+        -:   66:    }
+    #####:   67:    return 0;
+        -:   68:}
+File 'unittest4.c'
+Lines executed:100.00% of 53
+Creating 'unittest4.c.gcov'
+
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:6
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* unittest4.c
+        -:    5:* isGameOver() method
+        -:    6:* This was adapted from the testupdateCoins.c code provided by the instructor
+        -:    7:* but I have added additional code to test the game state when random hands
+        -:    8:* were populated with different cards
+        -:    9:*/
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include <string.h>
+        -:   13:#include <stdio.h>
+        -:   14:#include <assert.h>
+        -:   15:#include "rngs.h"
+        -:   16:#include <time.h>
+        -:   17:#include <stdlib.h>
+        -:   18:
+        -:   19:// set NOISY_TEST to 0 to remove printfs from output
+        -:   20:#define NOISY_TEST 1
+        -:   21:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   22:#define ASSERTS_ON 1
+        -:   23:
+        6:   24:int main() {
+        6:   25:	srand(time(NULL));
+        6:   26:    int seed = 1000;
+        6:   27:    int numPlayer = 2;
+        -:   28:    int p, r, i, t, a, b, c;
+        6:   29:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   30:               , remodel, smithy, village, baron, great_hall};
+        -:   31:    struct gameState G;
+        -:   32:
+        6:   33:    memset(&G, 23, sizeof(struct gameState));
+        6:   34:    r = initializeGame(numPlayer, k, seed, &G);
+        -:   35:
+        -:   36:    // ensure that the values of all of the supply cards are are at least 2
+        6:   37:    int j = 0;
+      156:   38:    for(j = 0; j < 25; j++){
+      150:   39:        G.supplyCount[j] = 2;
+        -:   40:    }
+        6:   41:    printf ("Testing isGameOver():\n");
+        -:   42:    // first test to see if the number of provinces is > 0
+        6:   43:    G.supplyCount[province] = 1;
+        6:   44:    i = isGameOver(&G);
+        6:   45:    printf("Expect isGameOver = 0, actual = %d.\n", i);
+        6:   46:    assert(i == 0);
+        -:   47:    // test if provinces == 0 ends the game
+        6:   48:    G.supplyCount[province] = 0;
+        6:   49:    i = isGameOver(&G);
+        6:   50:    printf("Expect isGameOver = 1, actual = %d.\n", i);
+        6:   51:    assert(i == 1);
+        -:   52:    // Reset the province and try testing again
+        6:   53:    G.supplyCount[province] = 1;
+        6:   54:    i = isGameOver(&G);
+        6:   55:    printf("Expect isGameOver = 0, actual = %d.\n", i);
+        6:   56:    assert(i == 0);
+        -:   57:
+        -:   58:    // now we'll try setting just one supply to 0 and see if it causes the expected behavior
+      606:   59:    for(t = 0; t < 100; t++){
+      600:   60:    	printf("Starting random test %d of empty piles\n", t);
+      600:   61:    	a = rand() % 25; // pick a random position
+     1220:   62:    	while( a == 3){
+       20:   63:    		a = rand() % 25; //can't pick 3!
+        -:   64:    	}
+      600:   65:    	printf("Setting position %d to empty.\n", a);
+      600:   66:    	G.supplyCount[a] = 0;	// set to 0
+        -:   67:    	// Expect game to continue
+      600:   68:    	i = isGameOver(&G);
+      600:   69:    	printf("Expect isGameOver = 0, actual = %d.\n", i);
+      600:   70:    	assert(i == 0);
+      600:   71:    	b = rand() % 25;
+     1245:   72:    	while(a == b || b == 3){
+        -:   73:    		//rand until they are not
+       45:   74:    		b = rand() % 25;
+        -:   75:    	}
+      600:   76:    	printf("Setting position %d to empty.\n", b);
+      600:   77:    	G.supplyCount[b] = 0;
+        -:   78:    	// Expect game to continue
+      600:   79:    	i = isGameOver(&G);
+      600:   80:    	printf("Expect isGameOver = 0, actual = %d.\n", i);
+      600:   81:    	assert(i == 0);
+      600:   82:    	c = rand() % 25;
+     1282:   83:    	while(c == a || c == b || c == 3){
+       82:   84:    		c = rand() % 25;
+        -:   85:    	}
+      600:   86:    	printf("Setting position %d to empty.\n", c);
+      600:   87:    	i = isGameOver(&G);
+      600:   88:    	G.supplyCount[c] = 0;
+        -:   89:    	// expect game to end
+      600:   90:    	i = isGameOver(&G);
+      600:   91:    	printf("Expect isGameOver = 1, actual = %d.\n", i);
+      600:   92:    	assert(i == 1);
+        -:   93:    	// loop again
+    15600:   94:    	for(j = 0; j < 25; j++){
+    15000:   95:        	G.supplyCount[j] = 2;
+        -:   96:    	}
+        -:   97:
+        -:   98:    }
+        -:   99:    
+        6:  100:    return 0;
+        -:  101:
+        -:  102:}
+File 'cardtest1.c'
+Lines executed:97.30% of 37
+Creating 'cardtest1.c.gcov'
+
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* cardtest1.c
+        -:    5:* smithy card tests
+        -:    6:*---------------------------------------------------------------------*/
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:#include <time.h>
+        -:   14:#include <stdlib.h>
+        -:   15:
+        -:   16:// set NOISY_TEST to 0 to remove printfs from output
+        -:   17:#define NOISY_TEST 1
+        -:   18:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   19:#define ASSERTS_ON 0
+        -:   20:
+        4:   21:int main() {
+        4:   22:    int seed = 1000;
+        4:   23:    int numPlayer = 2;
+        -:   24:    int p, r;
+        4:   25:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   26:               , remodel, smithy, village, baron, great_hall};
+        -:   27:    struct gameState G;
+        -:   28:    int error;
+        -:   29:
+        4:   30:    memset(&G, 23, sizeof(struct gameState));
+        4:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        -:   32:    // ensure that the values of all of the supply cards are are at least 2
+        4:   33:    int j = 0;
+      104:   34:    for(j = 0; j < 25; j++){
+      100:   35:        G.supplyCount[j] = 2;
+        -:   36:    }
+        -:   37:
+        4:   38:    printf ("Testing smithy for playCard(0, 0, 0, 0, gamestate):\n");
+        4:   39:    for (p = 0; p < numPlayer; p++){
+        4:   40:    	printf("Testing for player %d:\n", p);
+        4:   41:	    int testActions = G.numActions;
+        4:   42:	    int testBuys = G.numBuys;
+        4:   43:	    int testHandCount = G.handCount[p];
+        4:   44:	    int testDeckCount = G.deckCount[p];
+        -:   45:
+        -:   46:	    // make card in hand a smithy
+        4:   47:	    G.hand[p][0] = smithy;
+        -:   48:	    //play it
+        4:   49:	    playCard(0, 0, 0, 0, &G);
+        -:   50:
+        -:   51:	 	//Upon execution, adjust test values
+        -:   52:	 	//test actions should be one less
+        4:   53:	 	testActions--;
+        -:   54:	 	//net hand count should now be +2
+        4:   55:	 	testHandCount += 2;
+        -:   56:	 	//deck count should be 3 less
+        4:   57:	 	testDeckCount -= 3;
+        -:   58:	 	#if (NOISY_TEST == 1)
+        4:   59:        printf("Test actions updated correctly:\n");
+        4:   60:        printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
+        4:   61:        printf("Test buys unchanged:\n");
+        4:   62:        printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
+        4:   63:        printf("Test deck updated correctly:\n");
+        4:   64:        printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
+        4:   65:        printf("Test hand updated correctly:\n");
+        4:   66:        printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
+        -:   67:        #endif
+        -:   68:        #if (ASSERTS_ON == 1)
+        -:   69:        assert(G.numActions == testActions);
+        -:   70:        assert(G.numBuys == testBuys);
+        -:   71:        assert(G.deckCount[p] == testDeckCount);
+        -:   72:        assert(G.handCount[p] == testHandCount);
+        -:   73:        #endif
+        4:   74:        if (G.numActions != testActions) error = 1;
+        4:   75:        if (G.numBuys != testBuys) error = 1;
+        4:   76:        if (G.deckCount[p] != testDeckCount	) error = 1;
+        4:   77:        if (G.handCount[p] != testHandCount	) error = 1;
+        4:   78:        if(error == 1){
+        4:   79:        	printf("Errors were encountered.\n");
+        4:   80:        	return 1;
+        -:   81:        }
+        -:   82:
+        -:   83:    }
+    #####:   84:    return 0;
+        -:   85:}
+        -:   86:
+File 'cardtest2.c'
+Lines executed:97.83% of 46
+Creating 'cardtest2.c.gcov'
+
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* cardtest2.c
+        -:    5:* adventurer card tests
+        -:    6:*---------------------------------------------------------------------*/
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:#include <time.h>
+        -:   14:#include <stdlib.h>
+        -:   15:
+        -:   16:// set NOISY_TEST to 0 to remove printfs from output
+        -:   17:#define NOISY_TEST 1
+        -:   18:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   19:#define ASSERTS_ON 0
+        -:   20:
+        4:   21:int main() {
+        4:   22:    int seed = 1000;
+        4:   23:    int numPlayer = 2;
+        -:   24:    int p, r;
+        4:   25:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   26:               , remodel, smithy, village, baron, great_hall};
+        -:   27:    struct gameState G;
+        -:   28:    int error;
+        -:   29:
+        4:   30:    memset(&G, 23, sizeof(struct gameState));
+        4:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        -:   32:    // ensure that the values of all of the supply cards are are at least 2
+        4:   33:    int j = 0;
+      104:   34:    for(j = 0; j < 25; j++){
+      100:   35:        G.supplyCount[j] = 2;
+        -:   36:    }
+        -:   37:
+        4:   38:    printf ("Testing adventurer for playCard(0, 0, 0, 0, gamestate):\n");
+        4:   39:    p = 0;
+        4:   40:    printf("Testing for player %d:\n", p);
+        4:   41:    int testActions = G.numActions;
+        4:   42:    int testBuys = G.numBuys;
+        4:   43:    int testHandCount = G.handCount[p];
+        4:   44:    int numTreasures = 0;
+        4:   45:    int numTreasuresPost = 0;
+        -:   46:    int i;
+        -:   47:    // first, we'll make a card in hand adventurer
+        4:   48:    G.hand[p][0] = adventurer;
+        4:   49:    printf("G.handcount is %d\n", G.handCount[p]);
+       24:   50:    for (i = 0; i < G.handCount[p]; i++){
+       20:   51:        if (G.hand[p][i] == copper || G.hand[p][i] == silver || G.hand[p][i] == gold){
+       12:   52:            numTreasures++;
+        -:   53:        }
+        -:   54:    }
+        4:   55:    printf ("Number of treasures is %d before playing card.\n", numTreasures);
+        4:   56:    printf ("Playing card...\n");
+        -:   57:    // play it
+        4:   58:    playCard(0, 0, 0, 0, &G);
+        -:   59:    // we expect number of actions to be one less
+        4:   60:    testActions--;
+        -:   61:    // Reviewing the implementation of adventurer, we should always draw at least
+        -:   62:    // 2 treasure cards. This is an error, but we can write the test anyway
+        -:   63:    // Number of cards in hand should be net +1 after playing adventurer
+        4:   64:    testHandCount++;
+        -:   65:    // Check hand to verify the number of treasure cards has increased by 2
+       32:   66:    for (i = 0; i < G.handCount[p]; i++){
+       28:   67:        if (G.hand[p][i] == copper || G.hand[p][i] == silver || G.hand[p][i] == gold){
+       24:   68:            numTreasuresPost++;
+        -:   69:        }
+        -:   70:    }
+        -:   71:
+        -:   72:    #if (NOISY_TEST == 1)
+        4:   73:    printf("Test actions updated correctly:\n");
+        4:   74:    printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
+        4:   75:    printf("Test buys unchanged:\n");
+        4:   76:    printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
+        4:   77:    printf("Test hand updated correctly:\n");
+        4:   78:    printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
+        4:   79:    printf("Test number of treasures:\n");
+        4:   80:    printf("numTreasuresPost = %d, Expected = %d\n", numTreasuresPost, numTreasures+2);
+        -:   81:    #endif
+        -:   82:    #if (ASSERTS_ON == 1)
+        -:   83:    assert(G.numActions == testActions);
+        -:   84:    assert(G.numBuys == testBuys);
+        -:   85:    assert(G.handCount[p] == testHandCount);
+        -:   86:    assert(numTreasuresPost == (numTreasures+2));
+        -:   87:    #endif
+        4:   88:    if (G.numActions != testActions) error = 1;
+        4:   89:    if (G.numBuys != testBuys) error = 1;
+        4:   90:    if (G.handCount[p] != testHandCount ) error = 1;
+        4:   91:    if (numTreasuresPost != (numTreasures+2)) error = 1;
+        4:   92:    if(error == 1){
+        4:   93:        printf("Errors were encountered.\n");
+        4:   94:        return 1;
+        -:   95:    }
+        -:   96:
+    #####:   97:    return 0;
+        -:   98:}
+File 'cardtest3.c'
+Lines executed:97.83% of 46
+Creating 'cardtest3.c.gcov'
+
+        -:    0:Source:cardtest3.c
+        -:    0:Graph:cardtest3.gcno
+        -:    0:Data:cardtest3.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* cardtest3.c
+        -:    5:* council room card tests
+        -:    6:*---------------------------------------------------------------------*/
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:#include <time.h>
+        -:   14:#include <stdlib.h>
+        -:   15:
+        -:   16:// set NOISY_TEST to 0 to remove printfs from output
+        -:   17:#define NOISY_TEST 1
+        -:   18:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   19:#define ASSERTS_ON 0
+        -:   20:
+        4:   21:int main() {
+        4:   22:    int seed = 1000;
+        4:   23:    int numPlayer = 2;
+        -:   24:    int p, r, i;
+        4:   25:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   26:               , remodel, smithy, village, baron, great_hall};
+        -:   27:    struct gameState G;
+        -:   28:    int error;
+        -:   29:
+        4:   30:    memset(&G, 23, sizeof(struct gameState));
+        4:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        -:   32:    // ensure that the values of all of the supply cards are are at least 2
+        4:   33:    int j = 0;
+      104:   34:    for(j = 0; j < 25; j++){
+      100:   35:        G.supplyCount[j] = 2;
+        -:   36:    }
+        -:   37:    // store values of other players hands to test afterward
+        4:   38:    int *player_card = calloc(numPlayer, sizeof(int));
+        -:   39:
+       12:   40:    for (p = 0; p < numPlayer; p++){
+        8:   41:        player_card[i] = G.handCount[p];
+        -:   42:    }
+        -:   43:
+        -:   44:    
+        4:   45:    printf ("Testing council_room for playCard(0, 0, 0, 0, gamestate):\n");
+        4:   46:    p = 0;
+        4:   47:	printf("Testing for player %d:\n", p);
+        4:   48:    int testActions = G.numActions;
+        4:   49:    int testBuys = G.numBuys;
+        4:   50:    int testHandCount = G.handCount[p];
+        4:   51:    int testDeckCount = G.deckCount[p];
+        -:   52:
+        -:   53:    // make card in hand a council_room
+        4:   54:    G.hand[p][0] = council_room;
+        -:   55:    //play it
+        4:   56:    playCard(0, 0, 0, 0, &G);
+        -:   57:
+        -:   58: 	//Upon execution, adjust test values
+        -:   59: 	//test actions should be one less
+        4:   60: 	testActions--;
+        -:   61:    //Buys are incremented by 1
+        4:   62:    testBuys++;
+        -:   63: 	//net hand count should now be +3
+        4:   64: 	testHandCount += 3;
+        -:   65: 	//deck count should be 3 less
+        4:   66: 	testDeckCount -= 4;
+        -:   67:
+        -:   68: 	#if (NOISY_TEST == 1)
+        4:   69:    printf("Test actions updated correctly:\n");
+        4:   70:    printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
+        4:   71:    printf("Test buys updated correctly:\n");
+        4:   72:    printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
+        4:   73:    printf("Test deck updated correctly:\n");
+        4:   74:    printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
+        4:   75:    printf("Test hand updated correctly:\n");
+        4:   76:    printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
+        -:   77:    #endif
+        -:   78:    #if (ASSERTS_ON == 1)
+        -:   79:    assert(G.numActions == testActions);
+        -:   80:    assert(G.numBuys == testBuys);
+        -:   81:    assert(G.deckCount[p] == testDeckCount);
+        -:   82:    assert(G.handCount[p] == testHandCount);
+        -:   83:    #endif
+        4:   84:    if (G.numActions != testActions) error = 1;
+        4:   85:    if (G.numBuys != testBuys) error = 1;
+        4:   86:    if (G.deckCount[p] != testDeckCount	) error = 1;
+        4:   87:    if (G.handCount[p] != testHandCount	) error = 1;
+        -:   88:
+        -:   89:    //test other players hands to ensure that they were incremented by one
+        8:   90:    for(p = 1; p < numPlayer; p++){
+        -:   91:        #if (NOISY_TEST == 1)
+        4:   92:        printf("Checking the hands of other players:\n");
+        4:   93:        printf("Player %d Hand = %d, Expected = %d\n", p, G.handCount[p], player_card[i]+1);
+        -:   94:        #endif
+        -:   95:        #if (ASSERTS_ON == 1)
+        -:   96:        assert(G.handCount[p] == player_card[i]+1);
+        -:   97:        #endif
+        4:   98:        if(G.handCount[p] != player_card[i]+1) error = 1;
+        -:   99:    }
+        4:  100:    free(player_card);
+        4:  101:    if(error == 1){
+        4:  102:    	printf("Errors were encountered.\n");
+        4:  103:    	return 1;
+        -:  104:    }
+        -:  105:
+        -:  106:
+    #####:  107:    return 0;
+        -:  108:}
+File 'cardtest4.c'
+Lines executed:97.22% of 36
+Creating 'cardtest4.c.gcov'
+
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 3
+        -:    4:* cardtest4.c
+        -:    5:* village card tests
+        -:    6:*---------------------------------------------------------------------*/
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:#include <time.h>
+        -:   14:#include <stdlib.h>
+        -:   15:
+        -:   16:// set NOISY_TEST to 0 to remove printfs from output
+        -:   17:#define NOISY_TEST 1
+        -:   18:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   19:#define ASSERTS_ON 0
+        -:   20:
+        4:   21:int main() {
+        4:   22:    int seed = 1000;
+        4:   23:    int numPlayer = 2;
+        -:   24:    int p, r, i;
+        4:   25:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   26:               , remodel, smithy, village, baron, great_hall};
+        -:   27:    struct gameState G;
+        -:   28:    int error;
+        -:   29:
+        4:   30:    memset(&G, 23, sizeof(struct gameState));
+        4:   31:    r = initializeGame(numPlayer, k, seed, &G);
+        -:   32:    // ensure that the values of all of the supply cards are are at least 2
+        4:   33:    int j = 0;
+      104:   34:    for(j = 0; j < 25; j++){
+      100:   35:        G.supplyCount[j] = 2;
+        -:   36:    }
+        -:   37:
+        4:   38:    printf ("Testing village for playCard(0, 0, 0, 0, gamestate):\n");
+        4:   39:    p = 0;
+        4:   40:    printf("Testing for player %d:\n", p);
+        4:   41:    int testActions = G.numActions;
+        4:   42:    int testBuys = G.numBuys;
+        4:   43:    int testHandCount = G.handCount[p];
+        4:   44:    int testDeckCount = G.deckCount[p];
+        -:   45:
+        -:   46:    // make card in hand a council_room
+        4:   47:    G.hand[p][0] = village;
+        -:   48:    //play it
+        4:   49:    playCard(0, 0, 0, 0, &G);
+        -:   50:
+        -:   51:    //Upon execution, adjust test values
+        -:   52:    //test actions should be one more
+        4:   53:    testActions++;
+        -:   54:    //Buys unchanged
+        -:   55:    //net hand count should be unchanged
+        -:   56:    //deck count should be 1 less
+        4:   57:    testDeckCount -= 1;
+        -:   58:
+        -:   59:    #if (NOISY_TEST == 1)
+        4:   60:    printf("Test actions updated correctly:\n");
+        4:   61:    printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
+        4:   62:    printf("Test buys updated correctly:\n");
+        4:   63:    printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
+        4:   64:    printf("Test deck updated correctly:\n");
+        4:   65:    printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
+        4:   66:    printf("Test hand updated correctly:\n");
+        4:   67:    printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
+        -:   68:    #endif
+        -:   69:    #if (ASSERTS_ON == 1)
+        -:   70:    assert(G.numActions == testActions);
+        -:   71:    assert(G.numBuys == testBuys);
+        -:   72:    assert(G.deckCount[p] == testDeckCount);
+        -:   73:    assert(G.handCount[p] == testHandCount);
+        -:   74:    #endif
+        4:   75:    if (G.numActions != testActions) error = 1;
+        4:   76:    if (G.numBuys != testBuys) error = 1;
+        4:   77:    if (G.deckCount[p] != testDeckCount ) error = 1;
+        4:   78:    if (G.handCount[p] != testHandCount ) error = 1;
+        -:   79:
+        4:   80:    if(error == 1){
+        4:   81:        printf("Errors were encountered.\n");
+        4:   82:        return 1;
+        -:   83:    }
+        -:   84:
+    #####:   85:    return 0;
+        -:   86:}

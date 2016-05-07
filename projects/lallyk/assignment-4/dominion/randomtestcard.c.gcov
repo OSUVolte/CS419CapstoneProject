@@ -1,0 +1,100 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/********************************************************************
+        -:    2: * Kara Franco
+        -:    3: * randomtestcard.c
+        -:    4: * Due Date: May 8, 2016
+        -:    5: * ****************************************************************/
+        -:    6:
+        -:    7:#include "dominion.h"
+        -:    8:#include <stdio.h>
+        -:    9:#include <math.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#define MAX_TEST 1500
+        -:   15:
+        1:   16:int main(){
+        1:   17:	printf("\n------------------------Random Test Village Card-----------------------------\n\n");
+        -:   18:	
+        1:   19:	printf("Running %d tests of the Village Card\n", MAX_TEST);
+        1:   20:	int cards[10] = {adventurer, village, gardens, mine, minion, smithy, embargo, tribute, feast, great_hall};
+        -:   21:	
+        -:   22:	int i;
+        -:   23:	int flag;	
+        -:   24:	int numPlayers;
+        -:   25:	int player;
+        -:   26:	int preHandCount;
+        -:   27:	int preDiscCount;
+        -:   28:	int preActionCount;
+        -:   29:	int randGen;
+        1:   30:	int failedCards = 0;
+        1:   31:	int failedActions = 0;
+        1:   32:	int failedDiscs = 0;
+        -:   33:
+        1:   34:	srand(time(NULL));
+        -:   35:	
+        -:   36:	struct gameState G;
+        -:   37:
+        -:   38:	
+     1501:   39:	for (i = 0; i < MAX_TEST; i++){
+        -:   40:		// set the random number generator and the number of players to a random number 
+     1500:   41:		randGen = rand();
+     1500:   42:		numPlayers = rand() % 3 + 2;
+        -:   43:		
+        -:   44:		// printf("\nInitialize Game...\n");
+        -:   45:	
+     1500:   46:		initializeGame(numPlayers, cards, randGen, &G);
+        -:   47:			// after game is started set the deckCount, handCount and discardCount to a random number	
+     1500:   48:			player = 0;
+     1500:   49:			G.deckCount[player] = rand() % MAX_DECK;
+     1500:   50:			G.discardCount[player] = rand() % MAX_DECK;
+     1500:   51:			G.handCount[player] = rand() % MAX_HAND;
+        -:   52:		
+     1500:   53:			preHandCount = G.handCount[player];
+     1500:   54:			preDiscCount = G.discardCount[player];
+     1500:   55:			preActionCount = G.numActions;
+        -:   56:
+        -:   57:		// use cardEffect to check for function return value
+        -:   58:		// printf("\nTesting that Village cardEffect function return value is 0...\n");
+     1500:   59:		flag = cardEffect(village, 0, 0, 0, &G, 0, 0);
+        -:   60:		if(flag == 0){
+        -:   61:			// printf("PASS\n");
+        -:   62:		}
+        -:   63:		
+        -:   64:		// village card action should be take one card and get two actions
+        -:   65:		// printf("\nTesting if Village card gave player a new card...\n");
+        -:   66:		
+     1500:   67:		if(G.handCount[player] != preHandCount){
+        -:   68:			// printf("FAIL: Player %d did not keep the right amount of cards\n", player);
+        -:   69:			// printf("Current handCount: %d, Previous handCount: %d\n", G.handCount[player], preHandCount);
+    #####:   70:			failedCards++;
+        -:   71:		}
+        -:   72:			
+        -:   73:		// village card should give two actions
+        -:   74:		// printf("\nTesting if Village card gave player a two actions...\n");
+        -:   75:
+     1500:   76:		if(G.numActions != preActionCount + 2){
+        -:   77:			// printf("FAIL: Player did not get two additional actions");
+    #####:   78:			failedActions++;
+        -:   79:		}
+        -:   80:
+        -:   81:		// village action should result in no change of discardCount  
+        -:   82:		// printf("\nTesting if Village card did not change the deck count...\n");
+     1500:   83:		if(G.discardCount[player] != preDiscCount){  
+        -:   84:			// printf("FAIL\n");
+        3:   85:			failedDiscs++;
+        -:   86:		}
+        -:   87:	}
+        -:   88:	
+        1:   89:	printf("\n--- Village Tests Complete! Number of tests run: %d ---\n", MAX_TEST);
+        1:   90:	printf("Village card gave one card: Number of tests FAILED %d\n", failedCards);
+        1:   91:	printf("Village card gave two actions: Number of tests FAILED %d\n", failedActions);
+        1:   92:	printf("Village card did not change the discardCount: Number of tests FAILED %d\n\n", failedDiscs);
+        -:   93:	
+        1:   94:	return 0;
+        -:   95:}

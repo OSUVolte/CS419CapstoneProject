@@ -72,7 +72,7 @@ int main() {
   for (i = 0; i < 17; i++) {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
-  villageCardEffect(player, 0, &game);
+  adventurerCardEffect(player, 0, &game);
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;

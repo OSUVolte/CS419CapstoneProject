@@ -6,7 +6,7 @@
 	(For example, create a test for smithy card.). It is mandatory to test smithy and adventurer card. 
 	
 	Testing:
-		great hall card 
+		gardens card 
 		int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);	
 */
 

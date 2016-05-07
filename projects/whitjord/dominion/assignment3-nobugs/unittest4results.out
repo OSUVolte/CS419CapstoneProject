@@ -1,0 +1,25 @@
+>>> testing discardCard 
+printing initial hand....
+card 0: 4
+card 1: 1
+card 2: 4
+card 3: 4
+card 4: 4
+> discard first card
+last played card was 4 expected 4
+playedCardCount is 1, expected 1
+discardCard returned 0, expected 0
+> discard last card in hand with more than one card
+last played card was 4 expected 4
+playedCardCount is 2, expected 2
+discardCard returned 0, expected 0
+> trashing card
+played card count is 2 expected 2
+last played card is 0 expected 0
+discardCard returned 0, expected 0
+> discard last card in hand with one card in hand
+last played card was 1 expected 1
+playedCardCount is 5, expected 5
+discardCard returned 0, expected 0
+>>> end of discardCard test 
+
