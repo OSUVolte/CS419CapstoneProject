@@ -1,0 +1,10 @@
+Assignment: Random Testing Quiz 2
+Class: CS362
+Student: Lauren Miller
+Date: 4/22/16
+
+I implemented the inputChar function so that it returned any ASCII value in the range of "[" to "}" and the space, assuming that this would be the desired set of characters based on the state assignment section of the existing code. inputString was implemented so that it returned a string of random characters from inputChar of random length between 1 and 10. Given that this was a test, I assumed I couldn't ask which characters were required or how long strings should be. However, I tried to write both so that values could be adjusted easily.
+
+As for testme, the conditions required for the program to march through the different states and the order of states required were so specific that it would be extremely unlikely for it to ever occur. Since I didn't want to just run the program for a week, (or however long), to confirm that it was possible, my tester confirmed that it was possible for all characters, (both as c and in s), required for the conditions that changed the states could be produced. All characters were in the range of [ to }, not including the space character, so I tested that all three of these could be produced, (but not necessarily in sequence), and that a string could have the sixth character as '\0', which was the other condition required to print the error message.
+
+If all the characters required by the conditions could be produced and it was possible to have a string of the right length and these things were produced randomly, then after some massive number of loops, the right sequence of events would happen and the final condition of s being "reset\0" and the state 9 would produce the sought error message. My tester only confirmed that the conditions to were possible, and after this was confirmed, set s to "reset\0" and the state to 9, which printed the error message. That was obviously a bit of a cheat, but it seems like confirming that s could at some point be "reset\0" and that c could be any of the characters required for the other conditions should allow this shortcut to the desired state.

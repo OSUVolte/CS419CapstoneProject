@@ -68,86 +68,86 @@ call    0 returned 100%
 call    0 returned 100%
         -:   53:		
         -:   54:		/*loop through players times - set decks*/
-       41:   55:		for(player = 0; player < randPlayers; player++){
-branch  0 taken 76%
-branch  1 taken 24% (fallthrough)
-       31:   56:			cardsBefore = 0;
-       31:   57:			cardsAfter = 0;
-       31:   58:			actionsBefore = 0;
-       31:   59:			actionsAfter = 0;
-       31:   60:			G->deckCount[player] = rand() % MAX_DECK; //each player gets random deck size
+       37:   55:		for(player = 0; player < randPlayers; player++){
+branch  0 taken 73%
+branch  1 taken 27% (fallthrough)
+       27:   56:			cardsBefore = 0;
+       27:   57:			cardsAfter = 0;
+       27:   58:			actionsBefore = 0;
+       27:   59:			actionsAfter = 0;
+       27:   60:			G->deckCount[player] = rand() % MAX_DECK; //each player gets random deck size
 call    0 returned 100%
-       31:   61:			printf("player %d gets deck size of %d\n", player+1, G->deckCount[player]);
+       27:   61:			printf("player %d gets deck size of %d\n", player+1, G->deckCount[player]);
 call    0 returned 100%
         -:   62:
         -:   63:			/*loop through players deck*/
-      847:   64:			for(card = 0; card < G->deckCount[player]; card++){
+      680:   64:			for(card = 0; card < G->deckCount[player]; card++){
 branch  0 taken 96%
 branch  1 taken 4% (fallthrough)
-      816:   65:				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
+      653:   65:				G->deck[player][card] = rand() % 27; //assign random card from enum CARD
 call    0 returned 100%
-      816:   66:				printf(" %s  | ", cardNames[G->deck[player][card]]);	
+      653:   66:				printf(" %s  | ", cardNames[G->deck[player][card]]);	
 call    0 returned 100%
-       31:   67:			}printf("\n");
+       27:   67:			}printf("\n");
 call    0 returned 100%
-       31:   68:			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
+       27:   68:			G->discardCount[player] = rand() % MAX_DECK; //each player gets random discard deck size
 call    0 returned 100%
-       31:   69:			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
+       27:   69:			printf("player %d gets discard size of %d\n", player+1, G->discardCount[player]);
 call    0 returned 100%
         -:   70:
         -:   71:			/*loop throuhg players discard pile*/
-      831:   72:			for(card = 0; card < G->discardCount[player]; card++){
+      672:   72:			for(card = 0; card < G->discardCount[player]; card++){
 branch  0 taken 96%
 branch  1 taken 4% (fallthrough)
-      800:   73:				G->discard[player][card] = rand() % 27; //random discard
+      645:   73:				G->discard[player][card] = rand() % 27; //random discard
 call    0 returned 100%
-      800:   74:				printf(" %s  | ", cardNames[G->discard[player][card]]);
+      645:   74:				printf(" %s  | ", cardNames[G->discard[player][card]]);
 call    0 returned 100%
-       31:   75:			} printf("\n");
+       27:   75:			} printf("\n");
 call    0 returned 100%
-       31:   76:			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
+       27:   76:			G->handCount[player] = rand() % MAX_HAND; //each player gets a random hand size
 call    0 returned 100%
-       31:   77:			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
+       27:   77:			printf("player %d gets hand size of %d\n", player+1, G->handCount[player]);
 call    0 returned 100%
         -:   78:			
         -:   79:			/*loop through players hand - count treasures*/
-      788:   80:			for(card = 0; card < G->handCount[player]; card++){
-branch  0 taken 96%
-branch  1 taken 4% (fallthrough)
-      757:   81:				G->hand[player][card] = rand() % 27; //random hand
+      822:   80:			for(card = 0; card < G->handCount[player]; card++){
+branch  0 taken 97%
+branch  1 taken 3% (fallthrough)
+      795:   81:				G->hand[player][card] = rand() % 27; //random hand
 call    0 returned 100%
-      757:   82:				cardEnum = G->hand[player][card];
-      757:   83:				printf(" %s  | ", cardNames[G->hand[player][card]]);
+      795:   82:				cardEnum = G->hand[player][card];
+      795:   83:				printf(" %s  | ", cardNames[G->hand[player][card]]);
 call    0 returned 100%
-       31:   84:			} printf("\n");
+       27:   84:			} printf("\n");
 call    0 returned 100%
         -:   85:
-       31:   86:			cardsBefore = G->handCount[player];
-       31:   87:			actionsBefore = G->numActions;
-       31:   88:			printf("Card Count Before: %d\n", cardsBefore);
+       27:   86:			cardsBefore = G->handCount[player];
+       27:   87:			actionsBefore = G->numActions;
+       27:   88:			printf("Card Count Before: %d\n", cardsBefore);
 call    0 returned 100%
-       31:   89:			printf("Action Count Before: %d\n", actionsBefore);
+       27:   89:			printf("Action Count Before: %d\n", actionsBefore);
 call    0 returned 100%
         -:   90:
-       31:   91:			choice1 = rand() % 2; //0 or 1
+       27:   91:			choice1 = rand() % 2; //0 or 1
 call    0 returned 100%
-       31:   92:			choice2 = rand() % 2; 
+       27:   92:			choice2 = rand() % 2; 
 call    0 returned 100%
-       31:   93:			choice3 = rand() % 2;	
+       27:   93:			choice3 = rand() % 2;	
 call    0 returned 100%
-       31:   94:			handPosition = rand() % 4; //no bonus
+       27:   94:			handPosition = rand() % 4; //no bonus
 call    0 returned 100%
-       31:   95:			printf("Card Effect with choice1 = %d choice2 = %d choice3 = %d handPosition = %d\n", choice1, choice2, choice3, handPosition);
+       27:   95:			printf("Card Effect with choice1 = %d choice2 = %d choice3 = %d handPosition = %d\n", choice1, choice2, choice3, handPosition);
 call    0 returned 100%
         -:   96:
         -:   97:			/*card effect - return value pass or fail*/
-       31:   98:			returnValue = cardEffect(village, choice1, choice2, choice3, G, handPosition, 0);
+       27:   98:			returnValue = cardEffect(village, choice1, choice2, choice3, G, handPosition, 0);
 call    0 returned 100%
-       31:   99:			if(returnValue == 0){
+       27:   99:			if(returnValue == 0){
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-       31:  100:				returnPass++;
-       31:  101:				printf("	RETURN VALUE PASS\n");
+       27:  100:				returnPass++;
+       27:  101:				printf("	RETURN VALUE PASS\n");
 call    0 returned 100%
         -:  102:			} else {
     #####:  103:				returnFail++;
@@ -155,18 +155,18 @@ call    0 returned 100%
 call    0 never executed
         -:  105:			}
         -:  106:
-       31:  107:			cardsAfter = G->handCount[player];
-       31:  108:			actionsAfter = G->numActions;
-       31:  109:			printf("Card Count After: %d\n", cardsAfter);
+       27:  107:			cardsAfter = G->handCount[player];
+       27:  108:			actionsAfter = G->numActions;
+       27:  109:			printf("Card Count After: %d\n", cardsAfter);
 call    0 returned 100%
-       31:  110:			printf("Action Count After: %d\n", actionsAfter);
+       27:  110:			printf("Action Count After: %d\n", actionsAfter);
 call    0 returned 100%
         -:  111:
-       31:  112:			if(cardsAfter == cardsBefore){
+       27:  112:			if(cardsAfter == cardsBefore){
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
-       31:  113:				cardPass++;
-       31:  114:				printf("	CARD COUNT PASS\n");
+       27:  113:				cardPass++;
+       27:  114:				printf("	CARD COUNT PASS\n");
 call    0 returned 100%
         -:  115:			} else {
     #####:  116:				cardFail++;
@@ -174,15 +174,15 @@ call    0 returned 100%
 call    0 never executed
         -:  118:			}
         -:  119:
-       31:  120:			if(actionsAfter == actionsBefore + 2){
+       27:  120:			if(actionsAfter == actionsBefore + 2){
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
     #####:  121:				actionPass++;
     #####:  122:				printf("	ACTION COUNT PASS\n");
 call    0 never executed
         -:  123:			} else {
-       31:  124:				actionFail++;
-       31:  125:				printf("	ACTION COUNT FAIL\n");
+       27:  124:				actionFail++;
+       27:  125:				printf("	ACTION COUNT FAIL\n");
 call    0 returned 100%
         -:  126:			}
         -:  127:
