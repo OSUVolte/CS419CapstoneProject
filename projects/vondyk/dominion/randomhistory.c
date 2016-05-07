@@ -16,10 +16,11 @@ depend on the game state being valid.
 Each file randomizes the number of players and the kingdom cards
 prior to initializing the game state for testing. 
 
-Each file runs 20 random tests to see how various inputs change 
-the outcome of the tests. The number 20 was chosen because it 
+Each file runs 2000 random tests to see how various inputs change 
+the outcome of the tests. The number 2000 was chosen because it 
 is large enough to give a good amount of data, yet small enough 
-to be manageable.
+to be manageable. Also because it was the number used in the example
+(i.e. the betterTestDrawCard file provided)
 
 **************************
 ** randomtestadventurer **

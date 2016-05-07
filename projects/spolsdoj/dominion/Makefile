@@ -36,10 +36,22 @@ unit:
 	gcc -o unit4 unittest4.c dominion.c rngs.c -lm
 
 card:
-	gcc -o card1 cardtest1.c -dominion.c rngs.c -lm
+	gcc -o card1 cardtest1.c dominion.c rngs.c -lm
 	gcc -o card2 cardtest2.c dominion.c rngs.c -lm
 	gcc -o card3 cardtest3.c dominion.c rngs.c -lm
 	gcc -o card4 cardtest4.c dominion.c rngs.c -lm
+
+randTestAdventurer:
+	gcc -o randTestAdventurer randomtestadventurer.c dominion.c rngs.c -lm
+	./randTestAdventurer &> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randTestCard:
+	gcc -o randTestCard randomtestcard.c dominion.c rngs.c -lm	 
+	./randTestCard &> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
 
 myTest:
 	./unit1 &> unittestresult.out

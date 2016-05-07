@@ -16,7 +16,7 @@ Date: 5/4/2016
 //testing Village - +1 Card, +2 Action
 int main() {
 	
-	int randomRun = 1000000;//the number of times the random checker runs
+	int randomRun = 2000000;//the number of times the random checker runs
 	int seed = 1;//the seed for initializeGame
 	int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};//used to initialize game - not cards for player playing village
     struct gameState game;//the game used
@@ -64,9 +64,13 @@ int main() {
 			printf("ERROR IN NUMBER OF ACTIONS ADDED: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.numActions + 1, game.numActions);
 		}
 			
-		if(returnVal == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] && game.deckCount[currentPlayer] + game.discardCount[currentPlayer] > 0) {//checking that net cards added to hand is 0 with valid game state - if there are enough cards in discard or deck piles
+		if(returnVal == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] && preCardGame.deckCount[currentPlayer] + preCardGame.discardCount[currentPlayer] > 0) {//checking that net cards added to hand is 0 with valid game state - if there are enough cards in discard or deck piles
 			printf("ERROR IN NUMBER OF CARDS ADDED TO HAND: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
-		}	
+		}
+		
+		if(returnVal == 0 && preCardGame.deckCount[currentPlayer] + preCardGame.discardCount[currentPlayer] == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] - 1) {//checking there is a net of -1 cards in hand if there are no cards to add to the player's hand
+			printf("ERROR IN NET NUMBER OF CARDS ADDED TO HAND WHEN THERE ARE NO CARDS TO ADD: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.handCount[currentPlayer] - 1, game.handCount[currentPlayer]);
+		}
 	}
 
 	return 0;

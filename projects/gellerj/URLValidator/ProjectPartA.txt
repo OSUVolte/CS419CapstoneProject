@@ -1,0 +1,128 @@
+CS 362 - Final Project
+Part A
+
+Josh Geller: gellerj@oregonstate.edu
+Daniel O’Farrell: ofarreld@oregonstate.edu
+Alex Samuel: samuelal@oregonstate.edu
+
+Final Project Part A: Understanding of testIsValid()
+
+*****************************************************
+
+testIsValid() Function Understanding
+
+Summary: testIsValid() constructs strings of various pieces of a URL to determine if they should fail compared to if they did fail. The test suite covers all possible elements of a URL: scheme, authority, port, path, and query parameters.
+
+testPair[]: testPair is a class object that is essentially a 2-dimensional array with a boolean attached. The boolean lists the expected outcome an isValid test.
+
+ResultPair[]: ResultPair is a public data class with 2 members used for constructing the testPair[] data structure. It consists of 2 members: a string, and a bool, isValid, which states whether or not a given string is a valid URL piece. This boolean is used later to test the expected result of a permutation versus the real result, versus a valid url.
+
+Outer do-while loop (line 94): testIsValid() iterates through all possible permutations of data found in testPair[], incrementing each location by 1.
+
+Inner for loop (line 97): Prior to a test being run, a for-loop iterates through each section, constructing the sections of the string from a given testPair[] string member. These pieces are appended to URL.
+
+Url: A string assembled from the testBuffer string array
+
+Expected: If at any point during the inner for-loop, if the testPair[] bool member is set to false, expected is then set to false through the ‘&=’ operator.
+
+Result: a boolean test set calling urlVal.isValid() function against url, which actually tests the url.
+
+AssertEquals:  An assertion is held between URL, expected, and result to determine if the results match.
+
+*****************************************************
+
+Number of Tests
+
+testisValid() should test a total number of 35,910 URLS. However, the real results shown via a counter added to the script is 31,920 URLS. This seems to be due to an error in in the testUrlScheme object, specifically with member #9, [“”, true]. The breakdown of the values are as follows:
+
+testUrlScheme, 9
+"http://", true
+"ftp://", true
+"h3t://", true
+"3ht://", false
+"http:/", false 
+"http:", false 
+"http/", false 
+"://", false 
+"", true
+
+testUrlAuthority, 19
+"www.google.com", true 
+"go.com", true 
+"go.au", true 
+"0.0.0.0", true 
+"255.255.255.255", true 
+".256.256.256", false 
+"255.com", true 
+"1.2.3.4.5", false 
+"1.2.3.4.", false 
+"1.2.3", false 
+".1.2.3.4", false 
+"go.a", false 
+"go.a1a", false 
+"go.cc", true 
+"go.1aa", false 
+"aaa.", false 
+".aaa", false 
+"aaa", false 
+"", false
+
+testUrlPort, 7
+":80", true 
+":65535", true 
+":0", true 
+"", true 
+":-1", false 
+":65636", true 
+":65a", false
+testPath, 10
+"/test1", true 
+ "/t123", true 
+ "/$23", true 
+ "/..", false 
+ "/../", false 
+ "/test1/", true 
+ "", true 
+ "/test1/file", true 
+ "/..//file", false 
+ "/test1//file", false
+ 
+testURLQuery, 3
+"?action=view"
+"?action=edit&mode=up"
+""
+
+*****************************************************
+
+Building the Urls
+
+Summary: testIsValid() creates the URLs by appending to a string, testBuffer some URL strings via the 4 main parts: scheme, authority, path, and query. Additionally, port has been given its own string member to increase the range of valid test permutations. This brings the total number of sections to 5. An outer do-while loop iterates until all possible cases have been run.
+
+Permutation Iteration: A for-loop builds each part of the url, lowest array position to highest, via the testPair[] class. When a test is completed, incrementTestPartsIndex() is run to proceed with the next test. 
+
+IncrementTestPartsIndex() is a helper function which decrements through the potential permutations for each part of the URL scheme. When there are no more available permutations within a specific URL part, false is returned and the next position within the UrlParts array is decremented by 1.  
+
+*****************************************************
+
+Valid Url Example
+The url: http://www.google.com:80/test1 would return expected true results.
+
+Invalid Url Example
+The url:  ://aaa:-1/..?action=view would return expected false results.
+
+*****************************************************
+
+Reflection: 
+
+UrlValidator code is a direct copy paste of apache commons url validator code. The test file/code is also direct copy paste of apache commons test code. Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? 
+
+In terms of concepts, we do not think that the real world tests differ that greatly from the tests produced for CS362. For the course, we were tasked with constructing random tests and unit tests. testIsValid() is an example of a unit test which checks a number of potential input combinations for validity. This is very similar to the unit testing with dominion.c. Both unit tests required that a base case is constructed, then a mutated case. The results of the tests are compared and printed out. 
+
+Additionally, the test designer in both cases needed to balance several important factors simultaneously including maximizing code coverage, focusing on testing critical features, and maintaining reasonable test execution time.
+
+In terms of complexity, we think the real world tests differ from those written for CS362. For most  of the unit and card tests we have written, we used relatively simple data structures to compare matching content. In testIsValid(), the data structures used to generate the test cases and the data members which make up the test cases are much more complex because they are class objects containing arrays of strings and booleans.
+
+
+Another way that the URLValidator tests are more complex involves the dynamic generation of assertions based on ResultPair data structures. In our Dominion unit tests, each assertion was coded as its own explicit statement. In the case of URLValidator, dynamically generating assertions lets developers avoid coding 30,000k+ individual assertions. 
+
+Additionally, URLValidator also accepts multiple configuration options passed as arguments, which gives the tester fine-grained control over how the tests are run. For example, the ALLOW_ALL_SCHEMES option that is passed to testIsValid() allows the tester to mark all schemes as valid, or to only mark http, https, and ftp as valid. This degree of configuration offers a level of complexity that we have not seen in our Dominion tests.
