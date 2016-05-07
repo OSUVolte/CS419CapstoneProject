@@ -32,4 +32,7 @@ Bug found. When a card is discarded using the discardCard function, it is added 
 Possible bug: According to my understanding of Dominion, every player has a hand at all times, but it seems like only the 
 	current player has an active hand. This could be an issue with how I was testing but I wanted to mention it.
 	
+	
+Possible bug: In adventurerCard, shuffle is called when "state->deckCount[currentPlayer] < 1", but in the shuffle function,
+	there is an if statement: "state->deckCount[player] < 1" return -1. This seems to be incorrect.
 */
