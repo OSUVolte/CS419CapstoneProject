@@ -47,17 +47,17 @@ int main () {
 
 
   for (t = 0; t < NUM_TEST; t++) {
-  	printf("******************* TEST #%d *******************\n", t);
+    printf("******************* TEST #%d *******************\n", t);
     
-  	numPlayers = rand() % (MAX_PLAYERS - 1) + MIN_PLAYERS; 
-		memset(&preState, 23, sizeof(struct gameState));
-		initializeGame(numPlayers, kingdomCards, randomSeed, &preState);
+    numPlayers = rand() % (MAX_PLAYERS - 1) + MIN_PLAYERS; 
+    memset(&preState, 23, sizeof(struct gameState));
+    initializeGame(numPlayers, kingdomCards, randomSeed, &preState);
 
     // Set all cards in the player's deck to MINE, to esnure only the specified
     // treasure cards are present
     for (i = 0; i < preState.deckCount[player]; i++) {
-			preState.deck[player][i] = mine;
-		}
+      preState.deck[player][i] = mine;
+    }
 
     // Set a random number of treasure cards to place in the deck
     amountTreasure = rand() % preState.deckCount[player];
@@ -76,23 +76,23 @@ int main () {
     
     // Check the results
     results = checkResults(&preState, &postState, amountTreasure, cardsDrawn, player);
-		if (results == -1) {
-			printf("TEST FAILED\n");
-		}
+    if (results == -1) {
+      printf("TEST FAILED\n");
+    }
     else {
-			printf("TEST PASSED\n");
-		}
-  	printf("************************************************\n");
+      printf("TEST PASSED\n");
+    }
+    printf("************************************************\n");
   }
 
-	return 0;
+  return 0;
 }
 
 int setDeck(
   struct gameState *state, 
-	int               player, 
-	int               amount
-	) 
+  int               player, 
+  int               amount
+  ) 
 {
 
   int i;
@@ -101,70 +101,70 @@ int setDeck(
   int treasureTypes = 3;
   int position;
   int positions[amount];
-	int type;
+  int type;
 
   // Choose random positions to place the treasure cards
-	while (count < amount) {
+  while (count < amount) {
     duplicate = FALSE;
-		position = rand() % state->deckCount[player];
-		// Ensure that the position has not already been chosen
-		for (i = 0; i < count; i++) {
-			if (position == positions[i]) {
-				duplicate = TRUE;
-				break;
-			} 
-		}
-		if (!duplicate) {
-			positions[count] = position;
-			count++;
-		}
- 	}
-	// Choose a random type of treasure card to place and put it into the player's
+    position = rand() % state->deckCount[player];
+    // Ensure that the position has not already been chosen
+    for (i = 0; i < count; i++) {
+      if (position == positions[i]) {
+        duplicate = TRUE;
+        break;
+      } 
+    }
+    if (!duplicate) {
+      positions[count] = position;
+      count++;
+    }
+   }
+  // Choose a random type of treasure card to place and put it into the player's
   // deck at the previously chosen position
- 	for (i = 0; i < count; i++) {
-	  type = rand() % treasureTypes;
-	  position = positions[i];
+   for (i = 0; i < count; i++) {
+    type = rand() % treasureTypes;
+    position = positions[i];
 
-		switch (type) {
-			case 0:
-				state->deck[player][position] = copper;
+    switch (type) {
+      case 0:
+        state->deck[player][position] = copper;
         printf("Copper [%d] ", position);
-				break;
-			case 1:
-				state->deck[player][position] = silver;
+        break;
+      case 1:
+        state->deck[player][position] = silver;
         printf("Silver [%d] ", position);
-				break;
-			case 2:
-				state->deck[player][position] = gold;
+        break;
+      case 2:
+        state->deck[player][position] = gold;
         printf("Gold [%d] ", position);
-				break;
-		 }
-	}
+        break;
+     }
+  }
   printf("\n"); 
   
   // Count the number of cards that will need to be drawn before two treasure 
   // cards are found
   count = 0; 
   for (i = 0; i < state->deckCount[player]; i++) {
-		type = state->deck[player][i];
-		if (type == copper || type == silver || type == gold) {
-			count++;
-			if (count == 2) {
-				return i + 1;
-			}
-		}
-	}	
+    type = state->deck[player][i];
+    if (type == copper || type == silver || type == gold) {
+      count++;
+      if (count == 2) {
+        return i + 1;
+      }
+    }
+  }  
   // If two treasure cards are not in the deck, the entire deck will be drawn
-	return state->deckCount[player];
+  return state->deckCount[player];
 }
 
 int checkResults(
-	struct gameState *preState, 
-	struct gameState *postState,
-	int               treasureCount,
+  struct gameState *preState, 
+  struct gameState *postState,
+  int               treasureCount,
   int               cardsDrawn,
   int               player
-	) 
+  ) 
 {
 
   int players = preState->numPlayers;
@@ -177,72 +177,72 @@ int checkResults(
   
   // Amount of treasure added to the deck
   addedTreasure = (treasureCount >= 2) ? 2 : treasureCount;
-		
+    
   // None of the card piles of other players should be changed 
   for (i = 0; i < players; i++) {
-	  if (i != player) {
-			if (preState->handCount[i] != postState->handCount[i]) {
-			  status = -1;	
-				printf("FAIL: Player #%d Hand Count has changed\n", i);
-			}
-			if (preState->deckCount[i] != postState->deckCount[i]) {
-			  status = -1;	
-				printf("FAIL: Player #%d Deck Count has changed\n", i);
-			}
-			if (preState->discardCount[i] != postState->discardCount[i]) {
-			  status = -1;	
-				printf("FAIL: Player #%d Discard Count has changed\n", i);
-			}
-		}
+    if (i != player) {
+      if (preState->handCount[i] != postState->handCount[i]) {
+        status = -1;  
+        printf("FAIL: Player #%d Hand Count has changed\n", i);
+      }
+      if (preState->deckCount[i] != postState->deckCount[i]) {
+        status = -1;  
+        printf("FAIL: Player #%d Deck Count has changed\n", i);
+      }
+      if (preState->discardCount[i] != postState->discardCount[i]) {
+        status = -1;  
+        printf("FAIL: Player #%d Discard Count has changed\n", i);
+      }
+    }
   }
   // Supply counts and embargo tokens should not be changed
   for (i = 0; i <= MAX_CARD; i++) {
-		if (preState->supplyCount[i] != postState->supplyCount[i]) {
-			status = -1;	
-			printf("FAIL: Supply Count for card %d has changed\n", i);
-		}
-		if (preState->embargoTokens[i] != postState->embargoTokens[i]) {
-			status = -1;	
-			printf("FAIL: Embargo Tokens for %d has changed\n", i);
-		}
-	}
+    if (preState->supplyCount[i] != postState->supplyCount[i]) {
+      status = -1;  
+      printf("FAIL: Supply Count for card %d has changed\n", i);
+    }
+    if (preState->embargoTokens[i] != postState->embargoTokens[i]) {
+      status = -1;  
+      printf("FAIL: Embargo Tokens for %d has changed\n", i);
+    }
+  }
 
-	// Deck will decrease by the number of cards drawn in search of the treasure
+  // Deck will decrease by the number of cards drawn in search of the treasure
   newDeckCount = preState->deckCount[player] - cardsDrawn;
-	// The hand will increase by the number of treasure cards drawn
+  // The hand will increase by the number of treasure cards drawn
   newHandCount = preState->handCount[player] + addedTreasure;
-	// The played card count will include all of the cards drawn except for the
+  // The played card count will include all of the cards drawn except for the
   // added treasure
   newPlayedCardCount = preState->playedCardCount + cardsDrawn - addedTreasure; 
   
-	if (newDeckCount != postState->deckCount[player]) {
-		status = -1;	
-		printf("  Deck INCORRECT\n");
-	}
-	if (newHandCount != postState->handCount[player]) {
-		status = -1;	
-		printf("  Hand INCORRECT\n");
-	}
-	if (preState->discardCount[player] != postState->discardCount[player]) {
-		status = -1;	
-		printf("  Discard INCORRECT\n");
-	}
+  if (newDeckCount != postState->deckCount[player]) {
+    status = -1;  
+    printf("  Deck INCORRECT\n");
+  }
+  if (newHandCount != postState->handCount[player]) {
+    status = -1;  
+    printf("  Hand INCORRECT\n");
+  }
+  if (preState->discardCount[player] != postState->discardCount[player]) {
+    status = -1;  
+    printf("  Discard INCORRECT\n");
+  }
   if (newPlayedCardCount != postState->playedCardCount) {
-		status = -1;
-		printf("  Played INCORRECT\n");
-	}
+    status = -1;
+    printf("  Played INCORRECT\n");
+  }
   
   if (status == -1) {
-		printf("\tBefore\tAfter\tCorrect\n");
-		printf("Deck\t%d\t%d\t%d\n", preState->deckCount[player], postState->deckCount[player], newDeckCount);
-		printf("Hand\t%d\t%d\t%d\n", preState->handCount[player], postState->handCount[player], newHandCount);
-		printf("Played\t%d\t%d\t%d\n", preState->playedCardCount, postState->playedCardCount, newPlayedCardCount);
-		printf("Discard\t%d\t%d\t%d\n", preState->discardCount[player], postState->discardCount[player], preState->discardCount[player]);
-	}
+    printf("\tBefore\tAfter\tCorrect\n");
+    printf("Deck\t%d\t%d\t%d\n", preState->deckCount[player], postState->deckCount[player], newDeckCount);
+    printf("Hand\t%d\t%d\t%d\n", preState->handCount[player], postState->handCount[player], newHandCount);
+    printf("Played\t%d\t%d\t%d\n", preState->playedCardCount, postState->playedCardCount, newPlayedCardCount);
+    printf("Discard\t%d\t%d\t%d\n", preState->discardCount[player], postState->discardCount[player], preState->discardCount[player]);
+  }
 
   return status;
 
-}	
+}  
 
 
 
