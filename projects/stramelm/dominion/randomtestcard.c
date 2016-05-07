@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
     pn = rand() % np; // randomnly choose player 1 to np (index 0 to np - 1)
     hp = rand() % 5; // randomnly choose hand position (0 to 4)
 
-    if (i < 100) { // gameState created via initializeGame() w/ random inputs
+    if (i % 2 == 0) { // gameState created via initializeGame() w/ random inputs
 
       // create/initialize state
       state = malloc(sizeof(struct gameState));
