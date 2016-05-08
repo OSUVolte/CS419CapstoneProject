@@ -113,7 +113,7 @@ int main (int argc, char** argv) {
 		}
 
 		//Choose a random player to test card on
-		p = (Random() * 3);
+		p = (Random() * (numPlayers - 1));
 		printf("Random player chosen %d.\n", p);
 		
 		//Make it this player's turn
