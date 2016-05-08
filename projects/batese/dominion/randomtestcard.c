@@ -208,7 +208,7 @@ int testStatesVillage (struct gameState *preGameState, struct gameState *postGam
 					if (postGameState->hand[x][y] == preGameState->deck[x][preGameState->deckCount[x]-1]) {
 # if (noiseLevel > 1)
 						printf("PASSED: Hand now contains top card from deck.\n");
-# endf	
+# endif	
 						break;
 					}
 					if (y == postGameState->handCount[x] - 1) { // will only get inside here if top card from deck in not in hand
