@@ -1,0 +1,43 @@
+Project Part A Submission
+CS 362
+Jon Patterson     Elliot Bates     Charles Siebert
+Discussion of testIsValid function
+For the testIsValid function, it is taking arrays of several types of test objects that are provided as tuples of {string, boolean}.
+These arrays of test objects (of which there are 5) are stored in an array called testUrlParts[]. The contents of testUrlParts[] is as follows:
+[0]: testUrlScheme  example of scheme: "http://"
+[1]: testUrlAuthority   example of authority: "www.google.com"
+[2]: testUrlPort    example of port: "80"
+[3]: testPath       example of path: "/path"
+[4]: testUrlQuery
+With each tuple, they are appended to build a URL. 
+With each append, there is a logical boolean AND that occurs (&=), which will cause at the end of the URL construction a result of "false" if any of the components were not valid in a URL. 
+After that, the url is tested with the isValid() function to determine if it was valid or not.
+The code performs an assert to identify if the expected result (true or false) matches the return value of the isValid method.
+The code bubbles up from the end of the testPartsIndex integer array, which is {0, 0, 0, 0, 0} after each iteration. We end up with it bubbling through the array like so:
+{0, 0, 0, 0, 0}
+{0, 0, 0, 0, 1}
+{0, 0, 0, 0, 2}
+{0, 0, 0, 1, 0}
+{0, 0, 0, 1, 1}
+...and so on.
+Since the code is trying each permutation of the following, testUrlScheme(8), testUrlAuthority(19), testUrlPort(7), testPath(10), and testUrlQuery(3), we get 31,920 URLs in the loop, plus the two tests to google giving 31,922 total.
+For example, some invalid URLs:
+://:-1/test1//file?action=edit&mode=up
+://:-1/test1//file
+://:65636/test1?action=view
+://:65636/test1?action=edit&mode=up
+And some valid URLs:
+h3t://go.cc:65636
+h3t://go.cc:65636/test1/file?action=view
+h3t://go.cc:65636/test1/file?action=edit&mode=up
+h3t://go.cc:65636/test1/file
+This seems to be a pretty effective real world test, however I would say practically many more test cases should be in the testPath array and the testUrlQuery array.
+In my personal experience, query strings are often rife with problems, and various APIs that I've used (even for paid products) didn't have a high degree of polish in handling query strings. 
+For example, an API may generate query strings that have spaces, i.e. ?q=APPLICATION NAME&var1=foo&var2=bar.
+This should be escaped to %20 or some other escape code, but often this is not handled.
+These kind of real world tests are not that different to the unit tests or card tests that we have written this term since the URLs are being built from predetermined lists of options
+which the programmer chooses when running the validator. This is similar to the test we wrote since we also chose what inputs to give the tester based on our knowledge of what the 
+expected outcomes might be. The complexity of the program is a little higher, but the overarching concept is quite similar.
+The random generated tests we have made recently are a different concept from the testIsValid, since they do build URLs based on a predetermined list, they attempt to cover most combinations
+of strings that would likely fail and pass, based on the code they've written. To be able to test a URL based on all combinations of types of strings would increase the run-time complexity
+by many magnitutes, as it would have to check each value based on randomly generated strings. This kind of testing does not seem as practical compared to our card tests that we've been making.
