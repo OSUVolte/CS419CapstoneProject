@@ -26,16 +26,3 @@ Invalid URL:  http:/go.cc
 
  Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? 
 They are very similar in the sense that the domain input for both includes both valid and invalid options. They are the same conceptually in the fact that in both cases more than just the whole is being tested. For example, take a card test, not only did the test cover the card as a whole but also how the card did and did not interact with other portions of the game. The testIsValid does the same thing by checking the individual parts to see if the URL is valid. Additionally, they are similar in that they both required knowledge of the system being tested to create them. For example, to create a unit test for a card, we needed to know how the card was supposed to work and what inputs/outputs to test for. This same type of knowledge is needed for real world tests.
-[a]I actually think it might be only 31,920 urls that are being tested - the very last scheme ("") doesn't look like it's getting tested at all. If you put a counter before the do-while loop and then print out the results, it'll come up with 31,920. I'm not entirely sure why yet, though.
-[b]Okay, after a bit of fiddling, I found 2 things that are really strange.
-
-
-First, it looks like the test is stopping prematurely because of a bug in incrementTestPartsIndex. Because it's not resetting the temporary variable index to 0 every time when it carries, the maxIndex prematurely calculates that all the indices have reached their max. To fix this part of it, just put "index = 0;" between lines 280 and 281.
-
-
-Second, it looks like the assertion about the validity of the last testUrlScheme ResultPair ("", true) is just wrong, since it stops the program from an assumption failure. If you actually change it to ("", false), then it'll actually get through 35,909 urls.
-
-
-So the most confusing part is that I thought this was supposed to be the correct URLValidatorTest? I'm not sure how to answer the question of how many it's testing, because by definition, with its current errors, it can't test more than 31,920.
-[c]Noticing most people are just going with the 31,920 they get with the counter. Thinking to go with that and mention that it should be the 35,909 if there wasn't a bug?
-[d]Sounds good!
