@@ -1,0 +1,102 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2://Michael Lee
+        -:    3://Smithy random testing
+        -:    4://
+        -:    5://
+        -:    6://
+        -:    7:
+        -:    8:
+        -:    9:#include "dominion.h"
+        -:   10:#include "dominion_helpers.h"
+        -:   11:#include "rngs.h"
+        -:   12:#include <stdio.h>
+        -:   13:#include <stdlib.h>
+        -:   14:#include <string.h>
+        -:   15:#include <time.h>
+        -:   16:#include <math.h>
+        -:   17:
+        -:   18:int testSmithy(struct gameState actual, struct gameState previous, int curPlay);
+        -:   19:void printCondition(struct gameState actual,struct gameState previous,  int curPlay);
+        -:   20:
+        1:   21:int main() {
+        1:   22:	srand(time(NULL));
+        -:   23:
+        -:   24:	struct gameState game, compareGame;
+        -:   25:	int numPlay, curPlay;
+        -:   26:	
+        1:   27:	int k[10] = {adventurer, embargo, village, mine, gardens, smithy, council_room, minion, tribute, feast};
+        1:   28:	int seed = 500;
+        -:   29:	int i; 
+        1:   30:	int numRandTest = 10000;
+        1:   31:	int errors = 0;
+        -:   32:	//for 10000 random tests
+    10001:   33:	for(i=0; i<numRandTest; i++){
+        -:   34:		//get random num of players
+    10000:   35:		numPlay = (rand() % 3) + 2;
+    10000:   36:		initializeGame(numPlay, k, seed, &game);
+        -:   37:		
+        -:   38:		//randomize the game settings
+    10000:   39:		curPlay = 0;
+        -:   40:		
+    10000:   41:		game.deckCount[curPlay] = (rand() % MAX_DECK) + 4;
+    10000:   42:		game.discardCount[curPlay] = MAX_DECK - game.deckCount[curPlay];
+    10000:   43:		game.handCount[curPlay] = (rand() % MAX_HAND) + 1;
+        -:   44:		//printf("%d\n", game.handCount[curPlay]);
+    10000:   45:		game.whoseTurn = curPlay;
+        -:   46:	
+        -:   47:
+    10000:   48:		memcpy(&compareGame, &game, sizeof(struct gameState));
+        -:   49:		//call Smithy
+    10000:   50:		cardSmithy(&game, curPlay, 0);
+    10000:   51:		errors = errors + testSmithy(game, compareGame, curPlay);
+        -:   52:	}
+        1:   53:	printf("There were %d errors\n", errors);
+        1:   54:	return 0;
+        -:   55:}
+        -:   56:
+    10000:   57:int testSmithy(struct gameState actual, struct gameState previous, int curPlay){
+    10000:   58:	int error = 0;
+    10000:   59:	if(actual.deckCount[curPlay] != previous.deckCount[curPlay]-3){
+        -:   60:		//printf("the deck count should have decreased by three\n");
+        -:   61:		//printCondition(actual, previous, curPlay);
+    10000:   62:		error++;
+        -:   63:	}
+    10000:   64:	if(actual.discardCount[curPlay] != previous.discardCount[curPlay]  + 3){
+        -:   65:		//printf("the discard count should have increased by three\n");
+        -:   66:		//printCondition(actual, previous, curPlay);
+    10000:   67:		error++;
+        -:   68:	}
+    10000:   69:	if(actual.handCount[curPlay] != previous.handCount[curPlay] + 3){
+        -:   70:		//printf("the hand count should have increased by three\n");
+        -:   71:		//printCondition(actual, previous, curPlay);
+    #####:   72:		error++;
+        -:   73:	}
+        -:   74:	int i;
+    40000:   75:	for(i=1; i<4; i++){
+        -:   76:		//printf("other player was changed in some way\n");
+    30000:   77:		if(actual.deckCount[i] != previous.deckCount[i]){
+    #####:   78:			error++;
+        -:   79:		}
+    30000:   80:		if(actual.discardCount[i] != previous.discardCount[i]){
+    #####:   81:			error++;
+        -:   82:		}
+    30000:   83:		if(actual.handCount[i] != previous.handCount[i]){
+    #####:   84:			error++;
+        -:   85:		}
+        -:   86:	}
+        -:   87:
+    10000:   88:	return error;
+        -:   89:
+        -:   90:}
+        -:   91:
+    #####:   92:void printCondition(struct gameState actual, struct gameState previous, int curPlay){
+    #####:   93:	printf("Previous DeckCount: %d New DeckCount: %d\n", previous.deckCount[curPlay], actual.deckCount[curPlay]);
+    #####:   94:	printf("Previous discardCount: %d New discardCount: %d\n", previous.discardCount[curPlay], actual.discardCount[curPlay]);
+    #####:   95:	printf("Previous handCount: %d New handCount: %d\n", previous.handCount[curPlay], actual.handCount[curPlay]);
+    #####:   96:}
+        -:   97:

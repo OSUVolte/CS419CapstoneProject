@@ -73,6 +73,20 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	gcc -o cardtest4 dominion.c rngs.c cardtest4.c $(CFLAGS)
 	cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
+	
+randomtestcard.out: randomtestcard.c 
+	echo "Result for running Random Test Card tests:" > randomtestcard.out
+	echo "randomtestcard.c:" >> randomtestcard.out
+	gcc -o randomtestcard dominion.c rngs.c randomtestcard.c $(CFLAGS)
+	randomtestcard >> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	
+randomtestadventurer.out: randomtestadventurer.c 
+	echo "Result for running Random Test Card tests:" > randomtestadventurer.out
+	echo "randomtestadventurer.c:" >> randomtestadventurer.out
+	gcc -o randomtestadventurer dominion.c rngs.c randomtestadventurer.c $(CFLAGS)
+	randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 

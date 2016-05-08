@@ -59,7 +59,31 @@ cardtest3: cardtest3.c dominion.o rngs.o
 
 cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestcard.out: randomtestcard
+	echo "Result for randomtestcard:" > randomtestcard.out
+	
+	echo "Coverage Test: randomtestcard" >> randomtestcard.out
+	randomtestcard >> randomtestcard.out
+	gcov randomtestcard.c -b >> randomtestcard.out
+	gcov dominion.c -b >> randomtestcard.out
+	gcov -f -b dominion.c >> randomtestcard.out
 
+randomtestadventurer.out: randomtestadventurer
+	echo "Result for randomtestcard:" > randomtestcard.out
+	
+	echo "Coverage Test: randomtestcard" >> randomtestadventurer.out
+	randomtestadventurer >> randomtestadventurer.out
+	gcov randomtestcard.c -b >> randomtestadventurer.out
+	gcov dominion.c -b >> randomtestadventurer.out
+	gcov -f -b dominion.c >> randomtestadventurer.out
+	
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	echo "Result for running unit tests:" > unittestresults.out
 	
@@ -71,7 +95,7 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	echo "Coverage Test: unittest2" >> unittestresults.out
 	unittest2 >> unittestresults.out
 	gcov unittest2.c -b >> unittestresults.out
-	gcov dominion.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresult
 	
 	echo "Coverage Test: unittest3" >> unittestresults.out
 	unittest3 >> unittestresults.out

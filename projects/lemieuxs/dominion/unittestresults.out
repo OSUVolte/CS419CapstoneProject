@@ -1,0 +1,431 @@
+Test results:
+unittest1.c
+Testing whoseTurn()
+Setting game->whoseTurn to 0, checking that whoseTurn returns 0
+Setting game->whoseTurn to 1, checking that whoseTurn returns 1
+
+Testing other players' state:
+
+Checking Player Number 0:
+Checking handCount
+hand count = 5, expected = 5
+Checking deckCount
+deck count = 5, expected = 5
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+unittest2.c
+Testing supplyCount()
+
+
+Checking that supplyCount returns game->supplyCount[i]
+
+supply for card 0: 10, expected = 10
+supply for card 1: 8, expected = 8
+supply for card 2: 8, expected = 8
+supply for card 3: 8, expected = 8
+supply for card 4: 46, expected = 46
+supply for card 5: 40, expected = 40
+supply for card 6: 30, expected = 30
+supply for card 7: 10, expected = 10
+supply for card 8: -1, expected = -1
+supply for card 9: -1, expected = -1
+supply for card 10: 8, expected = 8
+supply for card 11: 10, expected = 10
+supply for card 12: -1, expected = -1
+supply for card 13: 10, expected = 10
+supply for card 14: 10, expected = 10
+supply for card 15: -1, expected = -1
+supply for card 16: -1, expected = -1
+supply for card 17: 10, expected = 10
+supply for card 18: -1, expected = -1
+supply for card 19: 10, expected = 10
+supply for card 20: -1, expected = -1
+supply for card 21: 10, expected = 10
+supply for card 22: 10, expected = 10
+supply for card 23: -1, expected = -1
+supply for card 24: -1, expected = -1
+supply for card 25: 10, expected = 10
+supply for card 26: -1, expected = -1
+
+Subtracting 3 cards from each of the kingdom piles
+
+supply for card 7: 7, expected = 7
+supply for card 10: 5, expected = 5
+supply for card 22: 7, expected = 7
+supply for card 14: 7, expected = 7
+supply for card 17: 7, expected = 7
+supply for card 11: 7, expected = 7
+supply for card 21: 7, expected = 7
+supply for card 25: 7, expected = 7
+supply for card 19: 7, expected = 7
+supply for card 13: 7, expected = 7
+
+Subtracting 3 cards from each of the victory, curse, and treasure piles
+
+supply for card 0: 7, expected = 7
+supply for card 1: 5, expected = 5
+supply for card 2: 5, expected = 5
+supply for card 3: 5, expected = 5
+supply for card 4: 43, expected = 43
+supply for card 5: 37, expected = 37
+supply for card 6: 27, expected = 27
+
+Testing other players' state:
+
+Checking Player Number 0:
+Checking handCount
+hand count = 5, expected = 5
+Checking deckCount
+deck count = 5, expected = 5
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+unittest3.c
+Testing buyCard
+
+Test 1: buying embargo
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 1, expected = 1
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+Supply count for embargo = 9, expected = 9
+
+Test 2: buying mine
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 2, expected = 2
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+Supply count for mine = 9, expected = 9
+
+Test 3: attempting to buy adventurer
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 2, expected = 2
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Test 4: attempting to buy embargo while numBuys = 0
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 2, expected = 2
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Test 5: attempting to buy a card that is out of supply
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 2, expected = 2
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+unittest4.c
+Testing gainCard
+
+Test 1: gain adventurer to discard
+Checking player's state
+hand count = 5, expected = 5
+deck count = 5, expected = 5
+discard count = 1, expected = 1
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+
+Test 2: gain adventurer to deck
+Checking player's state
+hand count = 5, expected = 5
+deck count = 6, expected = 6
+discard count = 1, expected = 1
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+
+Test 3: gain adventurer to hand
+Checking player's state
+hand count = 6, expected = 6
+deck count = 6, expected = 6
+discard count = 1, expected = 1
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+
+Test 4: try to gain card not in supply
+hand count = 6, expected = 6
+deck count = 6, expected = 6
+discard count = 1, expected = 1
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+cardtest1.c
+Testing Smithy Card
+Checking handCount:
+hand count = 8, expected = 7
+Checking deckCount:
+deck count = 1, expected = 2
+Checking discardCount:
+discard count = 0, expected = 1
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+pile 0 count = 10, expected = 10
+pile 1 count = 8, expected = 8
+pile 2 count = 8, expected = 8
+pile 3 count = 8, expected = 8
+pile 4 count = 46, expected = 46
+pile 5 count = 40, expected = 40
+pile 6 count = 30, expected = 30
+pile 7 count = 10, expected = 10
+pile 8 count = -1, expected = -1
+pile 9 count = -1, expected = -1
+pile 10 count = 8, expected = 8
+pile 11 count = 10, expected = 10
+pile 12 count = -1, expected = -1
+pile 13 count = 10, expected = 10
+pile 14 count = 10, expected = 10
+pile 15 count = -1, expected = -1
+pile 16 count = -1, expected = -1
+pile 17 count = 10, expected = 10
+pile 18 count = -1, expected = -1
+pile 19 count = 10, expected = 10
+pile 20 count = -1, expected = -1
+pile 21 count = 10, expected = 10
+pile 22 count = 10, expected = 10
+pile 23 count = -1, expected = -1
+pile 24 count = -1, expected = -1
+pile 25 count = 10, expected = 10
+pile 26 count = -1, expected = -1
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+cardtest2.c
+Testing Adventurer Card
+Treasures in hand before playing Adventurer: 4
+handcount: 7
+deckcount: 3
+Checking +2 treasure:
+Treasures in hand after: 5
+Checking discardCount:
+discard count = 0, expected = 2
+Checking that a smithy and village are in the discard pile:
+Checking that Adventurer has been discarded:
+Played cards: 0
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+cardtest3.c
+Testing Council Room Card
+Checking handCount
+hand count = 8, expected = 8
+Checking deckCount
+deck count = 1, expected = 1
+Checking buys
+buys = 2, expected = 2
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 2:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 3:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+
+cardtest4
+Testing Feast Card
+
+Card number 1: 4
+
+Card number 2: 4
+
+Card number 3: 1
+
+Card number 4: 4
+
+Card number 5: 4
+
+Test 1: choose embargo
+Checking handCount:
+hand count = 5, expected = 5
+Checking deckCount:
+deck count = 5, expected = 5
+Checking discardCount:
+discard count = 1, expected = 1
+
+Testing that embargo is in the discard pile:
+
+Card number 1: 22
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+
+Test 2: choose mine
+Checking handCount:
+hand count = 5, expected = 5
+Checking deckCount:
+deck count = 5, expected = 5
+Checking discardCount:
+discard count = 2, expected = 2
+
+Testing that mine is in the discard pile:
+
+Card number 1: 22
+
+Card number 2: 11
+
+Test 3: choose Adventurer (too expensive)
+(this test causes an infinite loop, so I have commented it out)
+File 'dominion.c'
+Lines executed:33.87% of 561
+Creating 'dominion.c.gcov'
+

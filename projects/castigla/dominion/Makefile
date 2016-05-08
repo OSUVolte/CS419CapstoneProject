@@ -45,6 +45,24 @@ card3:
 card4:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o cardtest4.c rngs.o -o cardtest4 -lm -g
 
+randomtestadventurer:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestadventurer.c rngs.o -o randomtestadventurer -lm -g
+
+runrandomtestadventurer:: randomtestadventurer.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestadventurer.c rngs.o -o randomtestadventurer -lm -g
+	./randomtestadventurer &> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestcard:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestcard.c rngs.o -o randomtestcard -lm -g
+
+runrandomtestcard:: randomtestcard.c dominion.o rngs.o
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestcard.c rngs.o -o randomtestcard -lm -g
+	./randomtestcard &> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	
 
 myTest:: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o unittest1.c rngs.o -o unittest1 -lm -g
@@ -65,8 +83,6 @@ myTest:: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c
 	./cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
-	
-	
 
 
 interface.o: interface.h interface.c
@@ -85,4 +101,4 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard randomtestadventurer

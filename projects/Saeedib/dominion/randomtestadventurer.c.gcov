@@ -1,0 +1,70 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:Behnam Saeedi
+        -:    3:Saeedib
+        -:    4:93227697
+        -:    5:Unit test
+        -:    6:*/
+        -:    7:
+        -:    8:#include <stdlib.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <assert.h>
+        -:   11:#include <string.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#include "dominion.h"
+        -:   15:#include "dominion_helpers.h"
+        -:   16:#include "rngs.h"
+        -:   17:
+        -:   18:#define UNITTEST "Adventurer"
+        -:   19:
+        2:   20:int main(int argc, char ** argv)
+        -:   21:{
+        2:   22:	srand(time(NULL));
+        -:   23:	//Generating player:
+        -:   24:	int out;
+        2:   25:	int seed = 1000;
+     2002:   26:	for(int counter = 0; counter < 1000; counter++)
+        -:   27:	{
+     2000:   28:		int numPlayers = rand() % 4 + 1;
+     2000:   29:		int thisPlayer = 0;
+        -:   30:		struct gameState G, testG;
+     2000:   31:		int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+        -:   32:		// initialize a game state and player cards
+     2000:   33:		initializeGame(numPlayers, k, seed, &G);
+        -:   34:		// generating a random state
+     2000:   35:		memcpy(&testG, &G, sizeof(struct gameState));
+        -:   36:		int count;
+     2000:   37:		count = testG.handCount[thisPlayer];
+    12000:   38:		for(int i = 0; i < count; i++)
+    10000:   39:			testG.hand[thisPlayer][i] = estate;
+    52000:   40:		for(int i = 0; i < 25; i++)
+    50000:   41:			testG.supplyCount[i] = 10;
+     2000:   42:		testG.hand[thisPlayer][rand() % 2] = gold;	//3
+     2000:   43:		testG.hand[thisPlayer][rand() % 2+2] = silver;	//2
+     2000:   44:		testG.hand[thisPlayer][rand() % 2+4] = copper;	//1
+     2000:   45:		testG.supplyCount[province] = rand() % 5 + 1;
+        -:   46:
+     2000:   47:		printf("\n\nTesting card: %s\n\n", UNITTEST);
+        -:   48:
+        -:   49:
+     2000:   50:		printf("Test 1: Checking the function.\n");
+     2000:   51:		updateCoins(thisPlayer,&testG,0);
+     2000:   52:		out = testG.coins;
+     2000:   53:		printf("This should return Adventurer new coins in card: %d (should be 6)\n",out);
+        -:   54:		//assert(out == 6);
+     2000:   55:		out = Adventurer(thisPlayer,0,&testG,&G.hand);
+        -:   56:		//assert(out == 6);
+     2000:   57:		printf("This should return the value of Adventurer card: %d\n",out);
+     2000:   58:		out = updateCoins(thisPlayer,&testG,0);
+     2000:   59:		out = testG.coins;
+     2000:   60:		printf("This should return Adventurer new coins in card: %d (should be 8)\n",out);
+        -:   61:		//assert(out == 8);
+     2000:   62:		printf("Test 1 Passed\n");
+        -:   63:	}
+        2:   64:	return 0;	//No bugs found
+        -:   65:}

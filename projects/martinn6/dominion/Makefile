@@ -1,4 +1,4 @@
-CFLAGS = -Wall -fpic -coverage -lm
+CFLAGS = -Wall -fpic -coverage -lm 
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -24,60 +24,16 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-<<<<<<< HEAD
-unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c
-	echo "unittest1.c testing updateCoins():" &> unittestresults.out
-	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
-	unittest1 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
+runtests:  randomtestcard.c randomtestadventurer.c
+	echo "randomtestadventurer.c: testing adventure:" &> randomtestadventurer.out
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS) -std=c99
+	randomtestadventurer >> randomtestadventurer.out
+	gcov -f dominion.c >> randomtestadventurer.out
 	
-	echo "unittest2.c: testing getCoins():" >> unittestresults.out
-	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
-	unittest2 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "unittest3.c: testing gainCard():" >> unittestresults.out
-	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
-	unittest3 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "unittest4.c: testing getWinners():" >> unittestresults.out
-	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
-	unittest4 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "cardtest1.c: testing smithy:" >> unittestresults.out
-	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
-	cardtest1 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "cardtest2.c: testing adventurer:" >> unittestresults.out
-	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
-	cardtest2 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "cardtest3.c: testing great_hall:" >> unittestresults.out
-	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
-	cardtest3 >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	
-	echo "cardtest4.c: testing embargo:" >> unittestresults.out
-	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-	cardtest4 >> unittestresults.out
-	echo "final coverage test by line:" >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	echo "final coverage test by function:" >> unittestresults.out
-	gcov -f dominion.c >> unittestresults.out
-	echo "final coverage test by branch:" >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	
-=======
-runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
-
->>>>>>> 81135317deea85c1137fcb514346961ffb58aee0
+	echo "randomtestcard.c: testing smity:" &> randomtestcard.out
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS) -std=c99
+	randomtestcard >> randomtestcard.out
+	gcov -f dominion.c >> randomtestcard.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

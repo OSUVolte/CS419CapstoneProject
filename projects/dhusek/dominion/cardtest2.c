@@ -43,10 +43,10 @@ int main() {
     int failedTests = 0;
     int passedTests = 0;
     const char* cards[27] = {"curse", "estate", "duchy", "province", "copper", "silver",
-        "gold", "adventurer", "council room", "feast", "gardens",
-        "mine", "remodel", "smithy", "village", "baron", "great hall",
-        "minion", "steward", "tribute", "ambassador", "cutpurse",
-        "embargo", "outpost", "salvager", "sea hag", "treasure map"};
+                             "gold", "adventurer", "council room", "feast", "gardens",
+                             "mine", "remodel", "smithy", "village", "baron", "great hall",
+                             "minion", "steward", "tribute", "ambassador", "cutpurse",
+                             "embargo", "outpost", "salvager", "sea hag", "treasure map"};
     
     // initialize a game state and player cards
     initializeGame(numPlayers, k, seed, &G);
@@ -145,7 +145,7 @@ int main() {
             num = GnewCoins - testG.coins;
             printf("\t**FAILED**: Current player has %d too few coins.\n\n", num);
             failedTests++;
-        } else { // Current player hass too many coins
+        } else { // Current player has too many coins
             num = testG.coins - GnewCoins;
             printf("\t**FAILED**: Current player has %d too many coins.\n\n", num);
             failedTests++;
@@ -256,7 +256,7 @@ int main() {
         printf("\n");
     }
     
-    // ----------- No state change should occur for the victory card piles. --------------
+    // ----------- No state change should occur for the kingdom card piles. --------------
     printf("Testing: No state change should occur for the kingdom card piles.\n");
     errorCount = 0;
     for(i = 0; i < 10; i++) {

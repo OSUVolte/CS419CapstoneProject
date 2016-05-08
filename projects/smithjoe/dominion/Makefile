@@ -95,7 +95,17 @@ unittestresults.out: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2
 	./cardtest4 >> unittestresults.out
 	gcov cardtest4.c >> unittestresults.out
 	gcov -b cardtest4.c >> unittestresults.out
+
+
+randomtestcard.out: randomtestcard.c dominion.o rngs.o
+
+	gcc -o randomtestcard.out -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
 	
+
+
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+
+	gcc -o randomtestadventurer.out -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 	
 	
 	
