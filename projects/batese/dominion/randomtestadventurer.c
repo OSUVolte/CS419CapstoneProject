@@ -12,12 +12,12 @@ Description: Random test for the adventurer card function in dominion.c
 #include <stdlib.h>
 #include <string.h>
 
-# define noiseLevel = 3
+# define noiseLevel 3
 //Noise level 0 = no print statements
 //Noise level 1 = only print failed tests
 //Noise level 2 = print results of all tests
 //Noise level 3 = print everything
-# define defaultTests = 1000
+# define defaultTests 1000
 
 // Function prototypes
 int testStatesAdventurer (struct gamestate preGameState, struct gamesate postGameState, int numPlayers, int player);
@@ -41,7 +41,7 @@ int main (int argc, char** argv) {
 	struct gameState preGameSate;			// original gameState
 	struct gameState postGameState;			// test gameState
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
-	int otherCards[7] = {curse, estate, dutchy, province, copper, silver, gold};
+	int otherCards[7] = {curse, estate, duchy, province, copper, silver, gold};
 
 	//Set up gamestate with random number of players
 	//Get arguments for number of tests if there is one
@@ -74,28 +74,28 @@ int main (int argc, char** argv) {
 			kingdomCardsToAdd = (Random() * 10);
 			for (x = 0; x < kingdomCardsToAdd; x++) {
 				kingdomCardToAdd = k[(int) (Random() * 9)];
-				preGameSate->deck[p][preGameSate->deckCount[p]] = kingdomCardToAdd;
-				preGameSate->deckCount[p]++;
+				preGameSate.deck[p][preGameSate.deckCount[p]] = kingdomCardToAdd;
+				preGameSate.deckCount[p]++;
 			}
 			// Add random number of other cards to deck
 			otherCardsToAdd = (Random() * 10);
 			for (x = 0; x < otherCardsToAdd; x++) {
 				otherCardToAdd = otherCards[(int) (Random() * 9)];
-				preGameSate->deck[p][preGameSate->deckCount[p]] = otherCardToAdd;
-				preGameSate->deckCount[p]++;
+				preGameSate.deck[p][preGameSate.deckCount[p]] = otherCardToAdd;
+				preGameSate.deckCount[p]++;
 			}			
 			// If first player then add hand back to deck
 			if (p == 0) {
-				while (preGameSate->handCount[p] > 0) {
-					preGameSate->deck[p][preGameSate->deckCount[p]] = preGameSate->hand[p][preGameSate->handCount[p] - 1];
-					preGameSate->handCount[p]--;
-					preGameSate->hand[p][preGameSate->handCount[p]] = -1;
-					preGameSate->deckCount[p]++;
+				while (preGameSate.handCount[p] > 0) {
+					preGameSate.deck[p][preGameSate.deckCount[p]] = preGameSate.hand[p][preGameSate.handCount[p] - 1];
+					preGameSate.handCount[p]--;
+					preGameSate.hand[p][preGameSate.handCount[p]] = -1;
+					preGameSate.deckCount[p]++;
 				}
 			}	
 			// Shuffle deck
-			shuffle(p, preGameSate);
-			// Draw random sized hand -> this may need to be changed for a generic version
+			shuffle(p, &preGameSate);
+			// Draw random sized hand . this may need to be changed for a generic version
 			handSize = (Random() * 5);
 			for (x = 0; x < handsize; x++) {
 				drawCard(p, preGameSate);
@@ -106,33 +106,33 @@ int main (int argc, char** argv) {
 		p = (Random() * 3);
 		
 		//Make it this player's turn
-		preGameSate->whoseTurn = p;
+		preGameSate.whoseTurn = p;
 
 		//Make sure player has card in hand, place in random position if not
-		for (x = 0; x < preGameSate->handCount[p]; x++) {
-			if (preGameSate->hand[p][x] == adventurer) {
+		for (x = 0; x < preGameSate.handCount[p]; x++) {
+			if (preGameSate.hand[p][x] == adventurer) {
 				handPos = x;
 				break;
 			}
-			if (x == preGameSate->handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
+			if (x == preGameSate.handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
 				handPos = Random() * (handCount[p] - 1);
-				preGameSate->hand[p][handPos] = adventurer;
+				preGameSate.hand[p][handPos] = adventurer;
 			}
 		}
 		
 		// Randomise number of cards left in deck to trigger any lines that involve shuffling
-		deckSize = Random() * preGameSate->deckCount[p];
-		while (preGameSate->deckCount[p] > deckSize) {
-			preGameSate->discard[p][preGameSate->dicardCount[p]] = preGameSate->deck[p][preGameSate->deckCount[p] - 1];
-			preGameSate->dicardCount[p]++;
-			preGameSate->deckCount[p]--;
+		deckSize = Random() * preGameSate.deckCount[p];
+		while (preGameSate.deckCount[p] > deckSize) {
+			preGameSate.discard[p][preGameSate.dicardCount[p]] = preGameSate.deck[p][preGameSate.deckCount[p] - 1];
+			preGameSate.dicardCount[p]++;
+			preGameSate.deckCount[p]--;
 		}		
 
 		//Save copy of gamestate
 		memcpy(&postGameState, &preGameState, sizeof(struct gameState));	
 
 		//Check player has at least 2 treasures in their deck/discard pile
-		if (hasTreasures(preGameSate, p) > 2) {
+		if (hasTreasures(&preGameSate, p) > 2) {
 # if (noiseLevel > 0)
 			printf("ABANDONING TEST %d: Player %d does not have at least 2 treasure cards in deck/discard pile.\n", i, p);
 # endif
@@ -142,7 +142,7 @@ int main (int argc, char** argv) {
 		cardEffect(adventurer, 0, 0, 0, &postGameState, 0, 0);
 
 		//Test that only certain things have changed and that they have changed correctly
-		failedTests = testStatesAdventurer(preGameSate, postGameState, numPlayers, p);
+		failedTests = testStatesAdventurer(&preGameSate, &postGameState, numPlayers, p);
 # if (noiseLevel > 2)
 		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", failedTests);
 # endif	
@@ -155,7 +155,7 @@ int main (int argc, char** argv) {
 
 
 //Test states adventurer function
-int testStatesAdventurer (struct gamestate preGameState, struct gamesate postGameState, int numPlayers, int player) {
+int testStatesAdventurer (struct gamestate *preGameState, struct gamesate *postGameState, int numPlayers, int player) {
 	int x, y;				// counters
 	int failedTest = 0;
 	
@@ -292,7 +292,7 @@ int testStatesAdventurer (struct gamestate preGameState, struct gamesate postGam
 }
 
 //Has more treasures function
-int hasTreasures (struct gamestate g, int player) {
+int hasTreasures (struct gamestate *g, int player) {
 	int numTreasures = 0;
 	int x, y;
 	
