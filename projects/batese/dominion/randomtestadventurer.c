@@ -21,7 +21,7 @@ Description: Random test for the adventurer card function in dominion.c
 
 // Function prototypes
 int testStatesAdventurer (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p);
-int hasTreasures (struct gameState *g, int player);
+int hasTreasures (struct gameState *g, int p);
 
 
 int main (int argc, char** argv) {
@@ -38,7 +38,7 @@ int main (int argc, char** argv) {
 	int failedTests;						// Will hold the number of failed tests returned by the state comparison function
 	int seed = 1000;
 	int numPlayers;  						// number of players in game
-	struct gameState preGameSate;			// original gameState
+	struct gameState preGameState;			// original gameState
 	struct gameState postGameState;			// test gameState
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 	int otherCards[7] = {curse, estate, duchy, province, copper, silver, gold};
@@ -65,8 +65,8 @@ int main (int argc, char** argv) {
 		numPlayers = (Random() * 3) + 1;
 		
 		//Initialise gamestate
-		memset(&preGameSate, 23, sizeof(struct gameState));   // clear the game state
-		initializeGame(numPlayers, k, seed, &preGameSate); // initialize a new game	
+		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game state
+		initializeGame(numPlayers, k, seed, &preGameState); // initialize a new game	
 		
 		//Randomise hands and decks in some way
 		for (p = 0; p < numPlayers; p++) {
@@ -74,31 +74,31 @@ int main (int argc, char** argv) {
 			kingdomCardsToAdd = (Random() * 10);
 			for (x = 0; x < kingdomCardsToAdd; x++) {
 				kingdomCardToAdd = k[(int) (Random() * 9)];
-				preGameSate.deck[p][preGameSate.deckCount[p]] = kingdomCardToAdd;
-				preGameSate.deckCount[p]++;
+				preGameState.deck[p][preGameState.deckCount[p]] = kingdomCardToAdd;
+				preGameState.deckCount[p]++;
 			}
 			// Add random number of other cards to deck
 			otherCardsToAdd = (Random() * 10);
 			for (x = 0; x < otherCardsToAdd; x++) {
 				otherCardToAdd = otherCards[(int) (Random() * 9)];
-				preGameSate.deck[p][preGameSate.deckCount[p]] = otherCardToAdd;
-				preGameSate.deckCount[p]++;
+				preGameState.deck[p][preGameState.deckCount[p]] = otherCardToAdd;
+				preGameState.deckCount[p]++;
 			}			
 			// If first player then add hand back to deck
 			if (p == 0) {
-				while (preGameSate.handCount[p] > 0) {
-					preGameSate.deck[p][preGameSate.deckCount[p]] = preGameSate.hand[p][preGameSate.handCount[p] - 1];
-					preGameSate.handCount[p]--;
-					preGameSate.hand[p][preGameSate.handCount[p]] = -1;
-					preGameSate.deckCount[p]++;
+				while (preGameState.handCount[p] > 0) {
+					preGameState.deck[p][preGameState.deckCount[p]] = preGameState.hand[p][preGameState.handCount[p] - 1];
+					preGameState.handCount[p]--;
+					preGameState.hand[p][preGameState.handCount[p]] = -1;
+					preGameState.deckCount[p]++;
 				}
 			}	
 			// Shuffle deck
-			shuffle(p, &preGameSate);
+			shuffle(p, &preGameState);
 			// Draw random sized hand . this may need to be changed for a generic version
 			handSize = (Random() * 5);
-			for (x = 0; x < handsize; x++) {
-				drawCard(p, preGameSate);
+			for (x = 0; x < handSize; x++) {
+				drawCard(p, &preGameState);
 			}
 		}
 
@@ -106,33 +106,33 @@ int main (int argc, char** argv) {
 		p = (Random() * 3);
 		
 		//Make it this player's turn
-		preGameSate.whoseTurn = p;
+		preGameState.whoseTurn = p;
 
 		//Make sure player has card in hand, place in random position if not
-		for (x = 0; x < preGameSate.handCount[p]; x++) {
-			if (preGameSate.hand[p][x] == adventurer) {
+		for (x = 0; x < preGameState.handCount[p]; x++) {
+			if (preGameState.hand[p][x] == adventurer) {
 				handPos = x;
 				break;
 			}
-			if (x == preGameSate.handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
-				handPos = Random() * (handCount[p] - 1);
-				preGameSate.hand[p][handPos] = adventurer;
+			if (x == preGameState.handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
+				handPos = Random() * (preGameState.handCount[p] - 1);
+				preGameState.hand[p][handPos] = adventurer;
 			}
 		}
 		
 		// Randomise number of cards left in deck to trigger any lines that involve shuffling
-		deckSize = Random() * preGameSate.deckCount[p];
-		while (preGameSate.deckCount[p] > deckSize) {
-			preGameSate.discard[p][preGameSate.dicardCount[p]] = preGameSate.deck[p][preGameSate.deckCount[p] - 1];
-			preGameSate.dicardCount[p]++;
-			preGameSate.deckCount[p]--;
+		deckSize = Random() * preGameState.deckCount[p];
+		while (preGameState.deckCount[p] > deckSize) {
+			preGameState.discard[p][preGameState.discardCount[p]] = preGameState.deck[p][preGameState.deckCount[p] - 1];
+			preGameState.discardCount[p]++;
+			preGameState.deckCount[p]--;
 		}		
 
 		//Save copy of gamestate
 		memcpy(&postGameState, &preGameState, sizeof(struct gameState));	
 
 		//Check player has at least 2 treasures in their deck/discard pile
-		if (hasTreasures(&preGameSate, p) > 2) {
+		if (hasTreasures(&preGameState, p) > 2) {
 # if (noiseLevel > 0)
 			printf("ABANDONING TEST %d: Player %d does not have at least 2 treasure cards in deck/discard pile.\n", i, p);
 # endif
@@ -142,9 +142,9 @@ int main (int argc, char** argv) {
 		cardEffect(adventurer, 0, 0, 0, &postGameState, 0, 0);
 
 		//Test that only certain things have changed and that they have changed correctly
-		failedTests = testStatesAdventurer(&preGameSate, &postGameState, numPlayers, p);
+		failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
 # if (noiseLevel > 2)
-		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", failedTests);
+		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
 # endif	
 	}
 
@@ -166,13 +166,13 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 	for (x = 0; x < numPlayers; x++) {
 		if (x == p) {
 			//Check player's hand size has increased by 2
-			if (postGameState->handCount[x] == preGameSate->handCount[x]) {
+			if (postGameState->handCount[x] == preGameState->handCount[x]) {
 # if (noiseLevel > 1)
-				prtinf("PASSED: Player %d hand count has increased by 2.\n", x);
+				printf("PASSED: Player %d hand count has increased by 2.\n", x);
 # endif	
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: Player %d hand count has increased by %d.\n", x, (postGameState->handCount[x] - preGameSate->handCount[x]));
+				printf("FAILED: Player %d hand count has increased by %d.\n", x, (postGameState->handCount[x] - preGameState->handCount[x]));
 				failedTest++;
 # endif	
 			}
@@ -190,97 +190,97 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 # endif	
 			}
 			//Check buys are still the same
-			if (postGameState->numBuys == preGameSate->numBuys) {
+			if (postGameState->numBuys == preGameState->numBuys) {
 # if (noiseLevel > 1)
 				printf("PASSED: numBuys has not changed.\n");
 # endif	
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: numBuys has changed from %d to %d.\n", preGameSate->numBuys, postGameState->numBuys);
+				printf("FAILED: numBuys has changed from %d to %d.\n", preGameState->numBuys, postGameState->numBuys);
 				failedTest++;
 # endif	
 			}
 			//Check actions are still the same
-			if (postGameState->numActions == preGameSate->numActions) {
+			if (postGameState->numActions == preGameState->numActions) {
 # if (noiseLevel > 1)
 				printf("PASSED: numActions has not changed.\n");
 # endif	
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: numActions has changed from %d to %d.\n", preGameSate->numActions, postGameState->numActions);
+				printf("FAILED: numActions has changed from %d to %d.\n", preGameState->numActions, postGameState->numActions);
 				failedTest++;
 # endif	
 			}			
 		} else { // For all other players
 		
 			// Compare hands
-			if (postGameState->handCount[x] == preGameSate->handCount[x]) {
+			if (postGameState->handCount[x] == preGameState->handCount[x]) {
 # if (noiseLevel > 1)
 				printf("PASSED: Player %d handCount has not changed.\n", x);
 # endif	
 				for (y = 0; y < postGameState->handCount[x]; y++) {
-					if (postGameState->hand[x][y] == preGameSate->hand[x][y]) {
+					if (postGameState->hand[x][y] == preGameState->hand[x][y]) {
 # if (noiseLevel > 1)
 						prtinf("PASSED: Player %d card in hand position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
-						printf("FAILED: Player %d card in hand position %d has changed from %d to %d.\n", x, y, preGameSate->hand[x][y], postGameState->hand[x][y]);
+						printf("FAILED: Player %d card in hand position %d has changed from %d to %d.\n", x, y, preGameState->hand[x][y], postGameState->hand[x][y]);
 						failedTest++;
 # endif	
 					}
 				}
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: Player %d handCount has changed from %d to %d.\n", x, preGameSate->handCount[x], postGameState->handCount[x]);
+				printf("FAILED: Player %d handCount has changed from %d to %d.\n", x, preGameState->handCount[x], postGameState->handCount[x]);
 				failedTest++;
 # endif		
 			}
 			
 			// Compare decks
-			if (postGameState->deckCount[x] == preGameSate->deckCount[x]) {
+			if (postGameState->deckCount[x] == preGameState->deckCount[x]) {
 # if (noiseLevel > 1)
 				printf("PASSED: Player %d deckCount has not changed.\n", x);
 # endif	
 				for (y = 0; y < postGameState->deckCount[x]; y++) {
-					if (postGameState->deck[x][y] == preGameSate->deck[x][y]) {
+					if (postGameState->deck[x][y] == preGameState->deck[x][y]) {
 # if (noiseLevel > 1)
 						prtinf("PASSED: Player %d card in deck position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
-						printf("FAILED: Player %d card in deck position %d has changed from %d to %d.\n", x, y, preGameSate->deck[x][y], postGameState->deck[x][y]);
+						printf("FAILED: Player %d card in deck position %d has changed from %d to %d.\n", x, y, preGameState->deck[x][y], postGameState->deck[x][y]);
 						failedTest++;
 # endif	
 					}
 				}
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: Player %d deckCount has changed from %d to %d.\n", x, preGameSate->deckCount[x], postGameState->deckCount[x]);
+				printf("FAILED: Player %d deckCount has changed from %d to %d.\n", x, preGameState->deckCount[x], postGameState->deckCount[x]);
 				failedTest++;
 # endif		
 			}
 			
 			// Compare discard piles
-			if (postGameState->discardCount[x] == preGameSate->discardCount[x]) {
+			if (postGameState->discardCount[x] == preGameState->discardCount[x]) {
 # if (noiseLevel > 1)
 				printf("PASSED: Player %d discardCount has not changed.\n", x);
 # endif	
 				for (y = 0; y < postGameState->discardCount[x]; y++) {
-					if (postGameState->discard[x][y] == preGameSate->discard[x][y]) {
+					if (postGameState->discard[x][y] == preGameState->discard[x][y]) {
 # if (noiseLevel > 1)
 						prtinf("PASSED: Player %d card in discard position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
-						printf("FAILED: Player %d card in discard position %d has changed from %d to %d.\n", x, y, preGameSate->discard[x][y], postGameState->discard[x][y]);
+						printf("FAILED: Player %d card in discard position %d has changed from %d to %d.\n", x, y, preGameState->discard[x][y], postGameState->discard[x][y]);
 						failedTest++;
 # endif	
 					}
 				}
 			} else {
 # if (noiseLevel > 0)
-				printf("FAILED: Player %d discardCount has changed from %d to %d.\n", x, preGameSate->discardCount[x], postGameState->discardCount[x]);
+				printf("FAILED: Player %d discardCount has changed from %d to %d.\n", x, preGameState->discardCount[x], postGameState->discardCount[x]);
 				failedTest++;
 # endif		
 			}
@@ -292,7 +292,7 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 }
 
 //Has more treasures function
-int hasTreasures (struct gameState *g, int player) {
+int hasTreasures (struct gameState *g, int p) {
 	int numTreasures = 0;
 	int x, y;
 	
@@ -303,7 +303,7 @@ int hasTreasures (struct gameState *g, int player) {
 	
 	// Find treasures in discard pile
 	for (x = 0; x < g->discardCount[p]; x++)
-		if (g->discardard[p][x] == copper || g->discard[p][x] == silver || g->discard[p][x] == gold)
+		if (g->discard[p][x] == copper || g->discard[p][x] == silver || g->discard[p][x] == gold)
 			numTreasures++;
 	
 	return numTreasures;
