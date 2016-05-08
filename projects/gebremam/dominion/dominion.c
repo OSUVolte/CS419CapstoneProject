@@ -759,9 +759,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
       adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand);
+      return 0;
 			
     case council_room:
       councilRoomRefactored(currentPlayer, state, handPos);
+      return 0;
 			
     case feast:
       //gain card with cost up to 5
@@ -882,9 +884,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case smithy:
       smithyRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case village:
       villageRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -939,6 +943,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case great_hall:
       greatHallRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case minion:
       //+1 action
