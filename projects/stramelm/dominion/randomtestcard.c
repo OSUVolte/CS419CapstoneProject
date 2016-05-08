@@ -7,16 +7,38 @@
 #include <string.h>
 #include <time.h>
 
-void print_mem(void const *vp, size_t n)
+void printMemory(void const *memLoc, int totalSize, int numBytes)
 {
-  // http://stackoverflow.com/questions/5349896/print-a-struct-in-c
-  unsigned char const *p = vp;
-  size_t i;
-  for (i=0; i<n; i++) {
-    printf("%02x%s", p[i],
-      i==0 ? "" : i % 16 == 15 ? "\n" : i % 4 == 3 ? " " : "");
+  unsigned const char *mem = memLoc;
+  int i;
+
+  if (numBytes > totalSize || numBytes < 0) {
+    numBytes = totalSize;
+
+}
+
+  for (i = 0; i < numBytes; i++) {
+    if ((i % 16) == 0 && i != 0) {
+      printf("\n");
+    }
+    if ((i % 4) == 0) {
+      printf(" ");
+    }
+    printf("%02x", mem[i]);
   }
-  putchar('\n');
+
+  printf("\n");
+  fflush(stdout);
+};
+
+void randomizeMemory(void *memLoc, int totalSize)
+{
+  unsigned char *mem = memLoc;
+  int i;
+
+  for (i = 0; i < totalSize; i++) {
+    mem[i] = rand() % 256;
+  }
 };
 
 int main(int argc, char *argv[]) {
@@ -28,27 +50,48 @@ int main(int argc, char *argv[]) {
   // set dominion cards - arbitrary for this test
   int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
     sea_hag, tribute, smithy};
-
+  int maxBytes = 32;
   int np, pn, hp; // number of players, player number, hand position
   int i, j, changed, seed;
   int r, calls = 0; // result of test smithy, number of calls to smithy
   int pass[] = {0, 0, 0, 0, 0, 0}, fail[] = {0, 0, 0, 0, 0, 0}, t; // test cnt
   int before, after; // ints used to assess pass/fail criteria
 
-  for (i = 0; i < 100; i++) { // 100 different sets of input conds to test
+  for (i = 0; i < 200; i++) { // 200 different sets of input conds to test
     t = -1;
-    np = rand() % (MAX_PLAYERS - 1)  + 2; // random number players
-    seed = rand() % 100 + 1; // random seed value between 1 and 100
 
-    // create, initialize, and copy game state
-    struct gameState* state = malloc(sizeof(struct gameState));
-    initializeGame(np, k, seed, state);
-    struct gameState* copy = malloc(sizeof(struct gameState));
-    memcpy(copy, state, sizeof(struct gameState));
+    struct gameState* state;
+    struct gameState* copy;
+
+    np = rand() % (MAX_PLAYERS - 1)  + 2; // random number players
 
     // random player number and hand position for this test
     pn = rand() % np; // randomnly choose player 1 to np (index 0 to np - 1)
     hp = rand() % 5; // randomnly choose hand position (0 to 4)
+
+    if (i % 2 == 0) { // gameState created via initializeGame() w/ random inputs
+
+      // create/initialize state
+      state = malloc(sizeof(struct gameState));
+      seed = rand() % 100 + 1; // random seed value between 1 and 100
+      initializeGame(np, k, seed, state);
+    }
+    else { // gameState completely random bytes (similar to lecture example)
+
+      // create/initialize state
+      state = malloc(sizeof(struct gameState));
+      randomizeMemory(state, sizeof(*state));
+
+      // the following statements help the segfaults go away
+      state->numPlayers = np;
+      state->deckCount[pn] = rand() % MAX_DECK + 1;
+      state->discardCount[pn] = rand() % MAX_DECK + 1;
+      state->handCount[pn] = rand() % MAX_HAND + 1;
+    }
+
+    // copy game state
+    copy = malloc(sizeof(struct gameState));
+    memcpy(copy, state, sizeof(struct gameState));
 
     // run the test
     r = smithyCardEffect(pn, hp, state);
@@ -65,8 +108,8 @@ int main(int argc, char *argv[]) {
         printf("FUNCTION SUCCESSFULLY COMPLETES\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
-        printf("state=\n");
-        print_mem(state, sizeof(*state));
+        printf("1st %d bytes of state=\n", maxBytes);
+        printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -85,8 +128,8 @@ int main(int argc, char *argv[]) {
         printf("BUT SMITHY TO BE DISCARDED, NET 2 IN HAND\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
-        printf("state=\n");
-        print_mem(state, sizeof(*state));
+        printf("1st %d bytes of state=\n", maxBytes);
+        printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -105,8 +148,8 @@ int main(int argc, char *argv[]) {
         printf("BUT SMITHY WILL BE ADDED BACK TO THE DISCARD, NET -2\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
-        printf("state=\n");
-        print_mem(state, sizeof(*state));
+        printf("1st %d bytes of state=\n", maxBytes);
+        printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -128,8 +171,8 @@ int main(int argc, char *argv[]) {
           printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
           printf("pn=%d\n", pn);
           printf("hp=%d\n", hp);
-          printf("state=\n");
-          print_mem(state, sizeof(*state));
+          printf("1st %d bytes of state=\n", maxBytes);
+          printMemory(state, sizeof(*state), maxBytes);
         }
       }
 
@@ -143,8 +186,8 @@ int main(int argc, char *argv[]) {
           printf("NO STATE CHANGE FOR OTHER PLAYER(S)\n");
           printf("pn=%d\n", pn);
           printf("hp=%d\n", hp);
-          printf("state=\n");
-          print_mem(state, sizeof(*state));
+          printf("1st %d bytes of state=\n", maxBytes);
+          printMemory(state, sizeof(*state), maxBytes);
         }
       }
     }
@@ -169,8 +212,8 @@ int main(int argc, char *argv[]) {
         printf("NO STATE CHANGE FOR VICTORY CARD PILE\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
-        printf("state=\n");
-        print_mem(state, sizeof(*state));
+        printf("1st %d bytes of state=\n", maxBytes);
+        printMemory(state, sizeof(*state), maxBytes);
       }
     }
 
@@ -194,8 +237,8 @@ int main(int argc, char *argv[]) {
         printf("NO STATE CHANGE FOR KINGDOM CARD PILE\n");
         printf("pn=%d\n", pn);
         printf("hp=%d\n", hp);
-        printf("state=\n");
-        print_mem(state, sizeof(*state));
+        printf("1st %d bytes of state=\n", maxBytes);
+        printMemory(state, sizeof(*state), maxBytes);
       }
     }
 

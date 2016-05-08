@@ -1133,10 +1133,9 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
       state->playedCardCount++;
     }
-	
+  
   //set played card to -1
   state->hand[currentPlayer][handPos] = -1;
-	
   //remove card from player's hand
   if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
     {
@@ -1281,7 +1280,7 @@ int playVillage(struct gameState *state, int handPos) {
   
   //+2 Actions
   state->numActions = state->numActions + 1;
-  
+
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
 

@@ -1,0 +1,65 @@
+
+RANDOM TEST: Adventurer card
+Test attempts: 50
+
+--- BEGIN TEST OUTPUT ---
+TEST 1 FAILED (1): Player 1 hand count = 106, expecting 81
+TEST 1 FAILED (2): Player 0 hand count = 260, expecting 213
+TEST 1 FAILED (3): Player 0 hand count = 92, expecting 75
+TEST 1 FAILED (4): Player 1 hand count = 272, expecting 229
+TEST 1 FAILED (5): Player 1 hand count = 73, expecting 61
+TEST 1 FAILED (6): Player 0 hand count = 269, expecting 236
+TEST 1 FAILED (7): Player 0 hand count = 46, expecting 38
+TEST 1 FAILED (8): Player 1 hand count = 261, expecting 235
+TEST 1 FAILED (9): Player 0 hand count = 8, expecting 6
+TEST 1 FAILED (10): Player 0 hand count = 253, expecting 227
+TEST 1 FAILED (11): Player 1 hand count = 59, expecting 6
+TEST 1 FAILED (12): Player 1 hand count = 37, expecting 14
+TEST 1 FAILED (13): Player 0 hand count = 104, expecting 50
+TEST 1 FAILED (14): Player 0 hand count = 49, expecting 28
+TEST 1 FAILED (15): Player 1 hand count = 132, expecting 86
+TEST 1 FAILED (16): Player 0 hand count = 46, expecting 34
+TEST 1 FAILED (17): Player 0 hand count = 159, expecting 113
+TEST 1 FAILED (18): Player 1 hand count = 37, expecting 31
+TEST 1 FAILED (19): Player 1 hand count = 173, expecting 133
+TEST 1 FAILED (20): Player 0 hand count = 25, expecting 20
+TEST 1 FAILED (21): Player 0 hand count = 177, expecting 143
+TEST 1 FAILED (23): Player 0 hand count = 173, expecting 147
+TEST 1 FAILED (24): Player 0 hand count = 364, expecting 316
+TEST 1 FAILED (25): Player 1 hand count = 158, expecting 141
+TEST 1 FAILED (26): Player 1 hand count = 390, expecting 333
+TEST 1 FAILED (27): Player 0 hand count = 143, expecting 127
+TEST 1 FAILED (28): Player 0 hand count = 377, expecting 340
+TEST 1 FAILED (29): Player 1 hand count = 113, expecting 105
+TEST 1 FAILED (30): Player 0 hand count = 31, expecting 3
+TEST 1 FAILED (31): Player 0 hand count = 13, expecting 6
+TEST 1 FAILED (32): Player 1 hand count = 68, expecting 34
+TEST 1 FAILED (33): Player 1 hand count = 9, expecting 7
+TEST 1 FAILED (34): Player 0 hand count = 92, expecting 57
+TEST 1 FAILED (35): Player 0 hand count = 177, expecting 131
+TEST 1 FAILED (36): Player 1 hand count = 96, expecting 72
+TEST 1 FAILED (37): Player 0 hand count = 215, expecting 167
+TEST 1 FAILED (38): Player 0 hand count = 99, expecting 78
+TEST 1 FAILED (39): Player 1 hand count = 240, expecting 196
+TEST 1 FAILED (40): Player 1 hand count = 94, expecting 75
+TEST 1 FAILED (41): Player 0 hand count = 255, expecting 215
+TEST 1 FAILED (42): Player 0 hand count = 81, expecting 65
+TEST 1 FAILED (43): Player 1 hand count = 269, expecting 227
+TEST 1 FAILED (44): Player 0 hand count = 53, expecting 47
+TEST 1 FAILED (45): Player 0 hand count = 266, expecting 230
+TEST 1 FAILED (46): Player 1 hand count = 23, expecting 19
+TEST 1 FAILED (47): Player 1 hand count = 257, expecting 225
+TEST 1 FAILED (48): Player 0 hand count = 524, expecting 456
+TEST 1 FAILED (49): Player 0 hand count = 235, expecting 213
+TEST 1 FAILED (50): Player 1 hand count = 92, expecting 24
+--- END TEST OUTPUT ---
+
+TEST RESULTS:
+Tests passed: 51
+Tests failed: 49
+Which tests failed how many times?
+Test 0: 49
+Test 1: 0
+
+--- END ADVENTURER RANDOM TESTER ---
+
