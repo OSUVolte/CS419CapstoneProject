@@ -65,13 +65,13 @@ int main (int argc, char** argv) {
 		// Set a random number of players
 		PlantSeeds(7);
 		numPlayers = (Random() * 2) + 2;
-		printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
+		//printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
 		
 		//Initialise gamestate
 		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game states
 		memset(&postGameState, 23, sizeof(struct gameState));   // clear the game states
 		r = initializeGame(numPlayers, k, seed, &preGameState); // initialize a new game	
-		printf("Gamestate initialised.\n");
+		//printf("Gamestate initialised.\n");
 		
 		//Randomise hands and decks in some way
 		for (p = 0; p < numPlayers; p++) {
@@ -82,7 +82,7 @@ int main (int argc, char** argv) {
 				preGameState.deck[p][preGameState.deckCount[p]] = kingdomCardToAdd;
 				preGameState.deckCount[p]++;
 			}
-			printf("Added kingdom cards to %d.\n", p);
+			//printf("Added kingdom cards to %d.\n", p);
 			// Add random number of other cards to deck
 			otherCardsToAdd = (Random() * 10);
 			for (x = 0; x < otherCardsToAdd; x++) {
@@ -90,7 +90,7 @@ int main (int argc, char** argv) {
 				preGameState.deck[p][preGameState.deckCount[p]] = otherCardToAdd;
 				preGameState.deckCount[p]++;
 			}	
-			printf("Added other cards to %d.\n", p);
+			//printf("Added other cards to %d.\n", p);
 			// If first player then add hand back to deck
 			if (p == 0) {
 				while (preGameState.handCount[p] > 0) {
@@ -103,23 +103,22 @@ int main (int argc, char** argv) {
 			}
 			// Shuffle deck
 			shuffle(p, &preGameState);
-			printf("Player %d hand shuffled.\n", p);
+			//printf("Player %d hand shuffled.\n", p);
 			// Draw random sized hand . this may need to be changed for a generic version
 			handSize = (Random() * 5);
 			for (x = 0; x < handSize; x++) {
 				drawCard(p, &preGameState);
 			}
-			printf("Hand drawn of size %d for player %d.\n", handSize, p);
+			//printf("Hand drawn of size %d for player %d.\n", handSize, p);
 		}
 
 		//Choose a random player to test card on
 		p = (Random() * (numPlayers - 1));
-		printf("Random player chosen %d.\n", p);
+		//printf("Random player chosen %d.\n", p);
 		
 		//Make it this player's turn
 		preGameState.whoseTurn = p;
-		printf("Now their turn next.\n");
-
+		
 		//Make sure player has card in hand, place in random position if not
 		for (x = 0; x < preGameState.handCount[p]; x++) {
 			if (preGameState.hand[p][x] == adventurer) {
@@ -131,7 +130,7 @@ int main (int argc, char** argv) {
 				preGameState.hand[p][handPos] = adventurer;
 			}
 		}
-		printf("Card now in hand.\n");
+		//printf("Card now in hand.\n");
 		
 		// Randomise number of cards left in deck to trigger any lines that involve shuffling
 		deckSize = Random() * preGameState.deckCount[p];
@@ -140,11 +139,11 @@ int main (int argc, char** argv) {
 			preGameState.discardCount[p]++;
 			preGameState.deckCount[p]--;
 		}	
-		printf("Deck randomised.\n");		
+		//printf("Deck randomised.\n");		
 
 		//Save copy of gamestate
 		memcpy(&postGameState, &preGameState, sizeof(struct gameState));
-		printf("Gamestate copied.\n");
+		//printf("Gamestate copied.\n");
 
 		//Check player has at least 2 treasures in their deck/discard pile
 		if (hasTreasures(&preGameState, p) < 2) {
