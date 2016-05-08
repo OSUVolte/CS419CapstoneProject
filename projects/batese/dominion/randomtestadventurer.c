@@ -58,11 +58,12 @@ int main (int argc, char** argv) {
 	numTests = 1;
 
 	for (i = 0; i < numTests; i++) {
-# if (noiseLevel > 3)
+# if (noiseLevel > 2)
 		printf("-----Beginning test %d of %d-----\n", i, numTests);
 # endif	
 		
 		// Set a random number of players
+		PlantSeeds(7);
 		numPlayers = (Random() * 3) + 1;
 		
 		//Initialise gamestate
