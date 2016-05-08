@@ -1,7 +1,21 @@
 /*
-File: randomtesadventurer.c
+File: randomtestcard.c
 Author: Elliot Bates
-Description: Random test for the adventurer card function in dominion.c
+Description: Random test for the villiage card function in dominion.c
+*/
+
+/*
+int villageCard(int currentPlayer, struct gameState *state, int handPos) {
+	  //+1 Card
+      drawCard(currentPlayer, state);
+			
+      //+2 Actions
+      state->numActions = state->numActions + 1;
+			
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+}
 */
 
 #include "dominion.h"
@@ -20,9 +34,7 @@ Description: Random test for the adventurer card function in dominion.c
 # define defaultTests 1000
 
 // Function prototypes
-int testStatesAdventurer (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p);
-int hasTreasures (struct gameState *g, int p);
-
+int testStatesVillage (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p);
 
 int main (int argc, char** argv) {
 
@@ -121,13 +133,13 @@ int main (int argc, char** argv) {
 		
 		//Make sure player has card in hand, place in random position if not
 		for (x = 0; x < preGameState.handCount[p]; x++) {
-			if (preGameState.hand[p][x] == adventurer) {
+			if (preGameState.hand[p][x] == village) {
 				handPos = x;
 				break;
 			}
-			if (x == preGameState.handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
+			if (x == preGameState.handCount[p] - 1) { // Will only get inside this statement if there is no village in hand
 				handPos = Random() * (preGameState.handCount[p] - 1);
-				preGameState.hand[p][handPos] = adventurer;
+				preGameState.hand[p][handPos] = village;
 			}
 		}
 		//printf("Card now in hand.\n");
@@ -151,8 +163,8 @@ int main (int argc, char** argv) {
 			printf("ABANDONING TEST %d: Player %d does not have at least 2 treasure cards in deck/discard pile.\n", i, p);
 # endif
 		} else {
-			//Call adventurer method
-			cardEffect(adventurer, 0, 0, 0, &postGameState, 0, 0);
+			//Call village method
+			cardEffect(village, 0, 0, 0, &postGameState, 0, 0);
 
 			//Test that only certain things have changed and that they have changed correctly
 			failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
@@ -168,8 +180,8 @@ int main (int argc, char** argv) {
 
 
 
-//Test states adventurer function
-int testStatesAdventurer (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p) {
+//Test states village function
+int testStatesVillage (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p) {
 	int x, y;				// counters
 	int failedTest = 0;
 	
@@ -179,10 +191,10 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 # endif	
 	for (x = 0; x < numPlayers; x++) {
 		if (x == p) {
-			//Check player's hand size has increased by 2
-			if (postGameState->handCount[x] == preGameState->handCount[x] + 2) {
+			//Check player's hand size has not increased
+			if (postGameState->handCount[x] == preGameState->handCount[x]) {
 # if (noiseLevel > 1)
-				printf("PASSED: Player %d hand count has increased by 2.\n", x);
+				printf("PASSED: Player %d hand count has not increased.\n", x);
 # endif	
 			} else {
 # if (noiseLevel > 0)
@@ -190,18 +202,21 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 				failedTest++;
 # endif	
 			}
-			//Check both of these new cards are treasures
-			if ((postGameState->hand[p][postGameState->handCount[p]-1] == copper || postGameState->hand[p][postGameState->handCount[p]-1] == silver ||
-					postGameState->hand[p][postGameState->handCount[p]-1] == gold) && (postGameState->hand[p][postGameState->handCount[p]-2] == copper ||
-					postGameState->hand[p][postGameState->handCount[p]-2] == silver || postGameState->hand[p][postGameState->handCount[p]-2] == gold)) {
-#if (noiseLevel > 1)
-				printf("PASSED: Both new cards added to player %d hand are treasures.\n", x);
-# endif	
-			} else {
+			//If deck did not need to be shuffled, check top card from deck is now in hand
+			if (preGameState->deckCount[x] > 0) {
+				for (y = 0; y < postGameState->handCount[x]) {
+					if (postGameState->hand[x][y] == preGameState->deck[x][preGameState->deckCount[x]-1]) {
+# if (noiseLevel > 1)
+						printf("PASSED: Hand now contains top card from deck.\n");
+# endf	
+						break;
+					}
+					if (y == postGameState->handCount[x] - 1) { // will only get inside here if top card from deck in not in hand
 # if (noiseLevel > 0)
-				printf("FAILED: One or both of the cards added to player %d hand are not treasures.\n", x);
-				failedTest++;
-# endif	
+						printf("FAILED: Top card from deck is not in hand.\n");
+# endif					
+					}
+				}
 			}
 			//Check buys are still the same
 			if (postGameState->numBuys == preGameState->numBuys) {
@@ -214,10 +229,10 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 				failedTest++;
 # endif	
 			}
-			//Check actions are still the same
-			if (postGameState->numActions == preGameState->numActions) {
+			//Check actions has increased by 2
+			if (postGameState->numActions == preGameState->numActions + 2) {
 # if (noiseLevel > 1)
-				printf("PASSED: numActions has not changed.\n");
+				printf("PASSED: numActions has increased by 2.\n");
 # endif	
 			} else {
 # if (noiseLevel > 0)
@@ -303,22 +318,4 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 	
 	// Returns the number of tests failed
 	return failedTest;
-}
-
-//Has more treasures function
-int hasTreasures (struct gameState *g, int p) {
-	int numTreasures = 0;
-	int x, y;
-	
-	// Find treasures in deck
-	for (x = 0; x < g->deckCount[p]; x++)
-		if (g->deck[p][x] == copper || g->deck[p][x] == silver || g->deck[p][x] == gold)
-			numTreasures++;
-	
-	// Find treasures in discard pile
-	for (x = 0; x < g->discardCount[p]; x++)
-		if (g->discard[p][x] == copper || g->discard[p][x] == silver || g->discard[p][x] == gold)
-			numTreasures++;
-	
-	return numTreasures;
 }
