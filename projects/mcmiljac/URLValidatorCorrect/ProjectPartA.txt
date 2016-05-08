@@ -1,0 +1,46 @@
+﻿Project Part A
+CS 362
+Christopher Johnson
+Jake McMillen
+Lauren Crees
+
+1. Explain testIsValid Function of UrlValidator test code.
+
+The testIsValid function first calls isValid on a couple of URLs that should be valid.  It then creates a URL from sets of test values that represent each part of a URL.  The structure of a URL is Scheme + Authority + Port + Path + Query with the scheme, port, and query being optional.  For each test part, each other part is appended and tested, meaning URLs for each combination of different parts is constructed and passed into isValid.  If a URL is determined valid by isValid it is printed and compared to the known answer.  The print status is set to false, so the do-while loop then increments and continues or exits.  If the print status was set to true, it would print periods for successful URLs and Xs for failed test URLs.
+
+
+2. Give how many total number of urls it is testing.
+ 
+The testIsValid() function runs through a total of 31,920 different URLs. As explained in number (3.), the URLs are made by concatenating 5 parts, in order. There are 8, 19, 7, 10, and 3 possible values for parts 1 through 5 respectively. The multiplicative principle of counting asserts that there are a total of 8 * 19 * 7 * 10 * 3 = 31,920 different URLs which can be constructed using the scheme in the testIsValid() function. 
+
+Note: The original analysis we did differed slightly. In the code of testIsValid(), there are 9 values for the first part of the URL rather than 8. If all values for each part were used this would give 9 * 19 * 7 * 10 * 3 = 35,910 different URLs.  We put a counter in the actual test code to track the number of URLs actually being tested, and it showed 31,920 rather than 35,910.  Further investigation of the test output showed that the 9th and final value for testUrlScheme, which is simply “” (empty string), is not used.  Adjusting the value from 9 to 8 in the product to account for this omission gives 31,920 as shown above, which matches the amount given by the counter in the code.
+
+
+3. Also, explain how it is building all the urls.
+
+There are 5 different parts used to build the strings that serve as test URLs. There are multiple possible values that each of the 5 parts can take on. Given a value for each part, they are concatenated together with fixed positions in order to construct a URL to test. A loop runs over all possible combinations using an “odometer strategy”, which uses the same principle as how an odometer in a car tracks mileage. Initially, the first four parts are held fixed while the 5th part cycles through each of its values. Each time the 5th part returns to its starting value, the 4th part cycles one value forward. When both the 4th and 5th parts return to their starting values simultaneously, the 3rd part cycles forward one value. When the 3rd, 4th, and 5th parts return to their starting values, the 2nd part cycles forward one value. Finally, when the 2nd through 5th parts all hit their starting values again at the same time, the 1st part cycles forward one value. This strategy will reach every possible combination with no duplication. Details on the possible values for each part are given below.
+
+	The 1st part - testUrlScheme: 8 values
+	The 2nd part - testUrlAuthority: 19 values
+	The 3rd part - testUrlPort: 7 values
+	The 4th part - testPath: 10 values 
+		Note - if testUrlPartsOptions is used in call of testIsValid() function rather than testUrlParts, then there are 15 values for the path
+	The 5th part - testUrlQuery: 3 values
+
+
+4. Give an example of valid url being tested and an invalid url being tested by testIsValid() method. 
+
+A valid URL is generated when all 5 of the parts used to construct it are valid. There are 3, 7, 5, 6, and 3 valid values for parts 1 through 5 respectively giving a total of
+3 * 7 * 5 * 6 * 3 = 1890 valid URLs that are tested. Some valid URLs are as follows:
+	http://www.google.com
+	ftp://go.cc:65535/t123
+	h3t://go.com:80/test1/
+Whenever 1 or more of the 5 parts used are themselves not valid, and invald URL results. There are a total of 31,920 - 1890 = 30,030 invalid URLs tested. Some examples include the following:
+	://1.2.3.4.:0/t123
+	3ht://go.com:80/test1/
+	http://256.256.256.256/../
+
+
+5. Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines. 
+
+In many regards, a real world test, such as URL Validator's testIsValid() is not that different from the tests we have been writing for the Dominion game in class. Perhaps the complexity level of testIsValid() might be greater than some of the unit tests we have written (it uses a variety of objects), however the concept used is quite simple. It merely employs a straight-forward combinatorial strategy to generate a set of test cases and then compares the result of applying the function it is testing to the expected result. This is quite similar to the way we have constructed some of our tests in class.

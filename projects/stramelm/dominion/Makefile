@@ -101,6 +101,39 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	echo "--------------------------------------------" >> unittestresults.out
 	gcov -f -b dominion.c >> unittestresults.out
 
+randomtestresults: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
+	echo "--------------------------------------------" > randomtestcard.out
+	echo "Stramel CS362 Assignment 3 Random Test Card Results" >> randomtestcard.out
+	echo "--------------------------------------------" >> randomtestcard.out
+	echo "" >> randomtestcard.out
+	
+	echo "--------------------------------------------" >> randomtestcard.out
+	echo "randomtestcard" >> randomtestcard.out
+	echo "--------------------------------------------" >> randomtestcard.out
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	randomtestcard >> randomtestcard.out
+	echo "" >> randomtestcard.out
+	echo "--------------------------------------------" >> randomtestcard.out
+	echo "gcov results" >> randomtestcard.out
+	echo "--------------------------------------------" >> randomtestcard.out
+	gcov -f -b dominion.c >> randomtestcard.out
+	
+	echo "--------------------------------------------" > randomtestadventurer.out
+	echo "Stramel CS362 Assignment 3 Random Test Adventurer Results" >> randomtestadventurer.out
+	echo "--------------------------------------------" >> randomtestadventurer.out
+	echo "" >> randomtestadventurer.out
+	
+	echo "--------------------------------------------" >> randomtestadventurer.out
+	echo "randomtestadventurer" >> randomtestadventurer.out
+	echo "--------------------------------------------" >> randomtestadventurer.out
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	randomtestadventurer >> randomtestadventurer.out
+	echo "" >> randomtestadventurer.out
+	echo "--------------------------------------------" >> randomtestadventurer.out
+	echo "gcov results" >> randomtestadventurer.out
+	echo "--------------------------------------------" >> randomtestadventurer.out
+	gcov -f -b dominion.c >> randomtestadventurer.out
+	
 clean:
 	rm -f *.out *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
 

@@ -22,7 +22,7 @@ call    0 returned 100%
         1:   15:	initializeGame(2, k, 10, &game);
 call    0 returned 100%
         1:   16:	memcpy(&afterCard, &game, sizeof(struct gameState));
-        1:   17:	playCouncil_Room(&afterCard, 1, 0);
+        1:   17:	playCouncil_Room(&afterCard);
 call    0 returned 100%
         -:   18:	
         1:   19:	printf("hand count: %d, After card played: %d (council room should increase the players hand by 4)\n", game.handCount[0], afterCard.handCount[0]);

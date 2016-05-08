@@ -1,6 +1,12 @@
 CFLAGS = -fpic -Wall -coverage -lm
 # fuck -Wall ^^
 
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o testHelperRand.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o testHelperRand.o $(CFLAGS)
+
+randomtestcard: randomtestcard.c dominion.o rngs.o testHelperRand.o
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o testHelperRand.o $(CFLAGS)
+
 cardtest1: cardtest1.c dominion.o rngs.o testHelper.o
 	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o testHelper.o $(CFLAGS)
 
@@ -27,7 +33,10 @@ unittest4: unittest4.c dominion.o rngs.o testHelper.o
 
 testHelper.o: testHelper.h testHelper.c
 	gcc -c testHelper.c -g $(CFLAGS)
-  
+ 
+testHelperRand.o: testHelperRand.h testHelperRand.c
+	gcc -c testHelperRand.c -g $(CFLAGS)
+ 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -69,12 +78,19 @@ unittestresults: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 uni
 	gcov dominion.c -b >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
+randomtestresults: randomtestadventurer randomtestcard
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c -f -b >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	./randomtestcard >> randomtestcard.out
+	gcov dominion.c -f -b >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
 
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4
+all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 randomtestadventurer randomtestcard
 
 
 clean:

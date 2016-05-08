@@ -80,3 +80,16 @@ rununittests:
 	./cardtest2 >> unittestresults.out
 	./cardtest3 >> unittestresults.out
 	./cardtest4 >> unittestresults.out
+	
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o \
+	rngs.o $(CFLAGS)
+	./randomtestadventurer > randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestcard.out: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard > randomtestcard.out
+	gcov -b dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out

@@ -1,0 +1,52 @@
+CS362 Final Project Part A
+Baljot Singh - singhba@oregonstate.edu 
+Dylan York Kosloff - kosloffd@oregonstate.edu 
+Erin Donnelly - donneler@oregonstate.edu
+
+Explain testIsValid Function of UrlValidator test code. It is available under aburasali/UrlValidator folder. (Baljot)
+
+testIsVaild() function first calls another function called testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES).
+
+The 2 arguments passed are:
+1.       testUrlParts which is array of arrays of objects and the objects inside this array are created    by using ResultPair class.
+2.       ALLOW_ALL_SCHEMES is a member of UrlValidator class which allows all valid format schemes to pass validation
+
+This function testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES) creates a new UrlValidator object and then asserts that it gives correct result for 2 valid urls, http://www.google.com" and http://www.google.com/".
+
+After that it starts a do/while loop. Inside do/while it loops through the testUrlParts and checks all the parts of url if individual part is valid or not through ResultPair object and store the results inside Boolean variable “expected”. It also concatenates all the individual parts of url using testBuffer. (See Question 3 for more details)
+
+Outside for loop it tests isValid method by passing the full url and stores the result in “result” variable. If isValid returns true, then it prints the url and asserts that “expected” and “result” are equal.
+           	If the printStatus is set to true it prints the output accordingly. 
+
+setUp() function sets each index of testPartsIndex to 0.
+
+Give how many total number of urls it is testing.
+	31,920 urls are tested. This is 8 schemes * 19 authority * 7 port * 10 path * 3 query. We would expect that there would actually be 35,910 urls tested based on the fact that we know there are actually 9 schemes, not 8. The problem is that the while-loop with testIsValid only continues until the incrementTestPartsIndex function returns false. The incrementTestPartsIndex function returns not max Index. In other words, we should continue until we have hit the max index of the first part (schemes). And that is exactly what it does, it returns false once we hit the max index of the schemes and thus the last scheme is never tested.
+
+Also, explain how it is building all the urls.
+	The urls are primarily built within the for-loop of the testIsValid function. It takes in a testObjects array of objects, which is made up of arrays of the five different url parts – the scheme, authority, port, path and query parts. The testIsValid function is called with a testUrlParts as the testObjects. The testUrlParts is declared to equal {testUrlScheme, testUrlAuthority, testUrlPort, testPath, testUrlQuery}.
+ 
+There is a while-loop that continue until incrementTestPartsIndex(testPartsIndex, testObjects) returns false. On the first while-loop, the testPartsIndex array is equal to {0, 0, 0, 0, 0}.  The incrementTestPartIndex function starts runs a for-loop that runs through testPartsIndex backwards. For the last part (which is the query), if the index for that part (contained in testPartsIndex array) is less the number of possible query parts – 1 then the index in testPartsIndex array is increment and carry is set to false.  Else (meaning we cannot increment the parts index anymore) then the index of the part is reset and carry is set to true. Therefore, we increment the index of the last part until we have reached its max index, and then we carry over to the next to last part until we have reached its max index and so on. The function incrementTestPartsIndex  will return false when the index of the first item is at its maximum index.
+ 
+There is a for-loop that occurs 0 to the length of the testPartsIndex array, which is always 5. It uses the testPartsIndexIndex provided by the for-loop to iterate through the indices provided by the testPartsIndex array. In other words, the testPartsIndex array contains 5 indices each corresponding to the index we will use from the testObjects. So the testPartsIndex[0] is the index of the scheme will we use, which is contained in testObjects[0].
+ 
+It then adds the part to the testBuffer that is specified by the for-loop, and then adds the parts validity to the testBuffer’s current validity. The for-loop is used to add all the parts of the url and all their validities.
+
+Give an example of valid url being tested and an invalid url being tested by testIsValid() method. 
+	
+The url http://255.com/../?action=view is an invalid url that is tested with the current configuration.  Each of the values in the testUrlParts have two sections: item, and valid.  Each part of the url is selected from the item section of the following arrays within the testUrlParts array:
+testUrlScheme: 		( “http://”, true)
+		testUrlAuthority: 	( “255.com”, true)
+		testUrlPort:		(“” [an empty string], true)
+		testPath:		(“ /../”, false )
+		testUrlQuery:		(“?action=view”, true)
+One can see that the testPath value /../ is invalid for a url as evidenced by the false notation in the valid section.  
+
+The point which these values are selected is at the end of the do-while loop, where testPartsIndex[] is incremented from [ 0, 6, 3, 3, 2 ] to [ 0, 6, 3, 4, 0 ].  Once the loop begins again, a for-loop goes through each index value in the testPartsIndex array and appends the corresponding testUrlParts.item value to the testBuffer as described above. At this point the boolean variable expected is combined with the testUrlParts.valid value in a bitwise ‘and’ operation, which will change the value of expected to false if  testUrlParts.valid is false for that item, which is what occurs after appending the value “/../” to the testBuffer.  When fully built, the testBuffer is converted to a string and run through the isValid() method and the result is compared to the expected value (false).  
+
+A valid url would be built in just the same way, although it would include valid values of true for every testUrlParts.item that was added to the buffer.  An example would be ftp://go.cc:80/$23?action=edit&mode=up.  Since each of these testUrlParts.valid values are true, the expected variable would never change from its initial value of true.  Again when it is formed into a string and tested, the result of that test is compared with expected, so the assertion outcome really is the same as with an invalid url because you expect it to be valid and you’re testing the result of isValid() against that expectation.
+
+
+
+Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines. 
+Conceptually there is not much difference from the unit tests which we wrote, as we were testing each aspect of the effects of the cards, just as the tester here is testing each section of a url.  The complexity, however, is much greater.  This was clearly built as a long-term testing module, as a lot of thought and effort went into creating a flexible, maintainable test suite, where many of our tests were simple if-then statements, for which each statement would basically need to be updated or deleted and rewritten if we wanted to change the values we were testing. The tester allows for a large amount of test cases by utilizing combinations of the various parts of the url. This is a great way to create a large amount of test cases without too much manual creation of the test cases.
