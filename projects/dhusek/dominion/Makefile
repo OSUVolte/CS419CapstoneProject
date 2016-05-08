@@ -66,6 +66,38 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	gcov dominion.c -b -f >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
+randomtestadventurer: randomtestadventurer.c dominion.o interface.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o interface.o rngs.o $(CFLAGS)
+
+randomtestadventurer.out: randomtestadventurer
+	echo "Running Random Tests on Adventurer Card..." > randomtestadventurer.out
+	echo "randomtestadventurer.c:" >> randomtestadventurer.out
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c -b -f >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestcard: randomtestcard.c dominion.o interface.o rngs.o
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o interface.o rngs.o $(CFLAGS)
+
+randomtestcard.out: randomtestcard
+	echo "Running Random Tests on Smithy Card..." > randomtestcard.out
+	echo "randomtestcard.c:" >> randomtestcard.out
+	./randomtestcard >> randomtestcard.out
+	gcov dominion.c -b -f >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+
+randomtest: randomtestadventurer randomtestcard
+	echo "Running Random Tests on Adventurer Card..." > randomtestadventurer.out
+	echo "randomtestadventurer.c:" >> randomtestadventurer.out
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c -b -f >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	echo "Running Random Tests on Smithy Card..." > randomtestcard.out
+	echo "randomtestcard.c:" >> randomtestcard.out
+	./randomtestcard >> randomtestcard.out
+	gcov dominion.c -b -f >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
@@ -82,5 +114,5 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2
 	rm -f *.gcda
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe testBuyCard testBuyCard.exe unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe unittestresults.out
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe testBuyCard testBuyCard.exe unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe unittestresults.out randomtestadventurer randomtestadventurer.exe randomtestadventurer.out randomtestcard randomtestcard.exe randomtestcard.out
 	rm -rf *.dSYM
