@@ -1,0 +1,76 @@
+﻿CS362 Spring 2016 Group Project
+
+
+Luke Brewbaker
+John Brown -- brownjoh@oregonstate.edu
+Gunnar Martin -- martigun@oregonstate.edu
+
+
+-- Final Project Part A --
+
+
+1) Explain testIsValid Function of UrlValidator test code.  
+
+
+The testIsValid function is a member of the URLValidatorTest class which is itself an extension of the TestCase class. The version of testIsValid which takes no arguments can be called first.  This version of testIsValid passes the testUrlParts data to the version of testIsValid which takes arguments.  
+
+
+The gist of the validator is that URL tests are built by looping iterating through all the permutations of the URL pieces to form individual URLS.  If the URL pieces are all expected to be valid (true), then we expect the entire URL to be valid.  Conversely if any of the URL pieces have a false value, we expect the URL to be invalid.  This true/false value is then checked against the actual true/value returned by that URL from the actual isValid function.
+
+
+From a technical perspective, the data in the testUrlParts object is iterated through using an array of integers called testPartsIndex. Within the testIsValid function, a for loop is nested within a while loop to effectively iterate through every permutation of testUrlParts.
+
+
+2) Give how many total number of urls it is testing.
+
+
+There are 5 result pair “pieces” that are permutated to build URLs.  These pieces are always combined in order and also each include a blank case where nothing is appended to the URL being built.
+
+
+(For UrlValidator.ALLOW_ALL_SCHEMES option)
+testUrlScheme: 9 elements
+testUrlAuthority: 19 elements
+testUrlPort: 7 elements
+testPath: 10 elements
+testUrlQuery: 3 elements
+
+
+Multiplying the elements together to allow for all possible permutations results in 35,910 URLs.
+
+
+
+3) Explain how it is building all the urls.
+
+
+scheme+authority+port+path+query
+
+
+The testUrlParts array is basically a 2d array containing various pieces of the URL that will be permutated to form different URL test cases.  Each of the URL pieces is made up of a result-pair object.  The result-pair objects include a string of characters (or an empty string) and a true/false value.  The character string is the actual URL piece while the truth value indicates whether this is a valid piece of a URL. The placeholder for the current result-pair elements being used is the testPartsIndex array.  This array simply contains 5 integers that start at zero.  We retrieve the result-pair element at each of these indices first, then increment the last integer by one and repeat.  After the last integer reaches the max length for the array, it is reset to 0 and the second to last element is incremented by one.  After all of the indices have reached maximum length, the test terminates.  For each iteration, the url is built by appending the URL pieces to a buffer, updating the expected truth value of the URL to false if any of the pieces are invalid and stringifying the completed URL.  
+
+
+
+
+4) Give an example of a valid url being tested by testIsValid() method.
+
+
+http://www.google.com:80/test1?action=view
+ftp://go.com:0/t123 
+
+
+Truth values of all URLs are evaluated on an AND basis.  Any false results in an expected false from the isValid method. Since all of the pieces of the above URL were marked as valid in the test, the entire concatenated URL is valid.
+
+
+5) Give an example of an invalid url being tested by testIsValid() method.
+
+
+3ht://go.com:-1
+http://255.255.255.255:65a/test1/
+
+Truth values of all URLs are evaluated on an AND basis.  Any false results in an expected false from the isValid method. Since the scheme of “3ht://” was marked as invalid in the test, no matter what the rest of the URL was, this test would return invalid.
+
+
+
+6) Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines.
+
+
+In terms of overall concept, I believe the class unit tests and the URL Validator are similar.  For the card tests, we established which game state values should be after certain inputs were provided to a function and we then checked to see if this was actually the case.  This is very similar to what the testIsValid function is doing. In terms of complexity, the URL Validator is much more complicated than the unit tests we set out to write.  The URL validator’s test input is built by combining various bits of URLs using a looping structure which results in many more test cases than what was generated for the Dominion tests.
