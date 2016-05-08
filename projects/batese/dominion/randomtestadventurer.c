@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 		printf("Bad agruments.\n");
 		exit(1);
 	}*/
-	numTests = 1;
+	numTests = 3;
 
 	for (i = 1; i <= numTests; i++) {
 # if (noiseLevel > 2)
@@ -92,16 +92,16 @@ int main (int argc, char** argv) {
 			}	
 			printf("Added other cards to %d.\n", p);
 			// If first player then add hand back to deck
-			/*if (p == 0) {
+			if (p == 0) {
 				while (preGameState.handCount[p] > 0) {
 					printf("Handcount = %d.\n", preGameState.handCount[p]);
 					preGameState.deck[p][preGameState.deckCount[p]] = preGameState.hand[p][preGameState.handCount[p] - 1];
 					preGameState.handCount[p]--;
-					//preGameState.hand[p][preGameState.handCount[p]] = -1;
+					preGameState.hand[p][preGameState.handCount[p]] = -1;
 					preGameState.deckCount[p]++;
 				}
 				printf("Removed card from hand of p0.\n");
-			}*/
+			}
 			// Shuffle deck
 			shuffle(p, &preGameState);
 			printf("Player %d hand shuffled.\n", p);
