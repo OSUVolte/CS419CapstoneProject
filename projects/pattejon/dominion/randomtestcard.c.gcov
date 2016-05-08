@@ -1,0 +1,130 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* ---------------------------------------------------------------------
+        -:    2:* Jon Patterson
+        -:    3:* Assignment 4
+        -:    4:* randomtestcard.c
+        -:    5:* village card random tests
+        -:    6:*---------------------------------------------------------------------*/
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:#include <time.h>
+        -:   14:#include <stdlib.h>
+        -:   15:
+        -:   16:// set NOISY_TEST to 0 to remove printfs from output
+        -:   17:#define NOISY_TEST 1
+        -:   18:// set ASSERTS_ON to 0 to disable asserts for investigating gcov
+        -:   19:#define ASSERTS_ON 0
+        -:   20:// let's just define number of tests here
+        -:   21:#define NUM_TESTS 1000
+        -:   22:
+        1:   23:int main() {
+        1:   24:    int seed = 1000;
+        -:   25:    int numPlayer;
+        -:   26:    int p, r, i, test;
+        1:   27:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   28:               , remodel, smithy, village, baron, great_hall};
+        -:   29:    struct gameState G;
+        -:   30:    struct gameState T;
+        -:   31:    int error;
+        1:   32:    int num_errors = 0;
+        1:   33:    srand(time(NULL)); // set random seed prior to going into loop
+     1001:   34:    for( test = 0; test < NUM_TESTS; test++ ){
+        -:   35:        // In the previous assignment this was a much shorter test but it had good coverage
+        -:   36:        // For this assignment I'm going to try and add more cases and then ensure the 
+        -:   37:        // random testing component keeps up the good coverage
+     1000:   38:        seed = rand(); // randomize
+     1000:   39:        numPlayer = (rand() % 3) + 2; // set randome number of players, minimum 2
+        -:   40:
+     1000:   41:        error = 0; // We're going to track the number of tests that have errors, just for fun
+     1000:   42:        memset(&G, 23, sizeof(struct gameState));
+     1000:   43:        memset(&T, 23, sizeof(struct gameState));
+        -:   44:
+     1000:   45:        r = initializeGame(numPlayer, k, seed, &G);
+        -:   46:        // ensure that the values of all of the supply cards are are at least 2
+     1000:   47:        int j = 0;
+        -:   48:        // start with the first player, since they're active
+     1000:   49:        p = 0;
+        -:   50:        // make a random card in hand a village
+     1000:   51:        int temp = rand() % G.handCount[p];
+    26000:   52:        for(j = 0; j < 25; j++){
+    25000:   53:            G.supplyCount[j] = 2;
+        -:   54:        }
+     1000:   55:        printf ("Testing village for playCard(%d, 0, 0, 0, gameState):\n", temp);
+     1000:   56:        printf("Testing for village card player %d:\n", p);
+     1000:   57:        int testActions = G.numActions;
+     1000:   58:        int testBuys = G.numBuys;
+     1000:   59:        int testHandCount = G.handCount[p];
+     1000:   60:        int testDeckCount = G.deckCount[p];
+        -:   61:
+        -:   62:        //assign the card
+     1000:   63:        G.hand[p][temp] = village;
+        -:   64:        // Copy the gameState to another place to test so we can compare
+     1000:   65:        memcpy(&T, &G, sizeof(struct gameState));
+        -:   66:        //play the village card now
+     1000:   67:        playCard(temp, 0, 0, 0, &G);
+        -:   68:
+        -:   69:        //Upon execution, adjust test values
+        -:   70:        //test actions should be one more
+     1000:   71:        testActions++;
+        -:   72:        //Buys unchanged
+        -:   73:        //net hand count should be unchanged
+        -:   74:        //deck count should be 1 less
+     1000:   75:        testDeckCount -= 1;
+        -:   76:
+        -:   77:        #if (NOISY_TEST == 1)
+     1000:   78:        printf("Test actions updated correctly:\n");
+     1000:   79:        printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
+     1000:   80:        printf("Test buys updated correctly:\n");
+     1000:   81:        printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
+     1000:   82:        printf("Test deck updated correctly:\n");
+     1000:   83:        printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
+     1000:   84:        printf("Test hand updated correctly:\n");
+     1000:   85:        printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
+        -:   86:        #endif
+        -:   87:        #if (ASSERTS_ON == 1)
+        -:   88:        assert(G.numActions == testActions);
+        -:   89:        assert(G.numBuys == testBuys);
+        -:   90:        assert(G.deckCount[p] == testDeckCount);
+        -:   91:        assert(G.handCount[p] == testHandCount);
+        -:   92:        #endif
+     1000:   93:        if (G.numActions != testActions) error = 1;
+     1000:   94:        if (G.numBuys != testBuys) error = 1;
+     1000:   95:        if (G.deckCount[p] != testDeckCount ) error = 1;
+     1000:   96:        if (G.handCount[p] != testHandCount ) error = 1;
+        -:   97:
+        -:   98:        //Some additional sanity tests for other players
+     3015:   99:        for(p = 1; p < numPlayer; p++){
+        -:  100:            #if NOISY_TEST
+     2015:  101:            printf("Test player %d unchanged:\n", p);
+     2015:  102:            printf("Deck = %d, Expected = %d\n", G.deckCount[p], T.deckCount[p]);
+     2015:  103:            printf("Hand = %d, Expected = %d\n", G.handCount[p], T.handCount[p]);
+        -:  104:            #endif
+        -:  105:            #if (ASSERTS_ON == 1)
+        -:  106:            assert(G.deckCount[p] == T.deckCount[p]);
+        -:  107:            assert(G.handCount[p] == T.handCount[p]);
+        -:  108:            #endif 
+     2015:  109:            if(G.deckCount[p] != T.deckCount[p]) error = 1;
+     2015:  110:            if(G.handCount[p] != T.handCount[p]) error = 1;
+        -:  111:        }
+     1000:  112:        if(error == 1){
+     1000:  113:            num_errors++;
+        -:  114:        }
+        -:  115:
+        -:  116:    }
+        1:  117:    printf("Number of tests run: %d\n", test);
+        1:  118:    printf("Number of tests that encountered errors: %d\n", num_errors);
+        1:  119:    if(num_errors > 0){
+        1:  120:        printf("Errors were encountered.\n");
+        1:  121:        return 1;
+        -:  122:    }
+        -:  123:
+    #####:  124:    return 0;
+        -:  125:}
