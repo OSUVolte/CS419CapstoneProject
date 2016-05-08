@@ -221,7 +221,7 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 				for (y = 0; y < postGameState->handCount[x]; y++) {
 					if (postGameState->hand[x][y] == preGameState->hand[x][y]) {
 # if (noiseLevel > 1)
-						prtinf("PASSED: Player %d card in hand position %d has not changed.\n", x, y);
+						printf("PASSED: Player %d card in hand position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
@@ -245,7 +245,7 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 				for (y = 0; y < postGameState->deckCount[x]; y++) {
 					if (postGameState->deck[x][y] == preGameState->deck[x][y]) {
 # if (noiseLevel > 1)
-						prtinf("PASSED: Player %d card in deck position %d has not changed.\n", x, y);
+						printf("PASSED: Player %d card in deck position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
@@ -269,7 +269,7 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 				for (y = 0; y < postGameState->discardCount[x]; y++) {
 					if (postGameState->discard[x][y] == preGameState->discard[x][y]) {
 # if (noiseLevel > 1)
-						prtinf("PASSED: Player %d card in discard position %d has not changed.\n", x, y);
+						printf("PASSED: Player %d card in discard position %d has not changed.\n", x, y);
 # endif	
 					} else {
 # if (noiseLevel > 0)
