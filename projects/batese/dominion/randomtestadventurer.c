@@ -94,7 +94,6 @@ int main (int argc, char** argv) {
 			// If first player then add hand back to deck
 			if (p == 0) {
 				while (preGameState.handCount[p] > 0) {
-					printf("Handcount = %d.\n", preGameState.handCount[p]);
 					preGameState.deck[p][preGameState.deckCount[p]] = preGameState.hand[p][preGameState.handCount[p] - 1];
 					preGameState.handCount[p]--;
 					preGameState.hand[p][preGameState.handCount[p]] = -1;
@@ -106,13 +105,11 @@ int main (int argc, char** argv) {
 			shuffle(p, &preGameState);
 			printf("Player %d hand shuffled.\n", p);
 			// Draw random sized hand . this may need to be changed for a generic version
-			if (p != 0) {
-				handSize = (Random() * 5);
-				for (x = 0; x < handSize; x++) {
-					drawCard(p, &preGameState);
-				}
-				printf("Hand drawn of size %d for player %d.\n", handSize, p);
+			handSize = (Random() * 5);
+			for (x = 0; x < handSize; x++) {
+				drawCard(p, &preGameState);
 			}
+			printf("Hand drawn of size %d for player %d.\n", handSize, p);
 		}
 
 		//Choose a random player to test card on
@@ -121,7 +118,7 @@ int main (int argc, char** argv) {
 		
 		//Make it this player's turn
 		preGameState.whoseTurn = p;
-		printf("Now their turn next");
+		printf("Now their turn next.\n");
 
 		//Make sure player has card in hand, place in random position if not
 		for (x = 0; x < preGameState.handCount[p]; x++) {
