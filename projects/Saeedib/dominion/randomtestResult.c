@@ -1,32 +1,9010 @@
 
 
-Testing card: Smithy
+Testing card: Adventurer
 
 Test 1: Checking the function.
-smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Test 1 failed, it needs to return: 7
-Test 2: Discard Pile.
-Discard count is: 0.
-Test 2 failed, discard count is not correct.
+This should return Adventurer new coins in card: 0 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 0 (should be 8)
+Test 1 Passed
 
 
-Testing card: Smithy
+Testing card: Adventurer
 
 Test 1: Checking the function.
-smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Test 1 failed, it needs to return: 7
-Test 2: Discard Pile.
-Discard count is: 0.
-Test 2 failed, discard count is not correct.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 5 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 7 (should be 8)
+Test 1 Passed
 ___________________________________________________
 Coverage: 
 File 'randomtestcard.c'
-Lines executed:93.75% of 32
+Lines executed:21.74% of 23
 Creating 'randomtestcard.c.gcov'
 
 File 'randomtestadventurer.c'
-Lines executed:93.75% of 32
+Lines executed:100.00% of 30
 Creating 'randomtestadventurer.c.gcov'
 
