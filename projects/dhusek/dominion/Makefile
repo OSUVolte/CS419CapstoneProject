@@ -114,5 +114,5 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2
 	rm -f *.gcda
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe testBuyCard testBuyCard.exe unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe unittestresults.out randomtestadventurer randomtestadventurer.exe randomtestadventurer.out randomtestcard randomtestcard.exe randomtestcard.out
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe testDrawCard testDrawCard.exe badTestDrawCard badTestDrawCard.exe testBuyCard testBuyCard.exe unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe unittestresults.out randomtestadventurer randomtestadventurer.exe randomtestcard randomtestcard.exe
 	rm -rf *.dSYM

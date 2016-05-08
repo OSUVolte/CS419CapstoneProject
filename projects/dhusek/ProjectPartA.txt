@@ -1,5 +1,5 @@
 Project Part A
-Kristen Dhuse	Benjamin Fisher		David Hite
+Kristen Dhuse		Benjamin Fisher		David Hite
 
 1) Explain testIsValid Function of UrlValidator test code.
 * The testIsValid function calls the overloaded version of testIsValid function.
@@ -12,11 +12,11 @@ UrlAuthorities, port numbers, paths, and queries.
 * The function then enters a doÖ while loop
 * In the do while loop it enters a for loop(iterates over an int array called testPartsIndex) and then builds 
 a url using the testUrlParts object 
-* The code then tests if the url is valid, using the UrlValidatorís isValid method and compares against 
+* The code then tests if the url is valid, using the UrlValidator’s isValid method and compares against 
 the expected result.
 * Finally the do while loop exits when the call to incrementTestPartsIndex returns false.
-* The incrementTestPartsIndex methodís job is to increment the values in testPartsIndex array indices in a 
-way to generate the unique random url but make sure the indices are valid with respect to the ResultPair arrayís. 
+* The incrementTestPartsIndex method’s job is to increment the values in testPartsIndex array indices in a 
+way to generate the unique random url but make sure the indices are valid with respect to the ResultPair array’s. 
 They are eventually used to access in the Object array.
  
 The UrlValidator class uses the singleton design pattern to return the default settings for the class object.
@@ -37,7 +37,7 @@ We put a counter next to urlVal.isValid and found that it was called 31,922 time
 There are several arrays of ResultPair objects that represent elements of the URL,
 namely the scheme, authority, port, path, and path options. These elements are put
 together in every combination to produce valid and invalid URLs. The validity is 
-determined by the boolean values in each elementís ResultPair.
+determined by the boolean values in each element’s ResultPair.
 The int array testPartsIndex stores the indices of the elements that are referenced 
 in the the ResultPairs arrays to form the urls.  With every call to 
 incrementTestPartsIndex one int element in testPartsIndex is incremented. This allows 
@@ -62,7 +62,7 @@ complexity)? Explain in few lines.
 
 No, this is not very different from the unit tests and card tests that we wrote because they
 are not truly random.  In our unit tests and card tests, we were testing specific inputs and
-game configurations.  In URL Validatorís testIsValid(), URLs are being pieced together from
+game configurations.  In URL Validator’s testIsValid(), URLs are being pieced together from
 the hard-coded scheme, authority, port, path, and query options to test all of the permutations
 of these options.  In both testing scenarios, inputs were being specifically chosen for the tests
 to cover a broad area of the possible inputs instead of being random. In both cases the expected
