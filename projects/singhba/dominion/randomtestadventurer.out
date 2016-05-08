@@ -1,0 +1,7168 @@
+randomtestadventurer.c test results
+----------------- Testing Card: adventurer ----------------
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 10 and after 6
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 4
+Deck Count before: 10 and after 5
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 5 and after 3
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 10 and after 7
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 3
+Deck Count before: 5 and after 1
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 1
+Deck Count before: 10 and after 8
+
+FAILED: Played Card Count.
+EXPECTED: 1 , ACTUAL 0
+
+FAILED: Discard pile and Deck count.
+Discard Pile before: 0 and after 2
+Deck Count before: 5 and after 2
+
+ >>>>> SUCCESS: Testing complete adventurer <<<<<
+
+Function 'updateCoins'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:92.31% of 13
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:6.52% of 184
+Branches executed:14.84% of 155
+Taken at least once:2.58% of 155
+Calls executed:7.69% of 52
+
+Function 'mineEffect'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 14
+Taken at least once:0.00% of 14
+Calls executed:0.00% of 6
+
+Function 'feastEffect'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'councilEffect'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'adventurerEffect'
+Lines executed:94.44% of 18
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:66.67% of 3
+
+Function 'smithyEffect'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:90.32% of 62
+Branches executed:95.65% of 46
+Taken at least once:82.61% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:24.24% of 561
+Branches executed:25.66% of 417
+Taken at least once:17.27% of 417
+Calls executed:13.13% of 99
+Creating 'dominion.c.gcov'
+
