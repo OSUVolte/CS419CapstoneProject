@@ -48,7 +48,13 @@ cardTest3: cardtest3.c dominion.o rngs.o
 cardTest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
 
-unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4
+randomTest:
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
+
+randomTestAdventurer:
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4 randomTest randomTestAdventurer
 	./unittest1 &> unittestresult.out
 	./unittest2 >> unittestresult.out
 	./unittest3 >> unittestresult.out
@@ -57,8 +63,14 @@ unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2
 	./cardtest2 >> unittestresult.out
 	./cardtest3 >> unittestresult.out
 	./cardtest4 >> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+	./randomtestcard &> randomtestcard.out
+	./randomtestadventurer &> randomtestadventurer.out
+
+	gcov dominion.c >> randomtestcard.out
+	gcov dominion.c >> randomtestadventurer.out
+
+	cat dominion.c.gcov >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestadventurer.out
 
 
 player: player.c interface.o
