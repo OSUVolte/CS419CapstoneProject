@@ -59,6 +59,8 @@ int main() {
         Game.whoseTurn = player;
 
         int randomHand = rand() % MAX_HAND;
+        //printf("random hand: %d\n", randomHand);
+        Game.handCount[player] = randomHand;
 
         //fill this random hand to ensure no errors;
         for (i = 0; i < randomHand; i++)
@@ -72,12 +74,12 @@ int main() {
         cardEffect(smithy, 0, 0, 0, &Game, 0, 0);
 
         int finalHand = Game.handCount[player];
-
-        if (randomHand != finalHand + 3)
+        //printf("final hand: %d\n", finalHand);
+        if (randomHand != finalHand - 2)
             failed++;
 
         testCount++;
     }
 
-    printf("Num Failed: %d", failed);
+    printf("Num Failed: %d\n", failed);
 }
