@@ -1,0 +1,334 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:*Alex Marsh
+        -:    3:*CS362
+        -:    4:*randomtestadventurer.c
+        -:    5:*Last Modified: May 7, 2016
+        -:    6:*
+        -:    7:*This is a random test for the implementation of the adventurer card in dominion.c.  Format and some code taken from 'betterTestDrawCard.c'
+        -:    8:*
+        -:    9:*The adventure card allows the player to reveal cards from their
+        -:   10:* deck until they reveal 2 treasure cards. The two treasure cards
+        -:   11:*are then put in the players hand and the other revealed cards are 
+        -:   12:* put in the discard pile
+        -:   13:*
+        -:   14:*Include the following lines in your makefile:
+        -:   15:*
+        -:   16:*randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+        -:   17:*       gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+        -:   18:*/
+        -:   19:
+        -:   20:#include "dominion.h"
+        -:   21:#include "dominion_helpers.h"
+        -:   22:#include "interface.h"
+        -:   23:#include <string.h>
+        -:   24:#include <stdio.h>
+        -:   25:#include <assert.h>
+        -:   26:#include "rngs.h"
+        -:   27:
+        -:   28:#define TESTCARD "adventurer"
+        -:   29:int countHandCoins(int player, struct gameState *game);
+        -:   30:
+        -:   31:
+function main called 1 returned 100% blocks executed 85%
+        1:   32:int main() {
+        -:   33:    int i, coins;
+        -:   34:    int currPlayer, otherPlayer;
+        1:   35:    int seed = 1000;
+        1:   36:    int numPlayers = 2;
+        1:   37:    int newCards = 2, discarded = 1;
+        1:   38:    int num_copper = 60;
+        1:   39:    int num_silver = 40;
+        1:   40:    int num_gold = 30;
+        1:   41:    int choice1 = 0, choice2 = 0, choice3 = 0;
+        1:   42:    int handpos, bonus = 0;
+        1:   43:    int errors = 0;
+        1:   44:    int testTreasureCount = 0, realTreasureCount = 0;
+        -:   45:    int testHandCount, realHandCount;
+        1:   46:    int handIndex, shuffledCards = 0;
+        -:   47:
+        -:   48:
+        1:   49:    int numOfTests = 50;
+        1:   50:    int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   51:	       remodel, smithy, village, baron, great_hall};
+        -:   52:
+        -:   53:  struct gameState G, expected, played;
+        -:   54:
+        1:   55:  printf("--------------Testing adventurer Randomly--------------\n");
+call    0 returned 100%
+        -:   56:    
+        1:   57:  srand(time(NULL)); //set rand
+call    0 returned 100%
+call    1 returned 100%
+        -:   58:     
+        1:   59:  SelectStream(2);
+call    0 returned 100%
+        1:   60:  PutSeed(3);    
+call    0 returned 100%
+        -:   61:    
+     2001:   62:  for(i=0; i<2000; i++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   63:    // initialize game environment & begin testing
+     2000:   64:    initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+     2000:   65:    memcpy(&played, &G, sizeof(struct gameState));
+        -:   66:    
+        -:   67:    //initialize a random game 
+     2000:   68:    currPlayer = rand() % numPlayers; //get random player
+call    0 returned 100%
+     2000:   69:    if(currPlayer == 0){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+      992:   70:      otherPlayer = 1;   
+        -:   71:    }
+        -:   72:    else
+     1008:   73:        otherPlayer = 2;
+        -:   74:      
+     2000:   75:    played.whoseTurn = currPlayer; //set player
+        -:   76:     
+        -:   77:    //randomize deck, hand, and discard  
+     2000:   78:    played.deckCount[currPlayer] = (rand() % (MAX_DECK+1));
+call    0 returned 100%
+     2000:   79:    played.discardCount[currPlayer] = (rand() % ( MAX_DECK+1));
+call    0 returned 100%
+     2000:   80:    played.handCount[currPlayer] = (rand() %  (MAX_HAND+1));
+call    0 returned 100%
+        -:   81:    
+        -:   82:    //get random number for handposition
+     2000:   83:    handpos  = (rand() % 7);
+call    0 returned 100%
+        -:   84:      
+        -:   85:    //insert a adventure card in players hand for testing
+     2000:   86:    played.hand[currPlayer][handpos] = adventurer;   
+        -:   87:      
+        -:   88:    //randomize the number of coins 
+     2000:   89:    coins = (rand() % (num_copper + 1)); //copper coins
+call    0 returned 100%
+        -:   90:    //printf("coins = %d\n", coins);
+     2000:   91:    coins =+ (rand() % (num_silver +1)); //silver coins
+call    0 returned 100%
+        -:   92:    //printf("coins = %d\n", coins);
+     2000:   93:    coins =+ (rand() % (num_gold+1)); //gold coins
+call    0 returned 100%
+        -:   94:    //printf("coins = %d\n", coins);
+        -:   95:      
+     2000:   96:    played.coins = coins;  
+        -:   97:
+        -:   98:    //copy random test state for testing  
+     2000:   99:    memcpy(&expected, &played, sizeof(struct gameState));
+        -:  100:  
+        -:  101: /***     
+        -:  102:    //test printing
+        -:  103:    printf("%d player handcount %d:\n", currPlayer, played.deckCount[currPlayer]);   
+        -:  104:    printf("%d player deckcount %d:\n", currPlayer, played.deckCount[currPlayer]);   
+        -:  105:    printf("%d player discardcount %d:\n", currPlayer, played.discardCount[currPlayer]);   
+        -:  106:    printf("%d player coins %d:\n", currPlayer, countHandCoins(currPlayer, &played));   
+        -:  107:    printf("*******************************************************\n");  
+        -:  108:  
+        -:  109:    printf("%d player handcount %d:\n", currPlayer, expected.deckCount[currPlayer]);   
+        -:  110:    printf("%d player deckcount %d:\n", currPlayer, expected.deckCount[currPlayer]);   
+        -:  111:    printf("%d player discardcount %d:\n", currPlayer, expected.discardCount[currPlayer]);   
+        -:  112:    printf("%d player coins %d:\n", currPlayer, countHandCoins(currPlayer, &expected));   
+        -:  113:    printf("*******************************************************\n");  
+        -:  114: ***/   
+        -:  115:      
+        -:  116:    //play adventurer card
+     2000:  117:    cardEffect(adventurer, choice1, choice2, choice3, &played, handpos, bonus); 
+call    0 returned 100%
+        -:  118:    
+        -:  119:    //check to see that 2 treasure cards 
+        -:  120:    //test to make sure play is recieving 2 cards
+        -:  121:    //and then discarding 1, resulting in the handCount
+        -:  122:    //growing by 1
+     2000:  123:    if(played.handCount[currPlayer] != expected.handCount[currPlayer] + newCards - discarded){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  124:        //check if hand is correct
+     2000:  125:        printf("****FAIL Iteration: %d Player %d Returned Hand Count = %d, expected = %d\n", i, currPlayer, played.handCount[currPlayer], expected.handCount[currPlayer] + newCards - discarded); 
+call    0 returned 100%
+     2000:  126:            errors++;
+        -:  127:    }  
+        -:  128:    
+        -:  129:      
+        -:  130:    //test to see that cards added are treasure cards
+        -:  131:    //the enum for copper is 4, silver =5, and gold =6
+        -:  132:    //get amount of treasure cards in hand before adventure card is played
+     2000:  133:    testHandCount = played.handCount[currPlayer];  //get current num of cards in hand
+        -:  134:
+        -:  135:    //print players hand for error checking. 
+     2000:  136:    testTreasureCount = 0;
+        -:  137: //   if(testHandCount > 0) printf("#  Card\n");
+   508816:  138:    for(handIndex = 0; handIndex < testHandCount; handIndex++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   506816:  139:        int card = played.deck[currPlayer][handIndex];
+   506816:  140:        if(card == 4 || card == 5 || card == 6){
+branch  0 taken 97% (fallthrough)
+branch  1 taken 3%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+    13833:  141:           testTreasureCount++;    
+        -:  142:        }
+        -:  143:    }
+        -:  144:
+     2000:  145:    realHandCount = expected.handCount[currPlayer];  //get current num of cards in hand
+        -:  146:  
+        -:  147:      
+   499884:  148:    for(handIndex = 0; handIndex < realHandCount; handIndex++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   497884:  149:        int card = expected.deck[currPlayer][handIndex];
+   497884:  150:        if(card == 4 || card == 5 || card == 6){
+branch  0 taken 97% (fallthrough)
+branch  1 taken 3%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+    13889:  151:           realTreasureCount++;    
+        -:  152:        }
+        -:  153:    }  
+        -:  154:      
+        -:  155:      
+     2000:  156:    if(testTreasureCount != realTreasureCount+2){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  157:        //check if hand is correct
+     2000:  158:            printf("****FAIL Iteration: %d Player %d Returned Treasure Count in Hand = %d, expected = %d\n", i, currPlayer, testTreasureCount, realTreasureCount+2); 
+call    0 returned 100%
+     2000:  159:            errors++;
+        -:  160:    }
+        -:  161:
+        -:  162:    
+        -:  163:    //test to make sure player is drawing from their own pile
+        -:  164:     //printf("Player %d deck count = %d, expected = %d\n", currPlayer, played.deckCount[currPlayer], expected.deckCount[currPlayer] - newCards + shuffledCards);
+     2000:  165:    if(played.deckCount[currPlayer] != expected.deckCount[currPlayer] - played.discardCount[currPlayer] - 2 ){
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+        -:  166:        //check if deck is correct
+     1998:  167:            printf("****FAIL player pulling from own pile Iteration: %d Returned Deck Count for Player %d = %d, expected = %d\n", i, currPlayer, played.deckCount[currPlayer], expected.deckCount[currPlayer] - played.discardCount[currPlayer] - 2); 
+call    0 returned 100%
+     1998:  168:            errors++;
+        -:  169:    }
+        -:  170:
+        -:  171:    //test to make sure other players game state has not changed
+        -:  172:    //test to make sure other players hand is not changed
+        -:  173:    //int recievedResult = played.handCount[otherPlayer];
+        -:  174:    //int Expected = expected.handCount[otherPlayer];
+        -:  175: //   printf("Player %d hand count = %d, expected = %d\n", otherPlayer, recievedResult, expected);
+     2000:  176:    if(played.handCount[otherPlayer] != expected.handCount[otherPlayer]){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  177:        //check if hand is correct
+      992:  178:            printf("****FAIL other player problem Iteration: %d Returned Hand Count for Player %d = %d, expected = %d\n", i, otherPlayer, played.handCount[otherPlayer], expected.handCount[otherPlayer]); 
+call    0 returned 100%
+      992:  179:            errors++;
+        -:  180:    }
+        -:  181:
+        -:  182:    //test to make sure other player deck is same and first player did not draw
+        -:  183:    //from other players pile
+        -:  184://    printf("Player %d deck count = %d, expected = %d\n", otherPlayer, played.deckCount[otherPlayer], expected.deckCount[otherPlayer]);
+     2000:  185:    if(played.deckCount[otherPlayer] != expected.deckCount[otherPlayer]){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  186:        //check if deck is correct
+      992:  187:            printf("****FAIL Iteration: %d Returned Deck Count for Player %d = %d, expected = %d\n", i, otherPlayer, played.deckCount[currPlayer], expected.deckCount[currPlayer]); 
+call    0 returned 100%
+      992:  188:            errors++;
+        -:  189:    }
+        -:  190:
+        -:  191:    //test to make sure victory card piles where untouched.
+        -:  192:    //check curse
+     2000:  193:    if(played.supplyCount[curse] != expected.supplyCount[curse]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  194:         printf("****FAIL Iteration: %d Curse Count for Player %d = %d, expected = %d\n",  i, currPlayer, played.supplyCount[curse], expected.supplyCount[curse]); 
+call    0 never executed
+    #####:  195:            errors++;
+        -:  196:    }
+        -:  197:    //check estate
+     2000:  198:    if(played.supplyCount[estate] != expected.supplyCount[estate]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  199:         printf("****FAIL Iteration: %d Estate Count for Player %d = %d, expected = %d\n", i, currPlayer, played.supplyCount[estate], expected.supplyCount[estate]); 
+call    0 never executed
+    #####:  200:            errors++;
+        -:  201:    }
+        -:  202:    //check duchy
+     2000:  203:    if(played.supplyCount[duchy] != expected.supplyCount[duchy]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  204:         printf("****FAIL Iteration: %d Duchy Count for Player %d = %d, expected = %d\n", i, currPlayer, played.supplyCount[duchy], expected.supplyCount[duchy]); 
+call    0 never executed
+    #####:  205:            errors++;
+        -:  206:    }
+        -:  207:    //check province
+     2000:  208:    if(played.supplyCount[province] != expected.supplyCount[province]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  209:         printf("****FAIL Iteration: %d Province Count for Player %d = %d, expected = %d\n", i, currPlayer, played.supplyCount[province], expected.supplyCount[province]); 
+call    0 never executed
+    #####:  210:            errors++;
+        -:  211:    }
+        -:  212:
+        -:  213:    //test to make sure the kingdom cards count have not been altered
+        -:  214:    int i;
+    22000:  215:    for(i=0; i < 10; i++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+    20000:  216:        if(played.supplyCount[k[i]] != expected.supplyCount[k[i]]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  217:         printf("****FAIL Iteration: %d Count for Player %d = %d, expected = %d\n", i, currPlayer, played.supplyCount[k[i]], expected.supplyCount[k[i]]); 
+call    0 never executed
+    #####:  218:            errors++;
+    #####:  219:         printf("%d is incorrect\n", k[i]);    
+call    0 never executed
+        -:  220:        }
+        -:  221:    }            
+        -:  222:      
+        -:  223:  }
+        -:  224: 
+        1:  225:    if(errors == 0){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  226:     printf("ALL TESTS PASS for adventurer card.\n");   
+call    0 never executed
+        -:  227:    }
+        -:  228:    else{
+        1:  229:     printf("FAIL: There are %d errors for playing adventurer card.\n", errors);   
+call    0 returned 100%
+        -:  230:    }
+        1:  231:    return 0; 
+        -:  232:}
+        -:  233:
+function countHandCoins called 0 returned 0% blocks executed 0%
+    #####:  234:int countHandCoins(int player, struct gameState *game) {
+    #####:  235:  int card, index, coinage = 0;
+        -:  236:	
+    #####:  237:  for(index = 0; index < game->handCount[player]; index++) {
+branch  0 never executed
+branch  1 never executed
+    #####:  238:    card = game->hand[player][index];
+    #####:  239:    switch(card) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  240:    case copper: coinage += COPPER_VALUE;
+    #####:  241:      break;
+    #####:  242:    case silver: coinage += SILVER_VALUE;
+    #####:  243:      break;
+    #####:  244:    case gold: coinage += GOLD_VALUE;
+    #####:  245:      break;
+        -:  246:    }
+        -:  247:  }
+    #####:  248:  return coinage;
+        -:  249:}

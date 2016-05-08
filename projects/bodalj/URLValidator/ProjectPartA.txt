@@ -1,5 +1,5 @@
 FINAL PROJECT PART A
-Jens Bodal, Emily Snyder, William George, Rick Garnica
+Jens Bodal, Emily Snyder, William George
 
 For Part a, You will be provided a correctly working version of URL Validator
 Go through instructor video of explaining URL Validation testing. 

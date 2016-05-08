@@ -1,0 +1,71 @@
+GROUP MEMBERS: Andrew DiMuzio, James Spolsdoff, Jonathan Hardman
+
+Part A Tasks:
+
+- Explain testIsValid Function of UrlValidator test code.
+
+- Give how many total number of urls it is testing.
+
+- Also, explain how it is building all the urls.
+
+- Give an example of valid url being tested and an invalid url 
+  being tested by testIsValid() method.
+
+- Do you think that a real world test (URL Validator's testIsValid()
+  test in this case) is very different than the unit tests and card 
+  tests that we wrote (in terms of concepts & complexity)?
+__________________________________________________________________________________________________________
+INPUTS:
+Parameter 1: testUrlParts 
+Def Syntax: Object[] testUrlParts = {testUrlScheme, testUrlAuthority, testUrlPort, testPath, testUrlQuery};
+Desc: Each element of this array is the name of another list which holds all of the tested URL components, 
+      which are scheme+authority+port+path+query. The testUrlParts in conjunction with testPartsIndex is used 
+      to access each individual URL component.
+ 
+Parameter 2: UrlValidator.ALLOW_ALL_SCHEMES
+Def Syntax: public static final long ALLOW_ALL_SCHEMES = 1 << 0;
+Desc: “Allows all validly formatted schemes to pass validation instead of supplying a set of valid schemes.”
+
+FUNCTION:
+Function: testIsValid
+Inputs: testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES
+Desc: First it creates a new UrlValidator object for testing called urlVal. It then asserts that urlVal is 
+      initialized correctly and then initializes other required variables.Then it goes into a do-while loop which:
+
+	- Creates a string buffer to hold the tested url and an expected test result flag which by default is set to true. 	
+	- Then enters a for loop which:
+		- Cycles through the length of testPartsIndex and grabs the URL parts index value from testPartsIndex 
+		  and the part name from testURLParts.
+		- Once it has the part name and the part index value, it can fetch and append the URL component 
+		  onto the string buffer.
+		- This continues until all of the components to make a full URL are fetched and appended.
+	- After the for loop is finished and the string buffer is set, it then loads the contents of the 
+	  buffer into a string variable called url.
+	- It then sends url into the urlVal.isValid function for validation, while saving the response in
+	  a boolean variable called result.
+	- After receiving the result, the function prints out a response depending on if the results of the
+	  validation match our expected test results flag, which may include printing the url itself, a ‘.’ 
+	  for when the test passed or a ‘X’ for when it fails.
+      Each loop of the do-while loop increments the testPartsIndex by 1 from the least significant element (the last element)
+      to the max value of each respective element. (e.g. 00000 -> 00001 -> 00002 -> 00010 -> 00011 -> 00012 -> 00020 -> … -> 8,18,6,9,2)
+      This changes assembled URL in the for loop every time the do-while loop cycles through.
+
+      When it breaks out of the do-while loop, aka runs out of tests, the function prints an empty line and ends.
+
+
+ADDITIONAL NOTES:
+
+With how the do-while loop increments testPartsIndex (explained above) the total number of tests, or URLs tested, is 9*19*7*10*3 = 35,910.
+
+Some examples of some built URLs:
+testPartsIndex = {0, 0, 0, 0, 0} => http://www.google.com:80/test1?action=view 	Valid URL
+
+testPartsIndex = {0, 0, 0, 3, 2} => http://www.google.com:80/.. 		Invalid URL
+
+testPartsIndex = {8, 4, 2, 2, 0} => 255.255.255.255:0/$23?action=view 		Valid URL
+
+testPartsIndex = {8, 18, 6, 9, 2} => :65a/test1//file				Invalid URL
+
+As for how this compares to what our class did with unit tests in dominion, I think the amount of tests to cover with URL validator is
+significantly more than dominion but the model and method creating unit tests are the same. In other words the implementation of testIsValid
+is inherently more complex because of the diverse number of test cases but the method of creating those test cases is no different than what we did with dominion.
