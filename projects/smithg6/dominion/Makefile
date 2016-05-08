@@ -55,7 +55,7 @@ randomtestcard.out: $(CFLAGS) randomtestcard
 	gcov -b dominion.c >> randomtestcard.out
 	cat dominion.c.gcov >> randomtestcard.out
 
-randomtestadventurer: $(CFLAGS) randomtestadventurer.c dominion.o rngs.o
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
 	gcc -o ./randomtestadventurer -g $(CFLAGS)
 	./randomtestadventurer >> randomtestadventurer.out
 	gcov ($CFLAGS) dominion.c >> randomtestadventurer.out
