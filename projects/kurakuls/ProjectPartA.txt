@@ -1,0 +1,35 @@
+Explain testIsValid Function of UrlValidator test code.
+
+testIsValid creates a new UrlValidator object, then tests itself that both google.com and google.com/ are valid.
+
+Then for the full amount of urls to test (35, 910 according to the calculation below) it builds a URL out of the parts
+to test the validity. It does this by assign a flag to a built URL string and if a false flag is found, then 
+the URL is considered invalid.
+
+The test for validity is one of the methods of the UrlValidator object. 
+
+
+Give how many total number of urls it is testing. Also, explain how it is building all the urls. 
+
+testUrlScheme - 9
+testUrlAuthority - 19
+testUrlPort - 7
+testPath - 10
+testUrlQuery - 3
+
+9 * 19 * 7 * 10 * 3 = 35,910
+
+Give an example of valid url being tested and an invalid url being tested by testIsValid() method.  
+
+VALID - Well the obvious is "http://www.google.com"
+INVALID - http://go.au:-1/
+
+
+
+Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)?
+Explain in few lines.
+
+I think that it's fairly comprable. Sure, scale wise, it's different, but the essence is the same. We find a way to
+bombard the function that we're testing with various inputs and trying to see where failure occurs. The testIsValid()
+is doing the same thing. The only thing that immediately strikes me as adding in complexity is the bool flags. But that
+is just a simple facet of testing the URL string. 

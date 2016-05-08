@@ -18,3 +18,5 @@ testDrawCard
 
 *test?.out
 unittestresults.out
+.idea/
+*.compile.*

@@ -1,0 +1,58 @@
+Behnam Saeedi (Saeedib - 932217697)
+Jonathan Harijanto (harijanj - 932126199)
+Sarah Lemieux (lemieuxs - 932300799)
+
+Group Project Part A
+Due Sunday May 8th 2016
+
+1) 
+testIsValid is an overloaded method, where two methods within a class  (URLValidatorTest) can have same name but different parameter lists. One testIsValid has no parameter and it calls the second testIsValid method with “testUrlParts” and “UrlValidator.ALLOW_ALL_SCHEMES”. The other one has array objects and long (64 bits) which could be called with non default parameters . The array objects is going to be passed with testUrlParts which are testUrlScheme, testUrlAuthority, testUrlPort, testPath and testUrlQuery. The long option is the access scheme for the test and one of the possible values for it is the macro ALLOW_ALL_SCHEMES. What happens in testIsValid(Object [] testObjects, long options) is, first it will create new object called UrlValidator. After declaring some variables, it goes to “do-while” loop with condition that it goes to “incrementTestPartsIndex(testPartsIndex, testObjects)”. It creates a new object “StringBuffer” and enters another “for” loop that helps to append the segments of url one-by-one to form a complex URL to test. The formation of the URL is checked with “isValid” method, and if it is TRUE (a valid link) then it will printed.
+_____________________________________________________________________
+2) 
+31920 total test and 1890 are valid
+_____________________________________________________________________
+3)
+Buffer is empty
+Adds http:// or :// or https:// or combination of those with random inputs
+Adds address for the page with . and a random format for example:
+Go.au
+Google.com
+Adds “:” randomly
+Adds a combination of numbers and letters for port number
+Adds “/”
+Adds file address which is one of these:
+Test1
+test1/
+..
+../
+Random name with or without “/”
+Adds another “/”
+Adds a file
+Adds post function or action function for php
+These steps happen randomly and could be any variant or mix of these entries or an entry might not be included at all
+Here is an example of steps in a for loop that generates the random url:
+Step 1 : 
+Step 2 : http://
+Step 3 : http://www.google.com
+Step 4 : http://www.google.com
+Step 5 : http://www.google.com/test1/file
+http://www.google.com/test1/file
+_____________________________________________________________________
+4) 
+VALID
+h3t://go.cc/t123?action=edit&mode=up
+h3t://go.cc/t123
+h3t://www.google.com:80/test1/?action=view
+h3t://www.google.com:80/test1/?action=edit&mode=up
+
+INVALID
+://:65a/test1//file?action=view
+://:65a/test1//file?action=edit&mode=up
+://:65a/test1//file
+://go.cc:65636/$23?action=edit&mode=up
+://go.cc:65636/$23
+_____________________________________________________________________
+5)
+The URLValidator’s test seems to be very similar to the random test that we practiced in the class. However it seems like that it is more specialized than the tests we performed for some of the assignments. Furthermore, the specialization of the random tests was covered in our lectures and it was one of the methods for improving test coverage.
+    Conceptually, the URL Validator test is similar to the unit tests we practiced in class in that the program loops through a large number of different combinations of inputs. Testing lots of different combinations can help improve coverage, and using a large number of test cases can help catch bugs. In terms of complexity, the URL Validator test seems slightly simpler in some ways than the Dominion unit tests. For instance, in the Dominion unit tests, in addition to ensuring that the card/function did what it was supposed to, we also had to check to make sure the rest of the gamestate hadn’t accidentally been modified. With the URL Validator, there is no additional state to worry about; the test cases only need to verify that the URL passed or didn’t pass verification.
+
