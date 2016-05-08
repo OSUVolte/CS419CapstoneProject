@@ -57,7 +57,7 @@ int main (int argc, char** argv) {
 	}*/
 	numTests = 1;
 
-	for (i = 0; i < numTests; i++) {
+	for (i = 1; i <= numTests; i++) {
 # if (noiseLevel > 2)
 		printf("-----Beginning test %d of %d-----\n", i, numTests);
 # endif	
@@ -65,10 +65,12 @@ int main (int argc, char** argv) {
 		// Set a random number of players
 		PlantSeeds(7);
 		numPlayers = (Random() * 3) + 1;
+		printf("Seeds planted and numPlayers randomised.\n");
 		
 		//Initialise gamestate
 		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game state
 		initializeGame(numPlayers, k, seed, &preGameState); // initialize a new game	
+		printf("Gamestate initialised.\n");
 		
 		//Randomise hands and decks in some way
 		for (p = 0; p < numPlayers; p++) {
