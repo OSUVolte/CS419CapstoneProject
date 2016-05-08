@@ -83,6 +83,24 @@ runtests: testDrawCard
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS) 	
+	
+randomtestadventurer.out:
+	gcc -c rngs.c -g $(CFLAGS)
+	gcc -c dominion.c -g $(CFLAGS)
+
+	gcc -o rta -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	./rta >> randomtestadventurer.out
+	gcov -f -b dominion.c >> randomtestadventurer.out
+
+	
+randomtestcard.out:
+	gcc -c rngs.c -g $(CFLAGS)
+	gcc -c dominion.c -g $(CFLAGS)
+
+	gcc -o rtc -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	./rtc >> randomtestcard.out
+	gcov -f -b dominion.c >> randomtestcard.out
+
 
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 dominion.o rngs.o
 	unittest1 >> unittestresults.out

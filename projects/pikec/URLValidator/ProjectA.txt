@@ -1,0 +1,28 @@
+﻿Names: Candis Pike, Miranda Huey, Marta Wegner
+ONIDs: pikec, hueymi, wegnerma
+Part A of Class Project
+
+
+
+
+Explain testIsValid Function of UrlValidator test code. Also, explain how it is building all the URL's.
+The testIsValid() function calls an overloaded testIsValid function and the setup function. The setup function resets all starting indexes for the URL parts to 0. The overloaded function takes an object as a parameter and a long that acts as an options flag on how to build a valid url. The URL’s are built and tested in a do/while loop in which a for loop loops through all the available parts of a URL. The url is built with the following scheme <scheme>://<authority><port><path>?<query> Each part of the url is a designated pair, the actual part and a true/false Boolean. For a url to be valid, all parts of the URL must evaluate to true. The function only prints those URL's found to be valid
+
+
+Give how many total number of urls it is testing. 
+In total, the testIsValid function is testing 31,920 urls. However, in theory, it should be testing 35,910 urls.  9 (schemes) x 19 (authority) x 7 (ports) x 10 (paths) x 3 (query) = 35910 urls[a][b][c][d]. The reason for this discrepancy is that there are 2 subtle bugs in the program. 
+
+
+First, the incrementTestPartsIndex does not actually test any of the last testUrlScheme. This is because keeps track of the “maxIndex” by doing a repeated boolean AND check for when each of the values in testPartsIndex has reached its full length (line 287). However, instead of checking the testPartsIndex[testPartsIndexIndex] directly, it simply checks the index, which temporarily stores the values in testPartsIndex. However, whenever the index is the last index, line 283 resets the actual value in the testPartsIndex to 0, but does not reset the temporary variable “index”. Therefore, when the incrementTestPartsIndex increments to the last testUrl scheme, the testPartsIndex is actually {8, 0, 0, 0, 0}, but the values in index are {8, 18, 6, 9, 7}, which registers as the maximum, triggering the end of the do-while loop in testIsValid. 
+
+
+Second, the last testUrlScheme ResultPair (“”, true) is not considered a valid UrlScheme by the actual testUrl, which violates the assumption of validity. Therefore, when it is changed to (“”, false), all 35,910 urls are tested. 
+
+
+ Give an example of valid url being tested and an invalid url being tested by testIsValid() method. 
+Valid URL: ftp://go.com:80/t123
+Invalid URL:  http:/go.cc
+
+
+ Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? 
+They are very similar in the sense that the domain input for both includes both valid and invalid options. They are the same conceptually in the fact that in both cases more than just the whole is being tested. For example, take a card test, not only did the test cover the card as a whole but also how the card did and did not interact with other portions of the game. The testIsValid does the same thing by checking the individual parts to see if the URL is valid. Additionally, they are similar in that they both required knowledge of the system being tested to create them. For example, to create a unit test for a card, we needed to know how the card was supposed to work and what inputs/outputs to test for. This same type of knowledge is needed for real world tests.

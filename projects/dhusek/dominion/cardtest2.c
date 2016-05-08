@@ -145,7 +145,7 @@ int main() {
             num = GnewCoins - testG.coins;
             printf("\t**FAILED**: Current player has %d too few coins.\n\n", num);
             failedTests++;
-        } else { // Current player hass too many coins
+        } else { // Current player has too many coins
             num = testG.coins - GnewCoins;
             printf("\t**FAILED**: Current player has %d too many coins.\n\n", num);
             failedTests++;
@@ -256,7 +256,7 @@ int main() {
         printf("\n");
     }
     
-    // ----------- No state change should occur for the victory card piles. --------------
+    // ----------- No state change should occur for the kingdom card piles. --------------
     printf("Testing: No state change should occur for the kingdom card piles.\n");
     errorCount = 0;
     for(i = 0; i < 10; i++) {

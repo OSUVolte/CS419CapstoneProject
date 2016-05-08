@@ -41,8 +41,11 @@ int main() {
     int i, j, m;
     int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     int remove1, remove2;
-    int seed = 1000;
-    int numPlayers = 2;
+    /*int seed = 1000;*/
+    int seed = rand() % 1000;
+    /*int seed = 1000;*/
+    /*int numPlayers = 2;*/
+    int numPlayers = rand() % 3 + 2;
     int thisPlayer = 0;
     struct gameState G, testG;
     int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
@@ -52,6 +55,37 @@ int main() {
     initializeGame(numPlayers, k, seed, &G);
     
     printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+    
+    int numberOfTests = rand() % 1000;
+   
+    for (i = 0; i < numberOfTests; i++)
+    {
+        
+        seed = rand() % 1000;
+        numPlayers = rand() % 3 + 2;
+        
+        int changePlayer;
+        int currentCard;
+        for (changePlayer = 0; changePlayer < numPlayers; changePlayer++){
+            G.deckCount[changePlayer] = rand () % MAX_DECK;
+            
+            for (currentCard = 0; currentCard < G.deckCount[changePlayer]; currentCard++){
+                G.deck[changePlayer][currentCard] = rand() % 13;
+            }
+            
+            G.discardCount[changePlayer] = rand() % MAX_DECK;
+            
+            for (currentCard = 0; currentCard < G.discardCount[changePlayer]; currentCard++){
+                G.discard[changePlayer][currentCard] = rand() % 13;
+            }
+            
+            G.handCount[changePlayer] = rand() % MAX_HAND;
+            
+            for (currentCard = 0; currentCard < G.handCount[changePlayer]; currentCard++){
+                G.hand[changePlayer][currentCard] = rand() % 13;
+            }
+            
+        }
     
     // ----------- TEST 1: choice1 = 1 = +3 treasure --------------
     printf("TEST 1: choice1 = 1 = +2 cards\n");
@@ -69,6 +103,8 @@ int main() {
     assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
     assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
     assert(testG.coins == G.coins + xtraCoins);
+        
+    }
     
     
     printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);

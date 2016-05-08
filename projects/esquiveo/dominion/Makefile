@@ -56,6 +56,22 @@ cardTest3: cardtest3.c dominion.o rngs.o
 cardTest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardTest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 
+randomAdventurer:
+	gcc -fprofile-arcs -ftest-coverage -Wall dominion.c randomtestadventurer.c rngs.c -o randomtestadventurer -lm -g
+
+runRandomAdventurer: randomAdventurer
+	./randomtestadventurer &> randometestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomCard:
+	gcc -fprofile-arcs -ftest-coverage -Wall dominion.c randomtestcard.c rngs.c -o randomtestcard -lm -g
+
+runRandomCard: randomCard
+	./randomtestcard &> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+
 unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4 cardTest1 cardTest2 cardTest3 cardTest4
 	./unitTest1 &> unittestresult.out
 	./unitTest2 >> unittestresult.out
