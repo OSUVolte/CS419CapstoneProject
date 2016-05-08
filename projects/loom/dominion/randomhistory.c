@@ -17,3 +17,9 @@ Interestingly, I tried to add more randomness by randomly choosing a player, but
 kept having floating point errors with the random function.  I was unable to determine
 why this was, though, none of my tests were fruitful, so it always tests the first player.
 
+Randomtestcard
+
+I tested the smithy card, which is very simple and straightforward.  I randomly picked a player
+and a hand size, created them, then played the smithy card to see if it would always add the
+correct number of cards.  Of course, because I introduced a bug, it fails every single test
+however compensating for that bug shows that the test would pass every time.
