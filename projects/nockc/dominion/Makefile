@@ -12,6 +12,12 @@ playdom: dominion.o playdom.c
 testDrawCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 
+randomtestadventurer: randomtestadventurer.c dominion.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+randomtestcard: randomtestcard.c dominion.o 
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o  $(CFLAGS)
+
 cardtest1: cardtest1.c dominion.o rngs.o
 	gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o $(CFLAGS)
 
@@ -64,6 +70,25 @@ unittestresults.out: cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2
 		gcov dominion.c -b >> unittestresults.out
 		cat dominion.c.gcov >> unittestresults.out
 
+randomtestcard.out: 
+		make clean
+		make randomtestcard
+		./randomtestcard >> randomtestcard.out
+		gcov dominion.c -b >> randomtestcard.out
+		cat dominion.c.gcov >> randomtestcard.out
+		gcov randomtestcard.c -b >> randomtestcard.out
+		cat randomtestcard.c.gcov >> randomtestcard.out
+    
+
+randomtestadventurer.out:
+		make clean
+		make randomtestadventurer
+		./randomtestadventurer >> randomtestadventurer.out
+		gcov dominion.c -b >> randomtestadventurer.out
+		cat dominion.c.gcov >> randomtestadventurer.out
+		gcov randomtestadventurer.c -b >> randomtestadventurer.out
+		cat randomtestadventurer.c.gcov >> randomtestadventurer.out
+
 badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
 
@@ -88,4 +113,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 unittestresults.out *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 unittestresults.out randomtestcard.out randomtestadventurer.out randomtestcard randomtestadventurer *.gcov *.gcda *.gcno *.so

@@ -1300,7 +1300,7 @@ int adventurerCardEffect(int currentPlayer, int handPos, struct gameState *state
   int cardDrawn; //temp storage for card drawing
   int drawntreasure = 0; //counter for treasure drawn
   int z = 0; //counter for temp hand
-  int temphand[7]; //array to hold hands temporarily drawn
+  int temphand[MAX_HAND]; //array to hold hands temporarily drawn
 
   while (drawntreasure < 2) {
     if (state->deckCount[currentPlayer] < 1) { //if the deck is empty we need to shuffle discard and add to deck

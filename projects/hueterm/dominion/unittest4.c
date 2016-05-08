@@ -1,7 +1,7 @@
 /**
 Michael Hueter
 CS 362 Assignment 3
-unitTest4.c - testing the gainCard() function
+unittest4.c - testing the gainCard() function
 **/
 
 #include "dominion.h"

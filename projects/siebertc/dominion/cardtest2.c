@@ -43,10 +43,10 @@ int main() {
 	}
 	
 	if(G.handCount[player] == 1) {
-		printf("cardVillage TEST#3: PASS Expected CardHand: %d - result: %d\n", 4, G.handCount[player]);
+		printf("cardVillage TEST#3: PASS Expected CardHand: %d - result: %d\n", 3, G.handCount[player]);
 	}
 	else {
-		printf("cardVillage TEST#3: FAIL Expected CardHand: %d - result: %d\n", 4, G.handCount[player]);
+		printf("cardVillage TEST#3: FAIL Expected CardHand: %d - result: %d\n", 3, G.handCount[player]);
 	}
 	
 	if(G.playedCardCount == 1) {

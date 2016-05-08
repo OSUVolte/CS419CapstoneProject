@@ -36,14 +36,12 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 
 int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 		   struct gameState *state) {
-
   int i;
   int j;
   int it;			
   //set up random number generator
   SelectStream(1);
   PutSeed((long)randomSeed);
-  
   //check number of players
   if (numPlayers > MAX_PLAYERS || numPlayers < 2)
     {
@@ -64,8 +62,6 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 	    }
         }
     }
-
-
   //initialize supply
   ///////////////////////////////
 
@@ -96,7 +92,6 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
       state->supplyCount[duchy] = 12;
       state->supplyCount[province] = 12;
     }
-
   //set number of Treasure cards
   state->supplyCount[copper] = 60 - (7 * numPlayers);
   state->supplyCount[silver] = 40;
@@ -133,7 +128,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 
   ////////////////////////
   //supply intilization complete
-
+  
   //set player decks
   for (i = 0; i < numPlayers; i++)
     {
@@ -644,31 +639,35 @@ int getCost(int cardNumber)
 }
 
 
-adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand){
-  while(drawntreasure<2){
+int adventurerRefactored(int drawntreasure, struct gameState *state, int currentPlayer, int z, int temphand []){
+    while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
         shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
+    int cardDrawn;	
     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
         drawntreasure++;
+
     else{
         temphand[z]=cardDrawn;
         state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-      
+	//z++;      
     }
     } 
+
     while(z-1>=0){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
     }
+
     return 0;
 }
 
 
 
-councilRoomRefactored(currentPlayer, state, handPos){
+int councilRoomRefactored(int currentPlayer, struct gameState *state, int handPos){
   //+4 Cards
   int i;
   for (i = 0; i < 4; i++)
@@ -695,7 +694,7 @@ councilRoomRefactored(currentPlayer, state, handPos){
 }
 
 
-smithyRefactored(handPos, currentPlayer, state){
+int smithyRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+3 Cards
       int i;
       for (i = 0; i <= 3; i++)
@@ -709,7 +708,7 @@ smithyRefactored(handPos, currentPlayer, state){
 }
 
 
-villageRefactored(handPos, currentPlayer, state){
+int villageRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+1 Card
       drawCard(currentPlayer, state);
       
@@ -721,7 +720,7 @@ villageRefactored(handPos, currentPlayer, state){
       return 0;
 }
 
-greatHallRefactored(handPos, currentPlayer, state){
+int greatHallRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+1 Card
       drawCard(currentPlayer, state);
       
@@ -758,10 +757,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
       adventurerRefactored(drawntreasure, state, currentPlayer, z, temphand);
-			
+      return 0;				
     case council_room:
       councilRoomRefactored(currentPlayer, state, handPos);
-			
+      return 0;			
     case feast:
       //gain card with cost up to 5
       //Backup hand
@@ -881,9 +880,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case smithy:
       smithyRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case village:
       villageRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -938,6 +939,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case great_hall:
       greatHallRefactored(handPos, currentPlayer, state);
+      return 0;
 		
     case minion:
       //+1 action
@@ -1246,7 +1248,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //no second treasure_map found in hand
       return -1;
     }
-	
+  printf("out of cardEffect\n");	
   return -1;
 }
 

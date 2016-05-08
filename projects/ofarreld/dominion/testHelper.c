@@ -20,77 +20,51 @@ void linePrint() {
 
 void genericTest(struct gameState G, struct gameState testG, int otherPlayer, int otherDeck){
 
+	int pass = 1;
+
 	// testing blach blach.. PASSED
 	//testing blah... FAILED
 	//output
 
-	printf("Testing Player 2 hand count...\t\t");
 	if (testG.handCount[otherPlayer] != G.handCount[otherPlayer] + otherDeck) {
-		printf("ERROR\n");
-		printf("Player 2 hand count = %d, expected = %d\n", testG.handCount[otherPlayer], 
+		printf("ERROR: Player 2 hand count = %d, expected = %d\n", testG.handCount[otherPlayer], 
 		G.handCount[otherPlayer] + otherDeck);
-	} else {
-		printf("PASS\n");
+		pass = 0;
 	}
-
-	printf("Testing Player 2 deck count... \t\t");
 	if (testG.deckCount[otherPlayer] != G.deckCount[otherPlayer]- otherDeck) {
-		printf("ERROR\n");
-		printf("Player 2 deck count = %d, expected = %d\n", testG.deckCount[otherPlayer],
+		printf("ERROR: Player 2 deck count = %d, expected = %d\n", testG.deckCount[otherPlayer],
 		G.deckCount[otherPlayer] - otherDeck);
-	} else {
-		printf("PASS\n");
-	}
-
-	printf("Testing state estate count... \t\t");
+		pass = 0;
+	} 
 	if (testG.supplyCount[estate] != G.supplyCount[estate]) {
-		printf("ERROR\n");
-		printf("State estate count = %d, expected = %d\n", testG.supplyCount[estate], 
+		printf("ERROR: State estate count = %d, expected = %d\n", testG.supplyCount[estate], 
 		G.supplyCount[estate]);
-	} else {
-		printf("PASS\n");
+		pass = 0;
 	}
-
-	printf("Testing state duchy count... \t\t");
 	if (testG.supplyCount[duchy] != G.supplyCount[duchy]) {
-		printf("ERROR\n");
-		printf("State duchy count = %d, expected = %d\n", testG.supplyCount[duchy], 
+		printf("ERROR: State duchy count = %d, expected = %d\n", testG.supplyCount[duchy], 
 		G.supplyCount[duchy]);
-	} else {
-		printf("PASS\n");
+		pass = 0;
 	}
-
-	printf("Testing state province count...\t\t");
 	if (testG.supplyCount[province] != G.supplyCount[province]) {
-		printf("ERROR\n");
-		printf("State province count = %d, expected = %d\n", testG.supplyCount[province], 
+		printf("ERROR: State province count = %d, expected = %d\n", testG.supplyCount[province], 
 		G.supplyCount[province]);
-	} else {
-		printf("PASS\n");
+		pass = 0;
 	}
-
-	printf("Testing state cppper count... \t\t");
 	if (testG.supplyCount[copper] != G.supplyCount[copper]) {
-		printf("ERROR\n");
-		printf("State copper count = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper]);
-	} else {
-		printf("PASS\n");
+		printf("ERROR: State copper count = %d, expected = %d\n", testG.supplyCount[copper], G.supplyCount[copper]);
+		pass = 0;
 	}
-
-	printf("Testing state silver count..  \t\t");
 	if (testG.supplyCount[silver] != G.supplyCount[silver]) {
-		printf("ERROR\n");
-		printf("State silver count = %d, expected = %d\n", testG.supplyCount[silver], G.supplyCount[silver]);
-	} else {
-		printf("PASS\n");
+		printf("ERROR: State silver count = %d, expected = %d\n", testG.supplyCount[silver], G.supplyCount[silver]);
+		pass = 0;
 	}
-
-	printf("Testing state gold count... \t\t");
 	if (testG.supplyCount[gold] != G.supplyCount[gold] ) {
-		printf("ERROR\n");
-		printf("State gold count = %d, expected = %d\n", testG.supplyCount[gold], G.supplyCount[gold]);
-	} else {
-		printf("PASS\n");
+		printf("ERROR: State gold count = %d, expected = %d\n", testG.supplyCount[gold], G.supplyCount[gold]);
+		pass = 0;
+	}
+	
+	if (pass ==1) {
+		printf("SUPPLEMENTARY TESTING COMPLETE\t\n");
 	}
 }
-

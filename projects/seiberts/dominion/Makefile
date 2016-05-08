@@ -61,8 +61,14 @@ card3:
 
 card4:
 	gcc -coverage dominion.c cardtest4.c rngs.c -o cardtest4 -lm 
+
+rtc:
+	gcc -coverage dominion.c randomtestcard.c rngs.c -o randomtestcard -lm
 	
-run:
+rta:
+	gcc -coverage dominion.c randomtestadventurer.c rngs.c -o randomtestadventurer -lm 
+	 
+run: 
 	echo "----------UNIT TEST 1-------------"
 	./unittest1 &> unittestresults.out
 	gcov unittest1.c >> unittestresults.out
@@ -97,5 +103,26 @@ run:
 	gcov -b cardtest4.c >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
+	
+randomCard:
+	echo "----------RANDOM CARD TEST -------------"
+	./randomtestcard &> randomtestcard.out
+	gcov  randomtestcard.c >> randomtestcard.out
+	gcov -b  randomtestcard.c >> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	echo "----------RANDOM CARD TEST COMPLETED-------------"
+randomAdventurer:
+	echo "----------RANDOM ADVENTURER TEST-------------"
+	./randomtestadventurer &> randomtestadventurer.out
+	gcov randomtestadventurer.c >> randomtestadventurer.out
+	gcov -b randomtestadventurer.c >> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	echo "----------RANDOM ADVENTURER TEST COMPLETED-------------"
+	
+randomtestcard.out: rtc randomCard
 
+randomtestadventurer.out: rta randomAdventurer
+	
 unittestresults.out: unit1 unit2 unit3 unit4 card1 card2 card3 card4 run
