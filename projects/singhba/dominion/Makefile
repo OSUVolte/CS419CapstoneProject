@@ -67,12 +67,14 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	./cardtest4 >> unittestresults.out
 	gcov -fb dominion.c >> unittestresults.out
 
-randomtestadventurer.out: randomtestadventurer dominion.o rngs.o
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 	echo "randomtestadventurer.c test results" > randomtestadventurer.out
 	./randomtestadventurer >> randomtestadventurer.out
 	gcov -fb dominion.c >> randomtestadventurer.out
  
-randomtestcard.out: randomtestcard dominion.o rngs.o
+randomtestcard.out: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
 	echo "randomtestcard.c test results" > randomtestcard.out
 	./randomtestcard >> randomtestcard.out
 	gcov -fb dominion.c >> randomtestcard.out
