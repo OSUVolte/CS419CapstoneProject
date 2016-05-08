@@ -20,8 +20,8 @@ Description: Random test for the adventurer card function in dominion.c
 # define defaultTests 1000
 
 // Function prototypes
-int testStatesAdventurer (struct gamestate preGameState, struct gamesate postGameState, int numPlayers, int player);
-int hasTreasures (struct gamestate g, int player);
+int testStatesAdventurer (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p);
+int hasTreasures (struct gameState *g, int player);
 
 
 int main (int argc, char** argv) {
@@ -155,7 +155,7 @@ int main (int argc, char** argv) {
 
 
 //Test states adventurer function
-int testStatesAdventurer (struct gamestate *preGameState, struct gamesate *postGameState, int numPlayers, int player) {
+int testStatesAdventurer (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p) {
 	int x, y;				// counters
 	int failedTest = 0;
 	
@@ -164,7 +164,7 @@ int testStatesAdventurer (struct gamestate *preGameState, struct gamesate *postG
 	printf("Comparing game states before and after card played.\n");
 # endif	
 	for (x = 0; x < numPlayers; x++) {
-		if (x == player) {
+		if (x == p) {
 			//Check player's hand size has increased by 2
 			if (postGameState->handCount[x] == preGameSate->handCount[x]) {
 # if (noiseLevel > 1)
@@ -292,7 +292,7 @@ int testStatesAdventurer (struct gamestate *preGameState, struct gamesate *postG
 }
 
 //Has more treasures function
-int hasTreasures (struct gamestate *g, int player) {
+int hasTreasures (struct gameState *g, int player) {
 	int numTreasures = 0;
 	int x, y;
 	
@@ -302,7 +302,7 @@ int hasTreasures (struct gamestate *g, int player) {
 			numTreasures++;
 	
 	// Find treasures in discard pile
-	for (x = 0; x < discardCount[p]; x++)
+	for (x = 0; x < g->discardCount[p]; x++)
 		if (g->discardard[p][x] == copper || g->discard[p][x] == silver || g->discard[p][x] == gold)
 			numTreasures++;
 	
