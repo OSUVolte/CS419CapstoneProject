@@ -1,5 +1,27 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
+randomtestadventurer.out: randomtestadventurer.c dominion.out
+	echo "%-------------------------------------RANDOM TEST ADVENTURER-------------------------------------%" >> randomtestadventurer.out
+
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov randomtestadventurer.c >> randomtestadventurer.out
+	gcov randomtestadventurer.c -b >> randomtestadventurer.out
+	cat randomtestadventurer.c.gcov >> randomtestadventurer.out
+	
+	echo "%-------------------------------------RANDOM TESTING COMPLETE-------------------------------------%" >> randomtestadventurer.out	
+	
+randomtestcard.out: randomtestcard.c dominion.out
+	echo "%-------------------------------------RANDOM   TEST   VILLAGE-------------------------------------%" >> randomtestcard.out
+
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestcard >> randomtestcard.out
+	gcov randomtestcard.c >> randomtestcard.out
+	gcov randomtestcard.c -b >> randomtestcard.out
+	cat randomtestcard.c.gcov >> randomtestcard.out
+	
+	echo "%-------------------------------------RANDOM TESTING COMPLETE-------------------------------------%" >> randomtestcard.out	
+
 unittestresults.out: unittest1.c dominion.o 
 	echo "%-------------------------------------UNITTEST1-------------------------------------%" >> unittestresults.out
 
@@ -101,4 +123,4 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 *.gcov *.gcda *.gcno *.so *.out
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestadventurer randomtestcard *.gcov *.gcda *.gcno *.so *.out

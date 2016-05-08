@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 		printf("Bad agruments.\n");
 		exit(1);
 	}*/
-	numTests = 2000;
+	numTests = 20000;
 	PlantSeeds(7);
 
 	for (i = 1; i <= numTests; i++) {
