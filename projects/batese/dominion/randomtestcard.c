@@ -204,7 +204,7 @@ int testStatesVillage (struct gameState *preGameState, struct gameState *postGam
 			}
 			//If deck did not need to be shuffled, check top card from deck is now in hand
 			if (preGameState->deckCount[x] > 0) {
-				for (y = 0; y < postGameState->handCount[x]) {
+				for (y = 0; y < postGameState->handCount[x]; y++) {
 					if (postGameState->hand[x][y] == preGameState->deck[x][preGameState->deckCount[x]-1]) {
 # if (noiseLevel > 1)
 						printf("PASSED: Hand now contains top card from deck.\n");

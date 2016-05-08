@@ -99,7 +99,7 @@ int main (int argc, char** argv) {
 					preGameState.hand[p][preGameState.handCount[p]] = -1;
 					preGameState.deckCount[p]++;
 				}
-				printf("Removed card from hand of p0.\n");
+				//printf("Removed cards from hand of p0.\n");
 			}
 			// Shuffle deck
 			shuffle(p, &preGameState);
