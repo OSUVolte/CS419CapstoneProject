@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 		printf("Bad agruments.\n");
 		exit(1);
 	}*/
-	numTests = 3;
+	numTests = 20;
 
 	for (i = 1; i <= numTests; i++) {
 # if (noiseLevel > 2)
@@ -147,20 +147,20 @@ int main (int argc, char** argv) {
 		printf("Gamestate copied.\n");
 
 		//Check player has at least 2 treasures in their deck/discard pile
-		if (hasTreasures(&preGameState, p) > 2) {
+		if (hasTreasures(&preGameState, p) < 2) {
 # if (noiseLevel > 0)
 			printf("ABANDONING TEST %d: Player %d does not have at least 2 treasure cards in deck/discard pile.\n", i, p);
 # endif
-		}
+		} else {
+			//Call adventurer method
+			cardEffect(adventurer, 0, 0, 0, &postGameState, 0, 0);
 
-		//Call adventurer method
-		cardEffect(adventurer, 0, 0, 0, &postGameState, 0, 0);
-
-		//Test that only certain things have changed and that they have changed correctly
-		failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
+			//Test that only certain things have changed and that they have changed correctly
+			failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
 # if (noiseLevel > 2)
-		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
+			printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
 # endif	
+		}
 	}
 
 	return 0;
@@ -181,7 +181,7 @@ int testStatesAdventurer (struct gameState *preGameState, struct gameState *post
 	for (x = 0; x < numPlayers; x++) {
 		if (x == p) {
 			//Check player's hand size has increased by 2
-			if (postGameState->handCount[x] == preGameState->handCount[x]) {
+			if (postGameState->handCount[x] == preGameState->handCount[x] + 2) {
 # if (noiseLevel > 1)
 				printf("PASSED: Player %d hand count has increased by 2.\n", x);
 # endif	
