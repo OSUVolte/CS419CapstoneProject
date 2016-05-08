@@ -653,28 +653,27 @@ int cardEffectAdventurer(int player, int handPos, struct gameState *state)
 	int cardDrawn;
 	int z = 0;
 	int temphand[MAX_HAND];// moved above the if statement
-	int shuffled = 0;
 	while (drawntreasure <= 2) {
 		if (state->deckCount[player] < 1) {//if the deck is empty we need to shuffle discard and add to deck
-			if (shuffled) break; // only allowed to shuffle once
-			else
-			{
-				shuffle(player, state);
-				shuffled++;
-			}
+			shuffle(player, state);
 		}
 		drawCard(player, state);
 		cardDrawn = state->hand[player][state->handCount[player] - 1];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == copper || cardDrawn == gold)
 			drawntreasure++;
 		else {
-			temphand[z] = cardDrawn;
-			state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
-			z++;
+			if (z < MAX_HAND) // bounds check to avoid segfault
+			{
+				temphand[z] = cardDrawn;
+				state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
+				z++;
+			}
+			else break;
 		}
 	}
 	while (z - 1 >= 0) {
-		state->discard[player][state->discardCount[player]++] = temphand[z - 1]; // discard all cards in play that have been drawn
+		// bounds check to avoid segfault
+		if(z <= MAX_HAND) state->discard[player][state->discardCount[player]++] = temphand[z - 1]; // discard all cards in play that have been drawn
 		z = z - 1;
 	}
 	//discard card from hand

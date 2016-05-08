@@ -1259,17 +1259,24 @@ int adventurerCard(struct gameState *state, int currentPlayer)
   int drawntreasure = 0;
   int z = 0;
   int temphand[MAX_HAND];
+  //printf("ADVC Made it 1\n");
   while(drawntreasure<2){
-	if (state->deckCount[currentPlayer] = 0){//if the deck is empty we need to shuffle discard and add to deck
+	  //printf("ADVC Made it 5\n");
+	if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
+	//printf("HandCountAfterDrawCard: %d\n", state->handCount[currentPlayer]);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+	//printf("DrawnCard: %d\n", cardDrawn);
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
 	else{
+	  //printf("ADVC Made it 2\n");
 	  temphand[z]=cardDrawn;
+	  //printf("ADVC Made it 3\n");
 	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+	  //printf("ADVC Made it 4\n");
 	  z++;
 	}
   }

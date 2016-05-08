@@ -4,7 +4,22 @@ CXXFLAGS += -Wall
 CXXFLAGS += -g
 CXXFLAGS += -pedantic-errors
 
-default: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+default: 
+	echo "Please enter a target: unittestresults.out, randomtestcard.out, randomtestadventure.out"
+
+randomtestcard.out: randCard
+	./randCard  1234 > randomtestcard.out
+
+randCard: randomtestcard.c rngs unitTestLib dominion
+	gcc randomtestcard.c unitTestLib.o rngs.o dominion.o -lm -coverage -o randCard
+
+randomtestadventurer.out: randAdv
+	./randAdv  1234 > randomtestadventurer.out
+
+randAdv: randomtestadventurer.c rngs unitTestLib dominion
+	gcc randomtestadventurer.c unitTestLib.o rngs.o dominion.o -lm -coverage -o randAdv
+
+unittests: dominion rngs unitTestLib unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	./unittest1 > unittestresults.out
@@ -56,7 +71,6 @@ cardtest3: cardtest3.c dominion rngs unitTestLib
 	${CXX} ${CXXFLAGS} cardtest3.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest3
 
 cardtest4: cardtest4.c unitTestLib dominion.o
-	${CXX} ${CXXFLAGS} cardtest4.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest4
-	
+	${CXX} ${CXXFLAGS} cardtest4.c rngs.o dominion.o unitTestLib.o -lm -coverage -o cardtest4	
 clean:
-	rm  *.o *.c.gcov *.gcda *.gcno unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out
+	rm  *.o *.c.gcov *.gcda *.gcno randCard randAdv unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out

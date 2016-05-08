@@ -1,0 +1,56 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:	Rosa Tung
+        -:    3:	CS362
+        -:    4:	(20 points) Write unit tests for four functions (not card implementations or cardEffect) in dominion.c. 
+        -:    5:	Check these tests in as unittest1.c,unittest2.c, unittest3.c, and unittest4.c. 
+        -:    6:	(for example, you can create a test for updateCoins() method)
+        -:    7:	
+        -:    8:	Testing:
+        -:    9:		int getCost(int cardNumber);
+        -:   10:*/
+        -:   11:
+        -:   12:#include "dominion.h" 
+        -:   13:
+        -:   14:#include <stdio.h> //printf scanf
+        -:   15:
+function main called 1 returned 100% blocks executed 79%
+        1:   16:int main(){
+        -:   17:	//check for cost of each card
+        1:   18:	const char* cardNames[] = {"curse", "estate", "duchy", "province", "copper", "silver", "gold", "adventurer", "council_room", "feast", 
+        -:   19:	"gardens", "mine", "remodel", "smithy", "village", "baron", "great_hall", "minion", "steward", "tribute", "ambassador", "cutpurse", 
+        -:   20:	"embargo", "outpost", "salvager", "sea_hag", "treasure_map"};
+        1:   21:	int costs[27] = {0, 2, 5, 8, 0, 3, 6, 6, 5, 4, 4, 5, 4, 4, 3, 4, 3, 5, 3, 5, 3, 4, 2, 5, 4, 4, 4};
+        -:   22:	int numCards;
+        -:   23:	
+        1:   24:	printf("---Testing getCost function START---\n\n");
+call    0 returned 100%
+        -:   25:	//go through and check all the card values 
+       28:   26:	for(numCards = 0; numCards<27; numCards++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   27:		printf("Testing %s cost (should be %d)\n", cardNames[numCards], costs[numCards]);
+call    0 returned 100%
+       27:   28:		if(getCost(numCards) == costs[numCards]){
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0%
+       27:   29:			printf("	PASS\n");
+call    0 returned 100%
+        -:   30:		} else {
+    #####:   31:			printf("	FAIL\n");
+call    0 never executed
+    #####:   32:			printf("		Cost: %d\n", getCost(numCards));
+call    0 never executed
+call    1 never executed
+        -:   33:		}		
+        -:   34:	}
+        -:   35:	
+        1:   36:	printf("\n---Testing getCost function COMPLETE---\n\n\n\n");
+call    0 returned 100%
+        1:   37:	return 0;
+        -:   38:}

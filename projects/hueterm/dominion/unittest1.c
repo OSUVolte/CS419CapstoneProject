@@ -1,7 +1,7 @@
 /**
 Michael Hueter
 CS 362 Assignment 3
-unitTest1.c - testing the getCost function
+unittest1.c - testing the getCost function
 **/
 
 #include "dominion.h"

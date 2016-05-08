@@ -1,0 +1,28 @@
+John Christiansen: chrijohn@oregonstate.edu
+William Maillard: maillarw@oregonstate.edu
+Peter Murphy: murphpet@oregonstate.edu  
+
+Final Project Part A
+
+Explain testIsValid Function of UrlValidator test code:
+The testIsValid function tests the UrlValidator by passing it a number combinations of known correct and incorrect url segments.  The url segment categories are: testUrlScheme, testUrlAuthority, testUrlPort, testPath, testUrlQuery.  Each of these categories has a number of examples that are either correctly formatted or incorrectly formatted.  The testIsValid combines these five segments in full URL and ensures each of the five parts of the URL are valid.  If one part is not valid, the entire URL is invalid.  
+
+Give how many total number of urls it is testing:
+In addition to the two tests of ‘google.com’,  testisValid tested 31,920 different urls. We determined this by adding a counter after asserting if the result of urlIsValid() equals what is expected, so that every URL is counted.
+
+Also, explain how it is building all the urls:
+The URL validator builds the URLs by taking one item in each of five category arrays.  So, it takes a scheme appends an authority and then appends a port then path, path options, and query.  It does this using the do-while loop, creating a URL until there are no more possible combinations.
+
+Give an example of valid url being tested and an invalid url being tested by testIsValid() method:
+The following are valid:
+h3t://go.com:0/test1/?action=view
+h3t://go.com:0/test1/?action=edit&mode=up
+h3t://go.com:0?action=view
+The following are not valid:
+h3t://go.com:0/../?action=view
+h3t://go.com:0/../?action=edit&mode=up
+h3t://go.com:0/../
+
+Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines:
+The URL validator test is not significantly different than the unit testing that we did for Dominion.  This test creates known valid and invalid inputs and tests if the validator can correctly identify if the URL is valid or not, similar to our Dominion unit tests.  
+This test is more complex than our unit tests since it runs through over three thousand unique inputs.  The unit tests that we did for Dominion are basically small pieces of that could be built upon to make a test like this one. 

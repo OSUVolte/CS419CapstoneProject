@@ -1,8 +1,8 @@
 /*******************************************************************************
 ** Program Filename: testhelpers.c
 ** Author: Jason Loomis
-** Date: 4/24/16
-** Description: CS 362, Assignment 3
+** Date: 5/8/16
+** Description: CS 362, Assignment 4
 **		Helper library for testing Dominion game.
 **		Contains functions to assess game/player state, card counts, etc.
 *******************************************************************************/
@@ -27,6 +27,81 @@ int Kingdom[] =
 	baron,
 	great_hall
 };
+
+/*******************************************************************************
+** Function: rand32
+** Description: bitwise combine multiple 16-bit random values into a single
+**		positive 32-bit random integer
+** Parameters: None
+** Pre-Conditions:
+**		srand() has been called to initialize the random number generator
+** Post-Conditions: returns a random positive 32-bit integer value
+*******************************************************************************/
+int rand32()
+{
+	/* rand() provides a value between 0 and MAX_RAND == 32767 */
+	return (rand() << 16) | ((rand() % 2) << 15) | rand();
+}
+
+/*******************************************************************************
+** Function: randU32
+** Description: bitwise combine multiple 16-bit random values into a single
+**		32-bit random unsigned integer
+** Parameters: None
+** Pre-Conditions:
+**		srand() has been called to initialize the random number generator
+** Post-Conditions: returns a random 32-bit unsigned integer value
+*******************************************************************************/
+unsigned int randU32()
+{
+	/* rand() provides a value between 0 and MAX_RAND == 32767 */
+	return ((rand() % 2) << 31) | (rand() << 16) | ((rand() % 2) << 15) | rand();
+}
+
+/*******************************************************************************
+** Function: chooseRandomCard
+** Description: choose a card randomly from among the kingdom cards, treasure,
+**		victory, or curse
+** Parameters:
+**		kingdom: pointer to array of kingdom cards
+** Pre-Conditions:
+**		srand() has been called to initialize the random number generator;
+**		kingdom points to an array of 10 integers, all of which are valid
+**			card types from the CARD enumeration
+** Post-Conditions: the chosen random card type is returned
+*******************************************************************************/
+int chooseRandomCard(int* kingdom)
+{
+	int index;
+	index = rand() % 17;
+	switch (index) /* 10 kingdom cards, 3 treasure, 3 victory, 1 curse*/
+	{
+	case 10: /* copper */
+		return copper;
+		break;
+	case 11: /* silver */
+		return silver;
+		break;
+	case 12: /* gold */
+		return gold;
+		break;
+	case 13: /* curse */
+		return curse;
+		break;
+	case 14: /* estate */
+		return estate;
+		break;
+	case 15: /* duchy */
+		return duchy;
+		break;
+	case 16: /* province */
+		return province;
+		break;
+	default: /* kingdom cards */
+		return kingdom[index];
+		break;
+	}
+}
 
 /*******************************************************************************
 ** Function: initCounts
@@ -77,7 +152,22 @@ int gameStateChanged(struct gameState* a, struct gameState* b)
 	{
 		if (*stateA != *stateB) return TRUE;
 	}
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
+}
+
+/*******************************************************************************
+** Function: isValidCardType
+** Description: check if a card type value is a value from the CARD enumeration.
+** Parameters:
+**		card: a card type value
+** Pre-Conditions: None
+** Post-Conditions: returns TRUE if the value is within the CARD enumeration,
+**		otherwise FALSE
+*******************************************************************************/
+int isValidCardType(int card)
+{
+	if (card >= curse && card <= treasure_map) return TRUE;
+	return FALSE;
 }
 
 /*******************************************************************************
@@ -177,25 +267,25 @@ int playerCardStateChanged(struct gameState* before, struct gameState* after, in
 	if (before->deckCount[player] != after->deckCount[player]) return TRUE;
 	if (before->discardCount[player] != after->discardCount[player]) return TRUE;
 
-	// check player's hand
+	/* check player's hand */
 	for (i = 0; i < before->handCount[player]; i++)
 	{
 		if (before->hand[player][i] != after->hand[player][i]) return TRUE;
 	}
 
-	// check player's deck
+	/* check player's deck */
 	for (i = 0; i < before->deckCount[player]; i++)
 	{
 		if (before->deck[player][i] != after->deck[player][i]) return TRUE;
 	}
 
-	// check player's discard
+	/* check player's discard */
 	for (i = 0; i < before->discardCount[player]; i++)
 	{
 		if (before->discard[player][i] != after->discard[player][i]) return TRUE;
 	}
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -241,10 +331,10 @@ int deltaSupplyCount(struct gameState* before, struct gameState* after, int card
 *******************************************************************************/
 int curseCardStateChanged(struct gameState* before, struct gameState* after)
 {
-	// check for change in curse cards
+	/* check for change in curse cards */
 	if (deltaSupplyCount(before, after, curse) != 0) return TRUE;
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -258,12 +348,12 @@ int curseCardStateChanged(struct gameState* before, struct gameState* after)
 *******************************************************************************/
 int victoryCardStateChanged(struct gameState* before, struct gameState* after)
 {
-	// check for change in victory cards
+	/* check for change in victory cards */
 	if (deltaSupplyCount(before, after, estate) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, duchy) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, province) != 0) return TRUE;
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -277,12 +367,12 @@ int victoryCardStateChanged(struct gameState* before, struct gameState* after)
 *******************************************************************************/
 int treasureCardStateChanged(struct gameState* before, struct gameState* after)
 {
-	// check for change in treasure cards
+	/* check for change in treasure cards */
 	if (deltaSupplyCount(before, after, copper) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, silver) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, gold) != 0) return TRUE;
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -301,13 +391,13 @@ int kingdomCardStateChanged(struct gameState* before, struct gameState* after, i
 {
 	int i;
 
-	// check for change in kingdom cards
+	/* check for change in kingdom cards */
 	for (i = 0; i < 10; i++)
 	{
 		if (deltaSupplyCount(before, after, kingdom[i]) != 0) return TRUE;
 	}
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -327,26 +417,26 @@ int supplyCardStateChanged(struct gameState* before, struct gameState* after, in
 {
 	int i;
 
-	// check for change in curse cards
+	/* check for change in curse cards */
 	if (deltaSupplyCount(before, after, curse) != 0) return TRUE;
 
-	// check for change in victory cards
+	/* check for change in victory cards */
 	if (deltaSupplyCount(before, after, estate) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, duchy) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, province) != 0) return TRUE;
 
-	// check for change in treasure cards
+	/* check for change in treasure cards */
 	if (deltaSupplyCount(before, after, copper) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, silver) != 0) return TRUE;
 	if (deltaSupplyCount(before, after, gold) != 0) return TRUE;
 
-	// check for change in kingdom cards
+	/* check for change in kingdom cards */
 	for (i = 0; i < 10; i++)
 	{
 		if (deltaSupplyCount(before, after, kingdom[i]) != 0) return TRUE;
 	}
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -366,10 +456,10 @@ int playerCardsOfTypeInHand(struct gameState* state, int player, int card)
 	int i;
 	int count = 0;
 
-	// count cards of type 'card'
+	/* count cards of type 'card' */
 	for (i = 0; i < state->handCount[player]; i++)
 	{
-		if (state->hand[player][i] == card) count++; // found a card
+		if (state->hand[player][i] == card) count++; /* found a card */
 	}
 
 	return count;
@@ -392,10 +482,10 @@ int playerCardsOfTypeInDeck(struct gameState* state, int player, int card)
 	int i;
 	int count = 0;
 
-	// count cards of type 'card'
+	/* count cards of type 'card' */
 	for (i = 0; i < state->deckCount[player]; i++)
 	{
-		if (state->deck[player][i] == card) count++; // found a card
+		if (state->deck[player][i] == card) count++; /* found a card */
 	}
 
 	return count;
@@ -418,10 +508,10 @@ int playerCardsOfTypeInDiscard(struct gameState* state, int player, int card)
 	int i;
 	int count = 0;
 
-	// count cards of type 'card'
+	/* count cards of type 'card' */
 	for (i = 0; i < state->discardCount[player]; i++)
 	{
-		if (state->discard[player][i] == card) count++; // found a card
+		if (state->discard[player][i] == card) count++; /* found a card */
 	}
 
 	return count;
@@ -442,10 +532,10 @@ int playedCardsOfType(struct gameState* state, int card)
 	int i;
 	int count = 0;
 
-	// count cards of type 'card'
+	/* count cards of type 'card' */
 	for (i = 0; i < state->playedCardCount; i++)
 	{
-		if (state->playedCards[i] == card) count++; // found a card
+		if (state->playedCards[i] == card) count++; /* found a card */
 	}
 
 	return count;
@@ -464,16 +554,16 @@ int playedCardsStateChanged(struct gameState* before, struct gameState* after)
 {
 	int i;
 
-	// check count of played cards
+	/* check count of played cards */
 	if (before->playedCardCount != after->playedCardCount) return TRUE;
 
-	// check for change played cards
+	/* check for change played cards */
 	for (i = 0; i < before->playedCardCount; i++)
 	{
 		if (before->playedCards[i] != after->playedCards[i]) return TRUE;
 	}
 
-	return FALSE; // no state change detected
+	return FALSE; /* no state change detected */
 }
 
 /*******************************************************************************
@@ -494,23 +584,23 @@ void deltaPlayedCardTypes(struct gameState* before, struct  gameState* after, in
 	int i;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* beforecardcounts = malloc(sizeof(int) * cardtypecount);
 	int* aftercardcounts = malloc(sizeof(int) * cardtypecount);
 	memset(beforecardcounts, 0, sizeof(int) * cardtypecount);
 	memset(aftercardcounts, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	countPlayedCardTypes(before, beforecardcounts);
 	countPlayedCardTypes(after, aftercardcounts);
 
-	// calculate deltas
+	/* calculate deltas */
 	for (i = 0; i < cardtypecount; i++)
 	{
 		cardcounts[i] = aftercardcounts[i] - beforecardcounts[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(beforecardcounts);
 	free(aftercardcounts);
 }
@@ -530,11 +620,13 @@ void deltaPlayedCardTypes(struct gameState* before, struct  gameState* after, in
 void countPlayedCardTypes(struct gameState* state, int* cardcounts)
 {
 	int i;
+	int card;
 
-	// cards in hand
+	/* cards in hand */
 	for (i = 0; i < state->playedCardCount; i++)
 	{
-		cardcounts[state->playedCards[i]]++;
+		card = state->playedCards[i];
+		if (isValidCardType(card) == TRUE) cardcounts[card]++;
 	}
 }
 
@@ -556,11 +648,13 @@ void countPlayedCardTypes(struct gameState* state, int* cardcounts)
 void countPlayerCardTypesInHand(struct gameState* state, int player, int* cardcounts)
 {
 	int i;
+	int card;
 
-	// cards in hand
+	/* cards in hand */
 	for (i = 0; i < state->handCount[player]; i++)
 	{
-		cardcounts[state->hand[player][i]]++;
+		card = state->hand[player][i];
+		if (isValidCardType(card) == TRUE) cardcounts[card]++;
 	}
 }
 
@@ -581,11 +675,13 @@ void countPlayerCardTypesInHand(struct gameState* state, int player, int* cardco
 void countPlayerCardTypesInDeck(struct gameState* state, int player, int* cardcounts)
 {
 	int i;
+	int card;
 
-	// cards in deck
+	/* cards in deck */
 	for (i = 0; i < state->deckCount[player]; i++)
 	{
-		cardcounts[state->deck[player][i]]++;
+		card = state->deck[player][i];
+		if (isValidCardType(card) == TRUE) cardcounts[card]++;
 	}
 }
 
@@ -606,11 +702,13 @@ void countPlayerCardTypesInDeck(struct gameState* state, int player, int* cardco
 void countPlayerCardTypesInDiscard(struct gameState* state, int player, int* cardcounts)
 {
 	int i;
+	int card;
 
-	// cards in discard
+	/* cards in discard */
 	for (i = 0; i < state->discardCount[player]; i++)
 	{
-		cardcounts[state->discard[player][i]]++;
+		card = state->discard[player][i];
+		if (isValidCardType(card) == TRUE) cardcounts[card]++;
 	}
 }
 
@@ -657,23 +755,23 @@ void deltaPlayerCardTypesInHand(struct gameState* before, struct  gameState* aft
 	int i;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* beforecardcounts = malloc(sizeof(int) * cardtypecount);
 	int* aftercardcounts = malloc(sizeof(int) * cardtypecount);
 	memset(beforecardcounts, 0, sizeof(int) * cardtypecount);
 	memset(aftercardcounts, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	countPlayerCardTypesInHand(before, player, beforecardcounts);
 	countPlayerCardTypesInHand(after, player, aftercardcounts);
 
-	// calculate deltas
+	/* calculate deltas */
 	for (i = 0; i < cardtypecount; i++)
 	{
 		cardcounts[i] = aftercardcounts[i] - beforecardcounts[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(beforecardcounts);
 	free(aftercardcounts);
 }
@@ -699,23 +797,23 @@ void deltaPlayerCardTypesInDeck(struct gameState* before, struct  gameState* aft
 	int i;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* beforecardcounts = malloc(sizeof(int) * cardtypecount);
 	int* aftercardcounts = malloc(sizeof(int) * cardtypecount);
 	memset(beforecardcounts, 0, sizeof(int) * cardtypecount);
 	memset(aftercardcounts, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	countPlayerCardTypesInDeck(before, player, beforecardcounts);
 	countPlayerCardTypesInDeck(after, player, aftercardcounts);
 
-	// calculate deltas
+	/* calculate deltas */
 	for (i = 0; i < cardtypecount; i++)
 	{
 		cardcounts[i] = aftercardcounts[i] - beforecardcounts[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(beforecardcounts);
 	free(aftercardcounts);
 }
@@ -741,23 +839,23 @@ void deltaPlayerCardTypesInDiscard(struct gameState* before, struct  gameState* 
 	int i;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* beforecardcounts = malloc(sizeof(int) * cardtypecount);
 	int* aftercardcounts = malloc(sizeof(int) * cardtypecount);
 	memset(beforecardcounts, 0, sizeof(int) * cardtypecount);
 	memset(aftercardcounts, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	countPlayerCardTypesInDiscard(before, player, beforecardcounts);
 	countPlayerCardTypesInDiscard(after, player, aftercardcounts);
 
-	// calculate deltas
+	/* calculate deltas */
 	for (i = 0; i < cardtypecount; i++)
 	{
 		cardcounts[i] = aftercardcounts[i] - beforecardcounts[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(beforecardcounts);
 	free(aftercardcounts);
 }
@@ -783,23 +881,23 @@ void deltaPlayerCardTypes(struct gameState* before, struct  gameState* after, in
 	int i;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* beforecardcounts = malloc(sizeof(int) * cardtypecount);
 	int* aftercardcounts = malloc(sizeof(int) * cardtypecount);
 	memset(beforecardcounts, 0, sizeof(int) * cardtypecount);
 	memset(aftercardcounts, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	countPlayerCardTypes(before, player, beforecardcounts);
 	countPlayerCardTypes(after, player, aftercardcounts);
 
-	// calculate deltas
+	/* calculate deltas */
 	for (i = 0; i < cardtypecount; i++)
 	{
 		cardcounts[i] = aftercardcounts[i] - beforecardcounts[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(beforecardcounts);
 	free(aftercardcounts);
 }
@@ -847,14 +945,14 @@ int checkSpecificPlayedCard(struct gameState* before, struct  gameState* after, 
 	int specific, others;
 	int cardtypecount = treasure_map + 1;
 
-	// initialize counting arrays
+	/* initialize counting arrays */
 	int* deltas = malloc(sizeof(int) * cardtypecount);
 	memset(deltas, 0, sizeof(int) * cardtypecount);
 
-	// count card types
+	/* count card types */
 	deltaPlayedCardTypes(before, after, deltas);
 
-	// calculate deltas
+	/* calculate deltas */
 	specific = 0;
 	others = 0;
 	for (i = 0; i < cardtypecount; i++)
@@ -863,7 +961,7 @@ int checkSpecificPlayedCard(struct gameState* before, struct  gameState* after, 
 		else others += deltas[i];
 	}
 
-	// clean up
+	/* clean up */
 	free(deltas);
 
 	return specific == 1 && others == 0 ? TRUE : FALSE;
@@ -896,6 +994,27 @@ void updateTestResult(int result, int* passes, int* failures)
 }
 
 /*******************************************************************************
+** Function: printTestResult
+** Description: print the test result (pass/fail) to stdout.
+** Parameters:
+**		result: boolean result of the test, zero for failure, otherwise success
+** Pre-Conditions: None
+** Post-Conditions: if result is non-zero, "passed" message printed to stdout;
+**		otherwise, "failed" message is printed to stdout.
+*******************************************************************************/
+void printTestResult(int result)
+{
+	if (result)
+	{
+		if (OUTPUTLEVEL > 1) printf("Passed\n");
+	}
+	else
+	{
+		if (OUTPUTLEVEL > 1) printf("FAILED\n");
+	}
+}
+
+/*******************************************************************************
 ** Function: printIndent
 ** Description: print the specified indentation.
 ** Parameters:
@@ -909,5 +1028,196 @@ void printIndent(int indent)
 	for (i = 0; i < indent; i++)
 	{
 		printf(" ");
+	}
+}
+
+/*******************************************************************************
+** Function: randomizeGameState
+** Description: initialize a randomized game state
+** Parameters:
+**		state: pointer to a gameState
+**		kingdom: pointer to array of kingdom cards
+**		cardToPlay: the specific card type to be played
+**		handpos: the hand position at which cardToPlay is located for the
+**			player specified by gameState.whoseTurn
+** Pre-Conditions:
+**		srand() has been called to initialize the random number generator;
+**		state is a pointer to a valid gameState struct;
+**		kingdom points to an array of 10 integers, all of which are valid
+**			card types from the CARD enumeration
+**		cardToPlay should be a valid card type from the CARD enumeration,
+**			additionally, cardToPlay should be one of the kingdom card types
+** Post-Conditions: initializes the gameState using the provided kingdom cards,
+**		the parameters are randomized as follows:
+**			numPlayers: 2 <= numPlayers <= MAX_PLAYERS
+**			supplyCount: all kingdom, treasure, victory, curse cards between 0
+**				and game initial counts
+**			embargo: if embargo is in the kingdom, embargo tokens may be
+**				may be applied to any kingdom supply piles; the number of
+**				tokens applied is up to (10 - # embargoes remaining in supply)
+**			outpostPlayed: if outpost is in the kingdom, with a 1/32 chance,
+**				outpostPlayed flag is set to up to (10 - # outposts remaining
+**				in supply)
+**			outpostTurn: if the outpostPlayed flag is non-zero, outpostTurn
+**				is set to a value between 0 and 2.
+**			whoseTurn: a player between 0 and (numPlayers - 1) is selected
+**			numActions: random value between 0 and 10 (arbitrary)
+**			coins: random value between 0 and 20 (arbitrary)
+**			numBuys: random value between 0 and 10 (arbitrary)
+**			cards counts: a cardcount is selected, between 0 and MAX_HAND,
+**				this value is then randomly divided among the deck, hand, and
+**				discard for each player; for the current player (whoseTurn),
+**				the distribution includes the played cards as well.
+**			cards: for the count of cards specified, the deck, hand, and
+**				discard are chosen randomly from among the kingdom, treasure
+**				victory, and curse cards; for the current player (whoseTurn),
+**				the playedCards are chosen as well.
+**			cardToPlay + handpos: for the current player (whoseTurn), the
+**				player's hand is specified to have at least 1 card and that
+**				card is specified to be cardToPlay and is set at any valid
+**				handpos for that player's hand.
+*******************************************************************************/
+void randomizeGameState(struct gameState* state, int* kingdom, int cardToPlay, int* handpos)
+{
+	int i, player, cards;
+	int numPlayers;
+	int embargoes;
+
+
+	/* initialize a new game */
+	numPlayers = 2 + (rand() % (MAX_PLAYERS - 2 + 1));
+	/* important, defines rngs seed, which is used for shuffling, etc. */
+	initializeGame(numPlayers, kingdom, rand32(), state);
+
+	/* "undeal" all player cards, returning them to the supply */
+	for (player = 0; player < state->numPlayers; player++)
+	{
+		for (i = 0; i < state->handCount[player]; i++)
+		{
+			state->supplyCount[state->hand[player][i]]++;
+			state->hand[player][i] = -1;
+		}
+		state->handCount[player] = 0;
+
+		for (i = 0; i < state->deckCount[player]; i++)
+		{
+			state->supplyCount[state->deck[player][i]]++;
+			state->deck[player][i] = -1;
+		}
+		state->deckCount[player] = 0;
+	}
+
+	/* randomize supply piles */
+	for (i = 0; i <= treasure_map; i++)
+	{
+		if (state->supplyCount[i] < 0) continue; /* invalid, skip */
+		state->supplyCount[i] = rand() % (state->supplyCount[i] + 1);
+	}
+
+	/* embargo */
+	if (state->supplyCount[embargo] >= 0) /* only embargo if embargo is in kingdom */
+	{
+		embargoes = 10 - state->supplyCount[embargo];
+		embargoes = rand() % (embargoes + 1);
+		for (i = 0; i < embargoes; i++) state->embargoTokens[kingdom[rand() % 10]] += 1;
+	}
+
+	/* only outpost if outpost is in kingdom */
+	if (state->supplyCount[outpost] >= 0)
+	{
+		if (rand() % 32) /* 1/32 chance of outpost being played */
+		{
+			state->outpostPlayed = rand() % (10 - state->supplyCount[outpost] + 1);
+		}
+		if (state->outpostPlayed) state->outpostTurn = rand() % (2 + 1); /* outpost turn counter? */
+	}
+
+	/* choose whose turn */
+	state->whoseTurn = rand() % state->numPlayers;
+
+	state->numActions = rand() % (10 + 1); /* arbitrary maximum of 10 */
+	state->coins = rand() % (20 + 1); /* arbitrary maximum of 20 */
+	state->numBuys = rand() % (10 + 1); /* arbitrary maximum of 10 */
+
+	/* set the players' card states */
+	for (player = 0; player < state->numPlayers; player++)
+	{
+		/* init card counts for player */
+		state->deckCount[player] = 0;
+		state->discardCount[player] = 0;
+		state->handCount[player] = 0;
+
+		cards = rand() % (MAX_HAND + 1); /* player's total cards */
+		if (player == state->whoseTurn) /* current player */
+		{
+			state->playedCardCount = 0; /* init played card count */
+			state->handCount[player] = 1; /* ensure at least current card in hand */
+			for (i = 1; i < cards; i++)
+			{
+				switch (rand() % 4) /* divide cards among deck, hand, discard, played*/
+				{
+				case 0:
+					state->deckCount[player]++;
+					break;
+				case 1:
+					state->discardCount[player]++;
+					break;
+				case 2:
+					state->playedCardCount++;
+					break;
+				default:
+					state->handCount[player]++;
+					break;
+				}
+			}
+		}
+		else /* other players */
+		{
+			for (i = 0; i < cards; i++)
+			{
+				switch (rand() % 3) /* divide cards among deck, hand, discard */
+				{
+				case 0:
+					state->deckCount[player]++;
+					break;
+				case 1:
+					state->discardCount[player]++;
+					break;
+				default:
+					state->handCount[player]++;
+					break;
+				}
+			}
+		}
+
+		/* choose hand */
+		for (i = 0; i < state->handCount[player]; i++)
+		{
+			state->hand[player][i] = chooseRandomCard(kingdom);
+		}
+
+		/* choose deck */
+		for (i = 0; i < state->deckCount[player]; i++)
+		{
+			state->deck[player][i] = chooseRandomCard(kingdom);
+		}
+
+		/* choose discard */
+		for (i = 0; i < state->discardCount[player]; i++)
+		{
+			state->discard[player][i] = chooseRandomCard(kingdom);
+		}
+
+		if (player == state->whoseTurn) /* current player */
+		{
+			/* choose played */
+			for (i = 0; i < state->playedCardCount; i++)
+			{
+				state->playedCards[i] = chooseRandomCard(kingdom);
+			}
+			/* set up current player to play the specified card */
+			*handpos = rand() % (state->handCount[player]);
+			state->hand[player][*handpos] = cardToPlay;
+		}
 	}
 }

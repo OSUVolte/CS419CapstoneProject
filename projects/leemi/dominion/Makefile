@@ -60,6 +60,12 @@ allTest: dominion.o rngs.o
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+randTest: dominion.o rngs.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	./randomtestadventurer &> randomtestadventurer.out
+	./randomtestcard >> randomtestcard.out
+
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 

@@ -66,6 +66,20 @@ unittestresults.out:  dominion.o unittest1 unittest2 unittest3 unittest4 cardtes
 	./cardtest3 >> unittestresults.out
 	./cardtest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
+  
+randomtestcard: randomtestcard.c dominion.o rngs.o
+  gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+  
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+  gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+  
+randomtestcard.out: dominion.o randomtestcard
+  ./randomtestcard >> randomtestcard.out
+  gcov -b dominion.c >> randomtestcard.out
+  
+randomtestadventurer.out: dominion.o randomtestadventurer
+  ./randomtestadventurer >> randomtestadventurer.out
+  gcov -b dominion.c >> randomtestadventurer.out
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
