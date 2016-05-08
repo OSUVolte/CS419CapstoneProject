@@ -58,7 +58,7 @@ int main (int argc, char** argv) {
 	numTests = 20;
 
 	for (i = 1; i <= numTests; i++) {
-# if (noiseLevel > 2)
+# if (noiseLevel > 0)
 		printf("-----Beginning test %d of %d-----\n", i, numTests);
 # endif	
 		
@@ -157,7 +157,7 @@ int main (int argc, char** argv) {
 
 			//Test that only certain things have changed and that they have changed correctly
 			failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
-# if (noiseLevel > 2)
+# if (noiseLevel > 0)
 			printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
 # endif	
 		}
