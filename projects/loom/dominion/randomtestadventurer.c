@@ -63,8 +63,7 @@ int main() {
         //set it to a random person's turn
         initializeGame(numPlayers, k, random, &Game);
         Game.whoseTurn =0;
-        //give them the adventurer card
-        Game.hand[Game.whoseTurn][0] = adventurer;
+
         //printf("2.\n");
 
         //check hand before

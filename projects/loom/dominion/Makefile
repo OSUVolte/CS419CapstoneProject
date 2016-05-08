@@ -74,9 +74,14 @@ unittestsresults.out: testDrawCard
 	
 randomtestadventurer.out: randomtestadventurer
 	./randomtestadventurer &> randomtestadventurer.out
+    gcov randomtestadventurer.c >> randomtestadventurer.out
+	cat randomtestadventurer.c.gcov >> randomtestadventurer.out
 
-randomtestadventurer.out: randomtestadventurer
-	./randomtestadventurer &> randomtestadventurer.out
+
+randomtestcard.out: randomtestcard
+	./randomtestcard &> randomtestcard.out
+    gcov randomtestcard.c >> randomtestcard.out
+	cat randomtestcard.c.gcov >> randomtestcard.out
     
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
