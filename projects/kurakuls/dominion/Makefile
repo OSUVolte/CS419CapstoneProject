@@ -3,6 +3,9 @@ CFLAGS = -Wall -fpic -coverage -lm
 UNITS = unit
 CARDS = card
 
+RANDOM1 = randomtestcard
+RANDOM2 = randomtestadventurer
+
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -35,7 +38,6 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-   
 
 unittestresults.out: dominion.o rngs.o $(UNITS) $(CARDS) 
 	./unit1 &> unittestresults.out
@@ -81,7 +83,22 @@ card:
 	gcc -o card2 cardtest2.c -g dominion.o rngs.o $(CFLAGS) 
 	gcc -o card3 cardtest3.c -g dominion.o rngs.o $(CFLAGS)
 	gcc -o card4 cardtest4.c -g dominion.o rngs.o $(CFLAGS)   
+
    
+randomtestresults.out: dominion.o rngs.o $(RANDOM1) $(RANDOM2)
+	./randomtestcard &> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out 
+
+randomtestcard: randomtestcard.c dominion.o
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+
+randomtestadventurer: randomtestadventurer.c dominion.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
    
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
