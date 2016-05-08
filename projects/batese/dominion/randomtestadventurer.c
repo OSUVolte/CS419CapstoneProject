@@ -45,7 +45,7 @@ int main (int argc, char** argv) {
 
 	//Set up gamestate with random number of players
 	//Get arguments for number of tests if there is one
-	if (argc == 2) {
+	/*if (argc == 2) {
 		char* testsArg = argv[1];
 		numTests = atoi(testsArg);
 	} else {
@@ -54,7 +54,8 @@ int main (int argc, char** argv) {
 	if (numTests == NULL) {
 		printf("Bad agruments.\n");
 		exit(1);
-	}
+	}*/
+	numTests = 1;
 
 	for (i = 0; i < numTests; i++) {
 # if (noiseLevel > 3)
