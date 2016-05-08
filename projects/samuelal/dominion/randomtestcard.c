@@ -1,8 +1,8 @@
 /*
 Alex Samuel
 Assignment 4
-randomtestadventurer.c
-Random Tester for adventurer card
+randomtestcard.c
+Random Tester for smithy card
 */
 
 #include "dominion.h"
@@ -21,7 +21,7 @@ int main() {
     int choice2 = 0;
     int choice3 = 0;
     int i, j, m;
-    int newCards = 2;
+    int newCards = 3;
     int discarded = 1;
     int minPlayers = 2;
     int numPlayers = 0;
@@ -67,44 +67,15 @@ int main() {
 
             PlayerID = whoseTurn(&testG);
 
-            if ( bonus % 2 == 0) {
-                testG.deckCount[PlayerID] = 0;
-            }
+            cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-            cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
-
-            //Random Test 1 - Testing adventurer - +2 Treasure Cards Added to Player's Hand, 1 Discarded
-            //Test fails because of bug introduced in refactor.c where 3 treasure cards are added instead of 2
-            //Also, as a result of a different bug, adventurer card is not discarded
+            //Random Test 1 - Testing smithy - +3 Cards Added to Player's Hand
+            //Test fails because of bug introduced in refactor.c where 4 cards are drawn instead of 3
             if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
                 errorFlag1 = 1;
             }
 
-            //Random Test 2 - Testing adventurer - Only Treasure Cards Are Added to Player's Hand
-            int treasureBefore = 0;
-            int treasureAfter = 0;
-
-            for (i = 0; i < G.handCount[PlayerID]; i++) {
-                if (G.hand[PlayerID][i] == copper || G.hand[PlayerID][i] == silver || G.hand[PlayerID][i] == gold) {
-                    treasureBefore++;
-                }
-            }
-
-            for (i = 0; i < testG.handCount[PlayerID]; i++) {
-                if (testG.hand[PlayerID][i] == copper || testG.hand[PlayerID][i] == silver || testG.hand[PlayerID][i] == gold) {
-                    treasureAfter++;
-                }
-            }
-
-            int NottreasureBefore = G.handCount[PlayerID] - treasureBefore;
-            int NottreasureAfter = testG.handCount[PlayerID] - treasureAfter;
-
-            //Test 2 fails because of bug introduced in refactor.c where 3 treasure cards are added instead of 2
-            if (NottreasureBefore != NottreasureAfter) {
-                errorFlag2 = 1;
-             }
-
-            //Random Test 3 - Other Players Are Unaffected by Player 1 Playing Adventurer
+            //Random Test 2 - Other Players Are Unaffected by Player 1 Playing Smithy
             for (m = 1; m < numPlayers; m++) {
 
                 PlayerID = m;
@@ -148,7 +119,7 @@ int main() {
                 //Compares whether any change to Player 2 hand or deck
                 if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
                     memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-                        printf("\n\nRANDOM TEST 3 HAS PASSED\n\n");
+                        //printf("\n\nRANDOM TEST 3 HAS PASSED\n\n");
                 }
                 else {
                     errorFlag3 = 1;
@@ -179,7 +150,8 @@ int main() {
 
 	}
 
-    printf("\n\nRANDOM TEST 1: Testing adventurer - +2 Treasure Cards Added to Player's Hand, 1 Discarded\n");
+
+    printf("\n\nRANDOM TEST 1: Testing smithy - +3 Cards Added to Player's Hand\n");
     if (errorFlag1 > 0) {
         printf("RANDOM TEST 1 HAS FAILED\n\n");
     }
@@ -187,7 +159,7 @@ int main() {
         printf("RANDOM TEST 1 HAS PASSED\n\n");
     }
 
-    printf("RANDOM TEST 2: Testing adventurer - Only Treasure Cards Are Added to Player's Hand\n");
+    printf("RANDOM TEST 2: Testing smithy - Other Players Are Unaffected by Player 1 Playing Smithy\n");
     if (errorFlag2 > 0) {
         printf("RANDOM TEST 2 HAS FAILED\n\n");
     }
@@ -195,13 +167,6 @@ int main() {
         printf("RANDOM TEST 2 HAS PASSED\n\n");
     }
 
-    printf("RANDOM TEST 3: Other Players Are Unaffected by Player 1 Playing Adventurer\n");
-    if (errorFlag3 > 0) {
-        printf("RANDOM TEST 3 HAS FAILED\n\n");
-    }
-    else {
-        printf("RANDOM TEST 3 HAS PASSED\n\n");
-    }
 
 
     return 0;
