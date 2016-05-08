@@ -17,6 +17,7 @@ void testPlaySmithy()
                 remodel, smithy, village, baron, great_hall};
 	struct gameState state;
 	int r;
+	int i;
 	int numPlayer = 2;
 	
 	memset(&state, 0, sizeof(struct gameState));   
@@ -31,17 +32,22 @@ void testPlaySmithy()
 	else
 		printf("playSmithy: FAIL smithy completed execution.\n");
 	
-	/*Test cards drawn and smithy discarded*/
+	/*Test cards drawn from deck and smithy discarded*/
 	player = 1;
 	handPos = 0;	
+	state.deckCount[player] = 10;
 	state.handCount[player] = 3;
 	r = playSmithy(player, &state, handPos);
 	if(state.handCount[player] == 5)
 		printf("playSmithy: PASS 3 cards drawn and smithy discarded.\n");
 	else
 		printf("playSmithy: FAIL 3 cards drawn and smithy discarded.\n");
+	if(state.deckCount[player] == 7)
+		printf("playSmithy: PASS 3 cards drawn from deck.\n");
+	else
+		printf("playSmithy: FAIL 3 cards drawn from deck.\n");
 	
-	/*Test cards drawn and smithy discarded*/
+	/*Test cards are added played stack*/
 	player = 1;
 	handPos = 0;	
 	state.handCount[player] = 3;
@@ -51,6 +57,46 @@ void testPlaySmithy()
 		printf("playSmithy: PASS card added to played stack.\n");
 	else
 		printf("playSmithy: FAIL card added to played stack.\n");
+	
+	/*Test other players do not draw cards*/
+	player = 1;
+	handPos = 0;	
+	state.handCount[player] = 3;
+	state.deckCount[player] = 10;
+	state.handCount[0] = 3;
+	state.deckCount[0] = 10;
+	state.playedCardCount = 0;
+	r = playSmithy(player, &state, handPos);
+	if(state.handCount[0] == 3)
+		printf("playSmithy: PASS other player did not draw card.\n");
+	else
+		printf("playSmithy: FAIL other player did not draw card.\n");
+	if(state.deckCount[0] == 10)
+		printf("playSmithy: PASS other player did not draw card.\n");
+	else
+		printf("playSmithy: FAIL other player did not draw card.\n");
+	
+	/*Test supply stacks do not change*/
+	for(i = 0; i <= treasure_map; i++)
+	{
+		state.supplyCount[i] = 10;
+	}
+	player = 1;
+	handPos = 0;	
+	state.handCount[player] = 3;
+	state.deckCount[player] = 10;
+	state.handCount[0] = 3;
+	state.deckCount[0] = 10;
+	state.playedCardCount = 0;
+	r = playSmithy(player, &state, handPos);
+	for(i = 0; i <= treasure_map; i++)
+	{
+		if(state.supplyCount[i] == 10)
+			printf("playSmithy: PASS card to drawn from supply posistion %d.\n", i);
+		else
+			printf("playSmithy: FAIL  card to drawn from supply posistion %d.\n", i);
+	}
+	
 }
 
 int main(int argc, char *argv[])

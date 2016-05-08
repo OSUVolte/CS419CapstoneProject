@@ -1,0 +1,39 @@
+>>> testing updateCoins 
+actual coins: 0  expected coins: 0 
+0 returned  0 expected
+actual coins: 0  expected coins: 0 
+0 returned  0 expected
+actual coins: 1  expected coins: 1 
+0 returned  0 expected
+actual coins: 5  expected coins: 5 
+0 returned  0 expected
+actual coins: 2  expected coins: 2 
+0 returned  0 expected
+actual coins: 10  expected coins: 10 
+0 returned  0 expected
+actual coins: 3  expected coins: 3 
+0 returned  0 expected
+actual coins: 15  expected coins: 15 
+0 returned  0 expected
+actual coins: 6  expected coins: 6 
+0 returned  0 expected
+actual coins: 1  expected coins: 1 
+0 returned  0 expected
+actual coins: 1  expected coins: 1 
+0 returned  0 expected
+actual coins: 2  expected coins: 2 
+0 returned  0 expected
+actual coins: 6  expected coins: 6 
+0 returned  0 expected
+actual coins: 3  expected coins: 3 
+0 returned  0 expected
+actual coins: 11  expected coins: 11 
+0 returned  0 expected
+actual coins: 4  expected coins: 4 
+0 returned  0 expected
+actual coins: 16  expected coins: 16 
+0 returned  0 expected
+actual coins: 7  expected coins: 7 
+0 returned  0 expected
+>>> end of updateCoins test 
+

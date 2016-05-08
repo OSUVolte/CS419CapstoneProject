@@ -43,9 +43,6 @@ int main() {
 	//test empty deck
 		memcpy(&testG, &G, sizeof(struct gameState)); 
 
-		//test shuffle function works
-		//move deck over to discarded
-
 		memcpy(testG.discard[p], testG.deck[p], sizeof(int) * testG.deckCount[p]);
 		testG.deckCount[p] =0;
 		cardEffect(adventurer, choice1, choice2, choice3, &testG, 0, &bonus);			
@@ -63,25 +60,6 @@ int main() {
 	printf("Discard Count %d, expected discardCount: %d", testG.discardCount[p], G.discardCount[p]+1);
 		
 		
-		// evaluate 2 coins added
-		
-		// check action is -1
-		
-		// check discard count 
-	
-	//test regular deck 
-	printf("Test 2: coins spread throughout deck \n");
-	
-		//move deck over to discarded
-		
-		//test shuffle function works
-		
-		// evaluate 2 coins added
-		
-		// check action is -1
-		
-		// check discard count 
-	
 	
 	
 	
@@ -111,8 +89,9 @@ void printMetrics(struct gameState * G, struct gameState *testG, int p, int * te
 	//assert(testG->handCount[p] == G->handCount[p]+2);
 	
 	printf("Discard Count greater than original %d > %d\n", testG->discardCount[p], G->discardCount[p]);
-	*testResult+= compareTest(testG->discardCount[p], G->discardCount[p]);
-	//assert(testG->discardCount[p] > G->discardCount[p]);
+	if(testG->discardCount[p] <= G->discardCount[p])
+		*testResult+= compareTest(testG->discardCount[p], G->discardCount[p]);
+	
 	printf("Player %d's turn,  Expected Players turn: %d\n", testG->whoseTurn, G->whoseTurn);
 	*testResult += compareTest(testG->whoseTurn, G->whoseTurn);
 	return;

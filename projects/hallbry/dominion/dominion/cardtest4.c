@@ -65,10 +65,10 @@ int main() {
 	//evaluate plus 2 actions 
 		//print out results
 	if(testResult ==0){
-		printf("\nCardtest 3 Test Passed!\n");		
+		printf("\nCardtest 4 Test Passed!\n");		
 	}
 	else{
-		printf("\nCardtest 3 Test Failed\n");
+		printf("\nCardtest 4 Test Failed\n");
 	}	
 	printf("--------------------------------------------------\n");	 
  

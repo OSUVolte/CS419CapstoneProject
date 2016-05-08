@@ -45,6 +45,60 @@ cardtests: cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o
 	gcc -o card-test3 cardtest3.c -g dominion.o rngs.o $(CFLAGS)
 	gcc -o card-test4 cardtest4.c -g dominion.o rngs.o $(CFLAGS)
 
+unittestresults.out: unittests cardtests
+	echo '' > unittestresults.out
+	echo '#### #### #### TEST OUTPUT #### #### ####' >> unittestresults.out
+	echo '' >> unittestresults.out
+	./unit-test1 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./unit-test2 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./unit-test3 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./unit-test4 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./card-test1 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./card-test2 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./card-test3 >> unittestresults.out
+	echo '' >> unittestresults.out
+	./card-test4 >> unittestresults.out
+	echo '' >> unittestresults.out
+	echo '#### #### #### TESTED COVERAGE #### #### ####' >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 277,314p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 355,393p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 395,420p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 1206,1234p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 1267,1279p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 1236,1265p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 1281,1294p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	sed -n -e 1352,1378p dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	echo '#### #### #### ALL COVERAGE #### #### ####' >> unittestresults.out
+	echo '' >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
+	echo '' >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+randomtests: randomtestadventurer.c randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+	echo '' > randomtestcard.out
+	./randomtestcard >> randomtestcard.out
+	echo '' > randomtestadventurer.out
+	./randomtestadventurer >> randomtestadventurer.out
+	
+
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:

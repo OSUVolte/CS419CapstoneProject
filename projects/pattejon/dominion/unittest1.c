@@ -81,7 +81,7 @@ int main() {
 
                 // We would also like to check random hand compositions
                 int t;
-                for(t=0; t <= 100; t++){
+                for(t=0; t <= 50; t++){
                     int testHandSum = 0;
                     for(i=0; i < handCount; i++){
                         int t = rand() % 3;
@@ -115,7 +115,7 @@ int main() {
                 }
 
             }
-            
+
         }
     }
     return 0;

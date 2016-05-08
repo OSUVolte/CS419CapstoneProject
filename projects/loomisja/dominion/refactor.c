@@ -1,6 +1,7 @@
 Jason Loomis
-4/10/2016
-Assignment 2: Refactoring
+4/24/2016
+Updated for Assignment 3: Unit Testing
+(originally from Assignment 2)
 Filename: refactor.c
 
 === CHANGES TO dominion.c ===
@@ -90,7 +91,5 @@ reversed--it should be checking if the cost of the card being trashed + 2 is
 less than the cost of the card being gained.
 
 in cardEffectSmithy():
-1) Changed drawCard(player, state) call in the for loop to drawCard(i, state).
-This will cause players 0 to 2 to gain cards, assuming the game has 3 players.
-If there are fewer than 3 players, the result will be unpredictable and may
-cause the program to crash (buffer overflow).
+1) Changed the for loop termination condition from i < 3 to i <= 3. This will
+cause 4 cards to be drawn, instead of the intended 3.

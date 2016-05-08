@@ -1,0 +1,120 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:Behnam Saeedi
+        -:    3:Saeedib
+        -:    4:93227697
+        -:    5:Unit test
+        -:    6:*/
+        -:    7:
+        -:    8:#include <stdlib.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <assert.h>
+        -:   11:#include <string.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#include "dominion.h"
+        -:   15:#include "dominion_helpers.h"
+        -:   16:#include "rngs.h"
+        -:   17:
+        -:   18:#define UNITTEST "isGameOver"
+        -:   19:
+        1:   20:int main(int argc, char ** argv)
+        -:   21:{
+        1:   22:	srand(time(NULL));
+        -:   23:	//Generating player:
+        -:   24:	int out;
+        1:   25:	int seed = 1000;
+        1:   26:	int numPlayers = 2;
+        1:   27:	int thisPlayer = 0;
+        -:   28:	struct gameState G, testG;
+        -:   29:
+        1:   30:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+        -:   31:	// initialize a game state and player cards
+        1:   32:	initializeGame(numPlayers, k, seed, &G);
+        -:   33:	// generating a random state
+        1:   34:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   35:	int count;
+        1:   36:	count = testG.handCount[thisPlayer];
+        6:   37:	for(int i = 0; i < count; i++)
+        5:   38:		testG.hand[thisPlayer][i] = estate;
+       26:   39:	for(int i = 0; i < 25; i++)
+       25:   40:		testG.supplyCount[i] = 10;
+        1:   41:	testG.hand[thisPlayer][0] = gold;	//3
+        1:   42:	testG.hand[thisPlayer][1] = silver;	//2
+        1:   43:	testG.hand[thisPlayer][2] = copper;	//1
+        1:   44:	testG.supplyCount[province] = rand() % 5 + 1;
+        -:   45:	//Total should add up to 6
+        -:   46:	// Starting test
+        1:   47:	printf("\n\nTesting Unit %s\n\n", UNITTEST);
+        -:   48:
+        -:   49:
+        1:   50:	printf("Test 1: Checking the function.\n");
+       26:   51:	for(int i = 0; i < 25; i++)
+       25:   52:		assert(testG.supplyCount[i] >= 0);
+        1:   53:	out = isGameOver(&testG);
+        1:   54:	if(out != 1)
+        1:   55:		printf("Game is not over(expected)\n");
+        -:   56:	else
+    #####:   57:		printf("Game is over(unexpected)\n");
+        1:   58:	assert(out != 1);
+        1:   59:	printf("Setting the province cards to 0\n");
+        1:   60:	testG.supplyCount[province] = 0;
+        1:   61:	out = isGameOver(&testG);
+        1:   62:	if(out == 1)
+        1:   63:		printf("Game is over(expected)\n");
+        -:   64:	else
+    #####:   65:		printf("Game is Not over(unexpected)\n");
+        1:   66:	assert(out == 1);
+        1:   67:	printf("Test 1 Passed\n");
+        -:   68:
+        1:   69:	printf("\nTest 2: testing decrease in province cards.\n");
+        1:   70:	testG.supplyCount[province] = 5;
+        6:   71:	for(int i = 0; i < 5; i++)
+        -:   72:	{
+        5:   73:		testG.supplyCount[province] = testG.supplyCount[province] -1;
+        5:   74:		out = isGameOver(&testG);
+        5:   75:		printf("value of %d: %d\n",i,out);
+        5:   76:		if(i != 4)
+        4:   77:			assert(out == 0);
+        -:   78:		else
+        1:   79:			assert(out == 1);
+        -:   80:	}
+        1:   81:	printf("Test 2 Passed\n");
+        -:   82:
+        1:   83:	printf("\nTest 3: Testing 3 piles are at 0.\n");
+        4:   84:	for(int i = 0; i < 3; i++)
+        -:   85:	{
+        3:   86:		printf("supply count of %d was %d.\n",i,testG.supplyCount[i]);
+        3:   87:		for(; testG.supplyCount[i] != 0; testG.supplyCount[i] = testG.supplyCount[i] -1);
+        3:   88:		printf("supply count of %d now is %d.\n",i,testG.supplyCount[i]);
+        -:   89:	}
+        1:   90:	testG.supplyCount[province] = 10;
+        1:   91:	out = isGameOver(&testG);
+        1:   92:	assert(out == 1);
+        1:   93:	printf("Test 3 Passed\n");
+        -:   94:
+        1:   95:	printf("\nTest 4: Checking unexpected input/Output\n");
+       11:   96:	for(int i = 0; i < 10; i++)
+        -:   97:	{
+       10:   98:		int mem[3] = {0,0,0};
+       40:   99:		for(int i = 0; i < 3; i++)
+        -:  100:		{
+       30:  101:			mem[i] = rand() % 25;
+        -:  102:		}
+       10:  103:		testG.supplyCount[mem[0]] = 0;
+       10:  104:		testG.supplyCount[mem[1]] = 0;
+       10:  105:		testG.supplyCount[mem[2]] = 0;
+       10:  106:		printf("Supplies %d, %d and %d are set to 0\n", mem[0],mem[1],mem[2]);
+       10:  107:		if(mem[0] != mem[1] && mem[1] != mem[2] && mem[0] != mem[2])
+       10:  108:			assert(isGameOver(&testG) == 1);
+      260:  109:		for(int j = 0; j < 25; j++)
+      250:  110:			testG.supplyCount[j] = 10;
+        -:  111:	}
+        -:  112:	
+        1:  113:	printf("Test 4 Passed\n");
+        1:  114:	return 0;	//No bugs found
+        -:  115:}

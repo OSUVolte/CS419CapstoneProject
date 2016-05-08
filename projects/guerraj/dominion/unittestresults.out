@@ -1,0 +1,112 @@
+Program by James Guerra Result for running unit- tests for cards:
+cardtest1.c:
+TESTING Smithy Card:
+G.handCount = 2, expected = 3
+Test 1 failed, expected card number not found in hand 
+Test 2 passed, expected card number in hand player 2 
+File 'cardtest1.c'
+Lines executed:85.71% of 28
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:70.00% of 10
+Creating 'cardtest1.c.gcov'
+
+cardtest2.c:
+TESTING adventeruer Card:
+G.handCount = 4, expected = 2
+Test 1 failed, expected card number not found in hand 
+Test 2 passed, expected card number in hand player 2 
+Test 3 failed, non-treasure card in hand 
+File 'cardtest2.c'
+Lines executed:82.86% of 35
+Branches executed:87.50% of 16
+Taken at least once:43.75% of 16
+Calls executed:66.67% of 12
+Creating 'cardtest2.c.gcov'
+
+cardtest3.c:
+TESTING remodel Card:
+G.handCount = 2, expected = 2
+Test 1 passed, expected card number in hand 
+Test 2 passed, expected card number in hand player 2 
+Test 3 failed, adventurer card not added 
+File 'cardtest3.c'
+Lines executed:78.95% of 38
+Branches executed:85.71% of 14
+Taken at least once:57.14% of 14
+Calls executed:69.23% of 13
+Creating 'cardtest3.c.gcov'
+
+cardtest4.c:
+TESTING salvager Card:
+G.handCount = 0, expected = 0
+Test 1 passed, expected card number in hand 
+Test 2 passed, expected card number in hand player 2 
+test 3 passed, correct number of coins added 
+All tests passed!
+File 'cardtest4.c'
+Lines executed:82.86% of 35
+Branches executed:100.00% of 8
+Taken at least once:50.00% of 8
+Calls executed:76.92% of 13
+Creating 'cardtest4.c.gcov'
+
+results for running unit-tests for functions
+unittest1.c:
+TESTING updateCoins function
+Test 1 passed, expected coins in gamestate 
+Test 2 passed, expected coins in gamestate 
+All tests passed!
+File 'unittest1.c'
+Lines executed:88.24% of 34
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:84.62% of 13
+Creating 'unittest1.c.gcov'
+
+unittest2.c:
+TESTING playCard function
+Test player 0 with 0 card(s) in hand before given salvager and later mine 
+Test 1 passed, not enough actions 
+Test 2 passed, expected coins in gamestate 
+All tests passed!
+File 'unittest2.c'
+Lines executed:88.89% of 36
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:85.71% of 14
+Creating 'unittest2.c.gcov'
+
+unittest3.c:
+TESTING getCost function
+Test 2 passed, Card has correct value returned by function. 
+Test 2 passed, Card has correct value returned by function. 
+All tests passed!
+File 'unittest3.c'
+Lines executed:87.10% of 31
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:84.62% of 13
+Creating 'unittest3.c.gcov'
+
+unittest4.c:
+TESTING scoreFor function
+Test 2 passed, Card has correct value returned by function. 
+Test 2 passed, score has correct value returned by function. 
+Test 3 passed, score has correct value returned by function. 
+All tests passed!
+File 'unittest4.c'
+Lines executed:82.35% of 34
+Branches executed:100.00% of 8
+Taken at least once:50.00% of 8
+Calls executed:80.00% of 15
+Creating 'unittest4.c.gcov'
+
+code coverage for dominon.c:
+File 'dominion.c'
+Lines executed:36.74% of 558
+Branches executed:45.06% of 415
+Taken at least once:27.95% of 415
+Calls executed:27.37% of 95
+Creating 'dominion.c.gcov'
+

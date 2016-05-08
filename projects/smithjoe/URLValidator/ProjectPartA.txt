@@ -1,0 +1,86 @@
+The testIsValid function runs through all permutations of the testUrlXXX arrays to create tests.
+The testIsValid function of the UrlValidator class makes a UrlValidator object. This object has the isValid method, which checks
+to see if a url is valid. It is asserted with www.google.com at the beginning of the function.
+The function uses a StringBuffer to build the urls, and its append method to append parts to it.
+It utilizes urlVal.isValid(url) to check whether the url is valid, after the url has been converted to string
+and put into the variable url. There are 31920 possible urls being tested. This number is the result of all possible combinations of  
+testUrlPort, testPath, testUrlScheme, testUrlAuthority,  and testUrlQuery
+the object testUrlParts contains the different parts: Object[] testUrlParts = {testUrlScheme, testUrlAuthority, testUrlPort, testPath, testUrlQuery};
+The different strings to test are stored in ResultPair[] objects as such:
+   ResultPair[] testUrlScheme = {new ResultPair("http://", true),
+                               new ResultPair("ftp://", true),
+                               new ResultPair("h3t://", true),
+                               new ResultPair("3ht://", false),
+                               new ResultPair("http:/", false),
+                               new ResultPair("http:", false),
+                               new ResultPair("http/", false),
+                               new ResultPair("://", false),
+                               new ResultPair("", true)};
+ResultPair[] testUrlAuthority = {new ResultPair("www.google.com", true),
+                                  new ResultPair("go.com", true),
+                                  new ResultPair("go.au", true),
+                                  new ResultPair("0.0.0.0", true),
+                                  new ResultPair("255.255.255.255", true),
+                                  new ResultPair("256.256.256.256", false),
+                                  new ResultPair("255.com", true),
+                                  new ResultPair("1.2.3.4.5", false),
+                                  new ResultPair("1.2.3.4.", false),
+                                  new ResultPair("1.2.3", false),
+                                  new ResultPair(".1.2.3.4", false),
+                                  new ResultPair("go.a", false),
+                                  new ResultPair("go.a1a", false),
+                                  new ResultPair("go.cc", true),
+                                  new ResultPair("go.1aa", false),
+                                  new ResultPair("aaa.", false),
+                                  new ResultPair(".aaa", false),
+                                  new ResultPair("aaa", false),
+                                  new ResultPair("", false)
+   };
+   ResultPair[] testUrlPort = {new ResultPair(":80", true),
+                             new ResultPair(":65535", true),
+                             new ResultPair(":0", true),
+                             new ResultPair("", true),
+                             new ResultPair(":-1", false),
+                             new ResultPair(":65636", true),
+                             new ResultPair(":65a", false)
+   };
+   ResultPair[] testPath = {new ResultPair("/test1", true),
+                          new ResultPair("/t123", true),
+                          new ResultPair("/$23", true),
+                          new ResultPair("/..", false),
+                          new ResultPair("/../", false),
+                          new ResultPair("/test1/", true),
+                          new ResultPair("", true),
+                          new ResultPair("/test1/file", true),
+                          new ResultPair("/..//file", false),
+                          new ResultPair("/test1//file", false)
+   };
+   //Test allow2slash, noFragment
+   ResultPair[] testUrlPathOptions = {new ResultPair("/test1", true),
+                                    new ResultPair("/t123", true),
+                                    new ResultPair("/$23", true),
+                                    new ResultPair("/..", false),
+                                    new ResultPair("/../", false),
+                                    new ResultPair("/test1/", true),
+                                    new ResultPair("/#", false),
+                                    new ResultPair("", true),
+                                    new ResultPair("/test1/file", true),
+                                    new ResultPair("/t123/file", true),
+                                    new ResultPair("/$23/file", true),
+                                    new ResultPair("/../file", false),
+                                    new ResultPair("/..//file", false),
+                                    new ResultPair("/test1//file", true),
+                                    new ResultPair("/#/file", false)
+   };
+
+   ResultPair[] testUrlQuery = {new ResultPair("?action=view", true),
+                              new ResultPair("?action=edit&mode=up", true),
+                              new ResultPair("", true)
+   };
+An example valid url is h3t://go.cc:65535 . An example invalid url would be ://go.au
+
+I think that a real world test is different from the unit tests and card tests that we wrote because this is based on a real
+world use case of software that is used by a large number of people. It is hard to get such a widely used piece of software for a
+class since we don't have time to deal with such complicated pieces of software in the limited time that we have to work for
+our class.
+

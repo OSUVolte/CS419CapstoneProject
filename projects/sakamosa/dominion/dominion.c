@@ -39,7 +39,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 
   int i;
   int j;
-  int it;			
+  			
   //set up random number generator
   SelectStream(1);
   PutSeed((long)randomSeed);
@@ -56,13 +56,13 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   //check selected kingdom cards are different
   for (i = 0; i < 10; i++)
     {
-      for (j = 0; j < 10; j++)
-        {
+     for (j = 0; j < 10; j++)
+     {
 	  if (j != i && kingdomCards[j] == kingdomCards[i])
 	    {
 	      return -1;
 	    }
-        }
+     }
     }
 
 
@@ -166,10 +166,10 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
       state->handCount[i] = 0;
       state->discardCount[i] = 0;
       //draw 5 cards
-      // for (j = 0; j < 5; j++)
-      //	{
-      //	  drawCard(i, state);
-      //	}
+      for (j = 0; j < 5; j++)
+      	{
+      	  drawCard(i, state);
+      	}
     }
   
   //set embargo tokens to 0 for all supply piles
@@ -189,9 +189,9 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   //int it; move to top
 
   //Moved draw cards to here, only drawing at the start of a turn
-  for (it = 0; it < 5; it++){
-    drawCard(state->whoseTurn, state);
-  }
+  //for (it = 0; it < 5; it++){
+  //  drawCard(state->whoseTurn, state);
+  //}
 
   updateCoins(state->whoseTurn, state, 0);
 
@@ -1286,10 +1286,12 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos){
 
 //adventurer: reveal cards from your deck until you get two treasure cards, discard rest
 int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
-    int drawntreasure=0;
+   
+    int drawntreasure = 0;
     int temphand[MAX_HAND];
     int z = 0;
-    while(drawntreasure<2){
+    while(drawntreasure < 2){
+   
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
