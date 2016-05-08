@@ -101,18 +101,18 @@
      1000:   96:        if (G.handCount[p] != testHandCount ) error = 1;
         -:   97:
         -:   98:        //Some additional sanity tests for other players
-     3015:   99:        for(p = 1; p < numPlayer; p++){
+     2999:   99:        for(p = 1; p < numPlayer; p++){
         -:  100:            #if NOISY_TEST
-     2015:  101:            printf("Test player %d unchanged:\n", p);
-     2015:  102:            printf("Deck = %d, Expected = %d\n", G.deckCount[p], T.deckCount[p]);
-     2015:  103:            printf("Hand = %d, Expected = %d\n", G.handCount[p], T.handCount[p]);
+     1999:  101:            printf("Test player %d unchanged:\n", p);
+     1999:  102:            printf("Deck = %d, Expected = %d\n", G.deckCount[p], T.deckCount[p]);
+     1999:  103:            printf("Hand = %d, Expected = %d\n", G.handCount[p], T.handCount[p]);
         -:  104:            #endif
         -:  105:            #if (ASSERTS_ON == 1)
         -:  106:            assert(G.deckCount[p] == T.deckCount[p]);
         -:  107:            assert(G.handCount[p] == T.handCount[p]);
         -:  108:            #endif 
-     2015:  109:            if(G.deckCount[p] != T.deckCount[p]) error = 1;
-     2015:  110:            if(G.handCount[p] != T.handCount[p]) error = 1;
+     1999:  109:            if(G.deckCount[p] != T.deckCount[p]) error = 1;
+     1999:  110:            if(G.handCount[p] != T.handCount[p]) error = 1;
         -:  111:        }
      1000:  112:        if(error == 1){
      1000:  113:            num_errors++;

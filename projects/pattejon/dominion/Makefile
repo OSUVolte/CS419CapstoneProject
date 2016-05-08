@@ -37,7 +37,7 @@ cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 
 randomtestcard: randomtestcard.c dominion.o rngs.o
-	gcc -o randomcardtest -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
 
 randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
 	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
