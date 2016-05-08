@@ -44,3 +44,4 @@ Results from this showed that failed roughly 20% of the unit tests, all of them 
 I introduced a bug which would cause exactly this. Otherwise all other tests completed succesfully.  Statement coverage in this function was 100% and every branch was taken. 
 
 Overall I was very pleased with my random testers. I ran 200,000 trials and caught a few bugs in the programs as well.  
+
