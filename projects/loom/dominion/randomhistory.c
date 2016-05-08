@@ -23,3 +23,24 @@ I tested the smithy card, which is very simple and straightforward.  I randomly 
 and a hand size, created them, then played the smithy card to see if it would always add the
 correct number of cards.  Of course, because I introduced a bug, it fails every single test
 however compensating for that bug shows that the test would pass every time.
+
+Coverage
+
+flip1 ~/CS362/dominion 153% gcov -b randomtestadventurer
+File 'randomtestadventurer.c'
+Lines executed:94.44% of 72
+Branches executed:100.00% of 46
+Taken at least once:91.30% of 46
+Calls executed:100.00% of 17
+Creating 'randomtestadventurer.c.gcov'
+
+flip1 ~/CS362/dominion 154% gcov -b randomtestcard
+File 'randomtestcard.c'
+Lines executed:96.00% of 25
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+Calls executed:100.00% of 10
+Creating 'randomtestcard.c.gcov'
+
+
+as we can see my tests covered almost the entire code, so they had good coverage.
