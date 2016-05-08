@@ -157,21 +157,15 @@ int main (int argc, char** argv) {
 		memcpy(&postGameState, &preGameState, sizeof(struct gameState));
 		//printf("Gamestate copied.\n");
 
-		//Check player has at least 2 treasures in their deck/discard pile
-		if (hasTreasures(&preGameState, p) < 2) {
-# if (noiseLevel > 0)
-			printf("ABANDONING TEST %d: Player %d does not have at least 2 treasure cards in deck/discard pile.\n", i, p);
-# endif
-		} else {
-			//Call village method
-			cardEffect(village, 0, 0, 0, &postGameState, 0, 0);
+		//Call village method
+		cardEffect(village, 0, 0, 0, &postGameState, 0, 0);
 
-			//Test that only certain things have changed and that they have changed correctly
-			failedTests = testStatesAdventurer(&preGameState, &postGameState, numPlayers, p);
+		//Test that only certain things have changed and that they have changed correctly
+		failedTests = testStatesVillage(&preGameState, &postGameState, numPlayers, p);
 # if (noiseLevel > 0)
-			printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
+		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
 # endif	
-		}
+		
 	}
 
 	return 0;
