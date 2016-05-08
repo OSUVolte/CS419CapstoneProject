@@ -68,7 +68,8 @@ int main (int argc, char** argv) {
 		printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
 		
 		//Initialise gamestate
-		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game state
+		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game states
+		memset(&postGameState, 23, sizeof(struct gameState));   // clear the game states
 		initializeGame(numPlayers, k, seed, &preGameState); // initialize a new game	
 		printf("Gamestate initialised.\n");
 		
@@ -93,9 +94,10 @@ int main (int argc, char** argv) {
 			// If first player then add hand back to deck
 			if (p == 0) {
 				while (preGameState.handCount[p] > 0) {
+					printf("Handcount = %d.\n", preGameState.handCount[p]);
 					preGameState.deck[p][preGameState.deckCount[p]] = preGameState.hand[p][preGameState.handCount[p] - 1];
 					preGameState.handCount[p]--;
-					preGameState.hand[p][preGameState.handCount[p]] = -1;
+					//preGameState.hand[p][preGameState.handCount[p]] = -1;
 					preGameState.deckCount[p]++;
 				}
 				printf("Removed card from hand of p0.\n");
