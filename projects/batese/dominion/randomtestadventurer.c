@@ -64,7 +64,7 @@ int main (int argc, char** argv) {
 		
 		// Set a random number of players
 		PlantSeeds(7);
-		numPlayers = (Random() * 3) + 1;
+		numPlayers = (Random() * 2) + 2;
 		printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
 		
 		//Initialise gamestate
