@@ -12,7 +12,7 @@ Description: Random test for the adventurer card function in dominion.c
 #include <stdlib.h>
 #include <string.h>
 
-# define noiseLevel 3
+# define noiseLevel 1
 //Noise level 0 = no print statements
 //Noise level 1 = only print failed tests
 //Noise level 2 = print results of all tests
@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 		printf("Bad agruments.\n");
 		exit(1);
 	}*/
-	numTests = 20;
+	numTests = 2000;
 
 	for (i = 1; i <= numTests; i++) {
 # if (noiseLevel > 0)
