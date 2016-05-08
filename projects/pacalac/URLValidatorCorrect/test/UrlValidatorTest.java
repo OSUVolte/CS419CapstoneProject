@@ -83,6 +83,7 @@ public class UrlValidatorTest extends TestCase {
     * @param testObjects Used to create a url.
     */
    public void testIsValid(Object[] testObjects, long options) {
+	  int count = 0;
       UrlValidator urlVal = new UrlValidator(null, null, options);
       assertTrue(urlVal.isValid("http://www.google.com"));
       assertTrue(urlVal.isValid("http://www.google.com/"));
@@ -92,6 +93,7 @@ public class UrlValidatorTest extends TestCase {
          statusPerLine = 6;
       }
       do {
+    	 ++count;
          StringBuffer testBuffer = new StringBuffer();
          boolean expected = true;
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
@@ -128,6 +130,7 @@ public class UrlValidatorTest extends TestCase {
       if (printStatus) {
          System.out.println();
       }
+      System.out.print(count);
    }
 
    public void testValidator202() {
