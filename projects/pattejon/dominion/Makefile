@@ -73,6 +73,16 @@ unittestresults.out: makeassignment3tests
 	cat cardtest4.c.gcov >> unittestresult.out
 	echo "done running tests, hit enter"
 
+randomtestcard.out: randomtestcard
+	./randomtestcard & > randomtestcard.out
+	gcov randomtestcard.c >> randomtestcard.out
+	cat randomtestcard.c.gcov >> randomtestcard.out
+
+randomtestadventurer.out: randomtestadventurer
+	./randomtestadventurer & > randomtestadventurer.out
+	gcov randomtestadventurer.c >> randomtestadventurer.out
+	cat randomtestadventurer.c.gcov >> randomtestadventurer.out
+
 badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
 
