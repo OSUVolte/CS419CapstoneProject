@@ -1,6 +1,6 @@
 CFLAGS = -Wall -fpic -coverage -lm
 
-randomtestadventurer.out: randomtestadventurer.c dominion.out
+randomtestadventurer.out: randomtestadventurer.c dominion.o
 	echo "%-------------------------------------RANDOM TEST ADVENTURER-------------------------------------%" >> randomtestadventurer.out
 
 	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
@@ -11,7 +11,7 @@ randomtestadventurer.out: randomtestadventurer.c dominion.out
 	
 	echo "%-------------------------------------RANDOM TESTING COMPLETE-------------------------------------%" >> randomtestadventurer.out	
 	
-randomtestcard.out: randomtestcard.c dominion.out
+randomtestcard.out: randomtestcard.c dominion.o
 	echo "%-------------------------------------RANDOM   TEST   VILLAGE-------------------------------------%" >> randomtestcard.out
 
 	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
