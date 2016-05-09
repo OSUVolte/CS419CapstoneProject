@@ -39,7 +39,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 
   int i;
   int j;
-  int it;			
+  			
   //set up random number generator
   SelectStream(1);
   PutSeed((long)randomSeed);
@@ -56,13 +56,13 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
   //check selected kingdom cards are different
   for (i = 0; i < 10; i++)
     {
-      for (j = 0; j < 10; j++)
-        {
+     for (j = 0; j < 10; j++)
+     {
 	  if (j != i && kingdomCards[j] == kingdomCards[i])
 	    {
 	      return -1;
 	    }
-        }
+     }
     }
 
 
@@ -165,7 +165,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
       //initialize hand size to zero
       state->handCount[i] = 0;
       state->discardCount[i] = 0;
-      draw 5 cards
+      //draw 5 cards
       for (j = 0; j < 5; j++)
       	{
       	  drawCard(i, state);
@@ -1286,12 +1286,12 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos){
 
 //adventurer: reveal cards from your deck until you get two treasure cards, discard rest
 int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
-    printf("entered adv\n");
+   
     int drawntreasure = 0;
     int temphand[MAX_HAND];
     int z = 0;
     while(drawntreasure < 2){
-        printf("in while loop\n");
+   
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -1305,7 +1305,6 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
 	}
     }
     while(z-1>=0){
-        printf("in discard loop\n");
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
     }

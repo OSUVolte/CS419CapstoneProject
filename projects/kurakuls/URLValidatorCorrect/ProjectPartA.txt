@@ -1,0 +1,47 @@
+CS 362 
+Project Part A 
+
+ Explain testIsValid Function of UrlValidator test code. 
+The testIsValid function in UrlValidatorTest.java is a public void method in the UrlValidatorTest class that extends the TestCase class. 
+
+The function accepts as parameters a type testObject and a number (long) options. 
+
+The testObjects contains arrays of different result pairs. Each pair contains a string and a boolean to indicate where it is valid or not. 
+The different arrays of result pairs that are combined to make the complete test URL are: the URl scheme, the Url Authority (domain), the port, the Path, the Path options, and the query. 
+
+Before the main loop of the function, a new instance of the UrlValidator class in created as urlVal. 
+
+The main part of the function is a do while loop that will continue as long as there are more test parts. 
+First, a testBuffer is created and boolean "expected" is defined as true. 
+
+Because a complete URL will only be valid if all of the parts it is made of are valid, the testIsValid function checks if each boolean in the of the results pairs that make up the URL are test to true (valid). 
+
+Explain how it is building all the urls.
+The url is then made by going through the current combination of url parts defined by the testPartsIndex variable. Each part of the URL is appended to the testBuuffer, and the boolean part of that result pair is ANDed with the "expected" variable. In this way, if any of the parts added to the testBuffer are false, the expected result will be false after all the parts are added. 
+
+Next, a boolean "result" is defined and assigned the value that the isValid method of the urlVal object returns when it is passed the url string (testBuffer is converted to url). 
+
+Finally, if the "result" variable is true, the url is printed, and an assert is made that the expected and result variables for the current url are equal. 
+
+The options variable that is passed in is used to create the new instance of a UrlValidator. The isValid uses regular expressions to check for valid html.
+
+TOTAL NUMBER OF URLs TESTED: 
+31922
+or 31920. (NEED INPUT?) 
+
+We had some debate. By our calculations, it seemed as if we should be testing 35,910. But the actual tests that were run produced different numbers. We couldn't come a consensus on the reason behind it.
+
+VALID - Well the obvious is "http://www.google.com" 
+INVALID - http://go.au:-1/ 
+
+
+Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? 
+Explain in few lines. 
+
+The main difference between the unit tests and the card tests that we wrote and these testing methods is that the testIsValid is more automated and magnitudes larger than our test. The testIsValid goes throught many more test cases, and defines which one should pass or fail. For the unit tests that I wrote, I only included tests that should have been passed. 
+
+Another main difference between the unit tests that we wrote and testIsValid() is that is that the testIsValid method uses predefined variables about where the test should pass or fail and compares it with the isValid method to check each test case. 
+
+I think that it's fairly comparable. Sure, scale wise, it's different, but the essence is the same. We find a way to bombard the function that we're testing with various inputs and trying to see where failure occurs. The testIsValid() is doing the same thing. The only thing that immediately strikes me as adding in complexity is the bool flags. But that is just a simple facet of testing the URL string. 
+
+This is not random because the permutations are predefined and gone through in the same order each time.

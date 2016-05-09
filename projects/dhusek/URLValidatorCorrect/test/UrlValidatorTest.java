@@ -27,7 +27,7 @@ import junit.framework.TestCase;
  */
 public class UrlValidatorTest extends TestCase {
 
-   private boolean printStatus = false;
+   private boolean printStatus = true;
    private boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
 
    public UrlValidatorTest(String testName) {
@@ -86,6 +86,7 @@ public class UrlValidatorTest extends TestCase {
       UrlValidator urlVal = new UrlValidator(null, null, options);
       assertTrue(urlVal.isValid("http://www.google.com"));
       assertTrue(urlVal.isValid("http://www.google.com/"));
+      int count = 2;
       int statusPerLine = 60;
       int printed = 0;
       if (printIndex)  {
@@ -103,7 +104,7 @@ public class UrlValidatorTest extends TestCase {
          //System.out.println(testPartsIndex[0]);
          String url = testBuffer.toString();
          boolean result = urlVal.isValid(url);
-         
+         count++;
          if(result == true)
         	 System.out.println(url);
          assertEquals(url, expected, result);
@@ -128,6 +129,7 @@ public class UrlValidatorTest extends TestCase {
       if (printStatus) {
          System.out.println();
       }
+      System.out.println(count);
    }
 
    public void testValidator202() {

@@ -64,5 +64,17 @@ unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 	
 	gcov dominion.c -f -b >> unittestresults.out
 
+randomtestcard.out: randomtestcard.c testUtilities.c dominion.o rngs.o
+	echo "Result for running dominion tests:" > unittestresults.out
+
+	gcc -o randomtestcard.compile.out randomtestcard.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./randomtestcard.compile.out >> unittestresults.out
+
+randomtestadventurer.out: randomtestadventurer.c testUtilities.c dominion.o rngs.o
+	echo "Result for running dominion tests:" > unittestresults.out
+
+	gcc -o randomtestadventurer.compile.out randomtestadventurer.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./randomtestadventurer.compile.out >> unittestresults.out
+
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *test?.out 

@@ -74,6 +74,37 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	#dominion.o >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 
+
+############ ADDED MAKEFILE FOR ASSIGNMENT 4 ##################################################
+randomtestcard.out: randomtestcard.c dominion.o rngs.o interface.o
+	echo "randomtestcard.c:" > randomtestcard.out
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o interface.o $(CFLAGS)
+	
+	randomtestcard >> randomtestcard.out
+	gcov randomtestcard.c >> randomtestcard.out
+	cat randomtestcard.c.gcov >> randomtestcard.out	
+	
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+#testrc: randomtestcard.c dominion.o rngs.o interface.o
+#	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o interface.o $(CFLAGS)
+
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o interface.o
+	echo "randomtestadventurer.c:" > randomtestadventurer.out
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o interface.o $(CFLAGS)
+	
+	randomtestadventurer >> randomtestadventurer.out
+	gcov randomtestadventurer.c >> randomtestadventurer.out	
+	cat randomtestadventurer.c.gcov >> randomtestadventurer.out	
+	
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+testra: randomtestadventurer.c dominion.o rngs.o interface.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o interface.o $(CFLAGS)
+
+###############################################################################################
+
+
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 

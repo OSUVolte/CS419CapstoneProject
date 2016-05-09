@@ -117,4 +117,4 @@ randomtest: randomtestcard.c randomtestadventurer.c dominion.o rngs.o
 	gcov randomtestcard.gnda >> randomtestResult.c
 	gcov randomtestadventurer.gnda >> randomtestResult.c
 	cat randomtestResult.c
-	rm -f randomtestcard.out randomtestadventurer.out
+#	rm -f randomtestcard.out randomtestadventurer.out

@@ -69,6 +69,29 @@ unittestresults.out: unit1 unit2 unit3 unit4 card1 card2 card3 card4 dominion.o
 	echo "" >> unittestresults.out
 	gcov dominion -f -b >> unittestresults.out
  
+rand1: dominion.o rngs.o randomtestadventurer.c
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestadventurer.c rngs.o -o randad -lm -g	
+
+randomtestadventurer.out: dominion.o rand1
+	echo "***********RANDOM ADVENTURER******************" >& randomtestadventurer.out  
+	./randad >> randomtestadventurer.out  
+	gcov randomtestadventurer -f -b >> randomtestadventurer.out
+	echo "************DOMINION******************" >> randomtestadventurer.out
+	echo "" >> randomtestadventurer.out 
+	gcov dominion -f -b >> randomtestadventurer.out 
+
+rand2: dominion.o rngs.o randomtestcard.c
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.o randomtestcard.c rngs.o -o rancard -lm -g	
+
+randomtestcard.out: dominion.o rand2
+	echo "***********RANDOM VILLAGE******************" >& randomtestcard.out  
+	./rancard >> randomtestcard.out  
+	gcov randomtestcard -f -b >> randomtestcard.out
+	echo "************DOMINION******************" >> randomtestcard.out
+	echo "" >> randomtestcard.out 
+	gcov dominion -f -b >> randomtestcard.out 
+
+
 testDrawCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 
@@ -93,7 +116,7 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard card1 card2 card3 card4 unit1 unit2 unit3 unit4
+all: playdom player testDrawCard testBuyCard badTestDrawCard card1 card2 card3 card4 unit1 unit2 unit3 unit4 rand1 rand2
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 .gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 randad randcard .gcov *.gcda *.gcno *.so
