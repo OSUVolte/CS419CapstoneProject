@@ -46,10 +46,10 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 4
 
 Function 'adventurerEffect'
-Lines executed:94.44% of 18
+Lines executed:100.00% of 18
 Branches executed:100.00% of 12
-Taken at least once:75.00% of 12
-Calls executed:66.67% of 3
+Taken at least once:91.67% of 12
+Calls executed:100.00% of 3
 
 Function 'smithyEffect'
 Lines executed:0.00% of 6
@@ -160,9 +160,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:24.24% of 561
+Lines executed:24.42% of 561
 Branches executed:25.66% of 417
-Taken at least once:17.27% of 417
-Calls executed:13.13% of 99
+Taken at least once:17.75% of 417
+Calls executed:14.14% of 99
 Creating 'dominion.c.gcov'
 
