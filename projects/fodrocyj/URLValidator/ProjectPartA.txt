@@ -1,0 +1,38 @@
+CS362 Final Project
+
+Group Members:
+Nick Martin (martinn6@oregonstate.edu)
+John Peter Fodrocy (fodrocyj@oregonstate.edu)
+Rob Tan (tangr@oregonstate.edu)
+
+
+Part a : Review of existing test case(s)(Part a is team project)
+
+Explain testIsValid function.
+The function testIsValid() first calls the function testIsValid(testObjects, options),
+which does the real work of the function. The function starts off by testing some hard
+coded URLs to make sure they are valid. It then builds some URLs from different parts
+that have been hard coded into the ResultPair array. The program knows which URLs should
+and shouldn’t pass (that information was also hard-coded in) and this allows it to compare
+expected results with actual results.
+
+How many URLs is it testing?
+testUrlScheme: 9
+testUrlAuthority: 19
+testUrlPort: 7
+testPath: 10
+testUrlQuery: 3
+The total number of query strings being tested is 9 * 19 * 7 * 10 * 3 = 35,910.
+If an option is passed, the program will test an addition 15 strings in the combination. 
+These are held in the testUrlPathOptions and would result in a total of 538650 tests.
+
+How is testIsValid building all the URLs?
+It creates a test buffer from StringBuffer(). It then combines the ResultPair[] parts
+into testBuffer utilizing all possible permutations to test whether or not there is a
+valid combination. When building the URLs, the program also notes if any of the parts would
+result in an invalid URL so it knows what outcome to expect.
+
+Give an example of a valid URL and an invalid URL being tested.
+A valid URL the program will test: http://www.google.com/test1
+An invalid URL the program will test: http://go.1aaa:80/test1//file
+ 
