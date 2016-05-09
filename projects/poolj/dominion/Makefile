@@ -139,6 +139,34 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	echo "GCOV results for dominion.c from cardtest4.c" >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 
+# Random Card Tests
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+	
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+	
+# Random Card Testing Suites
+randomtestcard.out: randomtestcard
+	echo "Results for running randomtestcard:" > randomtestcard.out
+	./randomtestcard >> randomtestcard.out
+	echo "" >> randomtestcard.out
+	echo "GCOV results for randomtestcard.c" >> randomtestcard.out
+	gcov -b randomtestcard.c >> randomtestcard.out
+	echo "" >> randomtestcard.out
+	echo "GCOV results for dominion.c from randomtestcard.c" >> randomtestcard.out
+	gcov -b dominion.c >> randomtestcard.out
+	
+randomtestadventurer.out: randomtestadventurer
+	echo "Results for running randomtestadventurer:" > randomtestadventurer.out
+	./randomtestadventurer >> randomtestadventurer.out
+	echo "" >> randomtestadventurer.out
+	echo "GCOV results for randomtestadventurer.c" >> randomtestadventurer.out
+	gcov -b randomtestadventurer.c >> randomtestadventurer.out
+	echo "" >> randomtestadventurer.out
+	echo "GCOV results for dominion.c from randomtestadventurer.c" >> randomtestcard.out
+	gcov -b dominion.c >> randomtestadventurer.out
+	
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
@@ -147,3 +175,4 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
 	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out
+	rm -f randomtestadventurer randomtestcard randomtestadventurer.out randomtestcard.out
