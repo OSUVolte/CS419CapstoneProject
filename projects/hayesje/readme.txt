@@ -15,3 +15,8 @@ Date: 05/06/2016
 Changes   1) Added dominion/randomtestcard.c dominion/randomtestadventurer.c 
           2) Added dominion/randomhistory.c
           3) Modified dominion/Makefile to include randomtestcard.out and randomtestadventurer.out rules.
+
+Date: 05/08/2016
+Changes   1) Added URLValidator and URLValidatorCorrect directories 
+          2) Added URLValidator/ProjectPartA.txt for team: Justin Pareno, Samuel Jones, Jerry Hayes
+      
