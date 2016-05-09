@@ -1,7 +1,3 @@
-/* created by James Guerra for random quiz 2. see randomstring.c for rest of quiz. 
-program randomly generates chars, and a random string of chars, 
-before testing them in an infintie loop until a very specific 
-sequence of randomly generated chars occurs*/
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -9,23 +5,19 @@ sequence of randomly generated chars occurs*/
 
 char inputChar()
 {
-    // function to generate random characters
-	int randNum = rand() % 128; //generates random number between 0 and 127
-	char randChar = (char) randNum; //assigns char value based on the int generated
-	
-    return randChar;
+		char myChar = rand() % 95 + 32;
+    return myChar;
 }
 
 char *inputString()
 {
-    char *randString;
-	char array[5];
-	for(int i =0; i<= 4; i++){ //assigns random chars to  string array
-		array[i] = inputChar(); 
-	}
-	array[5] = '/0';   //end string  
-	randString = array; //creates pointer to array for returning purposes
-    return randString;
+		int i = 0;
+		char static myString[6];
+		for(i = 0; i < 5; i++){
+			myString[i] = rand() % 25 + 97;
+		}
+		myString[5] = '\0';
+    return myString;
 }
 
 void testme()
@@ -64,7 +56,6 @@ void testme()
 
 int main(int argc, char *argv[])
 {
-	
     srand(time(NULL));
     testme();
     return 0;
