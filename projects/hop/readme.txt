@@ -1,1 +1,0 @@
-Ho, Patrick's directory

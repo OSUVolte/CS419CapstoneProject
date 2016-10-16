@@ -1,8 +1,0 @@
-Smithy is an action card costing 4 coins. When you play it, you get three cards from the top of your deck drawn. Hence the text “+ 3 cards” in the card body. It contains a single action so if you have other action cards and choose Smithy, you won’t be able to use any of the other actions. A strategy called “Big Money” is to buy a Smithy and then silver and gold treasures before buying any victory cards.
-
-Adventurer is an action card costing 6 coins. When you play it, it reveals cards from your deck until it has revealed two treasure cards. It then puts those two treasure cards into your hand and discards the other revealed cards.  It costs the same amount as gold and in my experience is likely to find two coppers or a copper and a silver, so I prefer to buy gold instead of buying this card.
-
-As long as the card to play is not marked as “trashed,” discardCard function adds the card at handPos to the played pile, removes it from the player’s hand, and reduces the number of cards in hand by 1. It returns 0 on success. It has four inputs: a pointer to a gameState variable, the position of the hand of the card to return, the integer representing current player, and an integer representing the “trashed” status.
-
-UpdateCoins function is called before buys, resets the coin count for current player and counts up the values of the treasure card values in the player’s hand. It adds 1 point for each copper, 2 points for each silver, and 3 points for each gold treasure card. Then it adds any extra coins the player earned. It returns 0 on success. It has three inputs: a pointer to a gameState variable, the integer representing current player, and an integer representing the bonus or value of extra coins.
-

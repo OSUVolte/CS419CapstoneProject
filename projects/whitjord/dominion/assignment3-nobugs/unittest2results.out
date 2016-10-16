@@ -1,7 +1,0 @@
->>> testing isGameOver 
-isGameOver returned 0 expected 0 
-isGameOver returned 1 expected 1 
-isGameOver returned 0 expected 0 
-isGameOver returned 1 expected 1 
->>> end of isGameOver test 
-

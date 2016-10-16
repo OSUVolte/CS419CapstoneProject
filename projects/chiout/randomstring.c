@@ -1,1 +1,0 @@
-A random tester for testme() would just simply have to run testme() until it completes. The tester can validate that it printed "error" to stdout, and if so, then it executed successfully.

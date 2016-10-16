@@ -1,1 +1,0 @@
-git for dummies

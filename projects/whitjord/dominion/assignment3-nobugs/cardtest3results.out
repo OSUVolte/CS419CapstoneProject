@@ -1,6 +1,0 @@
->>> testing village cardEffect 
-5 cards in hand, expecting 5
-3 actions, expecting 3
-village cardEffect returned 0, expecting 0
->>> end of village cardEffect test 
-
