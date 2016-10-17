@@ -381,7 +381,7 @@ game.Top = me.Entity.extend({
         this.alwaysUpdate = true;
         
         // define standing animation, use all frames
-        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                                     11, 12, 13, 14, 15, 16, 17, 18, 19]);
         // define death animation
         this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]);
@@ -529,6 +529,10 @@ game.Warrior = me.Entity.extend({
         this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
+
+        //keep player in view
+        this.maxX = me.game.viewport.width - this.width;
+        this.maxY = me.game.viewport.width - this.height;
     },
 
     // update player pos
@@ -611,6 +615,10 @@ game.Warrior = me.Entity.extend({
 
         // handle collisions against other shapes
         me.collision.check(this);
+
+        //kep player in viewport
+        this.pos.x = this.pos.x.clamp(0, this.maxX);
+        this.pos.y = this.pos.y.clamp(0, this.maxY);
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
