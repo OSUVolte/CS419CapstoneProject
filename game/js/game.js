@@ -12,7 +12,7 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto", scaleMethod: "flex-width"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -50,14 +50,18 @@ var game = {
         me.pool.register("top", game.Top);
         me.pool.register("mid", game.Mid);
 
+        //buildings:
+        me.pool.register("buildingA", game.BuildingA);
+
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
-        
+        me.input.bindKey(me.input.KEY.B, "b");
+        me.input.bindKey(me.input.KEY.A, "accept");
         me.input.bindKey(me.input.KEY.X, "x");
-        
+
         // Start the game.
         me.state.change(me.state.PLAY);
     }
