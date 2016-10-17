@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="31">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="35">
  <tileset firstgid="1" name="medieval_tilesheet" tilewidth="16" tileheight="16" tilecount="4840" columns="110">
   <image source="../img/map/medieval_tilesheet.png" width="1760" height="704"/>
  </tileset>
@@ -19,7 +19,7 @@
   </data>
  </layer>
  <objectgroup name="spawns">
-  <object id="18" name="spawn_top" x="32" y="544" width="16" height="32"/>
+  <object id="18" name="spawn_top" x="144" y="448" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="player">
   <object id="23" name="player" x="16" y="720" width="32" height="32"/>
@@ -28,5 +28,7 @@
   <object id="27" name="bottom" x="224" y="720">
    <polyline points="0,0 0,32 784,32 784,-464 752,-464 752,0 0,0"/>
   </object>
+  <object id="31" name="top" x="16" y="528" width="32" height="32"/>
+  <object id="32" name="mid" x="224" y="560" width="32" height="32"/>
  </objectgroup>
 </map>

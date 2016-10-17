@@ -47,6 +47,8 @@ var game = {
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("bottom", game.Bottom);
+        me.pool.register("top", game.Top);
+        me.pool.register("mid", game.Mid);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");

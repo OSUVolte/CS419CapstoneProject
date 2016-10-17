@@ -85,9 +85,9 @@ game.Bottom = me.Entity.extend({
             
             shapes: [new me.Rect(0, 0, 32, 32)]
         }
-        
+      // TODO: remove later when we get rid of testing  
         var combat = false;
-        var hp = 20;
+        var hp = 200;
         
         var width = settings.width;
         var height = settings.height;
@@ -108,9 +108,6 @@ game.Bottom = me.Entity.extend({
         this.endY = 256;
         this.combat = combat;
         this.hp = hp;
-        
-        console.log("endY = " + this.endY);
-        console.log("after init combat = " + this.combat);
 
 //        this.pos.x = x + width - settings.framewidth;
         
@@ -151,7 +148,6 @@ game.Bottom = me.Entity.extend({
             }
             
             if (this.walkUp && this.pos.y > this.endY) {
-                console.log("y = " + this.pos.y);
                 this.body.vel.y += -this.body.accel.y * me.timer.tick;
                 this.body.vel.x = 0;
             } else if (this.walkUp && this.pos.y < this.endY) {
@@ -167,7 +163,6 @@ game.Bottom = me.Entity.extend({
         }
         // if entity alive and engaged in combat, stop moving
         else if (this.alive && this.combat == true) {
-            console.log("COMBAT = " + this.combat);
             this.body.vel.x = 0;
             this.body.vel.y = 0;
         }
@@ -199,7 +194,6 @@ game.Bottom = me.Entity.extend({
       // cause it to flicker
       // probably call battle function here
         this.combat = true;
-        console.log("Engaged in combat! hp = " + this.hp);
         this.renderable.flicker(750);
         this.hp--;
         
@@ -207,6 +201,268 @@ game.Bottom = me.Entity.extend({
         // else they are considered dead, for now, 
         if (this.hp > 0) {
             this.combat = false;
+        } else {
+            this.alive = false;
+        }
+      
+      }
+      return false;
+    }
+    // Make all other objects solid
+    return true;
+    }
+});
+
+game.Mid = me.Entity.extend({
+ init : function (x, y, settings, combat, hp) {
+        // settings is the entity property (https://melonjs.github.io/melonJS/docs/me.Entity.html)
+        // can define things like sprite, framewidth of sprite, etc here
+        var settings = {
+            image: "slime spritesheet calciumtrice_0",
+            // the width of the path
+            width: 784,
+            height: 528,
+            
+            // the size of the entity
+            framewidth: 32,
+            frameheight: 32,
+            
+            shapes: [new me.Rect(0, 0, 32, 32)]
+        }
+        
+        var combat = false;
+        var hp = 20;
+        
+        var width = settings.width;
+        var height = settings.height;
+        
+        this._super(me.Entity, 'init', [x, y , settings, combat, hp]);
+        
+        // start/end position
+        y = this.pos.y;
+        x = this.pos.x;
+        this.startX = x;
+        this.endX = width;
+        this.startY = y;
+//        this.endY = y + height - settings.frameheight;
+        // endY is hardcoded for now, figure out a way to determine it later
+        this.endY = height;
+        this.combat = combat;
+        this.hp = hp;
+
+//        this.pos.x = x + width - settings.framewidth;
+        
+        this.diagonal = false;
+
+        this.body.setVelocity(1,0.6);
+        
+        // follow position
+        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        
+        this.alwaysUpdate = true;
+    },
+    
+
+  /**
+   * update the enemy pos
+   */
+    update : function (dt) {
+        if (this.alive && this.combat == false) {
+            if (!this.diagonal && (this.pos.x <= this.endX) || (this.pos.y >= this.endY)) {
+                this.body.vel.y += -this.body.accel.y * me.timer.tick;
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+            } else {
+                this.diagonal = true;
+                this.body.vel.x = 0;
+                this.body.vel.y = 0;
+            }
+        }
+        // if entity alive and engaged in combat, stop moving
+        else if (this.alive && this.combat == true) {
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+        // if entity has died
+        else {
+            // TODO: call function for unit death, clean up unit and maybe play death animation
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+
+        // update the body movement
+        this.body.update(dt);
+
+        // handle collisions against other shapes
+        me.collision.check(this);
+
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+    
+        /**
+    * colision handler
+    * (called when colliding with other objects)
+    */
+    onCollision : function (response, other) {
+    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+        // if something touches this entity
+      if (this.alive && (response.overlap > 0) && !this.combat) {
+      // cause it to flicker
+      // probably call battle function here
+        this.combat = true;
+
+        this.renderable.flicker(750);
+        this.hp--;
+
+        // call combat function, if this unit wins, they are no longer in combat and continue walking
+        // else they are considered dead, for now,
+        if (this.hp > 0) {
+            this.combat = false;
+        } else {
+            this.alive = false;
+        }
+      }
+      return false;
+    }
+    // Make all other objects solid
+    return true;
+    }
+});
+
+game.Top = me.Entity.extend({
+ init : function (x, y, settings, combat, hp) {
+        // settings is the entity property (https://melonjs.github.io/melonJS/docs/me.Entity.html)
+        // can define things like sprite, framewidth of sprite, etc here
+        var settings = {
+            image: "slime spritesheet calciumtrice_0",
+            // the width of the path
+            width: 784,
+            height: 100,
+            
+            // the size of the entity
+            framewidth: 32,
+            frameheight: 32,
+            
+            shapes: [new me.Rect(0, 0, 32, 32)]
+        }
+        
+        var combat = false;
+        var hp = 20;
+        
+        var width = settings.width;
+        var height = settings.height;
+        
+        this._super(me.Entity, 'init', [x, y , settings, combat, hp]);
+        
+        // start/end position
+        y = this.pos.y;
+        x = this.pos.x;
+        this.startX = x;
+        this.endX = x + width - settings.framewidth;
+        this.startY = y;
+
+        // end is hardcoded for now
+        this.endY = 16;
+        this.combat = combat;
+        this.hp = hp;
+        this.attack = 500;
+        this.def = 10;
+        this.hit = 20;
+        
+        
+        this.walkRight = false;
+        this.walkUp = false;
+
+        this.body.setVelocity(1,1);
+        
+        // follow position
+        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        
+        this.alwaysUpdate = true;
+        
+        // define standing animation, use all frames
+        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+                                                    11, 12, 13, 14, 15, 16, 17, 18, 19]);
+        // define death animation
+        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]);
+        // define death animation
+        this.renderable.addAnimation("dead", [49]);
+        // define walking animation
+        this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
+        // define attacking animation
+        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
+        // set standing as default
+        this.renderable.setCurrentAnimation("stand");
+    },
+    
+  /**
+   * update the enemy pos
+   */
+    update : function (dt) {
+        if (this.alive && this.combat == false) {
+            if (!this.walkUp && this.pos.y > this.endY) {
+                this.body.vel.y += -this.body.accel.y * me.timer.tick;
+                this.body.vel.x = 0;
+                walkUp = true;
+                if (!this.renderable.isCurrentAnimation("walk")) {
+                this.renderable.setCurrentAnimation("walk");
+                }
+            } else if (!this.walkUp && this.pos.y <= this.endY && this.pos.x < this.endX) {
+                this.body.vel.y = 0;
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+                if (!this.renderable.isCurrentAnimation("walk")) {
+                this.renderable.setCurrentAnimation("walk");
+                }
+            } else if (this.pos.x >= this.endX) {
+                this.body.vel.x = 0;
+                this.body.vel.y = 0;
+                this.walkRight = true;
+                if (!this.renderable.isCurrentAnimation("stand")) {
+                this.renderable.setCurrentAnimation("stand");
+                }
+            }
+        }
+        // if entity alive and engaged in combat, stop moving
+        else if (this.alive && this.combat == true) {
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+        // if entity has died
+        else {
+            // TODO: call function for unit death, clean up unit and maybe play death animation
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+
+        // update the body movement
+        this.body.update(dt);
+
+        // handle collisions against other shapes
+        me.collision.check(this);
+
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+    
+        /**
+    * colision handler
+    * (called when colliding with other objects)
+    */
+    onCollision : function (response, other) {
+    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+        // if something touches this entity
+      if (this.alive && (response.overlap > 0) && this.combat == false) {
+      // cause it to flicker
+      // probably call battle function here
+        this.combat = true;
+        this.renderable.flicker(750);
+       // this.hp--;
+        this.renderable.setCurrentAnimation("attack");
+        console.log("fight!");
+        // call combat function, if this unit wins, they are no longer in combat and continue walking
+        // else they are considered dead, for now, 
+        if (this.hp > 0) {
+       //     this.combat = false;
         } else {
             this.alive = false;
         }
@@ -250,14 +506,27 @@ game.Warrior = me.Entity.extend({
         
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
+        this.alive = true;
+        this.hp = 1000;
+        this.attack = 20;
+        this.def = 15;
+        this.hit = 10;
+        this.combat = false;
+        this.hit = false;
+        this.enemy;
+        this.me;
         
         // define standing animation, use all frames
         this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
                                                     11, 12, 13, 14, 15, 16, 17, 18, 19]);
-        
+        // define death animation
+        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49], 150);
+        // define death animation
+        this.renderable.addAnimation("dead", [49]);
         // define walking animation
         this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-        
+        // define attacking animation
+        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
     },
@@ -297,22 +566,47 @@ game.Warrior = me.Entity.extend({
             // going down
             this.body.vel.y += this.body.accel.y * me.timer.tick;
             // change to the walking animation
-            if (!this.renderable.isCurrentAnimation("walk")) {
+            if (!this.renderable.isCurrentAnimation("walk") && !this.combat) {
                 this.renderable.setCurrentAnimation("walk");
             }
-        } else {
+        } else if (!this.alive) {
+            if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
+                this.renderable.setCurrentAnimation("dead");
+                me.game.world.removeChild(this);
+            }
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+        else {
             // if doing nothing, dont move anywhere
             this.body.vel.x = 0;
             this.body.vel.y = 0;
-            // change to the standing animation
-            this.renderable.setCurrentAnimation("stand");
-            var a = this.getBounds();
-            var xpos = a.pos.x + (a.width / 2);
-            var ypos = a.pos.y + (a.height / 2);
-            //console.log("warrior: " + xpos + ", " + ypos);
+            // change to the standing animation if were not in combat
+            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                this.renderable.setCurrentAnimation("stand");
+            // if in combat, wait until animation 7 where we get "hit" by the enemy
+            } else if (this.combat) {
+//                if (this.renderable.getCurrentAnimationFrame() == 7 && this.hit == false) {
+
+                if (this.enemy.renderable.current.idx == 7 && this.hit == false) {
+                    this.hit = true;
+                    this.hp = battle(this.me, this.enemy);
+
+                    if (this.hp <= 0) {
+                        this.alive = false;
+                        this.combat = false;
+                        this.hit = false;
+                        this.renderable.setCurrentAnimation("dying");
+                        this.renderable.flicker(750);
+                    }
+                } else if (this.renderable.getCurrentAnimationFrame() != 7) {
+                    this.hit = false
+                }
+            }
+            
         }
 
-            // apply physics to the body (this moves the entity)
+        // apply physics to the body (this moves the entity)
         this.body.update(dt);
 
         // handle collisions against other shapes
@@ -326,10 +620,42 @@ game.Warrior = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
+        if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+            // if something touches this entity
+          if (this.alive && (response.overlap > 0) && this.combat == false) {
+            this.me = response;
+            this.enemy = other;
+            this.combat = true;
+            this.renderable.flicker(750);
+            this.hp--;
+
+            // call combat function, if this unit wins, they are no longer in combat and continue walking
+            // else they are considered dead, for now,
+            console.log("fight..");
+            this.renderable.setCurrentAnimation("attack");
+          }
+          else if (this.combat == true ) {
+                this.me = response;
+                this.enemy = other;
+          }
+          return true;
+        } 
         // Make all other objects solid
-        return true;
+    return false;
     }
 });
+
+
+// todo: make battle system more complicated
+function battle(response, other) {
+    console.log("BATTLE");
+    var hpResponse = response.a.hp;
+    
+    hpResponse = hpResponse - other.attack + response.a.def
+    console.log("PLAYER TAKES DAMAGE: " + hpResponse);
+    
+    return hpResponse;
+}
 
 
 
