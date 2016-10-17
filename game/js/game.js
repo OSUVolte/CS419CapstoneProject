@@ -51,14 +51,14 @@ var game = {
         me.pool.register("mid", game.Mid);
 
         //buildings:
-        me.pool.register("buildingA", game.BuildingA);
+        me.pool.register("buildingA", game.Barracks);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
-        me.input.bindKey(me.input.KEY.B, "b");
+        me.input.bindKey(me.input.KEY.B, "build");
         me.input.bindKey(me.input.KEY.A, "accept");
         me.input.bindKey(me.input.KEY.X, "x");
 

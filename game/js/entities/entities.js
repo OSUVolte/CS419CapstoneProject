@@ -616,7 +616,7 @@ game.Warrior = me.Entity.extend({
         // handle collisions against other shapes
         me.collision.check(this);
 
-        //kep player in viewport
+        //keep player in viewport
         this.pos.x = this.pos.x.clamp(0, this.maxX);
         this.pos.y = this.pos.y.clamp(0, this.maxY);
 

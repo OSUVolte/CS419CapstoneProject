@@ -1,6 +1,5 @@
 game.BuildingManager = me.Container.extend({
     init: function (x,y) {
-        //initialize the first building
 
         //this._super(me.Container, "init", [0, 32, this.COLS * 64 - 32, this.ROWS * 64 - 32]);
        // this.z = 5; // keep it above
