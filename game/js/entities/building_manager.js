@@ -132,6 +132,7 @@ game.BuildingObject = me.Entity.extend({
      * Check the position  to be within the "build" area and updates the image
      */
     checkPosition : function () {
+        //todo disallow building when out of bounds
         //todo flesh this out so it also checks for entities in the way
         console.log( this.bounds);
 
@@ -164,7 +165,14 @@ game.BuildingObject = me.Entity.extend({
     // mouse up function
     onRelease : function (/*event*/) {
         this.selected = false;
+
         this.checkPosition();
+        //todo warn use when attempt to place outside of bounds
+
+        //todo fix error from removal
+        if(this.placeBuilding()){
+            me.game.world.removeChild(this);
+        };
         // don"t propagate the event furthermore
         return false;
     },
@@ -224,7 +232,23 @@ game.FootPrint = game.BuildingObject.extend({
      */
     chooseImage: function (frameName) {
         this.renderable.setCurrentAnimation(frameName);
+    },
+    placeBuilding: function (){
+        //if conditions are met
+        console.log('placing a building...', this.type);
+        //add building to the area.
+        if(this.type == "barracks") {
+            console.log("positioningbarracks:", this.pos.x , this.pos.y);
+            me.game.world.addChild(new game.Barracks(this.pos.x , this.pos.y, {
+                width: 32,
+                height: 32,
+                bounds: this.bounds,
+                type: "barracks"
+            }), 10);
+            return true;
+        }
     }
+
 
 
 });

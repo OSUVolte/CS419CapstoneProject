@@ -7,9 +7,6 @@ game.Structures = me.Entity.extend({
     init: function (x, y, settings) {
 
         //settings
-        settings.image = "buildinga-footprint-spritesheet";
-        settings.width = 32;
-        settings.height = 32;
 
         //Settings for standard Building properties
         // to be passed on to the sub.
@@ -17,10 +14,83 @@ game.Structures = me.Entity.extend({
         settings.capacity = 5;
         settings.cost = 100;
 
+        // call the super constructor
+        this._super(me.Entity, "init", [x, y, settings]);
+    },
+    onActivateEvent: function () {
+        //register on mouse/touch event
+        me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
+        me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+        me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+        // register on the global pointermove event
+        console.log("onActivate fired");
+        this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
+    },
 
+    /**
+     * pointermove function
+     */
+    pointerMove: function (event) {
+        this.hover = false;
+        //console.log(event.gameX, event.gameY);
+        // move event is global (relative to the viewport)
+        if (this.getBounds().containsPoint(event.gameX, event.gameY)) {
+            // calculate the final coordinates
+            var parentPos = this.ancestor.getBounds().pos;
+            var x = event.gameX - this.pos.x - parentPos.x;
+            var y = event.gameY - this.pos.y - parentPos.y;
+
+            // the pointer event system will use the object bounding rect, check then with with all defined shapes
+            for (var i = this.body.shapes.length, shape; i--, (shape = this.body.shapes[i]);) {
+                if (shape.containsPoint(x, y)) {
+                    this.hover = true;
+                    break;
+                }
+            }
+        }
+
+        if (this.selected) {
+            //todo show a menu or status or something
+
+        }
+
+        if (this.hover || this.selected) {
+            return false;
+        }
+    },
+
+    // mouse down function
+    onSelect : function (event) {
+        if (this.hover === true) {
+            // this.grabOffset.set(event.gameX, event.gameY);
+            // this.grabOffset.sub(this.pos);
+            console.log('selected');
+            this.selected = true;
+            // don"t propagate the event furthermore
+            return false;
+        }
+        return true;
+    },
+
+    // mouse up function
+    onRelease : function (/*event*/) {
+        this.selected = false;
+        // close  building menu
+
+        // don"t propagate the event furthermore
+        return false;
+    },
+
+    /**
+     * update function
+     */
+    update: function () {
+        return this.selected || this.hover;
     }
 });
 
+//todo set up collisions on buildings
+// todo
 game.Barracks = game.Structures.extend({
     /**
      * constructor
@@ -28,27 +98,30 @@ game.Barracks = game.Structures.extend({
     init:function (x, y, settings) {
 
         //settings
-        settings.image= "barracks-footprint-spritesheet";
-        settings.width= 32;
-        settings.height= 32;
+        //settings.width= x;
+        //settings.height= y;
+        settings.timeToBuild = 1000;
 
         //call the constructor
-        this._super(me.DraggableEntity, 'init', [x, y , settings]);
+        this._super(game.Structures, 'init', [x, y , settings]);
 
-        this.placed = false;
+        this.placed = true;
 
-        this.chooseImage();
+        //this.chooseImage();
 
         // add a body shape
-        this.body.addShape(new me.Rect(100,100, this.width, this.height));
+        this.body.addShape(new me.Rect(0,0, 0, 0));
+        //addimage
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")});
+
 
     },
     /**
      * Change the image
      */
     chooseImage: function () {
-        //todo make it update its color depending on whether or not placement is allowed
-        this.renderable.addAnimation("neutral", [0], 5);
+        //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
+        this.renderable.addAnimation("building", [0], 5);
         this.renderable.setCurrentAnimation("neutral");
     },
     /**
