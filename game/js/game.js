@@ -62,6 +62,7 @@ var game = {
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
         me.input.bindKey(me.input.KEY.B, "build", true);
+        me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
         me.input.bindKey(me.input.KEY.A, "accept");
         me.input.bindKey(me.input.KEY.X, "x", true);
 
