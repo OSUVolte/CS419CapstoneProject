@@ -5,7 +5,7 @@ game.PlayScreen = me.ScreenObject.extend({
     onResetEvent: function() {
         // load level
 //        me.levelDirector.loadLevel("test_dungeon");
-        me.levelDirector.loadLevel("test_map");
+        me.levelDirector.loadLevel("test_map2");
 
         // reset the score
         game.data.score = 0;
@@ -16,10 +16,10 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.addChild(this.HUD);
 //        me.game.world.addChild(me.pool.pull("spawn_top", 50, 50), 1);
 
-        //for draggable pieces
-        var physicEditorContainer = new me.Container(50, 50, 400, 600);
-        physicEditorContainer.addChild(new game.Barracks(200, 100, {width: 32, height: 32, sprite:"buildinga-footprint-spritesheet"}), 6);
-        me.game.world.addChild(physicEditorContainer);
+        // //for draggable pieces
+        // var BarracksContainer = new me.Container(32, 32, 0, 600);
+        // BarracksContainer.addChild(new game.Barracks(100, 100, {width: 32, height: 32, sprite:"buildinga-footprint-spritesheet"}), 6);
+        // me.game.world.addChild(BarracksContainer);
 
     },
 

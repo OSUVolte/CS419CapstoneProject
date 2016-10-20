@@ -1,120 +1,48 @@
-game.Barracks = me.DraggableEntity.extend({
+
+
+
+
+/**
+ * building
+ *
+ *
+ */
+
+game.BuildingObject = me.Entity.extend({
     /**
      * constructor
      */
-    init:function (x, y) {
+    init: function (x, y, settings) {
+        // ensure we do not create a default shape
+        settings.shapes = [];
+        // call the super constructor
+        this._super(me.Entity, "init", [x, y, settings]);
 
-        // call the constructor
-        this._super(me.DraggableEntity, 'init', [x, y , {
-            image: "buildinga-footprint-spritesheet",
-            width: 32,
-            height: 32
-        }]);
+        // status flags
+        this.selected = false;
+        this.hover = false;
 
-        this.physicEditorContainer = new me.Container(50, 50, 400, 600);
-        // set the default horizontal & vertical speed (accel vector)
-        //this.body.setVelocity(4,4);
+        // to memorize where we grab the shape
+        this.grabOffset = new me.Vector2d(0,0);
 
-        //this.body.vel.y += this.body.accel.y * me.timer.tick;
-        // set the display to follow our position on both axis
-        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-
-        //keep it on the gameboard
-        this.maxX = me.game.viewport.width - this.width;
-        this.maxY = me.game.viewport.width - this.height;
-
-        this.chooseImage();
-
-        //this.body.collisionType = me.collision.types.ENEMY_OBJECT;
     },
 
-    chooseImage: function () {
-        //todo make it update its color depending on whether or not placement is allowed
-        this.renderable.addAnimation("neutral", [1], 5);
-        this.renderable.setCurrentAnimation("neutral");
-    },
-
-    /**
-     * update the entity
-     */
-    update : function (dt) {
-
-
-    //     if (me.input.isKeyPressed('build')) {
-    //         //      //it should spawn
-    //
-    //         //for draggable pieces
-    //     this.physicEditorContainer.addChild(new game.Barracks(200, 100, {
-    //         width: 32,
-    //         height: 32,
-    //         sprite: "buildinga-footprint-spritesheet"
-    //     }), 6);
-    //     me.game.world.addChild(this.physicEditorContainer);
-    // }
-
-        //     if (me.input.isKeyPressed("left")) {
-        //         this.pos.x -= this.velx * time / 1000;
-        //     }
-        //
-        //     if (me.input.isKeyPressed("right")) {
-        //         this.pos.x += this.velx * time / 1000;
-        //     }
-        //
-        //     if (me.input.isKeyPressed("down")) {
-        //         this.pos.y -= this.velx * time / 1000;
-        //     }
-        //
-        //     if (me.input.isKeyPressed("up")) {
-        //         this.pos.y += this.velx * time / 1000;
-        //     }
-        //     //If accept is placed add the buildingA to the grid.
-        //     //todo add the conditions which allow it to be placed
-        //     if (me.input.isKeyPressed("accept")) {
-        //         //update image
-        //
-        //         this.image = "bldgA";
-        //
-        //         //glue it to the grid
-        //
-        //
-        //     }else{
-        //
-        //
-        //     }
-        //
-        // }
-        //
-        //
-        // // apply physics to the body (this moves the entity)
-        // this.body.update(dt);
-        //
-        // // handle collisions against other shapes
-        // me.collision.check(this);
-        //
-        //
-        //  this.pos.x = this.pos.x.clamp(0, this.maxX);
-        //  this.pos.x = this.pos.y.clamp(0, this.maxY);
-        //
-        // // return true if we moved or if the renderable was updated
-        // return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-        return this.selected || this.hover;
-    },
-    //An attempt to get the object to be selected even with the Warrior in game
     onActivateEvent: function () {
         //register on mouse/touch event
         me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
         me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
         me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
-
         // register on the global pointermove event
+        console.log("onActivate fired");
         this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
     },
+
     /**
      * pointermove function
      */
     pointerMove: function (event) {
         this.hover = false;
-
+        //console.log(event.gameX, event.gameY);
         // move event is global (relative to the viewport)
         if (this.getBounds().containsPoint(event.gameX, event.gameY)) {
             // calculate the final coordinates
@@ -122,9 +50,12 @@ game.Barracks = me.DraggableEntity.extend({
             var x = event.gameX - this.pos.x - parentPos.x;
             var y = event.gameY - this.pos.y - parentPos.y;
 
+
+
             // the pointer event system will use the object bounding rect, check then with with all defined shapes
             for (var i = this.body.shapes.length, shape; i--, (shape = this.body.shapes[i]);) {
                 if (shape.containsPoint(x, y)) {
+
                     this.hover = true;
                     break;
                 }
@@ -136,18 +67,39 @@ game.Barracks = me.DraggableEntity.extend({
             me.game.world.moveUp(this);
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
+            this.checkPosition();
         }
 
         if (this.hover || this.selected) {
             return false;
         }
+    },
+    /*
+    * Check the position  to be within the "build" area and updates the image
+    */
+    checkPosition : function () {
+        //todo flesh this out so it also checks for entities in the way
+        console.log( this.bounds);
 
+        if(this.pos.x > this.bounds.x
+            && this.pos.x < this.bounds.width+this.bounds.x
+            && this.pos.y > this.bounds.y
+            && this.pos.y < this.bounds.width+this.bounds.y){
+            //update the image
+            console.log("is");
+            this.chooseImage("good");
+
+        }else{
+            console.log("not")
+            this.chooseImage("bad");
+        }
     },
     // mouse down function
     onSelect : function (event) {
         if (this.hover === true) {
             this.grabOffset.set(event.gameX, event.gameY);
             this.grabOffset.sub(this.pos);
+            console.log('selected');
             this.selected = true;
             // don"t propagate the event furthermore
             return false;
@@ -158,8 +110,16 @@ game.Barracks = me.DraggableEntity.extend({
     // mouse up function
     onRelease : function (/*event*/) {
         this.selected = false;
+        this.checkPosition();
         // don"t propagate the event furthermore
         return false;
+    },
+
+    /**
+     * update function
+     */
+    update: function () {
+        return this.selected || this.hover;
     },
 
     /**
@@ -168,22 +128,139 @@ game.Barracks = me.DraggableEntity.extend({
     draw: function (renderer) {
         renderer.setGlobalAlpha(this.hover ? 1.0 : 0.5);
         this._super(me.Entity, "draw", [renderer]);
-        renderer.setGlobalAlpha(1.0);
+        renderer.setGlobalAlpha(0.80);
+    }
+});
+
+game.FootPrint = game.BuildingObject.extend({
+    /**
+     * constructor
+     */
+    init: function (x, y, settings) {
+        // call the super constructor
+        //settings
+        settings.image= "buildinga-footprint-spritesheet";
+        settings.width= 32;
+        settings.height= 32;
+
+        this._super(game.BuildingObject, "init", [x, y, settings]);
+
+        // the bounds of the Building Container
+        this.bounds = settings.bounds;
+
+
+        // add a body shape
+        this.body.addShape(new me.Rect(0, 0, this.width, this.height));
+
+        //different sprite states determined by position of element
+        this.renderable.addAnimation("neutral", [0]);
+        this.renderable.addAnimation("bad", [1]);
+        this.renderable.addAnimation("caution", [2]);
+        this.renderable.addAnimation("good", [3]);
+
+        //set the initial image
+        this.chooseImage("neutral");
+        this.checkPosition();
+
+        //use to the track if it has been placed
+        this.placed = false;
+    },
+    /**
+     * Change the image
+     */
+    chooseImage: function (frameName) {
+        this.renderable.setCurrentAnimation(frameName);
+    }
+
+
+});
+
+game.Barracks = game.FootPrint.extend({
+    /**
+     * constructor
+     */
+    init:function (x, y, settings) {
+
+        //settings
+        settings.image= "buildinga-footprint-spritesheet";
+        settings.width= 32;
+        settings.height= 32;
+
+        //call the constructor
+        this._super(me.DraggableEntity, 'init', [x, y , settings]);
+
+        this.placed = false;
+
+        this.chooseImage();
+
+        // add a body shape
+        this.body.addShape(new me.Rect(100,100, this.width, this.height));
+
+    },
+    /**
+     * Change the image
+     */
+    chooseImage: function () {
+        //todo make it update its color depending on whether or not placement is allowed
+        this.renderable.addAnimation("neutral", [0], 5);
+        this.renderable.setCurrentAnimation("neutral");
+    },
+    /**
+     * Set spawn point of the footprint
+     * Might want to make it relative to some other entity
+     */
+    setSpawnPoint : function (dt) {
+      //todo make this useable
+        //this.xcoor = dt.gameX;
+        //this.ycoor = dt.gameY;
+    },
+    /**
+     * update the entity
+     */
+    update : function (dt) {
+        //Update functions of our game objects will always receive a delta time (in milliseconds). It's important to pass it along to our parent's class update.
+        //this._super(me.Sprite, "update", [dt]);
+
+        //do something when its placed
+        if(!this.placed){
+
+            // set the renderable position to bottom center
+            //this.anchorPoint.set(this.x.pos, this.y.pos);
+           // this.onActivateEvent();
+            //console.log("free roaming - not placed yet")
+        }
+
+
+        // // apply physics to the body (this moves the entity)
+         //this.body.update(dt);
+        //
+        // // handle collisions against other shapes
+        // me.collision.check(this);
+        //
+        //
+         //this.pos.x = this.pos.x.clamp(0, this.maxX);
+         //this.pos.x = this.pos.y.clamp(0, this.maxY);
+        //
+        // // return true if we moved or if the renderable was updated
+
+        return this.selected || this.hover;
+        //return true;
     },
 
-    //Attempted to use draggable entites first.
 
-    // dragStart: function (e) {
-    //     // call the super function
-    //     this._super(me.DraggableEntity, "dragStart", [e]);
-    //     //set properties or update image
-    //
-    // },
-    // dragEnd: function (e) {
-    //     // call the super function
-    //     this._super(me.DraggableEntity, "dragEnd", [e]);
-    //     //update image
-    // },
+    //Attempting to use draggable entities first.
+    dragStart: function (e) {
+        // call the super function
+        this._super(me.DraggableEntity, "dragStart", [e]);
+        //set properties or update image
+        console.log('say waat?')
+
+    },
+    dragEnd: function (e) {
+        // call the super function
+        this._super(me.DraggableEntity, "dragEnd", [e]);
+        //update image
+    },
 
    /**
      * collision handler
@@ -191,7 +268,7 @@ game.Barracks = me.DraggableEntity.extend({
      */
     onCollision : function (response, other) {
         // Make all other objects solid
-        return true;
+        //return true;
     }
 });
 
