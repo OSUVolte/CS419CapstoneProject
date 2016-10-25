@@ -248,9 +248,6 @@ game.FootPrint = game.BuildingObject.extend({
             return true;
         }
     }
-
-
-
 });
 
 game.Queue = me.Renderable.extend({
@@ -264,3 +261,10 @@ game.Queue = me.Renderable.extend({
         this.height = settings.height;
     }
 });
+
+function buildBarracksButton() {
+    console.log('building barracks!');
+    me.input.triggerKeyEvent(me.input.KEY.B, true);
+    me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
+    return;
+}
