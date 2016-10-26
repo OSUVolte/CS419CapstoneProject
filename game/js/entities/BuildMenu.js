@@ -38,15 +38,35 @@ game.BarracksButton = me.Entity.extend({
 	this.floating = true;
 	this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 
-	me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+	},
+	onActivateEvent: function () {
+		me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
 	},
 
 	//callback for mouse click
 	onMouseDown: function() {
 		console.log("barracksbutton pressed!");
-		
+
     	me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
 
 		return false;
+	},
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+		// close  building menu
+		me.game.world.removeChild(game.data.menu_background);
+		//game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
+		me.game.world.removeChild(game.data.barracksbutton);
+		// don"t propagate the event furthermore
+		return false;
+	},
+	/**
+	 * update function
+	 */
+	update: function () {
+		return this.selected
 	}
 });
