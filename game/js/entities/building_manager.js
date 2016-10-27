@@ -12,7 +12,7 @@
  * controls the building area, button pushes  (b for build)
  *
  */
-game.Building = me.Renderable.extend({
+game.BuildingArea = me.Renderable.extend({
     init: function (x, y, settings) {
         // set the coordinates to fit in the screen. Really it just needs any size greather than 0x0, and needs to be floating, so when the camera moves, it's always on screen
         this._super(me.Renderable, "init", [x, y, me.game.viewport.width, me.game.viewport.height]);
@@ -210,7 +210,7 @@ game.BuildingObject = me.Entity.extend({
         this.removeChild();
     }
 });
-//footprint is determined by the parameters sent to it in the call from game.Buildings = me.Renderable.extend
+//footprint is determined by the parameters sent to it in the call from game.BuildingArea = me.Renderable.extend
 // it extends the building object which contains all the drag a drop functions
 game.FootPrint = game.BuildingObject.extend({
     /**

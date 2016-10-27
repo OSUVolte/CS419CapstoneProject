@@ -53,7 +53,7 @@ var game = {
 
         //buildings:
         //me.pool.register("build", game.BuildingObject);
-        me.pool.register("build_area", game.Buildings);
+        me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
 
 
