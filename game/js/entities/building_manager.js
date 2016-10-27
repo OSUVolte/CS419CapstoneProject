@@ -157,11 +157,12 @@ game.BuildingObject = me.Entity.extend({
             //update the image
             console.log("is");
             this.chooseImage("good");
-
+            return true;
         }else{
             console.log("not")
             this.chooseImage("bad");
         }
+        return false;
     },
     // mouse down function
     onSelect : function (event) {
@@ -219,14 +220,13 @@ game.FootPrint = game.BuildingObject.extend({
     init: function (x, y, settings) {
         // we want the foot print established by the settings from which was called.
         settings.image = settings.type + "-footprint-spritesheet";
-        console.log("the bloddy settings!", settings);
+        //console.log("the bloody settings!", settings);
 
         // call the super constructor
         this._super(game.BuildingObject, "init", [x, y, settings]);
 
         // the bounds of the Building Container
         this.bounds = settings.bounds;
-
 
         // add a body shape
         this.body.addShape(new me.Rect(0, 0, this.width, this.height));
@@ -250,24 +250,26 @@ game.FootPrint = game.BuildingObject.extend({
     chooseImage: function (frameName) {
         this.renderable.setCurrentAnimation(frameName);
     },
+    /*
+        This places the actual building of the specific type defined in the buildingArea call
+     */
     placeBuilding: function (){
         //if conditions are met
         console.log('placing a building...', this.type);
         //add building to the area.
         if(this.type == "barracks") {
-            console.log("positioningbarracks:", this.pos.x , this.pos.y);
-            me.game.world.addChild(new game.Barracks(this.pos.x , this.pos.y, {
-                width: this.width,
-                height: this.height,
-                bounds: this.bounds,
-                type: "barracks"
-            }), 10);
-            return true;
+            console.log("positioningbarracks:", this.pos.x, this.pos.y);
+            if (this.checkPosition()) {
+                me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
+                    width: this.width,
+                    height: this.height,
+                    bounds: this.bounds,
+                    type: "barracks"
+                }), 10);
+                return true;
+            }
         }
     }
-
-
-
 });
 
 game.Queue = me.Renderable.extend({
