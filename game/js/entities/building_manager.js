@@ -186,7 +186,8 @@ game.BuildingObject = me.Entity.extend({
 
         //todo fix error from removal
         if(this.placeBuilding()){
-            me.game.world.removeChild(this);
+            //me.game.world.removeChild(this);
+            this.destroy();
         };
         // don"t propagate the event furthermore
         return false;
@@ -208,7 +209,7 @@ game.BuildingObject = me.Entity.extend({
         renderer.setGlobalAlpha(0.80);
     },
     destroy: function(){
-        this.removeChild();
+        me.game.world.removeChild(this);
     }
 });
 //footprint is determined by the parameters sent to it in the call from game.BuildingArea = me.Renderable.extend
@@ -258,7 +259,7 @@ game.FootPrint = game.BuildingObject.extend({
         console.log('placing a building...', this.type);
         //add building to the area.
         if(this.type == "barracks") {
-            console.log("positioningbarracks:", this.pos.x, this.pos.y);
+            //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             if (this.checkPosition()) {
                 me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
                     width: this.width,
@@ -269,6 +270,7 @@ game.FootPrint = game.BuildingObject.extend({
                 return true;
             }
         }
+        return false;
     }
 });
 
