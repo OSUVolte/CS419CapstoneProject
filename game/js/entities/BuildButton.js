@@ -25,11 +25,11 @@ game.BuildButton = me.Entity.extend({
 		console.log("buildbutton pressed!");
 		me.input.triggerKeyEvent(me.input.KEY.B, true);
 		//Show Build Menu
-		//game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
+		game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
         me.game.world.addChild(game.data.menu_background, 15);
-        //game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
+        game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
         me.game.world.addChild(game.data.barracksbutton, 30);
-		return false;
+		return true;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {

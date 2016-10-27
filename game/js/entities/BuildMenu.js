@@ -51,22 +51,17 @@ game.BarracksButton = me.Entity.extend({
 
     	me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
 
-		return false;
+		return true;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {
 		this.selected = false;
 		// close  building menu
 		me.game.world.removeChild(game.data.menu_background);
-		//game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
 		me.game.world.removeChild(game.data.barracksbutton);
+
 		// don"t propagate the event furthermore
 		return false;
-	},
-	/**
-	 * update function
-	 */
-	update: function () {
-		return this.selected
 	}
+
 });

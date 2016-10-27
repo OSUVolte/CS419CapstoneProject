@@ -41,7 +41,8 @@ game.Buildings = me.Renderable.extend({
         //build Barracks
         if (this.isPlacing == true && me.input.isKeyPressed("barracks")) {
             console.log("barracks");
-            var test;
+
+            // Adding it to the world, at a place near the bounding box as set by the tiled map object
             me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                 width: 32,
                 height: 32,
@@ -50,7 +51,6 @@ game.Buildings = me.Renderable.extend({
             }), 10);
             this.isPlacing = false;
         }
-
         return this.selected || this.hover;
     }
 
@@ -78,7 +78,6 @@ game.BuildingObject = me.Entity.extend({
 
         // to memorize where we grab the shape
         this.grabOffset = new me.Vector2d(0,0);
-
     },
 
     onActivateEvent: function () {
@@ -134,18 +133,18 @@ game.BuildingObject = me.Entity.extend({
     checkPosition : function () {
         //todo disallow building when out of bounds
         //todo flesh this out so it also checks for entities in the way
-        console.log( this.bounds);
+        //console.log( this.bounds);
 
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
             && this.pos.y > this.bounds.y
-            && this.pos.y < this.bounds.width+this.bounds.y){
+            && this.pos.y < this.bounds.height+this.bounds.y){
             //update the image
             console.log("is");
             this.chooseImage("good");
 
         }else{
-            console.log("not")
+            console.log("not");
             this.chooseImage("bad");
         }
     },
@@ -172,6 +171,11 @@ game.BuildingObject = me.Entity.extend({
         //todo fix error from removal
         if(this.placeBuilding()){
             me.game.world.removeChild(this);
+            // todo remove the square
+
+            //todo set in motion the building as functional game piece
+            this.placed = true;
+
         };
         // don"t propagate the event furthermore
         return false;
@@ -210,7 +214,6 @@ game.FootPrint = game.BuildingObject.extend({
         // the bounds of the Building Container
         this.bounds = settings.bounds;
 
-
         // add a body shape
         this.body.addShape(new me.Rect(0, 0, this.width, this.height));
 
@@ -234,19 +237,25 @@ game.FootPrint = game.BuildingObject.extend({
         this.renderable.setCurrentAnimation(frameName);
     },
     placeBuilding: function (){
+
+        game.data.Barracks = me.pool.pull("Barracks", this.pos.x , this.pos.y, {
+            width: 32,
+            height: 32,
+            bounds: this.bounds,
+            type: "barracks"
+        });
+
         //if conditions are met
         console.log('placing a building...', this.type);
         //add building to the area.
         if(this.type == "barracks") {
             console.log("positioningbarracks:", this.pos.x , this.pos.y);
-            me.game.world.addChild(new game.Barracks(this.pos.x , this.pos.y, {
-                width: 32,
-                height: 32,
-                bounds: this.bounds,
-                type: "barracks"
-            }), 10);
-            return true;
+            if(this.checkPosition()){
+
+                me.game.world.addChild(game.data.Barracks,100);
+            }
         }
+        return true;
     }
 });
 

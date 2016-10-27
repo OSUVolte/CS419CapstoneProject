@@ -11,6 +11,7 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.score = 0;
 
         //Build menu
+        //todo add a map object then we wont need this...I think?
         game.data.buildbutton = me.pool.pull("buildbutton", 10, 10, {});
         me.game.world.addChild(game.data.buildbutton, 30);
         game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
@@ -36,6 +37,6 @@ game.PlayScreen = me.ScreenObject.extend({
      */
     onDestroyEvent: function() {
         // remove the HUD from the game world
-        me.game.world.removeChild(this.HUD);
+        //me.game.world.removeChild(this.HUD);
     }
 });
