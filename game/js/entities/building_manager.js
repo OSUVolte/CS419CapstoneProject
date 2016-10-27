@@ -9,10 +9,10 @@
 
 /**
  * defines the path where building is allowed
- * controls button pushes  (b for build)
+ * controls the building area, button pushes  (b for build)
  *
  */
-game.Buildings = me.Renderable.extend({
+game.Building = me.Renderable.extend({
     init: function (x, y, settings) {
         // set the coordinates to fit in the screen. Really it just needs any size greather than 0x0, and needs to be floating, so when the camera moves, it's always on screen
         this._super(me.Renderable, "init", [x, y, me.game.viewport.width, me.game.viewport.height]);
@@ -41,15 +41,30 @@ game.Buildings = me.Renderable.extend({
         //build Barracks
         if (this.isPlacing == true && me.input.isKeyPressed("barracks")) {
             console.log("barracks");
-            var test;
+
+            // Adding it to the world, at a place near the bounding box as set by the tiled map object
             me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-                width: 32,
-                height: 32,
-                bounds: this.bounds,
+                width: 128,
+                height: 102,
+                bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                 type: "barracks"
             }), 10);
             this.isPlacing = false;
         }
+
+        // //build Something ELSE...
+        // if (this.isPlacing == true && me.input.isKeyPressed("NAME GOES HERE")) {
+        //
+        //     // Adding it to the world, at a place near the bounding box as set by the tiled map object
+        //     me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+        //         width: 32,
+        //         height: 32,
+        //         myBounds: this.myBounds,
+        //         type: "TYPE GOES HERE"
+        //     }), 10);
+        //
+        //     this.isPlacing = false;
+        // }
 
         return this.selected || this.hover;
     }
@@ -61,7 +76,6 @@ game.Buildings = me.Renderable.extend({
  * necessary for dragging and dropping of the footprint
  *
  */
-
 game.BuildingObject = me.Entity.extend({
     /**
      * constructor
@@ -191,20 +205,23 @@ game.BuildingObject = me.Entity.extend({
         renderer.setGlobalAlpha(this.hover ? 1.0 : 0.5);
         this._super(me.Entity, "draw", [renderer]);
         renderer.setGlobalAlpha(0.80);
+    },
+    destroy: function(){
+        this.removeChild();
     }
 });
-
+//footprint is determined by the parameters sent to it in the call from game.Buildings = me.Renderable.extend
+// it extends the building object which contains all the drag a drop functions
 game.FootPrint = game.BuildingObject.extend({
     /**
      * constructor
      */
     init: function (x, y, settings) {
-        // call the super constructor
-        //settings
-        settings.image= settings.type + "-footprint-spritesheet";
-        settings.width= 32;
-        settings.height= 32;
+        // we want the foot print established by the settings from which was called.
+        settings.image = settings.type + "-footprint-spritesheet";
+        console.log("the bloddy settings!", settings);
 
+        // call the super constructor
         this._super(game.BuildingObject, "init", [x, y, settings]);
 
         // the bounds of the Building Container
@@ -240,8 +257,8 @@ game.FootPrint = game.BuildingObject.extend({
         if(this.type == "barracks") {
             console.log("positioningbarracks:", this.pos.x , this.pos.y);
             me.game.world.addChild(new game.Barracks(this.pos.x , this.pos.y, {
-                width: 32,
-                height: 32,
+                width: this.width,
+                height: this.height,
                 bounds: this.bounds,
                 type: "barracks"
             }), 10);
