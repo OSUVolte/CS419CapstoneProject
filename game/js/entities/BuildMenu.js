@@ -49,13 +49,15 @@ game.BarracksButton = me.Entity.extend({
 	onMouseDown: function() {
 		console.log("barracksbutton pressed!");
 
-    	me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
-
 		return true;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {
 		this.selected = false;
+
+		//trigger the event
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
+
 		// close  building menu
 		me.game.world.removeChild(game.data.menu_background);
 		me.game.world.removeChild(game.data.barracksbutton);

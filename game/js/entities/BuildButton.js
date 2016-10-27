@@ -22,8 +22,7 @@ game.BuildButton = me.Entity.extend({
 
 	//callback for mouse click
 	onMouseDown: function() {
-		console.log("buildbutton pressed!");
-		me.input.triggerKeyEvent(me.input.KEY.B, true);
+
 		//Show Build Menu
 		game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
         me.game.world.addChild(game.data.menu_background, 15);
@@ -35,7 +34,8 @@ game.BuildButton = me.Entity.extend({
 	onRelease : function (/*event*/) {
 		this.selected = false;
 		// close  building menu
-
+		console.log("buildbutton pressed!");
+		me.input.triggerKeyEvent(me.input.KEY.B, true);
 		// don"t propagate the event furthermore
 		return false;
 	},
