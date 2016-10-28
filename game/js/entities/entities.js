@@ -14,8 +14,6 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
-
-    
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
         
@@ -27,6 +25,7 @@ game.PlayerEntity = me.Entity.extend({
         
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
+        this.qPressed = false;
     },
 
     /**
@@ -35,13 +34,30 @@ game.PlayerEntity = me.Entity.extend({
     update : function (dt) {
             var created = false;
         if (me.input.isKeyPressed('x') && created == false) {
-
             setTimeout(function(){
             // spawns a warrior at location x: 32, y: 544, 1 unit, on object spawn_top
-                me.game.world.addChild(me.pool.pull("spawn_top", 32, 544), 1);
+                me.game.world.addChild(me.pool.pull("spawn_top", 32, 544), 3);
                 created = false;
             }, 2000);
             created = true;
+        } if (me.input.isKeyPressed('q') && this.qPressed === false) {
+            var settings = {
+                // the width of the path
+                width: 784,
+                height: 100,
+                // the size of the entity
+                framewidth: 32,
+                frameheight: 32,
+                // direction
+                lane: "top",
+                // which player spawned
+                player: 2,
+                shapes: [new me.Rect(0, 0, 32, 32)]
+            }
+            me.game.world.addChild(me.pool.pull("top", 16, 528, rogue, settings), 1);
+                        me.game.world.addChild(me.pool.pull("top", 16, 528, rogue, settings), 1);
+                                    me.game.world.addChild(me.pool.pull("top", 16, 528, rogue, settings), 1);
+            this.qPressed = true;
         }
 
         // apply physics to the body (this moves the entity)
@@ -68,6 +84,7 @@ game.PlayerEntity = me.Entity.extend({
 // the lane is an entity from which we spawn a unit
 // TODO: figure out a way to initialize settings variable dynamically,
 // so we can use the lane entity to spawn different units
+/*
 game.Bottom = me.Entity.extend({
     // constructor
     init : function (x, y, settings, combat, hp) {
@@ -122,9 +139,7 @@ game.Bottom = me.Entity.extend({
         this.alwaysUpdate = true;
     },
     
-  /**
-   * update the enemy pos
-   */
+
     update : function (dt) {
         if (this.alive && this.combat == false) {
             if (this.walkRight && this.pos.x <= this.startX) {
@@ -183,10 +198,7 @@ game.Bottom = me.Entity.extend({
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
     },
 
-    /**
-    * colision handler
-    * (called when colliding with other objects)
-    */
+
     onCollision : function (response, other) {
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
         // if something touches this entity
@@ -263,9 +275,6 @@ game.Mid = me.Entity.extend({
     },
     
 
-  /**
-   * update the enemy pos
-   */
     update : function (dt) {
         if (this.alive && this.combat == false) {
             if (!this.diagonal && (this.pos.x <= this.endX) || (this.pos.y >= this.endY)) {
@@ -299,10 +308,6 @@ game.Mid = me.Entity.extend({
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
     },
     
-        /**
-    * colision handler
-    * (called when colliding with other objects)
-    */
     onCollision : function (response, other) {
     if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
         // if something touches this entity
@@ -328,31 +333,16 @@ game.Mid = me.Entity.extend({
     return true;
     }
 });
-
+*/
 game.Top = me.Entity.extend({
- init : function (x, y, settings, combat, hp) {
-        // settings is the entity property (https://melonjs.github.io/melonJS/docs/me.Entity.html)
-        // can define things like sprite, framewidth of sprite, etc here
-        var settings = {
-            image: "slime spritesheet calciumtrice_0",
-            // the width of the path
-            width: 784,
-            height: 100,
-            
-            // the size of the entity
-            framewidth: 32,
-            frameheight: 32,
-            
-            shapes: [new me.Rect(0, 0, 32, 32)]
-        }
-        
+    init : function (x, y, unit, settings) {
         var combat = false;
-        var hp = 20;
         
         var width = settings.width;
         var height = settings.height;
+        settings.image = unit.image;
         
-        this._super(me.Entity, 'init', [x, y , settings, combat, hp]);
+        this._super(me.Entity, 'init', [x, y, settings, unit, combat]);
         
         // start/end position
         y = this.pos.y;
@@ -364,12 +354,19 @@ game.Top = me.Entity.extend({
         // end is hardcoded for now
         this.endY = 16;
         this.combat = combat;
-        this.hp = hp;
-        this.attack = 500;
-        this.def = 10;
-        this.hit = 20;
-        
-        
+        this.hp = unit.hp;
+        this.maxHp = unit.maxHp;
+        this.attack = unit.atk;
+        this.def = unit.def;
+        this.speed = unit.speed;
+        this.hitPercent = unit.hitPercent;
+        this.dodge = unit.dodge;
+        this.type = unit.type;
+        this.name = unit.name;
+        this.player = settings.player;
+        this.target = null;
+        this.targetedBy = [];
+
         this.walkRight = false;
         this.walkUp = false;
 
@@ -393,6 +390,16 @@ game.Top = me.Entity.extend({
         this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
+        
+        // set the collision type, passed in settings option
+        if (this.player == 1) {
+            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+        } else if (this.player == 2) {
+            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+        } else {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
+        }
+
     },
     
   /**
@@ -421,17 +428,59 @@ game.Top = me.Entity.extend({
                 this.renderable.setCurrentAnimation("stand");
                 }
             }
-        }
-        // if entity alive and engaged in combat, stop moving
-        else if (this.alive && this.combat == true) {
+        } else if (!this.alive) {
+            // when this unit dies, remove itself from the game AND remove its self from the list of attackers
+            if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
+                this.renderable.setCurrentAnimation("dead");
+                var index = -1;
+                for (var i = 0; i < this.enemy.targetedBy.length; i++) {
+                    if (this.enemy.targetedBy[i].GUID === this.GUID) {
+                        index = i;
+                        this.enemy.targetedBy.splice(index, 1);
+                        if (this.enemy.targetedBy.length != 0) {
+                            this.enemy.target = this.enemy.targetedBy[0].GUID;
+                        } else {
+                            this.enemy.combat = false;
+                        }
+                    }
+                }
+
+
+                me.game.world.removeChild(this);
+            }
             this.body.vel.x = 0;
             this.body.vel.y = 0;
         }
-        // if entity has died
         else {
-            // TODO: call function for unit death, clean up unit and maybe play death animation
+            // if doing nothing, dont move anywhere
             this.body.vel.x = 0;
             this.body.vel.y = 0;
+            // change to the standing animation if were not in combat
+            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                this.renderable.setCurrentAnimation("stand");
+            // if in combat, wait until animation 7 where we get "hit" by the enemy
+            } else if (this.combat && this.targetedBy.length > 0 && this.enemy.hp > 0) {
+                console.log("TOP targeted by: " + this.targetedBy.length);
+                for (i = 0; i < this.targetedBy.length; i++) {
+                    var frame = this.targetedBy[i].renderable.current.idx;
+                    var enemyTargetingMe = this.targetedBy[i].target;
+                    if (frame == 7 && this.hit === false && this.GUID === enemyTargetingMe && this.targetedBy[i].alive !== false) {
+                        this.hit = true;
+                        this.hp = battle(this.me, this.enemy, this.player);
+                        if (this.hp <= 0) {
+                            this.alive = false;
+                            this.combat = false;
+                            this.hit = false;
+                            this.renderable.setCurrentAnimation("dying");
+                            this.renderable.flicker(750);
+                        }
+                    } else if (this.renderable.getCurrentAnimationFrame() != 7) {
+                        this.hit = false
+                    }
+                }
+            } else {
+                this.combat = false;
+            }
         }
 
         // update the body movement
@@ -449,29 +498,34 @@ game.Top = me.Entity.extend({
     * (called when colliding with other objects)
     */
     onCollision : function (response, other) {
-    if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
-        // if something touches this entity
-      if (this.alive && (response.overlap > 0) && this.combat == false) {
-      // cause it to flicker
-      // probably call battle function here
-        this.combat = true;
-        this.renderable.flicker(750);
-       // this.hp--;
-        this.renderable.setCurrentAnimation("attack");
-        console.log("fight!");
-        // call combat function, if this unit wins, they are no longer in combat and continue walking
-        // else they are considered dead, for now, 
-        if (this.hp > 0) {
-       //     this.combat = false;
-        } else {
-            this.alive = false;
+        if (response.b.body.collisionType !== me.collision.types.GLOBAL_OBJECT && response.a.player !== response.b.player && this.combat === false) {
+            // if something touches this entity
+//            console.log("TOUCHING...\n");
+            if (this.alive && (response.overlap > 0) && this.combat == false) {
+                this.me = response.a;
+                this.target = response.b.GUID;
+                this.enemy = other;
+                this.combat = true;
+                this.renderable.flicker(750);
+                this.renderable.setCurrentAnimation("attack");
+                if (other.combat === false) {
+                    this.targetedBy.push(other);
+                }
+            // call combat function, if this unit wins, they are no longer in combat and continue walking
+            // else they are considered dead, for now, 
+            } else if (this.combat == true ) {
+                console.log("Redoing target");
+                if (other.combat === false) {
+                    this.targetedBy.push(other);
+                }
+                this.me = response;
+                this.enemy = other;
+            }
+            return true;
         }
-      
-      }
-      return false;
-    }
+        return false;
     // Make all other objects solid
-    return true;
+        return true;
     }
 });
 
@@ -507,14 +561,17 @@ game.Warrior = me.Entity.extend({
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
         this.alive = true;
-        this.hp = 1000;
-        this.attack = 20;
-        this.def = 15;
-        this.hit = 10;
+        this.hp = 100;
+        this.maxHp = 100;
+        this.attack = 5;
+        this.def = 5;
+        this.hitPercent = 10;
         this.combat = false;
         this.hit = false;
-        this.enemy;
-        this.me;
+        this.name = "TEST_WARRIOR";
+        this.player = 1;
+        this.target = null;
+        this.targetedBy = [];
         
         // define standing animation, use all frames
         this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
@@ -529,6 +586,10 @@ game.Warrior = me.Entity.extend({
         this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
+        // set this collision type as ME
+        this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+        // set collision types
+        this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
     },
 
     // update player pos
@@ -570,8 +631,17 @@ game.Warrior = me.Entity.extend({
                 this.renderable.setCurrentAnimation("walk");
             }
         } else if (!this.alive) {
+            // when this unit dies, remove itself from the game AND remove its self from the list of attackers
             if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
                 this.renderable.setCurrentAnimation("dead");
+                for (var i = 0; i < this.enemy.targetedBy.length; i++) {
+                    if (this.enemy.targetedBy[i].GUID === this.GUID) {
+                        this.enemy.targetedBy.splice(i, 1);
+                        if (this.enemy.targetedBy.length != 0) {
+                            this.enemy.target = this.enemy.targetedBy[0].GUID;
+                        }
+                    }
+                }
                 me.game.world.removeChild(this);
             }
             this.body.vel.x = 0;
@@ -585,25 +655,27 @@ game.Warrior = me.Entity.extend({
             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
                 this.renderable.setCurrentAnimation("stand");
             // if in combat, wait until animation 7 where we get "hit" by the enemy
-            } else if (this.combat) {
-//                if (this.renderable.getCurrentAnimationFrame() == 7 && this.hit == false) {
-
-                if (this.enemy.renderable.current.idx == 7 && this.hit == false) {
-                    this.hit = true;
-                    this.hp = battle(this.me, this.enemy);
-
-                    if (this.hp <= 0) {
-                        this.alive = false;
-                        this.combat = false;
-                        this.hit = false;
-                        this.renderable.setCurrentAnimation("dying");
-                        this.renderable.flicker(750);
+            } else if (this.combat && this.targetedBy.length > 0) {
+                for (i = 0; i < this.targetedBy.length; i++) {
+                    var frame = this.targetedBy[i].renderable.current.idx;
+                    var enemyTargetingMe = this.targetedBy[i].target;
+                    if (frame == 7 && this.hit === false && this.GUID === enemyTargetingMe && this.targetedBy[i].alive !== false) {
+                        this.hit = true;
+                        this.hp = battle(this.me, this.enemy, this.player);
+                        if (this.hp <= 0) {
+                            this.alive = false;
+                            this.combat = false;
+                            this.hit = false;
+                            this.renderable.setCurrentAnimation("dying");
+                            this.renderable.flicker(750);
+                        }
+                    } else if (this.renderable.getCurrentAnimationFrame() != 7) {
+                        this.hit = false
                     }
-                } else if (this.renderable.getCurrentAnimationFrame() != 7) {
-                    this.hit = false
                 }
+            } else {
+                this.combat = false;
             }
-            
         }
 
         // apply physics to the body (this moves the entity)
@@ -620,42 +692,65 @@ game.Warrior = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-        if (response.b.body.collisionType !== me.collision.types.WORLD_SHAPE) {
+        if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
             // if something touches this entity
-          if (this.alive && (response.overlap > 0) && this.combat == false) {
-            this.me = response;
-            this.enemy = other;
-            this.combat = true;
-            this.renderable.flicker(750);
-            this.hp--;
-
-            // call combat function, if this unit wins, they are no longer in combat and continue walking
-            // else they are considered dead, for now,
-            console.log("fight..");
-            this.renderable.setCurrentAnimation("attack");
-          }
-          else if (this.combat == true ) {
-                this.me = response;
+            if (this.alive && (response.overlap > 0) && this.combat == false) {
+                this.me = response.a;
                 this.enemy = other;
-          }
+                this.target = response.b.GUID;
+                console.log("WARRIOR: initial target: " + this.target);
+                this.combat = true;
+                this.renderable.flicker(750);
+                this.renderable.setCurrentAnimation("attack");
+                this.targetedBy.push(other);
+        } else if (this.combat == true) {
+                this.targetedBy.push(other);
+                this.me = response.a;
+                this.enemy = other;
+        }
           return true;
-        } 
+        } else {
+ //           console.log("I AM TOUCHING SOMETHING ELSE");
+            return true;
+        }
         // Make all other objects solid
     return false;
     }
 });
 
-
-// todo: make battle system more complicated
-function battle(response, other) {
-    console.log("BATTLE");
-    var hpResponse = response.a.hp;
-    
-    hpResponse = hpResponse - other.attack + response.a.def
-    console.log("PLAYER TAKES DAMAGE: " + hpResponse);
-    
+// basic battle function
+function battle(defender, attacker, player) {
+    var hpDefender = defender.hp;
+    if (defender.player === player) {
+        hpResponse = defender.hp;
+        if (0 - attacker.attack + defender.def < 0) {
+            hpResponse = hpResponse - attacker.attack + defender.def;
+        }
+        console.log(defender.name + " A: " + hpResponse + "/" + defender.maxHp);
+        return hpResponse;
+    }
     return hpResponse;
 }
+
+// stats passed for creating a unit class
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
+    this.hp = hp;
+    this.maxHp = hp;
+    this.def = def;
+    this.atk = atk;
+    this.speed = speed;
+    this.hitPercent = hitPercent;
+    this.dodge = dodge;
+    this.type = type;
+    this.name = name;
+    this.image = image;
+}
+
+
+// units
+var slime = new Unit(10, 1, 3, 5, 90, 3, 1, "Slime", "slime spritesheet calciumtrice_0");
+var rogue = new Unit(15, 2, 8, 10, 98, 30, 2, "Rogue", "rogue spritesheet calciumtrice");
+var warrior = new Unit(20, 10, 10, 3, 70, 3, 3, "Warrior", "warrior spritesheet calciumtrice");
 
 
 
