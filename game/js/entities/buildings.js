@@ -16,6 +16,7 @@ game.Structures = me.Entity.extend({
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
+        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
     },
     onActivateEvent: function () {
         //register on mouse/touch event
