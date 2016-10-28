@@ -93,6 +93,8 @@ game.BuildingObject = me.Entity.extend({
         // to memorize where we grab the shape
         this.grabOffset = new me.Vector2d(0,0);
 
+        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+
     },
 
     onActivateEvent: function () {
@@ -100,9 +102,13 @@ game.BuildingObject = me.Entity.extend({
         me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
         me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
         me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
-        // register on the global pointermove event
+
         console.log("onActivate fired");
-        this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
+        //register locally...i think.
+        me.input.registerPointerEvent('pointermove', this, this.pointerMove.bind(this));
+
+        // register on the global pointermove event
+        //this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
     },
 
     /**
@@ -117,8 +123,6 @@ game.BuildingObject = me.Entity.extend({
             var parentPos = this.ancestor.getBounds().pos;
             var x = event.gameX - this.pos.x - parentPos.x;
             var y = event.gameY - this.pos.y - parentPos.y;
-
-
 
             // the pointer event system will use the object bounding rect, check then with with all defined shapes
             for (var i = this.body.shapes.length, shape; i--, (shape = this.body.shapes[i]);) {
@@ -146,9 +150,8 @@ game.BuildingObject = me.Entity.extend({
      * Check the position  to be within the "build" area and updates the image
      */
     checkPosition : function () {
-        //todo disallow building when out of bounds
         //todo flesh this out so it also checks for entities in the way
-        console.log( this.bounds);
+        //console.log( this.bounds);
 
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
@@ -159,7 +162,7 @@ game.BuildingObject = me.Entity.extend({
             this.chooseImage("good");
             return true;
         }else{
-            console.log("not")
+            console.log("not");
             this.chooseImage("bad");
         }
         return false;
@@ -182,13 +185,11 @@ game.BuildingObject = me.Entity.extend({
         this.selected = false;
 
         this.checkPosition();
-        //todo warn use when attempt to place outside of bounds
 
         //todo fix error from removal
         if(this.placeBuilding()){
-            //me.game.world.removeChild(this);
             this.destroy();
-        };
+        }
         // don"t propagate the event furthermore
         return false;
     },
@@ -209,6 +210,8 @@ game.BuildingObject = me.Entity.extend({
         renderer.setGlobalAlpha(0.80);
     },
     destroy: function(){
+
+        me.input.releasePointerEvent('pointerdown', this);
         me.game.world.removeChild(this);
     }
 });

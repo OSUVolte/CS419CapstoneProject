@@ -64,7 +64,7 @@ game.Structures = me.Entity.extend({
         if (this.hover === true) {
             // this.grabOffset.set(event.gameX, event.gameY);
             // this.grabOffset.sub(this.pos);
-            console.log('selected');
+            console.log('selected the new buiding');
             this.selected = true;
             // don"t propagate the event furthermore
             return false;
@@ -110,7 +110,7 @@ game.Barracks = game.Structures.extend({
         //this.chooseImage();
 
         // add a body shape
-        this.body.addShape(new me.Rect(0,0, 0, 0));
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));
         //addimage
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")});
 
