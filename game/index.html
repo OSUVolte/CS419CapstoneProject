@@ -16,7 +16,6 @@
     <body>
         <body oncontextmenu="return false;">
         <!-- Canvas placeholder -->
-        <div id="screen"></div>
 
         <!-- melonJS Library -->
         <!-- build:js js/app.min.js -->
@@ -33,11 +32,14 @@
         <!-- Buildings -->
         <script type="text/javascript" src="js/entities/buildings.js"></script>
         <script type="text/javascript" src="js/entities/building_manager.js"></script>
+        <script type="text/javascript" src="js/entities/BuildButton.js"></script>
+        <script type="text/javascript" src="js/entities/BuildMenu.js"></script>
 
         <script type="text/javascript" src="js/entities/HUD.js"></script>
 
         <script type="text/javascript" src="js/screens/title.js"></script>
         <script type="text/javascript" src="js/screens/play.js"></script>
+
         <!-- /build -->
 
         <!-- Bootstrap -->
@@ -46,5 +48,6 @@
                 game.onload();
             });
         </script>
+
     </body>
 </html>

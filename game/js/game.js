@@ -5,7 +5,12 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score : 0
+        score : 0,
+
+        //Build menu
+        buildbutton: "",
+        barracksbutton: "",
+        menu_background: ""
     },
 
 
@@ -55,7 +60,12 @@ var game = {
         //me.pool.register("build", game.BuildingObject);
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
+        me.pool.register("Barracks", game.Structures);
 
+        //Build Menu:
+        me.pool.register("menu_background", game.BuildMenu, true);
+        me.pool.register("buildbutton", game.BuildButton, true);
+        me.pool.register("barracksbutton", game.BarracksButton, true);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");
