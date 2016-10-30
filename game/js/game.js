@@ -66,12 +66,18 @@ var game = {
         me.pool.register("menu_background", game.BuildMenu, true);
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
+        me.pool.register("player", game.PlayerEntity);
+        me.pool.register("top", game.Top, false);
 
         // enable keyboard
-        me.input.bindKey(me.input.KEY.LEFT,  "left");
+        me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
+        
+        me.input.bindKey(me.input.KEY.X, "x");
+        me.input.bindKey(me.input.KEY.Q, "q");
+
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
         me.input.bindKey(me.input.KEY.A, "accept");
