@@ -6,14 +6,6 @@ game.Structures = me.Entity.extend({
      */
     init: function (x, y, settings) {
 
-        //settings
-
-        //Settings for standard Building properties
-        // to be passed on to the sub.
-        settings.upm = 5; //unites per minute
-        settings.capacity = 5;
-        settings.cost = 100;
-
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
@@ -23,7 +15,9 @@ game.Structures = me.Entity.extend({
         me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
         me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
         me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+
         // register on the global pointermove event
+        // If this causes issus see building_manager for alternative set up
         console.log("onActivate fired");
         this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
     },
@@ -81,7 +75,6 @@ game.Structures = me.Entity.extend({
         // don"t propagate the event furthermore
         return false;
     },
-
     /**
      * update function
      */
@@ -91,31 +84,40 @@ game.Structures = me.Entity.extend({
 });
 
 //todo set up collisions on buildings
-// todo
 game.Barracks = game.Structures.extend({
     /**
      * constructor
      */
     init:function (x, y, settings) {
 
-        //settings
-        //settings.width= x;
-        //settings.height= y;
-        settings.timeToBuild = 1000;
-
         //call the constructor
         this._super(game.Structures, 'init', [x, y , settings]);
 
         this.placed = true;
+        this.bldgProperties();
+        //this.chooseImage(); //todo set images correctly for barracks
 
-        //this.chooseImage();
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
+    },
+    /**
+     * Defines all the properties of the building
+     *
+     */
+    bldgProperties: function(){
 
-        // add a body shape
-        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));
-        //addimage
-        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")});
-
-
+        this.buildTime = 60;
+        this.est = Math.round(new Date().getTime()/1000);
+        this.functional = false; //starts off as non-functional until build time expires
+        //the types of units that this building can build
+        this.enabled = {
+            warrior:true,
+            tank: false  // etc etc //todo add all unit types
+        }; //
+        this.upm = 5; //units per minute
+        this.capacity = 5;
+        this.cost = 100;
+        this.health = 1000;
     },
     /**
      * Change the image
@@ -131,6 +133,8 @@ game.Barracks = game.Structures.extend({
      */
     setSpawnPoint : function (dt) {
       //todo make this useable
+        //I think it would be good to have this offset by a certain amount, but then it could potentially interfere with other buildings
+        // so a check needs to be made
         //this.xcoor = dt.gameX;
         //this.ycoor = dt.gameY;
     },
@@ -138,115 +142,36 @@ game.Barracks = game.Structures.extend({
      * update the entity
      */
     update : function (dt) {
-        //Update functions of our game objects will always receive a delta time (in milliseconds). It's important to pass it along to our parent's class update.
-        //this._super(me.Sprite, "update", [dt]);
+        //Update functions of our game objects will always receive a delta time (in milliseconds).
+        // It's important to pass it along to our parent's class update.
+        //setting the time for the building
+        this._super(me.Entity, "update", [dt]);
+
+        //establish time elapsed since the placement
+        this.now = Math.round(new Date().getTime()/1000);
+        this.elapsed = this.now - this.est;
 
         //do something when its placed
-        if(!this.placed){
+        if(this.placed){
 
-            // set the renderable position to bottom center
-            //this.anchorPoint.set(this.x.pos, this.y.pos);
-           // this.onActivateEvent();
-            //console.log("free roaming - not placed yet")
+            //start construction
+            if(this.elapsed > this.buildTime){
+                this.allowBuild = true;
+                this.chooseImage();//update the image when complete
+            }
         }
-
-
-        // // apply physics to the body (this moves the entity)
-         //this.body.update(dt);
-        //
-        // // handle collisions against other shapes
-        // me.collision.check(this);
-        //
-        //
-         //this.pos.x = this.pos.x.clamp(0, this.maxX);
-         //this.pos.x = this.pos.y.clamp(0, this.maxY);
-        //
-        // // return true if we moved or if the renderable was updated
-
         return this.selected || this.hover;
-        //return true;
     },
-
-
-    //Attempting to use draggable entities first.
-    dragStart: function (e) {
-        // call the super function
-        this._super(me.DraggableEntity, "dragStart", [e]);
-        //set properties or update image
-        console.log('say waat?')
-
-    },
-    dragEnd: function (e) {
-        // call the super function
-        this._super(me.DraggableEntity, "dragEnd", [e]);
-        //update image
-    },
-
    /**
      * collision handler
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
         // Make all other objects solid
-        //return true;
-    }
-});
-
-
-/*
-* This will be used to define where the entity can be dropped.
-* Somehowe there must be a way to a, confine this to an area
-* and b, only allow drop if nothing else is already there
-*
-*
-* CURRENTLY THIS IS ONLY COPY PASTA FROM EXAMPLES
-* */
-
-game.droptarget = me.DroptargetEntity.extend({
-    /**
-     * constructor
-     */
-    init: function (x, y, settings) {
-        // call the parent constructor
-        this._super(me.DroptargetEntity, "init", [x, y, settings]);
-        // set the color to white
-        this.color = "red";
-        // set the font we want to use
-        this.font = new me.Font("Verdana", 15, "black");
-        this.font.bold();
-        // set the text
-        this.text = "Drop on me\n\nAnd I\"ll turn green\n\ncheckmethod: overlap";
-    },
-    /**
-     * update function
-     */
-    update: function () {
         return true;
-    },
-    /**
-     * draw the square
-     */
-    draw: function (renderer) {
-        renderer.setColor(this.color);
-        renderer.fillRect(this.pos.x, this.pos.y, 100, 100);
-        this.font.draw(renderer, this.text, this.pos.x, this.pos.y);
-    },
-    /**
-     * drop overwrite function
-     */
-    drop: function (e) {
-        // save a reference to this to use in the timeout
-        var self = this;
-        // call the super function
-        this._super(me.DroptargetEntity, "draw", [e]);
-        // indicate a succesful drop
-        this.color = "green";
-        // set the color back to red after a second
-        window.setTimeout(function () {
-            self.color = "red";
-        }, 1000);
     }
 });
+
 
 
 

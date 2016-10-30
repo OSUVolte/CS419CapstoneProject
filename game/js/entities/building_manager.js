@@ -215,8 +215,10 @@ game.BuildingObject = me.Entity.extend({
         me.game.world.removeChild(this);
     }
 });
-//footprint is determined by the parameters sent to it in the call from game.BuildingArea = me.Renderable.extend
-// it extends the building object which contains all the drag a drop functions
+/**
+* footprint is determined by the parameters sent to it in the call from game.BuildingArea = me.Renderable.extend
+* it extends the building object which contains all the drag a drop functions
+*/
 game.FootPrint = game.BuildingObject.extend({
     /**
      * constructor
@@ -263,6 +265,7 @@ game.FootPrint = game.BuildingObject.extend({
         //add building to the area.
         if(this.type == "barracks") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
+            //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
                 me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
                     width: this.width,
