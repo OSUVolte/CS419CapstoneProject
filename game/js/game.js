@@ -50,14 +50,14 @@ var game = {
 
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
-        //me.pool.register("player", game.PlayerEntity);
+        me.pool.register("player", game.PlayerEntity);
         //me.pool.register("bottom", game.Bottom);
-        //me.pool.register("top", game.Top);
-        me.pool.register("mid", game.Mid);
+        me.pool.register("top", game.Top, false);
+        //me.pool.register("mid", game.Mid);
         me.pool.register("queue", game.Queue);
 
         //buildings:
-        //me.pool.register("build", game.BuildingObject);
+
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
         me.pool.register("Barracks", game.Structures);

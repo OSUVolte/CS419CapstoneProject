@@ -58,7 +58,6 @@
   <object id="18" name="spawn_top" x="480" y="396" width="33.3333" height="32"/>
  </objectgroup>
  <objectgroup name="path">
-  <object id="32" name="mid" x="943" y="686" width="32" height="32"/>
   <object id="39" name="build_area" x="32" y="64" width="800" height="640"/>
   <object id="101" name="queue" x="864" y="128" width="96" height="512"/>
  </objectgroup>

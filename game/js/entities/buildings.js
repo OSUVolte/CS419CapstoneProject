@@ -8,7 +8,7 @@ game.Structures = me.Entity.extend({
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+        this.body.setCollisionMask(me.collision.types.NO_OBJECT);
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -61,6 +61,20 @@ game.Structures = me.Entity.extend({
             // this.grabOffset.sub(this.pos);
             console.log('selected the new buiding');
             this.selected = true;
+
+            me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, rogue, {
+                framewidth: 32,
+                frameheight: 32,
+                height: this.height,
+                width: this.width,
+                // direction
+                lane: "top",
+
+                // which player spawned
+                player: 1,
+                shapes: [new me.Rect(0, 0, 32, 32)]
+            }), 10); //todo not sure about z index
+
             // don"t propagate the event furthermore
             return false;
         }

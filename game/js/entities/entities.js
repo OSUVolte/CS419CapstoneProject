@@ -76,11 +76,9 @@ game.PlayerEntity = me.Entity.extend({
         } else if (!me.input.isKeyPressed('q')) {
             this.playerTwoSpawn = false;
         }
+
         
-        
-        
-        
-        // apply physics to the body (this moves the entity)
+        // apply physics to the body (this moves the entity)xq
         this.body.update(dt);
 
         // handle collisions against other shapes
@@ -136,7 +134,6 @@ game.Top = me.Entity.extend({
         // set the spawn point
         this.spawnPoint = "top";
 
-        
         this.walkRight = false;
         this.walkUp = false;
 
