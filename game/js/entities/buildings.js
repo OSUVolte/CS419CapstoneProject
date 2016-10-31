@@ -6,9 +6,15 @@ game.Structures = me.Entity.extend({
      */
     init: function (x, y, settings) {
 
+        //load the general properties
+        this.generalProperties();
+
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
         this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+    },
+    generalProperties: function(){
+        this.q = [];
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -62,19 +68,6 @@ game.Structures = me.Entity.extend({
             console.log('selected the new buiding');
             this.selected = true;
 
-            me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, rogue, {
-                framewidth: 32,
-                frameheight: 32,
-                height: this.height,
-                width: this.width,
-                // direction
-                lane: "top",
-
-                // which player spawned
-                player: 1,
-                shapes: [new me.Rect(0, 0, 32, 32)]
-            }), 10); //todo not sure about z index
-
             // don"t propagate the event furthermore
             return false;
         }
@@ -89,11 +82,98 @@ game.Structures = me.Entity.extend({
         // don"t propagate the event furthermore
         return false;
     },
+    spawnUnit: function(type){
+        me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, type, {
+            framewidth: 32,
+            frameheight: 32,
+            height: this.height,
+            width: this.width,
+            // direction
+            lane: "top",
+
+            // which player spawned
+            player: 1,
+            shapes: [new me.Rect(0, 0, 32, 32)]
+        }), 10); //todo not sure about z index
+    },
+    /**
+     * Adds type of element to the Building Queue
+     * @param type string of the entity type
+     * Returnes true if added
+     */
+    addUnitQ: function(type){
+        var cap = this.buildQueue().cap;
+        //an obj with the time it was added and the type of element
+        var qObj = {
+            time: new Date.getTime(),
+            type: type
+        };
+        //don't add if it would go over capacity
+        if(q.length + 1 <= cap){
+            this.q.push(qObj);
+            return true;
+        }
+        return false;
+    },
+    /**
+     * Removes a building element from the queue
+     * @param index index to be removed from the queue
+     */
+    removeUnitQ: function(index){
+        curLength = q.length;
+        if(index+1 < this.capacity) {
+            q.splice(index, 1);
+        }
+        //make sure it decreased by one
+        return q.length == curLength - 1;
+    },
+    /**
+     * Actions to be taken when the unit build is complete
+     * @param dt the current time
+     * @param cb a call back function of what's to be done when it's complete
+     */
+    unitComplete: function(ctime){
+        var ubt = 100000;
+        //only do this when when have units in the queue
+        if(this.q.length > 0){
+            //get the first units type
+            var unit = q[0].type;
+
+            //get the build time of the unit being built
+            switch(unit){
+
+                case Warrior:
+                    ubt = game.Warrior.buildTime;
+                    break;
+                //todo Add all unit types
+                default:
+                    ubt = 60;
+            }
+            //check if unit is complete
+            if(ctime - q[0].time >= ubt){
+                //remove the first element in the queue
+                q.shift();
+
+                //spawn the unit
+                this.spawnUnit(unit.toLowerCase());
+            }
+        }
+    },
     /**
      * update function
      */
     update: function () {
+        console.log(this.selected);
+        //add units to a building
+        if (this.selected == true && me.input.isKeyPressed("add")) {
+            console.log("Adding units");
+            this.addUnitQ("Warrior");
+
+        }
         return this.selected || this.hover;
+    },
+    logitAll: function(){
+        console.log(this.selected);
     }
 });
 
@@ -146,7 +226,7 @@ game.Barracks = game.Structures.extend({
      * Might want to make it relative to some other entity
      */
     setSpawnPoint : function (dt) {
-      //todo make this useable
+        //todo make this useable
         //I think it would be good to have this offset by a certain amount, but then it could potentially interfere with other buildings
         // so a check needs to be made
         //this.xcoor = dt.gameX;
@@ -171,12 +251,13 @@ game.Barracks = game.Structures.extend({
             //start construction
             if(this.elapsed > this.buildTime){
                 this.allowBuild = true;
+                console.log("buildingAllowed", true);
                 this.chooseImage();//update the image when complete
             }
         }
         return this.selected || this.hover;
     },
-   /**
+    /**
      * collision handler
      * (called when colliding with other objects)
      */
