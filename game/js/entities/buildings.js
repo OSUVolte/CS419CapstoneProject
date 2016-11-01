@@ -15,6 +15,7 @@ game.Structures = me.Entity.extend({
     },
     generalProperties: function(){
         this.q = [];
+        this.allowBuild = false;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -82,8 +83,12 @@ game.Structures = me.Entity.extend({
         // don"t propagate the event furthermore
         return false;
     },
+    /**
+     * Spawns Units of specified type at objects location
+     * @param type string of the unit type as defined Classes in Entities.js (i.e. "Warrior" but not "warrior")
+     */
     spawnUnit: function(type){
-        me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, type, {
+        me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, eval(type), {
             framewidth: 32,
             frameheight: 32,
             height: this.height,
@@ -102,14 +107,13 @@ game.Structures = me.Entity.extend({
      * Returnes true if added
      */
     addUnitQ: function(type){
-        var cap = this.buildQueue().cap;
         //an obj with the time it was added and the type of element
         var qObj = {
-            time: new Date.getTime(),
+            time: new Date().getTime(),
             type: type
         };
         //don't add if it would go over capacity
-        if(q.length + 1 <= cap){
+        if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
             return true;
         }
@@ -128,6 +132,15 @@ game.Structures = me.Entity.extend({
         return q.length == curLength - 1;
     },
     /**
+     * Gets the Amount of time until the next Unit will spawn
+     * @param q
+     */
+    tNext: function(q){
+
+
+    },
+
+    /**
      * Actions to be taken when the unit build is complete
      * @param dt the current time
      * @param cb a call back function of what's to be done when it's complete
@@ -136,26 +149,30 @@ game.Structures = me.Entity.extend({
         var ubt = 100000;
         //only do this when when have units in the queue
         if(this.q.length > 0){
+
             //get the first units type
-            var unit = q[0].type;
+            var unit = this.q[0].type;
 
             //get the build time of the unit being built
             switch(unit){
 
-                case Warrior:
-                    ubt = game.Warrior.buildTime;
-                    break;
+                // case "Warrior":
+                //     ubt = game.Warrior.buildTime;
+                //     break;
                 //todo Add all unit types
                 default:
-                    ubt = 60;
+                    ubt = 10;
             }
+
+            //console.log((ctime, ctime - this.q[0].time)/1000, ubt )
             //check if unit is complete
-            if(ctime - q[0].time >= ubt){
+            if((ctime, ctime - this.q[0].time)/1000 >= ubt){
                 //remove the first element in the queue
-                q.shift();
+                this.q.shift();
 
                 //spawn the unit
-                this.spawnUnit(unit.toLowerCase());
+                console.log("spawning", unit.toLowerCase())
+                this.spawnUnit(unit);
             }
         }
     },
@@ -163,17 +180,58 @@ game.Structures = me.Entity.extend({
      * update function
      */
     update: function () {
-        console.log(this.selected);
-        //add units to a building
+        //This is all handled by the sub or extending class
+        //use mainUpate in each to call standard update functions
+    },
+    /**
+     * Used to define functions that are a part of all buildings but would
+     * be overridden by the extender's update function, i.e key presses
+     * @param dt
+     */
+    mainUpdate: function(dt){
+
+        this._super(me.Entity, "update", [dt]);
+        var now = new Date().getTime();
+
+        //add units to a building queue
         if (this.selected == true && me.input.isKeyPressed("add")) {
-            console.log("Adding units");
-            this.addUnitQ("Warrior");
+
+            //todo change this adding mechanism to add the unit of a certain type.
+            if(this.addUnitQ("warrior")){
+                console.log("Adding Unit");
+            }else{
+                console.log("cannot add queue is full")
+            }
 
         }
-        return this.selected || this.hover;
+        //Remove a Unit from the end of the queue
+        if (this.selected == true && me.input.isKeyPressed("remove")) {
+            //remove a unit from the end
+            this.removeUnitQ(this.q.length-1);
+            console.log("removing");
+
+        }
+
+        //spawn units when time is ready
+        this.unitComplete(now);
+
+
+        //log some state stuff
+        if(me.input.isKeyPressed("log")){
+            this.logitAll(dt);
+        }
+
+        return this._super(me.Entity, 'update', [dt]);
     },
-    logitAll: function(){
-        console.log(this.selected);
+    /**
+     * Logging of some specific variables to help with trouble shooting
+     */
+    logitAll: function(dt){
+        console.log("selected: ", this.selected);
+        console.log("the queue", this.q);
+        console.log("dt", dt);
+        console.log();
+
     }
 });
 
@@ -200,7 +258,7 @@ game.Barracks = game.Structures.extend({
      */
     bldgProperties: function(){
 
-        this.buildTime = 60;
+        this.buildTime = 5;
         this.est = Math.round(new Date().getTime()/1000);
         this.functional = false; //starts off as non-functional until build time expires
         //the types of units that this building can build
@@ -218,8 +276,8 @@ game.Barracks = game.Structures.extend({
      */
     chooseImage: function () {
         //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
-        this.renderable.addAnimation("building", [0], 5);
-        this.renderable.setCurrentAnimation("neutral");
+        //this.renderable.addAnimation("building", [0], 5);
+        //this.renderable.setCurrentAnimation("neutral");
     },
     /**
      * Set spawn point of the footprint
@@ -227,10 +285,8 @@ game.Barracks = game.Structures.extend({
      */
     setSpawnPoint : function (dt) {
         //todo make this useable
-        //I think it would be good to have this offset by a certain amount, but then it could potentially interfere with other buildings
-        // so a check needs to be made
-        //this.xcoor = dt.gameX;
-        //this.ycoor = dt.gameY;
+        //It might be best to offset this point from the buildings - but it will need a check to make sure
+        //it doesn't interfere with other buildings...
     },
     /**
      * update the entity
@@ -240,6 +296,9 @@ game.Barracks = game.Structures.extend({
         // It's important to pass it along to our parent's class update.
         //setting the time for the building
         this._super(me.Entity, "update", [dt]);
+
+        //mainUpdate - General functions that are good for all buildings
+        this.mainUpdate(dt);
 
         //establish time elapsed since the placement
         this.now = Math.round(new Date().getTime()/1000);
@@ -255,7 +314,7 @@ game.Barracks = game.Structures.extend({
                 this.chooseImage();//update the image when complete
             }
         }
-        return this.selected || this.hover;
+        return this._super(me.Entity, "update", [dt]);
     },
     /**
      * collision handler

@@ -23,12 +23,6 @@ game.PlayScreen = me.ScreenObject.extend({
         // Can also be forced by specifying a "Infinity" z value to the addChild function.
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
-//        me.game.world.addChild(me.pool.pull("spawn_top", 50, 50), 1);
-        //me.game.world.addChild(new game.HUD.GUI_Button());
-        // //for draggable pieces
-        // var BarracksContainer = new me.Container(32, 32, 0, 600);
-        // BarracksContainer.addChild(new game.Barracks(100, 100, {width: 32, height: 32, sprite:"buildinga-footprint-spritesheet"}), 6);
-        // me.game.world.addChild(BarracksContainer);
 
     },
 

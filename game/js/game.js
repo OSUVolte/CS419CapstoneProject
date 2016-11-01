@@ -80,8 +80,9 @@ var game = {
 
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.A, "accept");
+        me.input.bindKey(me.input.KEY.A, "accept",true);
         me.input.bindKey(me.input.KEY.W, "add", true);
+        me.input.bindKey(me.input.KEY.L, "log", true);
 
 
         // render hitbox int the debug panel
