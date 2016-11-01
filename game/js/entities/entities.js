@@ -519,7 +519,7 @@ function battle(attacker, defender) {
 }
 
 // stats passed for creating a unit class
-function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image, buildTime) {
     this.hp = hp;
     this.maxHp = hp;
     this.def = def;
@@ -530,13 +530,14 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
     this.type = type;
     this.name = name;
     this.image = image;
+    this.buildTime = buildTime;
 }
 
 
 // Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image)
-var slime = new Unit(10, 1, 3, 5, 90, 3, 1, "Slime", "slime spritesheet calciumtrice_0");
-var rogue = new Unit(15, 2, 20, 10, 98, 30, 2, "Rogue", "rogue spritesheet calciumtrice");
-var warrior = new Unit(10, 2, 5, 3, 70, 3, 3, "Warrior", "warrior spritesheet calciumtrice");
+var slime = new Unit(10, 1, 3, 5, 90, 3, 1, 60, "Slime", "slime spritesheet calciumtrice_0");
+var rogue = new Unit(15, 2, 20, 10, 98, 30, 2, 60, "Rogue", "rogue spritesheet calciumtrice");
+var warrior = new Unit(10, 2, 5, 3, 70, 3, 3, 60, "Warrior", "warrior spritesheet calciumtrice");
 
 
 
