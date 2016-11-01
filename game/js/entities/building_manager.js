@@ -41,14 +41,23 @@ game.BuildingArea = me.Renderable.extend({
         //build Barracks
         if (this.isPlacing == true && me.input.isKeyPressed("barracks")) {
             console.log("barracks");
+            console.log(game.data.playergold);
 
-            // Adding it to the world, at a place near the bounding box as set by the tiled map object
-            me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-                width: 128,
-                height: 102,
-                bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                type: "barracks"
-            }), 10);
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                    width: 128,
+                    height: 102,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "barracks"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                console.log("Not enough gold to build Barracks");
+            }
+            console.log(game.data.playergold);
             this.isPlacing = false;
         }
 

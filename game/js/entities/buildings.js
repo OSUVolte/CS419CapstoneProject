@@ -110,6 +110,7 @@ game.Barracks = game.Structures.extend({
         this.placed = true;
         this.bldgProperties();
         //this.chooseImage(); //todo set images correctly for barracks
+        this.cost = 500; //cost for barracks is 500 gold
 
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage

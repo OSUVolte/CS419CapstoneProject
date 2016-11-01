@@ -10,7 +10,9 @@ var game = {
         //Build menu
         buildbutton: "",
         barracksbutton: "",
-        menu_background: ""
+        menu_background: "",
+
+        playergold: 1000 //set initial player gold to 1000
     },
 
 
