@@ -18,6 +18,9 @@ game.BuildMenu = me.Entity.extend({
 	},
 	hide: function(){
 
+	},
+	update: function () {
+		return true;
 	}
 });
 
@@ -49,13 +52,14 @@ game.BarracksButton = me.Entity.extend({
 	onMouseDown: function() {
 		console.log("barracksbutton pressed!");
 
-		return true;
+		return false;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {
 		this.selected = false;
 
 		//trigger the event
+		me.input.triggerKeyEvent(me.input.KEY.B, false);
 		me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
 
 		// close  building menu
@@ -64,6 +68,17 @@ game.BarracksButton = me.Entity.extend({
 
 		// don"t propagate the event furthermore
 		return false;
+	},
+
+	update: function () {
+		return true;
+	},
+
+	onDeactivateEvent: function() {
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+		me.input.releasePointerEvent("pointerdown", this);
+        me.input.releasePointerEvent("pointerup", this);
+        me.input.releasePointerEvent("pointercancel", this);
 	}
 
 });
