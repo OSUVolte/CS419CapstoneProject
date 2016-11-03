@@ -28,7 +28,7 @@ game.BuildButton = me.Entity.extend({
         me.game.world.addChild(game.data.menu_background, 15);
         game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
         me.game.world.addChild(game.data.barracksbutton, 30);
-		return true;
+		return false;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {
@@ -36,6 +36,7 @@ game.BuildButton = me.Entity.extend({
 		// close  building menu
 		console.log("buildbutton pressed!");
 		me.input.triggerKeyEvent(me.input.KEY.B, true);
+
 		// don"t propagate the event furthermore
 		return false;
 	},
@@ -43,7 +44,13 @@ game.BuildButton = me.Entity.extend({
 	 * update function
 	 */
 	update: function () {
-		return this.selected;
+		return true;
+	},
+
+	onDeactivateEvent: function() {
+		me.input.releasePointerEvent("pointerdown", this);
+        me.input.releasePointerEvent("pointerup", this);
+        me.input.releasePointerEvent("pointercancel", this);
 	}
 
 
