@@ -3,9 +3,6 @@
  */
  // the actual player, push keys in the update function will
  // control the screen
- // SO FAR:
- // if you push x on the keyboard, will spawn units, but will spawn many
- // TODO: fix unit spawning, then implement a way to create units
  // probably store the units gold, unit capacity, builds in this entity
 game.PlayerEntity = me.Entity.extend({
 
@@ -562,8 +559,8 @@ game.ChaserEntity = me.Entity.extend({
     /* -----
     update the player pos
     ------ */
-    update: function() {
-        var now = Date.now()
+    update: function(dt) {
+        var now = Date.now();
 //        this.updateColRect(0, 16, 16, 16);
         if (this.target == null) {
             // we should globally store this value
