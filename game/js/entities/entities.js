@@ -77,7 +77,9 @@ game.PlayerEntity = me.Entity.extend({
         } else if (!me.input.isKeyPressed('q')) {
             this.playerTwoSpawn = false;
         }
+
         
+        // apply physics to the body (this moves the entity)xq
         if (me.input.isKeyPressed('r') && this.qPressed == false) {
             this.qPressed = true;
             
@@ -142,14 +144,13 @@ game.Top = me.Entity.extend({
         // set the spawn point
         this.spawnPoint = "top";
 
-        
         this.walkRight = false;
         this.walkUp = false;
 
         this.body.setVelocity(1,1);
         
         // follow position
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+//        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         this.alwaysUpdate = true;
         
@@ -375,7 +376,7 @@ game.Warrior = me.Entity.extend({
         this.combat = false;
         this.hit = false;
         this.name = "TEST_WARRIOR";
-        this.player = 1;
+    //    this.player = 1;
         this.target = [];
         this.targetedBy = [];
         
@@ -485,17 +486,11 @@ game.Warrior = me.Entity.extend({
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             var ydif = this.pos.y - response.b.pos.y;
             var xdif = this.pos.x - response.b.pos.x;
-            console.log("ydif = " + ydif + " xdif = " + xdif);
-            console.log(response);
         
             if (this.facing === "north" && ydif < 15) {
                 this.pos.y--;                                                   // prevent passing through
             }
         }
-        
-    
-    
-    
     // if something that is an enemy touches this unit
         if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
             // if something touches this entity while its alive...
@@ -503,18 +498,17 @@ game.Warrior = me.Entity.extend({
                 this.me = response.a;
                 this.enemy = other;
                 this.target.push(other);
-                console.log("WARRIOR: initial target: " + this.target);
                 this.combat = true;
                 this.renderable.setCurrentAnimation("attack");
                 this.renderable.setAnimationFrame();
                 this.targetedBy.push(other);
-        } else if (this.combat == true) {
+            } else if (this.combat == true) {
                 this.target.push(other);
                 this.targetedBy.push(other);
                 this.me = response.a;
                 this.enemy = other;
-        }
-          return true;
+            }
+          return false;
         } else {
  //           console.log("I AM TOUCHING SOMETHING ELSE");
             return true;
@@ -531,6 +525,7 @@ game.ChaserEntity = me.Entity.extend({
 
     init: function(x, y, settings) {
         // call the constructor
+        settings.image = "slime spritesheet calciumtrice_0",
         this._super(me.Entity, 'init', [x, y , settings]);
 
         // chase even when offscreen
@@ -542,14 +537,15 @@ game.ChaserEntity = me.Entity.extend({
 
         // adjust the bounding box
         // lower half SNES-RPG style
-        console.log(this.collisionBox);
-//        this.updateColRect(0, 32, 32, 32);
-
+        this.hp = 10000;
         this.target = null;
         this.myPath = [];
         this.dest = null;
         this.lastPos =  {x: -1, y: -1};
         this.pathAge = 0;
+        this.maxHp = 10000;
+        this.def = 1;
+        this.name = "slime";
 
     },
 
@@ -563,12 +559,19 @@ game.ChaserEntity = me.Entity.extend({
     /* -----
     update the player pos
     ------ */
-    update: function() {
+    update: function(dt) {
         var now = Date.now()
 //        this.updateColRect(0, 16, 16, 16);
         if (this.target == null) {
             // we should globally store this value
             this.target = me.game.world.getChildByType(game.Warrior)[0];
+        } else {
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].player == 1) {
+                    this.target = me.game.world.children[i];
+                }
+            }
+        
         }
         
         var cbdist = this.chessboard();
@@ -577,66 +580,49 @@ game.ChaserEntity = me.Entity.extend({
             // not moving anywhere
             // friction takes over
             if (this.target != null) {
-            //    this.myPath = me.astar.search(this.collisionBox.left,this.collisionBox.top,this.target.collisionBox.left,this.target.collisionBox.top);
-    //            this.myPath = me.astar.search(this.pos._x, this.pos_y, this.target.pos._x, this.target.pos._y);
+                this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
                 this.dest = this.myPath.pop();
                 this.pathAge = now;
-                //console.log(this.dest);
             }
         } else {
-            if (this.chessboard() < 96) {
+            if (this.chessboard() < 500) {
                 // just go for it
                 this.dest = this.target;
                 this.pathAge = now-5000;
-            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
-                // TODO - do this with non constant, add some fuzz factor
-                //console.log("Reached "+this.dest.pos.x+","+this.dest.pos.y);
-                this.dest = this.myPath.pop();
-
+//            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
+//                // TODO - do this with non constant, add some fuzz factor
             }
             if (this.dest != null) {
-                
                 //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                 //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                 // move based on next position
 
-
-            //    var xdiff = this.dest.pos.x - this.collisionBox.left;
-            //    var ydiff = this.dest.pos.y - this.collisionBox.top;
-                
                 var xdiff = this.dest.pos.x - this.pos.x;
                 var ydiff = this.dest.pos.y - this.pos.y;
 
-
                 if (xdiff < -2) {
-                    this.vel.x -= this.accel.x * me.timer.tick;
-        //            this.lastPos.x = this.left;
-                    this.lastPos.x = this.pos.x;
+                    this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                    this.lastPos.x = this.body.pos.x;
                 } else if (xdiff > 2) {
-                    this.flipX(true);
-                    this.vel.x += this.accel.x * me.timer.tick;
-        //            this.lastPos.x = this.left;
-                    this.lastPos.x = this.pos.x;
+     //               this.flipX(true);
+                    this.body.vel.x += this.body.accel.x * me.timer.tick;
+                    this.lastPos.x = this.body.pos.x;
                 }
 
                 if (ydiff < -2) {
-                    this.vel.y -= this.accel.y * me.timer.tick;
-                    this.lastPos.y = this.collisionBox.pos.y;
+                    this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                    this.lastPos.y = this.body.pos.y;
                 } else if (ydiff > 2) {
-                    this.vel.y += this.accel.y * me.timer.tick;
-                    this.lastPos.y = this.collisionBox.pos.y;
+                    this.body.vel.y += this.body.accel.y * me.timer.tick;
+                    this.lastPos.y = this.body.pos.y;
                 }
             }
         }
         // check & update player movement
-     //   this.updateMovement();
+        this.body.update(dt);
 
-        // update animation if necessary
-//        if (this.vel.x!=0 || this.vel.y!=0) {
-//            // update object animation
-//            this.parent();
- //           return true;
-//        }
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+
 
         // else inform the engine we did not perform
         // any update (e.g. position, animation)
@@ -656,7 +642,7 @@ game.ChaserEntity = me.Entity.extend({
                 context.translate(-x, -y);
             }
         // draw dest rect
-        debugAStar = true;
+        debugAStar = false;
         if (debugAStar && this.dest) {
             if (this.dest && this.dest.rect) {
                 this.dest.rect.draw(context, "green");
@@ -671,22 +657,20 @@ game.ChaserEntity = me.Entity.extend({
 
 });
 
-
-
 // takes the attacker object and defender object
 // do calculations, returns the amount of damage done
 // to the DEFENDER
 function battle(attacker, defender) {
-    var hpLost;
+    var hpLost = 0;
     if (attacker.attack - defender.def > 0) {
         hpLost = attacker.attack - defender.def;
-        console.log(defender.name + " : -" + hpLost);
+        console.log(defender.name + " : -" + hpLost + "hp");
     }
     return hpLost;
 }
 
 // stats passed for creating a unit class
-function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image, buildTime) {
     this.hp = hp;
     this.maxHp = hp;
     this.def = def;
@@ -697,6 +681,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
     this.type = type;
     this.name = name;
     this.image = image;
+    this.buildTime = buildTime;
 }
 
 
@@ -704,8 +689,4 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
 var slime = new Unit(10, 1, 3, 5, 90, 3, 1, "Slime", "slime spritesheet calciumtrice_0");
 var rogue = new Unit(15, 2, 10, 10, 98, 30, 2, "Rogue", "rogue spritesheet calciumtrice");
 var warrior = new Unit(10, 4, 5, 3, 70, 3, 3, "Warrior", "warrior spritesheet calciumtrice");
-
-
-
-
 
