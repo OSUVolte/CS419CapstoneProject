@@ -83,7 +83,6 @@ var game = {
         me.input.bindKey(me.input.KEY.DOWN, "down");
 
         me.input.bindKey(me.input.KEY.X, "x", true);
-        me.input.bindKey(me.input.KEY.W, "w", true);
         me.input.bindKey(me.input.KEY.Q, "q", true);
         me.input.bindKey(me.input.KEY.R, "r", true);
 

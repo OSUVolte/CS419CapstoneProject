@@ -138,7 +138,7 @@ game.Top = me.Entity.extend({
         this.target = [];                                   // target queue is empty
         this.targetedBy = [];                               // targeted by queue is empty
         this.hit = false;                                   // unit not performed an attack yet
-        this.path = 0;                                      
+        this.path = 0;
         
         // set the spawn point
         this.spawnPoint = "top";
@@ -687,7 +687,7 @@ function battle(attacker, defender) {
 }
 
 // stats passed for creating a unit class
-function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image, BuildTime) {
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, image) {
     this.hp = hp;
     this.maxHp = hp;
     this.def = def;
@@ -698,13 +698,14 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image, BuildTi
     this.type = type;
     this.name = name;
     this.image = image;
+    this.buildTime = buildTime;
 }
 
 
 // Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image)
-var slime = new Unit(10, 1, 3, 5, 90, 3, 1, 10 "Slime", "slime spritesheet calciumtrice_0");
-var rogue = new Unit(15, 2, 10, 10, 98, 30, 2, 10 "Rogue", "rogue spritesheet calciumtrice");
-var warrior = new Unit(10, 4, 5, 3, 70, 3, 3, 10 "Warrior", "warrior spritesheet calciumtrice");
+var slime = new Unit(10, 1, 3, 5, 90, 3, 1, 10, "Slime", "slime spritesheet calciumtrice_0");
+var rogue = new Unit(15, 2, 10, 10, 98, 30, 2, 10, "Rogue", "rogue spritesheet calciumtrice");
+var warrior = new Unit(10, 4, 5, 3, 70, 3, 3, 10, "Warrior", "warrior spritesheet calciumtrice");
 
 
 
