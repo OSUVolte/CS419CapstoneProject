@@ -88,7 +88,7 @@ game.Structures = me.Entity.extend({
      * @param type string of the unit type as defined Classes in Entities.js (i.e. "Warrior" but not "warrior")
      */
     spawnUnit: function(type){
-        me.game.world.addChild(me.pool.pull("top", this.pos.x, this.pos.y, eval(type), {
+        me.game.world.addChild(me.pool.pull("units", this.pos.x, this.pos.y, eval(type), {
             framewidth: 32,
             frameheight: 32,
             height: this.height,

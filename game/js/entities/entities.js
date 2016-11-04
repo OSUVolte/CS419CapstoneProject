@@ -13,7 +13,7 @@ game.PlayerEntity = me.Entity.extend({
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
         
-                // set the default horizontal & vertical speed (accel vector)
+        // set the default horizontal & vertical speed (accel vector)
         this.body.setVelocity(2,2);
         
         // set the display to follow our position on both axis
@@ -103,7 +103,9 @@ game.PlayerEntity = me.Entity.extend({
     }
 });
 
-game.Top = me.Entity.extend({
+//Units that are spawned into action
+
+game.Units = me.Entity.extend({
     init : function (x, y, unit, settings) {
         var width = settings.width;
         var height = settings.height;

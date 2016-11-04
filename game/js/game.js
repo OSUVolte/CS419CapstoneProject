@@ -57,29 +57,17 @@ var game = {
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
-        //me.pool.register("bottom", game.Bottom);
-        me.pool.register("top", game.Top, false);
-        //me.pool.register("mid", game.Mid);
+        me.pool.register("units", game.Units, false);
         me.pool.register("queue", game.Queue);
-
-        //buildings:
-
-        me.pool.register("build_area", game.BuildingArea);
-        me.pool.register("structures", game.Structures);
-        me.pool.register("Barracks", game.Structures);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
         me.pool.register("player", game.PlayerEntity);
-        //me.pool.register("bottom", game.Bottom);
-        me.pool.register("top", game.Top, false);
-        //me.pool.register("mid", game.Mid);
-        me.pool.register("queue", game.Queue);
+
 
         //buildings:
-
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
         me.pool.register("Barracks", game.Structures);
