@@ -86,30 +86,19 @@ var game = {
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
         
-        me.input.bindKey(me.input.KEY.W, "w");
-        me.input.bindKey(me.input.KEY.Q, "q");
-
+        //Buildings
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
         me.input.bindKey(me.input.KEY.A, "accept");
         me.input.bindKey(me.input.KEY.X, "x", true);
 
-
-        // render hitbox int the debug panel
-        me.debug.renderHitBox = true;
-
-        me.input.bindKey(me.input.KEY.R, "r");
-        
-
-        me.input.bindKey(me.input.KEY.X, "x", true);
+        //unknown
         me.input.bindKey(me.input.KEY.Q, "q", true);
-        me.input.bindKey(me.input.KEY.R, "r", true);
 
-        me.input.bindKey(me.input.KEY.B, "build", true);
-        me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.A, "accept",true);
-        me.input.bindKey(me.input.KEY.W, "add", true);
-        me.input.bindKey(me.input.KEY.L, "log", true);
+        //spawn Units
+        me.input.bindKey(me.input.KEY.W, "makeType1", true);
+        me.input.bindKey(me.input.KEY.R, "makeType2", true);
+        me.input.bindKey(me.input.KEY.E, "makeType3", true);
 
 
         // render hitbox int the debug panel

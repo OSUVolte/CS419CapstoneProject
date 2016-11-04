@@ -16,6 +16,7 @@ game.Structures = me.Entity.extend({
     generalProperties: function(){
         this.q = [];
         this.allowBuild = false;
+        this.complete = false;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -194,15 +195,42 @@ game.Structures = me.Entity.extend({
         var now = new Date().getTime();
 
         //add units to a building queue
-        if (this.selected == true && me.input.isKeyPressed("add")) {
+        if (this.selected == true && me.input.isKeyPressed("makeType1")) {
 
-            //todo change this adding mechanism to add the unit of a certain type.
-            if(this.addUnitQ("warrior")){
-                console.log("Adding Unit");
+            //only allow units when the building is ready to work
+            if(this.complete) {
+                if (this.addUnitQ("warrior")) {
+                    console.log("Adding Unit");
+                } else {
+                    console.log("cannot add queue is full")
+                }
             }else{
-                console.log("cannot add queue is full")
+                console.log("building is not complete")
             }
+        }else if (this.selected == true && me.input.isKeyPressed("makeType2")) {
 
+            //only allow units when the building is ready to work
+            if(this.complete) {
+                if (this.addUnitQ("rogue")) {
+                    console.log("Adding Unit");
+                } else {
+                    console.log("cannot add queue is full")
+                }
+            }else{
+                console.log("building is not complete")
+            }
+        }else if (this.selected == true && me.input.isKeyPressed("makeType3")) {
+
+            //only allow units when the building is ready to work
+            if(this.complete) {
+                if (this.addUnitQ("slime")) {
+                    console.log("Adding Unit");
+                } else {
+                    console.log("cannot add queue is full")
+                }
+            }else{
+                console.log("building is not complete")
+            }
         }
         //Remove a Unit from the end of the queue
         if (this.selected == true && me.input.isKeyPressed("remove")) {
@@ -214,7 +242,6 @@ game.Structures = me.Entity.extend({
 
         //spawn units when time is ready
         this.unitComplete(now);
-
 
         //log some state stuff
         if(me.input.isKeyPressed("log")){
@@ -248,7 +275,6 @@ game.Barracks = game.Structures.extend({
         this.placed = true;
         this.bldgProperties();
         //this.chooseImage(); //todo set images correctly for barracks
-        this.cost = 500; //cost for barracks is 500 gold
 
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
@@ -269,8 +295,8 @@ game.Barracks = game.Structures.extend({
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
-        this.cost = 100;
         this.health = 1000;
+        this.cost = 200; //cost for barracks is 500 gold
     },
     /**
      * Change the image
@@ -310,7 +336,7 @@ game.Barracks = game.Structures.extend({
 
             //start construction
             if(this.elapsed > this.buildTime){
-                this.allowBuild = true;
+                this.complete = true;
                 console.log("buildingAllowed", true);
                 this.chooseImage();//update the image when complete
             }
