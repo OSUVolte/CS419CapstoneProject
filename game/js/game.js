@@ -31,6 +31,9 @@ var game = {
             });
         }
 
+        // astar plugin
+//        me.plugin.register(aStarPlugin, "astar");
+        
         // Initialize the audio.
         me.audio.init("mp3,ogg");
 
@@ -52,6 +55,7 @@ var game = {
 
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
+        me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
         //me.pool.register("bottom", game.Bottom);
         me.pool.register("top", game.Top, false);
@@ -77,8 +81,9 @@ var game = {
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
         
-        me.input.bindKey(me.input.KEY.X, "x");
+        me.input.bindKey(me.input.KEY.W, "w");
         me.input.bindKey(me.input.KEY.Q, "q");
+<<<<<<< HEAD
 
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
@@ -89,6 +94,10 @@ var game = {
         // render hitbox int the debug panel
         me.debug.renderHitBox = true;
 
+=======
+        me.input.bindKey(me.input.KEY.R, "r");
+        
+>>>>>>> refs/remotes/origin/battle
         // Start the game.
         me.state.change(me.state.PLAY);
     }
