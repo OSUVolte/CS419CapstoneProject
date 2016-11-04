@@ -28,6 +28,8 @@ game.PlayerEntity = me.Entity.extend({
         
         this.playerOneSpawn = false;
         this.playerTwoSpawn = false;
+
+        this.qPressed = false;
     },
 
     /**
@@ -76,9 +78,16 @@ game.PlayerEntity = me.Entity.extend({
         } else if (!me.input.isKeyPressed('q')) {
             this.playerTwoSpawn = false;
         }
-
         
-        // apply physics to the body (this moves the entity)xq
+        if (me.input.isKeyPressed('r') && this.qPressed == false) {
+            this.qPressed = true;
+
+        } else if (!me.input.isKeyPressed('q')) {
+            this.qPressed = false;
+
+        }
+        
+        // apply physics to the body (this moves the entity)
         this.body.update(dt);
 
         // handle collisions against other shapes
@@ -163,10 +172,14 @@ game.Top = me.Entity.extend({
         if (this.player == 1) {
             this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else if (this.player == 2) {
-            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else {
             this.body.collisionType = me.collision.types.NO_OBJECT;
         }
+
+
+        // which way is the unit facing when spawned
+        this.facing = "north";
 
     },
     
@@ -176,6 +189,7 @@ game.Top = me.Entity.extend({
     update : function (dt) {
         // check if alive first
         if (this.hp <= 0 && this.alive) {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
         }
@@ -190,12 +204,14 @@ game.Top = me.Entity.extend({
                     } else {
                         this.body.vel.y = 0;
                         this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                        this.renderable.flipX(true);
                     }
                 }
                 else if (this.path == 1) {
                     if (this.player == 1) {
                         this.body.vel.y = 0;
                         this.body.vel.x += this.body.accel.x * me.timer.tick;
+                        this.renderable.flipX(false);
                     } else {
                         this.body.vel.y += this.body.accel.y * me.timer.tick;
                         this.body.x = 0;
@@ -242,6 +258,7 @@ game.Top = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
+                    console.log(this.target[0].renderable.flicker(500));
                     this.target[0].hp -= battle(this, this.target[0]);
                     console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
@@ -255,10 +272,12 @@ game.Top = me.Entity.extend({
         }
 
         // update the body movement
-        this.body.update(dt);
-
         // handle collisions against other shapes
-        me.collision.check(this);
+        if (!this.combat && this.alive) {
+                this.body.update(dt);
+                me.collision.check(this);
+                this.body.setVelocity(1,1);
+        }
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -271,6 +290,9 @@ game.Top = me.Entity.extend({
     onCollision : function (response, other) {
     // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE && response.a.player !== response.b.player) {
+        this.body.setVelocity(0,0);
+        this.body.vel.x = 0;
+        this.body.vel.y = 0;
         // if this is alive
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
@@ -288,13 +310,16 @@ game.Top = me.Entity.extend({
                 if (this.combat == false) {
                     this.renderable.setCurrentAnimation("attack");
                     this.renderable.setAnimationFrame();
+                    this.renderable.flicker(375);
                 }
                 this.combat = true;
                 this.me = response.a;
-                this.renderable.flicker(750);
+
             }
             return true;
         }
+
+
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
@@ -323,14 +348,18 @@ game.Warrior = me.Entity.extend({
             framewidth: 32,
             frameheight: 32,
             
-            shapes: [new me.Rect(0, 0, 25, 25)]
+            shapes: [new me.Rect(0, 0, 32, 32)]
         };
 
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
         
         // set the default horizontal & vertical speed (accel vector)
-        this.body.setVelocity(4,4);
+//        this.body.setVelocity(4,4);
+
+        this.body.setVelocity(0.35, 0.35);                      // so smooth walking oh yea
+        this.body.setMaxVelocity(3.5, 3.5);                     // SO SMOOTH
+        this.body.setFriction(0.05, 0.05);                      // THE SMOOTHEST
         
         // set the display to follow our position on both axis
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -369,6 +398,9 @@ game.Warrior = me.Entity.extend({
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         // set collision types
         this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
+
+
+        this.facing = "north";
     },
 
     // update player pos
@@ -435,33 +467,6 @@ game.Warrior = me.Entity.extend({
             // if doing nothing, dont move anywhere
             this.body.vel.x = 0;
             this.body.vel.y = 0;
-            // change to the standing animation if were not in combat
-            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                this.renderable.setCurrentAnimation("stand");
-                this.renderable.setAnimationFrame();
-            // if in combat, wait until animation 7 where we get "hit" by the enemy
-            } else if (this.combat && this.targetedBy.length > 0) {
-                for (i = 0; i < this.targetedBy.length; i++) {
-                    var frame = this.targetedBy[i].renderable.current.idx;
-                    var enemyTargetingMe = this.targetedBy[i].target;
-                    if (frame == 7 && this.hit === false && this.GUID === enemyTargetingMe && this.targetedBy[i].alive !== false) {
-                        this.hit = true;
-                        this.hp = battle(this.me, this.enemy, this.player);
-                        if (this.hp <= 0) {
-                            this.alive = false;
-                            this.combat = false;
-                            this.hit = false;
-                            this.renderable.setCurrentAnimation("dying");
-                            this.renderable.setAnimationFrame();
-                            this.renderable.flicker(750);
-                        }
-                    } else if (this.renderable.getCurrentAnimationFrame() != 7) {
-                        this.hit = false
-                    }
-                }
-            } else {
-                this.combat = false;
-            }
         }
 
         // apply physics to the body (this moves the entity)
@@ -478,6 +483,20 @@ game.Warrior = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+            var ydif = this.pos.y - response.b.pos.y;
+            var xdif = this.pos.x - response.b.pos.x;
+            console.log("ydif = " + ydif + " xdif = " + xdif);
+            console.log(response);
+
+            if (this.facing === "north" && ydif < 15) {
+                this.pos.y--;                                                   // prevent passing through
+            }
+        }
+
+
+
+
     // if something that is an enemy touches this unit
         if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
             // if something touches this entity while its alive...
@@ -506,6 +525,154 @@ game.Warrior = me.Entity.extend({
     }
 });
 
+game.ChaserEntity = me.Entity.extend({
+    /* -----
+    constructor
+    ------ */
+
+    init: function(x, y, settings) {
+        // call the constructor
+        this._super(me.Entity, 'init', [x, y , settings]);
+
+        // chase even when offscreen
+        this.alwaysUpdate = true;
+        // set the default horizontal & vertical speed (accel vector)
+        this.body.setVelocity(0.25, 0.25);
+        this.body.setMaxVelocity(3, 3);
+        this.body.setFriction(0.05, 0.05);
+
+        // adjust the bounding box
+        // lower half SNES-RPG style
+        console.log(this.collisionBox);
+//        this.updateColRect(0, 32, 32, 32);
+
+        this.target = null;
+        this.myPath = [];
+        this.dest = null;
+        this.lastPos =  {x: -1, y: -1};
+        this.pathAge = 0;
+
+    },
+
+    chessboard: function() {
+
+        // return chessboard distance to target
+     //   return Math.max( Math.abs(this.collisionBox.left - this.target.collisionBox.left), Math.abs(this.collisionBox.top - this.target.collisionBox.top));
+        return Math.max( Math.abs(this.pos._x - this.target.pos._x), Math.abs(this.pos._y - this.target.pos._y));
+    },
+
+    /* -----
+    update the player pos
+    ------ */
+    update: function() {
+        var now = Date.now()
+//        this.updateColRect(0, 16, 16, 16);
+        if (this.target == null) {
+            // we should globally store this value
+            this.target = me.game.world.getChildByType(game.Warrior)[0];
+        }
+
+        var cbdist = this.chessboard();
+
+        if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
+            // not moving anywhere
+            // friction takes over
+            if (this.target != null) {
+            //    this.myPath = me.astar.search(this.collisionBox.left,this.collisionBox.top,this.target.collisionBox.left,this.target.collisionBox.top);
+    //            this.myPath = me.astar.search(this.pos._x, this.pos_y, this.target.pos._x, this.target.pos._y);
+                this.dest = this.myPath.pop();
+                this.pathAge = now;
+                //console.log(this.dest);
+            }
+        } else {
+            if (this.chessboard() < 96) {
+                // just go for it
+                this.dest = this.target;
+                this.pathAge = now-5000;
+            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
+                // TODO - do this with non constant, add some fuzz factor
+                //console.log("Reached "+this.dest.pos.x+","+this.dest.pos.y);
+                this.dest = this.myPath.pop();
+
+            }
+            if (this.dest != null) {
+
+                //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+                //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+                // move based on next position
+
+
+            //    var xdiff = this.dest.pos.x - this.collisionBox.left;
+            //    var ydiff = this.dest.pos.y - this.collisionBox.top;
+
+                var xdiff = this.dest.pos.x - this.pos.x;
+                var ydiff = this.dest.pos.y - this.pos.y;
+
+
+                if (xdiff < -2) {
+                    this.vel.x -= this.accel.x * me.timer.tick;
+        //            this.lastPos.x = this.left;
+                    this.lastPos.x = this.pos.x;
+                } else if (xdiff > 2) {
+                    this.flipX(true);
+                    this.vel.x += this.accel.x * me.timer.tick;
+        //            this.lastPos.x = this.left;
+                    this.lastPos.x = this.pos.x;
+                }
+
+                if (ydiff < -2) {
+                    this.vel.y -= this.accel.y * me.timer.tick;
+                    this.lastPos.y = this.collisionBox.pos.y;
+                } else if (ydiff > 2) {
+                    this.vel.y += this.accel.y * me.timer.tick;
+                    this.lastPos.y = this.collisionBox.pos.y;
+                }
+            }
+        }
+        // check & update player movement
+     //   this.updateMovement();
+
+        // update animation if necessary
+//        if (this.vel.x!=0 || this.vel.y!=0) {
+//            // update object animation
+//            this.parent();
+ //           return true;
+//        }
+
+        // else inform the engine we did not perform
+        // any update (e.g. position, animation)
+        return false;
+    },
+
+    draw: function(context) {
+        // draw the sprite if defined
+            if (this.renderable) {
+                // translate the renderable position (relative to the entity)
+                // and keeps it in the entity defined bounds
+                // anyway to optimize this ?
+                var x = ~~(this.pos.x + (this.anchorPoint.x * (this.width - this.renderable.width)));
+                var y = ~~(this.pos.y + (this.anchorPoint.y * (this.height - this.renderable.height)));
+                context.translate(x, y);
+                this.renderable.draw(context);
+                context.translate(-x, -y);
+            }
+        // draw dest rect
+        debugAStar = true;
+        if (debugAStar && this.dest) {
+            if (this.dest && this.dest.rect) {
+                this.dest.rect.draw(context, "green");
+            }
+            for (var i = 0, ii = this.myPath.length; i < ii; i+=1) {
+                if (this.myPath[i] && this.myPath[i].rect) {
+                    this.myPath[i].rect.draw(context, "red");
+                }
+            }
+        }
+    }
+
+});
+
+
 
 // takes the attacker object and defender object
 // do calculations, returns the amount of damage done
@@ -520,7 +687,7 @@ function battle(attacker, defender) {
 }
 
 // stats passed for creating a unit class
-function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image, BuildTime) {
     this.hp = hp;
     this.maxHp = hp;
     this.def = def;
@@ -535,9 +702,9 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image) {
 
 
 // Unit(hp, def, atk, speed, hitPercent, dodge, type, name, image)
-var slime = new Unit(10, 1, 3, 5, 90, 3, 1, "Slime", "slime spritesheet calciumtrice_0");
-var rogue = new Unit(15, 2, 20, 10, 98, 30, 2, "Rogue", "rogue spritesheet calciumtrice");
-var warrior = new Unit(10, 2, 5, 3, 70, 3, 3, "Warrior", "warrior spritesheet calciumtrice");
+var slime = new Unit(10, 1, 3, 5, 90, 3, 1, 10 "Slime", "slime spritesheet calciumtrice_0");
+var rogue = new Unit(15, 2, 10, 10, 98, 30, 2, 10 "Rogue", "rogue spritesheet calciumtrice");
+var warrior = new Unit(10, 4, 5, 3, 70, 3, 3, 10 "Warrior", "warrior spritesheet calciumtrice");
 
 
 
