@@ -25,7 +25,6 @@ game.HUD.Container = me.Container.extend({
     }
 });
 
-
 /**
  * a basic HUD item to display score
  */
