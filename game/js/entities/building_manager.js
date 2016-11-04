@@ -61,6 +61,7 @@ game.BuildingArea = me.Renderable.extend({
             this.isPlacing = false;
         }
 
+
         // //build Something ELSE...
         // if (this.isPlacing == true && me.input.isKeyPressed("NAME GOES HERE")) {
         //
@@ -74,6 +75,7 @@ game.BuildingArea = me.Renderable.extend({
         //
         //     this.isPlacing = false;
         // }
+
 
         return this.selected || this.hover;
     }

@@ -31,6 +31,9 @@ var game = {
             });
         }
 
+        // astar plugin
+//        me.plugin.register(aStarPlugin, "astar");
+
         // Initialize the audio.
         me.audio.init("mp3,ogg");
 
@@ -52,6 +55,7 @@ var game = {
 
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
+        me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
         //me.pool.register("bottom", game.Bottom);
         me.pool.register("top", game.Top, false);
@@ -70,20 +74,23 @@ var game = {
         me.pool.register("barracksbutton", game.BarracksButton, true);
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
+        me.pool.register("queue", game.Queue);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
-        
-        me.input.bindKey(me.input.KEY.X, "x");
-        me.input.bindKey(me.input.KEY.Q, "q");
+
+        me.input.bindKey(me.input.KEY.X, "x", true);
+        me.input.bindKey(me.input.KEY.Q, "q", true);
+        me.input.bindKey(me.input.KEY.R, "r", true);
 
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.A, "accept");
-        me.input.bindKey(me.input.KEY.X, "x", true);
+        me.input.bindKey(me.input.KEY.A, "accept",true);
+        me.input.bindKey(me.input.KEY.W, "add", true);
+        me.input.bindKey(me.input.KEY.L, "log", true);
 
 
         // render hitbox int the debug panel
