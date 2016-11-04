@@ -5,7 +5,14 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score : 0
+        score : 0,
+
+        //Build menu
+        buildbutton: "",
+        barracksbutton: "",
+        menu_background: "",
+
+        playergold: 1000 //set initial player gold to 1000
     },
 
 
@@ -24,6 +31,9 @@ var game = {
             });
         }
 
+        // astar plugin
+        me.plugin.register(aStarPlugin, "astar");
+        
         // Initialize the audio.
         me.audio.init("mp3,ogg");
 
@@ -45,18 +55,45 @@ var game = {
 
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
+        me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
-        me.pool.register("bottom", game.Bottom);
-        me.pool.register("top", game.Top);
-        me.pool.register("mid", game.Mid);
+        //me.pool.register("bottom", game.Bottom);
+        me.pool.register("top", game.Top, false);
+        //me.pool.register("mid", game.Mid);
+        me.pool.register("queue", game.Queue);
+
+        //buildings:
+
+        me.pool.register("build_area", game.BuildingArea);
+        me.pool.register("structures", game.Structures);
+        me.pool.register("Barracks", game.Structures);
+
+        //Build Menu:
+        me.pool.register("menu_background", game.BuildMenu, true);
+        me.pool.register("buildbutton", game.BuildButton, true);
+        me.pool.register("barracksbutton", game.BarracksButton, true);
+        me.pool.register("player", game.PlayerEntity);
+        me.pool.register("top", game.Top, false);
 
         // enable keyboard
-        me.input.bindKey(me.input.KEY.LEFT,  "left");
+        me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
         
-        me.input.bindKey(me.input.KEY.X, "x");
+        me.input.bindKey(me.input.KEY.W, "w");
+        me.input.bindKey(me.input.KEY.Q, "q");
+
+        me.input.bindKey(me.input.KEY.B, "build", true);
+        me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
+        me.input.bindKey(me.input.KEY.A, "accept");
+        me.input.bindKey(me.input.KEY.X, "x", true);
+
+
+        // render hitbox int the debug panel
+        me.debug.renderHitBox = true;
+
+        me.input.bindKey(me.input.KEY.R, "r");
         
         // Start the game.
         me.state.change(me.state.PLAY);
