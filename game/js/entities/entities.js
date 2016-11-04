@@ -1,7 +1,6 @@
 /**
  * Player Entities
  */
- 
  // the actual player, push keys in the update function will
  // control the screen
  // SO FAR:
@@ -36,7 +35,7 @@ game.PlayerEntity = me.Entity.extend({
      * update the entity
      */
     update : function (dt) {
-        if (me.input.isKeyPressed('x') && this.playerOneSpawn == false) {
+        if (me.input.isKeyPressed('w') && this.playerOneSpawn == false) {
             this.playerOneSpawn = true;
             var settings = {
                 // the width of the path
@@ -49,7 +48,7 @@ game.PlayerEntity = me.Entity.extend({
                 lane: "top",
                 // which player spawned
                 player: 1,
-                shapes: [new me.Rect(0, 0, 32, 32)]
+                shapes: [new me.Rect(0, 0, 25, 25)]
             }
             // spawn unit
             me.game.world.addChild(me.pool.pull("top", 16, 528, rogue, settings), 1);
@@ -71,7 +70,7 @@ game.PlayerEntity = me.Entity.extend({
                 lane: "top",
                 // which player spawned
                 player: 2,
-                shapes: [new me.Rect(0, 0, 32, 32)]
+                shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
             }
             
             me.game.world.addChild(me.pool.pull("top", 752, 16, warrior, settings), 1);
@@ -172,12 +171,12 @@ game.Top = me.Entity.extend({
         if (this.player == 1) {
             this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else if (this.player == 2) {
-            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else {
             this.body.collisionType = me.collision.types.NO_OBJECT;
         }
-
-
+        
+        
         // which way is the unit facing when spawned
         this.facing = "north";
 
@@ -319,7 +318,7 @@ game.Top = me.Entity.extend({
             return true;
         }
 
-
+        
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
@@ -378,8 +377,7 @@ game.Warrior = me.Entity.extend({
         this.player = 1;
         this.target = [];
         this.targetedBy = [];
-        this.buildTime = 60; //needed by the unit queues in buildings
-
+        
         // define standing animation, use all frames
         this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
                                                     11, 12, 13, 14, 15, 16, 17, 18, 19]);
@@ -398,8 +396,8 @@ game.Warrior = me.Entity.extend({
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         // set collision types
         this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
-
-
+        
+        
         this.facing = "north";
     },
 

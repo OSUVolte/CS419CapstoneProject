@@ -33,7 +33,7 @@ var game = {
 
         // astar plugin
 //        me.plugin.register(aStarPlugin, "astar");
-
+        
         // Initialize the audio.
         me.audio.init("mp3,ogg");
 
