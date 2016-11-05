@@ -136,7 +136,8 @@ game.Units = me.Entity.extend({
         this.target = [];                                   // target queue is empty
         this.targetedBy = [];                               // targeted by queue is empty
         this.hit = false;                                   // unit not performed an attack yet
-        this.path = 0;                                      
+        this.path = 0;
+        this.gogetem = 1;
         
         // set the spawn point
         this.spawnPoint = "top";
@@ -569,13 +570,12 @@ game.ChaserEntity = me.Entity.extend({
             this.target = me.game.world.getChildByType(game.Warrior)[0];
         } else {
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].player == 1) {
+                if (me.game.world.children[i].gogetem == 1) {
                     this.target = me.game.world.children[i];
                 }
             }
-
         }
-        
+
         var cbdist = this.chessboard();
 
         if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
@@ -596,7 +596,7 @@ game.ChaserEntity = me.Entity.extend({
 //                // TODO - do this with non constant, add some fuzz factor
             }
             if (this.dest != null) {
-                
+
                 //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                 //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                 // move based on next position
