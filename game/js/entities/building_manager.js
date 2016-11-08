@@ -29,6 +29,14 @@ game.BuildingArea = me.Renderable.extend({
                 width: this.width,
                 height: this.height
         }
+
+        this.structureProperties = {
+            player: '',
+            time: '',
+            id: ''
+        }
+
+        this.structures = []; // Array to hold all structures in play.
     },
 
     update: function () {
@@ -78,6 +86,9 @@ game.BuildingArea = me.Renderable.extend({
 
 
         return this.selected || this.hover;
+    },
+    addStructure: function(structure){
+            this.structures.push(structure);
     }
 
 });
@@ -278,12 +289,14 @@ game.FootPrint = game.BuildingObject.extend({
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-                me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
+               var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
                     width: this.width,
                     height: this.height,
                     bounds: this.bounds,
                     type: "barracks"
                 }), 10);
+
+               // me.game.  addStructure(newBldg) // add the building to the array of structures
                 return true;
             }
         }

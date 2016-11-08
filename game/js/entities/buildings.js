@@ -69,7 +69,7 @@ game.Structures = me.Entity.extend({
             // this.grabOffset.sub(this.pos);
             console.log('selected the new buiding');
             this.selected = true;
-
+            this.displayStatus();
             // don"t propagate the event furthermore
             return false;
         }
@@ -259,7 +259,8 @@ game.Structures = me.Entity.extend({
         console.log("dt", dt);
         console.log();
 
-    }
+    },
+
 });
 
 //todo set up collisions on buildings
@@ -271,13 +272,15 @@ game.Barracks = game.Structures.extend({
 
         //call the constructor
         this._super(game.Structures, 'init', [x, y , settings]);
-
+        this.x = x,
+        this.y = y,
         this.placed = true;
         this.bldgProperties();
         //this.chooseImage(); //todo set images correctly for barracks
 
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
+        console.log(this.x, this.y);
     },
     /**
      * Defines all the properties of the building
@@ -350,7 +353,13 @@ game.Barracks = game.Structures.extend({
     onCollision : function (response, other) {
         // Make all other objects solid
         return true;
+    },
+    displayStatus: function(){
+
+        this.panel = new game.BuildingStatus(this.x, this.y,  100, 100, {building:this.bldgProperties()});
+
     }
+
 });
 
 

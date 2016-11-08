@@ -19,7 +19,7 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto", scaleMethod : "flex-width"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -44,6 +44,15 @@ var game = {
 
     // Run on game resources loaded.
     "loaded" : function () {
+
+        // load the texture atlas file
+        // this will be used by object entities later
+        game.texture = new me.video.renderer.Texture(
+            me.loader.getJSON("UI_Assets"),
+            me.loader.getImage("UI_Assets")
+        );
+
+
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         
@@ -66,7 +75,6 @@ var game = {
         me.pool.register("barracksbutton", game.BarracksButton, true);
         me.pool.register("player", game.PlayerEntity);
 
-
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
@@ -76,6 +84,7 @@ var game = {
         me.pool.register("menu_background", game.BuildMenu, true);
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
+        me.pool.register("build_menu", game.BuildingStatus, true);
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
