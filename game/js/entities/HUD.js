@@ -20,8 +20,11 @@ game.HUD.Container = me.Container.extend({
         // give a name
         this.name = "HUD";
 
-        // add our child score object
+        // add our child player gold object
         this.addChild(new game.HUD.PlayerGold(400, 10));
+        // add chilc game time object
+        this.addChild(new game.HUD.GameClock(800, 10));
+
     }
 });
 
@@ -44,6 +47,7 @@ game.HUD.PlayerGold = me.Renderable.extend({
 
         // local copy of the global score
         this.playergold = -1;
+        this.gametime = -1;
     },
 
     /**
@@ -67,4 +71,58 @@ game.HUD.PlayerGold = me.Renderable.extend({
         this.font.draw(renderer, "GOLD: "+game.data.playergold, this.pos.x, this.pos.y);
     }
 
+});
+
+game.HUD.GameClock = me.Renderable.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y) {
+
+        // call the parent constructor
+        // (size does not matter here)
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+
+        //create a font
+        this.font = new me.BitmapFont("32x32_font", 32);
+        this.font.set("right");
+
+        this.starttime = me.timer.getTime();
+        // local copy of the game's time clock
+        this.gametime = -1;
+    },
+
+    /**
+     * update function
+     */
+    update : function () {
+        // we don't do anything fancy here, so just
+        // return true if the game time has been updated
+        if(me.timer.getTime() - this.gametime > 1000) {
+            this.gametime += 1000;
+            game.data.gametime = this.gametime;
+            game.data.playergold += game.data.playergoldrate;
+        }
+        //console.log(this.gametime);
+    },
+
+    /**
+     * draw the score
+     */
+    draw : function (renderer) {
+        // draw it baby !
+        this.font.draw(renderer, this.formattime(), this.pos.x, this.pos.y);
+    },
+
+    formattime: function() {
+        var x = this.gametime / 1000;
+        var seconds = x % 60;
+        x /= 60;
+        var minutes = x % 60;
+        //console.log(seconds);
+        if(seconds >=0 && seconds < 10)
+            return Math.floor(minutes) + ":" + "0" + Math.floor(seconds);
+        else
+            return Math.floor(minutes) + ":" + Math.floor(seconds);
+    }
 });

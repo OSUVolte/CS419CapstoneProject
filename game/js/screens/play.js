@@ -8,7 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
         me.levelDirector.loadLevel("test_map2");
 
         // reset the score
-        game.data.score = 0;
+        game.data.gametime = 0;
 
         //Build menu
         //todo add a map object then we wont need this...I think?
