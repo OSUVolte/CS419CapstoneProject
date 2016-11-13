@@ -23,6 +23,7 @@ var game = {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
+        me.sys.fps = 30;
 
         // add "#debug" to the URL to enable the debug Panel
         if (me.game.HASH.debug === true) {
@@ -45,7 +46,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
 
-        // load the texture atlas file
+        // load the texture  file
         // this will be used by object entities later
         game.texture = new me.video.renderer.Texture(
             me.loader.getJSON("UI_Assets"),

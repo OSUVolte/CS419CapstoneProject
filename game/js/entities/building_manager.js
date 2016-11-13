@@ -8,8 +8,8 @@
     //what happens when....
 
 /**
- * defines the path where building is allowed
- * controls the building area, button pushes  (b for build)
+ * BuildingArea defines the path where building is allowed
+ * controls the building area, button pushes  (b for build etc)
  *
  */
 game.BuildingArea = me.Renderable.extend({

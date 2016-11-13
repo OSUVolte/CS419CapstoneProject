@@ -83,55 +83,60 @@ game.BarracksButton = me.Entity.extend({
 
 });
 
+game.UI = game.UI || {};
 // a Panel type container
-game.BuildingStatus = me.Entity.extend({
 
-	init: function(x, y, width, height, settings) {
+game.UI.BuildingStatus = me.Container.extend({
+	/**
+	 *
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 * @param label - Title on the menu
+	 * @param obj - is the building that called up the menu
+	 */
+	init: function(x, y, width, height, label, obj) {
 		console.log('trying to load menu');
 		// call the constructor
-		this._super(me.Entity, "init", [x, y, {
-			image: "barracksbutton",
-			width: width,
-			height: height,
-			getShape: function() {
-				return (new me.Rect(0, 0, this.width, this.height)).toPolygon();
-			}
-		}]);
+		this._super(me.Container, "init", [x+10, y+10, width, height]);
 
 		// persistent across level change
 		this.isPersistent = true;
 
 		// make sure our object is always draw first
-		this.z = Infinity;
+		this.z = 100;
 
 		this.floating = true;
 
 		// give a name
-		this.name = 'uhhh';
+		this.name = label;
+		this.building = obj;
+		var bldg = this.building; // because I need to locally too!
+									//writing txt on the menu is effing ugly!
 
-		/*// back panel sprite
+		// background panel sprite
 		this.panelSprite = game.texture.createSpriteFromName("grey_panel");
 		this.panelSprite.anchorPoint.set(0, 0);
-		// scale to match the container size
-		// this.panelSprite.scale(
-		// 	this.width / this.panelSprite.width,
-		// 	this.height / this.panelSprite.height
-		// );
-		this.addChild(this.panelSprite);*/
+		//scale to match the container size
+		this.panelSprite.scale(
+			this.width / this.panelSprite.width,
+			this.height / this.panelSprite.height
+		);
+		this.addChild(this.panelSprite);
 
-		/*// Panel Label
+		// Panel Label
 		this.LabelText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
 				this.font = new me.Font("OpenSans-Regular", 20, "black");
 				this.font.textAlign = "center";
 				this.font.textBaseline = "top";
-				this.font.bold();
 			},
 			draw: function(renderer){
 				this.font.draw (
 					renderer,
-					label,
+					label ,
 					this.pos.x,
 					this.pos.y);
 			}
@@ -141,7 +146,89 @@ game.BuildingStatus = me.Entity.extend({
 			16, // panel border
 			this.z
 		)
-		this.addChild(this.LabelText, 10);*/
+		this.addChild(this.LabelText, 10);
+
+
+		// //this.displayInfo(60, 4, 10, "Capacity: "+ this.building.q.length +' / ' + this.building.capacity, this.building );
+		// //this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		//display percent complete
+		//this.displayInfo(40, 4, 10, "% Complete: "+ this.building.percentComplete );
+		this.pcentCompText = new (me.Renderable.extend({
+			init: function() {
+				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font.textAlign = "left";
+				this.font.textBaseline = "top";
+				this.building = bldg;
+			},
+			draw: function(renderer){
+				this.font.draw (
+					renderer,
+					"% Complete: "+ this.building.percentComplete,
+					this.pos.x,
+					this.pos.y);
+			}
+		}));
+		this.pcentCompText.pos.set(
+			(this.width / 10)+ 6*((this.width / 10)),
+			40, // panel border
+			this.z
+		)
+		this.addChild(this.pcentCompText, 10);
+
+		//display capactiy
+		//this.displayInfo(60, 4, 10, "Capacity: "+ this.building.q.length +' / ' + this.building.capacity, this.building );
+		this.capaText = new (me.Renderable.extend({
+			init: function() {
+				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font.textAlign = "left";
+				this.font.textBaseline = "top";
+				this.building = bldg;
+			},
+			draw: function(renderer){
+				this.font.draw (
+					renderer,
+					"Capacity: "+ this.building.q.length +' / ' + this.building.capacity,
+					this.pos.x,
+					this.pos.y);
+			}
+		}));
+		this.capaText.pos.set(
+			(this.width / 10)+ 6*((this.width / 10)),
+			60, // panel border
+			this.z
+		)
+		this.addChild(this.capaText, 10);
+
+		//display health of building
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		this.healthText = new (me.Renderable.extend({
+			init: function() {
+				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font.textAlign = "left";
+				this.font.textBaseline = "top";
+				this.building = bldg;
+			},
+			draw: function(renderer){
+				this.font.draw (
+					renderer,
+					"Health: "+ this.building.health,
+					this.pos.x,
+					this.pos.y);
+			}
+		}));
+		this.healthText.pos.set(
+			(this.width / 10)+ 6*((this.width / 10)),
+			80, // panel border
+			this.z
+		)
+		this.addChild(this.healthText, 10);
+
+
+
+
 
 
 		// input status flags
@@ -150,6 +237,34 @@ game.BuildingStatus = me.Entity.extend({
 		// to memorize where we grab the shape
 		this.grabOffset = new me.Vector2d(0,0);
 	},
+	//I would love to use this function but the text dont update, so thats way I have everything upstairs repeated.
+	/*displayInfo: function(y, col, fontSize, text, bldg){
+
+		// Panel Label
+		this.CapacityText = new (me.Renderable.extend({
+			init: function() {
+				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+				this.font = new me.Font("OpenSans-Regular", fontSize, "black");
+				this.font.textAlign = "left";
+				this.font.textBaseline = "top";
+				this.bldg = bldg;
+			},
+			draw: function(renderer){
+				this.font.draw (
+					renderer,
+					text,
+					this.pos.x,
+					this.pos.y);
+			},
+
+		}));
+		this.CapacityText.pos.set(
+			(this.width / 6) *col,
+			y, // panel border
+			this.z
+		)
+		this.addChild(this.CapacityText, 10);
+	},*/
 
 	onActivateEvent: function () {
 		// register on the global pointermove event
@@ -158,6 +273,7 @@ game.BuildingStatus = me.Entity.extend({
 		me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
 		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
 		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointerleave", this, this.onLeave.bind(this));
 
 		// call the parent function
 		this._super(me.Container, "onActivateEvent");
@@ -170,6 +286,7 @@ game.BuildingStatus = me.Entity.extend({
 		me.input.releasePointerEvent("pointerdown", this);
 		me.input.releasePointerEvent("pointerup", this);
 		me.input.releasePointerEvent("pointercancel", this);
+		me.input.releasePointerEvent("pointerleave", this);
 
 		// call the parent function
 		this._super(me.Container, "onDeactivateEvent");
@@ -186,6 +303,12 @@ game.BuildingStatus = me.Entity.extend({
 			this.pos.set(event.gameX, event.gameY, this.pos.z);
 			this.pos.sub(this.grabOffset);
 			this.updateChildBounds();
+
+		}
+
+		//close the menu when we mouse away from it
+		if(!this.hover){
+			this.onLeave();
 		}
 	},
 
@@ -204,9 +327,21 @@ game.BuildingStatus = me.Entity.extend({
 	onRelease : function (/*event*/) {
 		this.selected = false;
 	},
+	onLeave : function () {
+
+		if(this.hover == false){
+			this.selected = false;
+			this.destroy();
+			console.log("left")
+		}
+	},
+	destroy: function(){
+		me.game.world.removeChild(this);
+	},
 
 	// update function
 	update : function(dt) {
-		return this._super(me.Container, "update", [ dt ]) || this.hover;
+
+		return this._super(me.Container, "update", [ dt ]) || this.hover ;
 	}
 });

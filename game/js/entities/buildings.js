@@ -272,8 +272,8 @@ game.Barracks = game.Structures.extend({
 
         //call the constructor
         this._super(game.Structures, 'init', [x, y , settings]);
-        this.x = x,
-        this.y = y,
+        this.x = x;
+        this.y = y;
         this.placed = true;
         this.bldgProperties();
         //this.chooseImage(); //todo set images correctly for barracks
@@ -288,7 +288,8 @@ game.Barracks = game.Structures.extend({
      */
     bldgProperties: function(){
 
-        this.buildTime = 5;
+        this.buildTime = 30;
+        this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.functional = false; //starts off as non-functional until build time expires
         //the types of units that this building can build
@@ -334,14 +335,21 @@ game.Barracks = game.Structures.extend({
         this.now = Math.round(new Date().getTime()/1000);
         this.elapsed = this.now - this.est;
 
+        //establish a percent complete
+        if(this.elapsed < this.buildTime) {
+            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
+        }else{
+            this.percentComplete = 100;
+        }
+
         //do something when its placed
         if(this.placed){
 
             //start construction
             if(this.elapsed > this.buildTime){
                 this.complete = true;
-                console.log("buildingAllowed", true);
-                this.chooseImage();//update the image when complete
+                //console.log("buildingAllowed", true);
+                //this.chooseImage();//update the image when complete
             }
         }
         return this._super(me.Entity, "update", [dt]);
@@ -355,8 +363,26 @@ game.Barracks = game.Structures.extend({
         return true;
     },
     displayStatus: function(){
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this),100);
 
-        this.panel = new game.BuildingStatus(this.x, this.y,  100, 100, {building:this.bldgProperties()});
+        this.panel.addChild(new game.UI.ButtonUI(
+            20, 40,
+            "yellow",
+            "Add Warrior",
+            "warrior"// default
+        ),110);
+        this.panel.addChild(new game.UI.ButtonUI(
+            20, 90,
+            "green",
+            "Add Slime", // default
+            "slime"
+        ),110);
+        this.panel.addChild(new game.UI.ButtonUI(
+            20, 140,
+            "blue",
+            "Add Rogue", // default
+            "rogue"
+        ),110);
 
     }
 

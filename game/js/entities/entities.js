@@ -258,9 +258,9 @@ game.Units = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
-                    console.log(this.target[0].renderable.flicker(500));
+                    //console.log(this.target[0].renderable.flicker(500));
                     this.target[0].hp -= battle(this, this.target[0]);
-                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    //console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
                     this.hit = false;
@@ -513,7 +513,7 @@ game.Warrior = me.Entity.extend({
             }
           return false;
         } else {
- //           console.log("I AM TOUCHING SOMETHING ELSE");
+ //           console.log("I AM TOUCHING SOMETHING ELSE ewww");
             return true;
         }
         // Make all other objects solid
@@ -670,7 +670,7 @@ function battle(attacker, defender) {
     var hpLost = 0;
     if (attacker.attack - defender.def > 0) {
         hpLost = attacker.attack - defender.def;
-        console.log(defender.name + " : -" + hpLost + "hp");
+        //console.log(defender.name + " : -" + hpLost + "hp");
     }
     return hpLost;
 }

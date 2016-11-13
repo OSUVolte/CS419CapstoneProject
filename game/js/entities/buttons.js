@@ -11,10 +11,11 @@ game.UI.ButtonUI = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, color, label) {
+    init: function(x, y, color, label, action) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
-            region : color + "_button04"
+            region : color + "_button04",
+            action: action  //string
         } ]);
 
         // offset of the two used images in the texture
@@ -24,11 +25,14 @@ game.UI.ButtonUI = me.GUI_Object.extend({
         this.anchorPoint.set(0, 0);
         this.setOpacity(0.5);
 
-        this.font = new me.Font("kenpixel", 12, "black");
+        this.font = new me.Font("Arial", 12, "black");
         this.font.textAlign = "center";
         this.font.textBaseline = "middle";
 
         this.label = label;
+        this.action = action;
+
+        this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
         this.floating = false;
@@ -42,6 +46,12 @@ game.UI.ButtonUI = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
         this.height = this.clicked_region.height;
+        console.log("hitting button " + this.action);
+
+        var parent = me.game.getParentContainer(this);
+        parent.building.addUnitQ(this.action);
+
+        //parent.spawnUnit(this.action);
         // don't propagate the event
         return false;
     },
@@ -75,7 +85,7 @@ game.UI.CheckBoxUI = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, texture, on_icon, off_icon, on_label, off_label) {
+    init: function(x, y, texture, on_icon, off_icon, on_label, off_label, action) {
 
         // call the parent constructor
         this._super(me.GUI_Object, "init", [ x, y, {
@@ -135,6 +145,7 @@ game.UI.CheckBoxUI = me.GUI_Object.extend({
      */
     onClick : function (/* event */) {
         this.setSelected(!this.isSelected);
+        this.action();
         // don't propagate the event
         return false;
     },
