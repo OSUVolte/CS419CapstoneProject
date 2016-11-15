@@ -688,6 +688,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, ima
     this.name = name;
     this.image = image;
     this.buildTime = buildTime;
+    this.qAssignment = -1;   // not assigned yet
 }
 
 
