@@ -404,7 +404,7 @@ game.Barracks = game.Structures.extend({
     addQueueButtons: function (aq, index){
         var xCoor = 93+(70*index);
         var img = "reg"+index;
-        //change the image depending on the button
+        //change the image depending if the button is the active queue
         if(aq == index){
             img = "reg"+index+"Pushed";
         }
