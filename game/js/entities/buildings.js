@@ -108,9 +108,17 @@ game.Structures = me.Entity.extend({
      * Returnes true if added
      */
     addUnitQ: function(type){
+
+        var time = new Date().getTime(); // the time for 1st unit being added
+
+        //for subsequent units set the time to be higher
+        if(this.q.length > 0){
+            time = new Date().getTime() + 30*60000; // add 30 minutes
+        }
+
         //an obj with the time it was added and the type of element
         var qObj = {
-            time: new Date().getTime(),
+            time: time,
             type: type
         };
         //don't add if it would go over capacity
@@ -118,17 +126,27 @@ game.Structures = me.Entity.extend({
             this.q.push(qObj);
             return true;
         }
+
         return false;
     },
     /**
      * Removes a building element from the queue
      * @param index index to be removed from the queue
+     * returns true if removed.
      */
     removeUnitQ: function(index){
-        curLength = q.length;
+        curLength = this.q.length;
         if(index+1 < this.capacity) {
-            q.splice(index, 1);
+            this.q.splice(index, 1);
         }
+
+        //if the index of the removed element was the first
+        ///we need to update the time or its bug city!
+        if(index == 0){
+            time = new Date().getTime();
+            this.q[0].time = time;
+        }
+
         //make sure it decreased by one
         return q.length == curLength - 1;
     },
@@ -147,7 +165,7 @@ game.Structures = me.Entity.extend({
      * @param cb a call back function of what's to be done when it's complete
      */
     unitComplete: function(ctime){
-        var ubt = 100000;
+        var ubt = 100000; //set crazy high for fun!
         //only do this when when have units in the queue
         if(this.q.length > 0){
 
@@ -156,10 +174,18 @@ game.Structures = me.Entity.extend({
 
             //get the build time of the unit being built
             switch(unit){
-
-                // case "Warrior":
-                //     ubt = game.Warrior.buildTime;
-                //     break;
+                case 'warrior':
+                    ubt = warrior.buildTime;
+                    console.log("war ubt", ubt);
+                    break;
+                case "slime":
+                    ubt = slime.buildTime;
+                    console.log("slme ubt",ubt);
+                    break;
+                case "rogue":
+                    ubt = rogue.buildTime;
+                    console.log("rogue ubt",ubt);
+                    break;
                 //todo Add all unit types
                 default:
                     ubt = 10;
@@ -167,12 +193,19 @@ game.Structures = me.Entity.extend({
 
             //console.log((ctime, ctime - this.q[0].time)/1000, ubt )
             //check if unit is complete
-            if((ctime, ctime - this.q[0].time)/1000 >= ubt){
+            if(( ctime - this.q[0].time)/1000 >= ubt){
                 //remove the first element in the queue
                 this.q.shift();
 
                 //spawn the unit
-                console.log("spawning", unit.toLowerCase())
+                console.log("spawning", unit.toLowerCase());
+
+                //update the time of the element in the front
+                //so that it begins building
+                if(this.q[0]){
+                    this.q[0].time = new Date().getTime();
+                }
+
                 this.spawnUnit(unit);
             }
         }
