@@ -50,7 +50,7 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         console.log("hitting button " + this.action);
 
         var parent = me.game.getParentContainer(this);
-        parent.building.addUnitQ(this.action);
+        parent.building.addUnitQ(this.action, parent.building.activeQ);
 
         //parent.spawnUnit(this.action);
         // don't propagate the event

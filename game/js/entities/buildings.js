@@ -87,28 +87,31 @@ game.Structures = me.Entity.extend({
     /**
      * Spawns Units of specified type at objects location
      * @param type string of the unit type as defined Classes in Entities.js (i.e. "Warrior" but not "warrior")
+     * @param queueAssignment the number of the queue to which the unit should belong
      */
-    spawnUnit: function(type){
-        me.game.world.addChild(me.pool.pull("units", this.pos.x, this.pos.y, eval(type), {
+    spawnUnit: function(type, queueAssignment){
+       var newUnit =  me.game.world.addChild(me.pool.pull("units", this.pos.x, this.pos.y, eval(type), {
             framewidth: 32,
             frameheight: 32,
             height: this.height,
             width: this.width,
             // direction
             lane: "top",
-            qAssignment: this.activeQ, //the units queue assignment
+            qAssignment: queueAssignment, //the units queue assignment
 
             // which player spawned
             player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10); //todo not sure about z index
+        console.log("Assigned to q", newUnit)
     },
     /**
      * Adds type of element to the Building Queue
      * @param type string of the entity type
+     * @param queue snumber fo the queue
      * Returnes true if added
      */
-    addUnitQ: function(type){
+    addUnitQ: function(type, queue){
 
         var time = new Date().getTime(); // the time for 1st unit being added
 
@@ -120,8 +123,10 @@ game.Structures = me.Entity.extend({
         //an obj with the time it was added and the type of element
         var qObj = {
             time: time,
-            type: type
+            type: type,
+            queue: queue
         };
+        console.log(qObj);
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
@@ -172,20 +177,18 @@ game.Structures = me.Entity.extend({
 
             //get the first units type
             var unit = this.q[0].type;
+            var unitQ = this.q[0].queue;
 
             //get the build time of the unit being built
             switch(unit){
                 case 'warrior':
                     ubt = warrior.buildTime;
-                    console.log("war ubt", ubt);
                     break;
                 case "slime":
                     ubt = slime.buildTime;
-                    console.log("slme ubt",ubt);
                     break;
                 case "rogue":
                     ubt = rogue.buildTime;
-                    console.log("rogue ubt",ubt);
                     break;
                 //todo Add all unit types
                 default:
@@ -195,19 +198,20 @@ game.Structures = me.Entity.extend({
             //console.log((ctime, ctime - this.q[0].time)/1000, ubt )
             //check if unit is complete
             if(( ctime - this.q[0].time)/1000 >= ubt){
+
                 //remove the first element in the queue
                 this.q.shift();
 
                 //spawn the unit
                 console.log("spawning", unit.toLowerCase());
 
+                this.spawnUnit(unit, unitQ);
+
                 //update the time of the element in the front
                 //so that it begins building
                 if(this.q[0]){
                     this.q[0].time = new Date().getTime();
                 }
-
-                this.spawnUnit(unit);
             }
         }
     },
