@@ -7,6 +7,8 @@ var game = {
         // score
         score : 0,
         gametime: 0,
+        currentwave: 0,
+        waveduration: 15, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",
@@ -74,13 +76,9 @@ var game = {
         me.pool.register("structures", game.Structures);
         me.pool.register("Barracks", game.Structures);
 
-        //Build Menu:
-        me.pool.register("menu_background", game.BuildMenu, true);
-        me.pool.register("buildbutton", game.BuildButton, true);
-        me.pool.register("barracksbutton", game.BarracksButton, true);
-        me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
+
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
