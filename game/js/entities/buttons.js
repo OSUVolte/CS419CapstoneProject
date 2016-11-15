@@ -257,12 +257,12 @@ game.UI.QueueSelector = me.GUI_Object.extend({
     init: function(x, y, img, label, index, activeQ) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
-            region : img+index
+            region : img
         } ]);
 
         // the two used images in the texture
-        this.unclicked_region = game.texture.getRegion(img+index);
-        this.clicked_region = game.texture.getRegion(img+index+"Pushed");
+        this.unclicked_region = game.texture.getRegion(img);
+        this.clicked_region = game.texture.getRegion(img+"Pushed");
 
         this.anchorPoint.set(0, 0);
         this.setOpacity(0.5);
@@ -282,25 +282,24 @@ game.UI.QueueSelector = me.GUI_Object.extend({
 
         if(index == this.activeQ)
             this.active = true; // has the button been pressed
-
-
     },
-
     /**
      * function called when the object is clicked on
      */
     onClick : function (/* event */) {
-             // var parent= me.game.getParentContainer(this);
-        //we're going to update visually as well as set which que units will be added to
-        //set the active queue to this button that was pushed
         this.offset.setV(this.clicked_region.offset);
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
         this.height = this.clicked_region.height;
 
-         this.activeQ= this.index; // update the array on the building itself
-         this.active = true;
+        //update the building with the correct active queue
+        //this way when units spawn they have the right queue assignment
+        var parent = me.game.getParentContainer(this);
+        parent.building.activeQ = this.index;
 
+        this.active = true;
+
+        // don't propagate the event
         return false;
     },
 
@@ -312,6 +311,7 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y -= this.unclicked_region.height - this.height;
         this.height = this.unclicked_region.height;
+        // don't propagate the event
         return false;
     },
 
@@ -323,23 +323,62 @@ game.UI.QueueSelector = me.GUI_Object.extend({
             this.pos.y + this.height / 2
         );
     },
-    changeButton: function(array){
-        for(i=0; i < array.length; i++) {
-            console.log(array[i]);
-            if (array[i] == false) {
 
-                this.offset.setV(this.inactive_region.offset);
-                // account for the different sprite size
-                this.pos.y += this.height - this.inactive_region.height;
-                this.height = this.active_region.height;
 
-                //this.active_region = game.texture.getRegion(this.reg+this.index);
-            } else {
-                this.offset.setV(this.active_region.offset);
-                // account for the different sprite size
-                this.pos.y += this.height - this.active_region.height;
-                this.height = this.active_region.height;
-            }
-        }
-    }
-});
+//     /**
+//      * function called when the object is clicked on
+//      */
+//     onClick : function (/* event */) {
+//              // var parent= me.game.getParentContainer(this);
+//         //we're going to update visually as well as set which que units will be added to
+//         //set the active queue to this button that was pushed
+//         this.offset.setV(this.clicked_region.offset);
+//         // account for the different sprite size
+//         this.pos.y += this.height - this.clicked_region.height ;
+//         this.height = this.clicked_region.height;
+//
+//          this.activeQ= this.index; // update the array on the building itself
+//          this.active = true;
+//
+//         return false;
+//     },
+//
+//     /**
+//      * function called when the pointer button is released
+//      */
+//     onRelease : function (/* event */) {
+//         this.offset.setV(this.unclicked_region.offset);
+//         // account for the different sprite size
+//         this.pos.y -= this.unclicked_region.height - this.height;
+//         this.height = this.unclicked_region.height;
+//         return false;
+//     },
+//
+//     draw: function(renderer) {
+//         this._super(me.GUI_Object, "draw", [ renderer ]);
+//         this.font.draw(renderer,
+//             this.label,
+//             this.pos.x + this.width / 2,
+//             this.pos.y + this.height / 2
+//         );
+//     },
+//     changeButton: function(array){
+//         for(i=0; i < array.length; i++) {
+//             console.log(array[i]);
+//             if (array[i] == false) {
+//
+//                 this.offset.setV(this.inactive_region.offset);
+//                 // account for the different sprite size
+//                 this.pos.y += this.height - this.inactive_region.height;
+//                 this.height = this.active_region.height;
+//
+//                 //this.active_region = game.texture.getRegion(this.reg+this.index);
+//             } else {
+//                 this.offset.setV(this.active_region.offset);
+//                 // account for the different sprite size
+//                 this.pos.y += this.height - this.active_region.height;
+//                 this.height = this.active_region.height;
+//             }
+//         }
+//     }
+ });

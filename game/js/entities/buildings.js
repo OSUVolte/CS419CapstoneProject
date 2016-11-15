@@ -391,32 +391,30 @@ game.Barracks = game.Structures.extend({
                 "rogue"
             ), 110);
         }
-        //todo this is lazy... needs a refactor
-        var reg0 = this.panel.addChild(new game.UI.QueueSelector(
-            93, 180,
-            "reg",
-            "", // default
-            0, // index of this button
-            this.activeQ
-        ), 110);
-        var reg1 = this.panel.addChild(new game.UI.QueueSelector(
-            163, 180,
-            "reg",
-            "", // default
-            1,
-            this.activeQ
-        ), 110);
-        var reg3 = this.panel.addChild(new game.UI.QueueSelector(
-            236, 180,
-            "reg",
-            "", // default
-            2,
-            this.activeQ
-        ), 110);
+
+       //Generate 3 buttons for 3 queues
+       for(i=0; i < 3; i++){
+           this.addQueueButtons(this.activeQ,i)
+       }
 
 
         //add the new buttons to a group so that we can track which is currently active
         //and use this to set behaviors and change the display
+    },
+    addQueueButtons: function (aq, index){
+        var xCoor = 93+(70*index);
+        var img = "reg"+index;
+        //change the image depending on the button
+        if(aq == index){
+            img = "reg"+index+"Pushed";
+        }
+        this.panel.addChild(new game.UI.QueueSelector(
+            xCoor, 180,
+            img, //img name
+            "", // default
+            index, // index of this button
+            this.activeQ
+        ), 110);
     }
 
 });
