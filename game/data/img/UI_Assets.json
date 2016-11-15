@@ -1,5 +1,13 @@
 {"frames": [
-
+{
+	"filename": "warrior",
+	"frame": {"x":397,"y":445,"w":38,"h":36},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":36},
+	"sourceSize": {"w":38,"h":36},
+	"pivot": {"x":0.5,"y":0.5}
+},
 {
 	"filename": "blue_boxCheckmark",
 	"frame": {"x":397,"y":445,"w":38,"h":36},
