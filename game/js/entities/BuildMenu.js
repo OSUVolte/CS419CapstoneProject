@@ -116,7 +116,7 @@ game.UI.BuildingStatus = me.Container.extend({
 									//writing txt on the menu is effing ugly!
 
 		// background panel sprite
-		this.panelSprite = game.texture.createSpriteFromName("grey_panel");
+		this.panelSprite = game.texture.createSpriteFromName("background_1");
 		this.panelSprite.anchorPoint.set(0, 0);
 		//scale to match the container size
 		this.panelSprite.scale(
@@ -129,7 +129,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.LabelText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 20, "black");
+				this.font = new me.Font("OpenSans-Regular", 20, "white");
 				this.font.textAlign = "center";
 				this.font.textBaseline = "top";
 			},
@@ -156,7 +156,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.pcentCompText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font = new me.Font("OpenSans-Regular", 10, "white");
 				this.font.textAlign = "left";
 				this.font.textBaseline = "top";
 				this.building = bldg;
@@ -181,7 +181,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.capaText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font = new me.Font("OpenSans-Regular", 10, "white");
 				this.font.textAlign = "left";
 				this.font.textBaseline = "top";
 				this.building = bldg;
@@ -206,7 +206,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.healthText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 10, "black");
+				this.font = new me.Font("OpenSans-Regular", 10, "white");
 				this.font.textAlign = "left";
 				this.font.textBaseline = "top";
 				this.building = bldg;
@@ -226,9 +226,14 @@ game.UI.BuildingStatus = me.Container.extend({
 		)
 		this.addChild(this.healthText, 10);
 
-
-
-
+		// //watch the queue and add icons to menu
+		// this.building.q.forEach(function(element, index){
+		// 	var c  =1;
+		// 	var size = this.building.q.length;
+        //
+		// 	me.game.world.addChild(new game.UI.UnitRemove(10*c,  30, 30, element, index, this));
+		// 	c++;
+		// });
 
 
 		// input status flags
@@ -237,14 +242,14 @@ game.UI.BuildingStatus = me.Container.extend({
 		// to memorize where we grab the shape
 		this.grabOffset = new me.Vector2d(0,0);
 	},
-	//I would love to use this function but the text dont update, so thats way I have everything upstairs repeated.
+	//I would love to use this function but the text wont update, so thats why I have everything upstairs repeated.
 	/*displayInfo: function(y, col, fontSize, text, bldg){
 
 		// Panel Label
 		this.CapacityText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", fontSize, "black");
+				this.font = new me.Font("OpenSans-Regular", fontSize, "white");
 				this.font.textAlign = "left";
 				this.font.textBaseline = "top";
 				this.bldg = bldg;

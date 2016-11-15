@@ -96,6 +96,7 @@ game.Structures = me.Entity.extend({
             width: this.width,
             // direction
             lane: "top",
+            qAssignment: this.activeQ, //the units queue assignment
 
             // which player spawned
             player: 1,
@@ -276,8 +277,6 @@ game.Barracks = game.Structures.extend({
         this.y = y;
         this.placed = true;
         this.bldgProperties();
-        //this.chooseImage(); //todo set images correctly for barracks
-
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
         console.log(this.x, this.y);
@@ -292,15 +291,18 @@ game.Barracks = game.Structures.extend({
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.functional = false; //starts off as non-functional until build time expires
+
         //the types of units that this building can build
         this.enabled = {
-            warrior:true,
-            tank: false  // etc etc //todo add all unit types
+            type1:true,
+            type2: false,
+            type3: false  //' etc etc //todo add all unit types
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
         this.health = 1000;
         this.cost = 200; //cost for barracks is 500 gold
+        this.activeQ = 0; // default is the front
     },
     /**
      * Change the image
@@ -363,27 +365,58 @@ game.Barracks = game.Structures.extend({
         return true;
     },
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this),100);
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this));
 
-        this.panel.addChild(new game.UI.ButtonUI(
-            20, 40,
-            "yellow",
-            "Add Warrior",
-            "warrior"// default
-        ),110);
-        this.panel.addChild(new game.UI.ButtonUI(
-            20, 90,
-            "green",
-            "Add Slime", // default
-            "slime"
-        ),110);
-        this.panel.addChild(new game.UI.ButtonUI(
-            20, 140,
-            "blue",
-            "Add Rogue", // default
-            "rogue"
-        ),110);
+        if(this.enabled.type1){
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 40,
+                "yellow",
+                "Add Warrior",
+                "warrior"// default
+            ),110);
+        }
+        if(this.enabled.type2) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 90,
+                "green",
+                "Add Slime", // default
+                "slime"
+            ), 110);
+        }
+        if(this.enabled.type3) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 140,
+                "blue",
+                "Add Rogue", // default
+                "rogue"
+            ), 110);
+        }
+        //todo this is lazy... needs a refactor
+        var reg0 = this.panel.addChild(new game.UI.QueueSelector(
+            93, 180,
+            "reg",
+            "", // default
+            0, // index of this button
+            this.activeQ
+        ), 110);
+        var reg1 = this.panel.addChild(new game.UI.QueueSelector(
+            163, 180,
+            "reg",
+            "", // default
+            1,
+            this.activeQ
+        ), 110);
+        var reg3 = this.panel.addChild(new game.UI.QueueSelector(
+            236, 180,
+            "reg",
+            "", // default
+            2,
+            this.activeQ
+        ), 110);
 
+
+        //add the new buttons to a group so that we can track which is currently active
+        //and use this to set behaviors and change the display
     }
 
 });

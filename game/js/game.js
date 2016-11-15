@@ -49,8 +49,8 @@ var game = {
         // load the texture  file
         // this will be used by object entities later
         game.texture = new me.video.renderer.Texture(
-            me.loader.getJSON("UI_Assets"),
-            me.loader.getImage("UI_Assets")
+            me.loader.getJSON("UI_Assets2"),
+            me.loader.getImage("UI_Assets2")
         );
 
 
