@@ -26,7 +26,7 @@ game.HUD.Container = me.Container.extend({
         this.addChild(new game.HUD.GameClock(800, 10));
 
         // add chilc game time object
-        this.addChild(new game.HUD.Message(800, this.height-50));
+        this.addChild(new game.HUD.Message(800, me.video.renderer.getHeight() -50));
 
     }
 });
@@ -140,30 +140,17 @@ game.HUD.Message = me.Renderable.extend({
         // call the parent constructor
         // (size does not matter here)
         this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.msg = game.data.message.msg;
 
-        //create a font
-        this.font = new me.BitmapFont("32x32_font", 32);
-        this.font.set("right");
-
-        this.msg = game.data.message;
-        // local copy of the game's time clock
-        this.gametime = -1;
     },
 
     /**
      * update function
      */
     update : function () {
-        // we don't do anything fancy here, so just
-        // return true if the game time has been updated
-        // if(me.timer.getTime() - this.gametime > 1000) {
-        //     this.gametime += 1000;
-        //     game.data.gametime = this.gametime;
-        //     game.data.playergold += game.data.playergoldrate;
-        // }
-        this.msg =game.data.message;
-        //console.log(this.gametime);
-        return false
+
+        this.updateMsg(me.timer.getTime());
+        return true
     },
 
     /**
@@ -171,18 +158,23 @@ game.HUD.Message = me.Renderable.extend({
      */
     draw : function (renderer) {
         // draw it baby !
-        this.font.draw(renderer, this.formattime(), this.pos.x, this.pos.y);
+        //font
+        this.font = new me.Font("Arial", 20, game.data.message.color);
+        this.font.textAlign = "center";
+        this.font.textBaseline = "middle";
+        this.font.draw(renderer, this.msg, this.pos.x, this.pos.y);
     },
+    updateMsg : function (now){
 
-    formattime: function() {
-        var x = this.gametime / 1000;
-        var seconds = x % 60;
-        x /= 60;
-        var minutes = x % 60;
-        //console.log(seconds);
-        if(seconds >=0 && seconds < 10)
-            return Math.floor(minutes) + ":" + "0" + Math.floor(seconds);
-        else
-            return Math.floor(minutes) + ":" + Math.floor(seconds);
+    var duration = game.data.message.msgDur * 1000;
+    //reset the message after 10 seconds when not empty
+    if (this.msg != ""){
+        if( now >= game.data.message.msgTime + duration){
+            game.data.message.msg = ""
+        }
     }
+    this.msg = game.data.message.msg;
+}
+
+
 });

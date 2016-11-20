@@ -15,7 +15,27 @@ var game = {
 
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
-        message: "" //Display message for warnings updates etc.
+        message: {
+            msgTime : 0, //time message was entered
+            msg: "",
+            dur: 10, // duration of the message
+            color: "black"
+        }, //Display message for warnings updates etc.
+
+        gameRules:{
+
+            //time at which q one will be released
+            waveTime : function(){
+
+            },
+
+            //When will  building of type2 (rogue) entities be allowed
+            //when player has x units in play, and gold greater than unit cost
+            type2Allowed : function(){
+
+            },
+
+        }
     },
 
 
@@ -81,7 +101,6 @@ var game = {
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
-        me.pool.register("Barracks", game.Structures);
 
         // //Build Menu:
         // me.pool.register("menu_background", game.BuildMenu, true);
