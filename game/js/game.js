@@ -14,7 +14,8 @@ var game = {
         menu_background: "",
 
         playergold: 1000, //set initial player gold to 1000
-        playergoldrate: 5 //set initial player gold rate to 5 gold per sec
+        playergoldrate: 5, //set initial player gold rate to 5 gold per sec
+        message: "" //Display message for warnings updates etc.
     },
 
 
@@ -55,7 +56,6 @@ var game = {
             me.loader.getImage("UI_Assets2")
         );
 
-
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         
@@ -83,14 +83,14 @@ var game = {
         me.pool.register("structures", game.Structures);
         me.pool.register("Barracks", game.Structures);
 
-        //Build Menu:
-        me.pool.register("menu_background", game.BuildMenu, true);
-        me.pool.register("buildbutton", game.BuildButton, true);
-        me.pool.register("barracksbutton", game.BarracksButton, true);
-        me.pool.register("build_menu", game.BuildingStatus, true);
-        me.pool.register("player", game.PlayerEntity);
-        me.pool.register("top", game.Top, false);
-        me.pool.register("queue", game.Queue);
+        // //Build Menu:
+        // me.pool.register("menu_background", game.BuildMenu, true);
+        // me.pool.register("buildbutton", game.BuildButton, true);
+        // me.pool.register("barracksbutton", game.BarracksButton, true);
+        // me.pool.register("build_menu", game.BuildingStatus, true);
+        // me.pool.register("player", game.PlayerEntity);
+        // me.pool.register("top", game.Top, false);
+        // me.pool.register("queue", game.Queue);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
