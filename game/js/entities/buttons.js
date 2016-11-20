@@ -50,7 +50,13 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         console.log("hitting button " + this.action);
 
         var parent = me.game.getParentContainer(this);
-        parent.building.addUnitQ(this.action, parent.building.activeQ);
+        parent.building.addUnitQ(this.action, parent.building.activeQ);  //the building that spawned the menu
+
+        //add a picture of unit below
+        this.panelSprite = game.texture.createSpriteFromName(this.action);
+        this.panelSprite.anchorPoint.set(100, 10*parent.building.q.length );
+        //scale to match the container size
+        parent.addChild(this.panelSprite);
 
         //parent.spawnUnit(this.action);
         // don't propagate the event
@@ -305,10 +311,20 @@ game.UI.QueueSelector = me.GUI_Object.extend({
      * function called when the pointer button is released
      */
     onRelease : function (/* event */) {
-        this.offset.setV(this.unclicked_region.offset);
-        // account for the different sprite size
-        this.pos.y -= this.unclicked_region.height - this.height;
-        this.height = this.unclicked_region.height;
+        var parent = me.game.getParentContainer(this);
+
+        if(parent.building.activeQ == this.index) {
+            this.offset.setV(this.clicked_region.offset);
+            // account for the different sprite size
+            this.pos.y -= this.clicked_region.height - this.height;
+            this.height = this.clicked_region.height;
+        }else{
+            this.offset.setV(this.unclicked_region.offset);
+            // account for the different sprite size
+            this.pos.y -= this.unclicked_region.height - this.height;
+            this.height = this.unclicked_region.height;
+        }
+
         // don't propagate the event
         return false;
     },

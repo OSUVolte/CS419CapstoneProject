@@ -313,5 +313,7 @@ game.Queue = me.Renderable.extend({
         this.pos.y = y;
         this.width = settings.width;
         this.height = settings.height;
+        //release times
+
     }
 });

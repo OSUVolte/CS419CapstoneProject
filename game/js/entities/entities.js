@@ -187,13 +187,14 @@ game.Units = me.Entity.extend({
    * update the enemy pos
    */
     update : function (dt) {
-        // check if alive first
+
+      // check if alive first
         if (this.hp <= 0 && this.alive) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
         }
-    // if unit is alive and not in combat... continue walking
+      // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
         // set up the walking conditions for all units
             if (this.spawnPoint == "top") {

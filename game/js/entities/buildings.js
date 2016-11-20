@@ -126,9 +126,10 @@ game.Structures = me.Entity.extend({
             type: type,
             queue: queue
         };
-        console.log(qObj);
+        //console.log(qObj);
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
+            game.data.message = "Capacity Reached - Cannot Build";
             this.q.push(qObj);
             return true;
         }
@@ -404,7 +405,7 @@ game.Barracks = game.Structures.extend({
     displayStatus: function(){
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this));
 
-        if(this.enabled.type1){
+        if(this.enabled.type1 && this.complete){
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 40,
                 "yellow",
@@ -412,7 +413,7 @@ game.Barracks = game.Structures.extend({
                 "warrior"// default
             ),110);
         }
-        if(this.enabled.type2) {
+        if(this.enabled.type2 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 90,
                 "green",
@@ -420,7 +421,7 @@ game.Barracks = game.Structures.extend({
                 "slime"
             ), 110);
         }
-        if(this.enabled.type3) {
+        if(this.enabled.type3 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 140,
                 "blue",
@@ -433,7 +434,6 @@ game.Barracks = game.Structures.extend({
        for(i=0; i < 3; i++){
            this.addQueueButtons(this.activeQ,i)
        }
-
 
         //add the new buttons to a group so that we can track which is currently active
         //and use this to set behaviors and change the display
@@ -458,7 +458,139 @@ game.Barracks = game.Structures.extend({
 
 
 
+game.TechCenter = game.Structures.extend({
+    /**
+     * constructor
+     */
+    init:function (x, y, settings) {
 
+        //call the constructor
+        this._super(game.Structures, 'init', [x, y , settings]);
+        this.x = x;
+        this.y = y;
+        this.placed = true;
+        this.bldgProperties();
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("TechCenter")}); //addimage
+        console.log(this.x, this.y);
+    },
+    /**
+     * Defines all the properties of the building
+     *
+     */
+    bldgProperties: function(){
+
+        this.buildTime = 60;
+        this.percentComplete = 0;
+        this.est = Math.round(new Date().getTime()/1000);
+        this.functional = false; //starts off as non-functional until build time expires
+
+        //the types of  tech that this building can build
+        this.enabled = {
+            type1:true,
+            type2: false,
+            type3: false  //' etc etc
+        };
+        this.health = 1000;
+        this.cost = 700;
+    },
+    /**
+     * Change the image
+     */
+    chooseImage: function () {
+        //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
+        //this.renderable.addAnimation("building", [0], 5);
+        //this.renderable.setCurrentAnimation("neutral");
+    },
+    /**
+     * Set spawn point of the footprint
+     * Might want to make it relative to some other entity
+     */
+    setSpawnPoint : function (dt) {
+        //todo make this useable
+        //It might be best to offset this point from the buildings - but it will need a check to make sure
+        //it doesn't interfere with other buildings...
+    },
+    /**
+     * update the entity
+     */
+    update : function (dt) {
+        //Update functions of our game objects will always receive a delta time (in milliseconds).
+        // It's important to pass it along to our parent's class update.
+        //setting the time for the building
+        this._super(me.Entity, "update", [dt]);
+
+        //mainUpdate - General functions that are good for all buildings
+        this.mainUpdate(dt);
+
+        //establish time elapsed since the placement
+        this.now = Math.round(new Date().getTime()/1000);
+        this.elapsed = this.now - this.est;
+
+        //establish a percent complete
+        if(this.elapsed < this.buildTime) {
+            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
+        }else{
+            this.percentComplete = 100;
+        }
+
+        //do something when its placed
+        if(this.placed){
+
+            //start construction
+            if(this.elapsed > this.buildTime){
+                this.complete = true;
+            }
+        }
+        return this._super(me.Entity, "update", [dt]);
+    },
+    /**
+     * collision handler
+     * (called when colliding with other objects)
+     */
+    onCollision : function (response, other) {
+        // Make all other objects solid
+        return true;
+    },
+    displayStatus: function(){
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "TechCenter Menu", this));
+
+        if(this.enabled.type1){
+            // this.panel.addChild(new game.UI.UnitAdd(
+            //     20, 40,
+            //     "yellow",
+            //     "Add Warrior",
+            //     "warrior"// default
+            // ),110);
+        }
+        if(this.enabled.type2) {
+            // this.panel.addChild(new game.UI.UnitAdd(
+            //     20, 90,
+            //     "green",
+            //     "Add Slime", // default
+            //     "slime"
+            // ), 110);
+        }
+        if(this.enabled.type3) {
+            // this.panel.addChild(new game.UI.UnitAdd(
+            //     20, 140,
+            //     "blue",
+            //     "Add Rogue", // default
+            //     "rogue"
+            // ), 110);
+        }
+
+        //Generate 3 buttons for 3 queues
+        for(i=0; i < 3; i++){
+           // this.addQueueButtons(this.activeQ,i)
+        }
+
+
+        //add the new buttons to a group so that we can track which is currently active
+        //and use this to set behaviors and change the display
+    }
+
+});
 
 
 
