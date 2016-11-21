@@ -6,23 +6,28 @@ var game = {
     data : {
         // score
         score : 0,
+        gametime: 0,
+        currentwave: 0,
+        waveduration: 15, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",
         barracksbutton: "",
         menu_background: "",
 
-        playergold: 1000 //set initial player gold to 1000
+        playergold: 1000, //set initial player gold to 1000
+        playergoldrate: 5 //set initial player gold rate to 5 gold per sec
     },
 
 
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto", scaleMethod : "flex-width"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
+        me.sys.fps = 30;
 
         // add "#debug" to the URL to enable the debug Panel
         if (me.game.HASH.debug === true) {
@@ -44,6 +49,15 @@ var game = {
 
     // Run on game resources loaded.
     "loaded" : function () {
+
+        // load the texture  file
+        // this will be used by object entities later
+        game.texture = new me.video.renderer.Texture(
+            me.loader.getJSON("UI_Assets2"),
+            me.loader.getImage("UI_Assets2")
+        );
+
+
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         
@@ -66,10 +80,6 @@ var game = {
         me.pool.register("barracksbutton", game.BarracksButton, true);
         me.pool.register("player", game.PlayerEntity);
 
-        // queuing areas
-        me.pool.register("queue_front", game.QueueArea);
-        me.pool.register("queue_back", game.QueueArea);
-
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
@@ -79,9 +89,14 @@ var game = {
         me.pool.register("menu_background", game.BuildMenu, true);
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
+        me.pool.register("build_menu", game.BuildingStatus, true);
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
+        
+        // queuing areas
+        me.pool.register("queue_front", game.QueueArea);
+        me.pool.register("queue_back", game.QueueArea);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
@@ -96,6 +111,7 @@ var game = {
         me.input.bindKey(me.input.KEY.X, "x", true);
 
         // debug quick unit spawning keys, remove later
+        me.input.bindKey(me.input.KEY.Q, "q", true);
         me.input.bindKey(me.input.KEY.A, "a", true);
         me.input.bindKey(me.input.KEY.D, "d", true);
 

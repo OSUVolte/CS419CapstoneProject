@@ -4,11 +4,10 @@ game.PlayScreen = me.ScreenObject.extend({
      */
     onResetEvent: function() {
         // load level
-//        me.levelDirector.loadLevel("test_dungeon");
         me.levelDirector.loadLevel("test_map2");
 
         // reset the score
-        game.data.score = 0;
+        game.data.gametime = 0;
 
         //Build menu
         //todo add a map object then we wont need this...I think?
@@ -29,6 +28,27 @@ game.PlayScreen = me.ScreenObject.extend({
         // var BarracksContainer = new me.Container(32, 32, 0, 600);
         // BarracksContainer.addChild(new game.Barracks(100, 100, {width: 32, height: 32, sprite:"buildinga-footprint-spritesheet"}), 6);
         // me.game.world.addChild(BarracksContainer);
+
+        // if(){
+        //     // display the current pointer coordinates on top of the pointer arrow
+        //     me.game.world.addChild(new (me.Renderable.extend({
+        //         init: function() {
+        //             this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+        //             this.font = new me.Font("Arial", 10, "#FFFFFF");
+        //             this.font.textAlign = "center";
+        //             this.fontHeight = this.font.measureText(me.video.renderer, "DUMMY").height;
+        //         },
+        //         draw: function(renderer){
+        //             var x = Math.round(me.input.pointer.pos.x);
+        //             var y = Math.round(me.input.pointer.pos.y);
+        //             this.font.draw (
+        //                 renderer,
+        //                 "( " + x + "," + y + " )",
+        //                 x,
+        //                 y - this.fontHeight);
+        //         }
+        //     })), 100);
+        //}
 
     },
 

@@ -69,7 +69,7 @@ game.Structures = me.Entity.extend({
             // this.grabOffset.sub(this.pos);
             console.log('selected the new buiding');
             this.selected = true;
-
+            this.displayStatus();
             // don"t propagate the event furthermore
             return false;
         }
@@ -87,46 +87,72 @@ game.Structures = me.Entity.extend({
     /**
      * Spawns Units of specified type at objects location
      * @param type string of the unit type as defined Classes in Entities.js (i.e. "Warrior" but not "warrior")
+     * @param queueAssignment the number of the queue to which the unit should belong
      */
-    spawnUnit: function(type){
-        me.game.world.addChild(me.pool.pull("units", this.pos.x, this.pos.y, eval(type), {
+    spawnUnit: function(type, queueAssignment){
+       var newUnit =  me.game.world.addChild(me.pool.pull("units", this.pos.x, this.pos.y, eval(type), {
             framewidth: 32,
             frameheight: 32,
             height: this.height,
             width: this.width,
-            
+            // direction
+            lane: "top",
+            qAssignment: queueAssignment, //the units queue assignment
+
             // which player spawned
             player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10); //todo not sure about z index
+        console.log("Assigned to q", newUnit)
     },
     /**
      * Adds type of element to the Building Queue
      * @param type string of the entity type
+     * @param queue snumber fo the queue
      * Returnes true if added
      */
-    addUnitQ: function(type){
+    addUnitQ: function(type, queue){
+
+        var time = new Date().getTime(); // the time for 1st unit being added
+
+        //for subsequent units set the time to be higher
+        if(this.q.length > 0){
+            time = new Date().getTime() + 30*60000; // add 30 minutes
+        }
+
         //an obj with the time it was added and the type of element
         var qObj = {
-            time: new Date().getTime(),
-            type: type
+            time: time,
+            type: type,
+            queue: queue
         };
+        console.log(qObj);
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
             return true;
         }
+
         return false;
     },
     /**
      * Removes a building element from the queue
      * @param index index to be removed from the queue
+     * returns true if removed.
      */
     removeUnitQ: function(index){
-        curLength = q.length;
+        curLength = this.q.length;
         if(index+1 < this.capacity) {
-            q.splice(index, 1);
+            this.q.splice(index, 1);
         }
+
+        //if the index of the removed element was the first
+        ///we need to update the time or its bug city!
+        if(index == 0){
+            time = new Date().getTime();
+            this.q[0].time = time;
+        }
+
         //make sure it decreased by one
         return q.length == curLength - 1;
     },
@@ -145,19 +171,25 @@ game.Structures = me.Entity.extend({
      * @param cb a call back function of what's to be done when it's complete
      */
     unitComplete: function(ctime){
-        var ubt = 100000;
+        var ubt = 100000; //set crazy high for fun!
         //only do this when when have units in the queue
         if(this.q.length > 0){
 
             //get the first units type
             var unit = this.q[0].type;
+            var unitQ = this.q[0].queue;
 
             //get the build time of the unit being built
             switch(unit){
-
-                // case "Warrior":
-                //     ubt = game.Warrior.buildTime;
-                //     break;
+                case 'warrior':
+                    ubt = warrior.buildTime;
+                    break;
+                case "slime":
+                    ubt = slime.buildTime;
+                    break;
+                case "rogue":
+                    ubt = rogue.buildTime;
+                    break;
                 //todo Add all unit types
                 default:
                     ubt = 10;
@@ -165,13 +197,21 @@ game.Structures = me.Entity.extend({
 
             //console.log((ctime, ctime - this.q[0].time)/1000, ubt )
             //check if unit is complete
-            if((ctime, ctime - this.q[0].time)/1000 >= ubt){
+            if(( ctime - this.q[0].time)/1000 >= ubt){
+
                 //remove the first element in the queue
                 this.q.shift();
 
                 //spawn the unit
-                console.log("spawning", unit.toLowerCase())
-                this.spawnUnit(unit);
+                console.log("spawning", unit.toLowerCase());
+
+                this.spawnUnit(unit, unitQ);
+
+                //update the time of the element in the front
+                //so that it begins building
+                if(this.q[0]){
+                    this.q[0].time = new Date().getTime();
+                }
             }
         }
     },
@@ -257,7 +297,8 @@ game.Structures = me.Entity.extend({
         console.log("dt", dt);
         console.log();
 
-    }
+    },
+
 });
 
 //todo set up collisions on buildings
@@ -269,13 +310,13 @@ game.Barracks = game.Structures.extend({
 
         //call the constructor
         this._super(game.Structures, 'init', [x, y , settings]);
-
+        this.x = x;
+        this.y = y;
         this.placed = true;
         this.bldgProperties();
-        //this.chooseImage(); //todo set images correctly for barracks
-
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
+        console.log(this.x, this.y);
     },
     /**
      * Defines all the properties of the building
@@ -283,13 +324,16 @@ game.Barracks = game.Structures.extend({
      */
     bldgProperties: function(){
 
-        this.buildTime = 5;
+        this.buildTime = 30;
+        this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.functional = false; //starts off as non-functional until build time expires
+
         //the types of units that this building can build
         this.enabled = {
-            warrior:true,
-            tank: false  // etc etc //todo add all unit types
+            type1:true,
+            type2: false,
+            type3: false  //' etc etc //todo add all unit types
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
@@ -298,6 +342,7 @@ game.Barracks = game.Structures.extend({
         this.maxHp = 300;
         this.cost = 200; //cost for barracks is 500 gold
         this.alive = true;
+        this.activeQ = 0; // default is the front
         
         this.setStats = false;
     },
@@ -322,9 +367,6 @@ game.Barracks = game.Structures.extend({
      * update the entity
      */
     update : function (dt) {
-        if (this.alive == false) {
-            me.game.world.removeChild(this);
-        }
         //Update functions of our game objects will always receive a delta time (in milliseconds).
         // It's important to pass it along to our parent's class update.
         //setting the time for the building
@@ -337,24 +379,27 @@ game.Barracks = game.Structures.extend({
         this.now = Math.round(new Date().getTime()/1000);
         this.elapsed = this.now - this.est;
 
+        //establish a percent complete
+        if(this.elapsed < this.buildTime) {
+            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
+        }else{
+            this.percentComplete = 100;
+        }
+
         //do something when its placed
         if(this.placed){
+
             //start construction
             if(this.elapsed > this.buildTime){
                 this.complete = true;
-//                console.log("buildingAllowed", true);
-                this.chooseImage();//update the image when complete                        
+                //console.log("buildingAllowed", true);
+                //this.chooseImage();//update the image when complete
                 if (this.setStats == false) {
                     setupBldStats(this, 1);
                     this.setStats = true;
                 }
             }
         }
-
-        checkHealth(this);
-
-        me.collision.check(this);
-
         return this._super(me.Entity, "update", [dt]);
     },
     /**
@@ -363,9 +408,65 @@ game.Barracks = game.Structures.extend({
      */
     onCollision : function (response, other) {
         // Make all other objects solid
-        return false;
+        return true;
+    },
+    displayStatus: function(){
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this));
+
+        if(this.enabled.type1){
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 40,
+                "yellow",
+                "Add Warrior",
+                "warrior"// default
+            ),110);
+        }
+        if(this.enabled.type2) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 90,
+                "green",
+                "Add Slime", // default
+                "slime"
+            ), 110);
+        }
+        if(this.enabled.type3) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 140,
+                "blue",
+                "Add Rogue", // default
+                "rogue"
+            ), 110);
+        }
+
+       //Generate 3 buttons for 3 queues
+       for(i=0; i < 3; i++){
+           this.addQueueButtons(this.activeQ,i)
+       }
+
+
+        //add the new buttons to a group so that we can track which is currently active
+        //and use this to set behaviors and change the display
+    },
+    addQueueButtons: function (aq, index){
+        var xCoor = 93+(70*index);
+        var img = "reg"+index;
+        //change the image depending if the button is the active queue
+        if(aq == index){
+            img = "reg"+index+"Pushed";
+        }
+        this.panel.addChild(new game.UI.QueueSelector(
+            xCoor, 180,
+            img, //img name
+            "", // default
+            index, // index of this button
+            this.activeQ
+        ), 110);
     }
+
 });
+
+
+
 
 // set the buildings this.player to 1 or 2, and the collision type, add other stats as needed.
 // stats are added after being built, otherwise units will consider the prebuilt
@@ -383,7 +484,7 @@ function setupBldStats(building, player) {
     building.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
 }
 
-//
+// checks building health
 function checkHealth(building) {
     if (building.hp <= 0) {
         console.log(building.type + " (" + building.GUID + "): DESTROYED");    
@@ -391,5 +492,7 @@ function checkHealth(building) {
         building.alive = false;
     }
 }
+
+
 
 
