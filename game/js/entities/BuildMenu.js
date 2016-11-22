@@ -114,10 +114,10 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.building = obj;
 		var bldg = this.building; // because I need to locally too!
 									//writing txt on the menu is effing ugly!
-
 		// background panel sprite
 		this.panelSprite = game.texture.createSpriteFromName("background_1");
 		this.panelSprite.anchorPoint.set(0, 0);
+
 		//scale to match the container size
 		this.panelSprite.scale(
 			this.width / this.panelSprite.width,
@@ -148,11 +148,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		)
 		this.addChild(this.LabelText, 10);
 
-
-		// //this.displayInfo(60, 4, 10, "Capacity: "+ this.building.q.length +' / ' + this.building.capacity, this.building );
-		// //this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
-		//display percent complete
-		//this.displayInfo(40, 4, 10, "% Complete: "+ this.building.percentComplete );
+		//Display for the percent complete
 		this.pcentCompText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -226,39 +222,30 @@ game.UI.BuildingStatus = me.Container.extend({
 		)
 		this.addChild(this.healthText, 10);
 
-		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
-		this.qText = new (me.Renderable.extend({
-			init: function() {
-				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 10, "white");
-				this.font.textAlign = "left";
-				this.font.textBaseline = "top";
-				this.building = bldg;
-			},
-			draw: function(renderer){
-				this.font.draw (
-					renderer,
-					"Active Q is: "+ this.building.activeQ,
-					this.pos.x,
-					this.pos.y);
-			}
-		}));
-		this.qText.pos.set(
-			(this.width / 10)+ 6*((this.width / 10)),
-			100, // panel border
-			this.z
-		)
-		this.addChild(this.qText, 10);
-
-		// //watch the queue and add icons to menu
-		// this.building.q.forEach(function(element, index){
-		// 	var c  =1;
-		// 	var size = this.building.q.length;
-        //
-		// 	me.game.world.addChild(new game.UI.UnitRemove(10*c,  30, 30, element, index, this));
-		// 	c++;
-		// });
+		// //display active Q of building
+		// //this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		// this.qText = new (me.Renderable.extend({
+		// 	init: function() {
+		// 		this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+		// 		this.font = new me.Font("OpenSans-Regular", 10, "white");
+		// 		this.font.textAlign = "left";
+		// 		this.font.textBaseline = "top";
+		// 		this.building = bldg;
+		// 	},
+		// 	draw: function(renderer){
+		// 		this.font.draw (
+		// 			renderer,
+		// 			"Active Q is: "+ this.building.activeQ,
+		// 			this.pos.x,
+		// 			this.pos.y);
+		// 	}
+		// }));
+		// this.qText.pos.set(
+		// 	(this.width / 10)+ 6*((this.width / 10)),
+		// 	100, // panel border
+		// 	this.z
+		// )
+		// this.addChild(this.qText, 10);
 
 
 		// input status flags

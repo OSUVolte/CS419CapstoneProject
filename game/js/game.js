@@ -55,7 +55,6 @@ var game = {
             me.loader.getImage("UI_Assets2")
         );
 
-
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         
@@ -72,12 +71,6 @@ var game = {
         me.pool.register("units", game.Units, false);
         me.pool.register("queue", game.Queue);
 
-        //Build Menu:
-        me.pool.register("menu_background", game.BuildMenu, true);
-        me.pool.register("buildbutton", game.BuildButton, true);
-        me.pool.register("barracksbutton", game.BarracksButton, true);
-        me.pool.register("player", game.PlayerEntity);
-
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
@@ -88,6 +81,8 @@ var game = {
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
         me.pool.register("build_menu", game.BuildingStatus, true);
+
+        //player Postions
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
@@ -101,8 +96,7 @@ var game = {
         //Buildings
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.A, "accept");
-        me.input.bindKey(me.input.KEY.X, "x", true);
+        me.input.bindKey(me.input.KEY.NUM2, "tech_center", true);
 
         //unknown
         me.input.bindKey(me.input.KEY.Q, "q", true);
@@ -111,7 +105,6 @@ var game = {
         me.input.bindKey(me.input.KEY.W, "makeType1", true);
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
-
 
         // render hitbox int the debug panel
         me.debug.renderHitBox = true;

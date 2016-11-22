@@ -265,15 +265,16 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         this.anchorPoint.set(0, 0);
         this.setOpacity(0.5);
 
+        //fonts
         this.font = new me.Font("Arial", 10, "white");
         this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
+        //label displayed on button
         this.label = label;
-       //this.image = img; // reg is image name (stands for regiment)
         this.index = index;
-        this.activeQ = activeQ;
-        this.active = false;
+        this.activeQ = activeQ; //set by which button is active
+        this.active = false; //
 
         // only the parent container is a floating object
         this.floating = false;
