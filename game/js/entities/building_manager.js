@@ -63,7 +63,33 @@ game.BuildingArea = me.Renderable.extend({
                 game.data.playergold -= 200;
             }
             else {
-                console.log("Not enough gold to build Barracks");
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+
+            }
+            console.log(game.data.playergold);
+            this.isPlacing = false;
+        }else
+
+        if (this.isPlacing == true && me.input.isKeyPressed("techcenter")) {
+            console.log("techcenter");
+            console.log("costs", game.TechCenter.cost);
+
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                    width: 128,
+                    height: 96,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "tech_center"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+
             }
             console.log(game.data.playergold);
             this.isPlacing = false;
@@ -247,7 +273,7 @@ game.FootPrint = game.BuildingObject.extend({
      */
     init: function (x, y, settings) {
         // we want the foot print established by the settings from which was called.
-        settings.image = settings.type + "-footprint-spritesheet";
+        settings.image =  "footprint-spritesheet";
         //console.log("the bloody settings!", settings);
 
         // call the super constructor
@@ -297,6 +323,21 @@ game.FootPrint = game.BuildingObject.extend({
                 }), 10);
 
                // me.game.  addStructure(newBldg) // add the building to the array of structures
+                return true;
+            }
+        }
+        if(this.type == "tech_center") {
+            //console.log("positioningbarracks:", this.pos.x, this.pos.y);
+            //todo disallow placement when not enough money to build
+            if (this.checkPosition()) {
+                var newBldg =  me.game.world.addChild(new game.TechCenter(this.pos.x, this.pos.y, {
+                    width: this.width,
+                    height: this.height,
+                    bounds: this.bounds,
+                    type: "techcenter"
+                }), 10);
+
+                // me.game.  addStructure(newBldg) // add the building to the array of structures
                 return true;
             }
         }

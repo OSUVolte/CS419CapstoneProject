@@ -11,7 +11,7 @@ game.Structures = me.Entity.extend({
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+        this.body.setCollisionMask(me.collision.types.WORLD_SHAPE);
     },
     generalProperties: function(){
         this.q = [];
@@ -112,8 +112,11 @@ game.Structures = me.Entity.extend({
      * Returnes true if added
      */
     addUnitQ: function(type, queue){
+        //display message
+        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+type+ "is being built ", msgDur: 2, color:"green"};
 
-        var time = new Date().getTime(); // the time for 1st unit being added
+        // the time for 1st unit being added
+        var time = new Date().getTime();
 
         //for subsequent units set the time to be higher
         if(this.q.length > 0){
@@ -131,6 +134,9 @@ game.Structures = me.Entity.extend({
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
             return true;
+        }else{
+            //display message
+            game.data.message= {msgTime: me.timer.getTime(), msg:"Capacity Reached!", msgDur: 10, color:"red"};
         }
 
         return false;
@@ -179,25 +185,14 @@ game.Structures = me.Entity.extend({
             var unit = this.q[0].type;
             var unitQ = this.q[0].queue;
 
-            //get the build time of the unit being built
-            switch(unit){
-                case 'warrior':
-                    ubt = warrior.buildTime;
-                    break;
-                case "slime":
-                    ubt = slime.buildTime;
-                    break;
-                case "rogue":
-                    ubt = rogue.buildTime;
-                    break;
-                //todo Add all unit types
-                default:
-                    ubt = 10;
-            }
+            ubt = eval(unit).buildTime;
 
             //console.log((ctime, ctime - this.q[0].time)/1000, ubt )
             //check if unit is complete
             if(( ctime - this.q[0].time)/1000 >= ubt){
+
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Unit Complete", msgDur: 5, color:"green"};
 
                 //remove the first element in the queue
                 this.q.shift();
@@ -324,7 +319,7 @@ game.Barracks = game.Structures.extend({
      */
     bldgProperties: function(){
 
-        this.buildTime = 30;
+        this.buildTime = 5;
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.functional = false; //starts off as non-functional until build time expires
@@ -404,7 +399,7 @@ game.Barracks = game.Structures.extend({
     displayStatus: function(){
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this));
 
-        if(this.enabled.type1){
+        if(this.enabled.type1 && this.complete){
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 40,
                 "yellow",
@@ -412,7 +407,7 @@ game.Barracks = game.Structures.extend({
                 "warrior"// default
             ),110);
         }
-        if(this.enabled.type2) {
+        if(this.enabled.type2 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 90,
                 "green",
@@ -420,7 +415,7 @@ game.Barracks = game.Structures.extend({
                 "slime"
             ), 110);
         }
-        if(this.enabled.type3) {
+        if(this.enabled.type3 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 140,
                 "blue",
@@ -434,6 +429,7 @@ game.Barracks = game.Structures.extend({
            this.addQueueButtons(this.activeQ,i)
        }
 
+        return this.panel;
 
         //add the new buttons to a group so that we can track which is currently active
         //and use this to set behaviors and change the display

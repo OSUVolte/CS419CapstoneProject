@@ -84,7 +84,132 @@ game.BarracksButton = me.Entity.extend({
 });
 
 game.UI = game.UI || {};
-// a Panel type container
+
+game.UI.ActionMenu = me.Container.extend({
+	/**
+	 *
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 * @param label - Title on the menu
+	 * @param obj - is the building that called up the menu
+	 */
+	init: function(x, y, width, height, label, obj) {
+		console.log('trying to load menu');
+		// call the constructor
+		this._super(me.Container, "init", [x+10, y+10, width, height]);
+
+		// persistent across level change
+		this.isPersistent = true;
+
+		// make sure our object is always draw first
+		this.z = 100;
+
+		this.floating = true;
+
+		// give a name
+		this.name = label;
+		this.building = obj;
+		var bldg = this.building; // because I need to locally too!
+		//writing txt on the menu is effing ugly!
+
+		// background panel sprite
+		this.panelSprite = game.texture.createSpriteFromName("background_1");
+		this.panelSprite.anchorPoint.set(0, 0);
+		//scale to match the container size
+		this.panelSprite.scale(
+			this.width / this.panelSprite.width,
+			this.height / this.panelSprite.height
+		);
+		this.addChild(this.panelSprite);
+
+		// input status flags
+		this.selected = false;
+		this.hover = false;
+		// to memorize where we grab the shape
+		this.grabOffset = new me.Vector2d(0,0);
+	},
+	onActivateEvent: function () {
+		// register on the global pointermove event
+		this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
+		//register on mouse/touch event
+		me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointerleave", this, this.onLeave.bind(this));
+
+		// call the parent function
+		this._super(me.Container, "onActivateEvent");
+	},
+
+	onDeactivateEvent: function () {
+		// unregister on the global pointermove event
+		me.event.unsubscribe(this.handler);
+		// release pointer events
+		me.input.releasePointerEvent("pointerdown", this);
+		me.input.releasePointerEvent("pointerup", this);
+		me.input.releasePointerEvent("pointercancel", this);
+		me.input.releasePointerEvent("pointerleave", this);
+
+		// call the parent function
+		this._super(me.Container, "onDeactivateEvent");
+	},
+
+	/**
+	 * pointermove function
+	 */
+	pointerMove: function (event) {
+		this.hover = this.getBounds().containsPoint(event.gameX, event.gameY);
+
+		if (this.selected) {
+			// follow the pointer
+			this.pos.set(event.gameX, event.gameY, this.pos.z);
+			this.pos.sub(this.grabOffset);
+			this.updateChildBounds();
+
+		}
+
+		//close the menu when we mouse away from it
+		if(!this.hover){
+			this.onLeave();
+		}
+	},
+
+	// mouse down function
+	onSelect : function (event) {
+		if (this.hover === true) {
+			this.grabOffset.set(event.gameX, event.gameY);
+			this.grabOffset.sub(this.pos);
+			this.selected = true;
+			// don"t propagate the event furthermore
+			return false;
+		}
+	},
+
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+	},
+	onLeave : function () {
+
+		if(this.hover == false){
+			this.selected = false;
+			this.destroy();
+			console.log("left")
+		}
+	},
+	destroy: function(){
+		me.game.world.removeChild(this);
+	},
+
+	// update function
+	update : function(dt) {
+
+		return this._super(me.Container, "update", [ dt ]) || this.hover ;
+	}
+});
+
 
 game.UI.BuildingStatus = me.Container.extend({
 	/**

@@ -25,6 +25,9 @@ game.HUD.Container = me.Container.extend({
         // add chilc game time object
         this.addChild(new game.HUD.GameClock(800, 10));
 
+        // add chilc game time object
+        this.addChild(new game.HUD.Message(800, me.video.renderer.getHeight() -50));
+
     }
 });
 
