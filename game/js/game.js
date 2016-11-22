@@ -16,7 +16,18 @@ var game = {
         menu_background: "",
 
         playergold: 1000, //set initial player gold to 1000
-        playergoldrate: 5 //set initial player gold rate to 5 gold per sec
+        playergoldrate: 5, //set initial player gold rate to 5 gold per sec
+
+        attackMod: 0,
+        defenseMod: 0,
+
+        goldUpgradeLevel: 0,
+        attackUpgradeLevel: 0,
+        defenseUpgradeLevel: 0,
+
+        upgradeLevelOneCost: 200,
+        upgradeLevelTwoCost: 500,
+        upgradeLevelThreeCost: 1000
     },
 
 
@@ -49,6 +60,7 @@ var game = {
 
     // Run on game resources loaded.
     "loaded" : function () {
+        var upgradePressed = 0;
 
         // load the texture  file
         // this will be used by object entities later
@@ -93,6 +105,7 @@ var game = {
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
+        me.pool.register("upgrade_menu", game.UpgradeMenu);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
@@ -114,11 +127,142 @@ var game = {
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
 
+        //Upgrades
+        me.input.bindKey(me.input.KEY.U, "upgrade", true);
+        me.input.bindKey(me.input.KEY.G, "upgradeGold", true);
+        me.input.bindKey(me.input.KEY.A, "upgradeAttack", true);
+        me.input.bindKey(me.input.KEY.D, "upgradeDefense", true);
+
 
         // render hitbox int the debug panel
         me.debug.renderHitBox = true;
 
         // Start the game.
         me.state.change(me.state.PLAY);
+
+
+        /**
+        PLAYER UPGRADE ACTION HANDLER
+        **/
+
+        //Listen for upgrade press
+        this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode) {
+            if (action === "upgrade") {          
+                console.log("upgrade button pressed");
+                upgradePressed = 1;
+            }
+        });
+
+        //Listen for gold upgrade press
+        this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode) {
+            if (action === "upgradeGold" && upgradePressed) {               
+                console.log("upgrading gold");
+                upgradePressed = 0;
+                playerUpgrade("gold");
+            }
+        });
+
+        //Listen for attack upgrade press
+        this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode) {
+            if (action === "upgradeAttack" && upgradePressed) {               
+                console.log("upgrading attack");
+                upgradePressed = 0;
+                playerUpgrade("attack");
+            }
+        });
+
+        //Listen for defense upgrade press
+        this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode) {
+            if (action === "upgradeDefense" && upgradePressed) {               
+                console.log("upgrading defense");
+                upgradePressed = 0;
+                playerUpgrade("defense");
+            }
+        });
+
+        function playerUpgrade(type) {
+            switch(type) {
+                case "gold":
+                    if(game.data.goldUpgradeLevel == 0 && game.data.playergold > game.data.upgradeLevelOneCost) {
+                        game.data.goldUpgradeLevel = 1; //upgrade to level 1
+                        game.data.playergoldrate = 10;
+                        game.data.playergold -= game.data.upgradeLevelOneCost; //charge player for upgrade
+                        console.log("Player at Gold Earning Level 1");
+                    } 
+                    else if(game.data.goldUpgradeLevel == 1 && game.data.playergold > game.data.upgradeLevelTwoCost) {
+                        game.data.goldUpgradeLevel = 2; //upgrade to level 2
+                        game.data.playergoldrate = 20;
+                        game.data.playergold -= game.data.upgradeLevelTwoCost; //charge player for upgrade
+                        console.log("Player at Gold Earning Level 2");
+                    } 
+                    else if(game.data.goldUpgradeLevel == 2 && game.data.playergold > game.data.upgradeLevelThreeCost) {
+                        game.data.goldUpgradeLevel = 3; //upgrade to level 3
+                        game.data.playergoldrate = 30;
+                        game.data.playergold -= game.data.upgradeLevelThreeCost; //charge player for upgrade
+                        console.log("Player at Gold Earning Level 3");
+                    }
+                    else if(game.data.goldUpgradeLevel >= 3) {
+                        console.log("No Gold Upgrades Left! Max Level!");
+                    }
+                    else {
+                        console.log("Not enough gold for this upgrade");
+                    }
+                    break;
+                case "attack":
+                    if(game.data.attackUpgradeLevel == 0 && game.data.playergold > game.data.upgradeLevelOneCost) {
+                        game.data.attackUpgradeLevel = 1; //upgrade to level 1
+                        game.data.attackMod = 2;
+                        game.data.playergold -= game.data.upgradeLevelOneCost; //charge player for upgrade
+                        console.log("Player at Attack Mod Level 1");
+                    } 
+                    else if(game.data.attackUpgradeLevel == 1 && game.data.playergold > game.data.upgradeLevelTwoCost) {
+                        game.data.attackUpgradeLevel = 2; //upgrade to level 2
+                        game.data.attackMod = 4;
+                        game.data.playergold -= game.data.upgradeLevelTwoCost; //charge player for upgrade
+                        console.log("Player at Attack Mod Level 2");
+                    } 
+                    else if(game.data.attackUpgradeLevel == 2 && game.data.playergold > game.data.upgradeLevelThreeCost) {
+                        game.data.attackUpgradeLevel = 3; //upgrade to level 3
+                        game.data.attackMod = 6;
+                        game.data.playergold -= game.data.upgradeLevelThreeCost; //charge player for upgrade
+                        console.log("Player at Attack Mod Level 3");
+                    }
+                    else if(game.data.attackUpgradeLevel >= 3) {
+                        console.log("No Attack Mod Upgrades Left! Max Level!");
+                    }
+                    else {
+                        console.log("Not enough gold for this upgrade");
+                    }
+                    break;
+                    break;
+                case "defense":
+                    if(game.data.defenseUpgradeLevel == 0 && game.data.playergold > game.data.upgradeLevelOneCost) {
+                        game.data.defenseUpgradeLevel = 1; //upgrade to level 1
+                        game.data.defenseMod = 2;
+                        game.data.playergold -= game.data.upgradeLevelOneCost; //charge player for upgrade
+                        console.log("Player at Defense Mod Earning Level 1");
+                    } 
+                    else if(game.data.defenseUpgradeLevel == 1 && game.data.playergold > game.data.upgradeLevelTwoCost) {
+                        game.data.defenseUpgradeLevel = 2; //upgrade to level 2
+                        game.data.defenseMod = 4;
+                        game.data.playergold -= game.data.upgradeLevelTwoCost; //charge player for upgrade
+                        console.log("Player at Defense Mod Earning Level 2");
+                    } 
+                    else if(game.data.defenseUpgradeLevel == 2 && game.data.playergold > game.data.upgradeLevelThreeCost) {
+                        game.data.defenseUpgradeLevel = 3; //upgrade to level 3
+                        game.data.defenseMod = 6;
+                        game.data.playergold -= game.data.upgradeLevelThreeCost; //charge player for upgrade
+                        console.log("Player at Defense Mod Earning Level 3");
+                    }
+                    else if(game.data.goldUpgradeLevel >= 3) {
+                        console.log("No Defense Mod Upgrades Left! Max Level!");
+                    }
+                    else {
+                        console.log("Not enough gold for this upgrade");
+                    }
+                    break;
+                    break;
+            }
+        }
     }
 };
