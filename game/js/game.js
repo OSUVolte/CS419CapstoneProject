@@ -104,7 +104,8 @@ var game = {
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
-        me.pool.register("Barracks", game.Structures);
+        //me.pool.register("Barracks", game.Structures);
+        //me.pool.register("TechCenter", game.Structures);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
@@ -126,7 +127,7 @@ var game = {
         //Buildings
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.NUM2, "tech_center", true);
+        me.input.bindKey(me.input.KEY.NUM2, "techcenter", true);
 
         //unknown
         me.input.bindKey(me.input.KEY.Q, "q", true);

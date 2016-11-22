@@ -270,7 +270,7 @@ game.UI.BuildingStatus = me.Container.extend({
 			this.width / 2,
 			16, // panel border
 			this.z
-		)
+		);
 		this.addChild(this.LabelText, 10);
 
 		//Display for the percent complete
@@ -294,7 +294,7 @@ game.UI.BuildingStatus = me.Container.extend({
 			(this.width / 10)+ 6*((this.width / 10)),
 			40, // panel border
 			this.z
-		)
+		);
 		this.addChild(this.pcentCompText, 10);
 
 		//display capactiy
@@ -319,7 +319,7 @@ game.UI.BuildingStatus = me.Container.extend({
 			(this.width / 10)+ 6*((this.width / 10)),
 			60, // panel border
 			this.z
-		)
+		);
 		this.addChild(this.capaText, 10);
 
 		//display health of building
@@ -371,7 +371,6 @@ game.UI.BuildingStatus = me.Container.extend({
 		// 	this.z
 		// )
 		// this.addChild(this.qText, 10);
-
 
 		// input status flags
 		this.selected = false;

@@ -15,7 +15,8 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
             region : "addButton",
-            action: action  //string
+            action: action,  //string
+            color: color
         } ]);
 
         // offset of the two used images in the texture
@@ -23,9 +24,9 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         this.clicked_region = game.texture.getRegion("addButtonPushed");
 
         this.anchorPoint.set(0, 0);
-        this.setOpacity(0.5);
+        this.setOpacity(1);
 
-        this.font = new me.Font("Arial", 10, "white");
+        this.font = new me.Font("Arial", 10, this.color);
         this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
@@ -90,27 +91,27 @@ game.UI.UnitRemove = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, button, label, index) {
+    init: function(x, y, label) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
-            region : button
+            region : "deleteButton"
         } ]);
 
         // offset of the two used images in the texture
-        this.unclicked_region = game.texture.getRegion(button);
-        this.clicked_region = game.texture.getRegion(button+"Pushed");
-        console.log(this.unclicked_region);
+        this.unclicked_region = game.texture.getRegion("deleteButton");
+        this.clicked_region = game.texture.getRegion("deleteButtonPushed");
 
         this.anchorPoint.set(0, 0);
-        this.setOpacity(0.5);
+        this.setOpacity(1);
 
+        //font
         this.font = new me.Font("Arial", 12, "black");
         this.font.textAlign = "center";
         this.font.textBaseline = "middle";
 
-        this.label = label;
-        this.index = index;
+        this.label = label; //Text
 
+        //Acces to the building
         this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
@@ -125,10 +126,13 @@ game.UI.UnitRemove = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
         this.height = this.clicked_region.height;
-        console.log("hitting button " + this.action);
 
         var parent = me.game.getParentContainer(this);
-        parent.building.removeUnitQ(this.index);
+        //remove the last unit in the queue
+        parent.building.removeUnitQ(parent.building.q.length-1);
+
+        //return a portion of the players gold
+
 
         //parent.spawnUnit(this.action);
         // don't propagate the event
@@ -263,7 +267,7 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         this.clicked_region = game.texture.getRegion(img+"Pushed");
 
         this.anchorPoint.set(0, 0);
-        this.setOpacity(0.5);
+        this.setOpacity(1);
 
         //fonts
         this.font = new me.Font("Arial", 10, "white");
@@ -279,6 +283,8 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         // only the parent container is a floating object
         this.floating = false;
 
+        this.qbutton = img;
+
         if(index == this.activeQ)
             this.active = true; // has the button been pressed
     },
@@ -292,14 +298,26 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         this.height = this.clicked_region.height;
 
         //update the building with the correct active queue
-        //this way when units spawn they have the right queue assignment
+        //this way when units get added to the Q they have the right queue assignment
         var parent = me.game.getParentContainer(this);
         parent.building.activeQ = this.index;
+
+        me.game.repaint();
 
         this.active = true;
 
         // don't propagate the event
+        //return false;
         return false;
+    },
+    update: function (){
+        if(this.activeQ == this.index){
+            this.offset.setV(this.clicked_region.offset);
+            return true;
+        }else{
+            this.offset.setV(this.unclicked_region.offset);
+        }
+        return false
     },
 
     /**
@@ -310,6 +328,7 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y -= this.unclicked_region.height - this.height;
         this.height = this.unclicked_region.height;
+
         // don't propagate the event
         return false;
     },
@@ -321,7 +340,7 @@ game.UI.QueueSelector = me.GUI_Object.extend({
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
-    },
+    }
 
 
 //     /**
@@ -381,3 +400,75 @@ game.UI.QueueSelector = me.GUI_Object.extend({
 //         }
 //     }
  });
+
+game.UI.developTech = me.GUI_Object.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y, color, label, action) {
+        this._super(me.GUI_Object, "init", [ x, y, {
+            image: game.texture,
+            region : "blankButton",
+            action: action  //string
+        } ]);
+
+        // offset of the two used images in the texture
+        this.unclicked_region = game.texture.getRegion("blankButton");
+        this.clicked_region = game.texture.getRegion("blankButtonPushed");
+
+        this.anchorPoint.set(0, 0);
+        this.setOpacity(1);
+
+        this.font = new me.Font("Arial", 10, "white");
+        this.font.textAlign = "left";
+        this.font.textBaseline = "middle";
+
+        this.label = label;
+        this.action = action;
+
+        //this.parent = me.game.getParentContainer(this);
+
+        // only the parent container is a floating object
+        this.floating = false;
+
+    },
+
+    /**
+     * function called when the object is clicked on
+     */
+    onClick : function (/* event */) {
+        this.offset.setV(this.clicked_region.offset);
+        // account for the different sprite size
+        this.pos.y += this.height - this.clicked_region.height ;
+        this.height = this.clicked_region.height;
+        console.log("hitting button " + this.action);
+
+        var parent = me.game.getParentContainer(this);
+        parent.building.addUnitQ(this.action, parent.building.activeQ);
+
+        //parent.spawnUnit(this.action);
+        // don't propagate the event
+        return false;
+    },
+
+    /**
+     * function called when the pointer button is released
+     */
+    onRelease : function (/* event */) {
+        this.offset.setV(this.unclicked_region.offset);
+        // account for the different sprite size
+        this.pos.y -= this.unclicked_region.height - this.height;
+        this.height = this.unclicked_region.height;
+        // don't propagate the event
+        return false;
+    },
+
+    draw: function(renderer) {
+        this._super(me.GUI_Object, "draw", [ renderer ]);
+        this.font.draw(renderer,
+            this.label,
+            this.pos.x + this.width / 2,
+            this.pos.y + this.height / 2
+        );
+    }
+});

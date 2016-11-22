@@ -147,20 +147,26 @@ game.Structures = me.Entity.extend({
      * returns true if removed.
      */
     removeUnitQ: function(index){
-        curLength = this.q.length;
-        if(index+1 < this.capacity) {
-            this.q.splice(index, 1);
-        }
-
-        //if the index of the removed element was the first
-        ///we need to update the time or its bug city!
-        if(index == 0){
-            time = new Date().getTime();
-            this.q[0].time = time;
-        }
-
         //make sure it decreased by one
-        return q.length == curLength - 1;
+        if(this.q.length > 0){
+
+            //remove it from somewhere in the array
+            if(index+1 < this.capacity) {
+                this.q.splice(index, 1);
+            }
+
+            //if the index of the removed element was the first
+            ///we need to update the time or its bug city!
+            if(index == 0){
+                time = new Date().getTime();
+                this.q[0].time = time;
+            }
+
+            curLength = this.q.length;
+            return this.q.length == curLength - 1;
+
+        }
+        return false
     },
     /**
      * Gets the Amount of time until the next Unit will spawn
@@ -265,13 +271,13 @@ game.Structures = me.Entity.extend({
                 console.log("building is not complete")
             }
         }
-        //Remove a Unit from the end of the queue
-        if (this.selected == true && me.input.isKeyPressed("remove")) {
-            //remove a unit from the end
-            this.removeUnitQ(this.q.length-1);
-            console.log("removing");
-
-        }
+        // //Remove a Unit from the end of the queue
+        // if (this.selected == true && me.input.isKeyPressed("remove")) {
+        //     //remove a unit from the end
+        //     this.removeUnitQ(this.q.length-1);
+        //     console.log("removing");
+        //
+        // }
 
         //spawn units when time is ready
         this.unitComplete(now);
@@ -402,7 +408,7 @@ game.Barracks = game.Structures.extend({
         if(this.enabled.type1 && this.complete){
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 40,
-                "yellow",
+                "white",
                 "Add Warrior",
                 "warrior"// default
             ),110);
@@ -410,7 +416,7 @@ game.Barracks = game.Structures.extend({
         if(this.enabled.type2 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 90,
-                "green",
+                "white",
                 "Add Slime", // default
                 "slime"
             ), 110);
@@ -418,9 +424,15 @@ game.Barracks = game.Structures.extend({
         if(this.enabled.type3 && this.complete) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 140,
-                "blue",
+                "white",
                 "Add Rogue", // default
                 "rogue"
+            ), 110);
+        }
+        if(this.q.length > 0 && this.complete) {
+            this.panel.addChild(new game.UI.UnitRemove(
+                20, 190,
+                "Remove Unit" // default
             ), 110);
         }
 
@@ -550,7 +562,7 @@ game.TechCenter = game.Structures.extend({
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Tech Center Menu", this));
 
         if(this.enabled.type1){
-            this.panel.addChild(new game.UI.DevelopeTech(
+            this.panel.addChild(new game.UI.DevelopTech(
                 20, 40,
                 "Weapons Upgrade",
                 "inc_attack"

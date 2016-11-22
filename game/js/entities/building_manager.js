@@ -82,7 +82,7 @@ game.BuildingArea = me.Renderable.extend({
                     width: 128,
                     height: 96,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "tech_center"
+                    type: "techcenter"
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -297,6 +297,8 @@ game.FootPrint = game.BuildingObject.extend({
 
         //use to the track if it has been placed
         this.placed = false;
+
+        this.body.setCollisionMask(me.collision.types.WORLD_SHAPE);
     },
     /**
      * Change the image
@@ -326,7 +328,7 @@ game.FootPrint = game.BuildingObject.extend({
                 return true;
             }
         }
-        if(this.type == "tech_center") {
+        if(this.type == "techcenter") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {

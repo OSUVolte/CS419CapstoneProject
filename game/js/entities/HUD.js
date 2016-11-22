@@ -129,3 +129,52 @@ game.HUD.GameClock = me.Renderable.extend({
             return Math.floor(minutes) + ":" + Math.floor(seconds);
     }
 });
+
+
+game.HUD.Message = me.Renderable.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y) {
+
+        // call the parent constructor
+        // (size does not matter here)
+        this._super(me.Renderable, 'init', [x, y, 10, 10]);
+        this.msg = game.data.message.msg;
+
+    },
+
+    /**
+     * update function
+     */
+    update : function () {
+
+        this.updateMsg(me.timer.getTime());
+        return true
+    },
+
+    /**
+     * draw the score
+     */
+    draw : function (renderer) {
+        // draw it baby !
+        //font
+        this.font = new me.Font("Arial", 20, game.data.message.color);
+        this.font.textAlign = "center";
+        this.font.textBaseline = "middle";
+        this.font.draw(renderer, this.msg, this.pos.x, this.pos.y);
+    },
+    updateMsg : function (now){
+
+    var duration = game.data.message.msgDur * 1000;
+    //reset the message after 10 seconds when not empty
+    if (this.msg != ""){
+        if( now >= game.data.message.msgTime + duration){
+            game.data.message.msg = ""
+        }
+    }
+    this.msg = game.data.message.msg;
+}
+
+
+});
