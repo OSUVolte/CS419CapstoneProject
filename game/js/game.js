@@ -67,6 +67,10 @@ var game = {
         // prevent default browser actions
         me.input.preventDefault = true;
 
+        // prevent game pauses when browser is out of focus
+        me.sys.pauseOnBlur = false;
+        me.sys.stopOnBlur = false;
+
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
