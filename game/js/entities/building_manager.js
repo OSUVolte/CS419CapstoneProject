@@ -323,20 +323,20 @@ game.FootPrint = game.BuildingObject.extend({
                     bounds: this.bounds,
                     type: "barracks"
                 }), 10);
-
-               // me.game.  addStructure(newBldg) // add the building to the array of structures
+                //todo maybe use this to easily apply upgrades to all buildings at once?
+                //me.game.  addStructure(newBldg) // add the building to the array of structures
                 return true;
             }
         }
-        if(this.type == "techcenter") {
+        if(this.type == "armory") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-                var newBldg =  me.game.world.addChild(new game.TechCenter(this.pos.x, this.pos.y, {
+                var newBldg =  me.game.world.addChild(new game.Armory(this.pos.x, this.pos.y, {
                     width: this.width,
                     height: this.height,
                     bounds: this.bounds,
-                    type: "techcenter"
+                    type: "armory"
                 }), 10);
 
                 // me.game.  addStructure(newBldg) // add the building to the array of structures

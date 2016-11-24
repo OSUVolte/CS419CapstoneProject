@@ -26,7 +26,7 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         this.anchorPoint.set(0, 0);
         this.setOpacity(1);
 
-        this.font = new me.Font("Arial", 10, this.color);
+        this.font = new me.Font("Arial", 10, "white");
         this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
@@ -105,8 +105,8 @@ game.UI.UnitRemove = me.GUI_Object.extend({
         this.setOpacity(1);
 
         //font
-        this.font = new me.Font("Arial", 12, "black");
-        this.font.textAlign = "center";
+        this.font = new me.Font("Arial", 10, "white");
+        this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
         this.label = label; //Text
@@ -256,10 +256,12 @@ game.UI.QueueSelector = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, img, label, index, activeQ) {
+    init: function(x, y, img, label, index, activeQ, building) {
+
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
-            region : img
+            region : img,
+            building : building
         } ]);
 
         // the two used images in the texture
@@ -302,24 +304,12 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         var parent = me.game.getParentContainer(this);
         parent.building.activeQ = this.index;
 
-        me.game.repaint();
-
         this.active = true;
 
         // don't propagate the event
         //return false;
         return false;
     },
-    update: function (){
-        if(this.activeQ == this.index){
-            this.offset.setV(this.clicked_region.offset);
-            return true;
-        }else{
-            this.offset.setV(this.unclicked_region.offset);
-        }
-        return false
-    },
-
     /**
      * function called when the pointer button is released
      */
@@ -328,6 +318,8 @@ game.UI.QueueSelector = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y -= this.unclicked_region.height - this.height;
         this.height = this.unclicked_region.height;
+
+
 
         // don't propagate the event
         return false;
@@ -443,9 +435,7 @@ game.UI.developTech = me.GUI_Object.extend({
         this.height = this.clicked_region.height;
         console.log("hitting button " + this.action);
 
-        var parent = me.game.getParentContainer(this);
-        parent.building.addUnitQ(this.action, parent.building.activeQ);
-
+        action(this.action);
         //parent.spawnUnit(this.action);
         // don't propagate the event
         return false;
@@ -470,5 +460,28 @@ game.UI.developTech = me.GUI_Object.extend({
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
+    },
+    //What happens when button is pressed
+    action: function(action){
+
+        switch(action){
+            case inc_base:
+                incBaseArmor();
+                break;
+
+            case inc_health:
+                incHealth();
+                break;
+
+            case inc_sf:
+                incScaling();
+                break;
+
+            default:
+        }
+
+
+
+
     }
 });

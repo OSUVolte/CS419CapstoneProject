@@ -2,43 +2,43 @@
 
 {
 	"filename": "addButton",
-	"frame": {"x":296,"y":71,"w":99,"h":36},
+	"frame": {"x":0,"y":103,"w":134,"h":36},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":36},
-	"sourceSize": {"w":99,"h":36},
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":36},
+	"sourceSize": {"w":134,"h":36},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "addButtonPushed",
-	"frame": {"x":197,"y":71,"w":99,"h":35},
+	"frame": {"x":0,"y":68,"w":134,"h":35},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":35},
-	"sourceSize": {"w":99,"h":35},
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":35},
+	"sourceSize": {"w":134,"h":35},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "background",
-	"frame": {"x":282,"y":107,"w":183,"h":147},
+	"filename": "Asset 15",
+	"frame": {"x":0,"y":0,"w":12,"h":10},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":147},
-	"sourceSize": {"w":183,"h":147},
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":10},
+	"sourceSize": {"w":12,"h":10},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "background_1",
-	"frame": {"x":99,"y":107,"w":183,"h":147},
+	"frame": {"x":0,"y":291,"w":243,"h":196},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":147},
-	"sourceSize": {"w":183,"h":147},
+	"spriteSourceSize": {"x":0,"y":0,"w":243,"h":196},
+	"sourceSize": {"w":243,"h":196},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "blank",
-	"frame": {"x":169,"y":0,"w":62,"h":70},
+	"frame": {"x":168,"y":221,"w":62,"h":70},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":70},
@@ -47,92 +47,92 @@
 },
 {
 	"filename": "blankButton",
-	"frame": {"x":98,"y":71,"w":99,"h":36},
+	"frame": {"x":0,"y":139,"w":135,"h":36},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":36},
-	"sourceSize": {"w":99,"h":36},
+	"spriteSourceSize": {"x":0,"y":0,"w":135,"h":36},
+	"sourceSize": {"w":135,"h":36},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "blankButtonPushed",
-	"frame": {"x":0,"y":71,"w":98,"h":36},
+	"frame": {"x":0,"y":175,"w":134,"h":36},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":36},
-	"sourceSize": {"w":98,"h":36},
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":36},
+	"sourceSize": {"w":134,"h":36},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "deleteButton",
-	"frame": {"x":0,"y":107,"w":99,"h":34},
+	"frame": {"x":0,"y":34,"w":134,"h":34},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":34},
-	"sourceSize": {"w":99,"h":34},
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":34},
+	"sourceSize": {"w":134,"h":34},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "deleteButtonPushed",
-	"frame": {"x":395,"y":71,"w":99,"h":34},
+	"frame": {"x":45,"y":0,"w":134,"h":34},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":34},
-	"sourceSize": {"w":99,"h":34},
+	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":34},
+	"sourceSize": {"w":134,"h":34},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg0",
-	"frame": {"x":418,"y":0,"w":63,"h":70},
+	"frame": {"x":0,"y":221,"w":42,"h":46},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":70},
-	"sourceSize": {"w":63,"h":70},
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":46},
+	"sourceSize": {"w":42,"h":46},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg0Pushed",
-	"frame": {"x":355,"y":0,"w":63,"h":71},
+	"frame": {"x":84,"y":221,"w":42,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":71},
-	"sourceSize": {"w":63,"h":71},
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":47},
+	"sourceSize": {"w":42,"h":47},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg1",
-	"frame": {"x":45,"y":0,"w":62,"h":70},
+	"frame": {"x":134,"y":175,"w":41,"h":46},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":70},
-	"sourceSize": {"w":62,"h":70},
+	"spriteSourceSize": {"x":0,"y":0,"w":41,"h":46},
+	"sourceSize": {"w":41,"h":46},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg1Pushed",
-	"frame": {"x":107,"y":0,"w":62,"h":71},
+	"frame": {"x":126,"y":221,"w":42,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":71},
-	"sourceSize": {"w":62,"h":71},
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":47},
+	"sourceSize": {"w":42,"h":47},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg2",
-	"frame": {"x":231,"y":0,"w":62,"h":70},
+	"frame": {"x":175,"y":175,"w":42,"h":46},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":70},
-	"sourceSize": {"w":62,"h":70},
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":46},
+	"sourceSize": {"w":42,"h":46},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "reg2Pushed",
-	"frame": {"x":293,"y":0,"w":62,"h":71},
+	"frame": {"x":42,"y":221,"w":42,"h":47},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":71},
-	"sourceSize": {"w":62,"h":71},
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":47},
+	"sourceSize": {"w":42,"h":47},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
@@ -142,15 +142,6 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":31},
 	"sourceSize": {"w":14,"h":31},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "slime",
-	"frame": {"x":0,"y":0,"w":12,"h":10},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":10},
-	"sourceSize": {"w":12,"h":10},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
@@ -167,8 +158,8 @@
 	"version": "1.0",
 	"image": "UI_Assets2.png",
 	"format": "RGBA8888",
-	"size": {"w":494,"h":254},
+	"size": {"w":243,"h":487},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:81dc44bc40c696d7f2f0cb10d19196d3:7a09edf0ac04ea19732b0ae44963739d:9194e755dab58fe06b6ffb6172fee209$"
+	"smartupdate": "$TexturePacker:SmartUpdate:d5da3959f9f30c468bec2a914cf7227b:d4f5fec8318b98471582ff323038fa41:9194e755dab58fe06b6ffb6172fee209$"
 }
 }

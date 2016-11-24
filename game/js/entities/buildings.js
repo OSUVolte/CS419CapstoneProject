@@ -233,51 +233,25 @@ game.Structures = me.Entity.extend({
         this._super(me.Entity, "update", [dt]);
         var now = new Date().getTime();
 
-        //add units to a building queue
-        if (this.selected == true && me.input.isKeyPressed("makeType1")) {
+        //establish time elapsed since the placement
+        this.now = Math.round(new Date().getTime()/1000);
+        this.elapsed = this.now - this.est;
 
-            //only allow units when the building is ready to work
-            if(this.complete) {
-                if (this.addUnitQ("warrior")) {
-                    console.log("Adding Unit");
-                } else {
-                    console.log("cannot add queue is full")
-                }
-            }else{
-                console.log("building is not complete")
-            }
-        }else if (this.selected == true && me.input.isKeyPressed("makeType2")) {
+        //establish a percent complete
+        if(this.elapsed < this.buildTime) {
+            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
+        }else{
+            this.percentComplete = 100;
+        }
 
-            //only allow units when the building is ready to work
-            if(this.complete) {
-                if (this.addUnitQ("rogue")) {
-                    console.log("Adding Unit");
-                } else {
-                    console.log("cannot add queue is full")
-                }
-            }else{
-                console.log("building is not complete")
-            }
-        }else if (this.selected == true && me.input.isKeyPressed("makeType3")) {
+        //do something when its placed
+        if(this.placed){
 
-            //only allow units when the building is ready to work
-            if(this.complete) {
-                if (this.addUnitQ("slime")) {
-                    console.log("Adding Unit");
-                } else {
-                    console.log("cannot add queue is full")
-                }
-            }else{
-                console.log("building is not complete")
+            //start construction
+            if(this.elapsed > this.buildTime){
+                this.complete = true;
             }
         }
-        // //Remove a Unit from the end of the queue
-        // if (this.selected == true && me.input.isKeyPressed("remove")) {
-        //     //remove a unit from the end
-        //     this.removeUnitQ(this.q.length-1);
-        //     console.log("removing");
-        //
-        // }
 
         //spawn units when time is ready
         this.unitComplete(now);
@@ -333,8 +307,8 @@ game.Barracks = game.Structures.extend({
         //the types of units that this building can build
         this.enabled = {
             type1:true,
-            type2: false,
-            type3: false  //' etc etc //todo add all unit types
+            type2: true,
+            type3: true  //' etc etc //todo add all unit types
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
@@ -363,35 +337,10 @@ game.Barracks = game.Structures.extend({
      * update the entity
      */
     update : function (dt) {
-        //Update functions of our game objects will always receive a delta time (in milliseconds).
-        // It's important to pass it along to our parent's class update.
-        //setting the time for the building
-        this._super(me.Entity, "update", [dt]);
 
         //mainUpdate - General functions that are good for all buildings
         this.mainUpdate(dt);
 
-        //establish time elapsed since the placement
-        this.now = Math.round(new Date().getTime()/1000);
-        this.elapsed = this.now - this.est;
-
-        //establish a percent complete
-        if(this.elapsed < this.buildTime) {
-            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
-        }else{
-            this.percentComplete = 100;
-        }
-
-        //do something when its placed
-        if(this.placed){
-
-            //start construction
-            if(this.elapsed > this.buildTime){
-                this.complete = true;
-                //console.log("buildingAllowed", true);
-                //this.chooseImage();//update the image when complete
-            }
-        }
         return this._super(me.Entity, "update", [dt])
     },
     /**
@@ -403,7 +352,9 @@ game.Barracks = game.Structures.extend({
         return true;
     },
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Barracks Menu", this));
+        this.panelHeight = 300;
+        this.panelWidth =400;
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
 
         if(this.enabled.type1 && this.complete){
             this.panel.addChild(new game.UI.UnitAdd(
@@ -438,7 +389,8 @@ game.Barracks = game.Structures.extend({
 
        //Generate 3 buttons for 3 queues
        for(i=0; i < 3; i++){
-           this.addQueueButtons(this.activeQ,i)
+           this.addQueueButtons(i)
+
        }
 
         return this.panel;
@@ -446,25 +398,27 @@ game.Barracks = game.Structures.extend({
         //add the new buttons to a group so that we can track which is currently active
         //and use this to set behaviors and change the display
     },
-    addQueueButtons: function (aq, index){
-        var xCoor = 93+(70*index);
+    addQueueButtons: function (index){
+        var xCoor = 20+(50*index);
         var img = "reg"+index;
         //change the image depending if the button is the active queue
-        if(aq == index){
+
+        if(this.activeQ == index){
             img = "reg"+index+"Pushed";
         }
         this.panel.addChild(new game.UI.QueueSelector(
-            xCoor, 180,
+            xCoor, this.panelHeight-60,
             img, //img name
             "", // default
             index, // index of this button
-            this.activeQ
+            this.activeQ,
+            this
         ), 110);
     }
 
 });
 
-game.TechCenter = game.Structures.extend({
+game.Armory = game.Structures.extend({
     /**
      * constructor
      */
@@ -529,25 +483,6 @@ game.TechCenter = game.Structures.extend({
         //mainUpdate - General functions that are good for all buildings
         this.mainUpdate(dt);
 
-        //establish time elapsed since the placement
-        this.now = Math.round(new Date().getTime()/1000);
-        this.elapsed = this.now - this.est;
-
-        //establish a percent complete
-        if(this.elapsed < this.buildTime) {
-            this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
-        }else{
-            this.percentComplete = 100;
-        }
-
-        //do something when its placed
-        if(this.placed){
-
-            //start construction
-            if(this.elapsed > this.buildTime){
-                this.complete = true;
-            }
-        }
         return this._super(me.Entity, "update", [dt]);
     },
     /**
@@ -562,34 +497,29 @@ game.TechCenter = game.Structures.extend({
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Tech Center Menu", this));
 
         if(this.enabled.type1){
-            this.panel.addChild(new game.UI.DevelopTech(
+            this.panel.addChild(new game.UI.developTech(
                 20, 40,
-                "Weapons Upgrade",
-                "inc_attack"
+                "white",
+                "Increase Unit Armor",
+                "inc_base"
             ),110);
         }
         if(this.enabled.type2) {
-            // this.panel.addChild(new game.UI.UnitAdd(
-            //     20, 90,
-            //     "green",
-            //     "Add Slime", // default
-            //     "slime"
-            // ), 110);
+            this.panel.addChild(new game.UI.developTech(
+                20, 90,
+                "white",
+                "Increase Unit Health", // default
+                "inc_health"
+            ), 110);
         }
         if(this.enabled.type3) {
-            // this.panel.addChild(new game.UI.UnitAdd(
-            //     20, 140,
-            //     "blue",
-            //     "Add Rogue", // default
-            //     "rogue"
-            // ), 110);
+            this.panel.addChild(new game.UI.developTech(
+                20, 140,
+                "white",
+                "Increase Armor (Level Scaling) ", // Scale factor will increase according to level
+                "inc_sf"
+            ), 110);
         }
-
-        //Generate 3 buttons for 3 queues
-        for(i=0; i < 3; i++){
-            // this.addQueueButtons(this.activeQ,i)
-        }
-
 
         //add the new buttons to a group so that we can track which is currently active
         //and use this to set behaviors and change the display

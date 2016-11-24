@@ -188,9 +188,9 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">../../../../../Documents/gameAssets/Asset 15.png</key>
             <key type="filename">../../../../../Documents/gameAssets/addButton.png</key>
             <key type="filename">../../../../../Documents/gameAssets/addButtonPushed.png</key>
-            <key type="filename">../../../../../Documents/gameAssets/background.png</key>
             <key type="filename">../../../../../Documents/gameAssets/background_1.png</key>
             <key type="filename">../../../../../Documents/gameAssets/blank.png</key>
             <key type="filename">../../../../../Documents/gameAssets/blankButton.png</key>
@@ -203,8 +203,9 @@
             <key type="filename">../../../../../Documents/gameAssets/reg1Pushed.png</key>
             <key type="filename">../../../../../Documents/gameAssets/reg2.png</key>
             <key type="filename">../../../../../Documents/gameAssets/reg2Pushed.png</key>
+            <key type="filename">../../../../../Documents/gameAssets/reg3.png</key>
+            <key type="filename">../../../../../Documents/gameAssets/reg3Pushed.png</key>
             <key type="filename">../../../../../Documents/gameAssets/rogue.png</key>
-            <key type="filename">../../../../../Documents/gameAssets/slime.png</key>
             <key type="filename">../../../../../Documents/gameAssets/warrior.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -215,22 +216,23 @@
         <array>
             <filename>../../../../../Documents/gameAssets/addButton.png</filename>
             <filename>../../../../../Documents/gameAssets/addButtonPushed.png</filename>
-            <filename>../../../../../Documents/gameAssets/background.png</filename>
+            <filename>../../../../../Documents/gameAssets/Asset 15.png</filename>
             <filename>../../../../../Documents/gameAssets/background_1.png</filename>
             <filename>../../../../../Documents/gameAssets/blank.png</filename>
             <filename>../../../../../Documents/gameAssets/blankButton.png</filename>
             <filename>../../../../../Documents/gameAssets/blankButtonPushed.png</filename>
+            <filename>../../../../../Documents/gameAssets/deleteButton.png</filename>
+            <filename>../../../../../Documents/gameAssets/deleteButtonPushed.png</filename>
             <filename>../../../../../Documents/gameAssets/reg0.png</filename>
             <filename>../../../../../Documents/gameAssets/reg0Pushed.png</filename>
             <filename>../../../../../Documents/gameAssets/reg1.png</filename>
             <filename>../../../../../Documents/gameAssets/reg1Pushed.png</filename>
             <filename>../../../../../Documents/gameAssets/reg2.png</filename>
             <filename>../../../../../Documents/gameAssets/reg2Pushed.png</filename>
+            <filename>../../../../../Documents/gameAssets/reg3.png</filename>
+            <filename>../../../../../Documents/gameAssets/reg3Pushed.png</filename>
             <filename>../../../../../Documents/gameAssets/rogue.png</filename>
-            <filename>../../../../../Documents/gameAssets/slime.png</filename>
             <filename>../../../../../Documents/gameAssets/warrior.png</filename>
-            <filename>../../../../../Documents/gameAssets/deleteButton.png</filename>
-            <filename>../../../../../Documents/gameAssets/deleteButtonPushed.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
