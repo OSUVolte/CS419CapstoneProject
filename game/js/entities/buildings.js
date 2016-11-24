@@ -17,6 +17,7 @@ game.Structures = me.Entity.extend({
         this.q = [];
         this.allowBuild = false;
         this.complete = false;
+        this.functional = false;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -70,6 +71,7 @@ game.Structures = me.Entity.extend({
             console.log('selected the new buiding');
             this.selected = true;
             this.displayStatus();
+
             // don"t propagate the event furthermore
             return false;
         }
@@ -113,7 +115,7 @@ game.Structures = me.Entity.extend({
      */
     addUnitQ: function(type, queue){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+type+ "is being built ", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+type+" is being built", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         var time = new Date().getTime();
@@ -134,6 +136,31 @@ game.Structures = me.Entity.extend({
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
             return true;
+        }else{
+            //display message
+            game.data.message= {msgTime: me.timer.getTime(), msg:"Capacity Reached!", msgDur: 10, color:"red"};
+        }
+
+        return false;
+    },
+    /**
+     * Adds a tech a Queue
+     * @param type string of the entity type
+     * @param queue snumber fo the queue
+     * Returnes true if added
+     */
+    addTechQ: function(techObj){
+        //display message
+        game.data.message= {msgTime: me.timer.getTime(), msg:""+techObj.name+ "is being Developed", msgDur: 2, color:"green"};
+
+        // the time for 1st unit being added
+        techObj.startTime = new Date().getTime();
+
+        //don't add if it would go over capacity
+        if(this.q.length + 1 <= this.capacity){
+            this.q.push(techObj);
+            return true;
+            console.log(this.q);
         }else{
             //display message
             game.data.message= {msgTime: me.timer.getTime(), msg:"Capacity Reached!", msgDur: 10, color:"red"};
@@ -250,11 +277,14 @@ game.Structures = me.Entity.extend({
             //start construction
             if(this.elapsed > this.buildTime){
                 this.complete = true;
+
+            }
+
+            if(this.health > 0.5*this.fullhealth){
+                this.functional = true;
             }
         }
 
-        //spawn units when time is ready
-        this.unitComplete(now);
 
         //log some state stuff
         if(me.input.isKeyPressed("log")){
@@ -270,7 +300,9 @@ game.Structures = me.Entity.extend({
         console.log("selected: ", this.selected);
         console.log("the queue", this.q);
         console.log("dt", dt);
-        console.log();
+        console.log("building health", this.health);
+        console.log("percentComplete", this.percentComplete);
+        console.log("functional", this.functional);
 
     },
 
@@ -302,7 +334,6 @@ game.Barracks = game.Structures.extend({
         this.buildTime = 5;
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
-        this.functional = false; //starts off as non-functional until build time expires
 
         //the types of units that this building can build
         this.enabled = {
@@ -312,7 +343,8 @@ game.Barracks = game.Structures.extend({
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
-        this.health = 1000;
+        this.fullhealth = 1000;
+        this.health = this.fullhealth;
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
     },
@@ -341,6 +373,11 @@ game.Barracks = game.Structures.extend({
         //mainUpdate - General functions that are good for all buildings
         this.mainUpdate(dt);
 
+        var now = new Date().getTime();
+
+        //spawn units when time is ready
+        this.unitComplete(now);
+
         return this._super(me.Entity, "update", [dt])
     },
     /**
@@ -356,7 +393,7 @@ game.Barracks = game.Structures.extend({
         this.panelWidth =400;
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
 
-        if(this.enabled.type1 && this.complete){
+        if(this.enabled.type1 && this.complete && this.functional){
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 40,
                 "white",
@@ -364,7 +401,7 @@ game.Barracks = game.Structures.extend({
                 "warrior"// default
             ),110);
         }
-        if(this.enabled.type2 && this.complete) {
+        if(this.enabled.type2 && this.complete && this.functional) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 90,
                 "white",
@@ -372,7 +409,7 @@ game.Barracks = game.Structures.extend({
                 "slime"
             ), 110);
         }
-        if(this.enabled.type3 && this.complete) {
+        if(this.enabled.type3 && this.complete && this.functional) {
             this.panel.addChild(new game.UI.UnitAdd(
                 20, 140,
                 "white",
@@ -432,7 +469,6 @@ game.Armory = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("TechCenter")}); //addimage
-        console.log(this.x, this.y);
     },
     /**
      * Defines all the properties of the building
@@ -440,18 +476,40 @@ game.Armory = game.Structures.extend({
      */
     bldgProperties: function(){
 
-        this.buildTime = 60;
+        this.buildTime = 5;
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
-        this.functional = false; //starts off as non-functional until build time expires
+        this.capacity = 5;
 
         //the types of  tech that this building can build
-        this.enabled = {
-            type1:true,
-            type2: false,
-            type3: false  //' etc etc
+        this.tech1 = {
+            name: "Inc. Armor 25",
+            startTime: null, // set when button is pressed
+            buildTime: 60,
+            value: 25,
+            enabled:true,
+            complete: false
         };
-        this.health = 1000;
+
+        this.tech2 = {
+            name: "Inc. Health 25",
+            startTime: null,
+            buildTime: 90,
+            value: 25,
+            enabled:false,
+            complete: false
+        };
+
+        this.tech3 = {
+            name: "Inc. Armor Scaling 1.25",
+            startTime: null,
+            buildTime: 120,
+            value: 1.25,
+            enabled:false,
+            complete: false
+        };
+        this.fullhealth = 1000;
+        this.health = this.fullhealth;
         this.cost = 700;
     },
     /**
@@ -483,6 +541,9 @@ game.Armory = game.Structures.extend({
         //mainUpdate - General functions that are good for all buildings
         this.mainUpdate(dt);
 
+        //Function watches the techQ, sets enabled when build time is done,
+
+
         return this._super(me.Entity, "update", [dt]);
     },
     /**
@@ -493,36 +554,44 @@ game.Armory = game.Structures.extend({
         // Make all other objects solid
         return true;
     },
+    /**
+     * The Display pop up on the building
+     */
     displayStatus: function(){
         this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Tech Center Menu", this));
 
-        if(this.enabled.type1){
+        if(this.tech1.enabled && this.functional && this.complete){
             this.panel.addChild(new game.UI.developTech(
                 20, 40,
-                "white",
-                "Increase Unit Armor",
-                "inc_base"
+                "white", //text color
+                "inc_base", // function to call - determined by switch in developTech
+                this.tech1  // the amount to change
             ),110);
         }
-        if(this.enabled.type2) {
+        if(this.tech2.enabled && this.functional && this.complete) {
             this.panel.addChild(new game.UI.developTech(
                 20, 90,
                 "white",
-                "Increase Unit Health", // default
-                "inc_health"
+                "inc_health",
+                this.tech2
             ), 110);
         }
-        if(this.enabled.type3) {
+        if(this.tech3.enabled && this.functional && this.complete) {
             this.panel.addChild(new game.UI.developTech(
                 20, 140,
                 "white",
-                "Increase Armor (Level Scaling) ", // Scale factor will increase according to level
-                "inc_sf"
+                "inc_sf",
+                this.tech3
             ), 110);
         }
 
-        //add the new buttons to a group so that we can track which is currently active
-        //and use this to set behaviors and change the display
+    },
+
+    developTech: function (tech){
+
+
+
+
     }
 
 });

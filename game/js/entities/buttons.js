@@ -80,10 +80,6 @@ game.UI.UnitAdd = me.GUI_Object.extend({
     }
 });
 /**
- * image of a unit button to cancel build and display
- *
- */
-/**
  * A Button to remove units
  *
  */
@@ -164,10 +160,11 @@ game.UI.UnitRemove = me.GUI_Object.extend({
 /**
  * a basic checkbox control
  */
+/*
 game.UI.CheckBoxUI = me.GUI_Object.extend({
-    /**
+    /!**
      * constructor
-     */
+     *!/
     init: function(x, y, texture, on_icon, off_icon, on_label, off_label, action) {
 
         // call the parent constructor
@@ -196,23 +193,23 @@ game.UI.CheckBoxUI = me.GUI_Object.extend({
         this.floating = false;
     },
 
-    /**
+    /!**
      * function called when the pointer is over the object
-     */
-    onOver : function (/* event */) {
+     *!/
+    onOver : function (/!* event *!/) {
         this.setOpacity(1.0);
     },
 
-    /**
+    /!**
      * function called when the pointer is leaving the object area
-     */
-    onOut : function (/* event */) {
+     *!/
+    onOut : function (/!* event *!/) {
         this.setOpacity(0.5);
     },
 
-    /**
+    /!**
      * change the checkbox state
-     */
+     *!/
     setSelected : function (selected) {
         if (selected) {
             this.offset.setV(this.on_offset);
@@ -223,10 +220,10 @@ game.UI.CheckBoxUI = me.GUI_Object.extend({
         }
     },
 
-    /**
+    /!**
      * function called when the object is clicked on
-     */
-    onClick : function (/* event */) {
+     *!/
+    onClick : function (/!* event *!/) {
         this.setSelected(!this.isSelected);
         this.action();
         // don't propagate the event
@@ -251,6 +248,7 @@ game.UI.CheckBoxUI = me.GUI_Object.extend({
         renderer.setGlobalAlpha(alpha);
     }
 });
+*/
 
 game.UI.QueueSelector = me.GUI_Object.extend({
     /**
@@ -289,6 +287,7 @@ game.UI.QueueSelector = me.GUI_Object.extend({
 
         if(index == this.activeQ)
             this.active = true; // has the button been pressed
+        this.changeImage()
     },
     /**
      * function called when the object is clicked on
@@ -332,6 +331,13 @@ game.UI.QueueSelector = me.GUI_Object.extend({
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
+    },
+    changeImage: function(){
+        if(this.active){
+            this.region = this.clicked_region;
+        }else{
+            this.region = this.unclicked_region;
+        }
     }
 
 
@@ -397,11 +403,12 @@ game.UI.developTech = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, color, label, action) {
+    init: function(x, y, color, action, tech) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
             region : "blankButton",
-            action: action  //string
+            action: action,  //string
+            tech:tech
         } ]);
 
         // offset of the two used images in the texture
@@ -415,9 +422,8 @@ game.UI.developTech = me.GUI_Object.extend({
         this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
-        this.label = label;
         this.action = action;
-
+        this.tech = tech;
         //this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
@@ -435,9 +441,12 @@ game.UI.developTech = me.GUI_Object.extend({
         this.height = this.clicked_region.height;
         console.log("hitting button " + this.action);
 
-        action(this.action);
-        //parent.spawnUnit(this.action);
-        // don't propagate the event
+        if(!this.tech.complete) {
+            this.action(this.tech);
+        }else{
+            game.data.message= {msgTime: me.timer.getTime(), msg:"This upgrade is already developed ", msgDur: 2, color:"red"};
+        }
+
         return false;
     },
 
@@ -456,32 +465,17 @@ game.UI.developTech = me.GUI_Object.extend({
     draw: function(renderer) {
         this._super(me.GUI_Object, "draw", [ renderer ]);
         this.font.draw(renderer,
-            this.label,
+            this.tech.name,
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
     },
     //What happens when button is pressed
-    action: function(action){
+    action: function(value){
 
-        switch(action){
-            case inc_base:
-                incBaseArmor();
-                break;
-
-            case inc_health:
-                incHealth();
-                break;
-
-            case inc_sf:
-                incScaling();
-                break;
-
-            default:
-        }
-
-
-
+        //add it to the buildings q
+        var parent = me.game.getParentContainer(this);
+        parent.building.addTechQ(value);
 
     }
 });

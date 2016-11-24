@@ -46,7 +46,7 @@ game.BuildingArea = me.Renderable.extend({
             console.log("build");
             this.isPlacing = true;
         }
-        //build Barracks
+        //What to do if building and type barracks
         if (this.isPlacing == true && me.input.isKeyPressed("barracks")) {
             console.log("barracks");
             console.log(game.data.playergold);
@@ -69,11 +69,9 @@ game.BuildingArea = me.Renderable.extend({
             }
             console.log(game.data.playergold);
             this.isPlacing = false;
-        }else
 
-        if (this.isPlacing == true && me.input.isKeyPressed("techcenter")) {
-            console.log("techcenter");
-            console.log("costs", game.TechCenter.cost);
+        //What to do if building and type Armory
+        }else if (this.isPlacing == true && me.input.isKeyPressed("armory")) {
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
@@ -82,7 +80,7 @@ game.BuildingArea = me.Renderable.extend({
                     width: 128,
                     height: 96,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "techcenter"
+                    type: "armory"
                 }), 10);
                 game.data.playergold -= 200;
             }

@@ -680,7 +680,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, ima
     this.hp = hp;
     this.maxHp = hp;
     this.def = def;
-    this.atk = atk;
+    this.atk = atk + this.atkBoost;
     this.speed = speed;
     this.hitPercent = hitPercent;
     this.dodge = dodge;
@@ -689,6 +689,17 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, ima
     this.image = image;
     this.buildTime = buildTime;
     this.qAssignment = -1;   // not assigned yet
+
+    //tech
+    this.atkBoost = 1;
+    this.defBoost = 1;
+    this.btBoost = 1;
+    //tech Scaling Factors
+    this.sfArmor =1;
+    this.sfSpeed = 1;
+    this.sfHealth = 1;
+    this.sfAtk =1;
+
 }
 
 
