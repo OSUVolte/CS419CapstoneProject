@@ -22,20 +22,32 @@ game.BuildButton = me.Entity.extend({
 
 	//callback for mouse click
 	onMouseDown: function() {
-
-		//Show Build Menu
-		game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
-        me.game.world.addChild(game.data.menu_background, 15);
-        game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
-        me.game.world.addChild(game.data.barracksbutton, 30);
+		console.log(game.data.isBuildMenuOpen);
+	    if(game.data.isBuildMenuOpen == true){
+	    	console.log("close menu");
+	    	// close  building menu
+			me.game.world.removeChild(game.data.menu_background);
+			me.game.world.removeChild(game.data.barracksbutton);
+			game.data.isBuildMenuOpen = false;
+		}
+		else{
+			//Show Build Menu
+			console.log("open menu");
+			game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
+	        me.game.world.addChild(game.data.menu_background, 15);
+	        game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
+	        me.game.world.addChild(game.data.barracksbutton, 30);
+	        me.input.triggerKeyEvent(me.input.KEY.B, true);
+	        console.log("buildbutton pressed!");
+	        game.data.isBuildMenuOpen = true;
+	    }
 		return false;
 	},
 	// mouse up function
 	onRelease : function (/*event*/) {
 		this.selected = false;
-		// close  building menu
-		console.log("buildbutton pressed!");
-		me.input.triggerKeyEvent(me.input.KEY.B, true);
+		
+		me.input.triggerKeyEvent(me.input.KEY.B, false);
 
 		// don"t propagate the event furthermore
 		return false;

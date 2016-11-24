@@ -14,6 +14,7 @@ var game = {
         buildbutton: "",
         barracksbutton: "",
         menu_background: "",
+        isBuildMenuOpen: false,
 
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5 //set initial player gold rate to 5 gold per sec
