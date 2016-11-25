@@ -19,7 +19,7 @@ var game = {
         isBuildMenuOpen: false,
 
         playergold: 1000, //set initial player gold to 1000
-        playergoldrate: 5 //set initial player gold rate to 5 gold per sec
+        playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
         /**
          * Checks if user has enough moolah
