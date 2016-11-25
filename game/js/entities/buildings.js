@@ -145,8 +145,7 @@ game.Structures = me.Entity.extend({
     },
     /**
      * Adds a tech a Queue
-     * @param type string of the entity type
-     * @param queue snumber fo the queue
+     * @param techObj string of the entity type
      * Returnes true if added
      */
     addTechQ: function(techObj){
@@ -292,7 +291,7 @@ game.Structures = me.Entity.extend({
         //do something when its placed
         if(this.placed){
 
-            //start construction set when done
+            //start construction and set when done
             if(this.elapsed > this.buildTime){
                 this.complete = true;
 
@@ -500,6 +499,9 @@ game.Armourer = game.Structures.extend({
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
+        this.fullhealth = 1000;
+        this.health = this.fullhealth;
+        this.cost = 700;
 
         //the types of  tech that this building can build
         this.tech1 = {
@@ -540,9 +542,6 @@ game.Armourer = game.Structures.extend({
             inProcess: false
 
         };
-        this.fullhealth = 1000;
-        this.health = this.fullhealth;
-        this.cost = 700;
     },
     /**
      * Change the image
@@ -710,6 +709,9 @@ game.Arsenal = game.Structures.extend({
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
+        this.fullhealth = 1000;
+        this.health = this.fullhealth;
+        this.cost = 700;
 
         //the types of  tech that this building can build
         this.tech1 = {
@@ -749,9 +751,6 @@ game.Arsenal = game.Structures.extend({
             complete: false,
             inProcess: false
         };
-        this.fullhealth = 1000;
-        this.health = this.fullhealth;
-        this.cost = 700;
     },
     /**
      * Change the image
@@ -805,7 +804,7 @@ game.Arsenal = game.Structures.extend({
             this.panel.addChild(new game.UI.developTech(
                 20, 40,
                 "white", //text color
-                this.tech1  // the amount to change
+                this.tech1 // the tech that will be applied by te button
             ),110);
         }
         if(this.tech2.enabled && this.functional && this.complete) {
@@ -830,10 +829,8 @@ game.Arsenal = game.Structures.extend({
         //check front of q for finished tech
         if (this.q.length > 0) {
             if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
-                console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
-                //apply the item
-                //Armory applies to all units
 
+                //apply the tech
                 switch (this.q[0].action) {
                     case "inc_base":
                         game.data.atkBoost =  game.data.atkBoost + this.q[0].value;

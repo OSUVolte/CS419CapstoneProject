@@ -329,8 +329,7 @@ game.FootPrint = game.BuildingObject.extend({
         This places the actual building of the specific type defined in the buildingArea call
      */
     placeBuilding: function (){
-        //if conditions are met
-        console.log('placing a building...', this.type);
+
         //add building to the area.
         if(this.type == "barracks") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
