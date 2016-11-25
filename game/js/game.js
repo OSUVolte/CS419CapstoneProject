@@ -5,7 +5,7 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score: 0,
+        score : 0,
         gametime: 0,
         currentwave: 0,
         waveduration: 15, //set to 15 seconds for testing
@@ -19,7 +19,7 @@ var game = {
         isBuildMenuOpen: false,
 
         playergold: 1000, //set initial player gold to 1000
-        playergoldrate: 5, //set initial player gold rate to 5 gold per sec
+        playergoldrate: 5 //set initial player gold rate to 5 gold per sec
 
         /**
          * Checks if user has enough moolah
@@ -88,11 +88,10 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto", scaleMethod : "flex-width"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
-        me.sys.fps = 30;
 
         // add "#debug" to the URL to enable the debug Panel
         if (me.game.HASH.debug === true) {
@@ -140,11 +139,12 @@ var game = {
         me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("units", game.Units, false);
-        me.pool.register("queue", game.Queue);
 
         //buildings:
+
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
+        me.pool.register("Barracks", game.Structures);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
@@ -159,6 +159,10 @@ var game = {
         me.pool.register("top", game.Top, false);
         me.pool.register("queue", game.Queue);
 
+        // queuing areas
+        me.pool.register("queue_front", game.QueueArea);
+        me.pool.register("queue_back", game.QueueArea);
+
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function
         me.input.bindKey(me.input.KEY.RIGHT, "right");
@@ -171,13 +175,17 @@ var game = {
         me.input.bindKey(me.input.KEY.NUM2, "armourer", true);
         me.input.bindKey(me.input.KEY.NUM3, "arsenal", true);
 
-        //unknown
+
+        // debug quick unit spawning keys, remove later
         me.input.bindKey(me.input.KEY.Q, "q", true);
+        me.input.bindKey(me.input.KEY.A, "a", true);
+        me.input.bindKey(me.input.KEY.D, "d", true);
 
         //spawn Units
         me.input.bindKey(me.input.KEY.W, "makeType1", true);
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
+
 
         // render hitbox int the debug panel
         me.debug.renderHitBox = true;

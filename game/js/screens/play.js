@@ -23,6 +23,27 @@ game.PlayScreen = me.ScreenObject.extend({
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
 
+        // if(){
+        //     // display the current pointer coordinates on top of the pointer arrow
+        //     me.game.world.addChild(new (me.Renderable.extend({
+        //         init: function() {
+        //             this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+        //             this.font = new me.Font("Arial", 10, "#FFFFFF");
+        //             this.font.textAlign = "center";
+        //             this.fontHeight = this.font.measureText(me.video.renderer, "DUMMY").height;
+        //         },
+        //         draw: function(renderer){
+        //             var x = Math.round(me.input.pointer.pos.x);
+        //             var y = Math.round(me.input.pointer.pos.y);
+        //             this.font.draw (
+        //                 renderer,
+        //                 "( " + x + "," + y + " )",
+        //                 x,
+        //                 y - this.fontHeight);
+        //         }
+        //     })), 100);
+        //}
+
     },
 
     /**

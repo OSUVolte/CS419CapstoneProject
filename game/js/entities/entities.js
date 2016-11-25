@@ -4,6 +4,7 @@
  // the actual player, push keys in the update function will
  // control the screen
  // probably store the units gold, unit capacity, builds in this entity
+
 game.PlayerEntity = me.Entity.extend({
 
     /**
@@ -17,46 +18,58 @@ game.PlayerEntity = me.Entity.extend({
         this.body.setVelocity(2,2);
         
         // set the display to follow our position on both axis
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+//        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
         
         this.playerOneSpawn = false;
         this.playerTwoSpawn = false;
-
-        this.qPressed = false;
     },
 
     /**
      * update the entity
      */
     update : function (dt) {
-        if (me.input.isKeyPressed('w') && this.playerOneSpawn == false) {
+        if (me.input.isKeyPressed('d') && this.playerOneSpawn == false) {
             this.playerOneSpawn = true;
             var settings = {
                 // the width of the path
                 width: 784,
                 height: 100,
                 // the size of the entity
-                framewidth: 32,
+                framewidth: 32,                                     // minotaurs are 48 pixels in length
                 frameheight: 32,
                 // direction
-                lane: "top",
+                queueGroup: "queue_back",
                 // which player spawned
                 player: 1,
                 shapes: [new me.Rect(0, 0, 25, 25)]
             }
             // spawn unit
-            me.game.world.addChild(me.pool.pull("top", 16, 528, rogue, settings), 1);
+            me.game.world.addChild(me.pool.pull("units", 1000, 160, wizard, settings), 10);
 
-        } else if (!me.input.isKeyPressed('x')) {
+        } else if (!me.input.isKeyPressed('d')) {
             this.playerOneSpawn = false;
         }
 
-        if (me.input.isKeyPressed('q') && this.playerTwoSpawn == false) {
+        if (me.input.isKeyPressed('a') && this.playerTwoSpawn == false) {
             this.playerTwoSpawn = true;
             var settings = {
+                // the width of the path
+                width: 784,
+                height: 100,
+                // the size of the entity
+                framewidth: 48,
+                frameheight: 48,
+                // direction
+                queueGroup: "queue_front",
+                // which player spawned
+                player: 2,
+                shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
+            }
+
+            var settingssm = {
                 // the width of the path
                 width: 784,
                 height: 100,
@@ -64,25 +77,18 @@ game.PlayerEntity = me.Entity.extend({
                 framewidth: 32,
                 frameheight: 32,
                 // direction
-                lane: "top",
+                queueGroup: "queue_front",
                 // which player spawned
                 player: 2,
                 shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
             }
             
-            me.game.world.addChild(me.pool.pull("top", 752, 16, warrior, settings), 1);
-        } else if (!me.input.isKeyPressed('q')) {
+            me.game.world.addChild(me.pool.pull("units", 0, 160, minotaur, settings), 10);
+            me.game.world.addChild(me.pool.pull("units", 0, 160, rogue, settingssm), 10);
+        } else if (!me.input.isKeyPressed('a')) {
             this.playerTwoSpawn = false;
         }
-        
-        if (me.input.isKeyPressed('r') && this.qPressed == false) {
-            this.qPressed = true;
-            
-        } else if (!me.input.isKeyPressed('q')) {
-            this.qPressed = false;
-            
-        }
-        
+
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
 
@@ -104,24 +110,13 @@ game.PlayerEntity = me.Entity.extend({
 });
 
 //Units that are spawned into action
-
 game.Units = me.Entity.extend({
     init : function (x, y, unit, settings) {
-        var width = settings.width;
-        var height = settings.height;
         settings.image = unit.image;
         
         this._super(me.Entity, 'init', [x, y, settings, unit]);
-        
-        // start/end position
-        y = this.pos.y;
-        x = this.pos.x;
-        this.startX = x;
-        this.endX = x + width - settings.framewidth;
-        this.startY = y;
 
-        // end is hardcoded for now
-        this.endY = 16;
+        // set up unit stats
         this.combat = false;
         this.hp = (unit.hp + game.data.hpBoost) * game.data.sfHealth;
         this.maxHp = unit.maxHp;
@@ -137,19 +132,38 @@ game.Units = me.Entity.extend({
         this.targetedBy = [];                               // targeted by queue is empty
         this.hit = false;                                   // unit not performed an attack yet
         this.path = 0;
-        this.gogetem = 1;
-        
-        // set the spawn point
-        this.spawnPoint = "top";
+        this.type = "unit";
 
-        
-        this.walkRight = false;
-        this.walkUp = false;
+        // astar stats
+        this.target_destination = null;
+        this.myPath = [];
+        this.dest = null;
+        this.lastPos =  {x: -1, y: -1};
+        this.pathAge = 0;
 
-        this.body.setVelocity(1,1);
+        // setup unit speeds
+        var speed = Math.pow(2, -Math.abs(this.speed/5));
+        this.body.setVelocity(this.speed, this.speed);                                                                                      // speed 8 = 0.35
+        this.body.setMaxVelocity(this.speed, this.speed);                                                                                     // speed 8 = 3.5
+        this.body.setFriction(speed, speed);
+
+        this.hpBarCurrent = new me.Font("Verdana", 11, "green");
+        this.hpBarCurrent.lineWidth = 1;
+        this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
         
-        // follow position
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        this.idle = true;
+        this.queueGroup = settings.queueGroup;
+
+        // player 1 is green hp bar, 2 is red hp bar
+        if (this.player == 1) {
+            this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
+        } else {
+            this.hpBarCurrent.fillStyle = new me.Color(255, 0, 0, 50);
+        }
+        this.hpBarMax = new me.Font("Verdana", 11, "black");
+        this.hpBarMax.alpha = 0.5;
+        // DO NOT follow position
+//        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         this.alwaysUpdate = true;
         
@@ -163,7 +177,7 @@ game.Units = me.Entity.extend({
         // define walking animation
         this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
         // define attacking animation
-        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
+        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], (1200 / this.speed));                 // 18.75 attackspeed multiplier
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
         this.renderable.setAnimationFrame();
@@ -176,56 +190,151 @@ game.Units = me.Entity.extend({
         } else {
             this.body.collisionType = me.collision.types.NO_OBJECT;
         }
-        
-        
-        // which way is the unit facing when spawned
-        this.facing = "north";
+    },
 
-        this.buildTime = (unit.buildTime - game.data.btBoost)* game.data.sfBuildTime;
-        this.qAssignment = unit.qAssignment;
+    chessboard: function() {
+        // return chessboard distance to target
+     //   return Math.max( Math.abs(this.collisionBox.left - this.target.collisionBox.left), Math.abs(this.collisionBox.top - this.target.collisionBox.top));
+        return Math.max( Math.abs(this.pos._x - this.target_destination.pos._x), Math.abs(this.pos._y - this.target_destination.pos._y));
+    },
 
+    // use draw function to draw hp bar
+    draw : function(renderer) {
+        var unitHp = "";
+        var percent = this.hp / this.maxHp * 100;
+        
+        if (percent >= 80) {
+            unitHp += "▄"
+        }
+        if (percent >= 60) {
+            unitHp += "▄"
+        }
+        if (percent >= 40) {
+            unitHp += "▄"
+        }
+        if (percent >= 20) {
+            unitHp += "▄"
+        }
+        if (percent >= 0) {
+            unitHp += "▄"
+        }
+
+        this._super(me.Entity, "draw", [renderer]);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x-4, this.pos.y-20);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
     },
     
   /**
    * update the enemy pos
    */
     update : function (dt) {
+        if (this.target_destination != null) {
+            if (this.target_destination.alive == false) {
+                this.target_destination = null;
+            }
+        }
         // check if alive first
         if (this.hp <= 0 && this.alive) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
+            if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
+                this.renderable.setCurrentAnimation("dying");
+                this.renderable.setAnimationFrame();
+            }
         }
+
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
-        // set up the walking conditions for all units
-            if (this.spawnPoint == "top") {
-                if (this.path == 0) {
-                    if (this.player == 1) {
-                        this.body.vel.y += -this.body.accel.y * me.timer.tick;
-                        this.body.vel.x = 0;
-                    } else {
-                        this.body.vel.y = 0;
-                        this.body.vel.x -= this.body.accel.x * me.timer.tick;
-                        this.renderable.flipX(true);
-                    }
-                }
-                else if (this.path == 1) {
-                    if (this.player == 1) {
-                        this.body.vel.y = 0;
-                        this.body.vel.x += this.body.accel.x * me.timer.tick;
-                        this.renderable.flipX(false);
-                    } else {
-                        this.body.vel.y += this.body.accel.y * me.timer.tick;
-                        this.body.x = 0;
+            var now = Date.now();
+            if (this.target_destination == null) {
+                var closest = Number.MAX_VALUE;
+                var temp_destination;
+                for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+                    if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
+                        temp_destination = this.target_destination;
+                        this.target_destination = me.game.world.children[i];
+                        if (this.chessboard() <= closest) {
+                            closest = this.chessboard();
+                        } else {
+                            this.target_destination = temp_destination;
+                        }
                     }
                 }
             }
-            
-            if (!this.renderable.isCurrentAnimation("walk")) {
-                this.renderable.setCurrentAnimation("walk");
-                this.renderable.setAnimationFrame();
-            } 
+
+
+            if (this.idle == true) {
+                for (var i = 0; i < me.game.world.children.length; i++) {
+                    if (me.game.world.children[i].name === this.queueGroup) {
+                        this.target_destination = me.game.world.children[i];
+                    }
+                }
+            }
+
+            if (this.target_destination != null) {
+                var cbdist = this.chessboard();
+            }
+
+            if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
+                // not moving anywhere
+                // friction takes over
+                if (this.target_destination != null) {
+
+                    this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
+                    this.dest = this.myPath.pop();
+                    this.pathAge = now;
+                }
+            } else if (this.target_destination != null) {
+                // if the unit is close enough
+                if (this.chessboard() < 1000) {                                                                              // DISTANCE FROM THIS UNIT (500)
+                    if (!this.renderable.isCurrentAnimation("walk")) {
+                        this.renderable.setCurrentAnimation("walk");
+                        this.renderable.setAnimationFrame();
+                    }
+                    // just go for it
+                    this.dest = this.target_destination;
+                    this.pathAge = now-5000;
+    //            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
+    //                // TODO - do this with non constant, add some fuzz factor
+                } else {    // if the unit is not close enough to target destination, just stand there
+                    this.body.vel.x = 0;
+                    this.body.vel.y = 0;
+
+                    if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                        this.renderable.setCurrentAnimation("stand");
+                        this.renderable.setAnimationFrame();
+                    }
+                }
+                if (this.dest != null) {
+                    //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+                    //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+                    // move based on next position
+
+                    var xdiff = this.dest.pos.x - this.pos.x;
+                    var ydiff = this.dest.pos.y - this.pos.y;
+
+                    if (xdiff < -2) {
+                        this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                        this.lastPos.x = this.body.pos.x;
+                        this.renderable.flipX(true);
+                    } else if (xdiff > 2) {
+                        this.body.vel.x += this.body.accel.x * me.timer.tick;
+                        this.lastPos.x = this.body.pos.x;
+                        this.renderable.flipX(false);
+                    }
+
+                    if (ydiff < -2) {
+                        this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                        this.lastPos.y = this.body.pos.y;
+                    } else if (ydiff > 2) {
+                        this.body.vel.y += this.body.accel.y * me.timer.tick;
+                        this.lastPos.y = this.body.pos.y;
+                    }
+                }
+            }
+
         // if unit is dead
         } else if (!this.alive) {
             // when this unit dies, remove itself from the game
@@ -261,16 +370,13 @@ game.Units = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
-                    //console.log(this.target[0].renderable.flicker(500));
+                    this.target[0].renderable.flicker(500)
                     this.target[0].hp -= battle(this, this.target[0]);
-                    //console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
                     this.hit = false;
                 }
-            }
-            else {
-                this.combat = false;
             }
         }
 
@@ -280,6 +386,15 @@ game.Units = me.Entity.extend({
                 this.body.update(dt);
                 me.collision.check(this);
                 this.body.setVelocity(1,1);
+        }
+
+        if (this.target_destination == null) {
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                this.renderable.setCurrentAnimation("stand");
+                this.renderable.setAnimationFrame();
+            }
         }
 
         // return true if we moved or if the renderable was updated
@@ -292,7 +407,8 @@ game.Units = me.Entity.extend({
     */
     onCollision : function (response, other) {
     // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
-        if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE && response.a.player !== response.b.player) {
+        if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
+            && response.a.player !== response.b.player && response.b.player != undefined) {
         this.body.setVelocity(0,0);
         this.body.vel.x = 0;
         this.body.vel.y = 0;
@@ -328,8 +444,25 @@ game.Units = me.Entity.extend({
             this.path++;
             return true;
         }
-        
 
+        return false;
+    }
+});
+
+game.QueueArea = me.Entity.extend({
+    init:function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y , settings]);
+
+        this.body.collisionType = me.collision.types.NO_OBJECT;
+    },
+
+    update : function (dt) {
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+
+    onCollision : function (response, other) {
+        console.log("touching");
         return false;
     }
 });
@@ -378,10 +511,11 @@ game.Warrior = me.Entity.extend({
         this.combat = false;
         this.hit = false;
         this.name = "TEST_WARRIOR";
-        this.player = 1;
+    //    this.player = 1;
         this.target = [];
         this.targetedBy = [];
-        
+        this.gogetem = 1;
+
         // define standing animation, use all frames
         this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
                                                     11, 12, 13, 14, 15, 16, 17, 18, 19]);
@@ -399,7 +533,7 @@ game.Warrior = me.Entity.extend({
         // set this collision type as ME
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         // set collision types
-        this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
+     //   this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
         
         
         this.facing = "north";
@@ -410,7 +544,7 @@ game.Warrior = me.Entity.extend({
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.renderable.flipX(true);
-           
+            endQueue();
             // update the entity velocity
             this.body.vel.x -= this.body.accel.x * me.timer.tick;
 
@@ -420,6 +554,7 @@ game.Warrior = me.Entity.extend({
                 this.renderable.setAnimationFrame();
                 }
         } else if (me.input.isKeyPressed('right')) {
+
             // unflip the sprite
             this.renderable.flipX(false);
 
@@ -493,10 +628,6 @@ game.Warrior = me.Entity.extend({
                 this.pos.y--;                                                   // prevent passing through
             }
         }
-        
-    
-    
-    
     // if something that is an enemy touches this unit
         if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
             // if something touches this entity while its alive...
@@ -516,7 +647,7 @@ game.Warrior = me.Entity.extend({
             }
           return false;
         } else {
- //           console.log("I AM TOUCHING SOMETHING ELSE ewww");
+ //           console.log("I AM TOUCHING SOMETHING ELSE");
             return true;
         }
         // Make all other objects solid
@@ -591,7 +722,7 @@ game.ChaserEntity = me.Entity.extend({
                 //console.log(this.dest);
             }
         } else {
-            if (this.chessboard() < 500) {
+            if (this.chessboard() < 500) {                                                                              // DISTANCE FROM THIS UNIT (500)
                 // just go for it
                 this.dest = this.target;
                 this.pathAge = now-5000;
@@ -669,18 +800,44 @@ game.ChaserEntity = me.Entity.extend({
 // takes the attacker object and defender object
 // do calculations, returns the amount of damage done
 // to the DEFENDER
+// todo: maybe shields for the building (?)
 function battle(attacker, defender) {
     var hpLost = 0;
-    if (attacker.attack - defender.def > 0) {
-        hpLost = attacker.attack - defender.def;
-        //console.log(defender.name + " : -" + hpLost + "hp");
+    var hitChance = Math.floor((Math.random() * 100) + 1);
+    if (hitChance <= attacker.hitPercent) {                                                 // if the attacker lands a hit
+        var dodgeChance = Math.floor((Math.random() * 100) + 1);
+        if (dodgeChance >= defender.dodge || defender.dodge == undefined) {                 // if the does not dodge
+            if (attacker.attack - defender.def > 0 || attacker.name == "Wizard") {
+                var critChance = Math.floor((Math.random() * 100) + 1);
+                if (critChance <= attacker.crit) {
+                    hpLost = (attacker.attack * 1.5) - defender.def;
+                    if (attacker.name == "Wizard") {
+                        hpLost = (attacker.attack * 1.5);
+                    }
+                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
+                } else {
+                    hpLost = attacker.attack - defender.def;
+                    if (attacker.name == "Wizard") {
+                        hpLost = attacker.attack;
+                    }
+                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
+                }
+            } else {
+                hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
+            }
+        } else if (dodgeChance <= defender.dodge && defender.dodge != undefined) {
+            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
+        }
+    } else {
+        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
     }
+
     return hpLost;
 }
 
 // stats passed for creating a unit class
-function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, image, cost) {
-    this.hp = hp; // (hp + game.data.hpBoost) * game.data.sfHealth;
+function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, name, image, cost) {
+    this.hp = hp;
     this.maxHp = hp;
     this.def = def;
     this.atk = atk;
@@ -691,16 +848,57 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, ima
     this.name = name;
     this.image = image;
     this.buildTime = buildTime;
+    this.crit = crit;
     this.qAssignment = -1;   // not assigned yet
-    this.cost = cost
+    this.cost = cost// add crit chance, 150% extra damage
+}
 
+/*
+ * 200 point distribution between HP/ATK/DEF/SPEED/HIT/DODGE/CRIT
+ *
+ * warrior:     HP = 72         ATK = 20        DEF = 12        SPEED = 8                       // cost = 1x
+ *              DODGE = 8       HIT = 75        CRIT = 5
+ *
+ * rogues:      HP = 50         ATK = 15        DEF = 5         SPEED = 15                      // cost = 1x
+ *              DODGE = 15      HIT = 90        CRIT = 10
+ *
+ * wizard:      HP = 40         ATK = 40        DEF = 2         SPEED = 8                       // cost = 1x
+ *              DODGE = 10      HIT = 98        CRIT = 0
+ *
+ * minotaur:    HP = 175        ATK = 50        DEF = 15        SPEED = 5                       // cost = 2x (300 point distribution allowed)
+ *              DODGE = 0       HIT = 50        CRIT = 5
+ *
+ */
+// Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, name, image)
+var slime = new Unit(10, 1, 3, 5, 90, 3, "unit", 3, 10, "Slime", "slime spritesheet calciumtrice_0", 100);           // weak, fast build time
+var rogue = new Unit(50, 5, 15, 15, 90, 15, "unit", 10, 10, "Rogue", "rogue spritesheet calciumtrice", 100);         // fast but weak
+var warrior = new Unit(72, 12, 20, 8, 75, 8, "unit", 5, 10, "Warrior", "warrior spritesheet calciumtrice", 100);       // decent hp/def/attack, but prone to missing and slow
+var wizard = new Unit(40, 2, 40, 8, 98, 10, "unit", 0, 10, "Wizard", "wizard spritesheet calciumtrice", 100);          // ignores defence/dodge chance, no chance for crit/slow
+var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minotaur spritesheet calciumtrice", 100);      // strong, slow, lots of hp, most likely to miss, best for buildings
+
+// todo:
+// maybe implement archers/cleric
+
+
+
+
+
+
+
+
+
+// end unit queueing
+function endQueue() {
+    for (i = 0; i < me.game.world.children.length; i++) {
+        if (me.game.world.children[i].idle == true) {
+            me.game.world.children[i].idle = false;
+            me.game.world.children[i].target_destination = null;
+        }
+    }
 }
 
 
-// Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, image)
-var slime = new Unit(10, 1, 3, 5, 90, 3, 1, 5, "Slime", "slime spritesheet calciumtrice_0", 100);
-var rogue = new Unit(15, 2, 10, 10, 98, 30, 2, 10, "Rogue", "rogue spritesheet calciumtrice", 100);
-var warrior = new Unit(10, 4, 5, 3, 70, 3, 3, 20, "Warrior", "warrior spritesheet calciumtrice", 100);
+
 
 
 
