@@ -677,9 +677,9 @@ function battle(attacker, defender) {
 
 // stats passed for creating a unit class
 function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, image) {
-    this.hp = (hp + game.data.hpBoost) * game.data.sfHealth;
+    this.hp = hp; // (hp + game.data.hpBoost) * game.data.sfHealth;
     this.maxHp = hp;
-    this.def = (def + game.data.defBoost) * game.data.sfArmor;
+    this.def = def;
     this.atk = (atk + game.data.atkBoost) * game.data.sfAtk;
     this.speed = (speed + game.data.speedBoost) * game.data.sfSpeed;
     this.hitPercent = hitPercent;

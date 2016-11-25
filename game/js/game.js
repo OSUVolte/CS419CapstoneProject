@@ -148,7 +148,8 @@ var game = {
         //Buildings
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.NUM2, "unit_defense", true);
+        me.input.bindKey(me.input.KEY.NUM2, "armourer", true);
+        me.input.bindKey(me.input.KEY.NUM3, "arsenal", true);
 
         //unknown
         me.input.bindKey(me.input.KEY.Q, "q", true);

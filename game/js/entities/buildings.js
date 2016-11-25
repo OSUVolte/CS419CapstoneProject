@@ -481,7 +481,7 @@ game.Barracks = game.Structures.extend({
 
 });
 
-game.UnitDefense = game.Structures.extend({
+game.Armourer = game.Structures.extend({
     /**
      * constructor
      */
@@ -494,7 +494,7 @@ game.UnitDefense = game.Structures.extend({
         this.placed = true;
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
-        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("TechCenter")}); //addimage
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Armourer")}); //addimage
     },
     /**
      * Defines all the properties of the building
@@ -587,7 +587,7 @@ game.UnitDefense = game.Structures.extend({
      * The Display pop up on the building
      */
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Tech Center Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Armor  Menu", this));
 
         if(this.tech1.enabled && this.functional && this.complete){
             this.panel.addChild(new game.UI.developTech(
@@ -624,10 +624,7 @@ game.UnitDefense = game.Structures.extend({
 
                 switch (this.q[0].action) {
                     case "inc_base":
-                        console.log("defBoost was", game.data.defBoost);
                         game.data.defBoost =  game.data.defBoost + this.q[0].value;
-                        console.log("qvalue", this.q[0].value);
-                        console.log("defBoost is now", game.data.defBoost);
                         //send a message
                         game.data.message = {
                             msgTime: me.timer.getTime(),
@@ -639,14 +636,18 @@ game.UnitDefense = game.Structures.extend({
                         this.q[0].complete = true;
 
                         break;
+
                     case "inc_health":
-                        game.data.hpBoost += this.q[0].value;
+                        game.data.hpBoost + game.data.hpBoost+ this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
                             msg: "Health Boosted by " + this.q[0].value,
                             msgDur: 4,
                             color: "blue"
                         };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
                         break;
 
                     case "inc_sf":
@@ -657,12 +658,12 @@ game.UnitDefense = game.Structures.extend({
                             msgDur: 4,
                             color: "blue"
                         };
+
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
                         break;
                 }
-                //todo move his to a new function remove techQ
-                // //update startTime of item in position 1 to now if there is
-                // if(this.q.length > 1)
-                //     this.q[1].startTime = now;
 
                 //remove it from the q
                 this.removeTechQ(0);
