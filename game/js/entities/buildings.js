@@ -115,7 +115,7 @@ game.Structures = me.Entity.extend({
      */
     addUnitQ: function(unit, queue){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+unit.name+" is being built", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+unit+" is being built", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         var time = new Date().getTime();
@@ -641,7 +641,7 @@ game.Armourer = game.Structures.extend({
                         break;
 
                     case "inc_health":
-                        game.data.hpBoost + game.data.hpBoost+ this.q[0].value;
+                        game.data.hpBoost = game.data.hpBoost + this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
                             msg: "Health Boosted by " + this.q[0].value,
@@ -730,7 +730,7 @@ game.Arsenal = game.Structures.extend({
             startTime: null,
             buildTime: 9,
             action: "inc_speed",
-            value: 25,
+            value: 5,
             cost:400,
             enabled:true,
             complete: false,
@@ -853,10 +853,10 @@ game.Arsenal = game.Structures.extend({
                         break;
 
                     case "inc_health":
-                        game.data.hpBoost + game.data.hpBoost+ this.q[0].value;
+                        game.data.speedBoost = game.data.speedBoost+ this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
-                            msg: "Health Boosted by " + this.q[0].value,
+                            msg: "Speed Boosted by " + this.q[0].value,
                             msgDur: 4,
                             color: "blue"
                         };
@@ -866,7 +866,7 @@ game.Arsenal = game.Structures.extend({
                         break;
 
                     case "inc_sf":
-                        game.data.sfArmor = this.q[0].value;
+                        game.data.sfAtk = this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
                             msg: "Scaling Factor Boosted by " + this.q[0].value,
