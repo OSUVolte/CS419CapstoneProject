@@ -151,7 +151,7 @@ game.Structures = me.Entity.extend({
      */
     addTechQ: function(techObj){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:""+techObj.name+ "is being Developed", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), msg:""+techObj.name+ " is being Developed", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         techObj.startTime = me.timer.getTime();
@@ -252,7 +252,7 @@ game.Structures = me.Entity.extend({
             if(( ctime - this.q[0].time)/1000 >= ubt){
 
                 //display message
-                game.data.message= {msgTime: me.timer.getTime(), msg:"Unit Complete", msgDur: 5, color:"green"};
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Unit Complete ", msgDur: 5, color:"green"};
 
                 //remove the first element in the queue
                 this.q.shift();
@@ -624,31 +624,38 @@ game.UnitDefense = game.Structures.extend({
 
                 switch (this.q[0].action) {
                     case "inc_base":
-                        game.defBoost += this.q[0].value;
+                        console.log("defBoost was", game.data.defBoost);
+                        game.data.defBoost =  game.data.defBoost + this.q[0].value;
+                        console.log("qvalue", this.q[0].value);
+                        console.log("defBoost is now", game.data.defBoost);
+                        //send a message
                         game.data.message = {
                             msgTime: me.timer.getTime(),
-                            msg: "Armor Boosted by" + this.q[0].value,
+                            msg: "Armor Boosted by " + this.q[0].value,
                             msgDur: 4,
-                            color: "Blue"
+                            color: "blue"
                         };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
                         break;
                     case "inc_health":
-                        game.hpBoost += this.q[0].value;
+                        game.data.hpBoost += this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
-                            msg: "Health Boosted by" + this.q[0].value,
+                            msg: "Health Boosted by " + this.q[0].value,
                             msgDur: 4,
-                            color: "Blue"
+                            color: "blue"
                         };
                         break;
 
                     case "inc_sf":
-                        game.sfArmor = this.q[0].value;
+                        game.data.sfArmor = this.q[0].value;
                         game.data.message = {
                             msgTime: me.timer.getTime(),
-                            msg: "Scaling Factor Boosted by" + this.q[0].value,
+                            msg: "Scaling Factor Boosted by " + this.q[0].value,
                             msgDur: 4,
-                            color: "Blue"
+                            color: "blue"
                         };
                         break;
                 }
@@ -658,15 +665,15 @@ game.UnitDefense = game.Structures.extend({
                 //     this.q[1].startTime = now;
 
                 //remove it from the q
-                this.removeUnitQ(0);
+                this.removeTechQ(0);
 
                 //Let them know what is next in development cycle
                 if (this.q.length > 0)
                     game.data.message = {
                         msgTime: me.timer.getTime(),
-                        msg: "Now developing" + this.q[0].name,
+                        msg: "Now developing " + this.q[0].name,
                         msgDur: 4,
-                        color: "Blue"
+                        color: "blue"
                     };
             }
         }

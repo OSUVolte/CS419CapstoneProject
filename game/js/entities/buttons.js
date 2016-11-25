@@ -457,6 +457,12 @@ game.UI.developTech = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y -= this.unclicked_region.height - this.height;
         this.height = this.unclicked_region.height;
+
+        //remove the button
+        this.destroy();
+
+        //replace it with text
+
         // don't propagate the event
         return false;
     },
