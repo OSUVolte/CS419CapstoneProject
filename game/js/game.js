@@ -87,7 +87,7 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto", scaleMethod: "flex"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -140,10 +140,9 @@ var game = {
         me.pool.register("units", game.Units, false);
 
         //buildings:
-
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("structures", game.Structures);
-        me.pool.register("Barracks", game.Structures);
+
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
