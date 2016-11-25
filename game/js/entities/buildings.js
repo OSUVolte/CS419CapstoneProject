@@ -590,7 +590,7 @@ game.Armourer = game.Structures.extend({
      * The Display pop up on the building
      */
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Armor  Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Armorour  Menu", this));
 
         if(this.tech1.enabled && this.functional && this.complete){
             this.panel.addChild(new game.UI.developTech(
@@ -799,7 +799,7 @@ game.Arsenal = game.Structures.extend({
      * The Display pop up on the building
      */
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Armor  Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Arsenal  Menu", this));
 
         if(this.tech1.enabled && this.functional && this.complete){
             this.panel.addChild(new game.UI.developTech(

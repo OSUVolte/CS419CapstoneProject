@@ -336,7 +336,8 @@ game.FootPrint = game.BuildingObject.extend({
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-               var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
+
+                var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
                     width: this.width,
                     height: this.height,
                     bounds: this.bounds,

@@ -43,10 +43,11 @@ var game = {
         },
 
         //tech
-        atkBoost: 0,
-        defBoost: 0,
-        btBoost: 0,
-        hpBoost: 0,
+        atkBoost: 0, //attack boost
+        defBoost: 0, // defence boost
+        btBoost: 0, //buildtime Boost
+        hpBoost: 0, //health boost
+        speedBoost: 0,
 
         //tech Scaling Factors
         //todo increase scale factor per level perhaps (ie player gets leveled up set by a conditional, and then this increases the scaling factor by .01 or something)
