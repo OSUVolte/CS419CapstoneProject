@@ -98,8 +98,8 @@ game.BuildingArea = me.Renderable.extend({
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-                    width: 300,
-                    height: 267,
+                    width: 190,
+                    height: 190,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "arsenal"
                 }), 10);
@@ -302,7 +302,7 @@ game.FootPrint = game.BuildingObject.extend({
         this.bounds = settings.bounds;
 
         // add a body shape
-        this.body.addShape(new me.Rect(0, 0, this.width, this.height));
+        this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
 
         //different sprite states determined by position of element
         this.renderable.addAnimation("neutral", [0]);

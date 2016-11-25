@@ -19,11 +19,17 @@ var game = {
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
+        /**
+         * Checks if user has enough moolah
+         * @param amt amount to be deducted
+         * @returns {boolean} true if deduction was successful
+         */
         cashier: function(amt){
-            if(playergold- amt < 0){
+            if(this.playergold- amt < 0){
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough money ", msgDur: 3, color:"red"};
                 return false
             }else{
-                playergold = playergold - amt;
+                this.playergold = this.playergold - amt;
             }
             return true;
         },

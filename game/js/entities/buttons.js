@@ -11,12 +11,13 @@ game.UI.UnitAdd = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, color, label, action) {
+    init: function(x, y, color, label, action, unit) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
             region : "addButton",
-            action: action,  //string
-            color: color
+            unitName: action,  //string
+            color: color,
+            unit:unit
         } ]);
 
         // offset of the two used images in the texture
@@ -31,8 +32,8 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         this.font.textBaseline = "middle";
 
         this.label = label;
-        this.action = action;
-
+        this.unitName = action;
+        this.unit = unit;
         //this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
@@ -48,12 +49,8 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
         this.height = this.clicked_region.height;
-        console.log("hitting button " + this.action);
+        this.action();
 
-        var parent = me.game.getParentContainer(this);
-        parent.building.addUnitQ(this.action, parent.building.activeQ);
-
-        //parent.spawnUnit(this.action);
         // don't propagate the event
         return false;
     },
@@ -77,6 +74,12 @@ game.UI.UnitAdd = me.GUI_Object.extend({
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
+    },
+    action: function(){
+        if (game.data.cashier(this.unit.cost)){
+            var parent = me.game.getParentContainer(this);
+            parent.building.addUnitQ(this.unitName, parent.building.activeQ);
+        }
     }
 });
 /**
@@ -481,11 +484,13 @@ game.UI.developTech = me.GUI_Object.extend({
     action: function(value){
 
         //todo deduct player money msg if not allowed!!!!!
+        if (game.data.cashier(this.tech.cost)){
 
-        //add it to the buildings q
-        var parent = me.game.getParentContainer(this);
-        parent.building.addTechQ(value);
-        this.tech.inProcess = true;
+            //add it to the buildings q
+            var parent = me.game.getParentContainer(this);
+            parent.building.addTechQ(value);
+            this.tech.inProcess = true;
+        }
 
     }
 });

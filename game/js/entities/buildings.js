@@ -104,7 +104,7 @@ game.Structures = me.Entity.extend({
             // which player spawned
             player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
-        }), 10); //todo not sure about z index
+        }), 10);
         console.log("Assigned to q", newUnit)
     },
     /**
@@ -113,9 +113,9 @@ game.Structures = me.Entity.extend({
      * @param queue snumber fo the queue
      * Returnes true if added
      */
-    addUnitQ: function(type, queue){
+    addUnitQ: function(unit, queue){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+type+" is being built", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+unit.name+" is being built", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         var time = new Date().getTime();
@@ -128,7 +128,7 @@ game.Structures = me.Entity.extend({
         //an obj with the time it was added and the type of element
         var qObj = {
             time: time,
-            type: type,
+            type: unit,
             queue: queue
         };
         console.log(qObj);
@@ -223,15 +223,6 @@ game.Structures = me.Entity.extend({
         }
         return false
     },
-    /**
-     * Gets the Amount of time until the next Unit will spawn
-     * @param q
-     */
-    tNext: function(q){
-
-
-    },
-
     /**
      * Actions to be taken when the unit build is complete
      * @param dt the current time
@@ -421,26 +412,29 @@ game.Barracks = game.Structures.extend({
 
         if(this.enabled.type1 && this.complete && this.functional){
             this.panel.addChild(new game.UI.UnitAdd(
-                20, 40,
+                20, 45,
                 "white",
                 "Add Warrior",
-                "warrior"// default
+                "warrior",// default
+                warrior
             ),110);
         }
         if(this.enabled.type2 && this.complete && this.functional) {
             this.panel.addChild(new game.UI.UnitAdd(
-                20, 90,
+                20, 80,
                 "white",
                 "Add Slime", // default
-                "slime"
+                "slime",
+                slime
             ), 110);
         }
         if(this.enabled.type3 && this.complete && this.functional) {
             this.panel.addChild(new game.UI.UnitAdd(
-                20, 140,
+                20, 115,
                 "white",
                 "Add Rogue", // default
-                "rogue"
+                "rogue",
+                rogue
             ), 110);
         }
         if(this.q.length > 0 && this.complete) {
@@ -691,7 +685,7 @@ game.Armourer = game.Structures.extend({
 
 });
 
-game.Asenal = game.Structures.extend({
+game.Arsenal = game.Structures.extend({
     /**
      * constructor
      */
