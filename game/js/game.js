@@ -19,6 +19,15 @@ var game = {
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
+        cashier: function(amt){
+            if(playergold- amt < 0){
+                return false
+            }else{
+                playergold = playergold - amt;
+            }
+            return true;
+        },
+
         //Used for displaying messages on the screen
         message: {
             msgTime: 0, //time message was entered

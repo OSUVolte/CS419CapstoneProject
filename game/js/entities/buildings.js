@@ -364,8 +364,8 @@ game.Barracks = game.Structures.extend({
         //the types of units that this building can build
         this.enabled = {
             type1:true,
-            type2: false,  //set these via game conditionals
-            type3: false  //' etc etc //todo add all unit types
+            type2: true,  //set these via game conditionals
+            type3: true  //' etc etc //todo add all unit types
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
@@ -514,8 +514,11 @@ game.Armourer = game.Structures.extend({
             buildTime: 6,
             action: "inc_base",
             value: 25,
+            cost: 100,
             enabled:true,
-            complete: false
+            complete: false,
+            inProcess: false
+
         };
 
         this.tech2 = {
@@ -524,8 +527,11 @@ game.Armourer = game.Structures.extend({
             buildTime: 9,
             action: "inc_health",
             value: 25,
-            enabled:false,
-            complete: false
+            cost:400,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
         };
 
         this.tech3 = {
@@ -534,8 +540,11 @@ game.Armourer = game.Structures.extend({
             buildTime: 12,
             action: "inc_sf",
             value: 1.25,
-            enabled:false,
-            complete: false
+            cost: 1000,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
         };
         this.fullhealth = 1000;
         this.health = this.fullhealth;
@@ -682,7 +691,7 @@ game.Armourer = game.Structures.extend({
 
 });
 
-game.Attack = game.Structures.extend({
+game.Asenal = game.Structures.extend({
     /**
      * constructor
      */
@@ -695,7 +704,7 @@ game.Attack = game.Structures.extend({
         this.placed = true;
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
-        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("TechCenter")}); //addimage
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Arsenal")}); //addimage
     },
     /**
      * Defines all the properties of the building
@@ -710,33 +719,41 @@ game.Attack = game.Structures.extend({
 
         //the types of  tech that this building can build
         this.tech1 = {
-            name: "Inc. Armor 25",
+            name: "Inc. Attack 25",
             startTime: null, // set when button is pressed
-            buildTime: 60,
+            buildTime: 6,
             action: "inc_base",
             value: 25,
+            cost: 100,
             enabled:true,
-            complete: false
+            complete: false,
+            inProcess: false
+
         };
 
         this.tech2 = {
-            name: "Inc. Health 25",
+            name: "Inc. speed 25",
             startTime: null,
-            buildTime: 90,
-            action: "inc_health",
+            buildTime: 9,
+            action: "inc_speed",
             value: 25,
-            enabled:false,
-            complete: false
+            cost:400,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
         };
 
         this.tech3 = {
-            name: "Inc. Armor Scaling 1.25",
+            name: "Inc. Attack Scaling 1.25",
             startTime: null,
-            buildTime: 120,
+            buildTime: 12,
             action: "inc_sf",
             value: 1.25,
-            enabled:false,
-            complete: false
+            cost: 1000,
+            enabled:true,
+            complete: false,
+            inProcess: false
         };
         this.fullhealth = 1000;
         this.health = this.fullhealth;
@@ -788,13 +805,12 @@ game.Attack = game.Structures.extend({
      * The Display pop up on the building
      */
     displayStatus: function(){
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Tech Center Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Armor  Menu", this));
 
         if(this.tech1.enabled && this.functional && this.complete){
             this.panel.addChild(new game.UI.developTech(
                 20, 40,
                 "white", //text color
-                //"inc_base", // function to call - determined by switch in developTech
                 this.tech1  // the amount to change
             ),110);
         }
@@ -802,7 +818,6 @@ game.Attack = game.Structures.extend({
             this.panel.addChild(new game.UI.developTech(
                 20, 90,
                 "white",
-                //"inc_health",
                 this.tech2
             ), 110);
         }
@@ -810,46 +825,80 @@ game.Attack = game.Structures.extend({
             this.panel.addChild(new game.UI.developTech(
                 20, 140,
                 "white",
-                //"inc_sf",
                 this.tech3
             ), 110);
         }
 
     },
 
-    developTech: function (now){
+    developTech: function (now) {
 
         //check front of q for finished tech
-        if((now - this.q[0].startTime)/1000 >=  this.q[0].buildTime){
-            //apply the item
-            //Armory applies to all units
+        if (this.q.length > 0) {
+            if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
+                console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
+                //apply the item
+                //Armory applies to all units
 
-            switch(q[i].action){
-                case inc_base:
-                    game.defBoost += q[0].value;
-                    game.data.message= {msgTime: me.timer.getTime(), msg:"Armor Boosted by"+ q[0].value, msgDur: 4, color:"Blue"};
-                    break;
-                case inc_health:
-                    game.hpBoost += q[0].value;
-                    game.data.message= {msgTime: me.timer.getTime(), msg:"Health Boosted by"+ q[0].value, msgDur: 4, color:"Blue"};
-                    break;
+                switch (this.q[0].action) {
+                    case "inc_base":
+                        game.data.atkBoost =  game.data.atkBoost + this.q[0].value;
+                        //send a message
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Attack Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
 
-                case inc_sf:
-                    game.sfArmor = q[0].value;
-                    game.data.message= {msgTime: me.timer.getTime(), msg:"Scaling Factor Boosted by"+ q[0].value, msgDur: 4, color:"Blue"};
-                    break;
+                        //todo deduct player money
+
+
+                        break;
+
+                    case "inc_health":
+                        game.data.hpBoost + game.data.hpBoost+ this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Health Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+
+                    case "inc_sf":
+                        game.data.sfArmor = this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Scaling Factor Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+                }
+
+                //remove it from the q
+                this.removeTechQ(0);
+
+                //Let them know what is next in development cycle
+                if (this.q.length > 0)
+                    game.data.message = {
+                        msgTime: me.timer.getTime(),
+                        msg: "Now developing " + this.q[0].name,
+                        msgDur: 4,
+                        color: "blue"
+                    };
             }
-
-            //update startTime of item in postion 1 to now
-            q[1].startTime = now;
-
-            //remove it from the q
-            this.removeUnitQ(0);
-            if(this.q.length > 0)
-                game.data.message= {msgTime: me.timer.getTime(), msg:"Now developing"+ q[0].name, msgDur: 4, color:"Blue"};
-
         }
-
     }
 
 });

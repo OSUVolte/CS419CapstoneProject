@@ -422,7 +422,7 @@ game.UI.developTech = me.GUI_Object.extend({
         this.font.textBaseline = "middle";
 
         this.tech = tech;
-        console.log("What Tech?", this.tech);
+
         //this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
@@ -440,7 +440,9 @@ game.UI.developTech = me.GUI_Object.extend({
         this.height = this.clicked_region.height;
         //console.log("hitting button " + this.tech);
 
-        if(!this.tech.complete) {
+        //todo make only one click of button allowed
+
+        if(!this.tech.complete && !this.tech.inProcess) {
             this.action(this.tech);
         }else{
             game.data.message= {msgTime: me.timer.getTime(), msg:"This upgrade is already developed ", msgDur: 2, color:"red"};
@@ -470,7 +472,7 @@ game.UI.developTech = me.GUI_Object.extend({
     draw: function(renderer) {
         this._super(me.GUI_Object, "draw", [ renderer ]);
         this.font.draw(renderer,
-            "test",
+            this.tech.name,
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );
@@ -478,9 +480,12 @@ game.UI.developTech = me.GUI_Object.extend({
     //What happens when button is pressed
     action: function(value){
 
+        //todo deduct player money msg if not allowed!!!!!
+
         //add it to the buildings q
         var parent = me.game.getParentContainer(this);
         parent.building.addTechQ(value);
+        this.tech.inProcess = true;
 
     }
 });

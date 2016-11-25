@@ -70,7 +70,7 @@ game.BuildingArea = me.Renderable.extend({
             console.log(game.data.playergold);
             this.isPlacing = false;
 
-        //What to do if building and type Armory
+        //What to do if building and type Armourer
         }else if (this.isPlacing == true && me.input.isKeyPressed("armourer")) {
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
@@ -81,6 +81,27 @@ game.BuildingArea = me.Renderable.extend({
                     height: 96,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "armourer"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+
+            }
+            console.log(game.data.playergold);
+            this.isPlacing = false;
+
+        }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
+
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                    width: 300,
+                    height: 267,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "arsenal"
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -327,7 +348,7 @@ game.FootPrint = game.BuildingObject.extend({
             }
         }
         if(this.type == "armourer") {
-            //console.log("positioningbarracks:", this.pos.x, this.pos.y);
+
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
                 var newBldg =  me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, {
@@ -335,6 +356,21 @@ game.FootPrint = game.BuildingObject.extend({
                     height: this.height,
                     bounds: this.bounds,
                     type: "armourer"
+                }), 10);
+
+                // me.game.  addStructure(newBldg) // add the building to the array of structures
+                return true;
+            }
+        }
+        if(this.type == "arsenal") {
+
+            //todo disallow placement when not enough money to build
+            if (this.checkPosition()) {
+                var newBldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, {
+                    width: this.width,
+                    height: this.height,
+                    bounds: this.bounds,
+                    type: "arsenal"
                 }), 10);
 
                 // me.game.  addStructure(newBldg) // add the building to the array of structures
