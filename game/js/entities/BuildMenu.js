@@ -65,18 +65,139 @@ game.BarracksButton = me.Entity.extend({
 		// close  building menu
 		me.game.world.removeChild(game.data.menu_background);
 		me.game.world.removeChild(game.data.barracksbutton);
+		me.game.world.removeChild(game.data.armourerbutton);
+		me.game.world.removeChild(game.data.arsenalbutton);
 		game.data.isBuildMenuOpen = false;
 		// don"t propagate the event furthermore
 		return false;
 	},
 
 	update: function () {
-		console.log("update buildmenu");
 		return true;
 	},
 
 	onDeactivateEvent: function() {
 		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+		me.input.releasePointerEvent("pointerdown", this);
+		me.input.releasePointerEvent("pointerup", this);
+		me.input.releasePointerEvent("pointercancel", this);
+	}
+
+});
+
+//Armourer Button on the Build BuildMenu
+game.ArmourerButton = me.Entity.extend({
+	init: function(x, y, settings) {
+		this._super(me.Entity, "init", [x, y, {
+			image: "armourerbutton",
+			width: 60,
+			height: 45,
+			spritewidth: "60",
+			spriteheight: "45",
+			getShape: function() {
+				return (new me.Rect(0, 0, 60, 45)).toPolygon();
+			}
+		}]);
+		this.floating = true;
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+
+	},
+	onActivateEvent: function () {
+		me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+	},
+
+	//callback for mouse click
+	onMouseDown: function() {
+		console.log("armourerbutton pressed!");
+		me.input.triggerKeyEvent(me.input.KEY.NUM2, true);
+		return false;
+	},
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+
+		//trigger the event
+		//me.input.triggerKeyEvent(me.input.KEY.B, false);
+		me.input.triggerKeyEvent(me.input.KEY.NUM2, false);
+
+		// close  building menu
+		me.game.world.removeChild(game.data.menu_background);
+		me.game.world.removeChild(game.data.barracksbutton);
+		me.game.world.removeChild(game.data.armourerbutton);
+		me.game.world.removeChild(game.data.arsenalbutton);
+		game.data.isBuildMenuOpen = false;
+		// don"t propagate the event furthermore
+		return false;
+	},
+
+	update: function () {
+		return true;
+	},
+
+	onDeactivateEvent: function() {
+		me.input.triggerKeyEvent(me.input.KEY.NUM2, false);
+		me.input.releasePointerEvent("pointerdown", this);
+		me.input.releasePointerEvent("pointerup", this);
+		me.input.releasePointerEvent("pointercancel", this);
+	}
+
+});
+
+//Arsenal Button on the Build BuildMenu
+game.ArsenalButton = me.Entity.extend({
+	init: function(x, y, settings) {
+		this._super(me.Entity, "init", [x, y, {
+			image: "arsenalbutton",
+			width: 60,
+			height: 53,
+			spritewidth: "60",
+			spriteheight: "53",
+			getShape: function() {
+				return (new me.Rect(0, 0, 60, 53)).toPolygon();
+			}
+		}]);
+		this.floating = true;
+		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+
+	},
+	onActivateEvent: function () {
+		me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+	},
+
+	//callback for mouse click
+	onMouseDown: function() {
+		console.log("arsenalbutton pressed!");
+		me.input.triggerKeyEvent(me.input.KEY.NUM3, true);
+		return false;
+	},
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+
+		//trigger the event
+		//me.input.triggerKeyEvent(me.input.KEY.B, false);
+		me.input.triggerKeyEvent(me.input.KEY.NUM3, false);
+
+		// close  building menu
+		me.game.world.removeChild(game.data.menu_background);
+		me.game.world.removeChild(game.data.barracksbutton);
+		me.game.world.removeChild(game.data.armourerbutton);
+		me.game.world.removeChild(game.data.arsenalbutton);
+		game.data.isBuildMenuOpen = false;
+		// don"t propagate the event furthermore
+		return false;
+	},
+
+	update: function () {
+		return true;
+	},
+
+	onDeactivateEvent: function() {
+		me.input.triggerKeyEvent(me.input.KEY.NUM3, false);
 		me.input.releasePointerEvent("pointerdown", this);
 		me.input.releasePointerEvent("pointerup", this);
 		me.input.releasePointerEvent("pointercancel", this);
