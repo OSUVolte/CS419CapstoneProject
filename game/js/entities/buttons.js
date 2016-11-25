@@ -476,7 +476,7 @@ game.UI.developTech = me.GUI_Object.extend({
         this._super(me.GUI_Object, "draw", [ renderer ]);
         this.font.draw(renderer,
             this.tech.name,
-            this.pos.x + this.width / 2,
+            this.pos.x +10,
             this.pos.y + this.height / 2
         );
     },
