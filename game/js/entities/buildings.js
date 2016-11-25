@@ -18,6 +18,21 @@ game.Structures = me.Entity.extend({
         this.allowBuild = false;
         this.complete = false;
         this.functional = false;
+        this.player =1;
+
+        //properties for health bar
+        this.hpBarCurrent = new me.Font("Verdana", 11, "green");
+        this.hpBarCurrent.lineWidth = 1;
+        this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
+        // player 1 is green hp bar, 2 is red hp bar
+        if (this.player == 1) {
+            this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
+        } else {
+            this.hpBarCurrent.fillStyle = new me.Color(255, 0, 0, 50);
+        }
+        this.hpBarMax = new me.Font("Verdana", 11, "black");
+        this.hpBarMax.alpha = 0.5;
+
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -298,7 +313,7 @@ game.Structures = me.Entity.extend({
             }
 
             //Disable building if not healthy enough
-            if(this.health > 0.5*this.fullhealth){
+            if(this.health > 0.5*this.fullHealth){
                 this.functional = true;
             }
         }
@@ -309,6 +324,31 @@ game.Structures = me.Entity.extend({
         }
 
         return this._super(me.Entity, 'update', [dt]);
+    },
+    draw : function(renderer) {
+        var unitHp = "";
+        var percent = this.health / this.fullHealth * 100;
+
+        if (percent >= 80) {
+            unitHp += "▄"
+        }
+        if (percent >= 60) {
+            unitHp += "▄"
+        }
+        if (percent >= 40) {
+            unitHp += "▄"
+        }
+        if (percent >= 20) {
+            unitHp += "▄"
+        }
+        if (percent >= 0) {
+            unitHp += "▄"
+        }
+
+        this._super(me.Entity, "draw", [renderer]);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y-20);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
     },
     /**
      * Logging of some specific variables to help with trouble shooting
@@ -359,8 +399,8 @@ game.Barracks = game.Structures.extend({
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
-        this.fullhealth = 1000;
-        this.health = this.fullhealth;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
     },
@@ -499,8 +539,8 @@ game.Armourer = game.Structures.extend({
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
-        this.fullhealth = 1000;
-        this.health = this.fullhealth;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
@@ -709,8 +749,8 @@ game.Arsenal = game.Structures.extend({
         this.percentComplete = 0;
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
-        this.fullhealth = 1000;
-        this.health = this.fullhealth;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
