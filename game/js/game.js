@@ -13,6 +13,8 @@ var game = {
         //Build menu
         buildbutton: "",
         barracksbutton: "",
+        armourerbutton: "",
+        arsenalbutton: "",
         menu_background: "",
         isBuildMenuOpen: false,
 
@@ -148,6 +150,8 @@ var game = {
         me.pool.register("menu_background", game.BuildMenu, true);
         me.pool.register("buildbutton", game.BuildButton, true);
         me.pool.register("barracksbutton", game.BarracksButton, true);
+        me.pool.register("armourerbutton", game.ArmourerButton, true);
+        me.pool.register("arsenalbutton", game.ArsenalButton, true);
         me.pool.register("build_menu", game.BuildingStatus, true);
 
         //player Postions
