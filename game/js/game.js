@@ -5,7 +5,7 @@ var game = {
     // an object where to store game information
     data : {
         // score
-        score : 0,
+        score: 0,
         gametime: 0,
         currentwave: 0,
         waveduration: 15, //set to 15 seconds for testing
@@ -19,40 +19,49 @@ var game = {
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
-
         //Used for displaying messages on the screen
         message: {
-            msgTime : 0, //time message was entered
+            msgTime: 0, //time message was entered
             msg: "",
             dur: 10, // duration of the message
             color: "black"
         },
 
+        //tech
+        atkBoost: 0,
+        defBoost: 0,
+        btBoost: 0,
+        hpBoost: 0,
 
-        //If this then that happens in the game:
-        conditionals : {
+        //tech Scaling Factors
+        //todo increase scale factor per level perhaps (ie player gets leveled up set by a conditional, and then this increases the scaling factor by .01 or something)
+        sfArmor: 1,
+        sfSpeed: 1,
+        sfHealth: 1,
+        sfAtk: 1,
+        sfBuildTime: 1
 
-            //time at which q one will be released
-            waveTime: function () {
+    },
+    //If this then that happens in the game:
+    conditionals : {
 
-            },
-            /**
-             * BUILDING RELATED
-             */
-            //When will  building of type2 (rogue) entities be allowed
-            //when player has x units in play, and gold greater than unit cost
-            type2Allowed: function () {
+        //time at which q one will be released
+        waveTime: function () {
 
-            },
-            //When will  building of type3 (slime) entities be allowed
-            //when player has x units in play, and gold greater than unit cost
-            type3Allowed: function () {
+        },
+        /**
+         * BUILDING RELATED
+         */
+        //When will  building of type2 (rogue) entities be allowed
+        //when player has x units in play, and gold greater than unit cost
+        type2Allowed: function () {
 
-            },
+        },
+        //When will  building of type3 (slime) entities be allowed
+        //when player has x units in play, and gold greater than unit cost
+        type3Allowed: function () {
 
-            //if Techcenter has ____ then ____ is increased etc etc
-        }
-
+        },
 
 
     },
@@ -139,7 +148,7 @@ var game = {
         //Buildings
         me.input.bindKey(me.input.KEY.B, "build", true);
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
-        me.input.bindKey(me.input.KEY.NUM2, "armory", true);
+        me.input.bindKey(me.input.KEY.NUM2, "unit_defense", true);
 
         //unknown
         me.input.bindKey(me.input.KEY.Q, "q", true);

@@ -403,12 +403,11 @@ game.UI.developTech = me.GUI_Object.extend({
     /**
      * constructor
      */
-    init: function(x, y, color, action, tech) {
+    init: function(x, y, color, tech) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
             region : "blankButton",
-            action: action,  //string
-            tech:tech
+            tech: tech
         } ]);
 
         // offset of the two used images in the texture
@@ -422,8 +421,8 @@ game.UI.developTech = me.GUI_Object.extend({
         this.font.textAlign = "left";
         this.font.textBaseline = "middle";
 
-        this.action = action;
         this.tech = tech;
+        console.log("What Tech?", this.tech);
         //this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
@@ -439,7 +438,7 @@ game.UI.developTech = me.GUI_Object.extend({
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
         this.height = this.clicked_region.height;
-        console.log("hitting button " + this.action);
+        //console.log("hitting button " + this.tech);
 
         if(!this.tech.complete) {
             this.action(this.tech);
@@ -465,7 +464,7 @@ game.UI.developTech = me.GUI_Object.extend({
     draw: function(renderer) {
         this._super(me.GUI_Object, "draw", [ renderer ]);
         this.font.draw(renderer,
-            this.tech.name,
+            "test",
             this.pos.x + this.width / 2,
             this.pos.y + this.height / 2
         );

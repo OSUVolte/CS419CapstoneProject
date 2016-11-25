@@ -71,7 +71,7 @@ game.BuildingArea = me.Renderable.extend({
             this.isPlacing = false;
 
         //What to do if building and type Armory
-        }else if (this.isPlacing == true && me.input.isKeyPressed("armory")) {
+        }else if (this.isPlacing == true && me.input.isKeyPressed("unit_defense")) {
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
@@ -80,7 +80,7 @@ game.BuildingArea = me.Renderable.extend({
                     width: 128,
                     height: 96,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "armory"
+                    type: "unit_defense"
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -326,15 +326,15 @@ game.FootPrint = game.BuildingObject.extend({
                 return true;
             }
         }
-        if(this.type == "armory") {
+        if(this.type == "unit_defense") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-                var newBldg =  me.game.world.addChild(new game.Armory(this.pos.x, this.pos.y, {
+                var newBldg =  me.game.world.addChild(new game.UnitDefense(this.pos.x, this.pos.y, {
                     width: this.width,
                     height: this.height,
                     bounds: this.bounds,
-                    type: "armory"
+                    type: "unit_defense"
                 }), 10);
 
                 // me.game.  addStructure(newBldg) // add the building to the array of structures

@@ -677,28 +677,29 @@ function battle(attacker, defender) {
 
 // stats passed for creating a unit class
 function Unit(hp, def, atk, speed, hitPercent, dodge, type, buildTime, name, image) {
-    this.hp = hp;
+    this.hp = (hp + game.data.hpBoost) * game.data.sfHealth;
     this.maxHp = hp;
-    this.def = def;
-    this.atk = atk + this.atkBoost;
-    this.speed = speed;
+    this.def = (def + game.data.defBoost) * game.data.sfArmor;
+    this.atk = (atk + game.data.atkBoost) * game.data.sfAtk;
+    this.speed = (speed + game.data.speedBoost) * game.data.sfSpeed;
     this.hitPercent = hitPercent;
     this.dodge = dodge;
     this.type = type;
     this.name = name;
     this.image = image;
-    this.buildTime = buildTime;
+    this.buildTime = (buildTime - game.data.btBoost)* game.data.sfBuildTime;
     this.qAssignment = -1;   // not assigned yet
 
-    //tech
-    this.atkBoost = 1;
-    this.defBoost = 1;
-    this.btBoost = 1;
-    //tech Scaling Factors
-    this.sfArmor =1;
-    this.sfSpeed = 1;
-    this.sfHealth = 1;
-    this.sfAtk =1;
+    // //tech
+    // this.atkBoost = 1;
+    // this.defBoost = 1;
+    // this.btBoost = 1;
+    //
+    // //tech Scaling Factors
+    // this.sfArmor =1;
+    // this.sfSpeed = 1;
+    // this.sfHealth = 1;
+    // this.sfAtk =1;
 
 }
 
