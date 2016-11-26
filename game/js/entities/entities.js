@@ -410,8 +410,7 @@ game.Units = me.Entity.extend({
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
         this.body.setVelocity(0,0);
-        this.body.vel.x = 0;
-        this.body.vel.y = 0;
+
         // if this is alive
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
@@ -435,14 +434,14 @@ game.Units = me.Entity.extend({
                 this.me = response.a;
 
             }
-            return true;
+            return false;
         }
 
         
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
-            return true;
+            return false;
         }
 
         return false;

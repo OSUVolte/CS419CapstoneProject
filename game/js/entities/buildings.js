@@ -11,7 +11,7 @@ game.Structures = me.Entity.extend({
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.body.setCollisionMask(me.collision.types.WORLD_SHAPE);
+        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
     },
     generalProperties: function(){
         this.q = [];
@@ -114,7 +114,7 @@ game.Structures = me.Entity.extend({
             width: this.width,
             // direction
             lane: "top",
-            qAssignment: queueAssignment, //the units queue assignment
+            queueGroup: queueAssignment, //the units queue assignment
 
             // which player spawned
             player: 1,
@@ -265,7 +265,8 @@ game.Structures = me.Entity.extend({
                 //spawn the unit
                 console.log("spawning", unit.toLowerCase());
 
-                this.spawnUnit(unit, unitQ);
+
+                this.spawnUnit(unit, game.data.queueName[unitQ]);
 
                 //update the time of the element in the front
                 //so that it begins building
@@ -346,9 +347,13 @@ game.Structures = me.Entity.extend({
         }
 
         this._super(me.Entity, "draw", [renderer]);
-        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
-        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y-20);
-        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y+50);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
+    },
+    onCollision : function (response, other) {
+        console.log("Building: eww he touched me");
+        return false;
     },
     /**
      * Logging of some specific variables to help with trouble shooting
@@ -362,6 +367,7 @@ game.Structures = me.Entity.extend({
         console.log("functional", this.functional);
 
     },
+
 
 });
 
@@ -436,18 +442,10 @@ game.Barracks = game.Structures.extend({
 
         return this._super(me.Entity, "update", [dt])
     },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
-    },
     displayStatus: function(){
         this.panelHeight = 300;
         this.panelWidth =400;
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.pos.x, this.pos.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
 
         if(this.enabled.type1 && this.complete && this.functional){
             this.panel.addChild(new game.UI.UnitAdd(
@@ -616,14 +614,6 @@ game.Armourer = game.Structures.extend({
         this.developTech(me.timer.getTime());
 
         return this._super(me.Entity, "update", [dt]);
-    },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
     },
     /**
      * The Display pop up on the building
@@ -825,14 +815,6 @@ game.Arsenal = game.Structures.extend({
         this.developTech(me.timer.getTime());
 
         return this._super(me.Entity, "update", [dt]);
-    },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
     },
     /**
      * The Display pop up on the building
