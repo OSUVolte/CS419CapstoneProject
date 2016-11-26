@@ -133,6 +133,8 @@ game.Units = me.Entity.extend({
         this.hit = false;                                   // unit not performed an attack yet
         this.path = 0;
         this.type = "unit";
+        this.waveRelease = false;
+        this.wavetarget = "";
 
         // astar stats
         this.target_destination = null;
@@ -229,6 +231,21 @@ game.Units = me.Entity.extend({
    * update the enemy pos
    */
     update : function (dt) {
+        if(this.waveRelease === true) {
+            console.log(this.waveRelease);
+            console.log(this.wavetarget);
+            console.log(this)
+            this.waveRelease = false;
+            console.log("unit is being released");
+
+            this.target_destination = this.wavetarget;
+            this.dest = this.wavetarget;
+
+            console.log(this.target_destination.name);
+            console.log(this.dest.name);
+
+        }
+
         if (this.target_destination != null) {
             if (this.target_destination.alive == false) {
                 this.target_destination = null;
@@ -244,7 +261,6 @@ game.Units = me.Entity.extend({
                 this.renderable.setAnimationFrame();
             }
         }
-
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
@@ -288,6 +304,7 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
+                consol.log("testinggg");
                 if (this.chessboard() < 1000) {                                                                              // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
@@ -307,10 +324,13 @@ game.Units = me.Entity.extend({
                         this.renderable.setAnimationFrame();
                     }
                 }
+                console.log(this.dest.name);
                 if (this.dest != null) {
                     //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                     //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                     // move based on next position
+
+                    console.log(this.dest.name);
 
                     var xdiff = this.dest.pos.x - this.pos.x;
                     var ydiff = this.dest.pos.y - this.pos.y;
@@ -902,12 +922,73 @@ function endQueue() {
 game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
         this.currentwave = game.data.currentwave;
+        this.player1QueueLocation = "queue_front";
+        this.player2QueueLocation = "queue_back";
+
+        //Get the GUIDs of each player's "base"
+        //For testing: player's queueLoc will be their "base"
+        for (var i = 0; i < me.game.world.children.length; i++) {
+            if (me.game.world.children[i].name === this.player1QueueLocation) {
+                this.player1Base = me.game.world.children[i];
+                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
+                }
+            else if (me.game.world.children[i].name === this.player2QueueLocation) {
+                this.player2Base = me.game.world.children[i];
+                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
+                }
+            else if (me.game.world.children[i].name === "TEST_WARRIOR") {
+                this.testwar = me.game.world.children[i];
+                console.log("Test warrior: " + this.testwar.name + " GUI: " + this.testwar.GUID);
+            }
+        }
     },
 
     update: function(){
         if(this.currentwave < game.data.currentwave) {
+            //Go to Next Wave
             this.currentwave = game.data.currentwave;
             console.log("Starting Wave: " + game.data.currentwave);
+
+            //Send Units waiting at Queue Locations to Target Destination
+            //TODO: Make ultimate target the other player's Base Building
+            
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].queueGroup === this.player1Base.name) {
+                    console.log("send from p1 to p2");
+                    console.log(me.game.world.children[i]);
+                    //console.log(me.game.world.children[i].queueGroup);
+                    //console.log(me.game.world.children[i].dest.GUID);
+                    //console.log(me.game.world.children[i].target_destination.GUID);
+                    me.game.world.children[i].wavetarget = this.player2Base;
+                    //me.game.world.children[i].dest = this.player2Base;
+                    //me.game.world.children[i].target_destination = this.player2Base;
+                    
+                    //me.game.world.children[i].target.push(this.player1Base);
+
+                    console.log(me.game.world.children[i].target);
+                    console.log(me.game.world.children[i]);
+
+                    //console.log(me.game.world.children[i].dest.GUID);
+                    //console.log(me.game.world.children[i].target_destination.GUID);
+                }
+                else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
+                    console.log("send from p2 to p1");
+                    //console.log("wm curr dest: " + me.game.world.children[i].dest.name);
+                    //console.log(me.game.world.children[i]);
+                    //console.log(this.player1Base);
+
+                    //me.game.world.children[i].setChildsProperty(prop: "dest", value: this.player1Base, false);
+
+                    me.game.world.children[i].target_destination = this.player1Base;
+                    me.game.world.children[i].dest = this.player1Base;
+                    me.game.world.children[i].wavetarget = this.player1Base;
+                    me.game.world.children[i].waveRelease = true;
+
+                    //console.log("wm new dest: " + me.game.world.children[i].dest.name);
+                    //console.log("wm new target_destination: " + me.game.world.children[i].target_destination);
+                }
+            }
+
         }
     }
 
