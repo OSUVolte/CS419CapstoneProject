@@ -182,8 +182,6 @@ var game = {
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
         me.input.bindKey(me.input.KEY.NUM2, "armourer", true);
         me.input.bindKey(me.input.KEY.NUM3, "arsenal", true);
-       // me.input.bindKey(me.input.KEY.NUM0, "keep", true);
-
 
         // debug quick unit spawning keys, remove later
         me.input.bindKey(me.input.KEY.Q, "q", true);
