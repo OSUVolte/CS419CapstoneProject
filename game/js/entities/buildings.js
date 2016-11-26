@@ -352,7 +352,7 @@ game.Structures = me.Entity.extend({
         this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
     },
     onCollision : function (response, other) {
-        console.log("Building: eww he touched me");
+        //console.log("Building: eww he touched me");
         return false;
     },
     /**
