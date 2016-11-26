@@ -18,6 +18,7 @@ var game = {
         menu_background: "",
         isBuildMenuOpen: false,
 
+        wavemanager: "",
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
@@ -160,6 +161,9 @@ var game = {
         // queuing areas
         me.pool.register("queue_front", game.QueueArea);
         me.pool.register("queue_back", game.QueueArea);
+
+        //wave manager
+        me.pool.register("waveManager", game.WaveManager, true);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function

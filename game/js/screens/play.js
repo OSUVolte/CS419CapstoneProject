@@ -23,6 +23,10 @@ game.PlayScreen = me.ScreenObject.extend({
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
 
+        //Add wave manager
+        game.data.wavemanager = me.pool.pull("waveManager", 0, 0, {});
+        me.game.world.addChild(game.data.wavemanager, 0);
+
         // if(){
         //     // display the current pointer coordinates on top of the pointer arrow
         //     me.game.world.addChild(new (me.Renderable.extend({

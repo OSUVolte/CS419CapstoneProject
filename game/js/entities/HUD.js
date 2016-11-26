@@ -110,7 +110,6 @@ game.HUD.GameClock = me.Renderable.extend({
         //Check if the currentwave is also incremented
         if((game.data.currentwave+1) * game.data.waveduration < (game.data.gametime/1000)) {
             game.data.currentwave += 1;
-            console.log("starting wave: " + game.data.currentwave);
         }
     },
 

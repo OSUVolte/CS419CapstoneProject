@@ -899,7 +899,19 @@ function endQueue() {
 
 
 
+game.WaveManager = me.Object.extend({
+    init: function (x, y, settings){
+        this.currentwave = game.data.currentwave;
+    },
 
+    update: function(){
+        if(this.currentwave < game.data.currentwave) {
+            this.currentwave = game.data.currentwave;
+            console.log("Starting Wave: " + game.data.currentwave);
+        }
+    }
+
+});
 
 
 
