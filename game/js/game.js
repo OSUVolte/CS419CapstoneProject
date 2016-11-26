@@ -144,11 +144,10 @@ var game = {
         me.pool.register("units", game.Units, false);
 
         //buildings:
-
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("P2_build_area", game.BuildingAreaAI);
         me.pool.register("structures", game.Structures);
-        me.pool.register("Barracks", game.Structures);
+        me.pool.register("keep", game.Keep);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
@@ -183,6 +182,7 @@ var game = {
         me.input.bindKey(me.input.KEY.NUM1, "barracks", true);
         me.input.bindKey(me.input.KEY.NUM2, "armourer", true);
         me.input.bindKey(me.input.KEY.NUM3, "arsenal", true);
+       // me.input.bindKey(me.input.KEY.NUM0, "keep", true);
 
 
         // debug quick unit spawning keys, remove later

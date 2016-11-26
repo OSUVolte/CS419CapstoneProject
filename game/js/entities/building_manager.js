@@ -79,8 +79,8 @@ game.BuildingArea = me.Renderable.extend({
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-                    width: 128,
-                    height: 128,
+                    width: 228,
+                    height: 196,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "armourer"
                 }), 10);
@@ -100,10 +100,30 @@ game.BuildingArea = me.Renderable.extend({
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-                    width: 150,
-                    height: 150,
+                    width: 265,
+                    height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "arsenal"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+
+            }
+            console.log(game.data.playergold);
+            this.isPlacing = false;
+        }else if (this.isPlacing == true && me.input.isKeyPressed("keep")) {
+
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                    width: 341,
+                    height: 288,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "keep"
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -431,13 +451,39 @@ game.FootPrint = game.BuildingObject.extend({
      */
     chooseImage: function (frameName) {
         //this.renderable.setCurrentAnimation(frameName);
+        switch(frameName){
+            case "good":
+                this.color = "green";
+                break;
+            case "bad":
+                this.color = "red";
+                break;
+            default:
+
+        }
 
     },
     /*
         This places the actual building of the specific type defined in the buildingArea call
      */
     placeBuilding: function (){
+        //add building to the area.
+        if(this.type == "keep") {
 
+            //todo disallow placement when not enough money to build
+            if (this.checkPosition()) {
+
+                var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
+                    width: this.width,
+                    height: this.height,
+                    bounds: this.bounds,
+                    type: "keep"
+                }), 10);
+                //todo maybe use this to easily apply upgrades to all buildings at once?
+                //me.game.  addStructure(newBldg) // add the building to the array of structures
+                return true;
+            }
+        }
         //add building to the area.
         if(this.type == "barracks") {
             //console.log("positioningbarracks:", this.pos.x, this.pos.y);

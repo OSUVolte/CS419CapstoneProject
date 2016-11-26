@@ -916,6 +916,206 @@ game.Arsenal = game.Structures.extend({
 
 });
 
+game.Keep = game.Structures.extend({
+    /**
+     * constructor
+     */
+    init:function (x, y, settings) {
 
+        //call the constructor
+        this._super(game.Structures, 'init', [x, y , settings]);
+        this.x = x;
+        this.y = y;
+        this.placed = true;
+        this.bldgProperties();
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("keep")}); //addimage
+    },
+    /**
+     * Defines all the properties of the building
+     *
+     */
+    bldgProperties: function(){
+
+        this.buildTime = 5;
+        this.percentComplete = 0;
+        this.est = Math.round(new Date().getTime()/1000);
+        this.capacity = 2;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
+        this.cost = 100;
+
+        //the types of  tech that this building can build
+        this.tech1 = {
+            name: "Inc. Attack 25",
+            startTime: null, // set when button is pressed
+            buildTime: 6,
+            action: "inc_base",
+            value: 25,
+            cost: 100,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech2 = {
+            name: "Inc. speed 25",
+            startTime: null,
+            buildTime: 9,
+            action: "inc_speed",
+            value: 5,
+            cost:400,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech3 = {
+            name: "Inc. Attack Scaling 1.25",
+            startTime: null,
+            buildTime: 12,
+            action: "inc_sf",
+            value: 1.25,
+            cost: 1000,
+            enabled:true,
+            complete: false,
+            inProcess: false
+        };
+    },
+    /**
+     * Change the image
+     */
+    chooseImage: function () {
+        //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
+        //this.renderable.addAnimation("building", [0], 5);
+        //this.renderable.setCurrentAnimation("neutral");
+    },
+    /**
+     * Set spawn point of the footprint
+     * Might want to make it relative to some other entity
+     */
+    setSpawnPoint : function (dt) {
+        //todo make this useable
+        //It might be best to offset this point from the buildings - but it will need a check to make sure
+        //it doesn't interfere with other buildings...
+    },
+    /**
+     * update the entity
+     */
+    update : function (dt) {
+        //Update functions of our game objects will always receive a delta time (in milliseconds).
+        // It's important to pass it along to our parent's class update.
+        //setting the time for the building
+        this._super(me.Entity, "update", [dt]);
+
+        //mainUpdate - General functions that are good for all buildings
+        this.mainUpdate(dt);
+
+        //Function watches the techQ, sets enabled when build time is done,
+        this.developTech(me.timer.getTime());
+
+        return this._super(me.Entity, "update", [dt]);
+    },
+    /**
+     * The Display pop up on the building
+     */
+    displayStatus: function(){
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Arsenal  Menu", this));
+
+        // if(this.tech1.enabled && this.functional && this.complete){
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 40,
+        //         "white", //text color
+        //         this.tech1 // the tech that will be applied by te button
+        //     ),110);
+        // }
+        // if(this.tech2.enabled && this.functional && this.complete) {
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 90,
+        //         "white",
+        //         this.tech2
+        //     ), 110);
+        // }
+        // if(this.tech3.enabled && this.functional && this.complete) {
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 140,
+        //         "white",
+        //         this.tech3
+        //     ), 110);
+        // }
+
+    },
+
+    developTech: function (now) {
+     /*
+        //check front of q for finished tech
+        if (this.q.length > 0) {
+            if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
+
+                //apply the tech
+                switch (this.q[0].action) {
+                    case "inc_base":
+                        game.data.atkBoost =  game.data.atkBoost + this.q[0].value;
+                        //send a message
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Attack Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        //todo deduct player money
+
+
+                        break;
+
+                    case "inc_health":
+                        game.data.speedBoost = game.data.speedBoost+ this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Speed Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+
+                    case "inc_sf":
+                        game.data.sfAtk = this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Scaling Factor Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+                }
+
+                //remove it from the q
+                this.removeTechQ(0);
+
+                //Let them know what is next in development cycle
+                if (this.q.length > 0)
+                    game.data.message = {
+                        msgTime: me.timer.getTime(),
+                        msg: "Now developing " + this.q[0].name,
+                        msgDur: 4,
+                        color: "blue"
+                    };
+            }
+        }
+      */}
+
+});
 
 
