@@ -232,17 +232,17 @@ game.Units = me.Entity.extend({
    */
     update : function (dt) {
         if(this.waveRelease === true) {
-            console.log(this.waveRelease);
-            console.log(this.wavetarget);
-            console.log(this)
+            //console.log(this.waveRelease);
+            //console.log(this.wavetarget);
+            //console.log(this)
             this.waveRelease = false;
             console.log("unit is being released");
 
             this.target_destination = this.wavetarget;
             this.dest = this.wavetarget;
 
-            console.log(this.target_destination.name);
-            console.log(this.dest.name);
+            //console.log(this.target_destination.name);
+            //console.log(this.dest.name);
 
         }
 
@@ -264,7 +264,9 @@ game.Units = me.Entity.extend({
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
+            
             if (this.target_destination == null) {
+                //console.log("testing 123");
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
@@ -304,7 +306,6 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                consol.log("testinggg");
                 if (this.chessboard() < 1000) {                                                                              // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
@@ -324,13 +325,13 @@ game.Units = me.Entity.extend({
                         this.renderable.setAnimationFrame();
                     }
                 }
-                console.log(this.dest.name);
+                //console.log(this.dest.name);
                 if (this.dest != null) {
                     //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                     //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                     // move based on next position
 
-                    console.log(this.dest.name);
+                    //console.log(this.dest.name);
 
                     var xdiff = this.dest.pos.x - this.pos.x;
                     var ydiff = this.dest.pos.y - this.pos.y;
@@ -955,18 +956,21 @@ game.WaveManager = me.Object.extend({
             for (var i = 0; i < me.game.world.children.length; i++) {
                 if (me.game.world.children[i].queueGroup === this.player1Base.name) {
                     console.log("send from p1 to p2");
-                    console.log(me.game.world.children[i]);
+                    //console.log(me.game.world.children[i]);
                     //console.log(me.game.world.children[i].queueGroup);
                     //console.log(me.game.world.children[i].dest.GUID);
                     //console.log(me.game.world.children[i].target_destination.GUID);
+                    me.game.world.children[i].target_destination = this.player2Base;
+                    me.game.world.children[i].dest = this.player2Base;
                     me.game.world.children[i].wavetarget = this.player2Base;
+                    me.game.world.children[i].waveRelease = true;
                     //me.game.world.children[i].dest = this.player2Base;
                     //me.game.world.children[i].target_destination = this.player2Base;
                     
                     //me.game.world.children[i].target.push(this.player1Base);
 
-                    console.log(me.game.world.children[i].target);
-                    console.log(me.game.world.children[i]);
+                    //console.log(me.game.world.children[i].target);
+                    //console.log(me.game.world.children[i]);
 
                     //console.log(me.game.world.children[i].dest.GUID);
                     //console.log(me.game.world.children[i].target_destination.GUID);
