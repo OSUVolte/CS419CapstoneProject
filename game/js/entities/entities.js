@@ -232,18 +232,12 @@ game.Units = me.Entity.extend({
    */
     update : function (dt) {
         if(this.waveRelease === true) {
-            //console.log(this.waveRelease);
-            //console.log(this.wavetarget);
-            //console.log(this)
             this.waveRelease = false;
-            console.log("unit is being released");
 
+            endQueue();
+            //Send to new target
             this.target_destination = this.wavetarget;
             this.dest = this.wavetarget;
-
-            //console.log(this.target_destination.name);
-            //console.log(this.dest.name);
-
         }
 
         if (this.target_destination != null) {
@@ -266,7 +260,6 @@ game.Units = me.Entity.extend({
             var now = Date.now();
             
             if (this.target_destination == null) {
-                //console.log("testing 123");
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
@@ -299,14 +292,13 @@ game.Units = me.Entity.extend({
                 // not moving anywhere
                 // friction takes over
                 if (this.target_destination != null) {
-
                     this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
                     this.dest = this.myPath.pop();
                     this.pathAge = now;
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 1000) {                                                                              // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
@@ -325,13 +317,11 @@ game.Units = me.Entity.extend({
                         this.renderable.setAnimationFrame();
                     }
                 }
-                //console.log(this.dest.name);
+
                 if (this.dest != null) {
                     //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                     //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                     // move based on next position
-
-                    //console.log(this.dest.name);
 
                     var xdiff = this.dest.pos.x - this.pos.x;
                     var ydiff = this.dest.pos.y - this.pos.y;
@@ -919,7 +909,6 @@ function endQueue() {
 }
 
 
-
 game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
         this.currentwave = game.data.currentwave;
@@ -937,10 +926,6 @@ game.WaveManager = me.Object.extend({
                 this.player2Base = me.game.world.children[i];
                 console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
                 }
-            else if (me.game.world.children[i].name === "TEST_WARRIOR") {
-                this.testwar = me.game.world.children[i];
-                console.log("Test warrior: " + this.testwar.name + " GUI: " + this.testwar.GUID);
-            }
         }
     },
 
@@ -955,41 +940,20 @@ game.WaveManager = me.Object.extend({
             
             for (var i = 0; i < me.game.world.children.length; i++) {
                 if (me.game.world.children[i].queueGroup === this.player1Base.name) {
-                    console.log("send from p1 to p2");
-                    //console.log(me.game.world.children[i]);
-                    //console.log(me.game.world.children[i].queueGroup);
-                    //console.log(me.game.world.children[i].dest.GUID);
-                    //console.log(me.game.world.children[i].target_destination.GUID);
+                    console.log("send p1 units to p2 base");
+
                     me.game.world.children[i].target_destination = this.player2Base;
                     me.game.world.children[i].dest = this.player2Base;
                     me.game.world.children[i].wavetarget = this.player2Base;
                     me.game.world.children[i].waveRelease = true;
-                    //me.game.world.children[i].dest = this.player2Base;
-                    //me.game.world.children[i].target_destination = this.player2Base;
-                    
-                    //me.game.world.children[i].target.push(this.player1Base);
-
-                    //console.log(me.game.world.children[i].target);
-                    //console.log(me.game.world.children[i]);
-
-                    //console.log(me.game.world.children[i].dest.GUID);
-                    //console.log(me.game.world.children[i].target_destination.GUID);
                 }
                 else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
-                    console.log("send from p2 to p1");
-                    //console.log("wm curr dest: " + me.game.world.children[i].dest.name);
-                    //console.log(me.game.world.children[i]);
-                    //console.log(this.player1Base);
-
-                    //me.game.world.children[i].setChildsProperty(prop: "dest", value: this.player1Base, false);
-
+                    console.log("send p2 units to p1 base");
+  
                     me.game.world.children[i].target_destination = this.player1Base;
                     me.game.world.children[i].dest = this.player1Base;
                     me.game.world.children[i].wavetarget = this.player1Base;
                     me.game.world.children[i].waveRelease = true;
-
-                    //console.log("wm new dest: " + me.game.world.children[i].dest.name);
-                    //console.log("wm new target_destination: " + me.game.world.children[i].target_destination);
                 }
             }
 
