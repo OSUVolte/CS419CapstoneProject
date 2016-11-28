@@ -133,6 +133,8 @@ game.Units = me.Entity.extend({
         this.hit = false;                                   // unit not performed an attack yet
         this.path = 0;
         this.type = "unit";
+        this.waveRelease = false;
+        this.wavetarget = "";
 
         // astar stats
         this.target_destination = null;
@@ -229,6 +231,15 @@ game.Units = me.Entity.extend({
    * update the enemy pos
    */
     update : function (dt) {
+        if(this.waveRelease === true) {
+            this.waveRelease = false;
+
+            endQueue();
+            //Send to new target
+            this.target_destination = this.wavetarget;
+            this.dest = this.wavetarget;
+        }
+
         if (this.target_destination != null) {
             if (this.target_destination.alive == false) {
                 this.target_destination = null;
@@ -256,8 +267,6 @@ game.Units = me.Entity.extend({
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
-
-            //Set a target Destination
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
@@ -280,7 +289,7 @@ game.Units = me.Entity.extend({
                 }
             }
 
-            // acquiring the queue group as targets
+
             if (this.idle == true) {
                 for (var i = 0; i < me.game.world.children.length; i++) {
                     if (me.game.world.children[i].name === this.queueGroup) {
@@ -301,11 +310,10 @@ game.Units = me.Entity.extend({
                     this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
                     this.dest = this.myPath.pop();
                     this.pathAge = now;
-
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 5000) {                                                                              // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
@@ -457,11 +465,9 @@ game.Units = me.Entity.extend({
 
         
         // bumped into a wall
-        //
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
-
             this.path++;
-                return true;
+            return true;
         }
 
         return false;
@@ -469,24 +475,6 @@ game.Units = me.Entity.extend({
 });
 
 game.QueueArea = me.Entity.extend({
-    init:function(x, y, settings) {
-        this._super(me.Entity, 'init', [x, y , settings]);
-
-        this.body.collisionType = me.collision.types.NO_OBJECT;
-    },
-
-    update : function (dt) {
-        // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-    },
-
-    onCollision : function (response, other) {
-        console.log("touching");
-        return false;
-    }
-});
-
-game.WayPoint = me.Entity.extend({
     init:function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -885,7 +873,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
     this.buildTime = buildTime;
     this.crit = crit;
     this.qAssignment = -1;   // not assigned yet
-    this.cost = cost; // add crit chance, 150% extra damage
+    this.cost = cost// add crit chance, 150% extra damage
 }
 
 /*
@@ -934,16 +922,54 @@ function endQueue() {
 }
 
 
-
 game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
         this.currentwave = game.data.currentwave;
+        this.player1QueueLocation = "queue_front";
+        this.player2QueueLocation = "queue_back";
+
+        //Get the GUIDs of each player's "base"
+        //For testing: player's queueLoc will be their "base"
+        for (var i = 0; i < me.game.world.children.length; i++) {
+            if (me.game.world.children[i].name === this.player1QueueLocation) {
+                this.player1Base = me.game.world.children[i];
+                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
+                }
+            else if (me.game.world.children[i].name === this.player2QueueLocation) {
+                this.player2Base = me.game.world.children[i];
+                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
+                }
+        }
     },
 
     update: function(){
         if(this.currentwave < game.data.currentwave) {
+            //Go to Next Wave
             this.currentwave = game.data.currentwave;
             console.log("Starting Wave: " + game.data.currentwave);
+
+            //Send Units waiting at Queue Locations to Target Destination
+            //TODO: Make ultimate target the other player's Base Building
+
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].queueGroup === this.player1Base.name) {
+                    console.log("send p1 units to p2 base");
+
+                    me.game.world.children[i].target_destination = this.player2Base;
+                    me.game.world.children[i].dest = this.player2Base;
+                    me.game.world.children[i].wavetarget = this.player2Base;
+                    me.game.world.children[i].waveRelease = true;
+                }
+                else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
+                    console.log("send p2 units to p1 base");
+
+                    me.game.world.children[i].target_destination = this.player1Base;
+                    me.game.world.children[i].dest = this.player1Base;
+                    me.game.world.children[i].wavetarget = this.player1Base;
+                    me.game.world.children[i].waveRelease = true;
+                }
+            }
+
         }
     }
 
