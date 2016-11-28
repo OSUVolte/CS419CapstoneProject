@@ -23,7 +23,7 @@ game.PlayerEntity = me.Entity.extend({
         this.body.setVelocity(2,2);
         
         // set the display to follow our position on both axis
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
@@ -117,7 +117,7 @@ game.Bottom = me.Entity.extend({
         this.body.setVelocity(1,1);
         
         // follow position
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         this.alwaysUpdate = true;
     },
@@ -220,8 +220,8 @@ game.Mid = me.Entity.extend({
         var settings = {
             image: "slime spritesheet calciumtrice_0",
             // the width of the path
-            width: 784,
-            height: 528,
+            width: 32,
+            height: 32,
             
             // the size of the entity
             framewidth: 32,
@@ -242,11 +242,11 @@ game.Mid = me.Entity.extend({
         y = this.pos.y;
         x = this.pos.x;
         this.startX = x;
-        this.endX = width;
+        this.endX = me.game.world.width;
         this.startY = y;
 //        this.endY = y + height - settings.frameheight;
         // endY is hardcoded for now, figure out a way to determine it later
-        this.endY = height;
+        this.endY = me.game.world.height;
         this.combat = combat;
         this.hp = hp;
 
@@ -254,12 +254,21 @@ game.Mid = me.Entity.extend({
         
         this.diagonal = false;
 
-        this.body.setVelocity(1,0.6);
+        this.body.setVelocity(3,3);
         
         // follow position
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        
+        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+
         this.alwaysUpdate = true;
+
+        //change dir on bounce
+        this.xDir = 1;
+        this.yDir = 1;
+
+        //keep player in world
+        this.maxX = (me.game.tmxRenderer.cols * me.game.tmxRenderer.tilewidth) - this.width;
+        this.maxY = (me.game.tmxRenderer.rows * me.game.tmxRenderer.tileheight) - this.height;
+        console.log("meGame", me.game);
     },
     
 
@@ -269,12 +278,28 @@ game.Mid = me.Entity.extend({
     update : function (dt) {
         if (this.alive && this.combat == false) {
             if (!this.diagonal && (this.pos.x <= this.endX) || (this.pos.y >= this.endY)) {
-                this.body.vel.y += -this.body.accel.y * me.timer.tick;
-                this.body.vel.x += this.body.accel.x * me.timer.tick;
+                this.body.vel.y += this.body.accel.y * me.timer.tick *this.yDir;
+                this.body.vel.x += this.body.accel.x * me.timer.tick *this.xDir;
+
+
             } else {
-                this.diagonal = true;
-                this.body.vel.x = 0;
-                this.body.vel.y = 0;
+                //this.diagonal = true;
+                //this.body.vel.x = 0;
+                //this.body.vel.y = 0;
+            }
+
+            // Bounce off room boundaries
+            if (this.pos.x < 0) {
+                this.xDir = 1;
+            }
+            if (this.pos.y < 0) {
+                this.yDir = 1;
+            }
+            if (this.pos.x > this.maxX-32) {
+                this.xDir = -1;
+            }
+            if (this.pos.y > this.maxY-32) {
+                this.yDir = -1;
             }
         }
         // if entity alive and engaged in combat, stop moving
@@ -294,6 +319,10 @@ game.Mid = me.Entity.extend({
 
         // handle collisions against other shapes
         me.collision.check(this);
+
+        //keep player in viewport
+        this.pos.x = this.pos.x.clamp(0, this.maxX);
+        this.pos.y = this.pos.y.clamp(0, this.maxY);
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -376,12 +405,12 @@ game.Top = me.Entity.extend({
         this.body.setVelocity(1,1);
         
         // follow position
-        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        //me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         
         this.alwaysUpdate = true;
         
         // define standing animation, use all frames
-        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                                     11, 12, 13, 14, 15, 16, 17, 18, 19]);
         // define death animation
         this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]);
@@ -503,6 +532,7 @@ game.Warrior = me.Entity.extend({
         
         // set the display to follow our position on both axis
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+
         
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
@@ -529,6 +559,11 @@ game.Warrior = me.Entity.extend({
         this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
         // set standing as default
         this.renderable.setCurrentAnimation("stand");
+
+        //keep player in view
+        //keep player in world
+        this.maxX = (me.game.tmxRenderer.cols * me.game.tmxRenderer.tilewidth) - this.width;
+        this.maxY = (me.game.tmxRenderer.rows * me.game.tmxRenderer.tileheight) - this.height;
     },
 
     // update player pos
@@ -536,7 +571,7 @@ game.Warrior = me.Entity.extend({
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.renderable.flipX(true);
-           
+
             // update the entity velocity
             this.body.vel.x -= this.body.accel.x * me.timer.tick;
 
@@ -569,7 +604,13 @@ game.Warrior = me.Entity.extend({
             if (!this.renderable.isCurrentAnimation("walk") && !this.combat) {
                 this.renderable.setCurrentAnimation("walk");
             }
-        } else if (!this.alive) {
+        // } else if (me.input.isKeyPressed('build')) {
+        //     //add a building - todo need to be part of the ui
+        //     console.log('pressed B');
+        //     var test;
+        //     me.game.world.addChild(new game.FootPrint(this.pos.x, this.pos.y, {width: 32, height: 32}), 10);
+
+        }else if (!this.alive) {
             if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
                 this.renderable.setCurrentAnimation("dead");
                 me.game.world.removeChild(this);
@@ -588,7 +629,7 @@ game.Warrior = me.Entity.extend({
             } else if (this.combat) {
 //                if (this.renderable.getCurrentAnimationFrame() == 7 && this.hit == false) {
 
-                if (this.enemy.renderable.current.idx == 7 && this.hit == false) {
+                if (this.renderable.getCurrentAnimationFrame() == 7 && this.hit == false) {
                     this.hit = true;
                     this.hp = battle(this.me, this.enemy);
 
@@ -603,7 +644,7 @@ game.Warrior = me.Entity.extend({
                     this.hit = false
                 }
             }
-            
+
         }
 
         // apply physics to the body (this moves the entity)
@@ -611,6 +652,10 @@ game.Warrior = me.Entity.extend({
 
         // handle collisions against other shapes
         me.collision.check(this);
+
+        //keep player in viewport
+        this.pos.x = this.pos.x.clamp(0, this.maxX);
+        this.pos.y = this.pos.y.clamp(0, this.maxY);
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
