@@ -8,7 +8,7 @@ var game = {
         score : 0,
         gametime: 0,
         currentwave: 0,
-        waveduration: 30, //set to 15 seconds for testing
+        waveduration: 60, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",

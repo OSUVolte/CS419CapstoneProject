@@ -117,11 +117,11 @@ game.Structures = me.Entity.extend({
             // direction
             player: this.player,                                                                                                                                // when spawning units, label which player theyre from
             queueGroup: queueAssignment, //the units queue assignment
-
             // which player spawned
         //    player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10);
+        console.log(game.data.myPath);
         console.log("Assigned to q", newUnit)
     },
     /**
@@ -395,6 +395,8 @@ game.Barracks = game.Structures.extend({
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
         //
         // this.player = settings.player;
+
+        this.alwaysUpdate = true;
     },
     /**
      * Defines all the properties of the building
