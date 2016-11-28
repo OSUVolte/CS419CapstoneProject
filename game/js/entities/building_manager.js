@@ -31,14 +31,6 @@ game.BuildingArea = me.Renderable.extend({
                 width: this.width,
                 height: this.height
         }
-
-        this.structureProperties = {
-            player: '',
-            time: '',
-            id: ''
-        }
-
-        this.structures = []; // Array to hold all structures in play.
     },
 
     update: function () {
@@ -138,9 +130,6 @@ game.BuildingArea = me.Renderable.extend({
 
 
         return this.selected || this.hover;
-    },
-    addStructure: function(structure){
-            this.structures.push(structure);
     }
 
 });
@@ -321,12 +310,36 @@ game.BuildingObject = me.Entity.extend({
             me.game.world.moveUp(this);
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
+            //me.collision.check(this);
             this.checkPosition();
         }
 
         if (this.hover || this.selected) {
             return false;
         }
+    },
+    /*
+     * Check the position  to be within the "build" area and updates the image
+     */
+    checkOtherBldg : function () {
+        console.log("calling it");
+        this.flag= false;
+        this.factor = 100;
+        for(i = 0; i < game.data.structures.length; i++) {
+            if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
+                || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
+                || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above
+                || (this.pos.y > game.data.structures[i].pos.y + game.data.structures[i]._height  - this.factor)){ // below
+
+                this.flag = true;
+            }
+        }
+
+        if(this.flag || game.data.structures.length == 0){
+            return true;
+        }
+        return false;
+
     },
     /*
      * Check the position  to be within the "build" area and updates the image
@@ -338,7 +351,7 @@ game.BuildingObject = me.Entity.extend({
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
             && this.pos.y > this.bounds.y
-            && this.pos.y < this.bounds.height+this.bounds.y){
+            && this.pos.y < this.bounds.height+this.bounds.y && this.checkOtherBldg()){
             //update the image
             this.chooseImage("good");
             return true;
@@ -365,7 +378,8 @@ game.BuildingObject = me.Entity.extend({
     onRelease : function (/*event*/) {
         this.selected = false;
 
-        this.checkPosition();
+        // this.checkPosition();
+        // this.checkOtherBldg();
 
         //todo fix error from removal
         if(this.placeBuilding()){
@@ -468,73 +482,45 @@ game.FootPrint = game.BuildingObject.extend({
      */
     placeBuilding: function (){
         //add building to the area.
+        var bldg = null;
+
+        var newBldg = {
+            width: this.width,
+            height: this.height,
+            bounds: this.bounds,
+            type: this.type
+        };
+        //Add Buildings to the area
         if(this.type == "keep") {
 
             //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-
-                var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
-                    width: this.width,
-                    height: this.height,
-                    bounds: this.bounds,
-                    type: "keep"
-                }), 10);
-                //todo maybe use this to easily apply upgrades to all buildings at once?
-                //me.game.  addStructure(newBldg) // add the building to the array of structures
+                 me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
                 return true;
             }
         }
-        //add building to the area.
         if(this.type == "barracks") {
-            //console.log("positioningbarracks:", this.pos.x, this.pos.y);
-            //todo disallow placement when not enough money to build
-            if (this.checkPosition()) {
 
-                var newBldg =  me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, {
-                    width: this.width,
-                    height: this.height,
-                    bounds: this.bounds,
-                    type: "barracks"
-                }), 10);
-                //todo maybe use this to easily apply upgrades to all buildings at once?
-                //me.game.  addStructure(newBldg) // add the building to the array of structures
+            if (this.checkPosition()) {
+                bldg = me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
+                game.data.structures.push(bldg);
+                console.log("structures",game.data.structures)
                 return true;
             }
         }
         if(this.type == "armourer") {
-
-            //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-                var newBldg =  me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, {
-                    width: this.width,
-                    height: this.height,
-                    bounds: this.bounds,
-                    type: "armourer"
-                }), 10);
-
-                // me.game.  addStructure(newBldg) // add the building to the array of structures
+                me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, newBldg), 10);
                 return true;
             }
         }
         if(this.type == "arsenal") {
 
-            //todo disallow placement when not enough money to build
             if (this.checkPosition()) {
-                var newBldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, {
-                    width: this.width,
-                    height: this.height,
-                    bounds: this.bounds,
-                    type: "arsenal"
-                }), 10);
-
-                // me.game.  addStructure(newBldg) // add the building to the array of structures
+                var newBldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, newBldg), 10);
                 return true;
             }
         }
-        return false;
-    },
-    onCollision: function(response, other){
-        console.log("eeew I touched something");
         return false;
     },
     draw: function (renderer) {
