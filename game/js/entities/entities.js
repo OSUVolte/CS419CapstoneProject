@@ -47,7 +47,7 @@ game.PlayerEntity = me.Entity.extend({
                 shapes: [new me.Rect(0, 0, 25, 25)]
             }
             // spawn unit
-            me.game.world.addChild(me.pool.pull("units", 1000, 160, wizard, settings), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 100, wizard, settings), 10);
 
         } else if (!me.input.isKeyPressed('d')) {
             this.playerOneSpawn = false;
@@ -83,8 +83,8 @@ game.PlayerEntity = me.Entity.extend({
                 shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
             }
             
-            me.game.world.addChild(me.pool.pull("units", 0, 160, minotaur, settings), 10);
-            me.game.world.addChild(me.pool.pull("units", 0, 160, rogue, settingssm), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 160, minotaur, settings), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 160, rogue, settings), 10);
         } else if (!me.input.isKeyPressed('a')) {
             this.playerTwoSpawn = false;
         }
@@ -410,8 +410,7 @@ game.Units = me.Entity.extend({
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
         this.body.setVelocity(0,0);
-        this.body.vel.x = 0;
-        this.body.vel.y = 0;
+
         // if this is alive
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
@@ -435,14 +434,14 @@ game.Units = me.Entity.extend({
                 this.me = response.a;
 
             }
-            return true;
+            return false;
         }
 
         
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
-            return true;
+            return false;
         }
 
         return false;

@@ -58,7 +58,10 @@ var game = {
         sfSpeed: 1,
         sfHealth: 1,
         sfAtk: 1,
-        sfBuildTime: 1
+        sfBuildTime: 1,
+
+        //array holding the queue names as set in the map
+        queueName: ["queue_front", "queue_mid", "queue_back"]
 
     },
     //If this then that happens in the game:
@@ -88,7 +91,7 @@ var game = {
     // Run on page load.
     "onload" : function () {
         // Initialize the video.
-        if (!me.video.init(1024, 768, {wrapper : "screen", scale : "auto"})) {
+        if (!me.video.init(1024, 768, {wrapper : "screen", scale : 1})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -141,9 +144,11 @@ var game = {
         me.pool.register("units", game.Units, false);
 
         //buildings:
-        me.pool.register("build_area", game.BuildingArea);
-        me.pool.register("structures", game.Structures);
 
+        me.pool.register("build_area", game.BuildingArea);
+        me.pool.register("P2_build_area", game.BuildingAreaAI);
+        me.pool.register("structures", game.Structures);
+        me.pool.register("keep", game.Keep);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);
@@ -160,10 +165,15 @@ var game = {
 
         // queuing areas
         me.pool.register("queue_front", game.QueueArea);
+        me.pool.register("queue_mid", game.QueueArea);
         me.pool.register("queue_back", game.QueueArea);
 
         //wave manager
         me.pool.register("waveManager", game.WaveManager, true);
+
+        me.pool.register("p2_queue_front", game.QueueArea);
+        me.pool.register("p2_queue_mid", game.QueueArea);
+        me.pool.register("p2_queue_back", game.QueueArea);
 
         // enable keyboard
         me.input.bindKey(me.input.KEY.LEFT,  "left");           // can add bind keys to play.js, under resetEvent function

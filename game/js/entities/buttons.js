@@ -493,4 +493,78 @@ game.UI.developTech = me.GUI_Object.extend({
         }
 
     }
+})
+game.UI.removeBuilding = me.GUI_Object.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y, label) {
+        this._super(me.GUI_Object, "init", [ x, y, {
+            image: game.texture,
+            region : "deleteButton"
+        } ]);
+
+        // offset of the two used images in the texture
+        this.unclicked_region = game.texture.getRegion("deleteButton");
+        this.clicked_region = game.texture.getRegion("deleteButtonPushed");
+
+        this.anchorPoint.set(0, 0);
+        this.setOpacity(1);
+
+        //font
+        this.font = new me.Font("Arial", 10, "white");
+        this.font.textAlign = "left";
+        this.font.textBaseline = "middle";
+
+        this.label = label; //Text
+
+        //Acces to the building
+        this.parent = me.game.getParentContainer(this);
+
+        // only the parent container is a floating object
+        this.floating = false;
+    },
+
+    /**
+     * function called when the object is clicked on
+     */
+    onClick : function (/* event */) {
+        this.offset.setV(this.clicked_region.offset);
+        // account for the different sprite size
+        this.pos.y += this.height - this.clicked_region.height ;
+        this.height = this.clicked_region.height;
+
+        var parent = me.game.getParentContainer(this);
+        //remove the last unit in the queue
+        //todo change this so that entities in a queue are emptied out first.
+        parent.building.destroy();
+
+        //return a portion of the players gold
+
+
+        //parent.spawnUnit(this.action);
+        // don't propagate the event
+        return false;
+    },
+
+    /**
+     * function called when the pointer button is released
+     */
+    onRelease : function (/* event */) {
+        this.offset.setV(this.unclicked_region.offset);
+        // account for the different sprite size
+        this.pos.y -= this.unclicked_region.height - this.height;
+        this.height = this.unclicked_region.height;
+        // don't propagate the event
+        return false;
+    },
+
+    draw: function(renderer) {
+        this._super(me.GUI_Object, "draw", [ renderer ]);
+        this.font.draw(renderer,
+            this.label,
+            this.pos.x + this.width / 2,
+            this.pos.y + this.height / 2
+        );
+    }
 });
