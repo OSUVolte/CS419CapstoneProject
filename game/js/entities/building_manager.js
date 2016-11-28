@@ -33,7 +33,7 @@ game.BuildingArea = me.Renderable.extend({
         }
 
         this.structureProperties = {
-            player: '',
+            player: 1,
             time: '',
             id: ''
         }
@@ -60,9 +60,11 @@ game.BuildingArea = me.Renderable.extend({
                     width: 192,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "barracks"
+                    type: "barracks",
+                    player: this.structureProperties.player
                 }), 10);
                 game.data.playergold -= 200;
+                                    console.log("BUILDING AREA: " + this.structureProperties.player);
             }
             else {
                 //display message
@@ -123,7 +125,8 @@ game.BuildingArea = me.Renderable.extend({
                     width: 341,
                     height: 288,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "keep"
+                    type: "keep",
+                    player: this.structureProperties.player
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -166,91 +169,108 @@ game.BuildingAreaAI = me.Renderable.extend({
         }
 
         this.structureProperties = {
-            player: '',
+            player: 2,
             time: '',
             id: ''
         }
 
         this.structures = []; // Array to hold all structures in play.
+        
+        /* new variables added */
+        // set name
+        this.name = "P2_build_area";
+        this.buildingToBuild = "none";
+        this.alwaysUpdate = true;
+        
+    }, 
+    
+    // enemyAI entity will call this when it builds, passing the type of building as an argument
+    build : function(type) {
+        this.buildingToBuild = type;
     },
 
     update: function () {
 
-        // //build
-        // if (me.input.isKeyPressed("build")) {
-        //     console.log("build");
-        //     this.isPlacing = true;
-        // }
-        // //What to do if building and type barracks
-        // if (this.isPlacing == true && me.input.isKeyPressed("barracks")) {
-        //     game.data.message= {msgTime: me.timer.getTime(), msg:"Placing Barracks", msgDur: 5, color:"white"};
-        //
-        //     //TODO: dynamically use cost of building instead of hardcoded "200"
-        //     if(game.data.playergold >= 200) {
-        //         // Adding it to the world, at a place near the bounding box as set by the tiled map object
-        //         me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-        //             width: 128,
-        //             height: 102,
-        //             bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-        //             type: "barracks"
-        //         }), 10);
-        //         game.data.playergold -= 200;
-        //     }
-        //     else {
-        //         //display message
-        //         game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
-        //
-        //     }
-        //     console.log(game.data.playergold);
-        //     this.isPlacing = false;
+        //build                                                                                                                              // isPlacing will be triggered in the enemyAI entity
+        //if (me.input.isKeyPressed("build")) {
+        //    console.log("build");
+        //    this.isPlacing = true;
+        //}
+        
+        //What to do if building and type barracks
+        if (this.isPlacing == true && this.buildingToBuild === "barracks") {
+            game.data.message= {msgTime: me.timer.getTime(), msg:"ENEMY Placing Barracks", msgDur: 5, color:"white"};
+        
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.dataAI.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x), (this.pos.y + 1), {                                                 // not sure if y position is off by 1 pixel when initialized (?)      
+                    width: 192,
+                    height: 192,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can build at that postion
+                    type: "barracks",
+                                        
+                    builder: "AI",                                                                                                           // builder AI is building
+                    player: this.structureProperties.player                                                                                                                // pass to barracks that its building owned by player
+                }), 10);
+                game.dataAI.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"ENEMY Not enough Money", msgDur: 5, color:"red"};
+        
+            }
+            console.log("Enemy is placing barracks, current gold: " + game.dataAI.playergold);
+            this.isPlacing = false;
         //
         //     //What to do if building and type Armourer
-        // }else if (this.isPlacing == true && me.input.isKeyPressed("armourer")) {
+        }else if (this.isPlacing == true && me.input.isKeyPressed("armourer")) {
         //
         //     //TODO: dynamically use cost of building instead of hardcoded "200"
-        //     if(game.data.playergold >= 200) {
-        //         // Adding it to the world, at a place near the bounding box as set by the tiled map object
-        //         me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-        //             width: 128,
-        //             height: 96,
-        //             bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-        //             type: "armourer"
-        //         }), 10);
-        //         game.data.playergold -= 200;
-        //     }
-        //     else {
-        //         //display message
-        //         game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                     width: 128,
+                    height: 96,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "armourer"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
+        
+            }
+            console.log(game.data.playergold);
+            this.isPlacing = false;
+        
+        }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
+        
+            //TODO: dynamically use cost of building instead of hardcoded "200"
+            if(game.data.playergold >= 200) {
+                // Adding it to the world, at a place near the bounding box as set by the tiled map object
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                    width: 150,
+                    height: 150,
+                    bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
+                    type: "arsenal"
+                }), 10);
+                game.data.playergold -= 200;
+            }
+            else {
+                //display message
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
         //
-        //     }
-        //     console.log(game.data.playergold);
-        //     this.isPlacing = false;
-        //
-        // }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
-        //
-        //     //TODO: dynamically use cost of building instead of hardcoded "200"
-        //     if(game.data.playergold >= 200) {
-        //         // Adding it to the world, at a place near the bounding box as set by the tiled map object
-        //         me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
-        //             width: 150,
-        //             height: 150,
-        //             bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-        //             type: "arsenal"
-        //         }), 10);
-        //         game.data.playergold -= 200;
-        //     }
-        //     else {
-        //         //display message
-        //         game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
-        //
-        //     }
-        //     console.log(game.data.playergold);
-        //     this.isPlacing = false;
-        // }
+            }
+            console.log(game.data.playergold);
+            this.isPlacing = false;
+        }
 
 
         return this.selected || this.hover;
     },
+    
     addStructure: function(structure){
         this.structures.push(structure);
     }
@@ -280,16 +300,30 @@ game.BuildingObject = me.Entity.extend({
         this.grabOffset = new me.Vector2d(0,0);
 
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+        
+        this.builder = settings.builder                                                                                             // for enemy AI requires some special settings to function
+        if (this.builder === "AI") {
+            this.alwaysUpdate = true;
+            this.goRight = true;
+            this.goDown = false;
+            this.goLeft = false;
+            this.body.setVelocity(15,15);
+        }
 
+        this.player = settings.player;
     },
 
     onActivateEvent: function () {
+        if (this.builder === "AI") {                                                                                                // if the builder is AI, control its thought process
+            // maybe do something upon activation
+        } else {
         //register on mouse/touch event
-        me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
+        me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));                                               // if the builder was not the AI, proceed as normal
         me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
         me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
         //register locally...i think.
         me.input.registerPointerEvent('pointermove', this, this.pointerMove.bind(this));
+        }
     },
 
     /**
@@ -343,7 +377,7 @@ game.BuildingObject = me.Entity.extend({
             this.chooseImage("good");
             return true;
         }else{
-            console.log("not");
+       //     console.log("not");
             this.chooseImage("bad");
         }
         return false;
@@ -377,9 +411,75 @@ game.BuildingObject = me.Entity.extend({
 
     /**
      * update function
+                 this.goRight = true;
+            this.goDown = false;
+            this.goLeft = false;
+            this.scanFinished = false;
      */
-    update: function () {
-
+    update: function (dt) {
+        // only perform these actions if the builder was the AI
+        if (this.builder == "AI") {
+        // check position each update, if the position is OK, place the building
+            if (this.checkPosition()) {
+                if(this.placeBuilding()){
+                    this.destroy();
+                }
+            }
+            this.body.update(dt);
+        
+            if ((this.pos.x + (this.width) * 1.5) >= (this.bounds.width + this.bounds.x) && this.goRight == true) {                                                 // todo: double/recheck bounds later                
+                this.body.vel.x = 0;
+                this.goRight = false;
+                this.currentY = this.pos.y;
+            }
+            
+            if (this.goRight == false && this.goDown == false) {
+                this.body.vel.y += this.body.accel.y * me.timer.tick;
+                if (this.currentY + 50 < this.pos.y) {                                                                                                              // go down ~50 pixels, then go left
+                    this.goDown = false;
+                    this.goLeft = true;
+                    this.body.vel.y = 0;
+                }
+            }
+            
+            if (this.goLeft == true) {
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                if (this.pos.x <= this.bounds.x) {
+                    this.body.vel.x = 0;
+                    this.goLeft = false;
+                    this.goRight = true;
+                }
+            }
+            
+            // final height check
+            if (this.pos.y + this.height >= this.bounds.y + this.bounds.height) {
+                this.goDown = false;
+                this.goLeft = true;
+                this.goRight = false;
+                this.body.vel.y = 0;
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+            }
+            
+            if (this.pos.x < this.bounds.x) {
+                this.scanFinished == true;
+                this.goDown = false;
+                this.goLeft = false;
+                this.goRight = false;
+                this.body.vel.y = 0;
+                this.body.vel.x = 0;
+                me.game.world.removeChildNow(this);
+                console.log("ENEMY BASE: no more space for buildings!");                                                                                            // debug message
+            }
+            
+            // set movement
+            if (this.builder == "AI" && this.goRight == true) {
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+            }
+            
+        }
+        
+    //    me.collision.check(this);
+        
         return this.selected || this.hover;
     },
 
@@ -392,13 +492,15 @@ game.BuildingObject = me.Entity.extend({
         renderer.setGlobalAlpha(0.80);
     },
     destroy: function(){
-
-        me.input.releasePointerEvent('pointerdown', this);
+        if (this.builder != "AI") {
+            me.input.releasePointerEvent('pointerdown', this);
+        }
         me.game.world.removeChild(this);
     },
-    onCollision: function(){
+    
+    onCollision: function(response, other){
         console.log("i hit something");
-        return false;
+        return true;
     }
 
 });
@@ -445,6 +547,7 @@ game.FootPrint = game.BuildingObject.extend({
         this.font.bold();
 
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+
     },
     /**
      * Change the image
@@ -494,10 +597,17 @@ game.FootPrint = game.BuildingObject.extend({
                     width: this.width,
                     height: this.height,
                     bounds: this.bounds,
-                    type: "barracks"
+                    type: "barracks",
+                    player: this.player
                 }), 10);
                 //todo maybe use this to easily apply upgrades to all buildings at once?
                 //me.game.  addStructure(newBldg) // add the building to the array of structures
+                
+                if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
+                    game.dataAI.structures.push(newBldg);
+                    console.log("ENEMY BUILDING ARRAY:");
+                    console.log(game.dataAI);
+                }
                 return true;
             }
         }

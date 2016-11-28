@@ -63,6 +63,82 @@ var game = {
         queueName: ["queue_front", "queue_mid", "queue_back"]
 
     },
+    
+    // data for enemy AI, basically a copy of data object containing features specific to the enemy player
+    dataAI : {
+        // score
+        score : 0,
+        gametime: 0,
+        currentwave: 0,
+        waveduration: 15, //set to 15 seconds for testing
+
+        playergold: 1000, //set initial player gold to 1000
+        playergoldrate: 5, //set initial player gold rate to 5 gold per sec
+
+        /**
+         * Checks if user has enough moolah
+         * @param amt amount to be deducted
+         * @returns {boolean} true if deduction was successful
+         */
+        cashier: function(amt){
+            if(this.playergold- amt < 0){
+                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough money ", msgDur: 3, color:"red"};
+                return false
+            }else{
+                this.playergold = this.playergold - amt;
+            }
+            return true;
+        },
+        
+        // returns the amount of a building within the structures array
+        count : function(type) {
+            var count = 0;
+            for (var i = 0; i < this.structures.length; i++) {
+                if (this.structures[i].type === type) {
+                    count++;
+                }
+            }
+            
+            return count;
+        },
+        
+        // todo: somehow decide what building to return
+        getBuilding : function(type) {
+            return this.structures[0];
+        
+        },
+
+        //Used for displaying messages on the screen
+        message: {
+            msgTime: 0, //time message was entered
+            msg: "",
+            dur: 10, // duration of the message
+            color: "black"
+        },
+
+        /* todo: update to be consistent with data object */
+        //tech
+        atkBoost: 0, //attack boost
+        defBoost: 0, // defence boost
+        btBoost: 0, //buildtime Boost
+        hpBoost: 0, //health boost
+        speedBoost: 0,
+
+        //tech Scaling Factors
+        //todo increase scale factor per level perhaps (ie player gets leveled up set by a conditional, and then this increases the scaling factor by .01 or something)
+        sfArmor: 1,
+        sfSpeed: 1,
+        sfHealth: 1,
+        sfAtk: 1,
+        sfBuildTime: 1,
+
+        //array holding the queue names as set in the map
+        queueName: ["p2_queue_front", "p2_queue_mid", "p2_queue_back"],
+        
+        // array holding the AI's buildings
+        structures: []
+    },
+    
     //If this then that happens in the game:
     conditionals : {
 
@@ -160,6 +236,9 @@ var game = {
         //player Postions
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
+    
+        // enemy ai
+        me.pool.register("enemyAI", game.EnemyAI);
 
         // queuing areas
         me.pool.register("queue_front", game.QueueArea);

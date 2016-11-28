@@ -7,18 +7,17 @@ game.Structures = me.Entity.extend({
     init: function (x, y, settings) {
 
         //load the general properties
-        this.generalProperties();
+        this.generalProperties(settings);
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
     },
-    generalProperties: function(){
+    generalProperties: function(settings){
         this.q = [];
         this.allowBuild = false;
         this.complete = false;
         this.functional = false;
-        this.player =1;
+        this.player = settings.player;                                                                                                                      // changed from player 1
 
         //properties for health bar
         this.hpBarCurrent = new me.Font("Verdana", 11, "green");
@@ -33,6 +32,7 @@ game.Structures = me.Entity.extend({
         this.hpBarMax = new me.Font("Verdana", 11, "black");
         this.hpBarMax.alpha = 0.5;
 
+        this.alwaysUpdate = true;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -113,11 +113,11 @@ game.Structures = me.Entity.extend({
             height: this.height,
             width: this.width,
             // direction
-            lane: "top",
+            player: this.player,                                                                                                                                // when spawning units, label which player theyre from
             queueGroup: queueAssignment, //the units queue assignment
 
             // which player spawned
-            player: 1,
+        //    player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10);
         console.log("Assigned to q", newUnit)
@@ -146,7 +146,7 @@ game.Structures = me.Entity.extend({
             type: unit,
             queue: queue
         };
-        console.log(qObj);
+//        console.log(qObj);                                                                                                                            objq canceld out
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
@@ -323,6 +323,11 @@ game.Structures = me.Entity.extend({
         if(me.input.isKeyPressed("log")){
             this.logitAll(dt);
         }
+        
+        checkHealth(this);                                                                                                                  // check building health
+        if (!this.alive) {
+            me.game.world.removeChildNow(this);
+        }
 
         return this._super(me.Entity, 'update', [dt]);
     },
@@ -386,6 +391,8 @@ game.Barracks = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
+        
+        this.player = settings.player;
     },
     /**
      * Defines all the properties of the building
@@ -407,6 +414,7 @@ game.Barracks = game.Structures.extend({
         this.capacity = 5;
         this.fullHealth = 1000;
         this.health = this.fullHealth;
+        this.def = 0;                                                                                                       // need to add defence for battle function to work
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
     },
@@ -538,6 +546,7 @@ game.Armourer = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
+        this.def = 0;
         this.health = this.fullHealth;
         this.cost = 700;
 
@@ -740,6 +749,7 @@ game.Arsenal = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
+        this.def = 0;
         this.health = this.fullHealth;
         this.cost = 700;
 
@@ -930,6 +940,8 @@ game.Keep = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("keep")}); //addimage
+        
+        
     },
     /**
      * Defines all the properties of the building
@@ -943,6 +955,7 @@ game.Keep = game.Structures.extend({
         this.capacity = 2;
         this.fullHealth = 1000;
         this.health = this.fullHealth;
+        this.def = 0;
         this.cost = 100;
 
         //the types of  tech that this building can build
@@ -1119,3 +1132,14 @@ game.Keep = game.Structures.extend({
 });
 
 
+
+//
+function checkHealth(building) {
+    if (building.health <= 0) {
+        console.log(building.type + " (" + building.GUID + "): DESTROYED");    
+        
+        building.alive = false;
+    } else {
+        console.log(building.type + ": " + building.health);
+    }
+}
