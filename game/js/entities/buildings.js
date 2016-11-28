@@ -395,6 +395,8 @@ game.Barracks = game.Structures.extend({
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
         //
         // this.player = settings.player;
+
+        this.alwaysUpdate = true;
     },
     /**
      * Defines all the properties of the building
