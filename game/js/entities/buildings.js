@@ -7,23 +7,23 @@ game.Structures = me.Entity.extend({
     init: function (x, y, settings) {
 
         //load the general properties
-        this.generalProperties();
+        this.generalProperties(settings);
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.body.setCollisionMask(me.collision.types.WORLD_SHAPE);
     },
-    generalProperties: function(){
+    generalProperties: function(settings){
         this.q = [];
         this.allowBuild = false;
         this.complete = false;
         this.functional = false;
-        this.player =1;
+        this.player = settings.player;                                                                                                                      // changed from player 1
 
         //properties for health bar
         this.hpBarCurrent = new me.Font("Verdana", 11, "green");
         this.hpBarCurrent.lineWidth = 1;
         this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
+
         // player 1 is green hp bar, 2 is red hp bar
         if (this.player == 1) {
             this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
@@ -33,6 +33,7 @@ game.Structures = me.Entity.extend({
         this.hpBarMax = new me.Font("Verdana", 11, "black");
         this.hpBarMax.alpha = 0.5;
 
+        this.alwaysUpdate = true;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -85,6 +86,7 @@ game.Structures = me.Entity.extend({
             // this.grabOffset.sub(this.pos);
             console.log('selected the new buiding');
             this.selected = true;
+            //me.viewport.reset(0,0);
             this.displayStatus();
 
             // don"t propagate the event furthermore
@@ -113,11 +115,11 @@ game.Structures = me.Entity.extend({
             height: this.height,
             width: this.width,
             // direction
-            lane: "top",
-            qAssignment: queueAssignment, //the units queue assignment
+            player: this.player,                                                                                                                                // when spawning units, label which player theyre from
+            queueGroup: queueAssignment, //the units queue assignment
 
             // which player spawned
-            player: 1,
+        //    player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10);
         console.log("Assigned to q", newUnit)
@@ -146,7 +148,7 @@ game.Structures = me.Entity.extend({
             type: unit,
             queue: queue
         };
-        console.log(qObj);
+//        console.log(qObj);                                                                                                                            objq canceld out
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(qObj);
@@ -265,7 +267,8 @@ game.Structures = me.Entity.extend({
                 //spawn the unit
                 console.log("spawning", unit.toLowerCase());
 
-                this.spawnUnit(unit, unitQ);
+
+                this.spawnUnit(unit, game.data.queueName[unitQ]);
 
                 //update the time of the element in the front
                 //so that it begins building
@@ -322,6 +325,11 @@ game.Structures = me.Entity.extend({
         if(me.input.isKeyPressed("log")){
             this.logitAll(dt);
         }
+        
+        checkHealth(this);                                                                                                                  // check building health
+        if (!this.alive) {
+            me.game.world.removeChildNow(this);
+        }
 
         return this._super(me.Entity, 'update', [dt]);
     },
@@ -346,9 +354,13 @@ game.Structures = me.Entity.extend({
         }
 
         this._super(me.Entity, "draw", [renderer]);
-        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
-        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y-20);
-        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y-20);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y+50);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
+    },
+    onCollision : function (response, other) {
+        //console.log("Building: eww he touched me");
+        return false;
     },
     /**
      * Logging of some specific variables to help with trouble shooting
@@ -362,6 +374,7 @@ game.Structures = me.Entity.extend({
         console.log("functional", this.functional);
 
     },
+
 
 });
 
@@ -380,6 +393,8 @@ game.Barracks = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
+        //
+        // this.player = settings.player;
     },
     /**
      * Defines all the properties of the building
@@ -401,6 +416,7 @@ game.Barracks = game.Structures.extend({
         this.capacity = 5;
         this.fullHealth = 1000;
         this.health = this.fullHealth;
+        this.def = 0;                                                                                                       // need to add defence for battle function to work
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
     },
@@ -436,18 +452,10 @@ game.Barracks = game.Structures.extend({
 
         return this._super(me.Entity, "update", [dt])
     },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
-    },
     displayStatus: function(){
         this.panelHeight = 300;
         this.panelWidth =400;
-        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.pos.x, this.pos.y,  this.panelWidth, this.panelHeight, "Barracks Menu", this));
 
         if(this.enabled.type1 && this.complete && this.functional){
             this.panel.addChild(new game.UI.UnitAdd(
@@ -540,6 +548,7 @@ game.Armourer = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
+        this.def = 0;
         this.health = this.fullHealth;
         this.cost = 700;
 
@@ -616,14 +625,6 @@ game.Armourer = game.Structures.extend({
         this.developTech(me.timer.getTime());
 
         return this._super(me.Entity, "update", [dt]);
-    },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
     },
     /**
      * The Display pop up on the building
@@ -750,6 +751,7 @@ game.Arsenal = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
+        this.def = 0;
         this.health = this.fullHealth;
         this.cost = 700;
 
@@ -825,14 +827,6 @@ game.Arsenal = game.Structures.extend({
         this.developTech(me.timer.getTime());
 
         return this._super(me.Entity, "update", [dt]);
-    },
-    /**
-     * collision handler
-     * (called when colliding with other objects)
-     */
-    onCollision : function (response, other) {
-        // Make all other objects solid
-        return true;
     },
     /**
      * The Display pop up on the building
@@ -934,6 +928,220 @@ game.Arsenal = game.Structures.extend({
 
 });
 
+game.Keep = game.Structures.extend({
+    /**
+     * constructor
+     */
+    init:function (x, y, settings) {
+
+        //call the constructor
+        this._super(game.Structures, 'init', [x, y , settings]);
+        this.x = x;
+        this.y = y;
+        this.placed = true;
+        this.bldgProperties();
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("keep")}); //addimage
+        
+        
+    },
+    /**
+     * Defines all the properties of the building
+     *
+     */
+    bldgProperties: function(){
+
+        this.buildTime = 5;
+        this.percentComplete = 0;
+        this.est = Math.round(new Date().getTime()/1000);
+        this.capacity = 2;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
+        this.def = 0;
+        this.cost = 100;
+
+        //the types of  tech that this building can build
+        this.tech1 = {
+            name: "Inc. Attack 25",
+            startTime: null, // set when button is pressed
+            buildTime: 6,
+            action: "inc_base",
+            value: 25,
+            cost: 100,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech2 = {
+            name: "Inc. speed 25",
+            startTime: null,
+            buildTime: 9,
+            action: "inc_speed",
+            value: 5,
+            cost:400,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech3 = {
+            name: "Inc. Attack Scaling 1.25",
+            startTime: null,
+            buildTime: 12,
+            action: "inc_sf",
+            value: 1.25,
+            cost: 1000,
+            enabled:true,
+            complete: false,
+            inProcess: false
+        };
+    },
+    /**
+     * Change the image
+     */
+    chooseImage: function () {
+        //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
+        //this.renderable.addAnimation("building", [0], 5);
+        //this.renderable.setCurrentAnimation("neutral");
+    },
+    /**
+     * Set spawn point of the footprint
+     * Might want to make it relative to some other entity
+     */
+    setSpawnPoint : function (dt) {
+        //todo make this useable
+        //It might be best to offset this point from the buildings - but it will need a check to make sure
+        //it doesn't interfere with other buildings...
+    },
+    /**
+     * update the entity
+     */
+    update : function (dt) {
+        //Update functions of our game objects will always receive a delta time (in milliseconds).
+        // It's important to pass it along to our parent's class update.
+        //setting the time for the building
+        this._super(me.Entity, "update", [dt]);
+
+        //mainUpdate - General functions that are good for all buildings
+        this.mainUpdate(dt);
+
+        //Function watches the techQ, sets enabled when build time is done,
+        this.developTech(me.timer.getTime());
+
+        return this._super(me.Entity, "update", [dt]);
+    },
+    /**
+     * The Display pop up on the building
+     */
+    displayStatus: function(){
+        this.panel = me.game.world.addChild(new game.UI.BuildingStatus(this.x, this.y,  400, 300, "Arsenal  Menu", this));
+
+        // if(this.tech1.enabled && this.functional && this.complete){
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 40,
+        //         "white", //text color
+        //         this.tech1 // the tech that will be applied by te button
+        //     ),110);
+        // }
+        // if(this.tech2.enabled && this.functional && this.complete) {
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 90,
+        //         "white",
+        //         this.tech2
+        //     ), 110);
+        // }
+        // if(this.tech3.enabled && this.functional && this.complete) {
+        //     this.panel.addChild(new game.UI.developTech(
+        //         20, 140,
+        //         "white",
+        //         this.tech3
+        //     ), 110);
+        // }
+
+    },
+
+    developTech: function (now) {
+     /*
+        //check front of q for finished tech
+        if (this.q.length > 0) {
+            if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
+
+                //apply the tech
+                switch (this.q[0].action) {
+                    case "inc_base":
+                        game.data.atkBoost =  game.data.atkBoost + this.q[0].value;
+                        //send a message
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Attack Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        //todo deduct player money
+
+
+                        break;
+
+                    case "inc_health":
+                        game.data.speedBoost = game.data.speedBoost+ this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Speed Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+
+                    case "inc_sf":
+                        game.data.sfAtk = this.q[0].value;
+                        game.data.message = {
+                            msgTime: me.timer.getTime(),
+                            msg: "Scaling Factor Boosted by " + this.q[0].value,
+                            msgDur: 4,
+                            color: "blue"
+                        };
+
+                        //mark this tech complete
+                        this.q[0].complete = true;
+
+                        break;
+                }
+
+                //remove it from the q
+                this.removeTechQ(0);
+
+                //Let them know what is next in development cycle
+                if (this.q.length > 0)
+                    game.data.message = {
+                        msgTime: me.timer.getTime(),
+                        msg: "Now developing " + this.q[0].name,
+                        msgDur: 4,
+                        color: "blue"
+                    };
+            }
+        }
+      */}
+
+});
 
 
 
+//
+function checkHealth(building) {
+    if (building.health <= 0) {
+        console.log(building.type + " (" + building.GUID + "): DESTROYED");    
+        
+        building.alive = false;
+    } else {
+        //console.log(building.type + ": " + building.health);
+    }
+}

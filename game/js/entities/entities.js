@@ -47,7 +47,7 @@ game.PlayerEntity = me.Entity.extend({
                 shapes: [new me.Rect(0, 0, 25, 25)]
             }
             // spawn unit
-            me.game.world.addChild(me.pool.pull("units", 1000, 160, wizard, settings), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 100, wizard, settings), 10);
 
         } else if (!me.input.isKeyPressed('d')) {
             this.playerOneSpawn = false;
@@ -83,8 +83,8 @@ game.PlayerEntity = me.Entity.extend({
                 shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
             }
             
-            me.game.world.addChild(me.pool.pull("units", 0, 160, minotaur, settings), 10);
-            me.game.world.addChild(me.pool.pull("units", 0, 160, rogue, settingssm), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 160, minotaur, settings), 10);
+            me.game.world.addChild(me.pool.pull("units", 100, 160, rogue, settings), 10);
         } else if (!me.input.isKeyPressed('a')) {
             this.playerTwoSpawn = false;
         }
@@ -381,9 +381,10 @@ game.Units = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
-                    this.target[0].renderable.flicker(500)
+                    this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
-                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    this.target[0].health -= battle(this, this.target[0]);
+//                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
                     this.hit = false;
@@ -421,8 +422,7 @@ game.Units = me.Entity.extend({
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
         this.body.setVelocity(0,0);
-        this.body.vel.x = 0;
-        this.body.vel.y = 0;
+
         // if this is alive
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
@@ -446,7 +446,7 @@ game.Units = me.Entity.extend({
                 this.me = response.a;
 
             }
-            return true;
+            return false;
         }
 
         
@@ -555,7 +555,7 @@ game.Warrior = me.Entity.extend({
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.renderable.flipX(true);
-            endQueue();
+        //    endQueue();
             // update the entity velocity
             this.body.vel.x -= this.body.accel.x * me.timer.tick;
 
@@ -806,8 +806,6 @@ game.ChaserEntity = me.Entity.extend({
 
 });
 
-
-
 // takes the attacker object and defender object
 // do calculations, returns the amount of damage done
 // to the DEFENDER
@@ -900,6 +898,7 @@ var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minot
 
 // end unit queueing
 function endQueue() {
+    console.log("endQueue fired");
     for (i = 0; i < me.game.world.children.length; i++) {
         if (me.game.world.children[i].idle == true) {
             me.game.world.children[i].idle = false;
