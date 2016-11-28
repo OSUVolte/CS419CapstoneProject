@@ -362,7 +362,7 @@ game.BuildingObject = me.Entity.extend({
      */
     checkOtherBldg : function () {
         this.flag= false;
-        this.factor = 100;
+        this.factor = 0;
         for(i = 0; i < game.data.structures.length; i++) {
             if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
                 || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
@@ -389,7 +389,8 @@ game.BuildingObject = me.Entity.extend({
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
             && this.pos.y > this.bounds.y
-            && this.pos.y < this.bounds.height+this.bounds.y && this.checkOtherBldg()){
+            && this.pos.y < this.bounds.height+this.bounds.y
+            && this.checkOtherBldg()){
             //update the image
             this.chooseImage("good");
             return true;
@@ -590,26 +591,18 @@ game.FootPrint = game.BuildingObject.extend({
             player: this.player
         };
         console.log(newBldg);
-        //Add Buildings to the area
-        // if(this.type == "keep") {
-        //
-        //     //todo disallow placement when not enough money to build
-        //     if (this.checkPosition()) {
-        //          me.game.world.addChild(new game.Keep(this.pos.x, this.pos.y, newBldg), 10);
-        //         return true;
-        //     }
-        // }
         if(this.type == "barracks") {
 
             if (this.checkPosition()) {
                 bldg = me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
-                game.data.structures.push(bldg);
-                //console.log("structures",game.data.structures);
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
-                    console.log("ENEMY BUILDING ARRAY:");
-                    console.log(game.dataAI);
+                    // console.log("ENEMY BUILDING ARRAY:");
+                    // console.log(game.dataAI.structures);
+                }else{
+                    game.data.structures.push(bldg);
+                    console.log("structures",game.data.structures);
                 }
 
                 return true;
@@ -618,12 +611,14 @@ game.FootPrint = game.BuildingObject.extend({
         if(this.type == "armourer") {
             if (this.checkPosition()) {
                 bldg = me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, newBldg), 10);
-                game.data.structures.push(bldg);
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
-                    console.log("ENEMY BUILDING ARRAY:");
-                    console.log(game.dataAI);
+                    // console.log("ENEMY BUILDING ARRAY:");
+                    // console.log(game.dataAI.structures);
+                }else{
+                    game.data.structures.push(bldg);
+                    console.log("structures",game.data.structures);
                 }
                 return true;
             }
@@ -636,8 +631,11 @@ game.FootPrint = game.BuildingObject.extend({
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
-                    console.log("ENEMY BUILDING ARRAY:");
-                    console.log(game.dataAI);
+                    // console.log("ENEMY BUILDING ARRAY:");
+                    // console.log(game.dataAI.structures);
+                }else{
+                    game.data.structures.push(bldg);
+                    console.log("structures",game.data.structures);
                 }
                 return true;
             }
