@@ -19,7 +19,7 @@ var game = {
         isBuildMenuOpen: false,
 
         wavemanager: "",
-        playergold: 1000, //set initial player gold to 1000
+        playergold: 10000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
         /**
@@ -277,6 +277,12 @@ var game = {
         me.input.bindKey(me.input.KEY.W, "makeType1", true);
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
+
+        //wayPoints
+        me.pool.register("wayPoint1", game.WayPoint);
+        me.pool.register("wayPoint2", game.WayPoint);
+        me.pool.register("wayPoint3", game.WayPoint);
+        me.pool.register("wayPoint4", game.WayPoint);
 
 
         // render hitbox int the debug panel

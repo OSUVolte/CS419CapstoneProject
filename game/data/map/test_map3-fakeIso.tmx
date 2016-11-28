@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="175">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="180">
  <tileset firstgid="1" name="medieval_tilesheet" tilewidth="16" tileheight="16" tilecount="4840" columns="110">
   <image source="../img/map/medieval_tilesheet.png" width="1760" height="704"/>
   <terraintypes>
@@ -87,6 +87,10 @@
   <object id="143" name="p2_queue_back" x="3698" y="505" width="128" height="90"/>
   <object id="157" name="enemyAI" x="3136" y="987" width="64" height="32"/>
   <object id="173" name="spawn_top" x="512" y="224" width="33.3333" height="32"/>
+  <object id="175" name="wayPoint1" type="waypoint" x="960" y="289" width="65" height="60"/>
+  <object id="177" name="wayPoint2" type="waypoint" x="1662.5" y="287" width="65" height="60"/>
+  <object id="178" name="wayPoint3" type="waypoint" x="2431.5" y="584" width="65" height="60"/>
+  <object id="179" name="wayPoint4" type="waypoint" x="3203.5" y="614" width="65" height="60"/>
  </objectgroup>
  <objectgroup name="collision" offsetx="-4" offsety="0">
   <object id="107" x="-96" y="0" width="1120" height="16"/>

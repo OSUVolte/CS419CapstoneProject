@@ -133,6 +133,8 @@ game.Units = me.Entity.extend({
         this.hit = false;                                   // unit not performed an attack yet
         this.path = 0;
         this.type = "unit";
+        this.waveRelease = false;
+        this.wavetarget = "";
 
         // astar stats
         this.target_destination = null;
@@ -229,6 +231,15 @@ game.Units = me.Entity.extend({
    * update the enemy pos
    */
     update : function (dt) {
+        if(this.waveRelease === true) {
+            this.waveRelease = false;
+
+            endQueue();
+            //Send to new target
+            this.target_destination = this.wavetarget;
+            this.dest = this.wavetarget;
+        }
+
         if (this.target_destination != null) {
             if (this.target_destination.alive == false) {
                 this.target_destination = null;
@@ -260,10 +271,15 @@ game.Units = me.Entity.extend({
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
 
+                //get all the children
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+
+                    //get opposite alive players only
                     if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
                         temp_destination = this.target_destination;
                         this.target_destination = me.game.world.children[i];
+
+                        //chessboard returns closer than maxValue from targetDestination, update closest
                         if (this.chessboard() <= closest) {
                             closest = this.chessboard();
                         } else {
@@ -297,7 +313,7 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 5000) {                                                                              // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
@@ -459,6 +475,24 @@ game.Units = me.Entity.extend({
 });
 
 game.QueueArea = me.Entity.extend({
+    init:function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y , settings]);
+
+        this.body.collisionType = me.collision.types.NO_OBJECT;
+    },
+
+    update : function (dt) {
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+
+    onCollision : function (response, other) {
+        console.log("touching");
+        return false;
+    }
+});
+
+game.WayPoint = me.Entity.extend({
     init:function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y , settings]);
 

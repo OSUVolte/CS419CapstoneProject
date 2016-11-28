@@ -590,7 +590,7 @@ game.FootPrint = game.BuildingObject.extend({
             type: this.type,
             player: this.player
         };
-        console.log(newBldg);
+        //console.log(newBldg);
         if(this.type == "barracks") {
 
             if (this.checkPosition()) {
@@ -602,7 +602,7 @@ game.FootPrint = game.BuildingObject.extend({
                     // console.log(game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);
-                    console.log("structures",game.data.structures);
+                    //console.log("structures",game.data.structures);
                 }
 
                 return true;
@@ -632,10 +632,10 @@ game.FootPrint = game.BuildingObject.extend({
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
                     // console.log("ENEMY BUILDING ARRAY:");
-                    // console.log(game.dataAI.structures);
+                    console.log("Enemy structure",game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);
-                    console.log("structures",game.data.structures);
+                    console.log("structure",game.data.structures);
                 }
                 return true;
             }
