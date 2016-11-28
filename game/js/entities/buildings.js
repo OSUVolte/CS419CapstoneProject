@@ -23,6 +23,7 @@ game.Structures = me.Entity.extend({
         this.hpBarCurrent = new me.Font("Verdana", 11, "green");
         this.hpBarCurrent.lineWidth = 1;
         this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
+
         // player 1 is green hp bar, 2 is red hp bar
         if (this.player == 1) {
             this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
@@ -85,6 +86,7 @@ game.Structures = me.Entity.extend({
             // this.grabOffset.sub(this.pos);
             console.log('selected the new buiding');
             this.selected = true;
+            //me.viewport.reset(0,0);
             this.displayStatus();
 
             // don"t propagate the event furthermore
@@ -391,8 +393,8 @@ game.Barracks = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
-        
-        this.player = settings.player;
+        //
+        // this.player = settings.player;
     },
     /**
      * Defines all the properties of the building

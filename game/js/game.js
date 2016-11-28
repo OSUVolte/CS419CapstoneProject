@@ -163,8 +163,6 @@ var game = {
         type3Allowed: function () {
 
         },
-
-
     },
 
     // Run on page load.

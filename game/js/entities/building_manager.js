@@ -30,7 +30,9 @@ game.BuildingArea = me.Renderable.extend({
                 y: y,
                 width: this.width,
                 height: this.height
-        }
+        };
+        this.player= 1;
+
     },
 
     update: function () {
@@ -53,7 +55,7 @@ game.BuildingArea = me.Renderable.extend({
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "barracks",
-                    player: this.structureProperties.player
+                    player: this.player
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -75,7 +77,8 @@ game.BuildingArea = me.Renderable.extend({
                     width: 228,
                     height: 196,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "armourer"
+                    type: "armourer",
+                    player: this.player
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -96,7 +99,8 @@ game.BuildingArea = me.Renderable.extend({
                     width: 265,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
-                    type: "arsenal"
+                    type: "arsenal",
+                    player: this.player
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -117,7 +121,7 @@ game.BuildingArea = me.Renderable.extend({
                     height: 288,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "keep",
-                    player: this.structureProperties.player
+                    player: this.player
                 }), 10);
                 game.data.playergold -= 200;
             }
@@ -354,10 +358,9 @@ game.BuildingObject = me.Entity.extend({
         }
     },
     /*
-     * Check the position  to be within the "build" area and updates the image
+     * Check the position  to not be over an existing structure
      */
     checkOtherBldg : function () {
-        console.log("calling it");
         this.flag= false;
         this.factor = 100;
         for(i = 0; i < game.data.structures.length; i++) {
@@ -370,11 +373,11 @@ game.BuildingObject = me.Entity.extend({
             }
         }
 
+        // it's fine if it's the first building or the flag is set
         if(this.flag || game.data.structures.length == 0){
             return true;
         }
         return false;
-
     },
     /*
      * Check the position  to be within the "build" area and updates the image
@@ -412,9 +415,6 @@ game.BuildingObject = me.Entity.extend({
     // mouse up function
     onRelease : function (/*event*/) {
         this.selected = false;
-
-        // this.checkPosition();
-        // this.checkOtherBldg();
 
         //todo fix error from removal
         if(this.placeBuilding()){
@@ -515,7 +515,7 @@ game.BuildingObject = me.Entity.extend({
 
     onCollision: function(response, other){
         console.log("i hit something");
-        return true;
+        return false;
     }
 
 });
@@ -539,17 +539,9 @@ game.FootPrint = game.BuildingObject.extend({
         this.bounds = settings.bounds;
 
         // add a body shape
-        console.log("sprite Sheet",settings.width, settings.height);
+        console.log("player",this.player);
         this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
 
-        //different sprite states determined by position of element
-        // this.renderable.addAnimation("neutral", [0]);
-        // this.renderable.addAnimation("bad", [1]);
-        // this.renderable.addAnimation("caution", [2]);
-        // this.renderable.addAnimation("good", [3]);
-
-        //set the initial image
-        //this.chooseImage("neutral");
         this.checkPosition();
 
         //use to the track if it has been placed
@@ -584,34 +576,38 @@ game.FootPrint = game.BuildingObject.extend({
         This places the actual building of the specific type defined in the buildingArea call
      */
     placeBuilding: function (){
+
         //add building to the area.
         var bldg = null;
 
+
+        //settings for the new building;
         var newBldg = {
             width: this.width,
             height: this.height,
             bounds: this.bounds,
-            type: this.type
+            type: this.type,
             player: this.player
         };
+        console.log(newBldg);
         //Add Buildings to the area
-        if(this.type == "keep") {
-
-            //todo disallow placement when not enough money to build
-            if (this.checkPosition()) {
-                 me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
-                return true;
-            }
-        }
+        // if(this.type == "keep") {
+        //
+        //     //todo disallow placement when not enough money to build
+        //     if (this.checkPosition()) {
+        //          me.game.world.addChild(new game.Keep(this.pos.x, this.pos.y, newBldg), 10);
+        //         return true;
+        //     }
+        // }
         if(this.type == "barracks") {
 
             if (this.checkPosition()) {
                 bldg = me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
                 game.data.structures.push(bldg);
-                console.log("structures",game.data.structures)
+                //console.log("structures",game.data.structures);
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
-                    game.dataAI.structures.push(newBldg);
+                    game.dataAI.structures.push(bldg);
                     console.log("ENEMY BUILDING ARRAY:");
                     console.log(game.dataAI);
                 }
@@ -621,14 +617,28 @@ game.FootPrint = game.BuildingObject.extend({
         }
         if(this.type == "armourer") {
             if (this.checkPosition()) {
-                me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, newBldg), 10);
+                bldg = me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, newBldg), 10);
+                game.data.structures.push(bldg);
+
+                if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
+                    game.dataAI.structures.push(bldg);
+                    console.log("ENEMY BUILDING ARRAY:");
+                    console.log(game.dataAI);
+                }
                 return true;
             }
         }
         if(this.type == "arsenal") {
 
             if (this.checkPosition()) {
-                var newBldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, newBldg), 10);
+               bldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, newBldg), 10);
+                game.data.structures.push(bldg);
+
+                if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
+                    game.dataAI.structures.push(bldg);
+                    console.log("ENEMY BUILDING ARRAY:");
+                    console.log(game.dataAI);
+                }
                 return true;
             }
         }
