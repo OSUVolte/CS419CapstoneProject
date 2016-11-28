@@ -61,7 +61,10 @@ var game = {
         sfBuildTime: 1,
 
         //array holding the queue names as set in the map
-        queueName: ["queue_front", "queue_mid", "queue_back"]
+        queueName: ["queue_front", "queue_mid", "queue_back"],
+
+        //array to hold players Structures that are in play
+        structures: []
 
     },
 
