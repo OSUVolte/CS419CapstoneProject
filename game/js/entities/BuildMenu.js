@@ -354,7 +354,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		// make sure our object is always draw first
 		this.z = 100;
 
-		this.floating = true;
+		this.floating = false;
 
 		// give a name
 		this.name = label;
