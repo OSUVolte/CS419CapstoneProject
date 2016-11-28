@@ -239,6 +239,14 @@ game.Units = me.Entity.extend({
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
+
+            //give money
+            if(this.player == 1){
+                game.dataAI.playergold += 20;
+            }else{
+                game.data.playergold += 20;
+            }
+
             if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
                 this.renderable.setCurrentAnimation("dying");
                 this.renderable.setAnimationFrame();
@@ -251,6 +259,7 @@ game.Units = me.Entity.extend({
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
+
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
                     if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
                         temp_destination = this.target_destination;
