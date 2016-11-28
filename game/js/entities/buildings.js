@@ -11,7 +11,6 @@ game.Structures = me.Entity.extend({
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
-        this.alwaysUpdate = true;
     },
     generalProperties: function(settings){
         this.q = [];
