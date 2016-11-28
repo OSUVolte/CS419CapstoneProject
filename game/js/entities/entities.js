@@ -256,14 +256,21 @@ game.Units = me.Entity.extend({
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
+
+            //Set a target Destination
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
 
+                //get all the children
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+
+                    //get opposite alive players only
                     if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
                         temp_destination = this.target_destination;
                         this.target_destination = me.game.world.children[i];
+
+                        //chessboard returns closer than maxValue from targetDestination, update closest
                         if (this.chessboard() <= closest) {
                             closest = this.chessboard();
                         } else {
@@ -273,7 +280,7 @@ game.Units = me.Entity.extend({
                 }
             }
 
-
+            // acquiring the queue group as targets
             if (this.idle == true) {
                 for (var i = 0; i < me.game.world.children.length; i++) {
                     if (me.game.world.children[i].name === this.queueGroup) {
@@ -294,6 +301,7 @@ game.Units = me.Entity.extend({
                     this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
                     this.dest = this.myPath.pop();
                     this.pathAge = now;
+
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
@@ -449,9 +457,11 @@ game.Units = me.Entity.extend({
 
         
         // bumped into a wall
+        //
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+
             this.path++;
-            return true;
+                return true;
         }
 
         return false;
@@ -459,6 +469,24 @@ game.Units = me.Entity.extend({
 });
 
 game.QueueArea = me.Entity.extend({
+    init:function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y , settings]);
+
+        this.body.collisionType = me.collision.types.NO_OBJECT;
+    },
+
+    update : function (dt) {
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+
+    onCollision : function (response, other) {
+        console.log("touching");
+        return false;
+    }
+});
+
+game.WayPoint = me.Entity.extend({
     init:function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -857,7 +885,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
     this.buildTime = buildTime;
     this.crit = crit;
     this.qAssignment = -1;   // not assigned yet
-    this.cost = cost// add crit chance, 150% extra damage
+    this.cost = cost; // add crit chance, 150% extra damage
 }
 
 /*
