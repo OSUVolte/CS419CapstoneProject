@@ -288,7 +288,7 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 1000) {                                                                              // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 5000) {                                                                              // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
@@ -372,7 +372,8 @@ game.Units = me.Entity.extend({
                     this.hit = true;
                     this.target[0].renderable.flicker(500)
                     this.target[0].hp -= battle(this, this.target[0]);
-                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    this.target[0].health -= battle(this, this.target[0]);
+//                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
                     this.hit = false;
@@ -441,7 +442,7 @@ game.Units = me.Entity.extend({
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
-            return false;
+            return true;
         }
 
         return false;
@@ -543,7 +544,7 @@ game.Warrior = me.Entity.extend({
         if (me.input.isKeyPressed('left')) {
             // flip the sprite on horizontal axis
             this.renderable.flipX(true);
-            endQueue();
+        //    endQueue();
             // update the entity velocity
             this.body.vel.x -= this.body.accel.x * me.timer.tick;
 
@@ -794,8 +795,6 @@ game.ChaserEntity = me.Entity.extend({
 
 });
 
-
-
 // takes the attacker object and defender object
 // do calculations, returns the amount of damage done
 // to the DEFENDER
@@ -888,6 +887,7 @@ var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minot
 
 // end unit queueing
 function endQueue() {
+    console.log("endQueue fired");
     for (i = 0; i < me.game.world.children.length; i++) {
         if (me.game.world.children[i].idle == true) {
             me.game.world.children[i].idle = false;
