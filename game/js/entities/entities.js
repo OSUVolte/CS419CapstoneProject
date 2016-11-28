@@ -263,10 +263,10 @@ game.Units = me.Entity.extend({
                 this.renderable.setAnimationFrame();
             }
         }
-
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
+            
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
@@ -306,7 +306,6 @@ game.Units = me.Entity.extend({
                 // not moving anywhere
                 // friction takes over
                 if (this.target_destination != null) {
-
                     this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
                     this.dest = this.myPath.pop();
                     this.pathAge = now;
@@ -332,6 +331,7 @@ game.Units = me.Entity.extend({
                         this.renderable.setAnimationFrame();
                     }
                 }
+
                 if (this.dest != null) {
                     //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                     //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
@@ -940,16 +940,54 @@ function endQueue() {
 }
 
 
-
 game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
         this.currentwave = game.data.currentwave;
+        this.player1QueueLocation = "queue_front";
+        this.player2QueueLocation = "queue_back";
+
+        //Get the GUIDs of each player's "base"
+        //For testing: player's queueLoc will be their "base"
+        for (var i = 0; i < me.game.world.children.length; i++) {
+            if (me.game.world.children[i].name === this.player1QueueLocation) {
+                this.player1Base = me.game.world.children[i];
+                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
+                }
+            else if (me.game.world.children[i].name === this.player2QueueLocation) {
+                this.player2Base = me.game.world.children[i];
+                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
+                }
+        }
     },
 
     update: function(){
         if(this.currentwave < game.data.currentwave) {
+            //Go to Next Wave
             this.currentwave = game.data.currentwave;
             console.log("Starting Wave: " + game.data.currentwave);
+
+            //Send Units waiting at Queue Locations to Target Destination
+            //TODO: Make ultimate target the other player's Base Building
+            
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].queueGroup === this.player1Base.name) {
+                    console.log("send p1 units to p2 base");
+
+                    me.game.world.children[i].target_destination = this.player2Base;
+                    me.game.world.children[i].dest = this.player2Base;
+                    me.game.world.children[i].wavetarget = this.player2Base;
+                    me.game.world.children[i].waveRelease = true;
+                }
+                else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
+                    console.log("send p2 units to p1 base");
+  
+                    me.game.world.children[i].target_destination = this.player1Base;
+                    me.game.world.children[i].dest = this.player1Base;
+                    me.game.world.children[i].wavetarget = this.player1Base;
+                    me.game.world.children[i].waveRelease = true;
+                }
+            }
+
         }
     }
 
