@@ -236,9 +236,11 @@ var game = {
         //player Postions
         me.pool.register("player", game.PlayerEntity);
         me.pool.register("top", game.Top, false);
+        me.pool.register("queue", game.Queue);
 
         // enemy ai
         me.pool.register("enemyAI", game.EnemyAI);
+
 
         // queuing areas
         me.pool.register("queue_front", game.QueueArea);

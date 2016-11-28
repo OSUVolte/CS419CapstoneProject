@@ -1140,6 +1140,6 @@ function checkHealth(building) {
         
         building.alive = false;
     } else {
-        console.log(building.type + ": " + building.health);
+        //console.log(building.type + ": " + building.health);
     }
 }

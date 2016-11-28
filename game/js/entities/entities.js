@@ -370,7 +370,7 @@ game.Units = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
-                    this.target[0].renderable.flicker(500)
+                    this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
                     this.target[0].health -= battle(this, this.target[0]);
 //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
