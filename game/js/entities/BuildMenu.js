@@ -444,8 +444,8 @@ game.UI.BuildingStatus = me.Container.extend({
 		);
 		this.addChild(this.capaText, 10);
 
-		//display health of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		//display hp of building
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
 		this.healthText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -457,7 +457,7 @@ game.UI.BuildingStatus = me.Container.extend({
 			draw: function(renderer){
 				this.font.draw (
 					renderer,
-					"Health: "+ this.building.health,
+					"Health: "+ this.building.hp,
 					this.pos.x,
 					this.pos.y);
 			}
@@ -470,7 +470,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.addChild(this.healthText, 10);
 
 		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
 		this.qText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -495,7 +495,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.addChild(this.qText, 10);
 
 		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
 		this.playerText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);

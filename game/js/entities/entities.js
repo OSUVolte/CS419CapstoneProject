@@ -491,7 +491,7 @@ game.Units = me.Entity.extend({
                     this.hit = true;
                     this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
-                    this.target[0].health -= battle(this, this.target[0]);
+                    this.target[0].hp -= battle(this, this.target[0]);
 //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
@@ -948,8 +948,8 @@ game.ChaserEntity = me.Entity.extend({
             this.target = me.game.world.getChildByName("queue_front")[0];
 
         }else if(this.targeting == "units"){
-            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.Units));
-
+            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.KillerEntity));
+            //console.log(this.myUnitTargets);
             //select one at random and go kill it.
             if(!this.hasTarget && this.myUnitTargets.length > 0){
                 var howManyUnits = this.myUnitTargets.length;
@@ -966,8 +966,8 @@ game.ChaserEntity = me.Entity.extend({
 
             }
 
-            if(this.hasTarget)
-                console.log("i has a target");
+            //if(this.hasTarget)
+               // console.log("i has a target");
 
         }else if(this.targeting == "buildings"){
             this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
@@ -1046,7 +1046,7 @@ game.ChaserEntity = me.Entity.extend({
 
                 // battle(this, this.target);
                 this.target.hp -= battle(this, this.target);
-                this.target.health -= battle(this, this.target);
+                this.target.hp -= battle(this, this.target);
 
             } else if (this.combat == true) {
                 this.target.push(other);
@@ -1097,7 +1097,7 @@ game.KillerEntity = me.Entity.extend({
         if (this.player == 1) {
             this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else if (this.player == 2) {
-            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else {
             this.body.collisionType = me.collision.types.NO_OBJECT;
         }
@@ -1122,8 +1122,8 @@ game.KillerEntity = me.Entity.extend({
 
 
         // set the default horizontal & vertical speed (accel vector)
-        this.body.setVelocity(this.speed/4, this.speed/4);
-        this.body.setMaxVelocity(this.speed, this.speed);
+        this.body.setVelocity(this.speed/5, this.speed/5);
+        this.body.setMaxVelocity(this.speed/5, this.speed/5);
         this.body.setFriction(0.05, 0.05);
 
         //a multiplier that can be used to change units direction.
@@ -1221,6 +1221,7 @@ game.KillerEntity = me.Entity.extend({
 
             return false;
         }
+        this.alive = true;
         return true;
 
     },
@@ -1240,7 +1241,7 @@ game.KillerEntity = me.Entity.extend({
             var xdiff = dest.pos.x - this.pos.x;
             var ydiff = dest.pos.y - this.pos.y;
 
-            var fuzz = 2//Math.floor(Math.random() * (5 - 3)) + 2;
+            var fuzz = 2;//Math.floor(Math.random() * (5 - 3)) + 2;
 
             if (xdiff < -fuzz) {
                 this.body.vel.x -= this.body.accel.x * me.timer.tick;
@@ -1268,21 +1269,23 @@ game.KillerEntity = me.Entity.extend({
 
         this.alive = this.checkIfAlive();
 
-        //set the target
+        //set the target to the queue
         if(this.targeting == "queue" ) {
+            this.myUnitTargets = [];
             this.target = me.game.world.getChildByName(this.queueGroup)[0];
+            this.hasTarget = true;
+            this.combat = false;
 
-        }else if(this.targeting == "units"){
-            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.Units));
+        //set the target to the units
+        }else if(this.targeting == "units"  ){
+            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.KillerEntity)); // target others
 
             //select one at random and go kill it.
             if(!this.hasTarget && this.myUnitTargets.length > 0){
                 var howManyUnits = this.myUnitTargets.length;
                 var random = Math.floor((Math.random() * howManyUnits+1));
-                this.target = this.myUnitTargets[random];
-                console.log(this.target);
-                this.setVelocity(this.speed, this.speed);
-
+                this.target = this.myUnitTargets[0];
+                this.combat = true;
                 //console.log(this.target);
                 // if(!this.target.alive){
                 //     console.log("zed's dead");
@@ -1290,12 +1293,14 @@ game.KillerEntity = me.Entity.extend({
                 // }else{
                 //     this.hasTarget = true;
                 // }
-                // this.hasTarget = true;
+                 this.hasTarget = true;
+                if(this.hasTarget){
+                    //console.log("i has a target");
+                }
 
+            }else{
+                this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.Structures));
             }
-
-            if(this.hasTarget)
-                console.log("i has a target");
 
         }else if(this.targeting == "buildings"){
             this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
@@ -1305,7 +1310,9 @@ game.KillerEntity = me.Entity.extend({
         }
 
         //Given that we have a target do something with it
-        if (this.target != null && this.target != undefined) {
+        if (this.target != null && this.target != undefined && this.target.hasOwnProperty("pos")) {
+            if(this.player ==1)
+                //console.log("going here ", this.target);
 
             //get the distance to that target if you want to decide it's too far away, or use it to sort the additions to an array
             var cbdist = this.distanceTo(this.target);
@@ -1334,19 +1341,6 @@ game.KillerEntity = me.Entity.extend({
 
     },
 
-    draw: function(context) {
-        // draw the sprite if defined
-        if (this.renderable) {
-            // translate the renderable position (relative to the entity)
-            // and keeps it in the entity defined bounds
-            // anyway to optimize this ?
-            var x = ~~(this.pos.x + (this.anchorPoint.x * (this.width - this.renderable.width)));
-            var y = ~~(this.pos.y + (this.anchorPoint.y * (this.height - this.renderable.height)));
-            context.translate(x, y);
-            this.renderable.draw(context);
-            context.translate(-x, -y);
-        }
-    },
 
     /**
      * colision handler
@@ -1362,13 +1356,13 @@ game.KillerEntity = me.Entity.extend({
                 this.body.vel.x += this.xDir * 4;
                 this.body.vel.y += this.yDir * 4;
             }else{
-                this.body.vel.x += this.xDir * 4;
-                this.body.vel.y += this.yDir * 4;
+                this.body.vel.x -= this.xDir * 4;
+                this.body.vel.y -= this.yDir * 4;
             }
 
 
             //console.log(this.body.vel.x, this.body.vel.y)
-
+            return false;
         }
 
 
@@ -1376,6 +1370,11 @@ game.KillerEntity = me.Entity.extend({
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
             //this.body.setVelocity(0,0);
+            //fight
+            if(this.combat = true) {
+                this.target.hp -= battle(this, this.target);
+                this.target.hp -= battle(this, this.target);
+            }
 
             // if this is alive
             if (this.alive && (response.overlap > 0)) {
@@ -1396,7 +1395,8 @@ game.KillerEntity = me.Entity.extend({
                 //     this.renderable.setAnimationFrame();
                 //     this.renderable.flicker(375);
                 // }
-                // this.combat = true;
+                 this.combat = true;
+
 
 
 
@@ -1517,7 +1517,7 @@ game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
         this.currentwave = game.data.currentwave;
         this.player1QueueLocation = "queue_front";
-        this.player2QueueLocation = "queue_back";
+        this.player2QueueLocation = "p2_queue_front";
 
         //Get the GUIDs of each player's "base"
         //For testing: player's queueLoc will be their "base"
@@ -1551,6 +1551,7 @@ game.WaveManager = me.Object.extend({
                     me.game.world.children[i].wavetarget = this.player2Base;
                     me.game.world.children[i].waveRelease = true;
                     me.game.world.children[i].targeting = "units";
+                    me.game.world.children[i].hasTarget =false;
                 }
                 else if (me.game.world.children[i].queueGroup === this.player2QueueLocation) {
                     console.log("send p2 units to p1 base");
@@ -1559,7 +1560,9 @@ game.WaveManager = me.Object.extend({
                     //me.game.world.children[i].dest = this.player1Base;
                     me.game.world.children[i].wavetarget = this.player1Base;
                     me.game.world.children[i].waveRelease = true;
+                    //Release them to get units
                     me.game.world.children[i].targeting = "units";
+                    me.game.world.children[i].hasTarget =false;
                 }
             }
 
