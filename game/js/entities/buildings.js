@@ -413,7 +413,9 @@ game.Barracks = game.Structures.extend({
         this.enabled = {
             type1:true,
             type2: true,  //set these via game conditionals
-            type3: true  //' etc etc //todo add all unit types
+            type3: true,  //' etc etc //todo add all unit types
+            type4: true,
+            type5: true
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
@@ -485,6 +487,24 @@ game.Barracks = game.Structures.extend({
                 "Add Rogue", // default
                 "rogue",
                 rogue
+            ), 110);
+        }
+        if(this.enabled.type4 && this.complete && this.functional) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 150,
+                "white",
+                "Add Minotaur", // default
+                "minotaur",
+                minotaur
+            ), 110);
+        }
+        if(this.enabled.type5 && this.complete && this.functional) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                160, 150,
+                "white",
+                "Add wizard", // default
+                "wizard",
+                wizard
             ), 110);
         }
         if(this.q.length > 0 && this.complete) {

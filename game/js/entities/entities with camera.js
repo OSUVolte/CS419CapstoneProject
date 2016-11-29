@@ -113,10 +113,7 @@ game.PlayerEntity = me.Entity.extend({
 game.Units = me.Entity.extend({
     init : function (x, y, unit, settings) {
         settings.image = unit.image;
-        if (unit.image == "minotaur spritesheet calciumtrice") {    // bigger frames
-            settings.framewidth = 48;
-            settings.frameheight = 48;
-        }
+        
         this._super(me.Entity, 'init', [x, y, settings, unit]);
 
         // set up unit stats
@@ -341,25 +338,17 @@ game.Units = me.Entity.extend({
                     if (xdiff < -2) {
                         this.body.vel.x -= this.body.accel.x * me.timer.tick;
                         this.lastPos.x = this.body.pos.x;
-                        this.left = "left";
-                        if (this.name != "Minotaur") {
-                            this.renderable.flipX(true);
-                        }                      
+                        this.renderable.flipX(true);
                     } else if (xdiff > 2) {
                         this.body.vel.x += this.body.accel.x * me.timer.tick;
                         this.lastPos.x = this.body.pos.x;
-                        this.facing = "right";
-                        if (this.name != "Minotaur") {
-                            this.renderable.flipX(false);
-                        }                   
+                        this.renderable.flipX(false);
                     }
 
                     if (ydiff < -2) {
                         this.body.vel.y -= this.body.accel.y * me.timer.tick;
-                        this.facing = "up";
                         this.lastPos.y = this.body.pos.y;
                     } else if (ydiff > 2) {
-                        this.facing = "down";
                         this.body.vel.y += this.body.accel.y * me.timer.tick;
                         this.lastPos.y = this.body.pos.y;
                     }
@@ -391,7 +380,7 @@ game.Units = me.Entity.extend({
                 // if target is not alive, pop off and get the next target, if there are no more
                 // targets left, we are no longer in combat
                 if (this.target.length > 0) {
-                    if(!this.target[0].alive || this.target[0] == undefined || this.target[0] == null) {
+                    if (!this.target[0].alive) {
                         this.target.shift();
                     }
                 } else {
@@ -469,18 +458,9 @@ game.Units = me.Entity.extend({
             return false;
         }
 
-        // bumped into a wall 
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
-            if (this.facing == "down") {
-                this.body.vel.y -= Number.MAX_VALUE;
-            } else if (this.facing == "up") {
-                this.body.vel.y += Number.MAX_VALUE;
-            } else if (this.facing == "right") {
-                this.body.vel.x -= Number.MAX_VALUE
-            } else if (this.facing == "left") {
-                this.body.vel.x += Number.MAX_VALUE
-            }
         
+        // bumped into a wall
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             this.path++;
             return true;
         }
@@ -507,76 +487,33 @@ game.QueueArea = me.Entity.extend({
     }
 });
 
-// a simple warrior unit
-// so far used to walk around and test the map, can move up down left right
-// can remove before release, so we can have unit walk up to buildings/enemies
-// and see if it will trigger the proper events
+// camera viewport
 game.Warrior = me.Entity.extend({
     /**
      * constructor
      */
     init:function (x, y, settings) {
         var settings = {
-            image: "warrior spritesheet calciumtrice",
-            width: 32,
-            height: 32,
+            image: "",
+            width: 5,
+            height: 5,
             
-            framewidth: 32,
-            frameheight: 32,
+            framewidth: 5,
+            frameheight: 5,
             
-            shapes: [new me.Rect(0, 0, 32, 32)]
+            shapes: [new me.Rect(0, 0, 5, 5)]
         };
 
         // call the constructor
         this._super(me.Entity, 'init', [x, y , settings]);
-        
-        // set the default horizontal & vertical speed (accel vector)
-//        this.body.setVelocity(4,4);
-        
-        this.body.setVelocity(15, 15);                      // so smooth walking oh yea
-        this.body.setMaxVelocity(35, 35);                     // SO SMOOTH
-        this.body.setFriction(0.05, 0.05);                      // THE SMOOTHEST
-        
-        // set the display to follow our position on both axis
-    //    me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        
+
         // ensure the player is updated even when outside of viewport
         this.alwaysUpdate = true;
         this.alive = true;
-        this.hp = 100;
-        this.maxHp = 100;
-        this.attack = 5;
-        this.def = 5;
-        this.hitPercent = 10;
-        this.combat = false;
-        this.hit = false;
-        this.name = "TEST_WARRIOR";
-    //    this.player = 1;
-        this.target = [];
-        this.targetedBy = [];
-        this.gogetem = 1;
+        this.name = "CAMERA";
 
-        // define standing animation, use all frames
-        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
-                                                    11, 12, 13, 14, 15, 16, 17, 18, 19]);
-        // define death animation
-        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49], 150);
-        // define death animation
-        this.renderable.addAnimation("dead", [49]);
-        // define walking animation
-        this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-        // define attacking animation
-        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
-        // set standing as default
-        this.renderable.setCurrentAnimation("stand");
-        this.renderable.setAnimationFrame();
-        // set this collision type as ME
+        // set this collision type as NO_OBJECT
         this.body.collisionType = me.collision.types.NO_OBJECT;
-        // set collision types
-     //   this.body.setCollisionMask(me.collision.types.ENEMY_OBJECT | me.collision.types.WORLD_SHAPE);
-        
-        
-        this.facing = "north";
     },
 
     // update player pos
@@ -592,11 +529,9 @@ game.Warrior = me.Entity.extend({
             // going down
             me.game.viewport.move(0, 100);
         }
-
+        
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
-
-        // handle collisions against other shapes
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -606,40 +541,11 @@ game.Warrior = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
-            var ydif = this.pos.y - response.b.pos.y;
-            var xdif = this.pos.x - response.b.pos.x;
-
-            if (this.facing === "north" && ydif < 15) {
-                this.pos.y--;                                                   // prevent passing through
-            }
-        }
-    // if something that is an enemy touches this unit
-        if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
-            // if something touches this entity while its alive...
-            if (this.alive && this.combat == false) {
-                this.me = response.a;
-                this.enemy = other;
-                this.target.push(other);
-                this.combat = true;
-                this.renderable.setCurrentAnimation("attack");
-                this.renderable.setAnimationFrame();
-                this.targetedBy.push(other);
-            } else if (this.combat == true) {
-                this.target.push(other);
-                this.targetedBy.push(other);
-                this.me = response.a;
-                this.enemy = other;
-            }
-          return false;
-        } else {
- //           console.log("I AM TOUCHING SOMETHING ELSE");
-            return true;
-        }
         // Make all other objects solid
-    return false;
+    return true;
     }
 });
+
 
 game.ChaserEntity = me.Entity.extend({
     /* -----
