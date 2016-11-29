@@ -311,6 +311,8 @@ game.Structures = me.Entity.extend({
         //do something when its placed
         if(this.placed){
 
+            this.renderable.setOpacity(this.percentComplete/100);
+
             //start construction and set when done
             if(this.elapsed > this.buildTime){
                 this.complete = true;
@@ -1113,7 +1115,7 @@ game.Keep = game.Structures.extend({
                         //get opposite alive players only
                         if (me.game.world.children[i].player != this.player
                             && me.game.world.children[i].player != undefined
-                            //&& me.game.world.children[i].type == "warrior"
+                            && me.game.world.children[i].type == "warrior"
 
                         ) {
                             //me.game.world.children[i].player = this.player;

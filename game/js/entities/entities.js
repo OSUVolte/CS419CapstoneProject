@@ -222,11 +222,11 @@ game.Units = me.Entity.extend({
         }
 
         this._super(me.Entity, "draw", [renderer]);
-        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
-        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x-4, this.pos.y-20);
-        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x, this.pos.y);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x, this.pos.y);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x, this.pos.y);
     },
-    
+
   /**
    * update the enemy pos
    */
@@ -305,9 +305,10 @@ game.Units = me.Entity.extend({
             if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
                 // not moving anywhere
                 // friction takes over
+                var rnd = Math.floor(Math.random() * 51) - 25
                 if (this.target_destination != null) {
 
-                    this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x, this.target_destination.pos._y);
+                    this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x+rnd, this.target_destination.pos._y+rnd);
                     this.dest = this.myPath.pop();
                     this.pathAge = now;
                 }
@@ -475,6 +476,24 @@ game.Units = me.Entity.extend({
 });
 
 game.QueueArea = me.Entity.extend({
+    init:function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y , settings]);
+
+        this.body.collisionType = me.collision.types.NO_OBJECT;
+    },
+
+    update : function (dt) {
+        // return true if we moved or if the renderable was updated
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+    },
+
+    onCollision : function (response, other) {
+        console.log("touching");
+        return false;
+    }
+});
+
+game.WayPoint = me.Entity.extend({
     init:function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y , settings]);
 
@@ -693,7 +712,7 @@ game.ChaserEntity = me.Entity.extend({
         // chase even when offscreen
         this.alwaysUpdate = true;
         // set the default horizontal & vertical speed (accel vector)
-        this.body.setVelocity(0.25, 0.25);
+        this.body.setVelocity(1, 1);
         this.body.setMaxVelocity(3, 3);
         this.body.setFriction(0.05, 0.05);
 
@@ -708,88 +727,119 @@ game.ChaserEntity = me.Entity.extend({
         this.maxHp = 10000;
         this.def = 1;
         this.name = "slime";
+        this.myWpTargets= [];
+        this.myUnitTargets= [];
+        this.myBldgTargets= [];
+        this.targeting = "units";
+        this.body.collisionType = me.collision.types.PLAYER_OBJECT;
 
+        //a multiplier that can be used to change units direction.
+            this.xDir = 1;
+            this.yDir = 1;
     },
 
     chessboard: function() {
-
-        // return chessboard distance to target
-     //   return Math.max( Math.abs(this.collisionBox.left - this.target.collisionBox.left), Math.abs(this.collisionBox.top - this.target.collisionBox.top));
-        return Math.max( Math.abs(this.pos._x - this.target.pos._x), Math.abs(this.pos._y - this.target.pos._y));
+       return Math.max( Math.abs(this.pos._x - this.target.pos._x), Math.abs(this.pos._y - this.target.pos._y));
     },
+    /**
+     * add targets
+     * @param takes an array of world entities
+     * returns an array filtered for opposite player
+     */
+    addTargets: function(type){
+        ///loop over the existing targets
+        var temp = [];
+        for(var i =0; i < type.length; i++){
+            if(type[i].player != this.player){
+                temp.push(type[i])
+            }
+        }
+        return temp;
+    },
+    /**
+     * navigates the unit to the destination
+     * @param dest (retuned from astar.serarch)
+     * //todo make it return when it get to a destination?
+     */
+    shakeItOnDown: function (dest){
+        if (this.dest != null) {
+            console.log("gonna shake it!");
 
+            //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+            //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+            // move based on next position
+
+            var xdiff = dest.pos.x - this.pos.x;
+            var ydiff = dest.pos.y - this.pos.y;
+
+            var fuzz = Math.floor(Math.random() * (5 - 3)) + 2
+
+            if (xdiff < -fuzz) {
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            } else if (xdiff > fuzz) {
+                //               this.flipX(true);
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            }
+
+            if (ydiff < -fuzz) {
+                this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            } else if (ydiff > fuzz) {
+                this.body.vel.y += this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            }
+        }
+    },
     /* -----
     update the player pos
     ------ */
     update: function(dt) {
         var now = Date.now();
-//        this.updateColRect(0, 16, 16, 16);
-        if (this.target == null) {
-            // we should globally store this value
-            this.target = me.game.world.getChildByType(game.Warrior)[0];
-        } else {
-            for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].gogetem == 1) {
-                    this.target = me.game.world.children[i];
-                }
+
+        //set the target
+        if(this.targeting == "queue"   ) {
+            this.target = me.game.world.getChildByName("queue_front")[0];
+
+        }else if(this.targeting == "units"){
+            this.target = this.addTargets(me.game.world.getChildByType(game.Units))[0];
+
+        }else if(this.targeting == "buildings"){
+            this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
+
+        }else{
+            this.target = this.addTargets(me.game.world.getChildByType(game.WayPoint))[0];
+        }
+
+        //Given that we have a target do something with it
+        if (this.target != null && this.target != undefined) {
+
+            //get the distance to that target if you want to decide it's too far away, or use it to sort the additions to an array
+            var cbdist = this.distanceTo(this.target);
+
+            //we don't care about the distance so search the path to it
+            this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
+
+            //set destination
+            this.dest = this.myPath.pop();
+
+            //get over here boi
+            this.shakeItOnDown(this.dest);
+
+            //check arrival...ehh not working its only gets approximate so...
+            if (this.target.pos._x == this.pos._x && this.target.pos._y == this.pos._y) {
+                console.log("Ankunft", now);
             }
         }
 
-        var cbdist = this.chessboard();
+        // handle collisions against other shapes
+        me.collision.check(this);
 
-        if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
-            // not moving anywhere
-            // friction takes over
-            if (this.target != null) {
-                this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
-                this.dest = this.myPath.pop();
-                this.pathAge = now;
-                //console.log(this.dest);
-            }
-        } else {
-            if (this.chessboard() < 500) {                                                                              // DISTANCE FROM THIS UNIT (500)
-                // just go for it
-                this.dest = this.target;
-                this.pathAge = now-5000;
-//            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
-//                // TODO - do this with non constant, add some fuzz factor
-            }
-            if (this.dest != null) {
-
-                //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
-                //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
-                // move based on next position
-
-                var xdiff = this.dest.pos.x - this.pos.x;
-                var ydiff = this.dest.pos.y - this.pos.y;
-
-                if (xdiff < -2) {
-                    this.body.vel.x -= this.body.accel.x * me.timer.tick;
-                    this.lastPos.x = this.body.pos.x;
-                } else if (xdiff > 2) {
-     //               this.flipX(true);
-                    this.body.vel.x += this.body.accel.x * me.timer.tick;
-                    this.lastPos.x = this.body.pos.x;
-                }
-
-                if (ydiff < -2) {
-                    this.body.vel.y -= this.body.accel.y * me.timer.tick;
-                    this.lastPos.y = this.body.pos.y;
-                } else if (ydiff > 2) {
-                    this.body.vel.y += this.body.accel.y * me.timer.tick;
-                    this.lastPos.y = this.body.pos.y;
-                }
-            }
-        }
-        // check & update player movement
         this.body.update(dt);
 
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 
-
-        // else inform the engine we did not perform
-        // any update (e.g. position, animation)
-        return false;
     },
 
     draw: function(context) {
@@ -804,17 +854,41 @@ game.ChaserEntity = me.Entity.extend({
                 this.renderable.draw(context);
                 context.translate(-x, -y);
             }
-        // draw dest rect
-        debugAStar = false;
-        if (debugAStar && this.dest) {
-            if (this.dest && this.dest.rect) {
-                this.dest.rect.draw(context, "green");
-            }   
-            for (var i = 0, ii = this.myPath.length; i < ii; i+=1) {
-                if (this.myPath[i] && this.myPath[i].rect) {
-                    this.myPath[i].rect.draw(context, "red");
-                }
+    },
+    onCollision: function(response){
+
+        //When I hit the wall...
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+
+            //update the velocity
+            this.body.vel.x += this.xDir *4;
+            this.body.vel.y += this.yDir *4;
+
+
+            console.log(this.body.vel.x, this.body.vel.y)
+
+        }
+
+        if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
+            // if something touches this entity while its alive...
+            if (this.alive && this.combat == false) {
+                this.me = response.a;
+                this.enemy = other;
+                this.target.push(other);
+                this.combat = true;
+                this.renderable.setCurrentAnimation("attack");
+                this.renderable.setAnimationFrame();
+                this.targetedBy.push(other);
+            } else if (this.combat == true) {
+                this.target.push(other);
+                this.targetedBy.push(other);
+                this.me = response.a;
+                this.enemy = other;
             }
+            return false;
+        } else {
+            //           console.log("I AM TOUCHING SOMETHING ELSE");
+            return true;
         }
     }
 

@@ -28,7 +28,7 @@ var game = {
          * @returns {boolean} true if deduction was successful
          */
         cashier: function(amt){
-            if(this.playergold- amt < 0){
+            if(this.playergold - amt < 0){
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough money ", msgDur: 3, color:"red"};
                 return false
             }else{
