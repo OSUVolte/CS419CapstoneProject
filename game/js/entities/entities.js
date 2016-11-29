@@ -135,7 +135,8 @@ game.Units = me.Entity.extend({
         this.type = "unit";
         this.waveRelease = false;
         this.wavetarget = "";
-
+        this.targeting = "queue";
+        this.body.setVelocity(1,1);
         // astar stats
         this.target_destination = null;
         this.myPath = [];
@@ -166,7 +167,11 @@ game.Units = me.Entity.extend({
         this.hpBarMax.alpha = 0.5;
         // DO NOT follow position
 //        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        
+
+        //a multiplier that can be used to change units direction.
+        this.xDir = 1;
+        this.yDir = 1;
+
         this.alwaysUpdate = true;
         
         // define standing animation, use all frames
@@ -226,203 +231,291 @@ game.Units = me.Entity.extend({
         this.hpBarCurrent.draw(renderer, unitHp, this.pos.x, this.pos.y);
         this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x, this.pos.y);
     },
+    /**
+     * add targets
+     * @param takes an array of world entities
+     * returns an array filtered for opposite player
+     */
+    addTargets: function(type){
+        ///loop over the existing targets
+        var temp = [];
+        for(var i =0; i < type.length; i++){
+            if(type[i].player != this.player){
+                temp.push(type[i])
+            }
+        }
+        return temp;
+    },
+    /**
+     * navigates the unit to the destination
+     * @param dest (retuned from astar.serarch)
+     * //todo make it return when it get to a destination?
+     */
+    shakeItOnDown: function (dest){
+        if (this.dest != null) {
+            //console.log("gonna shake it!");
+
+            //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+            //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+            // move based on next position
+
+            var xdiff = dest.pos.x - this.pos.x;
+            var ydiff = dest.pos.y - this.pos.y;
+
+            var fuzz = Math.floor(Math.random() * (5 - 3)) + 2
+
+            if (xdiff < -fuzz) {
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            } else if (xdiff > fuzz) {
+                //               this.flipX(true);
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            }
+
+            if (ydiff < -fuzz) {
+                this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            } else if (ydiff > fuzz) {
+                this.body.vel.y += this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            }
+        }
+    },
 
   /**
    * update the enemy pos
    */
     update : function (dt) {
-        if(this.waveRelease === true) {
-            this.waveRelease = false;
-
-            endQueue();
-            //Send to new target
-            this.target_destination = this.wavetarget;
-            this.dest = this.wavetarget;
-        }
-
-        if (this.target_destination != null) {
-            if (this.target_destination.alive == false) {
-                this.target_destination = null;
-            }
-        }
+        // if(this.waveRelease === true) {
+        //     this.waveRelease = false;
+        //     //this.targeting == "buildings";
+        //
+        //     endQueue();
+        //     //Send to new target
+        //     this.target_destination = this.wavetarget;
+        //     //this.dest = this.wavetarget;
+        // }
+        //
+        // if (this.target_destination != null) {
+        //     if (this.target_destination.alive == false) {
+        //         this.target_destination = null;
+        //     }
+        // }
         // check if alive first
-        if (this.hp <= 0 && this.alive) {
-            this.body.collisionType = me.collision.types.NO_OBJECT;
-            console.log(this.name + " : " + this.GUID + " >> DIED!");
-            this.alive = false;
-
-            //give money
-            if(this.player == 1){
-                game.dataAI.playergold += 20;
-            }else{
-                game.data.playergold += 20;
-            }
-
-            if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
-                this.renderable.setCurrentAnimation("dying");
-                this.renderable.setAnimationFrame();
-            }
-        }
+        // if (this.hp <= 0 && this.alive) {
+        //     this.body.collisionType = me.collision.types.NO_OBJECT;
+        //     console.log(this.name + " : " + this.GUID + " >> DIED!");
+        //     this.alive = false;
+        //
+        //     //give money
+        //     if(this.player == 1){
+        //         game.dataAI.playergold += 20;
+        //     }else{
+        //         game.data.playergold += 20;
+        //     }
+        //
+        //     if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
+        //         this.renderable.setCurrentAnimation("dying");
+        //         this.renderable.setAnimationFrame();
+        //     }
+        // }
 
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
-            if (this.target_destination == null) {
-                var closest = Number.MAX_VALUE;
-                var temp_destination;
+            /*if (this.target_destination == null) {
+             var closest = Number.MAX_VALUE;
+             var temp_destination;
 
-                //get all the children
-                for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+             //get all the children
+             for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
 
-                    //get opposite alive players only
-                    if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
-                        temp_destination = this.target_destination;
-                        this.target_destination = me.game.world.children[i];
+             //get opposite alive players only
+             if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
+             temp_destination = this.target_destination;
+             this.target_destination = me.game.world.children[i];
 
-                        //chessboard returns closer than maxValue from targetDestination, update closest
-                        if (this.chessboard() <= closest) {
-                            closest = this.chessboard();
-                        } else {
-                            this.target_destination = temp_destination;
-                        }
-                    }
-                }
+             //chessboard returns closer than maxValue from targetDestination, update closest
+             if (this.chessboard() <= closest) {
+             closest = this.chessboard();
+             } else {
+             this.target_destination = temp_destination;
+             }
+             }
+             }
+             }
+
+
+             if (this.idle == true) {
+             for (var i = 0; i < me.game.world.children.length; i++) {
+             if (me.game.world.children[i].name === this.queueGroup) {
+             this.target_destination = me.game.world.children[i];
+             }
+             }
+             }
+
+             if (this.target_destination != null) {
+             var cbdist = this.chessboard();
+             }
+
+             if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
+             // not moving anywhere
+             // friction takes over
+             var rnd = Math.floor(Math.random() * 51) - 25
+             if (this.target_destination != null) {
+
+             this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x+rnd, this.target_destination.pos._y+rnd);
+             this.dest = this.myPath.pop();
+             this.pathAge = now;
+             }
+             } else if (this.target_destination != null) {
+             // if the unit is close enough
+             if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
+             if (!this.renderable.isCurrentAnimation("walk")) {
+             this.renderable.setCurrentAnimation("walk");
+             this.renderable.setAnimationFrame();
+             }
+             // just go for it
+             this.dest = this.target_destination;
+             this.pathAge = now-5000;
+             //            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
+             //                // TODO - do this with non constant, add some fuzz factor
+             } else {    // if the unit is not close enough to target destination, just stand there
+             this.body.vel.x = 0;
+             this.body.vel.y = 0;
+
+             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+             this.renderable.setCurrentAnimation("stand");
+             this.renderable.setAnimationFrame();
+             }
+             }
+             if (this.dest != null) {
+             //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+             //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+             // move based on next position
+
+             var xdiff = this.dest.pos.x - this.pos.x;
+             var ydiff = this.dest.pos.y - this.pos.y;
+
+             if (xdiff < -2) {
+             this.body.vel.x -= this.body.accel.x * me.timer.tick;
+             this.lastPos.x = this.body.pos.x;
+             this.renderable.flipX(true);
+             } else if (xdiff > 2) {
+             this.body.vel.x += this.body.accel.x * me.timer.tick;
+             this.lastPos.x = this.body.pos.x;
+             this.renderable.flipX(false);
+             }
+
+             if (ydiff < -2) {
+             this.body.vel.y -= this.body.accel.y * me.timer.tick;
+             this.lastPos.y = this.body.pos.y;
+             } else if (ydiff > 2) {
+             this.body.vel.y += this.body.accel.y * me.timer.tick;
+             this.lastPos.y = this.body.pos.y;
+             }
+             }
+             }*/
+            //set the target
+            if (this.targeting == "queue") {
+                this.target = me.game.world.getChildByName("queue_front")[0];
+                this.body.setVelocity(1, 1);
+
+            } else if (this.targeting == "units") {
+                this.target = this.addTargets(me.game.world.getChildByType(game.Units))[0];
+
+            } else if (this.targeting == "buildings") {
+                this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
+
+            } else {
+                this.target = this.addTargets(me.game.world.getChildByType(game.WayPoint))[0];
             }
+            //Given that we have a target do something with it
+            if (this.target != null && this.target != undefined) {
 
+                //get the distance to that target if you want to decide it's too far away, or use it to sort the additions to an array
+                var cbdist = this.distanceTo(this.target);
 
-            if (this.idle == true) {
-                for (var i = 0; i < me.game.world.children.length; i++) {
-                    if (me.game.world.children[i].name === this.queueGroup) {
-                        this.target_destination = me.game.world.children[i];
-                    }
-                }
-            }
+                //we don't care about the distance so search the path to it
+                this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
 
-            if (this.target_destination != null) {
-                var cbdist = this.chessboard();
-            }
+                //set destination
+                this.dest = this.myPath.pop();
 
-            if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
-                // not moving anywhere
-                // friction takes over
-                var rnd = Math.floor(Math.random() * 51) - 25
-                if (this.target_destination != null) {
+                //get over here boi
+                this.shakeItOnDown(this.dest);
 
-                    this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x+rnd, this.target_destination.pos._y+rnd);
-                    this.dest = this.myPath.pop();
-                    this.pathAge = now;
-                }
-            } else if (this.target_destination != null) {
-                // if the unit is close enough
-                if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
-                    if (!this.renderable.isCurrentAnimation("walk")) {
-                        this.renderable.setCurrentAnimation("walk");
-                        this.renderable.setAnimationFrame();
-                    }
-                    // just go for it
-                    this.dest = this.target_destination;
-                    this.pathAge = now-5000;
-    //            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
-    //                // TODO - do this with non constant, add some fuzz factor
-                } else {    // if the unit is not close enough to target destination, just stand there
-                    this.body.vel.x = 0;
-                    this.body.vel.y = 0;
-
-                    if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                        this.renderable.setCurrentAnimation("stand");
-                        this.renderable.setAnimationFrame();
-                    }
-                }
-                if (this.dest != null) {
-                    //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
-                    //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
-                    // move based on next position
-
-                    var xdiff = this.dest.pos.x - this.pos.x;
-                    var ydiff = this.dest.pos.y - this.pos.y;
-
-                    if (xdiff < -2) {
-                        this.body.vel.x -= this.body.accel.x * me.timer.tick;
-                        this.lastPos.x = this.body.pos.x;
-                        this.renderable.flipX(true);
-                    } else if (xdiff > 2) {
-                        this.body.vel.x += this.body.accel.x * me.timer.tick;
-                        this.lastPos.x = this.body.pos.x;
-                        this.renderable.flipX(false);
-                    }
-
-                    if (ydiff < -2) {
-                        this.body.vel.y -= this.body.accel.y * me.timer.tick;
-                        this.lastPos.y = this.body.pos.y;
-                    } else if (ydiff > 2) {
-                        this.body.vel.y += this.body.accel.y * me.timer.tick;
-                        this.lastPos.y = this.body.pos.y;
-                    }
-                }
-            }
-
-        // if unit is dead
-        } else if (!this.alive) {
-            // when this unit dies, remove itself from the game
-            if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
-                this.renderable.setCurrentAnimation("dead");
-                this.renderable.setAnimationFrame();
-                me.game.world.removeChild(this);
-            }
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
-        }
-        // if unit is alive and in combat
-        else {
-            // dont move
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
-            // change to the standing animation if were not in combat and not currently standing (should never reach this ?)
-            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                this.renderable.setCurrentAnimation("stand");
-                this.renderable.setAnimationFrame();
-            // if in combat, wait until animation 7 where we will hit the enemy
-            } else if (this.combat) {
-                // if target is not alive, pop off and get the next target, if there are no more
-                // targets left, we are no longer in combat
-                if (this.target.length > 0) {
-                    if (!this.target[0].alive) {
-                        this.target.shift();
-                    }
-                } else {
-                    this.combat = false;
-                }
-                
-                // if there still exists a target and we are on frame 7, and we havent hit anything yet
-                if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
-                    this.hit = true;
-                    this.target[0].renderable.flicker(500);
-                    this.target[0].hp -= battle(this, this.target[0]);
-                    this.target[0].health -= battle(this, this.target[0]);
-//                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
-                } else if (this.renderable.getCurrentAnimationFrame() != 7) {
-                    // once unit leaves 7th 'hit' animation, reset hit switch
-                    this.hit = false;
+                //check arrival...ehh not working its only gets approximate so...
+                if (this.target.pos._x == this.pos._x && this.target.pos._y == this.pos._y) {
+                    console.log("Ankunft", now);
                 }
             }
         }
 
-        // update the body movement
-        // handle collisions against other shapes
-        if (!this.combat && this.alive) {
-                this.body.update(dt);
-                me.collision.check(this);
-                this.body.setVelocity(1,1);
-        }
+//
+//         // if unit is dead
+//         } else if (!this.alive) {
+//             // when this unit dies, remove itself from the game
+//             if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
+//                 this.renderable.setCurrentAnimation("dead");
+//                 this.renderable.setAnimationFrame();
+//                 me.game.world.removeChild(this);
+//             }
+//             this.body.vel.x = 0;
+//             this.body.vel.y = 0;
+//         }
+//         // if unit is alive and in combat
+//         else {
+//             // dont move
+//             this.body.vel.x = 0;
+//             this.body.vel.y = 0;
+//             // change to the standing animation if were not in combat and not currently standing (should never reach this ?)
+//             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+//                 this.renderable.setCurrentAnimation("stand");
+//                 this.renderable.setAnimationFrame();
+//             // if in combat, wait until animation 7 where we will hit the enemy
+//             } else if (this.combat) {
+//                 // if target is not alive, pop off and get the next target, if there are no more
+//                 // targets left, we are no longer in combat
+//                 if (this.target.length > 0) {
+//                     if (!this.target[0].alive) {
+//                         this.target.shift();
+//                     }
+//                 } else {
+//                     this.combat = false;
+//                 }
+//
+//                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
+//                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
+//                     this.hit = true;
+//                     this.target[0].renderable.flicker(500);
+//                     this.target[0].hp -= battle(this, this.target[0]);
+//                     this.target[0].health -= battle(this, this.target[0]);
+// //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+//                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
+//                     // once unit leaves 7th 'hit' animation, reset hit switch
+//                     this.hit = false;
+//                 }
+//             }
+//         }
+//
+//         // update the body movement
+//         // handle collisions against other shapes
+//         if (!this.combat && this.alive) {
+//                 this.body.update(dt);
+//                 me.collision.check(this);
+//                 this.body.setVelocity(1,1);
+//         }
 
-        if (this.target_destination == null) {
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
-            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                this.renderable.setCurrentAnimation("stand");
-                this.renderable.setAnimationFrame();
-            }
-        }
+        // if (this.target_destination == null) {
+        //     this.body.vel.x = 0;
+        //     this.body.vel.y = 0;
+        //     if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+        //         this.renderable.setCurrentAnimation("stand");
+        //         this.renderable.setAnimationFrame();
+        //     }
+        // }
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -433,6 +526,25 @@ game.Units = me.Entity.extend({
     * (called when colliding with other objects)
     */
     onCollision : function (response, other) {
+
+        //When I hit the wall...
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+
+            //update the velocity
+            if(this.player == 1) {
+                this.body.vel.x += this.xDir * 4;
+                this.body.vel.y += this.yDir * 4;
+            }else{
+                this.body.vel.x += this.xDir * 4;
+                this.body.vel.y += this.yDir * 4;
+            }
+
+
+            //console.log(this.body.vel.x, this.body.vel.y)
+
+        }
+
+
     // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
@@ -442,15 +554,15 @@ game.Units = me.Entity.extend({
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
                 var newEnemy = true;
-                for (var i = 0; i < this.target.length; i++) {
-                    if (this.target[i].GUID == other.GUID) {
-                        newEnemy = false;
-                    }
-                }
-                // if the enemy is new, push
-                if (newEnemy === true) {
-                    this.target.push(other);
-                }
+                // for (var i = 0; i < this.target.length; i++) {
+                //     if (this.target[i].GUID == other.GUID) {
+                //         newEnemy = false;
+                //     }
+                // }
+                // // if the enemy is new, push
+                // if (newEnemy === true) {
+                //     this.target.push(other);
+                // }
                 // if this is the first fight, set the animation to attack
                 if (this.combat == false) {
                     this.renderable.setCurrentAnimation("attack");
@@ -462,13 +574,6 @@ game.Units = me.Entity.extend({
 
             }
             return false;
-        }
-
-        
-        // bumped into a wall
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
-            this.path++;
-            return true;
         }
 
         return false;
@@ -529,6 +634,7 @@ game.Warrior = me.Entity.extend({
             frameheight: 32,
             
             shapes: [new me.Rect(0, 0, 32, 32)]
+
         };
 
         // call the constructor
@@ -763,7 +869,7 @@ game.ChaserEntity = me.Entity.extend({
      */
     shakeItOnDown: function (dest){
         if (this.dest != null) {
-            console.log("gonna shake it!");
+            //console.log("gonna shake it!");
 
             //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
             //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
@@ -865,7 +971,7 @@ game.ChaserEntity = me.Entity.extend({
             this.body.vel.y += this.yDir *4;
 
 
-            console.log(this.body.vel.x, this.body.vel.y)
+            //console.log(this.body.vel.x, this.body.vel.y)
 
         }
 
@@ -1002,49 +1108,49 @@ game.WaveManager = me.Object.extend({
         this.player1QueueLocation = "queue_front";
         this.player2QueueLocation = "queue_back";
 
-        //Get the GUIDs of each player's "base"
-        //For testing: player's queueLoc will be their "base"
-        for (var i = 0; i < me.game.world.children.length; i++) {
-            if (me.game.world.children[i].name === this.player1QueueLocation) {
-                this.player1Base = me.game.world.children[i];
-                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
-                }
-            else if (me.game.world.children[i].name === this.player2QueueLocation) {
-                this.player2Base = me.game.world.children[i];
-                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
-                }
-        }
+        // //Get the GUIDs of each player's "base"
+        // //For testing: player's queueLoc will be their "base"
+        // for (var i = 0; i < me.game.world.children.length; i++) {
+        //     if (me.game.world.children[i].name === this.player1QueueLocation) {
+        //         this.player1Base = me.game.world.children[i];
+        //         console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
+        //         }
+        //     else if (me.game.world.children[i].name === this.player2QueueLocation) {
+        //         this.player2Base = me.game.world.children[i];
+        //         console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
+        //         }
+        // }
     },
 
     update: function(){
-        if(this.currentwave < game.data.currentwave) {
-            //Go to Next Wave
-            this.currentwave = game.data.currentwave;
-            console.log("Starting Wave: " + game.data.currentwave);
-
-            //Send Units waiting at Queue Locations to Target Destination
-            //TODO: Make ultimate target the other player's Base Building
-
-            for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].queueGroup === this.player1Base.name) {
-                    console.log("send p1 units to p2 base");
-
-                    me.game.world.children[i].target_destination = this.player2Base;
-                    me.game.world.children[i].dest = this.player2Base;
-                    me.game.world.children[i].wavetarget = this.player2Base;
-                    me.game.world.children[i].waveRelease = true;
-                }
-                else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
-                    console.log("send p2 units to p1 base");
-
-                    me.game.world.children[i].target_destination = this.player1Base;
-                    me.game.world.children[i].dest = this.player1Base;
-                    me.game.world.children[i].wavetarget = this.player1Base;
-                    me.game.world.children[i].waveRelease = true;
-                }
-            }
-
-        }
+        // if(this.currentwave < game.data.currentwave) {
+        //     //Go to Next Wave
+        //     this.currentwave = game.data.currentwave;
+        //     console.log("Starting Wave: " + game.data.currentwave);
+        //
+        //     //Send Units waiting at Queue Locations to Target Destination
+        //     //TODO: Make ultimate target the other player's Base Building
+        //
+        //     for (var i = 0; i < me.game.world.children.length; i++) {
+        //         if (me.game.world.children[i].queueGroup === this.player1Base.name) {
+        //             console.log("send p1 units to p2 base");
+        //
+        //             me.game.world.children[i].target_destination = this.player2Base;
+        //             me.game.world.children[i].dest = this.player2Base;
+        //             me.game.world.children[i].wavetarget = this.player2Base;
+        //             me.game.world.children[i].waveRelease = true;
+        //         }
+        //         else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
+        //             console.log("send p2 units to p1 base");
+        //
+        //             me.game.world.children[i].target_destination = this.player1Base;
+        //             me.game.world.children[i].dest = this.player1Base;
+        //             me.game.world.children[i].wavetarget = this.player1Base;
+        //             me.game.world.children[i].waveRelease = true;
+        //         }
+        //     }
+        //
+        // }
     }
 
 });
