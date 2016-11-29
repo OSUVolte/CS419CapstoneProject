@@ -8,7 +8,7 @@ var game = {
         score : 0,
         gametime: 0,
         currentwave: 0,
-        waveduration: 60, //set to 15 seconds for testing
+        waveduration: 30, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",
@@ -218,7 +218,7 @@ var game = {
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
-        me.pool.register("units", game.Units, false);
+        me.pool.register("units", game.KillerEntity, false);
 
         //buildings:
         me.pool.register("build_area", game.BuildingArea);

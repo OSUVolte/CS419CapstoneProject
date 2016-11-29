@@ -135,8 +135,9 @@ game.Units = me.Entity.extend({
         this.type = "unit";
         this.waveRelease = false;
         this.wavetarget = "";
-        this.targeting = "queue";
+        //this.targeting = "queue";
         this.body.setVelocity(1,1);
+
         // astar stats
         this.target_destination = null;
         this.myPath = [];
@@ -287,49 +288,49 @@ game.Units = me.Entity.extend({
    * update the enemy pos
    */
     update : function (dt) {
-        // if(this.waveRelease === true) {
-        //     this.waveRelease = false;
-        //     //this.targeting == "buildings";
-        //
-        //     endQueue();
-        //     //Send to new target
-        //     this.target_destination = this.wavetarget;
-        //     //this.dest = this.wavetarget;
-        // }
-        //
-        // if (this.target_destination != null) {
-        //     if (this.target_destination.alive == false) {
-        //         this.target_destination = null;
-        //     }
-        // }
-        // check if alive first
-        // if (this.hp <= 0 && this.alive) {
-        //     this.body.collisionType = me.collision.types.NO_OBJECT;
-        //     console.log(this.name + " : " + this.GUID + " >> DIED!");
-        //     this.alive = false;
-        //
-        //     //give money
-        //     if(this.player == 1){
-        //         game.dataAI.playergold += 20;
-        //     }else{
-        //         game.data.playergold += 20;
-        //     }
-        //
-        //     if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
-        //         this.renderable.setCurrentAnimation("dying");
-        //         this.renderable.setAnimationFrame();
-        //     }
-        // }
+        if(this.waveRelease === true) {
+            this.waveRelease = false;
+            //this.targeting == "buildings";
+
+            endQueue();
+            //Send to new target
+            this.target_destination = this.wavetarget;
+            this.dest = this.wavetarget;
+        }
+
+        if (this.target_destination != null) {
+            if (this.target_destination.alive == false) {
+                this.target_destination = null;
+            }
+        }
+       // check if alive first
+        if (this.hp <= 0 && this.alive) {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
+            console.log(this.name + " : " + this.GUID + " >> DIED!");
+            this.alive = false;
+
+            //give money
+            if(this.player == 1){
+                game.dataAI.playergold += 20;
+            }else{
+                game.data.playergold += 20;
+            }
+
+            if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
+                this.renderable.setCurrentAnimation("dying");
+                this.renderable.setAnimationFrame();
+            }
+        }
 
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
-            /*if (this.target_destination == null) {
+            if (this.target_destination == null) {
              var closest = Number.MAX_VALUE;
              var temp_destination;
 
              //get all the children
-             for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+             for (i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
 
              //get opposite alive players only
              if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
@@ -348,7 +349,7 @@ game.Units = me.Entity.extend({
 
 
              if (this.idle == true) {
-             for (var i = 0; i < me.game.world.children.length; i++) {
+             for (i = 0; i < me.game.world.children.length; i++) {
              if (me.game.world.children[i].name === this.queueGroup) {
              this.target_destination = me.game.world.children[i];
              }
@@ -362,7 +363,7 @@ game.Units = me.Entity.extend({
              if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
              // not moving anywhere
              // friction takes over
-             var rnd = Math.floor(Math.random() * 51) - 25
+             var rnd = Math.floor(Math.random() * 51) - 25;
              if (this.target_destination != null) {
 
              this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target_destination.pos._x+rnd, this.target_destination.pos._y+rnd);
@@ -416,11 +417,10 @@ game.Units = me.Entity.extend({
              this.lastPos.y = this.body.pos.y;
              }
              }
-             }*/
-            //set the target
+             }
+           /* //set the target
             if (this.targeting == "queue") {
                 this.target = me.game.world.getChildByName("queue_front")[0];
-                this.body.setVelocity(1, 1);
 
             } else if (this.targeting == "units") {
                 this.target = this.addTargets(me.game.world.getChildByType(game.Units))[0];
@@ -451,71 +451,71 @@ game.Units = me.Entity.extend({
                     console.log("Ankunft", now);
                 }
             }
+        }*/
+
+
+        // if unit is dead
+        } else if (!this.alive) {
+            // when this unit dies, remove itself from the game
+            if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
+                this.renderable.setCurrentAnimation("dead");
+                this.renderable.setAnimationFrame();
+                me.game.world.removeChild(this);
+            }
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+        }
+        // if unit is alive and in combat
+        else {
+            // dont move
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+            // change to the standing animation if were not in combat and not currently standing (should never reach this ?)
+            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                this.renderable.setCurrentAnimation("stand");
+                this.renderable.setAnimationFrame();
+            // if in combat, wait until animation 7 where we will hit the enemy
+            } else if (this.combat) {
+                // if target is not alive, pop off and get the next target, if there are no more
+                // targets left, we are no longer in combat
+                if (this.target.length > 0) {
+                    if (!this.target[0].alive) {
+                        this.target.shift();
+                    }
+                } else {
+                    this.combat = false;
+                }
+
+                // if there still exists a target and we are on frame 7, and we havent hit anything yet
+                if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
+                    this.hit = true;
+                    this.target[0].renderable.flicker(500);
+                    this.target[0].hp -= battle(this, this.target[0]);
+                    this.target[0].health -= battle(this, this.target[0]);
+//                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                } else if (this.renderable.getCurrentAnimationFrame() != 7) {
+                    // once unit leaves 7th 'hit' animation, reset hit switch
+                    this.hit = false;
+                }
+            }
         }
 
-//
-//         // if unit is dead
-//         } else if (!this.alive) {
-//             // when this unit dies, remove itself from the game
-//             if (this.renderable.getCurrentAnimationFrame() == 9 && !this.renderable.isCurrentAnimation("dead")) {
-//                 this.renderable.setCurrentAnimation("dead");
-//                 this.renderable.setAnimationFrame();
-//                 me.game.world.removeChild(this);
-//             }
-//             this.body.vel.x = 0;
-//             this.body.vel.y = 0;
-//         }
-//         // if unit is alive and in combat
-//         else {
-//             // dont move
-//             this.body.vel.x = 0;
-//             this.body.vel.y = 0;
-//             // change to the standing animation if were not in combat and not currently standing (should never reach this ?)
-//             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-//                 this.renderable.setCurrentAnimation("stand");
-//                 this.renderable.setAnimationFrame();
-//             // if in combat, wait until animation 7 where we will hit the enemy
-//             } else if (this.combat) {
-//                 // if target is not alive, pop off and get the next target, if there are no more
-//                 // targets left, we are no longer in combat
-//                 if (this.target.length > 0) {
-//                     if (!this.target[0].alive) {
-//                         this.target.shift();
-//                     }
-//                 } else {
-//                     this.combat = false;
-//                 }
-//
-//                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
-//                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
-//                     this.hit = true;
-//                     this.target[0].renderable.flicker(500);
-//                     this.target[0].hp -= battle(this, this.target[0]);
-//                     this.target[0].health -= battle(this, this.target[0]);
-// //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
-//                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
-//                     // once unit leaves 7th 'hit' animation, reset hit switch
-//                     this.hit = false;
-//                 }
-//             }
-//         }
-//
-//         // update the body movement
-//         // handle collisions against other shapes
-//         if (!this.combat && this.alive) {
-//                 this.body.update(dt);
-//                 me.collision.check(this);
-//                 this.body.setVelocity(1,1);
-//         }
+        // update the body movement
+        // handle collisions against other shapes
+        if (!this.combat && this.alive) {
+                this.body.update(dt);
+                me.collision.check(this);
+                this.body.setVelocity(1,1);
+        }
 
-        // if (this.target_destination == null) {
-        //     this.body.vel.x = 0;
-        //     this.body.vel.y = 0;
-        //     if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-        //         this.renderable.setCurrentAnimation("stand");
-        //         this.renderable.setAnimationFrame();
-        //     }
-        // }
+        if (this.target_destination == null) {
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
+            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+                this.renderable.setCurrentAnimation("stand");
+                this.renderable.setAnimationFrame();
+            }
+        }
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -528,55 +528,55 @@ game.Units = me.Entity.extend({
     onCollision : function (response, other) {
 
         //When I hit the wall...
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+            if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
 
-            //update the velocity
-            if(this.player == 1) {
-                this.body.vel.x += this.xDir * 4;
-                this.body.vel.y += this.yDir * 4;
-            }else{
-                this.body.vel.x += this.xDir * 4;
-                this.body.vel.y += this.yDir * 4;
-            }
-
-
-            //console.log(this.body.vel.x, this.body.vel.y)
-
-        }
-
-
-    // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
-        if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
-            && response.a.player !== response.b.player && response.b.player != undefined) {
-        this.body.setVelocity(0,0);
-
-        // if this is alive
-            if (this.alive && (response.overlap > 0)) {
-                // loop through target array, if this enemy is new, push it to array
-                var newEnemy = true;
-                // for (var i = 0; i < this.target.length; i++) {
-                //     if (this.target[i].GUID == other.GUID) {
-                //         newEnemy = false;
-                //     }
-                // }
-                // // if the enemy is new, push
-                // if (newEnemy === true) {
-                //     this.target.push(other);
-                // }
-                // if this is the first fight, set the animation to attack
-                if (this.combat == false) {
-                    this.renderable.setCurrentAnimation("attack");
-                    this.renderable.setAnimationFrame();
-                    this.renderable.flicker(375);
+                //update the velocity
+                if(this.player == 1) {
+                    this.body.vel.x += this.xDir * 4;
+                    this.body.vel.y += this.yDir * 4;
+                }else{
+                    this.body.vel.x += this.xDir * 4;
+                    this.body.vel.y += this.yDir * 4;
                 }
-                this.combat = true;
-                this.me = response.a;
+
+
+                //console.log(this.body.vel.x, this.body.vel.y)
 
             }
-            return false;
-        }
 
-        return false;
+
+            // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
+            if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
+                && response.a.player !== response.b.player && response.b.player != undefined) {
+                this.body.setVelocity(0,0);
+
+                // if this is alive
+                if (this.alive && (response.overlap > 0)) {
+                    // loop through target array, if this enemy is new, push it to array
+                    var newEnemy = true;
+                    for (var i = 0; i < this.target.length; i++) {
+                        if (this.target[i].GUID == other.GUID) {
+                            newEnemy = false;
+                        }
+                    }
+                    // if the enemy is new, push
+                    if (newEnemy === true) {
+                        this.target.push(other);
+                    }
+                    // if this is the first fight, set the animation to attack
+                    if (this.combat == false) {
+                        this.renderable.setCurrentAnimation("attack");
+                        this.renderable.setAnimationFrame();
+                        this.renderable.flicker(375);
+                    }
+                    this.combat = true;
+                    this.me = response.a;
+
+                }
+                return false;
+            }
+
+            return false;
     }
 });
 
@@ -824,24 +824,39 @@ game.ChaserEntity = me.Entity.extend({
 
         // adjust the bounding box
         // lower half SNES-RPG style
-        this.hp = 10000;
+        this.hp = 100;
+        this.attack = 100;
+        this.atk = 100;
+        this.maxHp = 1000;
+        this.def = 10;
+        this.hitPercent = 75;
+        this.dodge = 15;
+        this.crit = 0;
+
         this.target = null;
         this.myPath = [];
         this.dest = null;
         this.lastPos =  {x: -1, y: -1};
         this.pathAge = 0;
-        this.maxHp = 10000;
-        this.def = 1;
+        this.player = 1;
         this.name = "slime";
         this.myWpTargets= [];
         this.myUnitTargets= [];
         this.myBldgTargets= [];
-        this.targeting = "units";
+        this.targeting = "queue";
+        this.hasTarget == false;
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+        this.queueGroup = "queue_front";
+
 
         //a multiplier that can be used to change units direction.
             this.xDir = 1;
             this.yDir = 1;
+
+        // define death animation
+        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]);
+        // define death animation
+        this.renderable.addAnimation("dead", [49]);
     },
 
     chessboard: function() {
@@ -856,11 +871,33 @@ game.ChaserEntity = me.Entity.extend({
         ///loop over the existing targets
         var temp = [];
         for(var i =0; i < type.length; i++){
-            if(type[i].player != this.player){
+            if(type[i].player != this.player && this.player !== undefined){
                 temp.push(type[i])
             }
         }
         return temp;
+    },
+    checkIfAlive:function(){
+        // check if alive first
+        if (this.hp <= 0 && this.alive) {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
+            console.log(this.name + " : " + this.GUID + " >> DIED!");
+            this.alive = false;
+
+            //give money
+            if(this.player == 1){
+                game.dataAI.playergold += 20;
+            }else{
+                game.data.playergold += 20;
+            }
+
+            this.renderable.setAnimationFrame();
+            me.game.world.removeChild(this);
+
+            return false;
+        }
+        return true;
+
     },
     /**
      * navigates the unit to the destination
@@ -878,7 +915,7 @@ game.ChaserEntity = me.Entity.extend({
             var xdiff = dest.pos.x - this.pos.x;
             var ydiff = dest.pos.y - this.pos.y;
 
-            var fuzz = Math.floor(Math.random() * (5 - 3)) + 2
+            var fuzz = Math.floor(Math.random() * (5 - 3)) + 2;
 
             if (xdiff < -fuzz) {
                 this.body.vel.x -= this.body.accel.x * me.timer.tick;
@@ -904,12 +941,33 @@ game.ChaserEntity = me.Entity.extend({
     update: function(dt) {
         var now = Date.now();
 
+        this.alive = this.checkIfAlive();
+
         //set the target
-        if(this.targeting == "queue"   ) {
+        if(this.targeting == "queue" ) {
             this.target = me.game.world.getChildByName("queue_front")[0];
 
         }else if(this.targeting == "units"){
-            this.target = this.addTargets(me.game.world.getChildByType(game.Units))[0];
+            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.Units));
+
+            //select one at random and go kill it.
+            if(!this.hasTarget && this.myUnitTargets.length > 0){
+                var howManyUnits = this.myUnitTargets.length;
+                var random = Math.floor((Math.random() * howManyUnits+1));
+                this.target = this.myUnitTargets[0];
+                //console.log(this.target);
+                // if(!this.target.alive){
+                //     console.log("zed's dead");
+                //     this.hasTarget == false;
+                // }else{
+                //     this.hasTarget = true;
+                // }
+                this.hasTarget = true;
+
+            }
+
+            if(this.hasTarget)
+                console.log("i has a target");
 
         }else if(this.targeting == "buildings"){
             this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
@@ -980,11 +1038,16 @@ game.ChaserEntity = me.Entity.extend({
             if (this.alive && this.combat == false) {
                 this.me = response.a;
                 this.enemy = other;
-                this.target.push(other);
+                //this.target.push(other);
                 this.combat = true;
                 this.renderable.setCurrentAnimation("attack");
                 this.renderable.setAnimationFrame();
-                this.targetedBy.push(other);
+               // this.targetedBy.push(other);
+
+                // battle(this, this.target);
+                this.target.hp -= battle(this, this.target);
+                this.target.health -= battle(this, this.target);
+
             } else if (this.combat == true) {
                 this.target.push(other);
                 this.targetedBy.push(other);
@@ -996,6 +1059,354 @@ game.ChaserEntity = me.Entity.extend({
             //           console.log("I AM TOUCHING SOMETHING ELSE");
             return true;
         }
+    }
+
+});
+
+
+game.KillerEntity = me.Entity.extend({
+    /* -----
+     constructor
+     ------ */
+
+    init: function(x, y, unit, settings) {
+        // call the constructor
+        settings.image = unit.image;
+
+        this._super(me.Entity, 'init', [x, y, settings, unit]);
+
+        // chase even when offscreen
+        this.alwaysUpdate = true;
+
+        //character properties
+        this.hp = (unit.hp + game.data.hpBoost) * game.data.sfHealth;
+        this.maxHp = unit.maxHp;
+        this.attack = (unit.atk + game.data.atkBoost) * game.data.sfAtk;
+        this.def = (unit.def + game.data.defBoost) * game.data.sfArmor;
+        this.speed = (unit.speed + game.data.speedBoost) * game.data.sfSpeed;
+        this.hitPercent = unit.hitPercent;
+        this.dodge = unit.dodge;
+        this.player = settings.player;
+        this.type = unit.type;                              // type of unit, to be used to determine damage multipliers maybe?
+        this.name = unit.name;
+        this.crit = unit.crit;                              // type of unit, to be used to determine damage multipliers maybe?
+        this.cost = unit.cost;
+        this.buildTime = unit.buildTime;
+
+        // set the collision type, passed in settings option
+        if (this.player == 1) {
+            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+        } else if (this.player == 2) {
+            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+        } else {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
+        }
+
+        //wave and queue
+        this.queueGroup = settings.queueGroup;
+        console.log(this.queueGroup);
+        this.waveRelease = false;
+        this.wavetarget = "";
+
+        //paths and targeting, astar
+        this.myPath = [];
+        this.dest = null;
+        this.lastPos =  {x: -1, y: -1};
+        this.pathAge = 0;
+        this.target = null;
+        this.targeting = "queue";
+        this.myUnitTargets= [];
+        this.myBldgTargets= [];
+        this.hasTarget = false;
+        this.combat = false;
+
+
+        // set the default horizontal & vertical speed (accel vector)
+        this.body.setVelocity(this.speed/4, this.speed/4);
+        this.body.setMaxVelocity(this.speed, this.speed);
+        this.body.setFriction(0.05, 0.05);
+
+        //a multiplier that can be used to change units direction.
+        this.xDir = 1;
+        this.yDir = 1;
+
+
+        //bars
+        this.hpBarCurrent = new me.Font("Verdana", 11, "green");
+        this.hpBarCurrent.lineWidth = 1;
+        this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
+        // player 1 is green hp bar, 2 is red hp bar
+        if (this.player == 1) {
+            this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
+        } else {
+            this.hpBarCurrent.fillStyle = new me.Color(255, 0, 0, 50);
+        }
+        this.hpBarMax = new me.Font("Verdana", 11, "black");
+        this.hpBarMax.alpha = 0.5;
+
+        //Animations
+        // define standing animation, use all frames
+        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 13, 14, 15, 16, 17, 18, 19]);
+        // define death animation
+        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]);
+        // define death animation
+        this.renderable.addAnimation("dead", [49]);
+        // define walking animation
+        this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
+        // define attacking animation
+        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], (1200 / this.speed));                 // 18.75 attackspeed multiplier
+        // set standing as default
+        this.renderable.setCurrentAnimation("stand");
+        this.renderable.setAnimationFrame();
+
+
+    },
+    // use draw function to draw hp bar
+    draw : function(renderer) {
+        var unitHp = "";
+        var percent = this.hp / this.maxHp * 100;
+
+        if (percent >= 80) {
+            unitHp += "▄"
+        }
+        if (percent >= 60) {
+            unitHp += "▄"
+        }
+        if (percent >= 40) {
+            unitHp += "▄"
+        }
+        if (percent >= 20) {
+            unitHp += "▄"
+        }
+        if (percent >= 0) {
+            unitHp += "▄"
+        }
+
+        this._super(me.Entity, "draw", [renderer]);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x, this.pos.y);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x, this.pos.y);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x, this.pos.y);
+    },
+    /**
+     * add targets
+     * @param takes an array of world entities
+     * returns an array filtered for opposite player
+     */
+    addTargets: function(type){
+        ///loop over the existing targets
+        var temp = [];
+        for(var i =0; i < type.length; i++){
+            if(type[i].player != this.player && this.player !== undefined){
+                temp.push(type[i])
+            }
+        }
+        return temp;
+    },
+    checkIfAlive:function(){
+        // check if alive first
+        if (this.hp <= 0 && this.alive) {
+            this.body.collisionType = me.collision.types.NO_OBJECT;
+            console.log(this.name + " : " + this.GUID + " >> DIED!");
+            this.alive = false;
+
+            //give money
+            if(this.player == 1){
+                game.dataAI.playergold += 20;
+            }else{
+                game.data.playergold += 20;
+            }
+
+            this.renderable.setAnimationFrame();
+            me.game.world.removeChild(this);
+
+            return false;
+        }
+        return true;
+
+    },
+    /**
+     * navigates the unit to the destination
+     * @param dest (retuned from astar.serarch)
+     * //todo make it return when it get to a destination?
+     */
+    shakeItOnDown: function (dest){
+        if (this.dest != null) {
+            //console.log("gonna shake it!");
+
+            //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
+            //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
+            // move based on next position
+
+            var xdiff = dest.pos.x - this.pos.x;
+            var ydiff = dest.pos.y - this.pos.y;
+
+            var fuzz = 2//Math.floor(Math.random() * (5 - 3)) + 2;
+
+            if (xdiff < -fuzz) {
+                this.body.vel.x -= this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            } else if (xdiff > fuzz) {
+                //               this.flipX(true);
+                this.body.vel.x += this.body.accel.x * me.timer.tick;
+                this.lastPos.x = this.body.pos.x;
+            }
+
+            if (ydiff < -fuzz) {
+                this.body.vel.y -= this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            } else if (ydiff > fuzz) {
+                this.body.vel.y += this.body.accel.y * me.timer.tick;
+                this.lastPos.y = this.body.pos.y;
+            }
+        }
+    },
+    /* -----
+     update the player pos
+     ------ */
+    update: function(dt) {
+        var now = Date.now();
+
+        this.alive = this.checkIfAlive();
+
+        //set the target
+        if(this.targeting == "queue" ) {
+            this.target = me.game.world.getChildByName(this.queueGroup)[0];
+
+        }else if(this.targeting == "units"){
+            this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.Units));
+
+            //select one at random and go kill it.
+            if(!this.hasTarget && this.myUnitTargets.length > 0){
+                var howManyUnits = this.myUnitTargets.length;
+                var random = Math.floor((Math.random() * howManyUnits+1));
+                this.target = this.myUnitTargets[random];
+                console.log(this.target);
+                this.setVelocity(this.speed, this.speed);
+
+                //console.log(this.target);
+                // if(!this.target.alive){
+                //     console.log("zed's dead");
+                //     this.hasTarget == false;
+                // }else{
+                //     this.hasTarget = true;
+                // }
+                // this.hasTarget = true;
+
+            }
+
+            if(this.hasTarget)
+                console.log("i has a target");
+
+        }else if(this.targeting == "buildings"){
+            this.target = this.addTargets(me.game.world.getChildByType(game.Structures))[0];
+
+        }else{
+            this.target = this.addTargets(me.game.world.getChildByType(game.WayPoint))[0];
+        }
+
+        //Given that we have a target do something with it
+        if (this.target != null && this.target != undefined) {
+
+            //get the distance to that target if you want to decide it's too far away, or use it to sort the additions to an array
+            var cbdist = this.distanceTo(this.target);
+
+            //we don't care about the distance so search the path to it
+            this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
+
+            //set destination
+            this.dest = this.myPath.pop();
+
+            //get over here boi
+            this.shakeItOnDown(this.dest);
+
+            //check arrival...ehh not working its only gets approximate so...
+            // if (this.target.pos._x == this.pos._x && this.target.pos._y == this.pos._y) {
+            //     console.log("Ankunft", now);
+            // }
+        }
+
+        // handle collisions against other shapes
+        me.collision.check(this);
+
+        this.body.update(dt);
+
+        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+
+    },
+
+    draw: function(context) {
+        // draw the sprite if defined
+        if (this.renderable) {
+            // translate the renderable position (relative to the entity)
+            // and keeps it in the entity defined bounds
+            // anyway to optimize this ?
+            var x = ~~(this.pos.x + (this.anchorPoint.x * (this.width - this.renderable.width)));
+            var y = ~~(this.pos.y + (this.anchorPoint.y * (this.height - this.renderable.height)));
+            context.translate(x, y);
+            this.renderable.draw(context);
+            context.translate(-x, -y);
+        }
+    },
+
+    /**
+     * colision handler
+     * (called when colliding with other objects)
+     */
+    onCollision : function (response, other) {
+
+        //When I hit the wall...
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
+
+            //update the velocity
+            if(this.player == 1) {
+                this.body.vel.x += this.xDir * 4;
+                this.body.vel.y += this.yDir * 4;
+            }else{
+                this.body.vel.x += this.xDir * 4;
+                this.body.vel.y += this.yDir * 4;
+            }
+
+
+            //console.log(this.body.vel.x, this.body.vel.y)
+
+        }
+
+
+        // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
+        if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
+            && response.a.player !== response.b.player && response.b.player != undefined) {
+            //this.body.setVelocity(0,0);
+
+            // if this is alive
+            if (this.alive && (response.overlap > 0)) {
+                // loop through target array, if this enemy is new, push it to array
+                // var newEnemy = true;
+                // for (var i = 0; i < this.target.length; i++) {
+                //     if (this.target[i].GUID == other.GUID) {
+                //         newEnemy = false;
+                //     }
+                // }
+                // // if the enemy is new, push
+                // // if (newEnemy === true) {
+                // //     this.target.push(other);
+                // // }
+                // // if this is the first fight, set the animation to attack
+                // if (this.combat == false) {
+                //     this.renderable.setCurrentAnimation("attack");
+                //     this.renderable.setAnimationFrame();
+                //     this.renderable.flicker(375);
+                // }
+                // this.combat = true;
+
+
+
+                this.me = response.a;
+
+            }
+            return false;
+        }
+
+        return false;
     }
 
 });
@@ -1017,13 +1428,13 @@ function battle(attacker, defender) {
                     if (attacker.name == "Wizard") {
                         hpLost = (attacker.attack * 1.5);
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
+                    //console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
                 } else {
                     hpLost = attacker.attack - defender.def;
                     if (attacker.name == "Wizard") {
                         hpLost = attacker.attack;
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
+                    //console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
                 }
             } else {
                 hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
@@ -1053,7 +1464,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
     this.buildTime = buildTime;
     this.crit = crit;
     this.qAssignment = -1;   // not assigned yet
-    this.cost = cost// add crit chance, 150% extra damage
+    this.cost = cost; // add crit chance, 150% extra damage
 }
 
 /*
@@ -1108,49 +1519,53 @@ game.WaveManager = me.Object.extend({
         this.player1QueueLocation = "queue_front";
         this.player2QueueLocation = "queue_back";
 
-        // //Get the GUIDs of each player's "base"
-        // //For testing: player's queueLoc will be their "base"
-        // for (var i = 0; i < me.game.world.children.length; i++) {
-        //     if (me.game.world.children[i].name === this.player1QueueLocation) {
-        //         this.player1Base = me.game.world.children[i];
-        //         console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
-        //         }
-        //     else if (me.game.world.children[i].name === this.player2QueueLocation) {
-        //         this.player2Base = me.game.world.children[i];
-        //         console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
-        //         }
-        // }
+        //Get the GUIDs of each player's "base"
+        //For testing: player's queueLoc will be their "base"
+        for (var i = 0; i < me.game.world.children.length; i++) {
+            if (me.game.world.children[i].name === this.player1QueueLocation) {
+                this.player1Base = me.game.world.children[i];
+                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
+                }
+            else if (me.game.world.children[i].name === this.player2QueueLocation) {
+                this.player2Base = me.game.world.children[i];
+                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
+                }
+        }
     },
 
     update: function(){
-        // if(this.currentwave < game.data.currentwave) {
-        //     //Go to Next Wave
-        //     this.currentwave = game.data.currentwave;
-        //     console.log("Starting Wave: " + game.data.currentwave);
-        //
-        //     //Send Units waiting at Queue Locations to Target Destination
-        //     //TODO: Make ultimate target the other player's Base Building
-        //
-        //     for (var i = 0; i < me.game.world.children.length; i++) {
-        //         if (me.game.world.children[i].queueGroup === this.player1Base.name) {
-        //             console.log("send p1 units to p2 base");
-        //
-        //             me.game.world.children[i].target_destination = this.player2Base;
-        //             me.game.world.children[i].dest = this.player2Base;
-        //             me.game.world.children[i].wavetarget = this.player2Base;
-        //             me.game.world.children[i].waveRelease = true;
-        //         }
-        //         else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
-        //             console.log("send p2 units to p1 base");
-        //
-        //             me.game.world.children[i].target_destination = this.player1Base;
-        //             me.game.world.children[i].dest = this.player1Base;
-        //             me.game.world.children[i].wavetarget = this.player1Base;
-        //             me.game.world.children[i].waveRelease = true;
-        //         }
-        //     }
-        //
-        // }
+        if(this.currentwave < game.data.currentwave) {
+            //Go to Next Wave
+            this.currentwave = game.data.currentwave;
+            console.log("Starting Wave: " + game.data.currentwave);
+
+            //Send Units waiting at Queue Locations to Target Destination
+            //TODO: Make ultimate target the other player's Base Building
+
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].queueGroup === this.player1QueueLocation) {
+                    console.log("send p1 units to p2 base");
+
+                    //me.game.world.children[i].target_destination = this.player2Base;
+                    //me.game.world.children[i].dest = this.player2Base;
+                    me.game.world.children[i].wavetarget = this.player2Base;
+                    me.game.world.children[i].waveRelease = true;
+                    me.game.world.children[i].targeting = "units";
+                }
+                else if (me.game.world.children[i].queueGroup === this.player2QueueLocation) {
+                    console.log("send p2 units to p1 base");
+
+                    //me.game.world.children[i].target_destination = this.player1Base;
+                    //me.game.world.children[i].dest = this.player1Base;
+                    me.game.world.children[i].wavetarget = this.player1Base;
+                    me.game.world.children[i].waveRelease = true;
+                    me.game.world.children[i].targeting = "units";
+                }
+            }
+
+            this.targeting = "units";
+
+        }
     }
 
 });

@@ -79,10 +79,10 @@
  <objectgroup name="path" offsetx="0.5" offsety="-2">
   <object id="39" name="build_area" x="-50" y="-30" width="752" height="428"/>
   <object id="130" name="queue_front" x="874" y="290.333" width="68" height="59"/>
-  <object id="132" name="queue_back" x="320" y="454.667" width="124" height="88"/>
+  <object id="132" name="queue_back" x="3276" y="598.667" width="124" height="88"/>
   <object id="134" name="P2_build_area" x="3452" y="600" width="720" height="412"/>
   <object id="135" name="queue_mid" x="518" y="458" width="124" height="88"/>
-  <object id="140" name="p2_queue_front" x="3276" y="592" width="158" height="114"/>
+  <object id="140" name="p2_queue_front" x="3292" y="588" width="158" height="114"/>
   <object id="142" name="p2_queue_mid" x="3541" y="509" width="128" height="90"/>
   <object id="143" name="p2_queue_back" x="3698" y="505" width="128" height="90"/>
   <object id="157" name="enemyAI" x="3136" y="987" width="64" height="32"/>
