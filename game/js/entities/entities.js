@@ -307,7 +307,7 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 1000) {                                                                           // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 100000) {                                                                           // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
@@ -919,25 +919,35 @@ function endQueue() {
 
 game.WaveManager = me.Object.extend({
     init: function (x, y, settings){
-        this.currentwave = game.data.currentwave;
-        this.player1QueueLocation = "queue_front";
-        this.player2QueueLocation = "queue_back";
+        this.findAIBase = false;
+        this.findPlayerBase = false;
 
-        //Get the GUIDs of each player's "base"
-        //For testing: player's queueLoc will be their "base"
-        for (var i = 0; i < me.game.world.children.length; i++) {
-            if (me.game.world.children[i].name === this.player1QueueLocation) {
-                this.player1Base = me.game.world.children[i];
-                console.log("player 1 base: " + this.player1Base.name + " GUI: " + this.player1Base.GUID);
-                }
-            else if (me.game.world.children[i].name === this.player2QueueLocation) {
-                this.player2Base = me.game.world.children[i];
-                console.log("player 2 base: " + this.player2Base.name + " GUI: " + this.player2Base.GUID);
-                }
-        }
+        this.currentwave = game.data.currentwave;
+        this.player1WaitLocation = "queue_mid";
+        this.player1AttackLocation = "queue_front";
+
+        this.player2WaitLocation = "p2_queue_mid";
+        this.player2AttackLocation = "p2_queue_front";
+
+        this.player1Base = "keep";
+        this.player2Base = "p2_queue_front"; //TODO: change to player 2's keep location
     },
 
     update: function(){
+        if(this.findAIBase == false){
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
+                    this.player2Base = me.game.world.children[i]; //get entity object
+                    this.findAIBase = true;
+                    console.log(me.game.world.children[i]);
+                    }
+                else if (me.game.world.children[i].name === "keep") {
+                    this.player1Base = me.game.world.children[i]; 
+                    this.findPlayerBase = true;
+                    console.log(me.game.world.children[i]);
+                }
+            }
+        }
         if(this.currentwave < game.data.currentwave) {
             //Go to Next Wave
             this.currentwave = game.data.currentwave;
@@ -947,7 +957,7 @@ game.WaveManager = me.Object.extend({
             //TODO: Make ultimate target the other player's Base Building
             
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].queueGroup === this.player1Base.name) {
+                if (me.game.world.children[i].queueGroup === this.player1AttackLocation.name) {
                     console.log("send p1 units to p2 base");
 
                     me.game.world.children[i].target_destination = this.player2Base;
@@ -955,7 +965,7 @@ game.WaveManager = me.Object.extend({
                     me.game.world.children[i].wavetarget = this.player2Base;
                     me.game.world.children[i].waveRelease = true;
                 }
-                else if (me.game.world.children[i].queueGroup === this.player2Base.name) {
+                else if (me.game.world.children[i].queueGroup === "queue_front" && me.game.world.children[i].player == 2) {
                     console.log("send p2 units to p1 base");
   
                     me.game.world.children[i].target_destination = this.player1Base;

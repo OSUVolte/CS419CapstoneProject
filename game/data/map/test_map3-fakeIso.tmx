@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="175">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="209">
  <tileset firstgid="1" name="medieval_tilesheet" tilewidth="16" tileheight="16" tilecount="4840" columns="110">
   <image source="../img/map/medieval_tilesheet.png" width="1760" height="704"/>
   <terraintypes>
@@ -78,32 +78,29 @@
  </layer>
  <objectgroup name="path">
   <object id="39" name="build_area" x="-50" y="-30" width="752" height="428"/>
-  <object id="130" name="queue_front" x="708" y="292" width="124" height="88"/>
-  <object id="132" name="queue_back" x="320" y="454.667" width="124" height="88"/>
-  <object id="134" name="P2_build_area" x="3452" y="600" width="720" height="412"/>
+  <object id="130" name="queue_front" x="900" y="292" width="124" height="88"/>
+  <object id="132" name="queue_back" x="275" y="200" width="124" height="88"/>
+  <object id="134" name="P2_build_area" x="3458.06" y="642.424" width="713.939" height="369.576"/>
   <object id="135" name="queue_mid" x="518" y="458" width="124" height="88"/>
-  <object id="140" name="p2_queue_front" x="3276" y="592" width="158" height="114"/>
-  <object id="142" name="p2_queue_mid" x="3541" y="509" width="128" height="90"/>
+  <object id="140" name="p2_queue_front" x="3273.82" y="648.606" width="158" height="77.6364"/>
+  <object id="142" name="p2_queue_mid" x="3483.42" y="545.364" width="128" height="90"/>
   <object id="143" name="p2_queue_back" x="3698" y="505" width="128" height="90"/>
-  <object id="157" name="enemyAI" x="3136" y="987" width="64" height="32"/>
+  <object id="157" name="enemyAI" x="3705.7" y="753.667" width="64" height="32"/>
   <object id="173" name="spawn_top" x="512" y="224" width="33.3333" height="32"/>
  </objectgroup>
  <objectgroup name="collision" offsetx="-4" offsety="0">
   <object id="107" x="-96" y="0" width="1120" height="16"/>
   <object id="108" x="-64" y="16" width="80" height="752"/>
-  <object id="112" x="1616" y="412">
-   <polygon points="0,0 736,356 748,620 0,612"/>
+  <object id="112" x="1631.34" y="405.352" rotation="-3.99382">
+   <polygon points="-9.52563,25.7835 876.358,327.819 890.646,570.92 0,563.554"/>
   </object>
-  <object id="113" x="1956" y="224">
-   <polygon points="0,0 676,340 664,-228 0,-232"/>
+  <object id="113" x="1942.92" y="224.942" rotation="7.74037">
+   <polygon points="0,0 730.23,262.732 717.268,-176.185 0,-179.276"/>
   </object>
-  <object id="116" x="876" y="0" width="1076" height="236"/>
-  <object id="117" x="2632" y="368" width="768" height="192"/>
-  <object id="123" x="2348" y="760">
-   <polygon points="0,0 180,-52 168,252 16,272"/>
-  </object>
-  <object id="125" x="2524" y="708">
-   <polygon points="0,0 636,0 772,68 780,316"/>
+  <object id="116" x="881.962" y="-24.4918" width="1071.33" height="206.85" rotation="2.6224"/>
+  <object id="117" x="2632" y="372" width="768" height="212.03"/>
+  <object id="125" x="2530" y="652.396">
+   <polygon points="0,20.6711 550.092,55.604 779.062,96.2819 774,326.604"/>
   </object>
   <object id="128" x="3308" y="908">
    <polygon points="0,0 124,56 788,48 792,112 -4,116"/>
@@ -114,8 +111,8 @@
   <object id="136" x="20" y="398">
    <polygon points="0,0 456,246 -14,626"/>
   </object>
-  <object id="137" x="490" y="638">
-   <polygon points="-18,8 434,-222 1120,-226"/>
+  <object id="137" x="490.305" y="639.88" rotation="-0.18804">
+   <polygon points="-17.9232,7.99793 515.721,-218.127 1129.12,-204.098"/>
   </object>
   <object id="139" x="3406" y="368">
    <polyline points="0,0 -2,190 18,210 276,74 588,230 656,202 694,244 718,-360 2,-2"/>

@@ -268,7 +268,8 @@ game.Structures = me.Entity.extend({
                 console.log("spawning", unit.toLowerCase());
 
 
-                this.spawnUnit(unit, game.data.queueName[unitQ]);
+                //this.spawnUnit(unit, game.data.queueName[unitQ]);
+                this.spawnUnit(unit, game.dataAI.queueName[unitQ]);
 
                 //update the time of the element in the front
                 //so that it begins building
