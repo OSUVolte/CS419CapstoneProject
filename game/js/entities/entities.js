@@ -243,11 +243,11 @@ game.Units = me.Entity.extend({
             this.dest = this.wavetarget;
         }
 
-        if (this.target_destination != null) {
-            if (this.target_destination.alive == false) {
-                this.target_destination = null;
-            }
-        }
+        // if (this.target_destination != null) {
+        //     if (this.target_destination.alive == false) {
+        //         this.target_destination = null;
+        //     }
+        // }
         // check if alive first
         if (this.hp <= 0 && this.alive) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
@@ -877,7 +877,7 @@ var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minot
 function endQueue() {
     console.log("endQueue fired");
     for (i = 0; i < me.game.world.children.length; i++) {
-        if (me.game.world.children[i].idle == true) {
+        if (me.game.world.children[i].idle == true ) {
             me.game.world.children[i].idle = false;
             me.game.world.children[i].target_destination = null;
         }

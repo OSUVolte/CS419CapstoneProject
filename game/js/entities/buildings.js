@@ -1182,8 +1182,6 @@ game.Keep = game.Structures.extend({
 
 });
 
-
-
 //
 function checkHealth(building) {
     if (building.health <= 0) {
