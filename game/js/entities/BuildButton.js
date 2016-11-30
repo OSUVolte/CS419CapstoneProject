@@ -23,7 +23,7 @@ game.BuildButton = me.Entity.extend({
 	//callback for mouse click
 	onMouseDown: function() {
 	    if(game.data.isBuildMenuOpen == true){
-	    	console.log("close menu");
+//	    	console.log("close menu");
 	    	// close  building menu
 			me.game.world.removeChild(game.data.menu_background);
 			me.game.world.removeChild(game.data.barracksbutton);
@@ -33,7 +33,7 @@ game.BuildButton = me.Entity.extend({
 		}
 		else{
 			//Show Build Menu
-			console.log("open menu");
+//			console.log("open menu");
 			game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
 	        me.game.world.addChild(game.data.menu_background, 15);
 	        game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
@@ -43,7 +43,7 @@ game.BuildButton = me.Entity.extend({
 	        game.data.arsenalbutton = me.pool.pull("arsenalbutton", 30, 240, {});
 	        me.game.world.addChild(game.data.arsenalbutton, 30);
 	        me.input.triggerKeyEvent(me.input.KEY.B, true);
-	        console.log("buildbutton pressed!");
+//	        console.log("buildbutton pressed!");
 	        game.data.isBuildMenuOpen = true;
 	    }
 		return false;

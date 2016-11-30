@@ -38,9 +38,35 @@ game.EnemyAI = me.Entity.extend({
         if (game.dataAI.count("barracks") > 0) {                        // if more than 1 barracks, make a unit
             var building = game.dataAI.getBuilding();
             if (building.percentComplete == 100) {
-                if(building.q.length < building.capacity && game.dataAI.playergold > warrior.cost){
-                    building.addUnitQ("warrior", 0);
+                var randomUnit = Math.floor((Math.random() * 5) + 1);
+                switch(randomUnit) {
+                    case 1:
+                        if(building.q.length < building.capacity && game.dataAI.playergold > warrior.cost){
+                            building.addUnitQ("warrior", 0);
+                        }
+                        break;
+                    case 2:
+                        if(building.q.length < building.capacity && game.dataAI.playergold > minotaur.cost){
+                            building.addUnitQ("minotaur", 0);
+                        }
+                        break;
+                    case 3:
+                        if(building.q.length < building.capacity && game.dataAI.playergold > wizard.cost){
+                            building.addUnitQ("wizard", 0);
+                        }
+                        break;
+                    case 4:
+                        if(building.q.length < building.capacity && game.dataAI.playergold > rogue.cost){
+                            building.addUnitQ("rogue", 0);
+                        }
+                        break;
+                    case 5:
+                        if(building.q.length < building.capacity && game.dataAI.playergold > slime.cost){
+                            building.addUnitQ("slime", 0);
+                        }
+                        break;
                 }
+
             }
             return true;
         }

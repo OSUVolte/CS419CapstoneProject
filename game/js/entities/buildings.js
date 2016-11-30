@@ -84,7 +84,7 @@ game.Structures = me.Entity.extend({
         if (this.hover === true) {
             // this.grabOffset.set(event.gameX, event.gameY);
             // this.grabOffset.sub(this.pos);
-            console.log('selected the new buiding');
+//            console.log('selected the new buiding');
             this.selected = true;
             //me.viewport.reset(0,0);
             this.displayStatus();
@@ -121,8 +121,8 @@ game.Structures = me.Entity.extend({
         //    player: 1,
             shapes: [new me.Rect(0, 0, 32, 32)]
         }), 10);
-        console.log(game.data.myPath);
-        console.log("Assigned to q", newUnit)
+//        console.log(game.data.myPath);
+ //       console.log("Assigned to q", newUnit)
     },
     /**
      * Adds type of element to the Building Queue
@@ -175,7 +175,7 @@ game.Structures = me.Entity.extend({
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(techObj);
-            console.log("tech Q", this.q);
+//            console.log("tech Q", this.q);
             return true;
 
         }else{
@@ -265,11 +265,11 @@ game.Structures = me.Entity.extend({
                 this.q.shift();
 
                 //spawn the unit
-                console.log("spawning", unit.toLowerCase());
+//                console.log("spawning", unit.toLowerCase());
 
 
-                //this.spawnUnit(unit, game.data.queueName[unitQ]);
-                this.spawnUnit(unit, game.dataAI.queueName[unitQ]);
+                this.spawnUnit(unit, game.data.queueName[unitQ]);
+                //this.spawnUnit(unit, game.dataAI.queueName[unitQ]);
 
                 //update the time of the element in the front
                 //so that it begins building

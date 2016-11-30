@@ -798,22 +798,22 @@ function battle(attacker, defender) {
                     if (attacker.name == "Wizard") {
                         hpLost = (attacker.attack * 1.5);
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
+//                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
                 } else {
                     hpLost = attacker.attack - defender.def;
                     if (attacker.name == "Wizard") {
                         hpLost = attacker.attack;
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
+ //                   console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
                 }
             } else {
                 hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
             }
         } else if (dodgeChance <= defender.dodge && defender.dodge != undefined) {
-            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
+//            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
         }
     } else {
-        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
+//        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
     }
 
     return hpLost;
@@ -905,12 +905,12 @@ game.WaveManager = me.Object.extend({
                 if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
                     this.player2Base = me.game.world.children[i]; //get entity object
                     this.findAIBase = true;
-                    console.log(me.game.world.children[i]);
+//                    console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
                     this.player1Base = me.game.world.children[i]; 
                     this.findPlayerBase = true;
-                    console.log(me.game.world.children[i]);
+//                    console.log(me.game.world.children[i]);
                 }
             }
         }
