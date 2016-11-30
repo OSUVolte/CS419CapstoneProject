@@ -482,16 +482,6 @@ game.Units = me.Entity.extend({
                 this.body.vel.x += Number.MAX_VALUE
             }
 
-            //update the velocity
-            if(this.player == 1) {
-                this.body.vel.x +=  4;
-                this.body.vel.y +=  4;
-            }else{
-                this.body.vel.x +=  4;
-                this.body.vel.y +=  4;
-            }
-
-
             this.path++;
             return true;
         }

@@ -35,13 +35,9 @@ game.EnemyAI = me.Entity.extend({
             this.buildingManager.build("barracks");                     // command like this to build a building
         }
         
-        if (game.dataAI.count("barracks") > 0 ) {                        // if more than 1 barracks, make a unit
+        if (game.dataAI.count("barracks") > 0) {                        // if more than 1 barracks, make a unit
             var building = game.dataAI.getBuilding();
-
-
             if (building.percentComplete == 100) {
-
-                //make a random character
                 if(building.q.length < building.capacity && game.dataAI.playergold > warrior.cost){
                     building.addUnitQ("warrior", 0);
                 }
