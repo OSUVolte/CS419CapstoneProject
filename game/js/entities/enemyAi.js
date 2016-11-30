@@ -59,10 +59,6 @@ game.EnemyAI = me.Entity.extend({
 });
 
 
-
-
-
-
 function findEntityByName(name) {
     for (var i = 0; i < me.game.world.children.length; i++) {
         if (me.game.world.children[i].name === name) {
