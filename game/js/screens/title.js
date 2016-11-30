@@ -17,7 +17,7 @@ game.TitleScreen = me.ScreenObject.extend({
     // add to the world container
     me.game.world.addChild(backgroundImage, 1);
 
-    
+    },
   /**
    * action to perform when leaving this screen (state change)
    */
