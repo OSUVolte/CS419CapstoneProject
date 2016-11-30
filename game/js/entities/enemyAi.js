@@ -12,7 +12,7 @@ game.EnemyAI = me.Entity.extend({
         this.alwaysUpdate = true;
         
         // anything else
-        this.player = 2;                                                        // player 2 is enemy
+//        this.player = 2;                                                        // player 2 is enemy
         this.waveNumber = game.data.currentwave;                               // save wave number, so that when it changes, an update will be triggered
         this.buildingManager = null;                                            // reference to buildingManagerAI
         this.data = game.dataAI;                                                 // reference to dataAI
@@ -35,13 +35,13 @@ game.EnemyAI = me.Entity.extend({
             this.buildingManager.build("barracks");                     // command like this to build a building
         }
         
-        if (game.dataAI.count("barracks") > 0 && game.dataAI.count("barracks") < 2 ) {                        // if more than 1 barracks, make a unit
+        if (game.dataAI.count("barracks") > 0 ) {                        // if more than 1 barracks, make a unit
             var building = game.dataAI.getBuilding();
+
+
             if (building.percentComplete == 100) {
 
                 //make a random character
-
-
                 if(building.q.length < building.capacity && game.dataAI.playergold > warrior.cost){
                     building.addUnitQ("warrior", 0);
                 }
@@ -61,10 +61,6 @@ game.EnemyAI = me.Entity.extend({
         return true;
     }
 });
-
-
-
-
 
 
 function findEntityByName(name) {

@@ -18,7 +18,6 @@ game.BuildingArea = me.Renderable.extend({
         console.log(settings.width, settings.height, x ,y)
 
         this._super(me.Renderable, "init", [x, y, settings.width, settings.height]);
-        this.floating = true;
         this.pos.x = x;
         this.pos.y = y;
         this.width = settings.width;
@@ -149,7 +148,6 @@ game.BuildingAreaAI = me.Renderable.extend({
         console.log(settings.width, settings.height, x ,y)
 
         this._super(me.Renderable, "init", [x, y, settings.width, settings.height]);
-        this.floating = true;
         this.pos.x = x;
         this.pos.y = y;
         this.width = settings.width;

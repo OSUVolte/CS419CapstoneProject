@@ -33,6 +33,7 @@ game.Structures = me.Entity.extend({
         this.hpBarMax = new me.Font("Verdana", 11, "black");
         this.hpBarMax.alpha = 0.5;
 
+        this.alwaysUpdate = true;
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -116,11 +117,11 @@ game.Structures = me.Entity.extend({
             // direction
             player: this.player,                                                                                                                                // when spawning units, label which player theyre from
             queueGroup: queueAssignment, //the units queue assignment
-            // which player spawned
-        //    player: 1,
+
             shapes: [new me.Rect(30, 30, 32, 32)]
         }), 10);
-        //console.log("Assigned to q", newUnit)
+        console.log(game.data.myPath);
+        console.log("Assigned to q", newUnit)
     },
     /**
      * Adds type of element to the Building Queue
@@ -174,7 +175,7 @@ game.Structures = me.Entity.extend({
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(techObj);
-            console.log("tech Q", this.q[0].inProcess);
+            console.log("tech Q", this.q);
             return true;
 
         }else{
@@ -268,8 +269,11 @@ game.Structures = me.Entity.extend({
                 //spawn the unit
                 console.log("spawning", unit.toLowerCase());
 
-
-                this.spawnUnit(unit, game.data.queueName[unitQ]);
+                if(this.player ==1) {
+                    this.spawnUnit(unit, game.data.queueName[unitQ]);
+                } else{
+                    this.spawnUnit(unit, game.dataAI.queueName[unitQ]);
+                }
 
                 //update the time of the element in the front
                 //so that it begins building
@@ -303,7 +307,6 @@ game.Structures = me.Entity.extend({
         //establish a percent complete
         if(this.elapsed < this.buildTime) {
             this.percentComplete = Math.round(( this.elapsed/this.buildTime)*100);
-
         }else{
             this.percentComplete = 100;
         }
@@ -361,8 +364,6 @@ game.Structures = me.Entity.extend({
         this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
         this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+50, this.pos.y+50);
         this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+50, this.pos.y+50);
-
-
     },
     onCollision : function (response, other) {
         //console.log("Building: eww he touched me");
@@ -418,7 +419,9 @@ game.Barracks = game.Structures.extend({
         this.enabled = {
             type1:true,
             type2: true,  //set these via game conditionals
-            type3: true  //' etc etc //todo add all unit types
+            type3: true,  //' etc etc //todo add all unit types
+            type4: true,
+            type5: true
         }; //
         this.upm = 5; //units per minute
         this.capacity = 5;
@@ -432,7 +435,9 @@ game.Barracks = game.Structures.extend({
      * Change the image
      */
     chooseImage: function () {
-
+        //todo make it update its color depending on status (healthy, damaged, working, tobe destroyed etc)
+        //this.renderable.addAnimation("building", [0], 5);
+        //this.renderable.setCurrentAnimation("neutral");
     },
     /**
      * Set spawn point of the footprint
@@ -455,6 +460,7 @@ game.Barracks = game.Structures.extend({
 
         //spawn units when time is ready
         this.unitComplete(now);
+
         return this._super(me.Entity, "update", [dt])
     },
     displayStatus: function(){
@@ -487,6 +493,24 @@ game.Barracks = game.Structures.extend({
                 "Add Rogue", // default
                 "rogue",
                 rogue
+            ), 110);
+        }
+        if(this.enabled.type4 && this.complete && this.functional) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                20, 150,
+                "white",
+                "Add Minotaur", // default
+                "minotaur",
+                minotaur
+            ), 110);
+        }
+        if(this.enabled.type5 && this.complete && this.functional) {
+            this.panel.addChild(new game.UI.UnitAdd(
+                160, 150,
+                "white",
+                "Add wizard", // default
+                "wizard",
+                wizard
             ), 110);
         }
         if(this.q.length > 0 && this.complete) {
@@ -669,7 +693,7 @@ game.Armourer = game.Structures.extend({
         //check front of q for finished tech
         if (this.q.length > 0) {
             if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
-                //console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
+                console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
                 //apply the item
                 //Armory applies to all units
 
@@ -768,7 +792,7 @@ game.Arsenal = game.Structures.extend({
             startTime: null, // set when button is pressed
             buildTime: 6,
             action: "inc_base",
-            value: 250,
+            value: 25,
             cost: 100,
             enabled:true,
             complete: false,
