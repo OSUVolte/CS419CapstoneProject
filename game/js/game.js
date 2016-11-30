@@ -227,6 +227,7 @@ var game = {
         me.pool.register("P2_build_area", game.BuildingAreaAI);
         me.pool.register("structures", game.Structures);
         me.pool.register("keep", game.Keep);
+        me.pool.register("keep2", game.KeepEnemy);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);

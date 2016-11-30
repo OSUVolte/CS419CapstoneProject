@@ -43,7 +43,7 @@ game.Structures = me.Entity.extend({
 
         // register on the global pointermove event
         // If this causes issus see building_manager for alternative set up
-        console.log("onActivate fired");
+//        console.log("onActivate fired");
         this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
     },
 
@@ -84,7 +84,7 @@ game.Structures = me.Entity.extend({
         if (this.hover === true) {
             // this.grabOffset.set(event.gameX, event.gameY);
             // this.grabOffset.sub(this.pos);
-            console.log('selected the new buiding');
+ //           console.log('selected the new buiding');
             this.selected = true;
             //me.viewport.reset(0,0);
             this.displayStatus();
@@ -119,10 +119,10 @@ game.Structures = me.Entity.extend({
             queueGroup: queueAssignment, //the units queue assignment
             // which player spawned
         //    player: 1,
-            shapes: [new me.Rect(0, 0, 32, 32)]
+            shapes: [new me.Rect(0, 0, 16, 16)]
         }), 10);
-        console.log(game.data.myPath);
-        console.log("Assigned to q", newUnit)
+//        console.log(game.data.myPath);
+//        console.log("Assigned to q", newUnit)
     },
     /**
      * Adds type of element to the Building Queue
@@ -175,7 +175,7 @@ game.Structures = me.Entity.extend({
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity){
             this.q.push(techObj);
-            console.log("tech Q", this.q);
+  //          console.log("tech Q", this.q);
             return true;
 
         }else{
@@ -265,11 +265,11 @@ game.Structures = me.Entity.extend({
                 this.q.shift();
 
                 //spawn the unit
-                console.log("spawning", unit.toLowerCase());
+  //              console.log("spawning", unit.toLowerCase());
 
 
-                //this.spawnUnit(unit, game.data.queueName[unitQ]);
-                this.spawnUnit(unit, game.dataAI.queueName[unitQ]);
+                this.spawnUnit(unit, game.data.queueName[unitQ]);
+                //this.spawnUnit(unit, game.dataAI.queueName[unitQ]);                                                                   // ?????? why ????
 
                 //update the time of the element in the front
                 //so that it begins building
@@ -684,7 +684,7 @@ game.Armourer = game.Structures.extend({
         //check front of q for finished tech
         if (this.q.length > 0) {
             if ((now - this.q[0].startTime ) / 1000 >= this.q[0].buildTime) {
-                console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
+   //             console.log(now, this.q[0].startTime,(now - this.q[0].startTime) / 1000,  this.q[0].buildTime);
                 //apply the item
                 //Armory applies to all units
 
@@ -949,6 +949,84 @@ game.Arsenal = game.Structures.extend({
         }
     }
 
+});
+
+game.KeepEnemy = game.Structures.extend({
+    init:function (x, y, settings) {
+        settings.player = 2;
+        //call the constructor
+        this._super(game.Structures, 'init', [x, y , settings]);
+        this.x = x;
+        this.y = y;
+        this.placed = true;
+        this.bldgProperties();
+        this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
+        this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("keep")}); //addimage
+    },
+    
+    bldgProperties: function(){
+
+        this.buildTime = 5;
+        this.percentComplete = 0;
+        this.est = Math.round(new Date().getTime()/1000);
+        this.capacity = 2;
+        this.fullHealth = 1000;
+        this.health = this.fullHealth;
+        this.def = 0;
+        this.cost = 100;
+
+        //the types of  tech that this building can build
+        this.tech1 = {
+            name: "Inc. Attack 25",
+            startTime: null, // set when button is pressed
+            buildTime: 6,
+            action: "inc_base",
+            value: 25,
+            cost: 100,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech2 = {
+            name: "Inc. speed 25",
+            startTime: null,
+            buildTime: 9,
+            action: "inc_speed",
+            value: 5,
+            cost:400,
+            enabled:true,
+            complete: false,
+            inProcess: false
+
+        };
+
+        this.tech3 = {
+            name: "Inc. Attack Scaling 1.25",
+            startTime: null,
+            buildTime: 12,
+            action: "inc_sf",
+            value: 1.25,
+            cost: 1000,
+            enabled:true,
+            complete: false,
+            inProcess: false
+        };
+    },
+    
+    update : function (dt) {
+        //Update functions of our game objects will always receive a delta time (in milliseconds).
+        // It's important to pass it along to our parent's class update.
+        //setting the time for the building
+        this._super(me.Entity, "update", [dt]);
+
+        //mainUpdate - General functions that are good for all buildings
+        this.mainUpdate(dt);
+
+        return this._super(me.Entity, "update", [dt]);
+    }
+    
 });
 
 game.Keep = game.Structures.extend({

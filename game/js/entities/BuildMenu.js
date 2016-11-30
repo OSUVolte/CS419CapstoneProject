@@ -14,7 +14,7 @@ game.BuildMenu = me.Entity.extend({
 		this.body.setCollisionMask(me.collision.types.NO_OBJECT);
 	},
 	displayMenu: function(){
-		console.log("Display Build Menu!");
+//		console.log("Display Build Menu!");
 	},
 	hide: function(){
 
@@ -50,7 +50,7 @@ game.BarracksButton = me.Entity.extend({
 
 	//callback for mouse click
 	onMouseDown: function() {
-		console.log("barracksbutton pressed!");
+	//	console.log("barracksbutton pressed!");
 		me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
 		return false;
 	},
@@ -110,7 +110,7 @@ game.ArmourerButton = me.Entity.extend({
 
 	//callback for mouse click
 	onMouseDown: function() {
-		console.log("armourerbutton pressed!");
+//		console.log("armourerbutton pressed!");
 		me.input.triggerKeyEvent(me.input.KEY.NUM2, true);
 		return false;
 	},
@@ -170,7 +170,7 @@ game.ArsenalButton = me.Entity.extend({
 
 	//callback for mouse click
 	onMouseDown: function() {
-		console.log("arsenalbutton pressed!");
+	//	console.log("arsenalbutton pressed!");
 		me.input.triggerKeyEvent(me.input.KEY.NUM3, true);
 		return false;
 	},
@@ -218,7 +218,7 @@ game.UI.ActionMenu = me.Container.extend({
 	 * @param obj - is the building that called up the menu
 	 */
 	init: function(x, y, width, height, label, obj) {
-		console.log('trying to load menu');
+//		console.log('trying to load menu');
 		// call the constructor
 		this._super(me.Container, "init", [x+10, y+10, width, height]);
 
@@ -318,7 +318,7 @@ game.UI.ActionMenu = me.Container.extend({
 		if(this.hover == false){
 			this.selected = false;
 			this.destroy();
-			console.log("left")
+	//		console.log("left")
 		}
 	},
 	destroy: function(){
@@ -344,7 +344,7 @@ game.UI.BuildingStatus = me.Container.extend({
 	 * @param obj - is the building that called up the menu
 	 */
 	init: function(x, y, width, height, label, obj) {
-		console.log('trying to load menu');
+//		console.log('trying to load menu');
 		// call the constructor
 		this._super(me.Container, "init", [x+10, y+10, width, height]);
 
@@ -354,7 +354,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		// make sure our object is always draw first
 		this.z = 100;
 
-		this.floating = false;
+		this.floating = true;
 
 		// give a name
 		this.name = label;
@@ -444,8 +444,8 @@ game.UI.BuildingStatus = me.Container.extend({
 		);
 		this.addChild(this.capaText, 10);
 
-		//display hp of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
+		//display health of building
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
 		this.healthText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -470,7 +470,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.addChild(this.healthText, 10);
 
 		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
 		this.qText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -495,7 +495,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		this.addChild(this.qText, 10);
 
 		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
+		//this.displayInfo(80, 4, 10, "Health: "+ this.building.health, this.building );
 		this.playerText = new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
@@ -620,7 +620,7 @@ game.UI.BuildingStatus = me.Container.extend({
 		if(this.hover == false){
 			this.selected = false;
 			this.destroy();
-			console.log("left")
+	//		console.log("left")
 		}
 	},
 	destroy: function(){

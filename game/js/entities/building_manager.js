@@ -15,9 +15,10 @@
 game.BuildingArea = me.Renderable.extend({
     init: function (x, y, settings) {
         // set the coordinates to fit in the screen. Really it just needs any size greather than 0x0, and needs to be floating, so when the camera moves, it's always on screen
-        console.log(settings.width, settings.height, x ,y)
+//        console.log(settings.width, settings.height, x ,y)
 
         this._super(me.Renderable, "init", [x, y, settings.width, settings.height]);
+        this.floating = true;
         this.pos.x = x;
         this.pos.y = y;
         this.width = settings.width;
@@ -38,7 +39,7 @@ game.BuildingArea = me.Renderable.extend({
 
         //build
         if (me.input.isKeyPressed("build")) {
-            console.log("build");
+//            console.log("build");
             this.isPlacing = true;
         }
         //What to do if building and type barracks
@@ -47,7 +48,7 @@ game.BuildingArea = me.Renderable.extend({
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
-                console.log((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2);
+//                console.log((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2);
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 192,
@@ -63,7 +64,7 @@ game.BuildingArea = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
 
             }
-            console.log(game.data.playergold);
+//            console.log(game.data.playergold);
             this.isPlacing = false;
 
         //What to do if building and type Armourer
@@ -86,7 +87,7 @@ game.BuildingArea = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
 
             }
-            console.log(game.data.playergold);
+//            console.log(game.data.playergold);
             this.isPlacing = false;
 
         }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
@@ -108,7 +109,7 @@ game.BuildingArea = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
 
             }
-            console.log(game.data.playergold);
+//            console.log(game.data.playergold);
             this.isPlacing = false;
         }else if (this.isPlacing == true && me.input.isKeyPressed("keep")) {
 
@@ -129,7 +130,7 @@ game.BuildingArea = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
 
             }
-            console.log(game.data.playergold);
+ //           console.log(game.data.playergold);
             this.isPlacing = false;
         }
 
@@ -145,9 +146,10 @@ game.BuildingArea = me.Renderable.extend({
 game.BuildingAreaAI = me.Renderable.extend({
     init: function (x, y, settings) {
         // set the coordinates to fit in the screen. Really it just needs any size greather than 0x0, and needs to be floating, so when the camera moves, it's always on screen
-        console.log(settings.width, settings.height, x ,y)
+ //       console.log(settings.width, settings.height, x ,y)
 
         this._super(me.Renderable, "init", [x, y, settings.width, settings.height]);
+        this.floating = true;
         this.pos.x = x;
         this.pos.y = y;
         this.width = settings.width;
@@ -235,7 +237,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
 
             }
-            console.log(game.data.playergold);
+//            console.log(game.data.playergold);
             this.isPlacing = false;
 
         }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
@@ -256,7 +258,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
         //
             }
-            console.log(game.data.playergold);
+ //           console.log(game.data.playergold);
             this.isPlacing = false;
         }
 
@@ -403,7 +405,7 @@ game.BuildingObject = me.Entity.extend({
         if (this.hover === true) {
             this.grabOffset.set(event.gameX, event.gameY);
             this.grabOffset.sub(this.pos);
-            console.log('selected');
+ //           console.log('selected');
             this.selected = true;
             // don"t propagate the event furthermore
             return false;
@@ -482,7 +484,7 @@ game.BuildingObject = me.Entity.extend({
                 this.body.vel.y = 0;
                 this.body.vel.x = 0;
                 me.game.world.removeChildNow(this);
-                console.log("ENEMY BASE: no more space for buildings!");                                                                                            // debug message
+//                console.log("ENEMY BASE: no more space for buildings!");                                                                                            // debug message
             }
 
             // set movement
@@ -513,7 +515,7 @@ game.BuildingObject = me.Entity.extend({
     },
 
     onCollision: function(response, other){
-        console.log("i hit something");
+ //       console.log("i hit something");
         return false;
     }
 
@@ -538,7 +540,7 @@ game.FootPrint = game.BuildingObject.extend({
         this.bounds = settings.bounds;
 
         // add a body shape
-        console.log("player",this.player);
+ //       console.log("player",this.player);
         this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
 
         this.checkPosition();
@@ -588,7 +590,7 @@ game.FootPrint = game.BuildingObject.extend({
             type: this.type,
             player: this.player
         };
-        //console.log(newBldg);
+ //       console.log(newBldg);
         if(this.type == "barracks") {
 
             if (this.checkPosition()) {
@@ -600,7 +602,7 @@ game.FootPrint = game.BuildingObject.extend({
                     // console.log(game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);
-                    //console.log("structures",game.data.structures);
+ //                   console.log("structures",game.data.structures);
                 }
 
                 return true;
@@ -616,7 +618,7 @@ game.FootPrint = game.BuildingObject.extend({
                     // console.log(game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);
-                    console.log("structures",game.data.structures);
+ //                   console.log("structures",game.data.structures);
                 }
                 return true;
             }
@@ -630,10 +632,10 @@ game.FootPrint = game.BuildingObject.extend({
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
                     // console.log("ENEMY BUILDING ARRAY:");
-                    console.log("Enemy structure",game.dataAI.structures);
+                    // console.log(game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);
-                    console.log("structure",game.data.structures);
+ //                   console.log("structures",game.data.structures);
                 }
                 return true;
             }

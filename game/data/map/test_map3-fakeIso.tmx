@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="229">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="64" tileheight="32" backgroundcolor="#3396ff" nextobjectid="237">
  <tileset firstgid="1" name="medieval_tilesheet" tilewidth="16" tileheight="16" tilecount="4840" columns="110">
   <image source="../img/map/medieval_tilesheet.png" width="1760" height="704"/>
   <terraintypes>
@@ -64,8 +64,13 @@
   </data>
  </layer>
  <objectgroup name="spawns">
-  <object id="104" name="chaser" x="272" y="240" width="32" height="32"/>
+  <object id="104" name="chaser" x="273" y="240" width="32" height="32"/>
   <object id="153" name="keep" x="75" y="265" width="162" height="127">
+   <properties>
+    <property name="player" value="1"/>
+   </properties>
+  </object>
+  <object id="236" name="keep2" x="3840" y="608" width="162" height="127">
    <properties>
     <property name="player" value="1"/>
    </properties>
@@ -80,7 +85,7 @@
   <object id="39" name="build_area" x="-34.8485" y="21.5152" width="752" height="428"/>
   <object id="130" name="queue_front" x="900" y="292" width="124" height="88"/>
   <object id="132" name="queue_back" x="350" y="225" width="124" height="88"/>
-  <object id="134" name="P2_build_area" x="3452" y="618.182" width="720" height="393.818"/>
+  <object id="134" name="P2_build_area" x="3392" y="608" width="720" height="393.818"/>
   <object id="135" name="queue_mid" x="518" y="350" width="124" height="88"/>
   <object id="140" name="p2_queue_front" x="3225.88" y="618.242" width="158" height="94"/>
   <object id="142" name="p2_queue_mid" x="3541" y="509" width="128" height="90"/>

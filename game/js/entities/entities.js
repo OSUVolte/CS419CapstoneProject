@@ -253,7 +253,6 @@ game.Units = me.Entity.extend({
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
-
             //give money
             if(this.player == 1){
                 game.dataAI.playergold += 20;
@@ -269,11 +268,9 @@ game.Units = me.Entity.extend({
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
-            
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
-
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
                     if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
                         temp_destination = this.target_destination;
@@ -286,7 +283,6 @@ game.Units = me.Entity.extend({
                     }
                 }
             }
-
 
             if (this.idle == true) {
                 for (var i = 0; i < me.game.world.children.length; i++) {
@@ -334,7 +330,6 @@ game.Units = me.Entity.extend({
                     //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
                     //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
                     // move based on next position
-
                     var xdiff = this.dest.pos.x - this.pos.x;
                     var ydiff = this.dest.pos.y - this.pos.y;
 
@@ -798,22 +793,22 @@ function battle(attacker, defender) {
                     if (attacker.name == "Wizard") {
                         hpLost = (attacker.attack * 1.5);
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
+ //                   console.log(defender.player + " " + defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
                 } else {
                     hpLost = attacker.attack - defender.def;
                     if (attacker.name == "Wizard") {
                         hpLost = attacker.attack;
                     }
-                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
+//                    console.log(defender.player + " " + defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
                 }
             } else {
                 hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
             }
         } else if (dodgeChance <= defender.dodge && defender.dodge != undefined) {
-            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
+//            console.log(defender.player + " " + defender.name + " (" + defender.GUID + "): DODGED!");
         }
     } else {
-        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
+//        console.log(attacker.player + " " + attacker.name + " (" + defender.GUID + "): MISSED!");
     }
 
     return hpLost;
@@ -958,6 +953,11 @@ game.GameOverManager = me.Object.extend({
             // End the game.
             me.game.viewport.fadeOut("#000", 200);
             me.state.change(me.state.MENU_LOSE);
+        }
+        
+        if (game.data.wavemanager.player2Base.alive == false) {
+            me.game.viewport.fadeOut("#000", 200);
+            me.state.change(me.state.MENU_WIN);
         }
     }
 });
