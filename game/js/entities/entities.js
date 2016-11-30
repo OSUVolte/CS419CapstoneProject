@@ -1206,6 +1206,10 @@ game.KillerEntity = me.Entity.extend({
             console.log("temp", temp);
         return temp;
     },
+    /**
+     * Checks id entity is alive
+     * @returns {boolean}
+     */
     checkIfAlive:function(){
         // check if alive first
         if (this.hp <= 0 && this.alive) {
@@ -1292,7 +1296,7 @@ game.KillerEntity = me.Entity.extend({
             if(!this.hasTarget && this.myUnitTargets.length > 0){
                 var howManyUnits = this.myUnitTargets.length;
                 var random = Math.floor((Math.random() * howManyUnits+1));
-                this.target = this.myUnitTargets[0];
+                this.target = this.myUnitTargets[random];
                 this.combat = true;
                 //console.log(this.target);
                 // if(!this.target.alive){
@@ -1379,7 +1383,8 @@ game.KillerEntity = me.Entity.extend({
             && response.a.player !== response.b.player && response.b.player != undefined) {
             //this.body.setVelocity(0,0);
             //fight
-            if(this.combat = true) {
+            if(this.combat == true ) { // don't fight dead people or e.g. queues...
+                console.log(this.target);
                 this.target.hp -= battle(this, this.target);
             }
 

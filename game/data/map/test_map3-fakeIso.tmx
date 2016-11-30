@@ -72,14 +72,42 @@
   </data>
  </layer>
  <objectgroup name="path" offsetx="0.5" offsety="-2">
-  <object id="39" name="build_area" x="-50" y="-30" width="752" height="428"/>
-  <object id="130" name="queue_front" x="874" y="290.333" width="68" height="59"/>
-  <object id="132" name="queue_back" x="623" y="301.667" width="124" height="88"/>
-  <object id="134" name="P2_build_area" x="3452" y="600" width="720" height="412"/>
+  <object id="39" name="build_area" x="-50" y="-30" width="752" height="428">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="130" name="queue_front" x="874" y="290.333" width="68" height="59">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="132" name="queue_back" x="623" y="301.667" width="124" height="88">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="134" name="P2_build_area" x="3452" y="600" width="720" height="412">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="135" name="queue_mid" x="518" y="458" width="124" height="88"/>
-  <object id="140" name="p2_queue_front" x="3323.5" y="641.5" width="51" height="30"/>
-  <object id="142" name="p2_queue_mid" x="3538.33" y="541" width="128" height="90"/>
-  <object id="143" name="p2_queue_back" x="3688.67" y="546.333" width="128" height="90"/>
+  <object id="140" name="p2_queue_front" x="3323.5" y="641.5" width="51" height="30">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="142" name="p2_queue_mid" x="3538.33" y="541" width="128" height="90">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="143" name="p2_queue_back" x="3688.67" y="546.333" width="128" height="90">
+   <properties>
+    <property name="alive" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="157" name="enemyAI" x="3346.67" y="880.333" width="64" height="32"/>
   <object id="173" name="spawn_top" x="512" y="224" width="33.3333" height="32"/>
   <object id="175" name="wayPoint1" type="waypoint" x="1216" y="305" width="65" height="60"/>
