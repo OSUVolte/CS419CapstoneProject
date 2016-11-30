@@ -86,7 +86,11 @@
   <object id="177" name="wayPoint2" type="waypoint" x="1802.68" y="336.152" width="65" height="60"/>
   <object id="178" name="wayPoint3" type="waypoint" x="2431.5" y="584" width="65" height="60"/>
   <object id="179" name="wayPoint4" type="waypoint" x="3203.5" y="614" width="65" height="60"/>
-  <object id="204" name="p2keep" x="3871.5" y="827.333" width="189.333" height="104"/>
+  <object id="204" name="p2keep" x="3871.5" y="827.333" width="189.333" height="104">
+   <properties>
+    <property name="player" type="int" value="2"/>
+   </properties>
+  </object>
   <object id="207" x="3678.17" y="448.667">
    <polygon points="0,0 429.333,160 257.333,-114.667"/>
   </object>

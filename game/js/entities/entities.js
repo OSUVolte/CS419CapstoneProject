@@ -875,6 +875,8 @@ game.ChaserEntity = me.Entity.extend({
                 temp.push(type[i])
             }
         }
+        if(this.player == 1)
+            //console.log(temp);
         return temp;
     },
     checkIfAlive:function(){
@@ -954,7 +956,7 @@ game.ChaserEntity = me.Entity.extend({
             if(!this.hasTarget && this.myUnitTargets.length > 0){
                 var howManyUnits = this.myUnitTargets.length;
                 var random = Math.floor((Math.random() * howManyUnits+1));
-                this.target = this.myUnitTargets[0];
+                this.target = this.myUnitTargets[random]; // it's not the random that causes the crash on pos of undefined.
                 //console.log(this.target);
                 // if(!this.target.alive){
                 //     console.log("zed's dead");
@@ -1097,7 +1099,7 @@ game.KillerEntity = me.Entity.extend({
         if (this.player == 1) {
             this.body.collisionType = me.collision.types.PLAYER_OBJECT;
         } else if (this.player == 2) {
-            this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+            this.body.collisionType = me.collision.types.ENEMY_OBJECT;
         } else {
             this.body.collisionType = me.collision.types.NO_OBJECT;
         }
@@ -1200,6 +1202,8 @@ game.KillerEntity = me.Entity.extend({
                 temp.push(type[i])
             }
         }
+        if(this.player == 1)
+            console.log("temp", temp);
         return temp;
     },
     checkIfAlive:function(){
@@ -1278,6 +1282,10 @@ game.KillerEntity = me.Entity.extend({
 
         //set the target to the units
         }else if(this.targeting == "units"  ){
+
+            //need to change their q otherwise the wave will look for it and reset it
+            this.queueGroup = null;
+
             this.myUnitTargets = this.addTargets(me.game.world.getChildByType(game.KillerEntity)); // target others
 
             //select one at random and go kill it.
@@ -1310,7 +1318,7 @@ game.KillerEntity = me.Entity.extend({
         }
 
         //Given that we have a target do something with it
-        if (this.target != null && this.target != undefined && this.target.hasOwnProperty("pos")) {
+        if (this.target != null && this.target != undefined) {
             if(this.player ==1)
                 //console.log("going here ", this.target);
 
@@ -1372,7 +1380,6 @@ game.KillerEntity = me.Entity.extend({
             //this.body.setVelocity(0,0);
             //fight
             if(this.combat = true) {
-                this.target.hp -= battle(this, this.target);
                 this.target.hp -= battle(this, this.target);
             }
 
