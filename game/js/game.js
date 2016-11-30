@@ -220,7 +220,7 @@ var game = {
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
-        me.pool.register("units", game.KillerEntity, true);
+        me.pool.register("units", game.Units, true);
 
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
