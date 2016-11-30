@@ -421,8 +421,8 @@ game.Units = me.Entity.extend({
         }
 
         if (this.target_destination == null) {
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
+            // this.body.vel.x = 0;
+            // this.body.vel.y = 0;
             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
                 this.renderable.setCurrentAnimation("stand");
                 this.renderable.setAnimationFrame();
