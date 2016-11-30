@@ -76,10 +76,10 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         );
     },
     action: function(){
-        if (game.data.cashier(this.unit.cost)){
+
             var parent = me.game.getParentContainer(this);
             parent.building.addUnitQ(this.unitName, parent.building.activeQ);
-        }
+
     }
 });
 /**
@@ -448,7 +448,7 @@ game.UI.developTech = me.GUI_Object.extend({
         if(!this.tech.complete && !this.tech.inProcess) {
             this.action(this.tech);
         }else{
-            game.data.message= {msgTime: me.timer.getTime(), msg:"This upgrade is already developed ", msgDur: 2, color:"red"};
+            game.data.message= {msgTime: me.timer.getTime(), player:this.player, msg:"This upgrade is already developed ", msgDur: 2, color:"red"};
         }
 
         return false;
@@ -484,7 +484,7 @@ game.UI.developTech = me.GUI_Object.extend({
     action: function(value){
 
         //todo deduct player money msg if not allowed!!!!!
-        if (game.data.cashier(this.tech.cost)){
+        if (game.data.cashier(this.player, this.tech.cost)){
 
             //add it to the buildings q
             var parent = me.game.getParentContainer(this);

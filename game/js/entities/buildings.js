@@ -34,6 +34,8 @@ game.Structures = me.Entity.extend({
         this.hpBarMax.alpha = 0.5;
 
         this.alwaysUpdate = true;
+
+
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -147,7 +149,7 @@ game.Structures = me.Entity.extend({
         };
 //        console.log(qObj);                                                                                                                            objq canceld out
         //don't add if it would go over capacity
-        if(this.q.length + 1 <= this.capacity){
+        if(this.q.length + 1 <= this.capacity &&  game.data.cashier(this.player, eval(unit).cost)){
             this.q.push(qObj);
             return true;
         }else{
@@ -696,8 +698,13 @@ game.Armourer = game.Structures.extend({
                 //Armory applies to all units
 
                 if(this.q[0].action == "inc_base") {
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.defBoost = game.data.defBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.defBoost = game.data.defBoost + this.q[0].value;
+                    }
 
-                    game.data.defBoost = game.data.defBoost + this.q[0].value;
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
@@ -711,7 +718,14 @@ game.Armourer = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_health") {
-                    game.data.hpBoost = game.data.hpBoost + this.q[0].value;
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.hpBoost = game.data.hpBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.hpBoost = game.data.hpBoost + this.q[0].value;
+                    }
+
+
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
@@ -725,17 +739,24 @@ game.Armourer = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_sf"){
-                        game.data.sfArmor = this.q[0].value;
-                        game.data.message = {
-                            player: this.player,
-                            msgTime: me.timer.getTime(),
-                            msg: "Scaling Factor Boosted by " + this.q[0].value,
-                            msgDur: 4,
-                            color: "blue"
-                        };
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.sfArmor = game.data.sfArmor = this.q[0].value;
+                    }else{
+                        game.dataAI.sfArmor = game.data.sfArmor = this.q[0].value;
+                    }
 
-                        //mark this tech complete
-                        this.q[0].complete = true;
+                    //message
+                    game.data.message = {
+                        player: this.player,
+                        msgTime: me.timer.getTime(),
+                        msg: "Scaling Factor Boosted by " + this.q[0].value,
+                        msgDur: 4,
+                        color: "blue"
+                    };
+
+                    //mark this tech complete
+                    this.q[0].complete = true;
 
                 }
 
@@ -901,7 +922,13 @@ game.Arsenal = game.Structures.extend({
 
                 //apply the tech
                 if(this.q[0].action == "inc_base") {
-                    game.data.atkBoost = game.data.atkBoost + this.q[0].value;
+                    //check for player
+                    if(this.player == 1) {
+                        game.data.atkBoost = game.atkBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.atkBoost = game.atkBoost + this.q[0].value;
+                    }
+
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
@@ -915,7 +942,13 @@ game.Arsenal = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_speed") {
-                    game.data.speedBoost = game.data.speedBoost + this.q[0].value;
+                    if(this.player == 1) {
+                        game.data.speedBoost = game.speedBoost+ this.q[0].value;
+                    }else{
+                        game.dataAI.speedBoost = game.speedBoost + this.q[0].value;
+                    }
+
+                    //message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
@@ -929,17 +962,22 @@ game.Arsenal = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_sf"){
-                        game.data.sfAtk = this.q[0].value;
-                        game.data.message = {
-                            player:this.player,
-                            msgTime: me.timer.getTime(),
-                            msg: "Scaling Factor Boosted by " + this.q[0].value,
-                            msgDur: 4,
-                            color: "blue"
-                        };
+                    if(this.player == 1) {
+                        game.data.sfAtk = game.sfAtk+ this.q[0].value;
+                    }else{
+                        game.dataAI.sfAtk = game.sfAtk + this.q[0].value;
+                    }
+                    //message
+                    game.data.message = {
+                        player:this.player,
+                        msgTime: me.timer.getTime(),
+                        msg: "Scaling Factor Boosted by " + this.q[0].value,
+                        msgDur: 4,
+                        color: "blue"
+                    };
 
-                        //mark this tech complete
-                        this.q[0].complete = true;
+                    //mark this tech complete
+                    this.q[0].complete = true;
                 }
 
                 //remove it from the q
@@ -1143,15 +1181,30 @@ game.Keep = game.Structures.extend({
                     //get all the children
                     for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
 
-                        //get opposite alive players only
+                        // //get opposite alive players only
+                        // if (me.game.world.children[i].player != this.player
+                        //     && me.game.world.children[i].player != undefined
+                        //     && me.game.world.children[i].type == "warrior"
+                        //
+                        // ) {
+                        //     me.game.world.children[i].player = this.player;
+                        //     console.log("warriors defecting", me.game.world.children[i]);
+                        // }
+                        //todo
+                        //cycle though random type
                         if (me.game.world.children[i].player != this.player
-                            && me.game.world.children[i].player != undefined
-                            && me.game.world.children[i].type == "warrior"
+                             && me.game.world.children[i].player != undefined
+                             && me.game.world.children[i].type == "warrior"
+                        ){
+                            //remove all of them
 
-                        ) {
-                            me.game.world.children[i].player = this.player;
-                            console.log("warriors defecting", me.game.world.children[i]);
+
+
                         }
+                        //add same amount to opposite players area
+
+
+
                     }
 
                     //send a message
