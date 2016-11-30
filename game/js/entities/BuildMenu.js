@@ -457,7 +457,7 @@ game.UI.BuildingStatus = me.Container.extend({
 			draw: function(renderer){
 				this.font.draw (
 					renderer,
-					"Health: "+ this.building.health,
+					"Health: "+ this.building.hp,
 					this.pos.x,
 					this.pos.y);
 			}

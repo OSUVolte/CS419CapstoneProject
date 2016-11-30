@@ -8,7 +8,7 @@ var game = {
         score : 0,
         gametime: 0,
         currentwave: 0,
-        waveduration: 60, //set to 15 seconds for testing
+        waveduration: 30, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",
@@ -50,7 +50,7 @@ var game = {
         atkBoost: 0, //attack boost
         defBoost: 0, // defence boost
         btBoost: 0, //buildtime Boost
-        hpBoost: 0, //health boost
+        hpBoost: 0, //hp boost
         speedBoost: 0,
 
         //tech Scaling Factors
@@ -126,7 +126,7 @@ var game = {
         atkBoost: 0, //attack boost
         defBoost: 0, // defence boost
         btBoost: 0, //buildtime Boost
-        hpBoost: 0, //health boost
+        hpBoost: 0, //hp boost
         speedBoost: 0,
 
         //tech Scaling Factors
@@ -220,13 +220,14 @@ var game = {
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
         me.pool.register("player", game.PlayerEntity);
-        me.pool.register("units", game.Units, false);
+        me.pool.register("units", game.KillerEntity, true);
 
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("P2_build_area", game.BuildingAreaAI);
         me.pool.register("structures", game.Structures);
         me.pool.register("keep", game.Keep);
+        me.pool.register("p2keep", game.Keep);
 
         //Build Menu:
         me.pool.register("menu_background", game.BuildMenu, true);

@@ -229,7 +229,7 @@ game.Units = me.Entity.extend({
         this.hpBarCurrent.draw(renderer, unitHp, this.pos.x-4, this.pos.y-20);
         this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
     },
-    
+
   /**
    * update the enemy pos
    */
@@ -269,7 +269,7 @@ game.Units = me.Entity.extend({
     // if unit is alive and not in combat... continue walking
         if (this.alive && this.combat == false) {
             var now = Date.now();
-            
+
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
                 var temp_destination;
@@ -344,14 +344,14 @@ game.Units = me.Entity.extend({
                         this.left = "left";
                         if (this.name != "Minotaur") {
                             this.renderable.flipX(true);
-                        }                      
+                        }
                     } else if (xdiff > 2) {
                         this.body.vel.x += this.body.accel.x * me.timer.tick;
                         this.lastPos.x = this.body.pos.x;
                         this.facing = "right";
                         if (this.name != "Minotaur") {
                             this.renderable.flipX(false);
-                        }                   
+                        }
                     }
 
                     if (ydiff < -2) {
@@ -469,7 +469,7 @@ game.Units = me.Entity.extend({
             return false;
         }
 
-        // bumped into a wall 
+        // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             if (this.facing == "down") {
                 this.body.vel.y -= Number.MAX_VALUE;
@@ -480,7 +480,7 @@ game.Units = me.Entity.extend({
             } else if (this.facing == "left") {
                 this.body.vel.x += Number.MAX_VALUE
             }
-        
+
             this.path++;
             return true;
         }
@@ -525,6 +525,7 @@ game.Warrior = me.Entity.extend({
             frameheight: 32,
             
             shapes: [new me.Rect(0, 0, 32, 32)]
+
         };
 
         // call the constructor
@@ -770,7 +771,7 @@ game.ChaserEntity = me.Entity.extend({
         if (debugAStar && this.dest) {
             if (this.dest && this.dest.rect) {
                 this.dest.rect.draw(context, "green");
-            }   
+            }
             for (var i = 0, ii = this.myPath.length; i < ii; i+=1) {
                 if (this.myPath[i] && this.myPath[i].rect) {
                     this.myPath[i].rect.draw(context, "red");
@@ -798,22 +799,22 @@ function battle(attacker, defender) {
                     if (attacker.name == "Wizard") {
                         hpLost = (attacker.attack * 1.5);
                     }
-//                    console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
+                    //console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp (CRIT)");
                 } else {
                     hpLost = attacker.attack - defender.def;
                     if (attacker.name == "Wizard") {
                         hpLost = attacker.attack;
                     }
- //                   console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
+                    //console.log(defender.name + " (" + defender.GUID + "): -" + hpLost + "hp");
                 }
             } else {
                 hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
             }
         } else if (dodgeChance <= defender.dodge && defender.dodge != undefined) {
-//            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
+            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
         }
     } else {
-//        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
+        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
     }
 
     return hpLost;
@@ -834,7 +835,7 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
     this.buildTime = buildTime;
     this.crit = crit;
     this.qAssignment = -1;   // not assigned yet
-    this.cost = cost// add crit chance, 150% extra damage
+    this.cost = cost; // add crit chance, 150% extra damage
 }
 
 /*
@@ -908,7 +909,7 @@ game.WaveManager = me.Object.extend({
 //                    console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
-                    this.player1Base = me.game.world.children[i]; 
+                    this.player1Base = me.game.world.children[i];
                     this.findPlayerBase = true;
 //                    console.log(me.game.world.children[i]);
                 }
@@ -921,7 +922,7 @@ game.WaveManager = me.Object.extend({
 
             //Send Units waiting at Queue Locations to Target Destination
             //TODO: Make ultimate target the other player's Base Building
-            
+
             for (var i = 0; i < me.game.world.children.length; i++) {
                 if (me.game.world.children[i].queueGroup === this.player1AttackLocation.name) {
                     console.log("send p1 units to p2 base");
@@ -933,7 +934,7 @@ game.WaveManager = me.Object.extend({
                 }
                 else if (me.game.world.children[i].queueGroup === "queue_front" && me.game.world.children[i].player == 2) {
                     console.log("send p2 units to p1 base");
-  
+
                     me.game.world.children[i].target_destination = this.player1Base;
                     me.game.world.children[i].dest = this.player1Base;
                     me.game.world.children[i].wavetarget = this.player1Base;
