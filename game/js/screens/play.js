@@ -27,6 +27,10 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.wavemanager = me.pool.pull("waveManager", 0, 0, {});
         me.game.world.addChild(game.data.wavemanager, 0);
 
+        //Add game over manager
+        game.data.gameovermanager = me.pool.pull("gameOverManager", 0, 0, {});
+        me.game.world.addChild(game.data.gameovermanager, 0);
+
         // if(){
         //     // display the current pointer coordinates on top of the pointer arrow
         //     me.game.world.addChild(new (me.Renderable.extend({

@@ -981,5 +981,18 @@ game.WaveManager = me.Object.extend({
 });
 
 
+game.GameOverManager = me.Object.extend({
+    init: function (x, y, settings){
+        this.isPlayer1BaseAlive = true;
+        this.isPlayer2BaseAlive = true;
+    },
 
+    update: function(){
+        if(game.data.wavemanager.player1Base.alive == false) {
+            // End the game.
+            me.game.viewport.fadeOut("#000", 200);
+            me.state.change(me.state.MENU_LOSE);
+        }
+    }
+});
 

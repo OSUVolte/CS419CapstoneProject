@@ -19,6 +19,7 @@ var game = {
         isBuildMenuOpen: false,
 
         wavemanager: "",
+        gameovermanager: "",
         playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
@@ -201,8 +202,9 @@ var game = {
             me.loader.getImage("UI_Assets2")
         );
 
-        me.state.set(me.state.MENU, new game.TitleScreen());
+        //me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
+        me.state.set(me.state.MENU_LOSE, new game.GameOverScreen());
         
         // disable gravity
         me.sys.gravity = 0;
@@ -250,6 +252,8 @@ var game = {
 
         //wave manager
         me.pool.register("waveManager", game.WaveManager, true);
+        // manages game over screen
+        me.pool.register("gameOverManager", game.GameOverManager, true);
 
         me.pool.register("p2_queue_front", game.QueueArea);
         me.pool.register("p2_queue_mid", game.QueueArea);
@@ -277,6 +281,9 @@ var game = {
         me.input.bindKey(me.input.KEY.W, "makeType1", true);
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
+
+        //testing game over
+        me.input.bindKey(me.input.KEY.P, "gameoverlose");
 
 
         // render hitbox int the debug panel
