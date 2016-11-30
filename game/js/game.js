@@ -20,7 +20,7 @@ var game = {
 
         wavemanager: "",
         gameovermanager: "",
-        playergold: 1000, //set initial player gold to 1000
+        playergold: 10000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
         /**

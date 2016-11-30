@@ -441,7 +441,7 @@ game.Units = me.Entity.extend({
     // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
-        this.body.setVelocity(0,0);
+        //this.body.setVelocity(0,0);
 
         // if this is alive
             if (this.alive && (response.overlap > 0)) {
@@ -455,6 +455,7 @@ game.Units = me.Entity.extend({
                 // if the enemy is new, push
                 if (newEnemy === true) {
                     this.target.push(other);
+                    console.log("pushed new enemy")
                 }
                 // if this is the first fight, set the animation to attack
                 if (this.combat == false) {
@@ -481,7 +482,7 @@ game.Units = me.Entity.extend({
                 this.body.vel.x += Number.MAX_VALUE
             }
 
-            this.path++;
+            //this.path++;
             return true;
         }
 
@@ -855,10 +856,10 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
  *
  */
 // Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, name, image)
-var slime = new Unit(10, 1, 3, 5, 90, 3, "unit", 3, 10, "Slime", "slime spritesheet calciumtrice_0", 100);           // weak, fast build time
-var rogue = new Unit(50, 5, 15, 15, 90, 15, "unit", 10, 10, "Rogue", "rogue spritesheet calciumtrice", 100);         // fast but weak
-var warrior = new Unit(72, 12, 20, 8, 75, 8, "unit", 5, 10, "Warrior", "warrior spritesheet calciumtrice", 100);       // decent hp/def/attack, but prone to missing and slow
-var wizard = new Unit(40, 2, 40, 8, 98, 10, "unit", 0, 10, "Wizard", "wizard spritesheet calciumtrice", 100);          // ignores defence/dodge chance, no chance for crit/slow
+var slime = new Unit(10, 1, 3, 20, 90, 3, "unit", 3, 10, "Slime", "slime spritesheet calciumtrice_0", 100);           // weak, fast build time
+var rogue = new Unit(50, 5, 15, 25, 90, 15, "unit", 10, 10, "Rogue", "rogue spritesheet calciumtrice", 100);         // fast but weak
+var warrior = new Unit(72, 12, 35, 8, 75, 8, "unit", 5, 10, "Warrior", "warrior spritesheet calciumtrice", 100);       // decent hp/def/attack, but prone to missing and slow
+var wizard = new Unit(40, 2, 40, 18, 98, 10, "unit", 0, 10, "Wizard", "wizard spritesheet calciumtrice", 100);          // ignores defence/dodge chance, no chance for crit/slow
 var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minotaur spritesheet calciumtrice", 100);      // strong, slow, lots of hp, most likely to miss, best for buildings
 
 // todo:

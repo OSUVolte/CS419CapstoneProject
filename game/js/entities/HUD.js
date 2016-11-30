@@ -25,8 +25,11 @@ game.HUD.Container = me.Container.extend({
         // add chilc game time object
         this.addChild(new game.HUD.GameClock(800, 10));
 
-        // add chilc game time object
-        this.addChild(new game.HUD.Message(800, me.video.renderer.getHeight() -50));
+        // add child game message object
+        this.addChild(new game.HUD.Message(me.video.renderer.getWidth(), me.video.renderer.getHeight()));
+        console.log(me.video.renderer.getWidth());
+        // add child game message object
+        //this.addChild(new game.HUD.AIMessage(800, me.video.renderer.getHeight() -50));
 
     }
 });
@@ -162,27 +165,41 @@ game.HUD.Message = me.Renderable.extend({
     },
 
     /**
-     * draw the score
+     * draw Messages
      */
     draw : function (renderer) {
         // draw it baby !
+        renderer.setColor("#C0C0C0");
+        renderer.fillRect(0, me.game.viewport.height-50, me.game.viewport.width/2, 50);
+        renderer.setColor("#F0F0F0");
+        renderer.fillRect(me.game.viewport.width/2, me.game.viewport.height-50, me.game.viewport.width/2, 50);
         //font
-        this.font = new me.Font("Arial", 20, game.data.message.color);
-        this.font.textAlign = "center";
-        this.font.textBaseline = "middle";
-        this.font.draw(renderer, this.msg, this.pos.x, this.pos.y);
+        if(game.data.message.player == 1){
+            this.font = new me.Font("Arial", 20, game.data.message.color);
+            this.font.textAlign = "center";
+            this.font.textBaseline = "middle";
+            this.font.draw(renderer, this.msg, this.pos.x/4, this.pos.y-25);
+        }else{
+            this.font = new me.Font("Arial", 20, game.data.message.color);
+            this.font.textAlign = "center";
+            this.font.textBaseline = "middle";
+            this.font.draw(renderer, this.msg, this.pos.x/4 +(this.pos.x/4 *2) , this.pos.y-25);
+        }
     },
     updateMsg : function (now){
 
-    var duration = game.data.message.msgDur * 1000;
-    //reset the message after 10 seconds when not empty
-    if (this.msg != ""){
-        if( now >= game.data.message.msgTime + duration){
-            game.data.message.msg = ""
+        var duration = game.data.message.msgDur * 1000;
+        //reset the message after 10 seconds when not empty
+        if (this.msg != ""){
+            if( now >= game.data.message.msgTime + duration){
+                game.data.message.msg = ""
+            }
         }
+        this.msg = game.data.message.msg;
     }
-    this.msg = game.data.message.msg;
-}
+
+
+
 
 
 });

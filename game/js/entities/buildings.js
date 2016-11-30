@@ -117,8 +117,6 @@ game.Structures = me.Entity.extend({
             // direction
             player: this.player,                                                                                                                                // when spawning units, label which player theyre from
             queueGroup: queueAssignment, //the units queue assignment
-            // which player spawned
-        //    player: 1,
             shapes: [new me.Rect(30, 30, 32, 32)]
         }), 10);
         //console.log("Assigned to q", newUnit)
@@ -131,7 +129,7 @@ game.Structures = me.Entity.extend({
      */
     addUnitQ: function(unit, queue){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:"Unit "+unit+" is being built", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Unit "+unit+" is being built", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         var time = new Date().getTime();
@@ -154,7 +152,7 @@ game.Structures = me.Entity.extend({
             return true;
         }else{
             //display message
-            game.data.message= {msgTime: me.timer.getTime(), msg:"Capacity Reached!", msgDur: 10, color:"red"};
+            game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Capacity Reached!", msgDur: 10, color:"red"};
         }
 
         return false;
@@ -166,7 +164,7 @@ game.Structures = me.Entity.extend({
      */
     addTechQ: function(techObj){
         //display message
-        game.data.message= {msgTime: me.timer.getTime(), msg:""+techObj.name+ " is being Developed", msgDur: 2, color:"green"};
+        game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:""+techObj.name+ " is being Developed", msgDur: 2, color:"green"};
 
         // the time for 1st unit being added
         techObj.startTime = me.timer.getTime();
@@ -180,7 +178,7 @@ game.Structures = me.Entity.extend({
 
         }else{
             //display message
-            game.data.message= {msgTime: me.timer.getTime(), msg:"Capacity Reached!", msgDur: 10, color:"red"};
+            game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Capacity Reached!", msgDur: 10, color:"red"};
         }
 
         return false;
@@ -261,7 +259,7 @@ game.Structures = me.Entity.extend({
             if(( ctime - this.q[0].time)/1000 >= ubt){
 
                 //display message
-                game.data.message= {msgTime: me.timer.getTime(), msg:"Unit Complete ", msgDur: 5, color:"green"};
+                game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Unit Complete ", msgDur: 5, color:"green"};
 
                 //remove the first element in the queue
                 this.q.shift();
@@ -703,6 +701,7 @@ game.Armourer = game.Structures.extend({
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Armor Boosted by " + this.q[0].value,
                         msgDur: 4,
                         color: "blue"
@@ -715,6 +714,7 @@ game.Armourer = game.Structures.extend({
                     game.data.hpBoost = game.data.hpBoost + this.q[0].value;
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Health Boosted by " + this.q[0].value,
                         msgDur: 4,
                         color: "blue"
@@ -727,6 +727,7 @@ game.Armourer = game.Structures.extend({
                 if(this.q[0].action == "inc_sf"){
                         game.data.sfArmor = this.q[0].value;
                         game.data.message = {
+                            player: this.player,
                             msgTime: me.timer.getTime(),
                             msg: "Scaling Factor Boosted by " + this.q[0].value,
                             msgDur: 4,
@@ -745,6 +746,7 @@ game.Armourer = game.Structures.extend({
                 if (this.q.length > 0)
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Now developing " + this.q[0].name,
                         msgDur: 4,
                         color: "blue"
@@ -903,6 +905,7 @@ game.Arsenal = game.Structures.extend({
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Attack Boosted by " + this.q[0].value,
                         msgDur: 4,
                         color: "blue"
@@ -915,6 +918,7 @@ game.Arsenal = game.Structures.extend({
                     game.data.speedBoost = game.data.speedBoost + this.q[0].value;
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Speed Boosted to " + game.data.speedBoost,
                         msgDur: 10,
                         color: "blue"
@@ -927,6 +931,7 @@ game.Arsenal = game.Structures.extend({
                 if(this.q[0].action == "inc_sf"){
                         game.data.sfAtk = this.q[0].value;
                         game.data.message = {
+                            player:this.player,
                             msgTime: me.timer.getTime(),
                             msg: "Scaling Factor Boosted by " + this.q[0].value,
                             msgDur: 4,
@@ -944,6 +949,7 @@ game.Arsenal = game.Structures.extend({
                 if (this.q.length > 0)
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Now developing " + this.q[0].name,
                         msgDur: 4,
                         color: "blue"
@@ -1120,6 +1126,7 @@ game.Keep = game.Structures.extend({
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Building Capacity Boosted by " + this.q[0].value,
                         msgDur: 4,
                         color: "blue"
@@ -1142,19 +1149,19 @@ game.Keep = game.Structures.extend({
                             && me.game.world.children[i].type == "warrior"
 
                         ) {
-                            //me.game.world.children[i].player = this.player;
-                            console.log("children defecting", me.game.world.children[i]);
+                            me.game.world.children[i].player = this.player;
+                            console.log("warriors defecting", me.game.world.children[i]);
                         }
                     }
 
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Warrior Defection Successfully Negotiated ",
                         msgDur: 4,
                         color: "blue"
                     };
-
                 }
 
                 //remove it from the q
@@ -1164,6 +1171,7 @@ game.Keep = game.Structures.extend({
                 if (this.q.length > 0)
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Now developing " + this.q[0].name,
                         msgDur: 4,
                         color: "blue"
