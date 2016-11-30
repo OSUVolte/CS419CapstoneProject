@@ -19,7 +19,7 @@ game.Structures = me.Entity.extend({
         this.functional = false;
         this.player = settings.player;                                                                                                                      // changed from player 1
 
-        //properties for health bar
+        //properties for hp bar
         this.hpBarCurrent = new me.Font("Verdana", 11, "green");
         this.hpBarCurrent.lineWidth = 1;
         this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
@@ -324,7 +324,7 @@ game.Structures = me.Entity.extend({
             }
 
             //Disable building if not healthy enough
-            if(this.health > 0.5*this.fullHealth){
+            if(this.hp > 0.5*this.fullHealth){
                 this.functional = true;
             }
         }
@@ -334,7 +334,7 @@ game.Structures = me.Entity.extend({
             this.logitAll(dt);
         }
         
-        checkHealth(this);                                                                                                                  // check building health
+        checkHealth(this);                                                                                                                  // check building hp
         if (!this.alive) {
             me.game.world.removeChildNow(this);
         }
@@ -343,7 +343,7 @@ game.Structures = me.Entity.extend({
     },
     draw : function(renderer) {
         var unitHp = "";
-        var percent = this.health / this.fullHealth * 100;
+        var percent = this.hp / this.fullHealth * 100;
 
         if (percent >= 80) {
             unitHp += "▄"
@@ -379,7 +379,7 @@ game.Structures = me.Entity.extend({
         console.log("selected: ", this.selected);
         console.log("the queue", this.q);
         console.log("dt", dt);
-        console.log("building health", this.health);
+        console.log("building hp", this.hp);
         console.log("percentComplete", this.percentComplete);
         console.log("functional", this.functional);
 
@@ -429,7 +429,7 @@ game.Barracks = game.Structures.extend({
         this.upm = 5; //units per minute
         this.capacity = 5;
         this.fullHealth = 1000;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.def = 0;                                                                                                       // need to add defence for battle function to work
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
@@ -579,7 +579,7 @@ game.Armourer = game.Structures.extend({
         this.capacity = 2;
         this.fullHealth = 1000;
         this.def = 0;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
@@ -806,7 +806,7 @@ game.Arsenal = game.Structures.extend({
         this.capacity = 2;
         this.fullHealth = 1000;
         this.def = 0;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
@@ -1026,7 +1026,7 @@ game.Keep = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.def = 0;
         this.cost = 100;
 
@@ -1237,11 +1237,11 @@ game.Keep = game.Structures.extend({
 
 //
 function checkHealth(building) {
-    if (building.health <= 0) {
+    if (building.hp <= 0) {
         console.log(building.type + " (" + building.GUID + "): DESTROYED");    
         
         building.alive = false;
     } else {
-        //console.log(building.type + ": " + building.health);
+        //console.log(building.type + ": " + building.hp);
     }
 }

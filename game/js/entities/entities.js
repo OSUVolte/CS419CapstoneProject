@@ -287,10 +287,10 @@ game.Units = me.Entity.extend({
                 }
             }
 
-
+            //this is always set to true....? so I took it out.
             if (this.idle == true) {
                 for (var i = 0; i < me.game.world.children.length; i++) {
-                    if (me.game.world.children[i].name === this.queueGroup) {
+                    if (me.game.world.children[i].queueGroup === null) {
                         this.target_destination = me.game.world.children[i];
                     }
                 }
@@ -403,7 +403,6 @@ game.Units = me.Entity.extend({
                     this.hit = true;
                     this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
-                    this.target[0].health -= battle(this, this.target[0]);
 //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
@@ -898,7 +897,7 @@ game.WaveManager = me.Object.extend({
         this.player2AttackLocation = "p2_queue_front";
 
         this.player1Base = "keep";
-        this.player2Base = "p2_queue_front"; //TODO: change to player 2's keep location
+        this.player2Base = "p2keep"; //TODO: change to player 2's keep location
     },
 
     update: function(){
@@ -925,21 +924,24 @@ game.WaveManager = me.Object.extend({
             //TODO: Make ultimate target the other player's Base Building
 
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].queueGroup === this.player1AttackLocation.name) {
+                if (me.game.world.children[i].queueGroup === "queue_front" ) {
                     console.log("send p1 units to p2 base");
 
                     me.game.world.children[i].target_destination = this.player2Base;
                     me.game.world.children[i].dest = this.player2Base;
                     me.game.world.children[i].wavetarget = this.player2Base;
                     me.game.world.children[i].waveRelease = true;
+                    me.game.world.children[i].queueGroup = null;
                 }
-                else if (me.game.world.children[i].queueGroup === "queue_front" && me.game.world.children[i].player == 2) {
+                //else if (me.game.world.children[i].queueGroup === "queue_front" && me.game.world.children[i].player == 2) {
+                else if (me.game.world.children[i].queueGroup === "p2_queue_front") {
                     console.log("send p2 units to p1 base");
 
                     me.game.world.children[i].target_destination = this.player1Base;
                     me.game.world.children[i].dest = this.player1Base;
                     me.game.world.children[i].wavetarget = this.player1Base;
                     me.game.world.children[i].waveRelease = true;
+                    me.game.world.children[i].queueGroup = null;
                 }
             }
 

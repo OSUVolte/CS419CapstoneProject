@@ -34,6 +34,7 @@ game.UI.UnitAdd = me.GUI_Object.extend({
         this.label = label;
         this.unitName = action;
         this.unit = unit;
+
         //this.parent = me.game.getParentContainer(this);
 
         // only the parent container is a floating object
