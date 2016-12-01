@@ -119,15 +119,24 @@ game.Units = me.Entity.extend({
         }
         this._super(me.Entity, 'init', [x, y, settings, unit]);
 
-        // set up unit stats
+        // set up unit stats for the right player
+        //this is sloppy but it works so...
+        if(settings.player == 1){
+            this.hp = (unit.hp + game.data.hpBoost) * game.data.sfHealth;
+            this.attack = (unit.atk + game.data.atkBoost) * game.data.sfAtk;
+            this.def = (unit.def + game.data.defBoost) * game.data.sfArmor;
+            this.speed = (unit.speed + game.data.speedBoost) * game.data.sfSpeed;
+            this.dodge = (unit.dodge+ game.data.dodgeBoost) * game.data.dodgeBoost;
+        }else if(settings.player == 2){
+            this.hp = (unit.hp + game.dataAI.hpBoost) * game.dataAI.sfHealth;
+            this.attack = (unit.atk + game.dataAI.atkBoost) * game.dataAI.sfAtk;
+            this.def = (unit.def + game.dataAI.defBoost) * game.dataAI.sfArmor;
+            this.speed = (unit.speed + game.dataAI.speedBoost) * game.dataAI.sfSpeed;
+            this.dodge = (unit.dodge+ game.dataAI.dodgeBoost) * game.dataAI.dodgeBoost;
+        }
         this.combat = false;
-        this.hp = (unit.hp + game.data.hpBoost) * game.data.sfHealth;
         this.maxHp = unit.maxHp;
-        this.attack = (unit.atk + game.data.atkBoost) * game.data.sfAtk;
-        this.def = (unit.def + game.data.defBoost) * game.data.sfArmor;
-        this.speed = (unit.speed + game.data.speedBoost) * game.data.sfSpeed;
         this.hitPercent = unit.hitPercent;
-        this.dodge = unit.dodge;
         this.type = unit.type;                              // type of unit, to be used to determine damage multipliers maybe?       
         this.name = unit.name;                              // unit name
         this.player = settings.player;                      // player 1 or 2
