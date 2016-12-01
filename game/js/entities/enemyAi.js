@@ -12,7 +12,6 @@ game.EnemyAI = me.Entity.extend({
         this.alwaysUpdate = true;
         
         // anything else
-        this.player = 2;                                                        // player 2 is enemy
         this.waveNumber = game.data.currentwave;                               // save wave number, so that when it changes, an update will be triggered
         this.buildingManager = null;                                            // reference to buildingManagerAI
         this.data = game.dataAI;                                                 // reference to dataAI

@@ -223,9 +223,13 @@ game.Units = me.Entity.extend({
         if (percent >= 0) {
             unitHp += "▄"
         }
+        var tar = "null";
+        if (this.target_destination != null || this.target_destination != undefined) {
+            tar = this.target_destination.name;
+        }
 
         this._super(me.Entity, "draw", [renderer]);
-        this.hpBarMax.draw(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄" + tar, this.pos.x-4, this.pos.y-20);
         this.hpBarCurrent.draw(renderer, unitHp, this.pos.x-4, this.pos.y-20);
         this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
     },
@@ -237,10 +241,10 @@ game.Units = me.Entity.extend({
         if(this.waveRelease === true) {
             this.waveRelease = false;
 
-            endQueue();
+        //    endQueue();
             //Send to new target
-            this.target_destination = this.wavetarget;
-            this.dest = this.wavetarget;
+        //    this.target_destination = this.wavetarget;
+        //    this.dest = this.wavetarget;
         }
 
         // if (this.target_destination != null) {
@@ -249,7 +253,24 @@ game.Units = me.Entity.extend({
         //     }
         // }
         // check if alive first
-        if (this.hp <= 0 && this.alive) {
+        
+        if (this.idle == true) {
+            for (var i = 0; i < me.game.world.children.length; i++) {
+                if (me.game.world.children[i].name === this.queueGroup) {
+                    this.target_destination = me.game.world.children[i];
+                    this.queueGroup = "NO_MORE_QUEUE";
+                    console.log(this.player + " " + this.name + " swapping to " + this.target_destination.name);
+                }
+            }
+        }
+        
+        // make sure were on the same team!
+        if (this.target_destination != null) {
+            
+        }
+        
+        
+        if (this.hp <= 0) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
@@ -272,28 +293,28 @@ game.Units = me.Entity.extend({
 
             if (this.target_destination == null) {
                 var closest = Number.MAX_VALUE;
-                var temp_destination;
+                var temp_destination = null;
 
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
-                    if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive) {
-                        temp_destination = this.target_destination;
-                        this.target_destination = me.game.world.children[i];
-                        if (this.chessboard() <= closest) {
-                            closest = this.chessboard();
-                        } else {
-                            this.target_destination = temp_destination;
+                    if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive
+                        && me.game.world.children[i].name) {
+                        
+                        if (!me.game.world.children[i].name.includes("queue") && me.game.world.children[i].player != this.player) {
+                            temp_destination = this.target_destination;
+                            this.target_destination = me.game.world.children[i];
+                            if (this.chessboard() < closest) {
+                                closest = this.chessboard();
+                            } else {
+                                this.target_destination = temp_destination;
+                            }
+                            console.log(this.player + " " + this.name + " swapped to " + this.target_destination.player + " " + this.target_destination.name);
                         }
                     }
                 }
             }
-
-
-            if (this.idle == true) {
-                for (var i = 0; i < me.game.world.children.length; i++) {
-                    if (me.game.world.children[i].name === this.queueGroup) {
-                        this.target_destination = me.game.world.children[i];
-                    }
-                }
+            
+            if (this.target_destination.player == this.player){
+                this.target_destination = null;
             }
 
             if (this.target_destination != null) {
@@ -310,14 +331,14 @@ game.Units = me.Entity.extend({
                 }
             } else if (this.target_destination != null) {
                 // if the unit is close enough
-                if (this.chessboard() < 100000) {                                                                           // DISTANCE FROM THIS UNIT (500)
+                if (this.chessboard() < 50000) {                                                                           // DISTANCE FROM THIS UNIT (500)
                     if (!this.renderable.isCurrentAnimation("walk")) {
                         this.renderable.setCurrentAnimation("walk");
                         this.renderable.setAnimationFrame();
                     }
                     // just go for it
                     this.dest = this.target_destination;
-                    this.pathAge = now-5000;
+                    this.pathAge = now-50;
     //            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
     //                // TODO - do this with non constant, add some fuzz factor
                 } else {    // if the unit is not close enough to target destination, just stand there
@@ -374,20 +395,18 @@ game.Units = me.Entity.extend({
                 this.renderable.setAnimationFrame();
                 me.game.world.removeChild(this);
             }
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
         }
         // if unit is alive and in combat
-        else {
+        else if (this.combat && this.alive) {
             // dont move
             this.body.vel.x = 0;
             this.body.vel.y = 0;
             // change to the standing animation if were not in combat and not currently standing (should never reach this ?)
-            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                this.renderable.setCurrentAnimation("stand");
-                this.renderable.setAnimationFrame();
+//            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+//                this.renderable.setCurrentAnimation("stand");
+//                this.renderable.setAnimationFrame();
             // if in combat, wait until animation 7 where we will hit the enemy
-            } else if (this.combat) {
+//            } else if (this.combat) {
                 // if target is not alive, pop off and get the next target, if there are no more
                 // targets left, we are no longer in combat
                 if (this.target.length > 0) {
@@ -401,33 +420,35 @@ game.Units = me.Entity.extend({
                 // if there still exists a target and we are on frame 7, and we havent hit anything yet
                 if (this.renderable.getCurrentAnimationFrame() == 7 && this.target.length != 0 && this.hit != true) {
                     this.hit = true;
-                    this.target[0].renderable.flicker(500);
-                    this.target[0].hp -= battle(this, this.target[0]);
-                    this.target[0].health -= battle(this, this.target[0]);
-//                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    if (this.target[0].renderable != null) {
+                        this.target[0].renderable.flicker(500);
+                        this.target[0].hp -= battle(this, this.target[0]);
+                        this.target[0].health -= battle(this, this.target[0]);
+    //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
+                    }
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
                     this.hit = false;
                 }
-            }
+ //           }
         }
 
         // update the body movement
         // handle collisions against other shapes
-        if (!this.combat && this.alive) {
+
                 this.body.update(dt);
                 me.collision.check(this);
                 this.body.setVelocity(1,1);
-        }
 
-        if (this.target_destination == null) {
-            this.body.vel.x = 0;
-            this.body.vel.y = 0;
-            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
-                this.renderable.setCurrentAnimation("stand");
-                this.renderable.setAnimationFrame();
-            }
-        }
+        
+//        if (this.idle == true) {
+//            this.body.vel.x = 0;
+//            this.body.vel.y = 0;
+//            if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
+//                this.renderable.setCurrentAnimation("stand");
+ //               this.renderable.setAnimationFrame();
+ //           }
+//        }
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
@@ -447,15 +468,15 @@ game.Units = me.Entity.extend({
             if (this.alive && (response.overlap > 0)) {
                 // loop through target array, if this enemy is new, push it to array
                 var newEnemy = true;
+                this.target_destination = null;                 // im fighting! im not going anywhere!
                 for (var i = 0; i < this.target.length; i++) {
                     if (this.target[i].GUID == other.GUID) {
                         newEnemy = false;
                     }
                 }
                 // if the enemy is new, push
-                if (newEnemy === true) {
+                if (newEnemy == true) {
                     this.target.push(other);
-                    console.log("pushed new enemy")
                 }
                 // if this is the first fight, set the animation to attack
                 if (this.combat == false) {
@@ -473,13 +494,13 @@ game.Units = me.Entity.extend({
         // bumped into a wall
         if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
             if (this.facing == "down") {
-                this.body.vel.y -= Number.MAX_VALUE;
+//                this.body.vel.y -= Number.MAX_VALUE;
             } else if (this.facing == "up") {
-                this.body.vel.y += Number.MAX_VALUE;
+//                this.body.vel.y += Number.MAX_VALUE;
             } else if (this.facing == "right") {
-                this.body.vel.x -= Number.MAX_VALUE
+//                this.body.vel.x -= Number.MAX_VALUE
             } else if (this.facing == "left") {
-                this.body.vel.x += Number.MAX_VALUE
+//                this.body.vel.x += Number.MAX_VALUE
             }
 
             //this.path++;
@@ -812,10 +833,10 @@ function battle(attacker, defender) {
                 hpLost = 0.5;                                                               // 0.5 hp lost even if defence of defender is too high
             }
         } else if (dodgeChance <= defender.dodge && defender.dodge != undefined) {
-            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
+//            console.log(defender.name + " (" + defender.GUID + "): DODGED!");
         }
     } else {
-        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
+//        console.log(attacker.name + " (" + defender.GUID + "): MISSED!");
     }
 
     return hpLost;
@@ -902,21 +923,24 @@ game.WaveManager = me.Object.extend({
     },
 
     update: function(){
+        if(this.currentwave + 50000 < game.data.currentwave) {
+            endQueue();
+        }
         if(this.findAIBase == false){
             for (var i = 0; i < me.game.world.children.length; i++) {
                 if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
-                    this.player2Base = me.game.world.children[i]; //get entity object
-                    this.findAIBase = true;
+         //           this.player2Base = me.game.world.children[i]; //get entity object
+        //            this.findAIBase = true;
 //                    console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
-                    this.player1Base = me.game.world.children[i];
-                    this.findPlayerBase = true;
+        //            this.player1Base = me.game.world.children[i];
+        //            this.findPlayerBase = true;
 //                    console.log(me.game.world.children[i]);
                 }
             }
         }
-        if(this.currentwave < game.data.currentwave) {
+ /*       if(this.currentwave < game.data.currentwave) {
             //Go to Next Wave
             this.currentwave = game.data.currentwave;
             console.log("Starting Wave: " + game.data.currentwave);
@@ -943,7 +967,7 @@ game.WaveManager = me.Object.extend({
                 }
             }
 
-        }
+        } */
     }
 
 });
