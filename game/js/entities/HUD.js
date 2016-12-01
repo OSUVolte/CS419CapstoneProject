@@ -12,7 +12,7 @@ game.HUD.Container = me.Container.extend({
         this._super(me.Container, 'init');
 
         // persistent across level change
-        this.isPersistent = true;
+        this.isPersistent = false;
 
         // make sure we use screen coordinates
         this.floating = true;
@@ -21,13 +21,12 @@ game.HUD.Container = me.Container.extend({
         this.name = "HUD";
 
         // add our child player gold object
-        this.addChild(new game.HUD.PlayerGold(400, 10));
+        this.addChild(new game.HUD.PlayerGold(500, 10));
         // add chilc game time object
         this.addChild(new game.HUD.GameClock(800, 10));
 
         // add child game message object
         this.addChild(new game.HUD.Message(me.video.renderer.getWidth(), me.video.renderer.getHeight()));
-        console.log(me.video.renderer.getWidth());
         // add child game message object
         //this.addChild(new game.HUD.AIMessage(800, me.video.renderer.getHeight() -50));
 
@@ -95,16 +94,23 @@ game.HUD.GameClock = me.Renderable.extend({
 
         this.starttime = me.timer.getTime();
         // local copy of the game's time clock
-        this.gametime = -1;
+        this.gametime = 0;
+        this.firsttick = true;
+        this.startingoffset = 0;
     },
 
     /**
      * update function
      */
     update : function () {
+        if(this.firsttick) {
+            this.firsttick = false;
+            this.startingoffset = me.timer.getTime();
+        }
         // we don't do anything fancy here, so just
         // return true if the game time has been updated
-        if(me.timer.getTime() - this.gametime > 1000) {
+        if(me.timer.getTime() - this.startingoffset - this.gametime > 1000) {
+            //console.log(this.gametime);
             this.gametime += 1000;
             game.data.gametime = this.gametime;
             game.data.playergold += game.data.playergoldrate;

@@ -19,9 +19,9 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
         game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
 
-        //Add the HUD
-        this.HUD = new game.HUD.Container();
-        me.game.world.addChild(this.HUD);
+        // //Add the HUD
+         this.HUD = new game.HUD.Container();
+         me.game.world.addChild(this.HUD);
 
         //Add wave manager
         game.data.wavemanager = me.pool.pull("waveManager", 0, 0, {});

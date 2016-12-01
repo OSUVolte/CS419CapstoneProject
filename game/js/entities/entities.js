@@ -403,6 +403,7 @@ game.Units = me.Entity.extend({
                     this.hit = true;
                     this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
+                    this.target[0].health -= battle(this, this.target[0]);
 //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch
@@ -420,8 +421,8 @@ game.Units = me.Entity.extend({
         }
 
         if (this.target_destination == null) {
-            // this.body.vel.x = 0;
-            // this.body.vel.y = 0;
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
             if (!this.renderable.isCurrentAnimation("stand") && !this.combat) {
                 this.renderable.setCurrentAnimation("stand");
                 this.renderable.setAnimationFrame();
@@ -903,10 +904,10 @@ game.WaveManager = me.Object.extend({
     update: function(){
         if(this.findAIBase == false){
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
+                if (me.game.world.children[i].name === "p2keep") {  //me.game.world.children[i].player == 2
                     this.player2Base = me.game.world.children[i]; //get entity object
                     this.findAIBase = true;
-//                    console.log(me.game.world.children[i]);
+ //                   console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
                     this.player1Base = me.game.world.children[i];
