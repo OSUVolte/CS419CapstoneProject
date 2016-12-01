@@ -3,14 +3,26 @@ game.GameOverScreen = me.ScreenObject.extend({
    * action to perform on state change
    */
   onResetEvent : function () {
-    // title screen
-    var backgroundImage = new me.Sprite(
-      me.game.viewport.width / 2,
-      me.game.viewport.height / 2,
-      {
-        image: me.loader.getImage('game_over_lose'),
-      }
-    );
+  	if(game.data.player1win == 0) {
+	    // Game over: Player 1 lose
+	    var backgroundImage = new me.Sprite(
+	      me.game.viewport.width / 2,
+	      me.game.viewport.height / 2,
+	      {
+	        image: me.loader.getImage('game_over_lose'),
+	      }
+	    );
+	}
+	else{
+	    // Game over: Player 1 win
+	    var backgroundImage = new me.Sprite(
+	      me.game.viewport.width / 2,
+	      me.game.viewport.height / 2,
+	      {
+	        image: me.loader.getImage('game_over_win'),
+	      }
+	    );
+	}
     // scale to fit with the viewport size
     backgroundImage.scale(me.game.viewport.width / backgroundImage.width, 1);
 

@@ -898,21 +898,21 @@ game.WaveManager = me.Object.extend({
         this.player2AttackLocation = "p2_queue_front";
 
         this.player1Base = "keep";
-        this.player2Base = "p2_queue_front"; //TODO: change to player 2's keep location
+        this.player2Base = "p2keep"; //TODO: change to player 2's keep location
     },
 
     update: function(){
         if(this.findAIBase == false){
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
+                if (me.game.world.children[i].name === "p2keep") {  //me.game.world.children[i].player == 2
                     this.player2Base = me.game.world.children[i]; //get entity object
                     this.findAIBase = true;
-//                    console.log(me.game.world.children[i]);
+ //                   console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
                     this.player1Base = me.game.world.children[i];
                     this.findPlayerBase = true;
-//                    console.log(me.game.world.children[i]);
+  //                  console.log(me.game.world.children[i]);
                 }
             }
         }
@@ -925,19 +925,19 @@ game.WaveManager = me.Object.extend({
             //TODO: Make ultimate target the other player's Base Building
 
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].queueGroup === this.player1AttackLocation.name) {
+                if (me.game.world.children[i].queueGroup === this.player1AttackLocation) {
                     console.log("send p1 units to p2 base");
 
-                    me.game.world.children[i].target_destination = this.player2Base;
-                    me.game.world.children[i].dest = this.player2Base;
+                    //me.game.world.children[i].target_destination = this.player2Base;
+                    //me.game.world.children[i].dest = this.player2Base;
                     me.game.world.children[i].wavetarget = this.player2Base;
                     me.game.world.children[i].waveRelease = true;
                 }
-                else if (me.game.world.children[i].queueGroup === "queue_front" && me.game.world.children[i].player == 2) {
+                else if (me.game.world.children[i].queueGroup === this.player2AttackLocation) {
                     console.log("send p2 units to p1 base");
 
-                    me.game.world.children[i].target_destination = this.player1Base;
-                    me.game.world.children[i].dest = this.player1Base;
+                    //me.game.world.children[i].target_destination = this.player1Base;
+                    //me.game.world.children[i].dest = this.player1Base;
                     me.game.world.children[i].wavetarget = this.player1Base;
                     me.game.world.children[i].waveRelease = true;
                 }
@@ -957,9 +957,18 @@ game.GameOverManager = me.Object.extend({
 
     update: function(){
         if(game.data.wavemanager.player1Base.alive == false) {
-            // End the game.
+            // End the game. Player 1 Loses
+            console.log("player 1 loses");
+            game.data.player1win = 0;
             me.game.viewport.fadeOut("#000", 200);
-            me.state.change(me.state.MENU_LOSE);
+            me.state.change(me.state.MENU_WIN_LOSE);
+        }
+        if(game.data.wavemanager.player2Base.alive == false) {
+            // End the game. Player 1 Wins
+            console.log("player 1 wins");
+            game.data.player1win = 1;
+            me.game.viewport.fadeOut("#000", 200);
+            me.state.change(me.state.MENU_WIN_LOSE);
         }
     }
 });

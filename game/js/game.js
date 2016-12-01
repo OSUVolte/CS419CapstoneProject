@@ -7,8 +7,9 @@ var game = {
         // score
         score : 0,
         gametime: 0,
+        lastAIspawnTime: 0,
         currentwave: 0,
-        waveduration: 30, //set to 15 seconds for testing
+        waveduration: 60, //set to 15 seconds for testing
 
         //Build menu
         buildbutton: "",
@@ -22,6 +23,7 @@ var game = {
         gameovermanager: "",
         playergold: 10000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
+        player1win: 0,
 
         /**
          * Checks if user has enough moolah
@@ -202,9 +204,9 @@ var game = {
             me.loader.getImage("UI_Assets2")
         );
 
-        //me.state.set(me.state.MENU, new game.TitleScreen());
+        me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
-        me.state.set(me.state.MENU_LOSE, new game.GameOverScreen());
+        me.state.set(me.state.MENU_WIN_LOSE, new game.GameOverScreen());
         
         // disable gravity
         me.sys.gravity = 0;
@@ -283,14 +285,10 @@ var game = {
         me.input.bindKey(me.input.KEY.R, "makeType2", true);
         me.input.bindKey(me.input.KEY.E, "makeType3", true);
 
-        //testing game over
-        me.input.bindKey(me.input.KEY.P, "gameoverlose");
-
-
         // render hitbox int the debug panel
         me.debug.renderHitBox = true;
 
         // Start the game.
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };
