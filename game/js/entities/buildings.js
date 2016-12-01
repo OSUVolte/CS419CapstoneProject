@@ -7,7 +7,27 @@ game.Structures = me.Entity.extend({
     init: function (x, y, settings) {
 
         //load the general properties
-        this.generalProperties(settings);
+        this.q = [];
+        this.allowBuild = false;
+        this.complete = false;
+        this.functional = false;
+        this.player = settings.player;                                                                                                                      // changed from player 1
+
+        //properties for hp bar
+        this.hpBarCurrent = new me.Font("Verdana", 11, "green");
+        this.hpBarCurrent.lineWidth = 1;
+        this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
+
+        // player 1 is green hp bar, 2 is red hp bar
+        if (this.player == 1) {
+            this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
+        } else {
+            this.hpBarCurrent.fillStyle = new me.Color(255, 0, 0, 50);
+        }
+        this.hpBarMax = new me.Font("Verdana", 11, "black");
+        this.hpBarMax.alpha = 0.5;
+
+        this.alwaysUpdate = true;
 
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
@@ -121,9 +141,9 @@ game.Structures = me.Entity.extend({
             queueGroup: queueAssignment, //the units queue assignment
             shapes: [new me.Rect(30, 30, 32, 32)]
         }), 10);
-        //console.log("Assigned to q", newUnit)
+        console.log("Assigned to q" , newUnit.player, newUnit)
     },
-    /**
+    /*
      * Adds type of element to the Building Queue
      * @param type string of the entity type
      * @param queue snumber fo the queue
@@ -173,7 +193,7 @@ game.Structures = me.Entity.extend({
         techObj.inProcess = true;
 
         //don't add if it would go over capacity
-        if(this.q.length + 1 <= this.capacity){
+        if(this.q.length + 1 <= this.capacity &&  game.data.cashier(this.player, techObj.cost)){
             this.q.push(techObj);
             console.log("tech Q", this.q[0].inProcess);
             return true;
@@ -506,7 +526,7 @@ game.Barracks = game.Structures.extend({
         }
         if(this.enabled.type5 && this.complete && this.functional) {
             this.panel.addChild(new game.UI.UnitAdd(
-                160, 150,
+                20, 185,
                 "white",
                 "Add wizard", // default
                 "wizard",
@@ -952,7 +972,7 @@ game.Arsenal = game.Structures.extend({
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
-                        msg: "Speed Boosted to " + game.data.speedBoost,
+                        msg: "Speed Boosted by " + this.q[0].value,
                         msgDur: 10,
                         color: "blue"
                     };
@@ -1013,6 +1033,7 @@ game.Keep = game.Structures.extend({
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("keep")}); //addimage
         this.alwaysUpdate = true;
+        this.player = settings.player;
         
     },
     /**

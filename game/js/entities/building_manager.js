@@ -31,7 +31,6 @@ game.BuildingArea = me.Renderable.extend({
                 height: this.height
         };
         this.player= 1;
-
     },
 
     update: function () {
@@ -552,6 +551,8 @@ game.FootPrint = game.BuildingObject.extend({
         this.font.textAlign = "left";
         this.font.bold();
 
+        this.player = settings.player;
+
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
     },
     /**
@@ -596,7 +597,7 @@ game.FootPrint = game.BuildingObject.extend({
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
                     game.dataAI.structures.push(bldg);
-                    // console.log("ENEMY BUILDING ARRAY:");
+                    //console.log("ENEMY BUILDING ARRAY:");
                     // console.log(game.dataAI.structures);
                 }else{
                     game.data.structures.push(bldg);

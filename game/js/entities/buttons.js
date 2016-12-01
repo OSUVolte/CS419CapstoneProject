@@ -484,21 +484,18 @@ game.UI.developTech = me.GUI_Object.extend({
     //What happens when button is pressed
     action: function(value){
 
-        //todo deduct player money msg if not allowed!!!!!
-        if (game.data.cashier(this.player, this.tech.cost)){
-
             //add it to the buildings q
             var parent = me.game.getParentContainer(this);
             parent.building.addTechQ(value);
             this.tech.inProcess = true;
-        }
 
     }
 })
+/*UNFINISHED
 game.UI.removeBuilding = me.GUI_Object.extend({
-    /**
+    /!**
      * constructor
-     */
+     *!/
     init: function(x, y, label) {
         this._super(me.GUI_Object, "init", [ x, y, {
             image: game.texture,
@@ -526,10 +523,10 @@ game.UI.removeBuilding = me.GUI_Object.extend({
         this.floating = false;
     },
 
-    /**
+    /!**
      * function called when the object is clicked on
-     */
-    onClick : function (/* event */) {
+     *!/
+    onClick : function (/!* event *!/) {
         this.offset.setV(this.clicked_region.offset);
         // account for the different sprite size
         this.pos.y += this.height - this.clicked_region.height ;
@@ -548,10 +545,10 @@ game.UI.removeBuilding = me.GUI_Object.extend({
         return false;
     },
 
-    /**
+    /!**
      * function called when the pointer button is released
-     */
-    onRelease : function (/* event */) {
+     *!/
+    onRelease : function (/!* event *!/) {
         this.offset.setV(this.unclicked_region.offset);
         // account for the different sprite size
         this.pos.y -= this.unclicked_region.height - this.height;
@@ -568,4 +565,4 @@ game.UI.removeBuilding = me.GUI_Object.extend({
             this.pos.y + this.height / 2
         );
     }
-});
+});*/

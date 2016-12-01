@@ -469,30 +469,32 @@ game.UI.BuildingStatus = me.Container.extend({
 		)
 		this.addChild(this.healthText, 10);
 
-		//display active Q of building
-		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
-		this.qText = new (me.Renderable.extend({
-			init: function() {
-				this._super(me.Renderable, 'init', [0, 0, 10, 10]);
-				this.font = new me.Font("OpenSans-Regular", 10, "white");
-				this.font.textAlign = "left";
-				this.font.textBaseline = "top";
-				this.building = bldg;
-			},
-			draw: function(renderer){
-				this.font.draw (
-					renderer,
-					"Active Q is: "+ (this.building.activeQ +1),
-					this.pos.x,
-					this.pos.y);
-			}
-		}));
-		this.qText.pos.set(
-			(this.width / 10)+ 6*((this.width / 10)),
-			100, // panel border
-			this.z
-		)
-		this.addChild(this.qText, 10);
+		// //display active Q of building
+		// //this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
+		// this.qText = new (me.Renderable.extend({
+		// 	init: function() {
+		// 		this._super(me.Renderable, 'init', [0, 0, 10, 10]);
+		// 		this.font = new me.Font("OpenSans-Regular", 10, "white");
+		// 		this.font.textAlign = "left";
+		// 		this.font.textBaseline = "top";
+		// 		this.building = bldg;
+		// 	},
+		// 	draw: function(renderer){
+		// 		this.font.draw (
+		// 			renderer,
+		// 			"Active Q is: "+ (this.building.activeQ +1),
+		// 			this.pos.x,
+		// 			this.pos.y);
+		// 	}
+		// }));
+		// this.qText.pos.set(
+		// 	(this.width / 10)+ 6*((this.width / 10)),
+		// 	100, // panel border
+		// 	this.z
+		// )
+		// var parent = me.game.getParentContainer(this);
+		// console.log("my parent is", parent)
+		// this.addChild(this.qText, 10);
 
 		//display active Q of building
 		//this.displayInfo(80, 4, 10, "Health: "+ this.building.hp, this.building );
