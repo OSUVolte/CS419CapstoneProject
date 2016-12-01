@@ -434,7 +434,7 @@ game.Units = me.Entity.extend({
                     if (this.target[0].renderable != null) {
                         this.target[0].renderable.flicker(500);
                         this.target[0].hp -= battle(this, this.target[0]);
-                        this.target[0].health -= battle(this, this.target[0]);
+                        this.target[0].health -= battle(this, this.target[0]); // todo I think it's safe to remove this now buildings have hp
     //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                     }
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
@@ -516,6 +516,13 @@ game.Units = me.Entity.extend({
 
             //this.path++;
             return true;
+        }
+
+        if (response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) {
+           //console.log("dont stand so close to me");
+
+
+            return false;
         }
 
         return false;

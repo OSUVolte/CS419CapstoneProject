@@ -722,7 +722,7 @@ game.Armourer = game.Structures.extend({
                     if(this.player == 1) {
                         game.data.defBoost = game.data.defBoost + this.q[0].value;
                     }else{
-                        game.dataAI.defBoost = game.data.defBoost + this.q[0].value;
+                        game.dataAI.defBoost = game.dataAI.defBoost + this.q[0].value;
                     }
 
                     //send a message
@@ -742,7 +742,7 @@ game.Armourer = game.Structures.extend({
                     if(this.player == 1) {
                         game.data.hpBoost = game.data.hpBoost + this.q[0].value;
                     }else{
-                        game.dataAI.hpBoost = game.data.hpBoost + this.q[0].value;
+                        game.dataAI.hpBoost = game.dataAI.hpBoost + this.q[0].value;
                     }
 
 
@@ -763,7 +763,7 @@ game.Armourer = game.Structures.extend({
                     if(this.player == 1) {
                         game.data.sfArmor = game.data.sfArmor = this.q[0].value;
                     }else{
-                        game.dataAI.sfArmor = game.data.sfArmor = this.q[0].value;
+                        game.dataAI.sfArmor = game.dataAI.sfArmor = this.q[0].value;
                     }
 
                     //message
@@ -944,9 +944,9 @@ game.Arsenal = game.Structures.extend({
                 if(this.q[0].action == "inc_base") {
                     //check for player
                     if(this.player == 1) {
-                        game.data.atkBoost = game.atkBoost + this.q[0].value;
+                        game.data.atkBoost = game.data.atkBoost + this.q[0].value;
                     }else{
-                        game.dataAI.atkBoost = game.atkBoost + this.q[0].value;
+                        game.dataAI.atkBoost = game.dataAI.atkBoost + this.q[0].value;
                     }
 
                     //send a message
@@ -963,9 +963,9 @@ game.Arsenal = game.Structures.extend({
 
                 if(this.q[0].action == "inc_speed") {
                     if(this.player == 1) {
-                        game.data.speedBoost = game.speedBoost+ this.q[0].value;
+                        game.data.speedBoost = game.data.speedBoost+ this.q[0].value;
                     }else{
-                        game.dataAI.speedBoost = game.speedBoost + this.q[0].value;
+                        game.dataAI.speedBoost = game.dataAI.speedBoost + this.q[0].value;
                     }
 
                     //message
@@ -983,9 +983,9 @@ game.Arsenal = game.Structures.extend({
 
                 if(this.q[0].action == "inc_sf"){
                     if(this.player == 1) {
-                        game.data.sfAtk = game.sfAtk+ this.q[0].value;
+                        game.data.sfAtk = game.data.sfAtk+ this.q[0].value;
                     }else{
-                        game.dataAI.sfAtk = game.sfAtk + this.q[0].value;
+                        game.dataAI.sfAtk = game.dataAI.sfAtk + this.q[0].value;
                     }
                     //message
                     game.data.message = {
