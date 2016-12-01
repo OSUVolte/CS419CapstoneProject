@@ -19,7 +19,7 @@ game.Structures = me.Entity.extend({
         this.functional = false;
         this.player = settings.player;                                                                                                                      // changed from player 1
 
-        //properties for health bar
+        //properties for hp bar
         this.hpBarCurrent = new me.Font("Verdana", 11, "green");
         this.hpBarCurrent.lineWidth = 1;
         this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
@@ -34,6 +34,8 @@ game.Structures = me.Entity.extend({
         this.hpBarMax.alpha = 0.5;
 
         this.alwaysUpdate = true;
+
+
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -147,7 +149,7 @@ game.Structures = me.Entity.extend({
         };
 //        console.log(qObj);                                                                                                                            objq canceld out
         //don't add if it would go over capacity
-        if(this.q.length + 1 <= this.capacity){
+        if(this.q.length + 1 <= this.capacity &&  game.data.cashier(this.player, eval(unit).cost)){
             this.q.push(qObj);
             return true;
         }else{
@@ -322,7 +324,7 @@ game.Structures = me.Entity.extend({
             }
 
             //Disable building if not healthy enough
-            if(this.health > 0.5*this.fullHealth){
+            if(this.hp > 0.5*this.fullHealth){
                 this.functional = true;
             }
         }
@@ -332,7 +334,7 @@ game.Structures = me.Entity.extend({
             this.logitAll(dt);
         }
         
-        checkHealth(this);                                                                                                                  // check building health
+        checkHealth(this);                                                                                                                  // check building hp
         if (!this.alive) {
             me.game.world.removeChildNow(this);
         }
@@ -341,7 +343,7 @@ game.Structures = me.Entity.extend({
     },
     draw : function(renderer) {
         var unitHp = "";
-        var percent = this.health / this.fullHealth * 100;
+        var percent = this.hp / this.fullHealth * 100;
 
         if (percent >= 80) {
             unitHp += "▄"
@@ -377,7 +379,7 @@ game.Structures = me.Entity.extend({
         console.log("selected: ", this.selected);
         console.log("the queue", this.q);
         console.log("dt", dt);
-        console.log("building health", this.health);
+        console.log("building hp", this.hp);
         console.log("percentComplete", this.percentComplete);
         console.log("functional", this.functional);
 
@@ -427,7 +429,7 @@ game.Barracks = game.Structures.extend({
         this.upm = 5; //units per minute
         this.capacity = 5;
         this.fullHealth = 1000;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.def = 0;                                                                                                       // need to add defence for battle function to work
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
@@ -577,7 +579,7 @@ game.Armourer = game.Structures.extend({
         this.capacity = 2;
         this.fullHealth = 1000;
         this.def = 0;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
@@ -696,8 +698,13 @@ game.Armourer = game.Structures.extend({
                 //Armory applies to all units
 
                 if(this.q[0].action == "inc_base") {
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.defBoost = game.data.defBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.defBoost = game.data.defBoost + this.q[0].value;
+                    }
 
-                    game.data.defBoost = game.data.defBoost + this.q[0].value;
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
@@ -711,7 +718,14 @@ game.Armourer = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_health") {
-                    game.data.hpBoost = game.data.hpBoost + this.q[0].value;
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.hpBoost = game.data.hpBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.hpBoost = game.data.hpBoost + this.q[0].value;
+                    }
+
+
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
@@ -725,17 +739,24 @@ game.Armourer = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_sf"){
-                        game.data.sfArmor = this.q[0].value;
-                        game.data.message = {
-                            player: this.player,
-                            msgTime: me.timer.getTime(),
-                            msg: "Scaling Factor Boosted by " + this.q[0].value,
-                            msgDur: 4,
-                            color: "blue"
-                        };
+                    //check for correct player
+                    if(this.player == 1) {
+                        game.data.sfArmor = game.data.sfArmor = this.q[0].value;
+                    }else{
+                        game.dataAI.sfArmor = game.data.sfArmor = this.q[0].value;
+                    }
 
-                        //mark this tech complete
-                        this.q[0].complete = true;
+                    //message
+                    game.data.message = {
+                        player: this.player,
+                        msgTime: me.timer.getTime(),
+                        msg: "Scaling Factor Boosted by " + this.q[0].value,
+                        msgDur: 4,
+                        color: "blue"
+                    };
+
+                    //mark this tech complete
+                    this.q[0].complete = true;
 
                 }
 
@@ -785,7 +806,7 @@ game.Arsenal = game.Structures.extend({
         this.capacity = 2;
         this.fullHealth = 1000;
         this.def = 0;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.cost = 700;
 
         //the types of  tech that this building can build
@@ -901,7 +922,13 @@ game.Arsenal = game.Structures.extend({
 
                 //apply the tech
                 if(this.q[0].action == "inc_base") {
-                    game.data.atkBoost = game.data.atkBoost + this.q[0].value;
+                    //check for player
+                    if(this.player == 1) {
+                        game.data.atkBoost = game.atkBoost + this.q[0].value;
+                    }else{
+                        game.dataAI.atkBoost = game.atkBoost + this.q[0].value;
+                    }
+
                     //send a message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
@@ -915,7 +942,13 @@ game.Arsenal = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_speed") {
-                    game.data.speedBoost = game.data.speedBoost + this.q[0].value;
+                    if(this.player == 1) {
+                        game.data.speedBoost = game.speedBoost+ this.q[0].value;
+                    }else{
+                        game.dataAI.speedBoost = game.speedBoost + this.q[0].value;
+                    }
+
+                    //message
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
@@ -929,17 +962,22 @@ game.Arsenal = game.Structures.extend({
                 }
 
                 if(this.q[0].action == "inc_sf"){
-                        game.data.sfAtk = this.q[0].value;
-                        game.data.message = {
-                            player:this.player,
-                            msgTime: me.timer.getTime(),
-                            msg: "Scaling Factor Boosted by " + this.q[0].value,
-                            msgDur: 4,
-                            color: "blue"
-                        };
+                    if(this.player == 1) {
+                        game.data.sfAtk = game.sfAtk+ this.q[0].value;
+                    }else{
+                        game.dataAI.sfAtk = game.sfAtk + this.q[0].value;
+                    }
+                    //message
+                    game.data.message = {
+                        player:this.player,
+                        msgTime: me.timer.getTime(),
+                        msg: "Scaling Factor Boosted by " + this.q[0].value,
+                        msgDur: 4,
+                        color: "blue"
+                    };
 
-                        //mark this tech complete
-                        this.q[0].complete = true;
+                    //mark this tech complete
+                    this.q[0].complete = true;
                 }
 
                 //remove it from the q
@@ -988,7 +1026,7 @@ game.Keep = game.Structures.extend({
         this.est = Math.round(new Date().getTime()/1000);
         this.capacity = 2;
         this.fullHealth = 1000;
-        this.health = this.fullHealth;
+        this.hp = this.fullHealth;
         this.def = 0;
         this.cost = 100;
 
@@ -1143,15 +1181,30 @@ game.Keep = game.Structures.extend({
                     //get all the children
                     for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
 
-                        //get opposite alive players only
+                        // //get opposite alive players only
+                        // if (me.game.world.children[i].player != this.player
+                        //     && me.game.world.children[i].player != undefined
+                        //     && me.game.world.children[i].type == "warrior"
+                        //
+                        // ) {
+                        //     me.game.world.children[i].player = this.player;
+                        //     console.log("warriors defecting", me.game.world.children[i]);
+                        // }
+                        //todo
+                        //cycle though random type
                         if (me.game.world.children[i].player != this.player
-                            && me.game.world.children[i].player != undefined
-                            && me.game.world.children[i].type == "warrior"
+                             && me.game.world.children[i].player != undefined
+                             && me.game.world.children[i].type == "warrior"
+                        ){
+                            //remove all of them
 
-                        ) {
-                            me.game.world.children[i].player = this.player;
-                            console.log("warriors defecting", me.game.world.children[i]);
+
+
                         }
+                        //add same amount to opposite players area
+
+
+
                     }
 
                     //send a message
@@ -1184,11 +1237,11 @@ game.Keep = game.Structures.extend({
 
 //
 function checkHealth(building) {
-    if (building.health <= 0) {
+    if (building.hp <= 0) {
         console.log(building.type + " (" + building.GUID + "): DESTROYED");    
         
         building.alive = false;
     } else {
-        //console.log(building.type + ": " + building.health);
+        //console.log(building.type + ": " + building.hp);
     }
 }

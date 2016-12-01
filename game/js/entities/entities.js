@@ -253,7 +253,7 @@ game.Units = me.Entity.extend({
         //     }
         // }
         // check if alive first
-        
+
         if (this.idle == true) {
             for (var i = 0; i < me.game.world.children.length; i++) {
                 if (me.game.world.children[i].name === this.queueGroup) {
@@ -263,13 +263,13 @@ game.Units = me.Entity.extend({
                 }
             }
         }
-        
+
         // make sure were on the same team!
         if (this.target_destination != null) {
-            
+
         }
-        
-        
+
+
         if (this.hp <= 0) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
@@ -298,7 +298,7 @@ game.Units = me.Entity.extend({
                 for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
                     if (me.game.world.children[i].player != this.player && me.game.world.children[i].player != undefined && me.game.world.children[i].alive
                         && me.game.world.children[i].name) {
-                        
+
                         if (!me.game.world.children[i].name.includes("queue") && me.game.world.children[i].player != this.player) {
                             temp_destination = this.target_destination;
                             this.target_destination = me.game.world.children[i];
@@ -312,7 +312,7 @@ game.Units = me.Entity.extend({
                     }
                 }
             }
-            
+
             if (this.target_destination.player == this.player){
                 this.target_destination = null;
             }
@@ -395,6 +395,8 @@ game.Units = me.Entity.extend({
                 this.renderable.setAnimationFrame();
                 me.game.world.removeChild(this);
             }
+            this.body.vel.x = 0;
+            this.body.vel.y = 0;
         }
         // if unit is alive and in combat
         else if (this.combat && this.alive) {
@@ -440,7 +442,7 @@ game.Units = me.Entity.extend({
                 me.collision.check(this);
                 this.body.setVelocity(1,1);
 
-        
+
 //        if (this.idle == true) {
 //            this.body.vel.x = 0;
 //            this.body.vel.y = 0;
@@ -919,7 +921,7 @@ game.WaveManager = me.Object.extend({
         this.player2AttackLocation = "p2_queue_front";
 
         this.player1Base = "keep";
-        this.player2Base = "p2_queue_front"; //TODO: change to player 2's keep location
+        this.player2Base = "p2keep"; //TODO: change to player 2's keep location
     },
 
     update: function(){

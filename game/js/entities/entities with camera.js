@@ -392,7 +392,6 @@ game.Units = me.Entity.extend({
                     this.hit = true;
                     this.target[0].renderable.flicker(500);
                     this.target[0].hp -= battle(this, this.target[0]);
-                    this.target[0].health -= battle(this, this.target[0]);
 //                    console.log(this.target[0].name + "(" + this.target[0].GUID + "): " + this.target[0].hp + "/" + this.target[0].maxHp);
                 } else if (this.renderable.getCurrentAnimationFrame() != 7) {
                     // once unit leaves 7th 'hit' animation, reset hit switch

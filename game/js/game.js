@@ -28,12 +28,19 @@ var game = {
          * @param amt amount to be deducted
          * @returns {boolean} true if deduction was successful
          */
-        cashier: function(amt){
-            if(this.playergold- amt < 0){
+        cashier: function(player, amt){
+            var purse;
+            if(player == 1){
+                purse = game.data.playergold
+            }else{
+                purse = game.dataAI.playergold
+            }
+
+            if(purse - amt < 0){
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough money ", msgDur: 3, color:"red"};
                 return false
             }else{
-                this.playergold = this.playergold - amt;
+                purse = purse - amt;
             }
             return true;
         },
