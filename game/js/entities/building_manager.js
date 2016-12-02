@@ -46,15 +46,15 @@ game.BuildingArea = me.Renderable.extend({
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
-                console.log((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2);
+                //console.log((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2);
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (me.game.viewport.height - this.height/2), {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 192,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "barracks",
                     player: this.player
-                }), 10);
+                }), 110);
                 game.data.playergold -= 200;
             }
             else {
@@ -71,13 +71,13 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (me.game.viewport.height - this.height/2), {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 228,
                     height: 196,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "armourer",
                     player: this.player
-                }), 10);
+                }), 110);
                 game.data.playergold -= 200;
             }
             else {
@@ -93,13 +93,13 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (me.game.viewport.height - this.height/2), {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 265,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "arsenal",
                     player: this.player
-                }), 10);
+                }), 110);
                 game.data.playergold -= 200;
             }
             else {
@@ -114,13 +114,13 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (me.game.viewport.height - this.height/2), {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 341,
                     height: 288,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "keep",
                     player: this.player
-                }), 10);
+                }), 110);
                 game.data.playergold -= 200;
             }
             else {
@@ -355,7 +355,7 @@ game.BuildingObject = me.Entity.extend({
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
             this.checkPosition();
-            me.collision.check(this);
+
             //console.log("position:",event.gameX, event.gameY,this.checkPosition() )
         }
 
@@ -375,14 +375,21 @@ game.BuildingObject = me.Entity.extend({
                 || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above
                 || (this.pos.y > game.data.structures[i].pos.y + game.data.structures[i]._height  - this.factor)){ // below
 
+                //update the image
+                this.chooseImage("good");
+
                 this.flag = true;
             }
         }
 
         // it's fine if it's the first building or the flag is set
         if(this.flag || game.data.structures.length == 0){
+
+            //update the image
+            this.chooseImage("good");
             return true;
         }
+        this.chooseImage("bad");
         return false;
     },
     /*
@@ -550,6 +557,7 @@ game.FootPrint = game.BuildingObject.extend({
 
         this.checkPosition();
 
+
         //use to the track if it has been placed
         this.placed = false;
 
@@ -587,7 +595,6 @@ game.FootPrint = game.BuildingObject.extend({
 
         //add building to the area.
         var bldg = null;
-
 
         //settings for the new building;
         var newBldg = {
