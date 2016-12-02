@@ -205,6 +205,10 @@ var game = {
 
     // Run on game resources loaded.
     "loaded" : function () {
+        // score if player has won or lost
+        me.save.add({win : 0, lose : 0});
+        console.log("WINS: " + JSON.stringify(me.save.win));
+        console.log("LOSS: " + JSON.stringify(me.save.lose));
 
         // load the texture  file
         // this will be used by object entities later

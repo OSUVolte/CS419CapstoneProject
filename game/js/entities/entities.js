@@ -1005,6 +1005,7 @@ game.GameOverManager = me.Object.extend({
             // End the game. Player 1 Loses
             console.log("player 1 loses");
             game.data.player1win = 0;
+            me.save.lose++;
             me.game.viewport.fadeOut("#000", 200);
             me.state.change(me.state.MENU_WIN_LOSE);
         }
@@ -1012,6 +1013,7 @@ game.GameOverManager = me.Object.extend({
             // End the game. Player 1 Wins
             console.log("player 1 wins");
             game.data.player1win = 1;
+            me.save.win++;
             me.game.viewport.fadeOut("#000", 200);
             me.state.change(me.state.MENU_WIN_LOSE);
         }

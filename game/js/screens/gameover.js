@@ -38,7 +38,7 @@ game.GameOverScreen = me.ScreenObject.extend({
 			  // play something on tap / enter
 			  // this will unlock audio on mobile devices
 			  me.audio.play("cling");
-			  me.state.change(me.state.PLAY);
+			  me.state.change(me.state.MENU);
 		  }
 	  });
   },

@@ -203,9 +203,161 @@ game.HUD.Message = me.Renderable.extend({
         }
         this.msg = game.data.message.msg;
     }
+});
+
+// clickable hud container for start menu
+game.HUD.ContainerTitle = me.Container.extend({
+
+    init: function() {
+        // call the constructor
+        this._super(me.Container, 'init');
+
+        // persistent across level change
+        this.isPersistent = false;
+
+        // make sure we use screen coordinates
+        this.floating = true;
+
+        // give a name
+        this.name = "HUD_title";
 
 
+        // add our child player gold object
+        this.startButtEasy = this.addChild(new game.HUD.StartButtonEasy(440, 290));
+        this.startButtHard = this.addChild(new game.HUD.StartButtonHard(440, 350));
+    }
+});
 
+// hardmode button
+game.HUD.StartButtonHard = me.Renderable.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y) {
 
+        // call the parent constructor
+        // (size does not matter here)
+        this._super(me.Renderable, 'init', [x, y, 128, 32]);
+
+        //create a font
+        this.font = new me.BitmapFont("32x32_font", 32);
+    //    this.font.set("right");
+        this.start = false;
+    },
+    
+    onActivateEvent: function () {
+		me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+	},
+    
+    onMouseDown: function() {
+//		console.log("barracksbutton pressed!");
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
+		return false;
+	},
+    
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+
+		//trigger the event
+		//me.input.triggerKeyEvent(me.input.KEY.B, false);
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+
+        me.audio.play("cling");
+        this.start = true;
+		return false;
+	},
+
+    /**
+     * update function
+     */
+    update : function () {
+        
+        return true;
+    },
+
+    /**
+     * draw the score
+     */
+    draw : function (renderer) {
+        // draw it baby !
+        this.font.draw(renderer, "HARD", this.pos.x, this.pos.y);
+    },
+    
+    onDeactivateEvent: function() {
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+		me.input.releasePointerEvent("pointerdown", this);
+		me.input.releasePointerEvent("pointerup", this);
+		me.input.releasePointerEvent("pointercancel", this);
+	},
+
+});
+
+// ez pz mode button
+game.HUD.StartButtonEasy = me.Renderable.extend({
+    /**
+     * constructor
+     */
+    init: function(x, y) {
+
+        // call the parent constructor
+        // (size does not matter here)
+        this._super(me.Renderable, 'init', [x, y, 128, 32]);
+
+        //create a font
+        this.font = new me.BitmapFont("32x32_font", 32);
+    //    this.font.set("right");
+        this.start = false;
+    },
+    
+    onActivateEvent: function () {
+		me.input.registerPointerEvent("pointerdown", this, this.onMouseDown.bind(this));
+		me.input.registerPointerEvent("pointerup", this, this.onRelease.bind(this));
+		me.input.registerPointerEvent("pointercancel", this, this.onRelease.bind(this));
+	},
+    
+    onMouseDown: function() {
+//		console.log("barracksbutton pressed!");
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, true);
+		return false;
+	},
+    
+	// mouse up function
+	onRelease : function (/*event*/) {
+		this.selected = false;
+
+		//trigger the event
+		//me.input.triggerKeyEvent(me.input.KEY.B, false);
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+
+        me.audio.play("cling");
+        this.start = true;
+		return false;
+	},
+
+    /**
+     * update function
+     */
+    update : function () {
+        
+        return true;
+    },
+
+    /**
+     * draw the score
+     */
+    draw : function (renderer) {
+        // draw it baby !
+        this.font.draw(renderer, "EASY", this.pos.x, this.pos.y);
+    },
+    
+    onDeactivateEvent: function() {
+		me.input.triggerKeyEvent(me.input.KEY.NUM1, false);
+		me.input.releasePointerEvent("pointerdown", this);
+		me.input.releasePointerEvent("pointerup", this);
+		me.input.releasePointerEvent("pointercancel", this);
+	},
 
 });
