@@ -65,8 +65,10 @@ game.Structures = me.Entity.extend({
 
         // register on the global pointermove event
         // If this causes issus see building_manager for alternative set up
-        console.log("onActivate fired");
-        this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
+        // console.log("onActivate fired");
+        // this.handler = me.event.subscribe(me.event.POINTERMOVE, this.pointerMove.bind(this));
+
+        me.input.registerPointerEvent('pointermove', this, this.pointerMove.bind(this));
     },
 
     /**
