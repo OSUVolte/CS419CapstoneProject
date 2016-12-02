@@ -942,7 +942,7 @@ game.WaveManager = me.Object.extend({
         this.player2AttackLocation = "p2_queue_front";
 
         this.player1Base = "keep";
-        this.player2Base = "p2keep"; //TODO: change to player 2's keep location
+        this.player2Base = "p2keep";
     },
 
     update: function(){
@@ -954,12 +954,10 @@ game.WaveManager = me.Object.extend({
                 if (me.game.world.children[i].name === "p2keep"){
                     this.player2Base = me.game.world.children[i]; //get entity object
                     this.findAIBase = true;
-//                    console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
                     this.player1Base = me.game.world.children[i];
                     this.findPlayerBase = true;
-//                    console.log(me.game.world.children[i]);
                 }
             }
         }
