@@ -30,13 +30,17 @@ game.GameOverScreen = me.ScreenObject.extend({
     me.game.world.addChild(backgroundImage, 1);
 
 
-    // change to play state on press Enter
-    me.input.bindKey(me.input.KEY.ENTER, "enter", true);
-    this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
-      if (action === "enter") {
-      	//reset game
-      }
-    });
+	  // change to play state on press Enter or click/tap
+	  me.input.bindKey(me.input.KEY.ENTER, "enter", true);
+	  me.input.bindPointer(me.input.pointer.LEFT, me.input.KEY.ENTER);
+	  this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
+		  if (action === "enter") {
+			  // play something on tap / enter
+			  // this will unlock audio on mobile devices
+			  me.audio.play("cling");
+			  me.state.change(me.state.PLAY);
+		  }
+	  });
   },
 
   /**

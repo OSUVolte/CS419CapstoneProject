@@ -236,7 +236,7 @@ var game = {
         //buildings:
         me.pool.register("build_area", game.BuildingArea);
         me.pool.register("P2_build_area", game.BuildingAreaAI);
-        me.pool.register("structures", game.Structures);
+        me.pool.register("structures", game.Structures, true);
         me.pool.register("keep", game.Keep);
         me.pool.register("p2keep", game.Keep);
 
@@ -263,9 +263,9 @@ var game = {
         me.pool.register("queue_back", game.QueueArea);
 
         //wave manager
-        me.pool.register("waveManager", game.WaveManager, true);
+        me.pool.register("waveManager", game.WaveManager);
         // manages game over screen
-        me.pool.register("gameOverManager", game.GameOverManager, true);
+        me.pool.register("gameOverManager", game.GameOverManager);
 
         me.pool.register("p2_queue_front", game.QueueArea);
         me.pool.register("p2_queue_mid", game.QueueArea);

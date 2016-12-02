@@ -356,7 +356,7 @@ game.Structures = me.Entity.extend({
         
         checkHealth(this);                                                                                                                  // check building hp
         if (!this.alive) {
-            me.game.world.removeChildNow(this);
+            me.game.world.removeChild(this);
         }
 
         return this._super(me.Entity, 'update', [dt]);
