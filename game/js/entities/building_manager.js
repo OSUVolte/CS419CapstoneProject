@@ -286,6 +286,7 @@ game.BuildingObject = me.Entity.extend({
     init: function (x, y, settings) {
         // ensure we do not create a default shape
         settings.shapes = [];
+
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
 
@@ -296,7 +297,6 @@ game.BuildingObject = me.Entity.extend({
         // to memorize where we grab the shape
         this.grabOffset = new me.Vector2d(0,0);
 
-        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
 
         this.builder = settings.builder;                                                                                            // for enemy AI requires some special settings to function
         if (this.builder === "AI") {
@@ -308,6 +308,8 @@ game.BuildingObject = me.Entity.extend({
         }
 
         this.player = settings.player;
+        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+        this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
     },
 
     onActivateEvent: function () {
@@ -353,6 +355,7 @@ game.BuildingObject = me.Entity.extend({
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
             this.checkPosition();
+            me.collision.check(this);
             //console.log("position:",event.gameX, event.gameY,this.checkPosition() )
         }
 
@@ -366,7 +369,7 @@ game.BuildingObject = me.Entity.extend({
     checkOtherBldg : function () {
         this.flag= false;
         this.factor = 0;
-        for(i = 0; i < game.data.structures.length; i++) {
+        for(var i = 0; i < game.data.structures.length; i++) {
             if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
                 || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
                 || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above
@@ -392,8 +395,7 @@ game.BuildingObject = me.Entity.extend({
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
             && this.pos.y > this.bounds.y
-            && this.pos.y < this.bounds.height+this.bounds.y
-            && this.checkOtherBldg()){
+            && this.pos.y < this.bounds.height+this.bounds.y){
             //update the image
             this.chooseImage("good");
 
@@ -498,7 +500,7 @@ game.BuildingObject = me.Entity.extend({
 
         }
 
-    //    me.collision.check(this);
+        me.collision.check(this);
 
         return this.selected || this.hover;
     },
@@ -519,7 +521,10 @@ game.BuildingObject = me.Entity.extend({
     },
 
     onCollision: function(response, other){
-        console.log("i hit something");
+        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE || response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) {
+            console.log("shit");
+        }
+
         return false;
     }
 
@@ -536,16 +541,12 @@ game.FootPrint = game.BuildingObject.extend({
         // we want the foot print established by the settings from which was called.
         //settings.image =  "footprint-spritesheet";
         //console.log("the bloody settings!", settings);
-
+        // add a body shape
         // call the super constructor
         this._super(game.BuildingObject, "init", [x, y, settings]);
 
         // the bounds of the Building Container
         this.bounds = settings.bounds;
-
-        // add a body shape
-        console.log("player",this.player);
-        this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
 
         this.checkPosition();
 
@@ -560,7 +561,7 @@ game.FootPrint = game.BuildingObject.extend({
 
         this.player = settings.player;
 
-        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
+
     },
     /**
      * Change the image

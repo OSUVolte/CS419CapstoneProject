@@ -32,31 +32,6 @@ game.Structures = me.Entity.extend({
         // call the super constructor
         this._super(me.Entity, "init", [x, y, settings]);
     },
-    generalProperties: function(settings){
-        this.q = [];
-        this.allowBuild = false;
-        this.complete = false;
-        this.functional = false;
-        this.player = settings.player;                                                                                                                      // changed from player 1
-
-        //properties for hp bar
-        this.hpBarCurrent = new me.Font("Verdana", 11, "green");
-        this.hpBarCurrent.lineWidth = 1;
-        this.hpBarCurrent.strokeStyle = new me.Color(0, 0, 0, 50);
-
-        // player 1 is green hp bar, 2 is red hp bar
-        if (this.player == 1) {
-            this.hpBarCurrent.fillStyle = new me.Color(0, 255, 0, 50);
-        } else {
-            this.hpBarCurrent.fillStyle = new me.Color(255, 0, 0, 50);
-        }
-        this.hpBarMax = new me.Font("Verdana", 11, "black");
-        this.hpBarMax.alpha = 0.5;
-
-        this.alwaysUpdate = true;
-
-
-    },
     onActivateEvent: function () {
         //register on mouse/touch event
         me.input.registerPointerEvent("pointerdown", this, this.onSelect.bind(this));
@@ -428,7 +403,7 @@ game.Barracks = game.Structures.extend({
         this.bldgProperties();
         this.body.addShape(new me.Rect(0,0, settings.width, settings.height));  // add a body shape
         this.renderable = new me.Sprite(0, 0, {image: me.loader.getImage("Barracks")}); //addimage
-        //
+        this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
         // this.player = settings.player;
 
         this.alwaysUpdate = true;
