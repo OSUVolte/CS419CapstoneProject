@@ -366,8 +366,6 @@ game.BuildingObject = me.Entity.extend({
         this.flag= false;
         this.factor = 0;
         for(i = 0; i < game.data.structures.length; i++) {
-        console.log( game.data.structures[i]);
-
             if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
                 || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
                 || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above

@@ -11,92 +11,13 @@ game.PlayerEntity = me.Entity.extend({
      * constructor
      */
     init:function (x, y, settings) {
-        // call the constructor
-        this._super(me.Entity, 'init', [x, y , settings]);
-        
-        // set the default horizontal & vertical speed (accel vector)
-        this.body.setVelocity(2,2);
-        
-        // set the display to follow our position on both axis
-//        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        
-        // ensure the player is updated even when outside of viewport
-        this.alwaysUpdate = true;
-        
-        this.playerOneSpawn = false;
-        this.playerTwoSpawn = false;
     },
 
     /**
      * update the entity
      */
     update : function (dt) {
-        if (me.input.isKeyPressed('d') && this.playerOneSpawn == false) {
-            this.playerOneSpawn = true;
-            var settings = {
-                // the width of the path
-                width: 784,
-                height: 100,
-                // the size of the entity
-                framewidth: 32,                                     // minotaurs are 48 pixels in length
-                frameheight: 32,
-                // direction
-                queueGroup: "queue_back",
-                // which player spawned
-                player: 1,
-                shapes: [new me.Rect(0, 0, 25, 25)]
-            }
-            // spawn unit
-            me.game.world.addChild(me.pool.pull("units", 100, 100, wizard, settings), 10);
 
-        } else if (!me.input.isKeyPressed('d')) {
-            this.playerOneSpawn = false;
-        }
-
-        if (me.input.isKeyPressed('a') && this.playerTwoSpawn == false) {
-            this.playerTwoSpawn = true;
-            var settings = {
-                // the width of the path
-                width: 784,
-                height: 100,
-                // the size of the entity
-                framewidth: 48,
-                frameheight: 48,
-                // direction
-                queueGroup: "queue_front",
-                // which player spawned
-                player: 2,
-                shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
-            }
-
-            var settingssm = {
-                // the width of the path
-                width: 784,
-                height: 100,
-                // the size of the entity
-                framewidth: 32,
-                frameheight: 32,
-                // direction
-                queueGroup: "queue_front",
-                // which player spawned
-                player: 2,
-                shapes: [new me.Rect(0, 0, 25, 25)]             // make the shape smaller than the frame so that units collide when overlapping a bit
-            }
-            
-            me.game.world.addChild(me.pool.pull("units", 100, 160, minotaur, settings), 10);
-            me.game.world.addChild(me.pool.pull("units", 100, 160, rogue, settings), 10);
-        } else if (!me.input.isKeyPressed('a')) {
-            this.playerTwoSpawn = false;
-        }
-
-        // apply physics to the body (this moves the entity)
-        this.body.update(dt);
-
-        // handle collisions against other shapes
-        me.collision.check(this);
-
-        // return true if we moved or if the renderable was updated
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
     },
 
    /**
@@ -269,14 +190,14 @@ game.Units = me.Entity.extend({
                 if (me.game.world.children[i].name === this.queueGroup) {
                     this.target_destination = me.game.world.children[i];
                     this.queueGroup = "NO_MORE_QUEUE";
-                    console.log(this.player + " " + this.name + " swapping to " + this.target_destination.name);
+//                    console.log(this.player + " " + this.name + " swapping to " + this.target_destination.name);
                 }
             }
         }
 
         if (this.hp <= 0 && this.alive == true) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
-            console.log(this.name + " : " + this.GUID + " >> DIED!");
+//            console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
 
             //give money
@@ -285,7 +206,7 @@ game.Units = me.Entity.extend({
             }else{
                 game.data.playergold += 200;
                 game.data.maxKills++;
-                console.log("SOMEONE DIED!");
+ //               console.log("SOMEONE DIED!");
             }
 
             if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
@@ -313,7 +234,7 @@ game.Units = me.Entity.extend({
                             } else {
                                 this.target_destination = temp_destination;
                             }
-                            console.log(this.player + " " + this.name + " swapped to " + this.target_destination.player + " " + this.target_destination.name);
+ //                           console.log(this.player + " " + this.name + " swapped to " + this.target_destination.player + " " + this.target_destination.name);
                         }
                     }
                 }
@@ -544,7 +465,7 @@ game.QueueArea = me.Entity.extend({
     },
 
     onCollision : function (response, other) {
-        console.log("touching");
+//        console.log("touching");
         return false;
     }
 });
@@ -559,7 +480,7 @@ game.Warrior = me.Entity.extend({
      */
     init:function (x, y, settings) {
         var settings = {
-            image: "warrior spritesheet calciumtrice",
+//            image: "warrior spritesheet calciumtrice",
             width: 32,
             height: 32,
             
@@ -599,20 +520,6 @@ game.Warrior = me.Entity.extend({
         this.targetedBy = [];
         this.gogetem = 1;
 
-        // define standing animation, use all frames
-        this.renderable.addAnimation("stand", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
-                                                    11, 12, 13, 14, 15, 16, 17, 18, 19]);
-        // define death animation
-        this.renderable.addAnimation("dying", [40, 41, 42, 43, 44, 45, 46, 47, 48, 49], 150);
-        // define death animation
-        this.renderable.addAnimation("dead", [49]);
-        // define walking animation
-        this.renderable.addAnimation("walk", [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]);
-        // define attacking animation
-        this.renderable.addAnimation("attack", [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], 150);
-        // set standing as default
-        this.renderable.setCurrentAnimation("stand");
-        this.renderable.setAnimationFrame();
         // set this collision type as ME
         this.body.collisionType = me.collision.types.NO_OBJECT;
         // set collision types
@@ -649,36 +556,6 @@ game.Warrior = me.Entity.extend({
      * (called when colliding with other objects)
      */
     onCollision : function (response, other) {
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE) {
-            var ydif = this.pos.y - response.b.pos.y;
-            var xdif = this.pos.x - response.b.pos.x;
-
-            if (this.facing === "north" && ydif < 15) {
-                this.pos.y--;                                                   // prevent passing through
-            }
-        }
-    // if something that is an enemy touches this unit
-        if (response.b.body.collisionType === me.collision.types.ENEMY_OBJECT) {
-            // if something touches this entity while its alive...
-            if (this.alive && this.combat == false) {
-                this.me = response.a;
-                this.enemy = other;
-                this.target.push(other);
-                this.combat = true;
-                this.renderable.setCurrentAnimation("attack");
-                this.renderable.setAnimationFrame();
-                this.targetedBy.push(other);
-            } else if (this.combat == true) {
-                this.target.push(other);
-                this.targetedBy.push(other);
-                this.me = response.a;
-                this.enemy = other;
-            }
-          return false;
-        } else {
- //           console.log("I AM TOUCHING SOMETHING ELSE");
-            return true;
-        }
         // Make all other objects solid
     return false;
     }
@@ -691,7 +568,7 @@ game.ChaserEntity = me.Entity.extend({
 
     init: function(x, y, settings) {
         // call the constructor
-        settings.image = "slime spritesheet calciumtrice_0",
+//        settings.image = "slime spritesheet calciumtrice_0",
         this._super(me.Entity, 'init', [x, y , settings]);
 
         // chase even when offscreen
@@ -726,69 +603,6 @@ game.ChaserEntity = me.Entity.extend({
     update the player pos
     ------ */
     update: function(dt) {
-        var now = Date.now();
-//        this.updateColRect(0, 16, 16, 16);
-        if (this.target == null) {
-            // we should globally store this value
-            this.target = me.game.world.getChildByType(game.Warrior)[0];
-        } else {
-            for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].gogetem == 1) {
-                    this.target = me.game.world.children[i];
-                }
-            }
-        }
-
-        var cbdist = this.chessboard();
-
-        if (this.myPath.length < 1 || (cbdist >= 96 && this.pathAge+5000 < now)) {
-            // not moving anywhere
-            // friction takes over
-            if (this.target != null) {
-                this.myPath = me.astar.search(this.pos._x, this.pos._y, this.target.pos._x, this.target.pos._y);
-                this.dest = this.myPath.pop();
-                this.pathAge = now;
-                //console.log(this.dest);
-            }
-        } else {
-            if (this.chessboard() < 500) {                                                                              // DISTANCE FROM THIS UNIT (500)
-                // just go for it
-                this.dest = this.target;
-                this.pathAge = now-5000;
-//            } else if (this.collisionBox.overlaps(this.dest.rect) && this.myPath.length > 0) {
-//                // TODO - do this with non constant, add some fuzz factor
-            }
-            if (this.dest != null) {
-
-                //console.log("@",this.collisionBox.pos.x,this.collisionBox.pos.y);
-                //console.log("Moving toward ",this.dest.pos.x,this.dest.pos.y);
-                // move based on next position
-
-                var xdiff = this.dest.pos.x - this.pos.x;
-                var ydiff = this.dest.pos.y - this.pos.y;
-
-                if (xdiff < -2) {
-                    this.body.vel.x -= this.body.accel.x * me.timer.tick;
-                    this.lastPos.x = this.body.pos.x;
-                } else if (xdiff > 2) {
-     //               this.flipX(true);
-                    this.body.vel.x += this.body.accel.x * me.timer.tick;
-                    this.lastPos.x = this.body.pos.x;
-                }
-
-                if (ydiff < -2) {
-                    this.body.vel.y -= this.body.accel.y * me.timer.tick;
-                    this.lastPos.y = this.body.pos.y;
-                } else if (ydiff > 2) {
-                    this.body.vel.y += this.body.accel.y * me.timer.tick;
-                    this.lastPos.y = this.body.pos.y;
-                }
-            }
-        }
-        // check & update player movement
-        this.body.update(dt);
-
-        return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 
 
         // else inform the engine we did not perform

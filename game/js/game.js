@@ -241,7 +241,7 @@ var game = {
         // add our player entity in the entity pool
         me.pool.register("spawn_top", game.Warrior);
         me.pool.register("chaser", game.ChaserEntity);
-        me.pool.register("player", game.PlayerEntity);
+//        me.pool.register("player", game.PlayerEntity);
         me.pool.register("units", game.Units, true);
 
         //buildings:
