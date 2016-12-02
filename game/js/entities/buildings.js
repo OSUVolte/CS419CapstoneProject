@@ -110,7 +110,9 @@ game.Structures = me.Entity.extend({
             console.log('selected the new buiding');
             this.selected = true;
             //me.viewport.reset(0,0);
-            this.displayStatus();
+
+            if(this.player == 1)
+                this.displayStatus();
 
             // don"t propagate the event furthermore
             return false;
