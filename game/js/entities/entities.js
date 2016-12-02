@@ -322,8 +322,13 @@ game.Units = me.Entity.extend({
                 }
             }
 
-            if (this.target_destination.player == this.player){
-                this.target_destination = null;
+            try{
+                if (this.target_destination.player == this.player){
+                    this.target_destination = null;
+                }
+            }
+            catch(err) {
+                //console.log(err);
             }
 
             if (this.target_destination != null) {
@@ -946,14 +951,14 @@ game.WaveManager = me.Object.extend({
         }
         if(this.findAIBase == false){
             for (var i = 0; i < me.game.world.children.length; i++) {
-                if (me.game.world.children[i].type === "barracks") {  //me.game.world.children[i].player == 2
-         //           this.player2Base = me.game.world.children[i]; //get entity object
-        //            this.findAIBase = true;
+                if (me.game.world.children[i].name === "p2keep"){
+                    this.player2Base = me.game.world.children[i]; //get entity object
+                    this.findAIBase = true;
 //                    console.log(me.game.world.children[i]);
                     }
                 else if (me.game.world.children[i].name === "keep") {
-        //            this.player1Base = me.game.world.children[i];
-        //            this.findPlayerBase = true;
+                    this.player1Base = me.game.world.children[i];
+                    this.findPlayerBase = true;
 //                    console.log(me.game.world.children[i]);
                 }
             }
@@ -999,9 +1004,18 @@ game.GameOverManager = me.Object.extend({
 
     update: function(){
         if(game.data.wavemanager.player1Base.alive == false) {
-            // End the game.
+            // End the game. Player 1 Loses
+            console.log("player 1 loses");
+            game.data.player1win = 0;
             me.game.viewport.fadeOut("#000", 200);
-            me.state.change(me.state.MENU_LOSE);
+            me.state.change(me.state.MENU_WIN_LOSE);
+        }
+        if(game.data.wavemanager.player2Base.alive == false) {
+            // End the game. Player 1 Wins
+            console.log("player 1 wins");
+            game.data.player1win = 1;
+            me.game.viewport.fadeOut("#000", 200);
+            me.state.change(me.state.MENU_WIN_LOSE);
         }
     }
 });
