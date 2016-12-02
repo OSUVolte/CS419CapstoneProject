@@ -8,7 +8,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
         // reset the score
         game.data.gametime = 0;
-
+        game.data.gametimeoffset = me.timer.getTime();
+        game.data.lastAIspawnTime = 0;
         //Build menu
         //todo add a map object then we wont need this...I think?
         game.data.buildbutton = me.pool.pull("buildbutton", 10, 10, {});

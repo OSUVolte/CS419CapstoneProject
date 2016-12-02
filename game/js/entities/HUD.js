@@ -109,7 +109,7 @@ game.HUD.GameClock = me.Renderable.extend({
         }
 
 
-        if(me.timer.getTime() - this.startingoffset - this.gametime > 1000) {
+        if(me.timer.getTime() - (game.data.gametimeoffset) - this.gametime > 1000) {
             //console.log(this.gametime);
             this.gametime += 1000;
             game.data.gametime = this.gametime;
