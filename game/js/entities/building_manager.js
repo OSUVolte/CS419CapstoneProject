@@ -380,8 +380,6 @@ game.BuildingObject = me.Entity.extend({
      * Check the position  to be within the "build" area and updates the image
      */
     checkPosition : function () {
-        //todo flesh this out so it also checks for entities in the way
-        //console.log( this.bounds);
 
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x

@@ -141,7 +141,7 @@ game.Structures = me.Entity.extend({
             queueGroup: queueAssignment, //the units queue assignment
             shapes: [new me.Rect(30, 30, 32, 32)]
         }), 10);
-        console.log("Assigned to q" , newUnit.player, newUnit)
+        //console.log("Assigned to q" , newUnit.player, newUnit)
     },
     /*
      * Adds type of element to the Building Queue
@@ -343,6 +343,7 @@ game.Structures = me.Entity.extend({
 
             }
 
+
             //Disable building if not healthy enough
             if(this.hp > 0.5*this.fullHealth){
                 this.functional = true;
@@ -356,7 +357,8 @@ game.Structures = me.Entity.extend({
         
         checkHealth(this);                                                                                                                  // check building hp
         if (!this.alive) {
-            me.game.world.removeChild(this);
+
+           this.destroy();
         }
 
         return this._super(me.Entity, 'update', [dt]);
@@ -404,8 +406,12 @@ game.Structures = me.Entity.extend({
         console.log("functional", this.functional);
 
     },
-
-
+    destroy : function(){
+            if (this.builder != "AI") {
+                me.input.releasePointerEvent('pointerMove', this);
+            }
+            me.game.world.removeChild(this);
+    }
 });
 
 //todo set up collisions on buildings
@@ -535,7 +541,7 @@ game.Barracks = game.Structures.extend({
         }
         if(this.q.length > 0 && this.complete) {
             this.panel.addChild(new game.UI.UnitRemove(
-                20, 190,
+                20, 220,
                 "Remove Unit" // default
             ), 110);
         }

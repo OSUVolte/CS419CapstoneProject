@@ -17,7 +17,18 @@ game.EnemyAI = me.Entity.extend({
         this.data = game.dataAI;                                                 // reference to dataAI
         
         this.testSwitch = true;
-        this.alwaysUpdate = true;                                               // update when out of viewport
+        this.alwaysUpdate = true;// update when out of viewport
+
+
+        //Build the barracks;
+        var newBldg = {
+            width: 192,
+            height: 192,
+            type: "barracks",
+            player: 2
+        };
+        var bldg = me.game.world.addChild(new game.Barracks(3486, 490, newBldg), 10);
+        game.dataAI.structures.push(bldg);
     },
     
     update : function(dt) {
@@ -27,17 +38,20 @@ game.EnemyAI = me.Entity.extend({
            console.log(this.data);
         }
         
-        // if no buildings, build barracks. buildingManager will handle amount of gold
-        if (this.testSwitch == true) {
-            this.testSwitch = false;
-            this.buildingManager.isPlacing = true;
-            this.buildingManager.build("barracks");                     // command like this to build a building
-        }
-        
+        // // if no buildings, build barracks. buildingManager will handle amount of gold
+        // if (this.testSwitch == true) {
+        //     this.testSwitch = false;
+        //     this.buildingManager.isPlacing = true;
+        //     this.buildingManager.build("barracks");
+        //     // command like this to build a building
+        //
+        // }
+
         //randomly queue a unit every 8 seconds
         if(game.data.lastAIspawnTime + 8000 <= game.data.gametime) {
             game.data.lastAIspawnTime = game.data.gametime;
             if (game.dataAI.count("barracks") > 0) {                        // if more than 1 barracks, make a unit
+
                 var building = game.dataAI.getBuilding();
                 if (building.percentComplete == 100) {
                     var randomUnit = Math.floor((Math.random() * 5) + 1);
