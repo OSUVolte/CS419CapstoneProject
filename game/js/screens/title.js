@@ -29,8 +29,16 @@ game.TitleScreen = me.ScreenObject.extend({
         // a tween to animate the arrow
         this.scrollertween = new me.Tween(this).to({scrollerpos: -2200 }, 10000).onComplete(this.scrollover.bind(this)).start();
 
-        this.scroller = "A GAME PROJECT CREATED FOR OREGON STATE UNIVERSITY CS419 (FALL 2016)       ";
+        this.scroller = "A GAME PROJECT CREATED FOR OREGON STATE UNIVERSITY CS419 (FALL 2016)       CLICK MODE TO START              ";
         this.scrollerpos = 600;
+        
+        this.win = me.save.win;
+        this.lose = me.save.lose;
+        
+        // //Add the HUD
+         this.HUD = new game.HUD.ContainerTitle();
+         me.game.world.addChild(this.HUD);
+
       },
 
       // some callback for the tween objects
@@ -41,12 +49,24 @@ game.TitleScreen = me.ScreenObject.extend({
       },
 
       update : function (dt) {
-        return true;
+        if (this.HUD != null && this.HUD != undefined) {
+            if (this.HUD.startButtEasy.start) {
+                me.state.change(me.state.PLAY);
+                game.data.mode = "easy";
+            }
+            if (this.HUD.startButtHard.start) {
+                me.state.change(me.state.PLAY);
+                game.data.mode = "hard";
+            }
+        }
+        return false;
       },
 
       draw : function (renderer) {
         this.font.draw(renderer, "VOLTE GAME PROJECT", 200, 50);
-        this.font.draw(renderer, "PRESS ENTER TO PLAY", 200, 340);
+        this.font.draw(renderer, "START GAME", 345, 230);
+        this.font.draw(renderer, "WON: " + this.win, 270, 450);
+        this.font.draw(renderer, "LOST: " + this.lose, 520, 450);
         this.font.draw(renderer, this.scroller, this.scrollerpos, 550);
       },
       onDestroyEvent : function () {
@@ -55,27 +75,12 @@ game.TitleScreen = me.ScreenObject.extend({
       }
     })), 2);
 
-    // change to play state on press Enter or click/tap
-    me.input.bindKey(me.input.KEY.ENTER, "enter", true);
-    me.input.bindPointer(me.input.pointer.LEFT, me.input.KEY.ENTER);
-    this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
-      if (action === "enter") {
-        // play something on tap / enter
-        // this will unlock audio on mobile devices
-        me.audio.play("cling");
-        me.state.change(me.state.PLAY);
-      }
-    });
   },
 
   /**
    * action to perform when leaving this screen (state change)
    */
   onDestroyEvent : function () {
-    me.input.unbindKey(me.input.KEY.ENTER);
-    me.input.unbindPointer(me.input.pointer.LEFT);
-    me.event.unsubscribe(this.handler);
-
     game.data.gametime = 0;
   }
 });

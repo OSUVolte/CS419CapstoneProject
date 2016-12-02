@@ -40,7 +40,11 @@ game.EnemyAI = me.Entity.extend({
             if (game.dataAI.count("barracks") > 0) {                        // if more than 1 barracks, make a unit
                 var building = game.dataAI.getBuilding();
                 if (building.percentComplete == 100) {
-                    var randomUnit = Math.floor((Math.random() * 5) + 1);
+                    if (game.data.mode == "easy") {
+                        var randomUnit = Math.floor((Math.random() * 8) + 1);                       // easy mode, more chances to spawn slimes
+                    } else {
+                        var randomUnit = Math.floor((Math.random() * 4) + 1);                       // hard mode, never spawns slimes ever again    
+                    }
                     switch(randomUnit) {
                         case 1:
                             if(building.q.length < building.capacity && game.dataAI.playergold > warrior.cost){
@@ -67,8 +71,12 @@ game.EnemyAI = me.Entity.extend({
                                 building.addUnitQ("slime", 0);
                             }
                             break;
+                        default:
+                            if(building.q.length < building.capacity && game.dataAI.playergold > slime.cost){
+                                building.addUnitQ("slime", 0);
+                            }
+                            break;
                     }
-
                 }
                 return true;
             }

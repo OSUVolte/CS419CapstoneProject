@@ -535,7 +535,7 @@ game.Barracks = game.Structures.extend({
         }
         if(this.q.length > 0 && this.complete) {
             this.panel.addChild(new game.UI.UnitRemove(
-                20, 190,
+                20, 220,
                 "Remove Unit" // default
             ), 110);
         }
