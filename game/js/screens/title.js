@@ -8,7 +8,7 @@ game.TitleScreen = me.ScreenObject.extend({
       me.game.viewport.width / 2,
       me.game.viewport.height / 2,
       {
-        image: me.loader.getImage('title_screen'),
+        image: me.loader.getImage('title_screen')
       }
     );
     // scale to fit with the viewport size
@@ -51,7 +51,7 @@ game.TitleScreen = me.ScreenObject.extend({
 
       update : function (dt) {
         if (this.HUD != null && this.HUD != undefined) {
-            if (this.HUD.startButtEasy.start) {
+            if (this.HUD.startButtEasy.start) { // lol
                 me.state.change(me.state.PLAY);
                 game.data.mode = "easy";
             }

@@ -48,7 +48,7 @@ game.BuildingArea = me.Renderable.extend({
             if(game.data.playergold >= 200) {
                 console.log((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2);
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (me.game.viewport.height - this.height/2), {
                     width: 192,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -71,7 +71,7 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (me.game.viewport.height - this.height/2), {
                     width: 228,
                     height: 196,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -93,7 +93,7 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (me.game.viewport.height - this.height/2), {
                     width: 265,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -114,7 +114,7 @@ game.BuildingArea = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.data.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (me.game.viewport.height - this.height/2), {
                     width: 341,
                     height: 288,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -226,7 +226,7 @@ game.BuildingAreaAI = me.Renderable.extend({
         //     //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.dataAI.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (this.pos.y + this.height) / 4, {
                      width: 128,
                     height: 96,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -247,7 +247,7 @@ game.BuildingAreaAI = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.dataAI.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (this.pos.y + this.height) / 4, {
                     width: 150,
                     height: 150,
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
@@ -298,7 +298,7 @@ game.BuildingObject = me.Entity.extend({
 
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
 
-        this.builder = settings.builder                                                                                             // for enemy AI requires some special settings to function
+        this.builder = settings.builder;                                                                                            // for enemy AI requires some special settings to function
         if (this.builder === "AI") {
             this.alwaysUpdate = true;
             this.goRight = true;
@@ -353,6 +353,7 @@ game.BuildingObject = me.Entity.extend({
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
             this.checkPosition();
+            //console.log("position:",event.gameX, event.gameY,this.checkPosition() )
         }
 
         if (this.hover || this.selected) {
@@ -480,13 +481,13 @@ game.BuildingObject = me.Entity.extend({
             }
 
             if (this.pos.x < this.bounds.x) {
-                this.scanFinished == true;
+                this.scanFinished = true;
                 this.goDown = false;
                 this.goLeft = false;
                 this.goRight = false;
                 this.body.vel.y = 0;
                 this.body.vel.x = 0;
-                me.game.world.removeChildNow(this);
+                me.game.world.removeChild(this);
                 console.log("ENEMY BASE: no more space for buildings!");                                                                                            // debug message
             }
 
