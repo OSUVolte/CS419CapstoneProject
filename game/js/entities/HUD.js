@@ -107,8 +107,8 @@ game.HUD.GameClock = me.Renderable.extend({
             this.firsttick = false;
             this.startingoffset = me.timer.getTime();
         }
-        // we don't do anything fancy here, so just
-        // return true if the game time has been updated
+
+
         if(me.timer.getTime() - this.startingoffset - this.gametime > 1000) {
             //console.log(this.gametime);
             this.gametime += 1000;
@@ -237,7 +237,7 @@ game.HUD.StartButtonHard = me.Renderable.extend({
 
         // call the parent constructor
         // (size does not matter here)
-        this._super(me.Renderable, 'init', [x, y, 128, 32]);
+        this._super(me.Renderable, 'init', [x, y, 256, 64]);
 
         //create a font
         this.font = new me.BitmapFont("32x32_font", 32);
@@ -304,7 +304,7 @@ game.HUD.StartButtonEasy = me.Renderable.extend({
 
         // call the parent constructor
         // (size does not matter here)
-        this._super(me.Renderable, 'init', [x, y, 128, 32]);
+        this._super(me.Renderable, 'init', [x, y, 256, 64]);
 
         //create a font
         this.font = new me.BitmapFont("32x32_font", 32);
