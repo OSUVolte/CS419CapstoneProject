@@ -78,6 +78,7 @@ game.Structures = me.Entity.extend({
         // move event is global (relative to the viewport)
         if (this.getBounds().containsPoint(event.gameX, event.gameY)) {
             // calculate the final coordinates
+            // make sure you can get bounds ?
             var parentPos = this.ancestor.getBounds().pos;
             var x = event.gameX - this.pos.x - parentPos.x;
             var y = event.gameY - this.pos.y - parentPos.y;

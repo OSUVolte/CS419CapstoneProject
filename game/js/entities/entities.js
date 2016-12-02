@@ -232,15 +232,16 @@ game.Units = me.Entity.extend({
         if (percent >= 0) {
             unitHp += "▄"
         }
-        var tar = "null";
-        if (this.target_destination != null || this.target_destination != undefined) {
-            tar = this.target_destination.name;
-        }
+        
+        var tar = "";
+//        if (this.target_destination != null || this.target_destination != undefined) {        // uncomment to see target
+//            tar = this.target_destination.name;
+//        }
 
         this._super(me.Entity, "draw", [renderer]);
-        this.hpBarMax.draw(renderer, "▄▄▄▄▄" + tar, this.pos.x-4, this.pos.y-20);
-        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x-4, this.pos.y-20);
-        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x-4, this.pos.y-20);
+        this.hpBarMax.draw(renderer, "▄▄▄▄▄" + tar, this.pos.x+22, this.pos.y-8);
+        this.hpBarCurrent.draw(renderer, unitHp, this.pos.x+22, this.pos.y-8);
+        this.hpBarCurrent.drawStroke(renderer, "▄▄▄▄▄", this.pos.x+22, this.pos.y-8);
     },
 
   /**
@@ -273,22 +274,18 @@ game.Units = me.Entity.extend({
             }
         }
 
-        // make sure were on the same team!
-        if (this.target_destination != null) {
-
-        }
-
-
-        if (this.hp <= 0) {
+        if (this.hp <= 0 && this.alive == true) {
             this.body.collisionType = me.collision.types.NO_OBJECT;
             console.log(this.name + " : " + this.GUID + " >> DIED!");
             this.alive = false;
 
             //give money
             if(this.player == 1){
-                game.dataAI.playergold += 20;
+                game.dataAI.playergold += 200;
             }else{
-                game.data.playergold += 20;
+                game.data.playergold += 200;
+                game.data.maxKills++;
+                console.log("SOMEONE DIED!");
             }
 
             if (!this.renderable.isCurrentAnimation("dying") && !this.combat) {
@@ -321,7 +318,7 @@ game.Units = me.Entity.extend({
                     }
                 }
             }
-
+            // MAKE SURE WERE ON THE SAME TEAM!
             try{
                 if (this.target_destination.player == this.player){
                     this.target_destination = null;
@@ -519,7 +516,7 @@ game.Units = me.Entity.extend({
 //                this.body.vel.x += Number.MAX_VALUE
             }
 
-            //this.path++;
+            this.path++;
             return true;
         }
 
@@ -1003,6 +1000,11 @@ game.GameOverManager = me.Object.extend({
     update: function(){
         if(game.data.wavemanager.player1Base.alive == false) {
             // End the game. Player 1 Loses
+            
+            // check maxKills score
+            if (me.save.maxKills < game.data.maxKills) {
+                me.save.maxKills = game.data.maxKills;
+            }
             console.log("player 1 loses");
             game.data.player1win = 0;
             me.save.lose++;
@@ -1011,6 +1013,11 @@ game.GameOverManager = me.Object.extend({
         }
         if(game.data.wavemanager.player2Base.alive == false) {
             // End the game. Player 1 Wins
+            
+            // check maxKills score
+            if (me.save.maxKills < game.data.maxKills) {
+                me.save.maxKills = game.data.maxKills;
+            }
             console.log("player 1 wins");
             game.data.player1win = 1;
             me.save.win++;

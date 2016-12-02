@@ -173,7 +173,11 @@ game.BuildingAreaAI = me.Renderable.extend({
         this.name = "P2_build_area";
         this.buildingToBuild = "none";
         this.alwaysUpdate = true;
-
+        
+        // new stuff as well
+        this.buildings = 0;
+        this.newXpos = 0;
+        this.newYpos = 0;
     },
 
     // enemyAI entity will call this when it builds, passing the type of building as an argument
@@ -196,7 +200,7 @@ game.BuildingAreaAI = me.Renderable.extend({
             //TODO: dynamically use cost of building instead of hardcoded "200"
             if(game.dataAI.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
-                me.game.world.addChild(new game.FootPrint((this.pos.x), (this.pos.y + 1), {                                                 // not sure if y position is off by 1 pixel when initialized (?)
+                me.game.world.addChild(new game.FootPrint((this.pos.x + this.newXpos), (this.pos.y + 1 + this.newYpos), {                                                 // not sure if y position is off by 1 pixel when initialized (?)
                     width: 192,
                     height: 192,
                     bounds: this.bounds, // we'll need them from the box to determine if we can build at that postion
@@ -206,11 +210,12 @@ game.BuildingAreaAI = me.Renderable.extend({
                     player: this.structureProperties.player                                                                                                                // pass to barracks that its building owned by player
                 }), 10);
                 game.dataAI.playergold -= 200;
+                this.buildings++;   
+                this.newYpos = 192;                                                                             // next building moves down 1 building length
             }
             else {
                 //display message
                 game.data.message= {msgTime: me.timer.getTime(), msg:"ENEMY Not enough Money", msgDur: 5, color:"red"};
-
             }
             console.log("Enemy is placing barracks, current gold: " + game.dataAI.playergold);
             this.isPlacing = false;
@@ -219,7 +224,7 @@ game.BuildingAreaAI = me.Renderable.extend({
         }else if (this.isPlacing == true && me.input.isKeyPressed("armourer")) {
         //
         //     //TODO: dynamically use cost of building instead of hardcoded "200"
-            if(game.data.playergold >= 200) {
+            if(game.dataAI.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                      width: 128,
@@ -227,7 +232,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "armourer"
                 }), 10);
-                game.data.playergold -= 200;
+                game.dataAI.playergold -= 200;
             }
             else {
                 //display message
@@ -240,7 +245,7 @@ game.BuildingAreaAI = me.Renderable.extend({
         }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
-            if(game.data.playergold >= 200) {
+            if(game.dataAI.playergold >= 200) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 2, (this.pos.y + this.height) / 2, {
                     width: 150,
@@ -248,14 +253,14 @@ game.BuildingAreaAI = me.Renderable.extend({
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "arsenal"
                 }), 10);
-                game.data.playergold -= 200;
+                game.dataAI.playergold -= 200;
             }
             else {
                 //display message
                 game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough Money", msgDur: 5, color:"red"};
         //
             }
-            console.log(game.data.playergold);
+//            console.log(game.data.playergold);
             this.isPlacing = false;
         }
 
@@ -361,6 +366,8 @@ game.BuildingObject = me.Entity.extend({
         this.flag= false;
         this.factor = 0;
         for(i = 0; i < game.data.structures.length; i++) {
+        console.log( game.data.structures[i]);
+
             if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
                 || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
                 || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above
@@ -390,6 +397,7 @@ game.BuildingObject = me.Entity.extend({
             && this.checkOtherBldg()){
             //update the image
             this.chooseImage("good");
+
             return true;
         }else{
        //     console.log("not");

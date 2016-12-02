@@ -75,8 +75,8 @@ var game = {
         queueName: ["queue_front", "queue_mid", "queue_back"],
 
         //array to hold players Structures that are in play
-        structures: []
-
+        structures: [],
+        maxKills: 0
     },
 
     // data for enemy AI, basically a copy of data object containing features specific to the enemy player
@@ -118,9 +118,18 @@ var game = {
         },
 
         // todo: somehow decide what building to return
+        // this probably only works for barracks lol
         getBuilding : function(type) {
-            return this.structures[0];
-
+            // shift buildings in a circle, so ai can grab the next building
+            if (this.structures.length > 1) {
+                var temp = this.structures.shift();
+                this.structures.push(temp);
+            }
+            for (var i = 0; i < this.structures.length; i++) {
+                if (this.structures[i].type === type) {
+                    return this.structures[i];
+                }
+            }
         },
 
         //Used for displaying messages on the screen
@@ -206,9 +215,7 @@ var game = {
     // Run on game resources loaded.
     "loaded" : function () {
         // score if player has won or lost
-        me.save.add({win : 0, lose : 0});
-        console.log("WINS: " + JSON.stringify(me.save.win));
-        console.log("LOSS: " + JSON.stringify(me.save.lose));
+        me.save.add({win : 0, lose : 0, maxKills: 0});
 
         // load the texture  file
         // this will be used by object entities later

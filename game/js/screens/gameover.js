@@ -51,3 +51,4 @@ game.GameOverScreen = me.ScreenObject.extend({
     me.event.unsubscribe(this.handler);
   }
 });
+

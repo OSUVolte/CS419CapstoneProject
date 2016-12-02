@@ -34,6 +34,7 @@ game.TitleScreen = me.ScreenObject.extend({
         
         this.win = me.save.win;
         this.lose = me.save.lose;
+        this.maxKills = me.save.maxKills;
         
         // //Add the HUD
          this.HUD = new game.HUD.ContainerTitle();
@@ -65,9 +66,10 @@ game.TitleScreen = me.ScreenObject.extend({
       draw : function (renderer) {
         this.font.draw(renderer, "VOLTE GAME PROJECT", 200, 50);
         this.font.draw(renderer, "START GAME", 345, 230);
-        this.font.draw(renderer, "WON: " + this.win, 270, 450);
-        this.font.draw(renderer, "LOST: " + this.lose, 520, 450);
-        this.font.draw(renderer, this.scroller, this.scrollerpos, 550);
+        this.font.draw(renderer, "WON: " + this.win, 270, 430);
+        this.font.draw(renderer, "LOST: " + this.lose, 520, 430);
+        this.font.draw(renderer, "TOP KILL SCORE: " + this.maxKills, 201, 500);
+        this.font.draw(renderer, this.scroller, this.scrollerpos, 650);
       },
       onDestroyEvent : function () {
         //just in case
