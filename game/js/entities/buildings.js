@@ -162,9 +162,6 @@ game.Structures = me.Entity.extend({
             //display message
             game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Capacity Reached!", msgDur: 10, color:"red"};
         }
-
-
-
         return false;
     },
     /**
