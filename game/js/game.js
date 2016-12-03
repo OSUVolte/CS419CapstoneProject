@@ -8,6 +8,7 @@ var game = {
         score : 0,
         gametime: 0,
         gametimeoffset: 0,
+        pauseoffset: 0,
         lastAIspawnTime: 0,
         currentwave: 0,
         waveduration: 60, //set to 15 seconds for testing
@@ -22,7 +23,7 @@ var game = {
 
         wavemanager: "",
         gameovermanager: "",
-        playergold: 10000, //set initial player gold to 1000
+        playergold: 1000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
         player1win: 0,
 
@@ -105,7 +106,7 @@ var game = {
         currentwave: 0,
         waveduration: 15, //set to 15 seconds for testing
 
-        playergold: 1000, //set initial player gold to 1000
+        playergold: 3000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
         /**

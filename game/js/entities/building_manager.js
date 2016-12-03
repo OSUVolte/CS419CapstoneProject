@@ -198,7 +198,7 @@ game.BuildingAreaAI = me.Renderable.extend({
             game.data.message= {msgTime: me.timer.getTime(), msg:"ENEMY Placing Barracks", msgDur: 5, color:"white"};
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
-            if(game.dataAI.playergold >= 200) {
+            if(game.dataAI.playergold >= 400) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.newXpos), (this.pos.y + 1 + this.newYpos), {                                                 // not sure if y position is off by 1 pixel when initialized (?)
                     width: 192,
@@ -209,7 +209,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                     builder: "AI",                                                                                                           // builder AI is building
                     player: this.structureProperties.player                                                                                                                // pass to barracks that its building owned by player
                 }), 10);
-                game.dataAI.playergold -= 200;
+                game.dataAI.playergold -= 400;
                 this.buildings++;   
                 this.newYpos = 192;                                                                             // next building moves down 1 building length
             }
@@ -224,7 +224,7 @@ game.BuildingAreaAI = me.Renderable.extend({
         }else if (this.isPlacing == true && me.input.isKeyPressed("armourer")) {
         //
         //     //TODO: dynamically use cost of building instead of hardcoded "200"
-            if(game.dataAI.playergold >= 200) {
+            if(game.dataAI.playergold >= 700) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (this.pos.y + this.height) / 4, {
                      width: 128,
@@ -232,7 +232,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "armourer"
                 }), 10);
-                game.dataAI.playergold -= 200;
+                game.dataAI.playergold -= 700;
             }
             else {
                 //display message
@@ -245,7 +245,7 @@ game.BuildingAreaAI = me.Renderable.extend({
         }else if (this.isPlacing == true && me.input.isKeyPressed("arsenal")) {
 
             //TODO: dynamically use cost of building instead of hardcoded "200"
-            if(game.dataAI.playergold >= 200) {
+            if(game.dataAI.playergold >= 700) {
                 // Adding it to the world, at a place near the bounding box as set by the tiled map object
                 me.game.world.addChild(new game.FootPrint((this.pos.x + this.width) / 4, (this.pos.y + this.height) / 4, {
                     width: 150,
@@ -253,7 +253,7 @@ game.BuildingAreaAI = me.Renderable.extend({
                     bounds: this.bounds, // we'll need them from the box to determine if we can buiild at that postion
                     type: "arsenal"
                 }), 10);
-                game.dataAI.playergold -= 200;
+                game.dataAI.playergold -= 700;
             }
             else {
                 //display message
