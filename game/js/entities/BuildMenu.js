@@ -30,12 +30,12 @@ game.BarracksButton = me.Entity.extend({
 	init: function(x, y, settings) {
 		this._super(me.Entity, "init", [x, y, {
 			image: "barracksbutton",
-			width: 60,
-			height: 47,
-			spritewidth: "60",
-			spriteheight: "47",
+			width: 78,
+			height: 62,
+			spritewidth: "78",
+			spriteheight: "62",
 			getShape: function() {
-				return (new me.Rect(0, 0, 60, 47)).toPolygon();
+				return (new me.Rect(0, 0, 78, 62)).toPolygon();
 			}
 		}]);
 		this.floating = true;
@@ -90,12 +90,12 @@ game.ArmourerButton = me.Entity.extend({
 	init: function(x, y, settings) {
 		this._super(me.Entity, "init", [x, y, {
 			image: "armourerbutton",
-			width: 60,
-			height: 45,
-			spritewidth: "60",
-			spriteheight: "45",
+			width: 78,
+			height: 60,
+			spritewidth: "78",
+			spriteheight: "60",
 			getShape: function() {
-				return (new me.Rect(0, 0, 60, 45)).toPolygon();
+				return (new me.Rect(0, 0, 78, 60)).toPolygon();
 			}
 		}]);
 		this.floating = true;
@@ -150,12 +150,12 @@ game.ArsenalButton = me.Entity.extend({
 	init: function(x, y, settings) {
 		this._super(me.Entity, "init", [x, y, {
 			image: "arsenalbutton",
-			width: 60,
-			height: 53,
-			spritewidth: "60",
-			spriteheight: "53",
+			width: 78,
+			height: 70,
+			spritewidth: "78",
+			spriteheight: "70",
 			getShape: function() {
-				return (new me.Rect(0, 0, 60, 53)).toPolygon();
+				return (new me.Rect(0, 0, 78, 70)).toPolygon();
 			}
 		}]);
 		this.floating = true;

@@ -36,11 +36,11 @@ game.BuildButton = me.Entity.extend({
 //			console.log("open menu");
 			game.data.menu_background = me.pool.pull("menu_background", 10, 100, {});
 	        me.game.world.addChild(game.data.menu_background, 15);
-	        game.data.barracksbutton = me.pool.pull("barracksbutton", 30, 110, {});
+	        game.data.barracksbutton = me.pool.pull("barracksbutton", 20, 110, {});
 	        me.game.world.addChild(game.data.barracksbutton, 30);
-	        game.data.armourerbutton = me.pool.pull("armourerbutton", 30, 180, {});
+	        game.data.armourerbutton = me.pool.pull("armourerbutton", 20, 190, {});
 	        me.game.world.addChild(game.data.armourerbutton, 30);
-	        game.data.arsenalbutton = me.pool.pull("arsenalbutton", 30, 240, {});
+	        game.data.arsenalbutton = me.pool.pull("arsenalbutton", 20, 270, {});
 	        me.game.world.addChild(game.data.arsenalbutton, 30);
 	        me.input.triggerKeyEvent(me.input.KEY.B, true);
 //	        console.log("buildbutton pressed!");
