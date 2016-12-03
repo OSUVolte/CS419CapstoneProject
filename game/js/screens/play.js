@@ -88,7 +88,9 @@ game.PlayScreen = me.ScreenObject.extend({
         //         }
         //     })), 100);
         //}
-
+        //Big up to https://www.freesound.org/people/oymaldonado/sounds/346278/
+        //for the sounds
+        me.audio.playTrack("gamemusic");
     },
 
     /**
