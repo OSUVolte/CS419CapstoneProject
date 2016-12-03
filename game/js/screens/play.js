@@ -11,12 +11,12 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.gametimeoffset = me.timer.getTime(); //factor out time spent in title screen, game over screen, and previous games
         game.data.lastAIspawnTime = 0;
         game.data.currentwave = 0;
-        game.data.playergold = 10000;
+        game.data.playergold = 1000;
         game.data.player1win = 0;
 
         game.dataAI.gametime = 0;
         game.dataAI.currentwave = 0;
-        game.data.playergold = 1000;
+        game.dataAI.playergold = 1000;
 
         // reset upgrades
         // PLAYER
