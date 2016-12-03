@@ -16,7 +16,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
         game.dataAI.gametime = 0;
         game.dataAI.currentwave = 0;
-        game.dataAI.playergold = 1000;
+        game.dataAI.playergold = 5000;
 
         // reset upgrades
         // PLAYER

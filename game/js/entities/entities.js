@@ -202,9 +202,9 @@ game.Units = me.Entity.extend({
 
             //give money
             if(this.player == 1){
-                game.dataAI.playergold += 200;
+                game.dataAI.playergold += 150;
             }else{
-                game.data.playergold += 200;
+                game.data.playergold += 150;
                 game.data.maxKills++;
  //               console.log("SOMEONE DIED!");
             }
