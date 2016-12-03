@@ -435,7 +435,7 @@ game.Barracks = game.Structures.extend({
         this.fullHealth = 1000;
         this.hp = this.fullHealth;
         this.def = 0;                                                                                                       // need to add defence for battle function to work
-        this.cost = 200; //cost for barracks is 500 gold
+        this.cost = 500; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
 
         this.font = new me.Font("Arial", 15, "black");
@@ -604,7 +604,7 @@ game.Armourer = game.Structures.extend({
             buildTime: 6,
             action: "inc_base",
             value: 25,
-            cost: 100,
+            cost: 800,
             enabled:true,
             complete: false,
             inProcess: false
@@ -617,7 +617,7 @@ game.Armourer = game.Structures.extend({
             buildTime: 9,
             action: "inc_health",
             value: 25,
-            cost:400,
+            cost:800,
             enabled:true,
             complete: false,
             inProcess: false
@@ -630,7 +630,7 @@ game.Armourer = game.Structures.extend({
             buildTime: 12,
             action: "inc_sf",
             value: 1.25,
-            cost: 1000,
+            cost: 1600,
             enabled:true,
             complete: false,
             inProcess: false
@@ -831,7 +831,7 @@ game.Arsenal = game.Structures.extend({
             buildTime: 6,
             action: "inc_base",
             value: 250,
-            cost: 100,
+            cost: 800,
             enabled:true,
             complete: false,
             inProcess: false
@@ -844,7 +844,7 @@ game.Arsenal = game.Structures.extend({
             buildTime: 9,
             action: "inc_speed",
             value: 5,
-            cost:400,
+            cost:800,
             enabled:true,
             complete: false,
             inProcess: false
@@ -857,7 +857,7 @@ game.Arsenal = game.Structures.extend({
             buildTime: 12,
             action: "inc_sf",
             value: 1.25,
-            cost: 1000,
+            cost: 1600,
             enabled:true,
             complete: false,
             inProcess: false
@@ -1079,7 +1079,7 @@ game.Keep = game.Structures.extend({
             buildTime: 12,
             action: "inc_sf",
             value: 1.25,
-            cost: 1000,
+            cost: 1800,
             enabled:true,
             complete: false,
             inProcess: false

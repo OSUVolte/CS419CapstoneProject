@@ -713,10 +713,10 @@ function Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, nam
  */
 // Unit(hp, def, atk, speed, hitPercent, dodge, type, crit, buildTime, name, image)
 var slime = new Unit(10, 1, 3, 20, 90, 3, "unit", 3, 10, "Slime", "slime spritesheet calciumtrice_0", 100);           // weak, fast build time
-var rogue = new Unit(50, 5, 15, 25, 90, 15, "unit", 10, 10, "Rogue", "rogue spritesheet calciumtrice", 100);         // fast but weak
-var warrior = new Unit(72, 12, 35, 8, 75, 8, "unit", 5, 10, "Warrior", "warrior spritesheet calciumtrice", 100);       // decent hp/def/attack, but prone to missing and slow
-var wizard = new Unit(40, 2, 40, 18, 98, 10, "unit", 0, 10, "Wizard", "wizard spritesheet calciumtrice", 100);          // ignores defence/dodge chance, no chance for crit/slow
-var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minotaur spritesheet calciumtrice", 100);      // strong, slow, lots of hp, most likely to miss, best for buildings
+var rogue = new Unit(50, 5, 15, 25, 90, 15, "unit", 10, 10, "Rogue", "rogue spritesheet calciumtrice", 250);         // fast but weak
+var warrior = new Unit(72, 12, 35, 8, 75, 8, "unit", 5, 10, "Warrior", "warrior spritesheet calciumtrice", 350);       // decent hp/def/attack, but prone to missing and slow
+var wizard = new Unit(40, 2, 40, 18, 98, 10, "unit", 0, 10, "Wizard", "wizard spritesheet calciumtrice", 250);          // ignores defence/dodge chance, no chance for crit/slow
+var minotaur = new Unit(175, 15, 50, 5, 50, 0, "unit", 5, 10, "Minotaur", "minotaur spritesheet calciumtrice", 350);      // strong, slow, lots of hp, most likely to miss, best for buildings
 
 // todo:
 // maybe implement archers/cleric
