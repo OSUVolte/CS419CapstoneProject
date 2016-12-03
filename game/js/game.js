@@ -43,7 +43,7 @@ var game = {
                         msgDur: 3,
                         color: "red"
                     };
-                    return false
+
                 }else{
                     game.data.playergold -= amt;
                 }
