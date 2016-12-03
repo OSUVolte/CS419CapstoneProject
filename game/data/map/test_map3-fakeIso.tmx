@@ -84,7 +84,7 @@
  <objectgroup name="path">
   <object id="39" name="build_area" x="-34.8485" y="21.5152" width="752" height="428"/>
   <object id="130" name="queue_front" x="900" y="292" width="124" height="88"/>
-  <object id="132" name="queue_back" x="350" y="225" width="124" height="88"/>
+  <object id="132" name="queue_back" x="253" y="234" width="124" height="88"/>
   <object id="134" name="P2_build_area" x="3440" y="605.182" width="720" height="393.818" visible="0"/>
   <object id="135" name="queue_mid" x="518" y="350" width="124" height="88"/>
   <object id="140" name="p2_queue_front" x="3225.88" y="618.242" width="158" height="94"/>

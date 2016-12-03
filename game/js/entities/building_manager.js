@@ -386,7 +386,7 @@ game.BuildingObject = me.Entity.extend({
 
             var by = game.data.structures[i].pos.y + factor;
             var bh = game.data.structures[i].pos.y + game.data.structures[i].height - factor;
-            //console.log("I am", xcoor, ycoor, "Box xx yy " , bx, bw, by, bh);
+            // console.log("I am", xcoor, ycoor, "Box xx yy " , bx, bw, by, bh);
 
             //if we are in any bldg, we return false cant place it
             if ( ((xcoor > bx) && (xcoor < bw))

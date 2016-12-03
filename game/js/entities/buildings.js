@@ -540,21 +540,23 @@ game.Barracks = game.Structures.extend({
         //and use this to set behaviors and change the display
     },
     addQueueButtons: function (index){
-        var xCoor = 20+(50*index);
-        var img = "reg"+index;
-        //change the image depending if the button is the active queue
 
-        if(this.activeQ == index){
-            img = "reg"+index+"Pushed";
-        }
         this.panel.addChild(new game.UI.QueueSelector(
-            xCoor, this.panelHeight-60,
-            img, //img name
-            "", // default
-            index, // index of this button
+            20,this.panelHeight-60,
+            "The battlefront", // default
+            0,
             this.activeQ,
             this
         ), 110);
+
+        this.panel.addChild(new game.UI.QueueSelector(
+            200, this.panelHeight-60,
+            "defend the keep", // default
+            1,
+            this.activeQ,
+            this
+        ), 110);
+
     }
     // FOR TESTING ONLY
     // draw: function (renderer) {
@@ -1192,34 +1194,23 @@ game.Keep = game.Structures.extend({
                  NEGOTIATE A TREATY
                  */
                 if(this.q[0].action == "treaty_warrior") {
+                    var random = Math.floor((Math.random()*5));
+                    var types = [warrior, rogue, wizard, minotaur, slime ];
+
 
                     //Apply increase to all barracks capacities
                     //get all the children
                     for (var i = 0; i < me.game.world.children.length; i++) {                                           // get whatever target is the closest thing
+                        console.log("removing", me.game.world.children[i], types[random].name )
 
-                        // //get opposite alive players only
-                        // if (me.game.world.children[i].player != this.player
-                        //     && me.game.world.children[i].player != undefined
-                        //     && me.game.world.children[i].type == "warrior"
-                        //
-                        // ) {
-                        //     me.game.world.children[i].player = this.player;
-                        //     console.log("warriors defecting", me.game.world.children[i]);
-                        // }
-                        //todo
-                        //cycle though random type
+
                         if (me.game.world.children[i].player != this.player
                              && me.game.world.children[i].player != undefined
-                             && me.game.world.children[i].type == "warrior"
+                             && me.game.world.children[i].type == types[random].name
                         ){
-                            //remove all of them
-
-
-
+                            me.game.removeChild(me.game.world.children[i]);
+                            console.log("removing", me.game.world.children[i] )
                         }
-                        //add same amount to opposite players area
-
-
 
                     }
 
@@ -1227,7 +1218,7 @@ game.Keep = game.Structures.extend({
                     game.data.message = {
                         msgTime: me.timer.getTime(),
                         player: this.player,
-                        msg: "Warrior Defection Successfully Negotiated ",
+                        msg: types[random].name + " Defection Successfully Negotiated ",
                         msgDur: 4,
                         color: "blue"
                     };
