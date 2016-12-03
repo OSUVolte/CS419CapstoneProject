@@ -8,6 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
 
         // reset the game data for keeping track of time a waves
         game.data.gametime = 0;
+        game.data.pauseoffset = 0;
         game.data.gametimeoffset = me.timer.getTime(); //factor out time spent in title screen, game over screen, and previous games
         game.data.lastAIspawnTime = 0;
         game.data.currentwave = 0;

@@ -95,21 +95,18 @@ game.HUD.GameClock = me.Renderable.extend({
         this.starttime = me.timer.getTime();
         // local copy of the game's time clock
         this.gametime = 0;
-        this.firsttick = true;
-        this.startingoffset = 0;
     },
 
     /**
      * update function
      */
     update : function () {
-        if(this.firsttick) {
-            this.firsttick = false;
-            this.startingoffset = me.timer.getTime();
+        if(me.timer.getTime() - game.data.gametimeoffset - game.data.pauseoffset - this.gametime > 1075) {
+            game.data.pauseoffset += me.timer.getTime() - game.data.gametimeoffset - game.data.pauseoffset - this.gametime;
+            console.log(game.data.pauseoffset);
         }
 
-
-        if(me.timer.getTime() - (game.data.gametimeoffset) - this.gametime > 1000) {
+        if(me.timer.getTime() - game.data.gametimeoffset - game.data.pauseoffset - this.gametime > 1000) {
             //console.log(this.gametime);
             this.gametime += 1000;
             game.data.gametime = this.gametime;

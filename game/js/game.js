@@ -8,6 +8,7 @@ var game = {
         score : 0,
         gametime: 0,
         gametimeoffset: 0,
+        pauseoffset: 0,
         lastAIspawnTime: 0,
         currentwave: 0,
         waveduration: 60, //set to 15 seconds for testing
