@@ -394,6 +394,7 @@ game.Units = me.Entity.extend({
     */
     onCollision : function (response, other) {
     // IF we hit something that is NOT a GLOBAL_OBJECT, and something that IS NOT on the same team as us
+
         if (response.b.body.collisionType != me.collision.types.WORLD_SHAPE
             && response.a.player !== response.b.player && response.b.player != undefined) {
         //this.body.setVelocity(0,0);
@@ -443,7 +444,7 @@ game.Units = me.Entity.extend({
 
         if (response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) {
            //console.log("dont stand so close to me");
-
+            //console.log("oof!");
 
             return false;
         }

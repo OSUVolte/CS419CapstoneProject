@@ -6,6 +6,9 @@ game.Structures = me.Entity.extend({
      */
     init: function (x, y, settings) {
 
+        // call the super constructor
+        this._super(me.Entity, "init", [x, y, settings]);
+
         //load the general properties
         this.q = [];
         this.allowBuild = false;
@@ -29,8 +32,8 @@ game.Structures = me.Entity.extend({
 
         this.alwaysUpdate = true;
 
-        // call the super constructor
-        this._super(me.Entity, "init", [x, y, settings]);
+        //console.log("BLDG",this.body);
+
     },
     onActivateEvent: function () {
         //register on mouse/touch event
@@ -151,6 +154,7 @@ game.Structures = me.Entity.extend({
         //don't add if it would go over capacity
         if(this.q.length + 1 <= this.capacity &&  game.data.cashier(this.player, eval(unit).cost)){
             this.q.push(qObj);
+            //console.log("COST", this.player, eval(unit).cost);
             return true;
         }else{
             //display message
@@ -286,7 +290,7 @@ game.Structures = me.Entity.extend({
     /**
      * update function
      */
-    update: function () {
+    update: function (dt) {
         //This is all handled by the sub or extending class
         //use mainUpate in each to call standard update functions
     },
@@ -433,6 +437,10 @@ game.Barracks = game.Structures.extend({
         this.def = 0;                                                                                                       // need to add defence for battle function to work
         this.cost = 200; //cost for barracks is 500 gold
         this.activeQ = 0; // default is the front
+
+        this.font = new me.Font("Arial", 15, "black");
+        this.font.textAlign = "left";
+        this.font.bold();
     },
     /**
      * Change the image
@@ -548,6 +556,13 @@ game.Barracks = game.Structures.extend({
             this
         ), 110);
     }
+    // FOR TESTING ONLY
+    // draw: function (renderer) {
+    //
+    //     this.font.draw(renderer, "x "+ (this.pos.x) +" y " +this.pos.y, this.pos.x +30, this.pos.y +30);
+    //
+    //     this.font.draw(renderer, "x "+ (this.pos.x+this._width) +" y " + (this.pos.y+this._height), this.pos.x +30, this.pos.y +60);
+    // }
 
 });
 

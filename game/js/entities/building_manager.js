@@ -293,7 +293,7 @@ game.BuildingObject = me.Entity.extend({
         // status flags
         this.selected = false;
         this.hover = false;
-
+        this.canBePlaced = false;
         // to memorize where we grab the shape
         this.grabOffset = new me.Vector2d(0,0);
 
@@ -310,6 +310,8 @@ game.BuildingObject = me.Entity.extend({
         this.player = settings.player;
         this.body.setCollisionMask(me.collision.types.PLAYER_OBJECT);
         this.body.addShape(new me.Rect(0, 0, settings.width, settings.height));
+
+        //console.log("BO",this.body);
     },
 
     onActivateEvent: function () {
@@ -354,7 +356,10 @@ game.BuildingObject = me.Entity.extend({
             me.game.world.moveUp(this);
             this.pos.set(event.gameX, event.gameY, this.pos.z);
             this.pos.sub(this.grabOffset);
-            this.checkPosition();
+
+            if(this.checkPosition()){
+                this.canBePlaced == true;
+            };
 
             //console.log("position:",event.gameX, event.gameY,this.checkPosition() )
         }
@@ -367,30 +372,38 @@ game.BuildingObject = me.Entity.extend({
      * Check the position  to not be over an existing structure
      */
     checkOtherBldg : function () {
-        this.flag= false;
-        this.factor = 0;
+        this.flag= true;
+        var factor = 50; // to shrink the box
+
+        //make a mid point of the FP
+        var xcoor = this.pos.x + this.width / 2;
+        var ycoor = this.pos.y + this.height / 2; // why no parenthesis? because it's bat shit that's why
+
         for(var i = 0; i < game.data.structures.length; i++) {
-            if (((this.pos.x > game.data.structures[i]._width + game.data.structures[i].pos.x - this.factor) //all the way right
-                || (this.pos.x+this.width - this.factor < game.data.structures[i].pos.x))// all the way left
-                || (this.pos.y+this.height - this.factor < game.data.structures[i].pos.y)// the way above
-                || (this.pos.y > game.data.structures[i].pos.y + game.data.structures[i]._height  - this.factor)){ // below
+            //make expanded bounds of the building
+            var bx = game.data.structures[i].pos.x + factor;
+            var bw = game.data.structures[i].pos.x + game.data.structures[i].width - factor;
 
-                //update the image
-                this.chooseImage("good");
+            var by = game.data.structures[i].pos.y + factor;
+            var bh = game.data.structures[i].pos.y + game.data.structures[i].height - factor;
+            //console.log("I am", xcoor, ycoor, "Box xx yy " , bx, bw, by, bh);
 
-                this.flag = true;
+            //if we are in any bldg, we return false cant place it
+            if ( ((xcoor > bx) && (xcoor < bw))
+                && ((ycoor > by) && (ycoor < bh))
+            ){
+
+                this.flag = false;
+                //console.log("I am IN ", xcoor, ycoor, bx, bw, by, bh);
             }
         }
 
-        // it's fine if it's the first building or the flag is set
-        if(this.flag || game.data.structures.length == 0){
-
-            //update the image
-            this.chooseImage("good");
-            return true;
+        if(!this.flag){
+          return false
         }
-        this.chooseImage("bad");
-        return false;
+
+        // it's fine if it's the first building or the flag is set
+        return true;
     },
     /*
      * Check the position  to be within the "build" area and updates the image
@@ -402,15 +415,18 @@ game.BuildingObject = me.Entity.extend({
         if(this.pos.x > this.bounds.x
             && this.pos.x < this.bounds.width+this.bounds.x
             && this.pos.y > this.bounds.y
-            && this.pos.y < this.bounds.height+this.bounds.y){
+            && this.pos.y < this.bounds.height+this.bounds.y && this.checkOtherBldg()){
+
             //update the image
             this.chooseImage("good");
 
+            //set the flag
+            this.canBePlaced = true;
             return true;
-        }else{
-       //     console.log("not");
-            this.chooseImage("bad");
         }
+
+        this.chooseImage("bad");
+        this.canBePlaced = false;
         return false;
     },
     // mouse down function
@@ -507,7 +523,7 @@ game.BuildingObject = me.Entity.extend({
 
         }
 
-        me.collision.check(this);
+        //me.collision.check(this);
 
         return this.selected || this.hover;
     },
@@ -528,9 +544,10 @@ game.BuildingObject = me.Entity.extend({
     },
 
     onCollision: function(response, other){
-        if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE || response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) {
-            console.log("shit");
-        }
+        //if (response.b.body.collisionType === me.collision.types.WORLD_SHAPE || response.b.body.collisionType === me.collision.types.PLAYER_OBJECT) {
+            //console.log("OW!");
+            //this.chooseImage("bad");
+        //}
 
         return false;
     }
@@ -557,10 +574,10 @@ game.FootPrint = game.BuildingObject.extend({
 
         this.checkPosition();
 
-
         //use to the track if it has been placed
         this.placed = false;
-
+        this.width = settings.width;
+        this.height = settings.height;
         //fonts
         this.color = "green";
         this.font = new me.Font("Arial", 15, "black");
@@ -568,7 +585,6 @@ game.FootPrint = game.BuildingObject.extend({
         this.font.bold();
 
         this.player = settings.player;
-
 
     },
     /**
@@ -584,7 +600,7 @@ game.FootPrint = game.BuildingObject.extend({
                 this.color = "red";
                 break;
             default:
-
+                this.color = "yellow";
         }
 
     },
@@ -607,7 +623,7 @@ game.FootPrint = game.BuildingObject.extend({
         //console.log(newBldg);
         if(this.type == "barracks") {
 
-            if (this.checkPosition()) {
+            if (this.canBePlaced) {
                 bldg = me.game.world.addChild(new game.Barracks(this.pos.x, this.pos.y, newBldg), 10);
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
@@ -623,7 +639,7 @@ game.FootPrint = game.BuildingObject.extend({
             }
         }
         if(this.type == "armourer") {
-            if (this.checkPosition()) {
+            if (this.canBePlaced) {
                 bldg = me.game.world.addChild(new game.Armourer(this.pos.x, this.pos.y, newBldg), 10);
 
                 if (this.builder == "AI") {                                                                                                             // store into dataAI buildings when new building is built
@@ -639,7 +655,7 @@ game.FootPrint = game.BuildingObject.extend({
         }
         if(this.type == "arsenal") {
 
-            if (this.checkPosition()) {
+            if (this.canBePlaced) {
                bldg =  me.game.world.addChild(new game.Arsenal(this.pos.x, this.pos.y, newBldg), 10);
                 game.data.structures.push(bldg);
 
@@ -661,6 +677,11 @@ game.FootPrint = game.BuildingObject.extend({
         renderer.setColor(this.color);
         renderer.fillRect(this.pos.x, this.pos.y, this.width, this.height);
         this.font.draw(renderer, this.type, this.pos.x, this.pos.y);
+        // var midy = (this.pos.y + this.height)/2;
+        // console.log(this.pos.y + this.height/2, this.pos.y , this.height);
+        // this.font.draw(renderer, "x "+ (this.pos.x) +" y " + (this.pos.y), this.pos.x +30, this.pos.y +30);
+        // this.font.draw(renderer, "midx "+ ((this.pos.x +this.width)/2) +" midy " +midy, this.pos.x +30, this.pos.y +60);
+        // this.font.draw(renderer, "w"+ (this.width) +" h " +(this.height), this.pos.x +30, this.pos.y +90);
     }
 });
 
