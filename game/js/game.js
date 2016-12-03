@@ -58,7 +58,7 @@ var game = {
                     };
                     return false
                 } else {
-                    game.data.playergold -= amt;
+                    game.dataAI.playergold -= amt;
 
                 }
             }
