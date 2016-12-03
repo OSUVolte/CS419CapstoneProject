@@ -29,21 +29,38 @@ var game = {
         /**
          * Checks if user has enough moolah
          * @param amt amount to be deducted
+         * @param player amount to be deducted
          * @returns {boolean} true if deduction was successful
          */
         cashier: function(player, amt){
-            var purse;
-            if(player == 1){
-                purse = game.data.playergold
-            }else{
-                purse = game.dataAI.playergold
-            }
 
-            if(purse - amt < 0){
-                game.data.message= {msgTime: me.timer.getTime(), msg:"Not enough money ", msgDur: 3, color:"red"};
-                return false
-            }else{
-                purse = purse - amt;
+            if(player == 1){
+                if(game.data.playergold - amt < 0) {
+                    game.data.message = {
+                        msgTime: me.timer.getTime(),
+                        msg: "Not enough money ",
+                        msgDur: 3,
+                        color: "red"
+                    };
+
+                }else{
+                    game.data.playergold -= amt;
+                }
+
+            }else {
+
+                if (game.dataAI.playergold - amt < 0) {
+                    game.data.message = {
+                        msgTime: me.timer.getTime(),
+                        msg: "Not enough money ",
+                        msgDur: 3,
+                        color: "red"
+                    };
+                    return false
+                } else {
+                    game.data.playergold -= amt;
+
+                }
             }
             return true;
         },
@@ -163,28 +180,6 @@ var game = {
 
         // array holding the AI's buildings
         structures: []
-    },
-
-    //If this then that happens in the game:
-    conditionals : {
-
-        //time at which q one will be released
-        waveTime: function () {
-
-        },
-        /**
-         * BUILDING RELATED
-         */
-        //When will  building of type2 (rogue) entities be allowed
-        //when player has x units in play, and gold greater than unit cost
-        type2Allowed: function () {
-
-        },
-        //When will  building of type3 (slime) entities be allowed
-        //when player has x units in play, and gold greater than unit cost
-        type3Allowed: function () {
-
-        },
     },
 
     // Run on page load.
