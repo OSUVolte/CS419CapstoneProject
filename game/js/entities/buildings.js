@@ -152,14 +152,18 @@ game.Structures = me.Entity.extend({
         };
 //        console.log(qObj);                                                                                                                            objq canceld out
         //don't add if it would go over capacity
-        if(this.q.length + 1 <= this.capacity &&  game.data.cashier(this.player, eval(unit).cost)){
+        if((this.q.length + 1 <= this.capacity)
+            &&  game.data.cashier(this.player, eval(unit).cost)){
+            console.log(game.data.cashier(this.player, eval(unit).cost))
             this.q.push(qObj);
             //console.log("COST", this.player, eval(unit).cost);
             return true;
-        }else{
+        }else if(game.data.cashier(this.player, eval(unit).cost)){
             //display message
             game.data.message= {msgTime: me.timer.getTime(), player: this.player, msg:"Capacity Reached!", msgDur: 10, color:"red"};
         }
+
+
 
         return false;
     },

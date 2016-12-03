@@ -39,10 +39,12 @@ var game = {
                 if(game.data.playergold - amt < 0) {
                     game.data.message = {
                         msgTime: me.timer.getTime(),
+                        player: this.player,
                         msg: "Not enough money ",
                         msgDur: 3,
                         color: "red"
                     };
+                    return false
 
                 }else{
                     game.data.playergold -= amt;
@@ -55,6 +57,7 @@ var game = {
                         msgTime: me.timer.getTime(),
                         msg: "Not enough money ",
                         msgDur: 3,
+                        player: this.player,
                         color: "red"
                     };
                     return false
