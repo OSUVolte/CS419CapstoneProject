@@ -105,7 +105,7 @@ var game = {
         currentwave: 0,
         waveduration: 15, //set to 15 seconds for testing
 
-        playergold: 5000, //set initial player gold to 1000
+        playergold: 3000, //set initial player gold to 1000
         playergoldrate: 5, //set initial player gold rate to 5 gold per sec
 
         /**
