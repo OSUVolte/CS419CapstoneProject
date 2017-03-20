@@ -1,8 +1,7 @@
 
 # Introduction
 
-	The goal of this project was to create an HTML5 Real-Time Strategy(RTS) game that could be played entirely in a web browser such as Google Chrome. At the beginning of the project, all members of the group decided that the work effort of the project be split according to functional tasks rather than sub-system focused development. Therefore each of the members of our group had to opportunity to design, develop, and test all aspects of the game including and not limited to the game engine, game UI, game play mechanics, computer controlled enemy AI and overall play balance. This allowed us the ability to work in collaboration on certain sections and for an overall better understanding of the project code base. This report will give a high level overview of how different aspects of the game were implemented and to provide a brief introduction of how to play the game.
-
+The goal of this project was to create an HTML5 Real-Time Strategy(RTS) game that could be played entirely in a web browser such as Google Chrome. At the beginning of the project, all members of the group decided that the work effort of the project be split according to functional tasks rather than sub-system focused development. Therefore each of the members of our group had to opportunity to design, develop, and test all aspects of the game including and not limited to the game engine, game UI, game play mechanics, computer controlled enemy AI and overall play balance. This allowed us the ability to work in collaboration on certain sections and for an overall better understanding of the project code base. This report will give a high level overview of how different aspects of the game were implemented and to provide a brief introduction of how to play the game.
 
 ## Description of Program(User’s Perspective)
 
